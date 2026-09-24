@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Frame } from "../frame";
+import type { Copy, LocaleId } from "@/lib/copy";
+import { localizedPath } from "@/lib/locales.mjs";
 import { HANDS, INKS, SIZES, TEMPLATES } from "@/lib/looks";
 import { paginate } from "@/lib/paginate.mjs";
 import { pdfFromJpegs } from "@/lib/pdf.mjs";
@@ -33,7 +35,7 @@ async function drawSheet(lines: string[], templateId: TemplateId, handId: HandId
   canvas.width = template.width;
   canvas.height = template.height;
   const ctx = canvas.getContext("2d");
-  if (!ctx) throw new Error("Could not draw the page.");
+  if (!ctx) throw new Error("draw");
   ctx.fillStyle = template.paper;
   ctx.fillRect(0, 0, template.width, template.height);
   if (template.ruled) {
@@ -71,11 +73,12 @@ async function drawSheet(lines: string[], templateId: TemplateId, handId: HandId
 
 async function canvasJpeg(canvas: HTMLCanvasElement) {
   const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.92));
-  if (!blob) throw new Error("Could not export the page.");
+  if (!blob) throw new Error("export");
   return new Uint8Array(await blob.arrayBuffer());
 }
 
-export function Studio() {
+export function Studio({ locale, copy }: { locale: LocaleId; copy: Copy }) {
+  const ui = copy.studio;
   const [text, setText] = useState("");
   const [templateId, setTemplateId] = useState<TemplateId>("letter");
   const [handId, setHandId] = useState<HandId>("casual");
@@ -102,7 +105,7 @@ export function Studio() {
         if (!gone) setPreview(canvas.toDataURL("image/jpeg", 0.92));
       })
       .catch((err: unknown) => {
-        if (!gone) setError(err instanceof Error ? err.message : "Could not draw the page.");
+        if (!gone) setError(ui.drawError);
       });
     return () => {
       gone = true;
@@ -124,10 +127,10 @@ export function Studio() {
     try {
       const canvas = await drawSheet(pages[safePage] || [], templateId, handId, inkId, sizeId);
       const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png"));
-      if (!blob) throw new Error("Could not export the PNG.");
+      if (!blob) throw new Error(ui.pngError);
       download(await blob.arrayBuffer(), `handwriting-${safePage + 1}.png`, "image/png");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not export the PNG.");
+    } catch {
+      setError(ui.pngError);
     } finally {
       setBusy(false);
     }
@@ -140,50 +143,50 @@ export function Studio() {
       const drawn = await exportPages();
       const pdf = pdfFromJpegs(drawn.map(({ jpeg, width, height }) => ({ jpeg, width, height })));
       download(pdf, "handwriting.pdf", "application/pdf");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not export the PDF.");
+    } catch {
+      setError(ui.pdfError);
     } finally {
       setBusy(false);
     }
   }
 
   return (
-    <Frame step={3}>
-      <p className="kicker">Step 3 of 3</p>
-      <h1>Choose a page, then download.</h1>
-      <p className="lede">Long text splits across pages. PNG saves the page you are looking at. PDF saves every page.</p>
+    <Frame locale={locale} copy={copy} step={3}>
+      <p className="kicker">{ui.kicker}</p>
+      <h1>{ui.h1}</h1>
+      <p className="lede">{ui.lede}</p>
       {!text.trim() && (
         <p className="note">
-          No transcript yet. <Link href="/text">Add the words first.</Link>
+          {ui.emptyBefore} <Link href={localizedPath(locale, "/text")}>{ui.emptyLink}</Link>
         </p>
       )}
       <div className="panel">
         <div className="chips">
           {Object.values(TEMPLATES).map((item) => (
-            <button key={item.id} className="chip" type="button" aria-pressed={templateId === item.id} onClick={() => { setTemplateId(item.id); setPage(0); }}>{item.label}</button>
+            <button key={item.id} className="chip" type="button" aria-pressed={templateId === item.id} onClick={() => { setTemplateId(item.id); setPage(0); }}>{ui[item.id]}</button>
           ))}
         </div>
         <div className="chips">
           {Object.values(HANDS).map((item) => (
-            <button key={item.id} className="chip" type="button" aria-pressed={handId === item.id} onClick={() => setHandId(item.id)}>{item.label}</button>
+            <button key={item.id} className="chip" type="button" aria-pressed={handId === item.id} onClick={() => setHandId(item.id)}>{ui[item.id]}</button>
           ))}
           {Object.values(SIZES).map((item) => (
-            <button key={item.id} className="chip" type="button" aria-pressed={sizeId === item.id} onClick={() => setSizeId(item.id)}>{item.label}</button>
+            <button key={item.id} className="chip" type="button" aria-pressed={sizeId === item.id} onClick={() => setSizeId(item.id)}>{ui[item.id]}</button>
           ))}
           {Object.values(INKS).map((item) => (
-            <button key={item.id} className="chip" type="button" aria-pressed={inkId === item.id} onClick={() => setInkId(item.id)}>{item.label}</button>
+            <button key={item.id} className="chip" type="button" aria-pressed={inkId === item.id} onClick={() => setInkId(item.id)}>{ui[item.id]}</button>
           ))}
         </div>
-        {preview && <img className="sheet-preview" src={preview} alt={`Handwriting page ${safePage + 1}`} />}
+        {preview && <img className="sheet-preview" src={preview} alt={ui.alt.replace("{current}", String(safePage + 1))} />}
         <div className="actions">
-          <button className="back" type="button" disabled={safePage === 0} onClick={() => setPage(safePage - 1)}>Previous</button>
-          <span className="note">Page {safePage + 1} of {pages.length}</span>
-          <button className="back" type="button" disabled={safePage >= pages.length - 1} onClick={() => setPage(safePage + 1)}>Next</button>
+          <button className="back" type="button" disabled={safePage === 0} onClick={() => setPage(safePage - 1)}>{ui.previous}</button>
+          <span className="note">{ui.page.replace("{current}", String(safePage + 1)).replace("{total}", String(pages.length))}</span>
+          <button className="back" type="button" disabled={safePage >= pages.length - 1} onClick={() => setPage(safePage + 1)}>{ui.nextPage}</button>
         </div>
         <div className="actions">
-          <Link className="back link" href="/text">Edit text</Link>
-          <button className="back" type="button" disabled={busy || !text.trim()} onClick={() => void savePng()}>Download PNG</button>
-          <button className="primary" type="button" disabled={busy || !text.trim()} onClick={() => void savePdf()}>Download PDF</button>
+          <Link className="back link" href={localizedPath(locale, "/text")}>{ui.edit}</Link>
+          <button className="back" type="button" disabled={busy || !text.trim()} onClick={() => void savePng()}>{ui.png}</button>
+          <button className="primary" type="button" disabled={busy || !text.trim()} onClick={() => void savePdf()}>{ui.pdf}</button>
         </div>
         {error && <p className="error">{error}</p>}
       </div>

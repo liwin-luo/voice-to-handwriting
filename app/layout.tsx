@@ -1,4 +1,6 @@
+import { headers } from "next/headers";
 import type { Metadata } from "next";
+import { localeFromPath } from "@/lib/locales.mjs";
 import "./globals.css";
 
 const site = "https://voicetohandwriting.online";
@@ -10,20 +12,20 @@ export const metadata: Metadata = {
     template: "%s — Voice to Handwriting",
   },
   description: "Record or upload speech, edit the transcript, and download it as handwriting in PNG or PDF.",
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: site,
     siteName: "Voice to Handwriting",
-    title: "Voice to Handwriting — Turn Speech into Printable Handwriting",
-    description: "Record or upload speech, edit the transcript, and download it as handwriting in PNG or PDF.",
   },
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export const dynamic = "force-dynamic";
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = (await headers()).get("x-pathname") || "/";
+  const locale = localeFromPath(pathname);
   return (
-    <html lang="en">
+    <html lang={locale.hreflang} dir={locale.dir}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

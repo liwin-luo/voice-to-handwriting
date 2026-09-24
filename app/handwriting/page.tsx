@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+import { COPY } from "@/lib/copy";
+import { pageMetadata } from "@/lib/seo";
 import { Studio } from "./studio";
 
-export const metadata: Metadata = {
-  title: "Handwriting Preview",
-  description: "Choose paper, handwriting style, size, and ink, then download a PNG of one page or a PDF of every page.",
-  alternates: { canonical: "/handwriting" },
-};
+export const metadata = pageMetadata("en", "handwriting");
 
 export default function Page() {
-  return <Studio />;
+  return <Studio locale="en" copy={COPY.en} />;
 }

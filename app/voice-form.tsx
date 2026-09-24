@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Frame } from "./frame";
+import type { Copy, LocaleId } from "@/lib/copy";
+import { localizedPath } from "@/lib/locales.mjs";
 import { saveText } from "@/lib/session";
 
 type SpeechResult = { results: ArrayLike<ArrayLike<{ transcript: string }>> };
@@ -22,8 +24,9 @@ declare global {
   }
 }
 
-export function VoiceForm() {
+export function VoiceForm({ locale, copy }: { locale: LocaleId; copy: Copy }) {
   const router = useRouter();
+  const home = copy.home;
   const [listening, setListening] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
@@ -36,7 +39,7 @@ export function VoiceForm() {
 
   function go(text: string) {
     saveText(text);
-    router.push("/text");
+    router.push(localizedPath(locale, "/text"));
   }
 
   async function transcribe(file: File) {
@@ -48,11 +51,11 @@ export function VoiceForm() {
       body.append("audio", file);
       const response = await fetch("/api/transcribe", { method: "POST", body });
       const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error || "Could not transcribe that audio.");
+      if (!response.ok) throw new Error(payload.error || home.transcribeError);
       const spoken = payload.source === "openrouter" ? String(payload.text || "") : browserTextRef.current;
       go(spoken);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not transcribe that audio.");
+      setError(err instanceof Error ? err.message : home.transcribeError);
     } finally {
       setBusy(false);
       browserTextRef.current = "";
@@ -100,7 +103,7 @@ export function VoiceForm() {
       recorder.start();
       setListening(true);
     } catch {
-      setError("Allow the microphone, then try again.");
+      setError(home.micError);
     }
   }
 
@@ -109,16 +112,16 @@ export function VoiceForm() {
   }
 
   return (
-    <Frame step={1}>
-      <p className="kicker">Step 1 of 3</p>
-      <h1>Add your voice.</h1>
-      <p className="lede">Record on this page, or upload an audio file. The next page shows the words.</p>
+    <Frame locale={locale} copy={copy} step={1}>
+      <p className="kicker">{home.kicker}</p>
+      <h1>{home.h1}</h1>
+      <p className="lede">{home.lede}</p>
       <div className="panel narrow">
         <button className={listening ? "record live" : "record"} type="button" onPointerDown={record} onPointerUp={stop} onPointerCancel={stop}>
-          {listening ? "Listening… release to transcribe" : busy ? "Transcribing…" : "Hold to record"}
+          {listening ? home.listening : busy ? home.transcribing : home.hold}
         </button>
         <button className="upload" type="button" onClick={() => fileRef.current?.click()}>
-          {fileName || "Upload audio"}
+          {fileName || home.upload}
         </button>
         <input
           ref={fileRef}
@@ -133,18 +136,12 @@ export function VoiceForm() {
         {error && <p className="error">{error}</p>}
       </div>
       <section className="features">
-        <article className="feature">
-          <h2>Record or upload</h2>
-          <p>Hold the button to record, or upload an m4a, mp3, wav, or webm file. Phones and computers use the same step.</p>
-        </article>
-        <article className="feature">
-          <h2>Fix the transcript</h2>
-          <p>The words land on their own page. Change a name or a sentence before anything is written by hand.</p>
-        </article>
-        <article className="feature">
-          <h2>Paper, ink, and download</h2>
-          <p>Pick Letter, Note, Card, or Grid, then a handwriting style, size, and ink. Save a PNG of one page or a PDF of all pages.</p>
-        </article>
+        {home.features.map(([title, body]) => (
+          <article className="feature" key={title}>
+            <h2>{title}</h2>
+            <p>{body}</p>
+          </article>
+        ))}
       </section>
     </Frame>
   );

@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+import { COPY } from "@/lib/copy";
+import { pageMetadata } from "@/lib/seo";
 import { TextEditor } from "./editor";
 
-export const metadata: Metadata = {
-  title: "Edit Transcript",
-  description: "Review and edit the words from your recording before they are written by hand.",
-  alternates: { canonical: "/text" },
-};
+export const metadata = pageMetadata("en", "text");
 
 export default function Page() {
-  return <TextEditor />;
+  return <TextEditor locale="en" copy={COPY.en} />;
 }

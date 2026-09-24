@@ -1,12 +1,14 @@
 import type { MetadataRoute } from "next";
+import { LOCALES, localizedPath, PAGES } from "@/lib/locales.mjs";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const site = "https://voicetohandwriting.online";
-  const paths = ["", "/text", "/handwriting", "/faq", "/privacy", "/contact"];
-  return paths.map((path) => ({
-    url: `${site}${path}`,
-    lastModified: new Date("2026-09-24"),
-    changeFrequency: path === "" || path === "/faq" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : path === "/faq" ? 0.6 : 0.4,
-  }));
+  return LOCALES.flatMap((locale) =>
+    PAGES.map((path) => ({
+      url: `${site}${localizedPath(locale.id, path) === "/" ? "" : localizedPath(locale.id, path)}`,
+      lastModified: new Date("2026-09-24"),
+      changeFrequency: path === "/" || path === "/faq" ? "weekly" : "monthly",
+      priority: path === "/" && locale.id === "en" ? 1 : path === "/" || path === "/faq" ? 0.6 : 0.4,
+    })),
+  );
 }

@@ -1,6 +1,7 @@
 import { audioFormat } from "../lib/audio-format.mjs";
 import { paginate } from "../lib/paginate.mjs";
 import { pdfFromJpegs } from "../lib/pdf.mjs";
+import { barePath, localizedPath } from "../lib/locales.mjs";
 import { sampleLetter } from "../lib/sample.mjs";
 
 const letter = sampleLetter({
@@ -34,5 +35,10 @@ const header = new TextDecoder().decode(pdf.slice(0, 8));
 if (header !== "%PDF-1.3") throw new Error("expected a pdf");
 const pdfText = new TextDecoder().decode(pdf);
 if (!pdfText.includes("/Count 2")) throw new Error("expected two pdf pages");
+
+if (localizedPath("zh", "/text") !== "/zh/text") throw new Error("expected chinese text path");
+if (localizedPath("en", "/zh/faq") !== "/faq") throw new Error("expected english faq path");
+if (barePath("/pt/handwriting") !== "/handwriting") throw new Error("expected bare handwriting path");
+if (localizedPath("ar", "/") !== "/ar") throw new Error("expected arabic home");
 
 console.log("ok");
