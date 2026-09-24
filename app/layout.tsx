@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const site = "https://voicetohandwriting.online";
+
 export const metadata: Metadata = {
-  title: "Voice to Handwriting — Upload, transcribe, write by hand",
-  description: "Record or upload speech, read the transcript, then turn those exact words into handwriting you can print.",
+  metadataBase: new URL(site),
+  title: {
+    default: "Voice to Handwriting — Turn Speech into Printable Handwriting",
+    template: "%s — Voice to Handwriting",
+  },
+  description: "Record or upload speech, edit the transcript, and download it as handwriting in PNG or PDF.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: site,
+    siteName: "Voice to Handwriting",
+    title: "Voice to Handwriting — Turn Speech into Printable Handwriting",
+    description: "Record or upload speech, edit the transcript, and download it as handwriting in PNG or PDF.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

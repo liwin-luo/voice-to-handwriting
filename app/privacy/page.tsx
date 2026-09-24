@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Frame } from "../frame";
 
-export const metadata: Metadata = { title: "Privacy — Voice to Handwriting" };
+export const metadata: Metadata = {
+  title: "Privacy",
+  description: "How Voice to Handwriting handles recordings, transcripts, and downloads.",
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPage() {
   return (

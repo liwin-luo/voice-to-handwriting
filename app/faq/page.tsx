@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Frame } from "../frame";
 
-export const metadata: Metadata = { title: "FAQ — Voice to Handwriting" };
+export const metadata: Metadata = {
+  title: "FAQ",
+  description: "How voice to handwriting works: recording, uploads, phones, paper styles, and PNG or PDF downloads.",
+  alternates: { canonical: "/faq" },
+};
 
 const ITEMS = [
   ["What does this site do?", "You record or upload speech, check the transcript, then turn those exact words into handwriting you can download."],
@@ -22,6 +26,20 @@ export default function FaqPage() {
       <p className="kicker">FAQ</p>
       <h1>Questions</h1>
       <div className="prose">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: ITEMS.map(([title, body]) => ({
+                "@type": "Question",
+                name: title,
+                acceptedAnswer: { "@type": "Answer", text: body },
+              })),
+            }),
+          }}
+        />
         {ITEMS.map(([title, body]) => (
           <section key={title}>
             <h2>{title}</h2>

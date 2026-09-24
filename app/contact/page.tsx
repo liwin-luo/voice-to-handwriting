@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Frame } from "../frame";
 
-export const metadata: Metadata = { title: "Contact — Voice to Handwriting" };
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Email Voice to Handwriting about transcription, downloads, or handwriting styles.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (
