@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "brand": "Voice to Handwriting",
+    "title": "Voice to Handwriting - Fale e vire escrita à mão",
+    "description": "Fale para a página, sua voz vira texto em tempo real e ganha aparência de escrita à mão de verdade. Exporte em PNG/PDF. Gerador de escrita à mão gratuito.",
+    "keywords": "gerador de escrita a mão, voz para texto, fonte manuscrita, fazer cartão, transcrever áudio",
+    "about": {
+      "title": "Sobre",
+      "description": "Voice to Handwriting é uma ferramenta web gratuita que transforma voz em páginas escritas à mão. Tudo roda no seu navegador."
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "description": "Como tratamos dados de voz e texto, cookies e anúncios de terceiros."
+    },
+    "terms": {
+      "title": "Termos de Uso",
+      "description": "Condições de uso, limites e aviso legal da ferramenta."
+    },
+    "contact": {
+      "title": "Contato",
+      "description": "Sugestões, relatórios de erros e contato comercial."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Tutoriais e ideias de cartões e imagens manuscritas."
+    },
+    "history": {
+      "title": "Histórico",
+      "description": "Suas conversões salvas localmente: instantâneos de texto e estilo, restauráveis com um clique."
+    },
+    "templates": {
+      "title": "Modelos manuscritos",
+      "description": "Cartas de amor, desculpas, agradecimentos, aniversários e festas — texto e estilo em um toque."
+    }
+  },
+  "nav": {
+    "tool": "Ferramenta",
+    "templates": "Modelos",
+    "history": "Histórico",
+    "blog": "Blog",
+    "about": "Sobre"
+  },
+  "home": {
+    "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
+    "badge": "Processado no navegador, o texto nunca é enviado",
+    "footerNote": "O reconhecimento de voz usa o navegador (Web Speech API). Recomendado: Chrome / Edge de desktop; seu texto nunca sai do dispositivo.",
+    "blogLink": "Tutoriais e ideias de cartões manuscritos",
+    "adPending": "Espaço de anúncio · ativado com NEXT_PUBLIC_ADSENSE_CLIENT",
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
+    "sampleText": "Querido amigo,\nfalei para uma página da web e estas palavras viraram escrita à mão. Dê um toque, fale ou importe um áudio — e exporte em imagem ou PDF. Tenha um ótimo dia!"
+  },
+  "tool": {
+    "speak": "Toque e fale",
+    "stop": "Parar",
+    "listening": "Ouvindo",
+    "unsupported": "Este navegador não suporta reconhecimento de voz. Recomendado Chrome / Edge, ou digite à esquerda.",
+    "errorDenied": "Microfone negado: permita pelo ícone à esquerda da barra de endereço e tente de novo",
+    "errorNetwork": "Erro de rede no serviço de reconhecimento. Verifique sua conexão",
+    "errorStopped": "Nenhuma voz detectada por um tempo — interrompido automaticamente",
+    "exporting": "Exportando",
+    "exportPng": "Exportar PNG",
+    "exportPdf": "Exportar PDF",
+    "sectionHandwriting": "Caligrafia",
+    "font": "Fonte",
+    "fontSize": "Tamanho",
+    "realism": "Realismo",
+    "reseed": "Trocar a letra",
+    "sectionPaper": "Papel",
+    "paper": "Papel",
+    "ink": "Tinta",
+    "editorLabel": "Texto (corrija erros de reconhecimento)",
+    "charUnit": "car.",
+    "placeholder": "Sua fala aparece aqui — também pode digitar ou colar",
+    "alignLeft": "Alinhar à esquerda",
+    "alignCenter": "Centralizar",
+    "indent": "Recuo na primeira linha",
+    "emptyTitle": "Fale, e se escreve sozinho",
+    "emptyHint": "Toque em \"Toque e fale\" abaixo, ou escreva no painel à esquerda",
+    "fonts": {
+      "mashanzheng": "Ma Shan Zheng · Kai",
+      "lxgwwenkai": "LXGW WenKai · Kai",
+      "longcang": "Long Cang · Xing",
+      "zhimangxing": "Zhi Mang Xing · Xing",
+      "liujianmaocao": "Liu Jian Mao Cao · Cao",
+      "zcoolkuaile": "ZCOOL KuaiLe · Divertida",
+      "caveat": "Caveat · Inglês"
+    },
+    "papers": {
+      "blank": "Liso",
+      "ruled": "Pautado",
+      "grid": "Quadriculado",
+      "letter": "Carta",
+      "custom": "Personalizado"
+    },
+    "inks": {
+      "blueblack": "Azul escuro",
+      "black": "Preto",
+      "red": "Vermelho cinabre",
+      "indigo": "Índigo",
+      "green": "Verde escuro",
+      "brown": "Marrom",
+      "gray": "Cinza grafite"
+    },
+    "customColor": "Cor personalizada",
+    "paperCustom": {
+      "style": "Estilo das linhas",
+      "bg": "Cor do papel",
+      "line": "Cor das linhas",
+      "spacing": "Espaçamento"
+    },
+    "importAudio": "Importar áudio",
+    "modelFast": "Rápido",
+    "modelQuality": "Alta qualidade",
+    "statusModel": "No primeiro uso o modelo é baixado {p}%",
+    "statusDecode": "Decodificando o áudio…",
+    "statusTranscribe": "Transcrevendo — arquivos longos demoram…",
+    "errorEmpty": "Nenhuma voz reconhecida no áudio",
+    "errorImport": "Falha na transcrição — tente mp3 / wav / m4a",
+    "modelNote": "Rápido: ~80MB; Alta qualidade: ~250MB, melhor para chinês. O modelo é baixado uma vez; o áudio nunca sai do seu aparelho",
+    "watermark": "Marca d'água na exportação",
+    "trySample": "Testar um exemplo"
+  },
+  "footer": {
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "contact": "Contato"
+  },
+  "consent": {
+    "text": "Usamos cookies para mostrar anúncios que mantêm esta ferramenta gratuita. Aceite anúncios personalizados ou continue só com o essencial.",
+    "privacy": "Privacidade",
+    "accept": "Aceitar",
+    "reject": "Recusar"
+  },
+  "blog": {
+    "tagline": "Tutoriais e ideias de cartões manuscritos — todos os guias funcionam com a ferramenta da página inicial."
+  },
+  "history": {
+    "emptyTitle": "Ainda sem histórico",
+    "emptyHint": "Um instantâneo é salvo ao exportar, terminar uma gravação ou transcrever um áudio",
+    "goTool": "Escrever agora",
+    "restore": "Restaurar",
+    "delete": "Excluir",
+    "clearAll": "Limpar tudo",
+    "confirmClearShort": "Limpar mesmo?",
+    "confirmDelete": "Confirmar",
+    "sourceSpeech": "Voz",
+    "sourceAudio": "Áudio",
+    "sourceExport": "Exportação",
+    "charUnit": "car."
+  },
+  "templates": {
+    "tagline": "Cada modelo inclui texto e estilo manuscrito — escolha e comece a escrever.",
+    "libraryTitle": "Modelos",
+    "searchPlaceholder": "Buscar cenários: aniversário, desculpa, obrigado…",
+    "noResult": "Nenhum modelo correspondente",
+    "noResultHint": "Tente outra palavra ou crie livremente na ferramenta",
+    "use": "Usar este modelo",
+    "editHint": "O texto continua editável após aplicar; fonte e papel se ajustam no painel à esquerda."
+  },
+  "notFound": {
+    "title": "Esta página voou com o vento",
+    "text": "Mas a ferramenta de escrita à mão continua aqui.",
+    "back": "Voltar a escrever"
+  },
+  "author": {
+    "name": "Equipe Voice to Handwriting",
+    "role": "Equipe de produto e engenharia"
+  },
+  "post": {
+    "updated": "Atualizado",
+    "reading": "{m} min de leitura",
+    "testedNote": "Todos os passos foram testados no Chrome de desktop (outubro de 2026, macOS). A qualidade varia conforme navegador e aparelho — revise textos importantes. Não coletamos texto nem áudio — veja a Política de Privacidade. Referência: MDN Web Speech API."
+  }
+}

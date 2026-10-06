@@ -1,3 +1,4 @@
+import { mergeI18n, EXTRA_POST_I18N } from "@/content/extra-locales";
 import type { Locale } from "@/i18n/routing";
 
 export interface Post {
@@ -5,11 +6,13 @@ export interface Post {
   date: string; // 首发
   updated: string; // 最后更新(EEAT:展示维护状态)
   image: string; // 题图(public/blog 下截图)
-  i18n: Record<Locale, { title: string; description: string }>;
+  i18n: Partial<Record<Locale, { title: string; description: string }>>;
 }
 
+
 export function getPostMeta(slug: string, locale: Locale) {
-  return POSTS.find((p) => p.slug === slug)?.i18n[locale];
+  const post = POSTS.find((p) => p.slug === slug);
+  return post ? (post.i18n[locale] ?? post.i18n.en) : undefined;
 }
 
 /** 博客索引:新增文章在 src/content/blog/<slug>.<locale>.mdx 建文件并注册到 registry 后,在此登记 */
@@ -180,3 +183,6 @@ export const POSTS: Post[] = [
     },
   },
 ];
+
+// de/fr/pt 等后补语言在此合并
+mergeI18n(POSTS, EXTRA_POST_I18N);

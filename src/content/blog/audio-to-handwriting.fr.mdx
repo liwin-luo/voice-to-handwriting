@@ -1,0 +1,49 @@
+# Transformer un enregistrement en notes manuscrites, gratuitement
+
+L'enregistrement d'une réunion, un cours, des notes vocales pleines d'idées — en faire une note manuscrite partageable demandait quatre étapes : application de transcription, copie, mise en page, export.
+
+Aujourd'hui, une seule : **importez un fichier audio, obtenez une page manuscrite**. Gratuit, sans que l'audio quitte votre appareil. Voici le fonctionnement, nos résultats de tests — et les limites honnêtes.
+
+## Les trois routes comparées
+
+| Route | Coût | Confidentialité | Idéal pour |
+| --- | --- | --- | --- |
+| Whisper dans le navigateur (notre choix) | 0 | L'audio reste sur l'appareil | Notes du quotidien, contenu sensible |
+| ASR cloud | À la minute ou quota | Audio envoyé | Fichiers très longs, vitesse |
+| Dictée mobile + copier-coller | 0 | Selon la méthode | Petites notes ponctuelles |
+
+Le seul coût de la route locale : un téléchargement de modèle unique, et une vitesse qui dépend de votre matériel.
+
+## Comment nous l'avons mis en œuvre
+
+- Les fichiers sont décodés via `decodeAudioData` puis rééchantillonnés en 16 kHz mono ;
+- Le modèle Whisper (~80 Mo rapide / ~250 MB haute qualité, q8) est **auto-hébergé sur notre domaine**, découpé en fenêtres de 30 secondes ;
+- Chrome avec WebGPU profite de l'accélération GPU, sinon retour sur WASM ;
+- La transcription arrive dans le même éditeur — polices, papier et export se comportent comme la saisie.
+
+Nous auto-hébergeons plutôt que d'appeler le CDN HuggingFace : pas de blocage CORS et des téléchargements qui fonctionnent aussi en Chine.
+
+## Test réel : un échantillon TTS
+
+Environnement : macOS + Chrome, pas de GPU (chemin WASM), modèle rapide.
+
+- Entrée : voix chinoise synthétisée (~5 s)
+- Sortie : « 你好,這是一段測試語音,用來驗證音頻轉寫功能。 » — contenu exact, mais en caractères traditionnels (tendance connue du modèle base ; le modèle haute qualité améliore ce point)
+
+Le premier chargement du modèle a pris environ une minute ; ensuite le navigateur le met en cache.
+
+## Trois étapes
+
+1. Sur la [page outil](/), cliquez « Importer un fichier audio » et choisissez mp3 / wav / m4a ;
+2. Attendez la progression (inclut le premier téléchargement du modèle) ;
+3. La transcription arrive dans l'éditeur — corrigez, choisissez le style, exportez.
+
+## Limites honnêtes
+
+- Le modèle base souffre avec les accents forts et le bruit — pour l'important : modèle haute qualité et relecture ;
+- Plus de 30 minutes devient lent — découpez les fichiers ;
+- Safari ne décode pas certains codecs — Chrome / Edge de bureau recommandés.
+
+## Testé, avec des limites honnêtes
+
+Toutes les étapes ont été testées sur Chrome de bureau (macOS, octobre 2026) ; les captures sont réelles. La reconnaissance vocale est fournie par le navigateur — la qualité varie. Relisez toujours le texte important. Nous ne collectons ni texte ni audio — voir la [Politique de confidentialité](/privacy). Référence : [MDN · Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API).

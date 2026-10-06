@@ -1,3 +1,4 @@
+import { mergeI18n, EXTRA_TEMPLATE_I18N } from "@/content/extra-locales";
 import type { Locale } from "@/i18n/routing";
 
 export interface TemplateStyle {
@@ -13,11 +14,22 @@ export interface TemplateStyle {
 export interface HandwritingTemplate {
   slug: string;
   style: TemplateStyle;
-  i18n: Record<Locale, { title: string; description: string; text: string }>;
+  i18n: Partial<Record<Locale, { title: string; description: string; text: string }>>;
 }
 
 export function getTemplate(slug: string): HandwritingTemplate | undefined {
   return TEMPLATES.find((t) => t.slug === slug);
+}
+
+export interface TemplateMeta {
+  title: string;
+  description: string;
+  text: string;
+}
+
+/** 模板元数据:当前语言缺翻译时回退英语 */
+export function getTemplateMeta(tpl: HandwritingTemplate, locale: Locale): TemplateMeta {
+  return tpl.i18n[locale] ?? tpl.i18n.en ?? { title: tpl.slug, description: "", text: "" };
 }
 
 /** 场景模板:文案 + 配套样式。新模板:在 TEMPLATES 加一项并在 sitemap 补 URL */
@@ -395,3 +407,5 @@ export const TEMPLATES: HandwritingTemplate[] = [
     },
   },
 ];
+
+mergeI18n(TEMPLATES, EXTRA_TEMPLATE_I18N);

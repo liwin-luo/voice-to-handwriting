@@ -7,7 +7,7 @@ import PaperView from "./PaperView";
 import RecorderPanel from "./RecorderPanel";
 import StylePanel from "./StylePanel";
 import TranscriptEditor from "./TranscriptEditor";
-import { getTemplate } from "@/content/templates";
+import { getTemplate, getTemplateMeta } from "@/content/templates";
 import { useEditorStore, type FontId } from "@/stores/useEditorStore";
 import type { Locale } from "@/i18n/routing";
 
@@ -26,7 +26,7 @@ export default function ToolWorkspace() {
     const tpl = getTemplate(slug);
     if (!tpl) return;
     const s = useEditorStore.getState();
-    s.setText(tpl.i18n[locale as Locale].text);
+    s.setText(getTemplateMeta(tpl, locale as Locale).text);
     s.setFontId(tpl.style.fontId as FontId);
     s.setPaperId(tpl.style.paperId);
     s.setInk(tpl.style.ink);

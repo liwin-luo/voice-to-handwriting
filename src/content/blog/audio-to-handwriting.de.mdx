@@ -1,0 +1,49 @@
+# Aufnahmen kostenlos in Handschrift-Notizen verwandeln
+
+Eine zweistündige Besprechung, eine Vorlesung, eine Sprachnotiz voller Ideen — daraus eine teilbare handschriftliche Notiz zu machen hieß bisher: Transkriptions-App, kopieren, layouten, exportieren.
+
+Jetzt ist es einer: **Audiodatei hochladen, fertige handschriftliche Seite bekommen**. Kostenlos, und das Audio verlässt dein Gerät nie. So funktioniert es, mit echten Testergebnissen — und ehrlichen Grenzen.
+
+## Die drei Routen im Vergleich
+
+| Route | Kosten | Datenschutz | Ideal für |
+| --- | --- | --- | --- |
+| Whisper im Browser (unsere Wahl) | 0 | Audio bleibt im Gerät | Alltagsnotizen, sensible Inhalte |
+| Cloud-ASR | Pro Minute / Gratis-Quote | Audio wird hochgeladen | Sehr lange Dateien, Tempo |
+| Handy-Diktat + Kopieren | 0 | Je nach Methode | Einmalige kurze Notizen |
+
+Der einzige Preis der lokalen Route: ein einmaliger Modell-Download, und das Tempo hängt von deiner Hardware ab.
+
+## Wie wir es umgesetzt haben
+
+- Dateien werden per `decodeAudioData` dekodiert und auf 16-kHz-Mono umgerechnet;
+- Das Whisper-Modell (~80 MB schnell / ~250 MB hochwertig, q8) ist **auf unserer eigenen Domain gehostet**, in 30-Sekunden-Fenster geteilt;
+- Desktop Chrome mit WebGPU nutzt GPU-Beschleunigung, sonst fällt es auf WASM zurück;
+- Das Ergebnis landet im selben Editor — Schriften, Papier und Export verhalten sich wie bei getipptem Text.
+
+Wir hosten das Modell selbst statt die HuggingFace-CDN zu nutzen: keine Cross-Origin-Blockaden und Downloads funktionieren auch in China.
+
+## Echter Test: eine TTS-Probe
+
+Umgebung: macOS + Chrome, kein eigener GPU (WASM-Pfad), schnelles Modell.
+
+- Eingabe: synthetisierte chinesische Sprache (~5 s)
+- Ausgabe: „你好,這是一段測試語音,用來驗證音頻轉寫功能。“ — inhaltlich korrekt, aber in traditionellen Zeichen (bekannte Tendenz des Base-Modells; hochwertiges Modell oder manuell korrigieren)
+
+Das erste Modell-Laden dauerte etwa eine Minute; danach cached der Browser.
+
+## Drei Schritte
+
+1. Auf der [Werkzeug-Seite](/) „Audiodatei importieren“ klicken und mp3 / wav / m4a wählen;
+2. Auf den Fortschritt warten (enthält den ersten Modell-Download);
+3. Das Transkript landet im Editor — korrigieren, Stil wählen, exportieren.
+
+## Ehrliche Grenzen
+
+- Base-Modelle schwächeln bei starken Akzenten und Lärm — für Wichtiges: hochwertiges Modell und Nachlesen;
+- Über 30 Minuten wird es spürbar langsamer — Dateien teilen;
+- Safari dekodiert manche Codecs nicht vollständig — Desktop Chrome / Edge empfohlen.
+
+## Getestet, mit ehrlichen Grenzen
+
+Alle Schritte wurden in Desktop Chrome (macOS, Oktober 2026) getestet; Screenshots stammen aus echten Läufen. Die Spracherkennung stellt der Browser bereit — die Qualität variiert. Wichtigen Text immer prüfen. Wir erfassen keinen Text oder Audio — siehe [Datenschutzerklärung](/privacy). Referenz: [MDN · Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API).

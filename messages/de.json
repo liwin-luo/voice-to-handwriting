@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "brand": "Voice to Handwriting",
+    "title": "Voice to Handwriting - Sprich, und es wird Handschrift",
+    "description": "Sprich einen Absatz in die Webseite, werde in Echtzeit zu Text und echter Handschrift, exportiere PNG/PDF. Kostenloser Handschrift-Generator.",
+    "keywords": "handschrift generator, sprache zu text, handschrift schriftart, grusskarte erstellen, audio transkribieren",
+    "about": {
+      "title": "Über uns",
+      "description": "Voice to Handwriting ist ein kostenloses Web-Tool, das gesprochene Sprache in handgeschriebene Seiten verwandelt. Alles läuft in deinem Browser."
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "description": "Wie Sprach- und Textdaten, Cookies und Werbung von Drittanbietern behandelt werden."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "description": "Nutzungsbedingungen, Grenzen und Haftungsausschluss des Tools."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Feedback, Fehlerberichte und geschäftliche Anfragen."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Anleitungen und Ideen für handgeschriebene Karten und Bilder."
+    },
+    "history": {
+      "title": "Verlauf",
+      "description": "Lokal gespeicherte Konvertierungen: Text- und Stil-Schnappschüsse, mit einem Klick wiederherstellbar."
+    },
+    "templates": {
+      "title": "Handschrift-Vorlagen",
+      "description": "Liebesbriefe, Entschuldigungen, Dankesschreiben, Geburtstage und Feiertage — Text und Stil in einem Tipp."
+    }
+  },
+  "nav": {
+    "tool": "Werkzeug",
+    "templates": "Vorlagen",
+    "history": "Verlauf",
+    "blog": "Blog",
+    "about": "Über"
+  },
+  "home": {
+    "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
+    "badge": "Lokal im Browser verarbeitet, Text wird nie hochgeladen",
+    "footerNote": "Spracherkennung über den Browser (Web Speech API). Desktop Chrome/Edge empfohlen; dein Text verlässt dein Gerät nie.",
+    "blogLink": "Tutorials & Ideen für handgeschriebene Karten",
+    "adPending": "Werbefläche · aktiviert mit NEXT_PUBLIC_ADSENSE_CLIENT",
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
+    "sampleText": "Liebe Freundin, lieber Freund,\nich habe einer Webseite zugeprochen und diese Worte wurden Handschrift. Tippen, sprechen oder Audio importieren – und als Bild oder PDF exportieren. Einen schönen Tag!"
+  },
+  "tool": {
+    "speak": "Tippen & sprechen",
+    "stop": "Stopp",
+    "listening": "Hört zu",
+    "unsupported": "Dieser Browser unterstützt keine Spracherkennung. Chrome / Edge empfohlen, oder links tippen.",
+    "errorDenied": "Mikrofon abgelehnt: Erlaube das Mikrofon über das Symbol links in der Adressleiste und versuche es erneut",
+    "errorNetwork": "Netzwerkfehler beim Erkennungsdienst. Bitte Verbindung prüfen",
+    "errorStopped": "Lange keine Sprache erkannt – automatisch gestoppt",
+    "exporting": "Exportiere",
+    "exportPng": "PNG exportieren",
+    "exportPdf": "PDF exportieren",
+    "sectionHandwriting": "Handschrift",
+    "font": "Schrift",
+    "fontSize": "Größe",
+    "realism": "Realismus",
+    "reseed": "Handschrift ändern",
+    "sectionPaper": "Papier",
+    "paper": "Papier",
+    "ink": "Tinte",
+    "editorLabel": "Text (Fehler korrigieren)",
+    "charUnit": "Zeichen",
+    "placeholder": "Dein Gesprochenes erscheint hier – tippen oder einfügen geht auch",
+    "alignLeft": "Linksbündig",
+    "alignCenter": "Zentriert",
+    "indent": "Erste Zeile einrücken",
+    "emptyTitle": "Sprich, und es schreibt sich",
+    "emptyHint": "Tippe unten auf „Tippen & sprechen“ oder schreibe links",
+    "fonts": {
+      "mashanzheng": "Ma Shan Zheng · Kai",
+      "lxgwwenkai": "LXGW WenKai · Kai",
+      "longcang": "Long Cang · Xing",
+      "zhimangxing": "Zhi Mang Xing · Xing",
+      "liujianmaocao": "Liu Jian Mao Cao · Cao",
+      "zcoolkuaile": "ZCOOL KuaiLe · Playful",
+      "caveat": "Caveat · Englisch"
+    },
+    "papers": {
+      "blank": "Blanko",
+      "ruled": "Liniert",
+      "grid": "Kariert",
+      "letter": "Brief",
+      "custom": "Eigene"
+    },
+    "inks": {
+      "blueblack": "Blauschwarz",
+      "black": "Schwarz",
+      "red": "Zinnober",
+      "indigo": "Indigo",
+      "green": "Dunkelgrün",
+      "brown": "Braun",
+      "gray": "Bleistiftgrau"
+    },
+    "customColor": "Eigene Farbe",
+    "paperCustom": {
+      "style": "Linienstil",
+      "bg": "Papierfarbe",
+      "line": "Linienfarbe",
+      "spacing": "Zeilenabstand"
+    },
+    "importAudio": "Audiodatei importieren",
+    "modelFast": "Schnell",
+    "modelQuality": "Hohe Qualität",
+    "statusModel": "Beim ersten Nutzen wird das Modell geladen {p}%",
+    "statusDecode": "Audio wird dekodiert…",
+    "statusTranscribe": "Transkribiere – lange Dateien dauern…",
+    "errorEmpty": "Keine Sprache erkannt",
+    "errorImport": "Transkription fehlgeschlagen – versuche mp3 / wav / m4a",
+    "modelNote": "Schnell: ~80MB; Hohe Qualität: ~250MB, besser für Chinesisch. Modell wird einmal geladen, Audio verlässt dein Gerät nie",
+    "watermark": "Export-Wasserzeichen",
+    "trySample": "Beispiel testen"
+  },
+  "footer": {
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "contact": "Kontakt"
+  },
+  "consent": {
+    "text": "Wir verwenden Cookies, um Werbung zu zeigen, die dieses Tool kostenlos hält. Akzeptiere personalisierte Werbung oder nutze nur das Nötige.",
+    "privacy": "Datenschutz",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen"
+  },
+  "blog": {
+    "tagline": "Tutorials und Ideen für handgeschriebene Karten — jede Anleitung funktioniert direkt mit dem Werkzeug."
+  },
+  "history": {
+    "emptyTitle": "Noch kein Verlauf",
+    "emptyHint": "Beim Exportieren, nach der Aufnahme oder erfolgreicher Transkription wird ein Schnappschuss gespeichert",
+    "goTool": "Jetzt schreiben",
+    "restore": "Wiederherstellen",
+    "delete": "Löschen",
+    "clearAll": "Alles löschen",
+    "confirmClearShort": "Wirklich löschen",
+    "confirmDelete": "Löschen bestätigen",
+    "sourceSpeech": "Spracheingabe",
+    "sourceAudio": "Audiodatei",
+    "sourceExport": "Export",
+    "charUnit": "Zeichen"
+  },
+  "templates": {
+    "tagline": "Jede Vorlage enthält Text und Handschrift-Stil — auswählen und loslegen.",
+    "libraryTitle": "Vorlagen",
+    "searchPlaceholder": "Szenen suchen: Geburtstag, Entschuldigung, Danke…",
+    "noResult": "Keine passende Vorlage",
+    "noResultHint": "Anderes Stichwort versuchen oder im Werkzeug frei schreiben",
+    "use": "Diese Vorlage verwenden",
+    "editHint": "Der Text bleibt nach dem Anwenden frei bearbeitbar; Schrift und Papier kannst du im linken Panel anpassen."
+  },
+  "notFound": {
+    "title": "Diese Seite ist weggeweht",
+    "text": "Aber das Handschrift-Tool ist noch da.",
+    "back": "Zurück zum Schreiben"
+  },
+  "author": {
+    "name": "Voice to Handwriting Team",
+    "role": "Produkt- & Engineering-Team"
+  },
+  "post": {
+    "updated": "Aktualisiert",
+    "reading": "{m} Min. Lesezeit",
+    "testedNote": "Alle Schritte wurden in Chrome für Desktop getestet (Oktober 2026, macOS). Die Qualität variiert je nach Browser und Gerät — wichtigen Text immer prüfen. Wir erfassen keinen Text oder Audio — siehe Datenschutzerklärung. Referenz: MDN Web Speech API."
+  }
+}

@@ -1,0 +1,49 @@
+# Gravei, quero manuscrito: transcrição local e gratuita
+
+Gravação de reunião, aula, notas de voz com ideias — transformar em nota manuscrita compartilhável exigia quatro passos: app de transcrição, copiar, formatar, exportar.
+
+Agora é um: **suba um arquivo de áudio e ganhe uma página manuscrita**. Grátis, sem o áudio sair do aparelho. Como funciona, resultados de testes reais — e os limites honestos.
+
+## As três rotas comparadas
+
+| Rota | Custo | Privacidade | Ideal para |
+| --- | --- | --- | --- |
+| Whisper no navegador (nossa escolha) | 0 | Áudio fica no aparelho | Notas do dia a dia, conteúdo sensível |
+| ASR na nuvem | Por minuto ou cota | Áudio enviado | Arquivos muito longos, velocidade |
+| Dictado no celular + copiar | 0 | Depende do método | Notas curtas pontuais |
+
+O único custo da rota local: um download de modelo na primeira vez, e a velocidade depende do seu hardware.
+
+## Como implementamos
+
+- Os arquivos são decodificados via `decodeAudioData` e reamostrados para 16kHz mono;
+- O modelo Whisper (~80MB rápido / ~250MB alta qualidade, q8) é **auto-hospedado no nosso domínio**, dividido em janelas de 30 segundos;
+- Chrome com WebGPU ganha aceleração de GPU; senão, volta para WASM;
+- A transcrição cai no mesmo editor — fontes, papel e exportação idênticos à digitação.
+
+Auto-hospedamos em vez de chamar o CDN do HuggingFace: sem bloqueios de CORS e downloads funcionando também na China.
+
+## Teste real: uma amostra TTS
+
+Ambiente: macOS + Chrome, sem GPU dedicada (caminho WASM), modelo rápido.
+
+- Entrada: voz chinesa sintetizada (~5s)
+- Saída: "你好,這是一段測試語音,用來驗證音頻轉寫功能。" — conteúdo exato, mas em caracteres tradicionais (tendência conhecida do modelo base; o modelo de alta qualidade melhora)
+
+O primeiro carregamento do modelo levou cerca de um minuto; depois o navegador armazena em cache.
+
+## Três passos
+
+1. Na [ferramenta](/), toque em "Importar áudio" e escolha mp3 / wav / m4a;
+2. Aguarde o progresso (inclui o download inicial do modelo);
+3. A transcrição cai no editor — corrija, escolha o estilo, exporte.
+
+## Limites honestos
+
+- O modelo base sofre com sotaques fortes e ruído — para o importante: modelo de alta qualidade e revisão manual;
+- Acima de 30 minutos fica lento — divida os arquivos;
+- O Safari não decodifica alguns codecs — recomendamos Chrome / Edge de desktop.
+
+## Testado, com limites honestos
+
+Todos os passos foram testados no Chrome de desktop (macOS, outubro de 2026); as capturas são reais. O reconhecimento de voz é fornecido pelo navegador — a qualidade varia. Revise textos importantes. Não coletamos texto nem áudio — veja a [Política de Privacidade](/privacy). Referência: [MDN · Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API).

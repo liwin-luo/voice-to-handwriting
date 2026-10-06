@@ -34,7 +34,8 @@ export default async function BlogIndex({
       </header>
       <ul className="mt-9 flex flex-col gap-4">
         {POSTS.map((p, i) => {
-          const meta = p.i18n[locale as Locale];
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const meta = (p.i18n[locale as Locale] ?? p.i18n.en)!;
           return (
             <li key={p.slug} className="rise" style={{ animationDelay: `${80 + i * 60}ms` }}>
               <Link

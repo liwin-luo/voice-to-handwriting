@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import AdSlot from "@/components/AdSlot";
 import TemplatesBrowser, { type TemplateCard } from "@/components/TemplatesBrowser";
-import { TEMPLATES } from "@/content/templates";
+import { TEMPLATES, getTemplateMeta } from "@/content/templates";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -25,7 +25,7 @@ export default async function TemplatesIndex({
   const t = await getTranslations("templates");
 
   const cards: TemplateCard[] = TEMPLATES.map((tpl) => {
-    const meta = tpl.i18n[locale as Locale];
+    const meta = getTemplateMeta(tpl, locale as Locale);
     return { slug: tpl.slug, title: meta.title, description: meta.description };
   });
 

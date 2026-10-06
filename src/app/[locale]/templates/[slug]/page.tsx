@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { routing, type Locale } from "@/i18n/routing";
-import { getTemplate, TEMPLATES } from "@/content/templates";
+import { getTemplate, getTemplateMeta, TEMPLATES } from "@/content/templates";
 import { FONTS } from "@/stores/useEditorStore";
 import { getPaper } from "@/engine/paper";
 
@@ -19,7 +19,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const meta = getTemplate(slug)?.i18n[locale as Locale];
+  const tplObj = getTemplate(slug);
+  const meta = tplObj ? getTemplateMeta(tplObj, locale as Locale)! : undefined;
   return meta ? { title: meta.title, description: meta.description } : {};
 }
 
@@ -33,7 +34,7 @@ export default async function TemplateDetail({
   setRequestLocale(locale);
   const tpl = getTemplate(slug);
   if (!tpl) notFound();
-  const meta = tpl.i18n[locale as Locale];
+  const meta = getTemplateMeta(tpl, locale as Locale);
   const t = await getTranslations("templates");
   const tm = await getTranslations("meta.templates");
   const font = FONTS.find((f) => f.id === tpl.style.fontId) ?? FONTS[0];
