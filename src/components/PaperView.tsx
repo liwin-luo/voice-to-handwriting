@@ -1,7 +1,7 @@
 "use client";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
-import { FONTS, useEditorStore } from "@/stores/useEditorStore";
+import { FONTS, useEditorStore, type TextAlign } from "@/stores/useEditorStore";
 import { tokenize, type Token } from "@/engine/tokens";
 import { expandPages, paginateLineTops } from "@/engine/layout";
 import { charJitter } from "@/engine/jitter";
@@ -11,8 +11,34 @@ export const PAGE_W = 794; // A4 @96dpi
 export const PAGE_H = 1123;
 const PADDING = 48;
 
+interface ParaGroup {
+  tokens: Token[];
+  /** 该组首字符的全局 token 索引(-1 表示空段落) */
+  startIndex: number;
+}
+
+/** 把 token 序列按 newline 边界切成段落组;newline 本身不渲染 */
+function partitionParagraphs(tokens: Token[]): ParaGroup[] {
+  const groups: ParaGroup[] = [];
+  let current: Token[] = [];
+  let startIndex = -1;
+  tokens.forEach((t, i) => {
+    if (t.kind === "newline") {
+      groups.push({ tokens: current, startIndex });
+      current = [];
+      startIndex = -1; // 待定:若下一个不是 newline,则是真段落起点
+    } else {
+      if (startIndex === -1) startIndex = i;
+      current.push(t);
+    }
+  });
+  groups.push({ tokens: current, startIndex });
+  return groups;
+}
+
 export default function PaperView() {
-  const { text, fontId, paperId, ink, fontSize, intensity, seed } = useEditorStore();
+  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent } =
+    useEditorStore();
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const paper = getPaper(paperId);
   const tokens = useMemo(() => tokenize(text), [text]);
@@ -25,6 +51,12 @@ export default function PaperView() {
     color: ink,
     lineHeight: `${paper.lineHeight}px`,
   } as const;
+
+  // 真段落起点 = 文首或紧跟换行的 token;跨页续行不在此集合,不加缩进
+  const paraStarts = useMemo(
+    () => new Set(tokens.map((t, i) => (i === 0 || tokens[i - 1].kind === "newline" ? i : -1)).filter((i) => i >= 0)),
+    [tokens],
+  );
 
   useLayoutEffect(() => {
     let cancelled = false;
@@ -49,7 +81,6 @@ export default function PaperView() {
   }, [tokens, fontSize, paper.lineHeight, font.css]);
 
   const rendered = (t: Token, i: number) => {
-    if (t.kind === "newline") return <br key={i} />;
     const j = charJitter(i, seed, intensity);
     return (
       <span
@@ -69,24 +100,48 @@ export default function PaperView() {
     );
   };
 
+  /** 段落流渲染:测量容器与可见页共用,保证 offsetTop 一致 */
+  const tokenFlow = (list: Token[]) => (
+    <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
+      {partitionParagraphs(list).map((group, gi) =>
+        group.tokens.length === 0 ? (
+          // 空段落:占一行高度
+          <div key={gi} style={{ height: paper.lineHeight }} />
+        ) : (
+          <div
+            key={gi}
+            style={{
+              textAlign: align,
+              // 仅"真段落起点"缩进两格;跨页续行不缩进
+              textIndent: indent && group.startIndex !== -1 && paraStarts.has(group.startIndex) ? "2em" : 0,
+            }}
+          >
+            {group.tokens.map(rendered)}
+          </div>
+        ),
+      )}
+    </div>
+  );
+
+  const measureNode = (
+    <div
+      ref={measureRef}
+      aria-hidden
+      style={{
+        position: "absolute",
+        visibility: "hidden",
+        left: -99999,
+        width: PAGE_W - PADDING * 2,
+      }}
+    >
+      {tokenFlow(tokens)}
+    </div>
+  );
+
   if (pages.length === 0) {
     return (
       <>
-        {/* 隐藏测量容器:与可见页同宽同行高,仅用于拿每字符 offsetTop */}
-        <div
-          ref={measureRef}
-          aria-hidden
-          style={{
-            position: "absolute",
-            visibility: "hidden",
-            left: -99999,
-            width: PAGE_W - PADDING * 2,
-            whiteSpace: "pre-wrap",
-            wordBreak: "break-word",
-          }}
-        >
-          {tokens.map(rendered)}
-        </div>
+        {measureNode}
         {/* 精心构图的空状态:用产品自己的手写字体说话 */}
         <div
           className="shadow-paper flex flex-col items-center justify-center gap-4 rounded-xl"
@@ -102,20 +157,7 @@ export default function PaperView() {
 
   return (
     <>
-      <div
-        ref={measureRef}
-        aria-hidden
-        style={{
-          position: "absolute",
-          visibility: "hidden",
-          left: -99999,
-          width: PAGE_W - PADDING * 2,
-          whiteSpace: "pre-wrap",
-          wordBreak: "break-word",
-        }}
-      >
-        {tokens.map(rendered)}
-      </div>
+      {measureNode}
       <div className="flex flex-col items-center gap-6">
         {pages.map((pageTokens, p) => (
           <div
@@ -128,9 +170,7 @@ export default function PaperView() {
               padding: PADDING,
             }}
           >
-            <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
-              {pageTokens.map(rendered)}
-            </div>
+            {tokenFlow(pageTokens)}
             <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
               {p + 1} / {pages.length}
             </span>
@@ -140,3 +180,5 @@ export default function PaperView() {
     </>
   );
 }
+
+export type { TextAlign };

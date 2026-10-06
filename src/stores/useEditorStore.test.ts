@@ -24,4 +24,14 @@ describe("useEditorStore", () => {
     useEditorStore.getState().reseed();
     expect(useEditorStore.getState().seed).not.toBe(before);
   });
+
+  it("文字排列:默认左对齐无缩进,可切换", () => {
+    const s = useEditorStore.getState();
+    expect(s.align).toBe("left");
+    expect(s.indent).toBe(false);
+    s.setAlign("center");
+    s.setIndent(true);
+    expect(useEditorStore.getState().align).toBe("center");
+    expect(useEditorStore.getState().indent).toBe(true);
+  });
 });
