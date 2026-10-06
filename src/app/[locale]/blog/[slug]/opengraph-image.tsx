@@ -28,6 +28,13 @@ export default async function OgImage({
     path.join(process.cwd(), "src/assets/fonts/MaShanZheng-Regular.ttf"),
   );
   const brand = locale === "zh" ? "声音转手写" : "Voice to Handwriting";
+  const taglines = {
+    zh: "说一段话,一键变成手写文稿",
+    en: "Speak a paragraph, get a handwritten page",
+    ja: "話すだけで手書きの文書に",
+    ko: "말하면 손글씨로",
+    es: "Habla y conviértelo en escritura a mano",
+  };
 
   return new ImageResponse(
     (
@@ -51,7 +58,7 @@ export default async function OgImage({
         <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
           <div style={{ display: "flex", width: 12, height: 52, background: "#15317e", borderRadius: 6 }} />
           <div style={{ display: "flex", fontSize: 34, color: "#52525b" }}>
-            {locale === "zh" ? "说一段话,一键变成手写文稿" : "Speak a paragraph, get a handwritten page"}
+            {taglines[locale as keyof typeof taglines] ?? taglines.en}
           </div>
         </div>
       </div>

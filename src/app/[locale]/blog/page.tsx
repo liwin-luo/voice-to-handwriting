@@ -24,13 +24,12 @@ export default async function BlogIndex({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("blog");
+  const tm = await getTranslations("meta.blog");
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
       <header className="rise">
-        <h1 className="font-hand text-4xl leading-none">
-          {locale === "en" ? "Blog" : "博客"}
-        </h1>
+        <h1 className="font-hand text-4xl leading-none">{tm("title")}</h1>
         <p className="mt-3 text-sm text-zinc-500">{t("tagline")}</p>
       </header>
       <ul className="mt-9 flex flex-col gap-4">

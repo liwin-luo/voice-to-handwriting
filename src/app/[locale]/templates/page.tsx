@@ -24,13 +24,12 @@ export default async function TemplatesIndex({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("templates");
+  const tm = await getTranslations("meta.templates");
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
       <header className="rise">
-        <h1 className="font-hand text-4xl leading-none">
-          {locale === "zh" ? "模板库" : locale === "ja" ? "テンプレート" : locale === "ko" ? "템플릿" : "Templates"}
-        </h1>
+        <h1 className="font-hand text-4xl leading-none">{tm("title")}</h1>
         <p className="mt-3 text-sm text-zinc-500">{t("tagline")}</p>
       </header>
       <div className="mt-9 grid grid-cols-1 gap-4 md:grid-cols-2">

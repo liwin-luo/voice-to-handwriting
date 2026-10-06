@@ -35,6 +35,7 @@ export default async function TemplateDetail({
   if (!tpl) notFound();
   const meta = tpl.i18n[locale as Locale];
   const t = await getTranslations("templates");
+  const tm = await getTranslations("meta.templates");
   const font = FONTS.find((f) => f.id === tpl.style.fontId) ?? FONTS[0];
   const paper = getPaper(tpl.style.paperId);
 
@@ -45,7 +46,7 @@ export default async function TemplateDetail({
         className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-800"
       >
         <ArrowLeft className="size-3.5" />
-        {locale === "zh" ? "模板库" : locale === "ja" ? "テンプレート" : locale === "ko" ? "템플릿" : "Templates"}
+        {tm("title")}
       </Link>
 
       <header className="rise mt-6">
