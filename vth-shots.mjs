@@ -3,35 +3,31 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const H = { "Accept-Language": "zh-CN" };
 
-// 1. 工作台(有内容 + 手写渲染)
-await page.goto("http://localhost:3000/", { extraHTTPHeaders: H });
-await page.getByPlaceholder(/说话内容会出现在这里/).fill("亲爱的朋友:\n见字如面。这段文字是用声音写成的,选好字体和纸张,一键就能导出成图片或 PDF。");
-await page.waitForTimeout(1500);
-await page.screenshot({ path: "public/blog/workspace.png" });
+async function styledShot(url, path, prep) {
+  await page.goto(url, { extraHTTPHeaders: H });
+  await prep?.();
+  await page.waitForTimeout(1200);
+  const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  if (bg === "rgba(0, 0, 0, 0)") throw new Error("page unstyled! bg=" + bg);
+  await page.screenshot({ path });
+  console.log("saved", path);
+}
 
-// 2. 样式面板细节(仿真度/纸张区域裁剪)
+await styledShot("http://localhost:3000/zh", "public/blog/workspace.png", async () => {
+  await page.getByPlaceholder(/说话内容会出现在这里/).fill("亲爱的朋友:\n见字如面。这段文字是用声音写成的,选好字体和纸张,一键就能导出成图片或 PDF。");
+});
 await page.locator("aside").screenshot({ path: "public/blog/style-panel.png" });
-
-// 3. 底部工具栏(说话 + 导入音频 + 导出)
 await page.locator(".glass-bar").screenshot({ path: "public/blog/toolbar.png" });
 
-// 4. 模板索引
-await page.goto("http://localhost:3000/templates", { extraHTTPHeaders: H });
-await page.waitForTimeout(900);
-await page.screenshot({ path: "public/blog/templates.png" });
+await styledShot("http://localhost:3000/zh/templates", "public/blog/templates.png");
+await styledShot("http://localhost:3000/zh/templates/love-letter", "public/blog/template-love.png");
 
-// 5. 模板详情(情书)
-await page.goto("http://localhost:3000/templates/love-letter", { extraHTTPHeaders: H });
-await page.waitForTimeout(900);
-await page.screenshot({ path: "public/blog/template-love.png" });
-
-// 6. 历史页(先造一条记录)
-await page.goto("http://localhost:3000/", { extraHTTPHeaders: H });
+await styledShot("http://localhost:3000/zh", "public/blog/pre-export.png", async () => {
+  await page.getByPlaceholder(/说话内容会出现在这里/).fill("亲爱的朋友:\n见字如面。这一段会进入本地历史记录,随时可以恢复继续编辑。");
+});
 await page.getByRole("button", { name: "导出 PNG" }).click();
-await page.waitForTimeout(2000);
-await page.goto("http://localhost:3000/history", { extraHTTPHeaders: H });
-await page.waitForTimeout(900);
-await page.screenshot({ path: "public/blog/history.png" });
+await page.waitForTimeout(2500);
+await styledShot("http://localhost:3000/zh/history", "public/blog/history.png");
 
 await browser.close();
-console.log("shots done");
+console.log("all shots retaken");
