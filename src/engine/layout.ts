@@ -22,7 +22,7 @@ export function paginateLineTops(boxes: CharBox[], pageHeight: number): number[]
 }
 
 /** 分页测量只覆盖可见 span(换行是 <br> 无测量值),
- *  本函数把 newline token 补进其前一可见字符所在的页。 */
+ *  本函数把 newline token 插回其前一可见字符所在页的原位(保持索引升序)。 */
 export function expandPages(groups: number[][], tokens: { kind: string }[]): number[][] {
   const groupOf = new Map<number, number>();
   groups.forEach((g, gi) => g.forEach((idx) => groupOf.set(idx, gi)));
@@ -33,7 +33,10 @@ export function expandPages(groups: number[][], tokens: { kind: string }[]): num
     if (gi !== undefined) {
       lastGi = gi;
     } else if (tokens[i].kind === "newline") {
-      result[lastGi].push(i);
+      const arr = result[lastGi];
+      let pos = arr.length;
+      while (pos > 0 && arr[pos - 1] > i) pos--;
+      arr.splice(pos, 0, i);
     }
   }
   return result;

@@ -35,7 +35,9 @@ function getSR(): SRCtor | null {
  */
 export function useSpeechRecognition(opts: { lang?: string; onFinal: (t: string) => void }) {
   const { lang = "zh-CN", onFinal } = opts;
-  const [supported] = useState(() => getSR() !== null);
+  // SSR 与客户端首帧统一为 false,挂载后再探测,避免水合不一致
+  const [supported, setSupported] = useState(false);
+  useEffect(() => setSupported(getSR() !== null), []);
   const [listening, setListening] = useState(false);
   const [interim, setInterim] = useState("");
   const [error, setError] = useState<string | null>(null);

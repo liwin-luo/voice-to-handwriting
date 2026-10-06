@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 声音转手写(voice-to-handwriting)
 
-## Getting Started
+对着网页说一段话 → 实时转成文字 → 渲染成逼真手写体 → 一键导出 PNG / PDF。
+适合贺卡、书信、手账与自媒体文案配图。
 
-First, run the development server:
+核心能力全部在浏览器本地完成:语音识别用 Web Speech API(免费、流式、自带标点),手写渲染用自托管 OFL 开源字体 + 逐字确定性抖动,**无后端、零 API 成本**。
+
+## 快速开始
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i            # 安装依赖
+npm run dev      # 启动开发服务器 http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> 语音识别需要 **HTTPS 或 localhost**,推荐桌面版 Chrome / Edge;Firefox 与移动端 Safari 会显示降级提示,可直接输入文字。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 字体准备(首次必做)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+手写字体为自托管 OFL 字体(马善政/龙藏/柳建毛草/Caveat,授权文件在 `fonts-src/`):
 
-## Learn More
+```bash
+# 1. 下载原始 TTF 到 fonts-src/(URL 见 scripts/fonts.mjs 注释或设计文档 Task 6)
+# 2. 切片为按需加载的 woff2 到 public/fonts/
+npm i -D cn-font-split
+node scripts/fonts.mjs
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 测试
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test             # Vitest 单元测试(引擎:抖动/分词/分页/纸张)
+npx playwright test      # E2E 冒烟(需先 npm run dev 或交给 webServer 自动起)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 部署(Vercel)
 
-## Deploy on Vercel
+1. 推送到 GitHub,在 Vercel 导入仓库(Hobby 免费档,自动 HTTPS);
+2. Framework 自动识别 Next.js,直接 Deploy;
+3. 建议绑定自定义域名(`vercel.app` 默认域名在国内不可达)。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 项目结构
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/engine/     纯函数渲染引擎:jitter(确定性抖动)/ tokens(分词)/ layout(分页)/ paper(纸张)
+src/hooks/      useSpeechRecognition(Web Speech API 封装,处理 Chrome 60s 断开自动重启)
+src/stores/     Zustand 全局状态(样式偏好持久化到 localStorage)
+src/components/ RecorderPanel / TranscriptEditor / StylePanel / PaperView / ExportBar
+scripts/        fonts.mjs 字体切片脚本
+docs/plans/     设计文档与实施计划
+```
+
+## 路线图
+
+- **一期(当前)**:说→渲→导闭环
+- **二期**:Hanzi Writer 逐笔书写动画、照片合成、云端 ASR(/api/transcribe)、SEO 内容 + 广告
+- **三期**:个人笔迹预设、端侧 Whisper/sherpa-onnx、书写动画视频导出、英文版
+
+详见 `docs/plans/2026-10-06-voicetohandwriting-design.md`。

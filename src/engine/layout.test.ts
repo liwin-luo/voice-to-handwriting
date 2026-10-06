@@ -46,4 +46,15 @@ describe("expandPages", () => {
     ]);
     expect(result).toEqual([[0, 1], [2]]);
   });
+
+  it("同页中段的换行插回原位(保持索引升序)", () => {
+    // tokens: [0:cjk, 1:cjk, 2:newline, 3:cjk],全部同页
+    const result = expandPages([[0, 1, 3]], [
+      { kind: "cjk" },
+      { kind: "cjk" },
+      { kind: "newline" },
+      { kind: "cjk" },
+    ]);
+    expect(result).toEqual([[0, 1, 2, 3]]);
+  });
 });
