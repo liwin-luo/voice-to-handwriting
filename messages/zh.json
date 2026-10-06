@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "brand": "声音转手写",
+    "title": "声音转手写 - 说话即手写",
+    "description": "对着网页说一段话,实时转成文字并渲染成逼真手写体,一键导出 PNG / PDF。免费在线手写体生成工具,适合贺卡、书信、手账与文案配图。",
+    "about": {
+      "title": "关于",
+      "description": "声音转手写是一个把语音变成手写文稿的免费网页工具:说话实时转文字,渲染成逼真手写体,导出 PNG/PDF。所有处理在浏览器本地完成。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "description": "声音转手写的隐私政策:说明语音与文字数据的处理方式、Cookie 与第三方广告的使用。"
+    },
+    "terms": {
+      "title": "使用条款",
+      "description": "声音转手写的使用条款:工具的许可、使用边界与免责声明。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "description": "联系声音转手写:产品建议、bug 反馈、商务合作。"
+    },
+    "blog": {
+      "title": "博客",
+      "description": "手写贺卡教程、手写体图片生成技巧、手写文案配图灵感 —— 用声音写手写的实践指南。"
+    }
+  },
+  "nav": {
+    "tool": "工具",
+    "blog": "博客",
+    "about": "关于"
+  },
+  "home": {
+    "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
+    "badge": "浏览器本地处理,文字不上传",
+    "footerNote": "语音识别由浏览器提供(Web Speech API),推荐桌面版 Chrome / Edge;文字内容不会上传服务器。",
+    "blogLink": "手写贺卡教程与灵感",
+    "adPending": "广告位 · 配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效"
+  },
+  "tool": {
+    "speak": "点击说话",
+    "stop": "停止说话",
+    "listening": "正在聆听",
+    "unsupported": "当前浏览器不支持语音识别,推荐 Chrome / Edge,或直接在右侧输入文字。",
+    "errorDenied": "麦克风权限被拒绝:请点击地址栏左侧图标允许麦克风,然后重试",
+    "errorNetwork": "识别服务网络异常,请检查网络后重试",
+    "errorStopped": "长时间未识别到语音,已自动停止",
+    "exporting": "导出中",
+    "exportPng": "导出 PNG",
+    "exportPdf": "导出 PDF",
+    "sectionHandwriting": "笔迹",
+    "font": "字体",
+    "fontSize": "字号",
+    "realism": "仿真度",
+    "reseed": "换一种笔迹",
+    "sectionPaper": "纸面",
+    "paper": "纸张",
+    "ink": "墨色",
+    "editorLabel": "文字(可修改识别错字)",
+    "charUnit": "字",
+    "placeholder": "说话内容会出现在这里,也可以直接粘贴或输入",
+    "alignLeft": "左对齐",
+    "alignCenter": "居中",
+    "indent": "段落首行缩进",
+    "emptyTitle": "说一段话,落笔成字",
+    "emptyHint": "点击下方「点击说话」,或直接在右侧输入文字"
+  },
+  "footer": {
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "contact": "联系我们"
+  },
+  "blog": {
+    "tagline": "手写贺卡、手写配图的教程与灵感;所有教程都可以用首页工具直接跟着做。"
+  },
+  "notFound": {
+    "title": "这个页面被风吹走了",
+    "text": "不过手写工具一直都在。",
+    "back": "回去写手写"
+  }
+}

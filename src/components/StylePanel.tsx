@@ -1,17 +1,25 @@
 "use client";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowsClockwise } from "@phosphor-icons/react";
 import { FONTS, INKS, useEditorStore } from "@/stores/useEditorStore";
 import { PAPERS } from "@/engine/paper";
 
 export default function StylePanel() {
+  const t = useTranslations("tool");
+  const locale = useLocale();
   const s = useEditorStore();
+
+  const fontName = (f: (typeof FONTS)[number]) => (locale === "en" ? f.nameEn : f.name);
+  const paperName = (p: (typeof PAPERS)[number]) => (locale === "en" ? p.nameEn : p.name);
+  const inkName = (i: (typeof INKS)[number]) => (locale === "en" ? i.nameEn : i.name);
+
   return (
     <section className="flex flex-col divide-y divide-zinc-200 text-sm">
       {/* 笔迹 */}
       <div className="flex flex-col gap-4 pb-5">
-        <h2 className="field-label">笔迹</h2>
+        <h2 className="field-label">{t("sectionHandwriting")}</h2>
         <label className="flex flex-col gap-1.5">
-          <span className="text-zinc-700">字体</span>
+          <span className="text-zinc-700">{t("font")}</span>
           <select
             value={s.fontId}
             onChange={(e) => s.setFontId(e.target.value as typeof s.fontId)}
@@ -19,14 +27,14 @@ export default function StylePanel() {
           >
             {FONTS.map((f) => (
               <option key={f.id} value={f.id}>
-                {f.name}
+                {fontName(f)}
               </option>
             ))}
           </select>
         </label>
         <label className="flex flex-col gap-1.5">
           <span className="flex justify-between text-zinc-700">
-            字号 <span className="font-mono text-xs text-zinc-400">{s.fontSize}px</span>
+            {t("fontSize")} <span className="font-mono text-xs text-zinc-400">{s.fontSize}px</span>
           </span>
           <input
             type="range"
@@ -39,7 +47,8 @@ export default function StylePanel() {
         </label>
         <label className="flex flex-col gap-1.5">
           <span className="flex justify-between text-zinc-700">
-            仿真度 <span className="font-mono text-xs text-zinc-400">{Math.round(s.intensity * 100)}%</span>
+            {t("realism")}{" "}
+            <span className="font-mono text-xs text-zinc-400">{Math.round(s.intensity * 100)}%</span>
           </span>
           <input
             type="range"
@@ -53,15 +62,15 @@ export default function StylePanel() {
         </label>
         <button onClick={s.reseed} className="btn btn-ghost self-start px-3.5 py-2 text-[13px]">
           <ArrowsClockwise className="size-3.5 text-zinc-500" />
-          换一种笔迹
+          {t("reseed")}
         </button>
       </div>
 
       {/* 纸面 */}
       <div className="flex flex-col gap-4 py-5">
-        <h2 className="field-label">纸面</h2>
+        <h2 className="field-label">{t("sectionPaper")}</h2>
         <label className="flex flex-col gap-1.5">
-          <span className="text-zinc-700">纸张</span>
+          <span className="text-zinc-700">{t("paper")}</span>
           <select
             value={s.paperId}
             onChange={(e) => s.setPaperId(e.target.value)}
@@ -69,19 +78,19 @@ export default function StylePanel() {
           >
             {PAPERS.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.name}
+                {paperName(p)}
               </option>
             ))}
           </select>
         </label>
         <div className="flex flex-col gap-1.5">
-          <span className="text-zinc-700">墨色</span>
+          <span className="text-zinc-700">{t("ink")}</span>
           <div className="flex gap-2.5 pt-0.5">
             {INKS.map((ink) => (
               <button
                 key={ink.id}
-                title={ink.name}
-                aria-label={ink.name}
+                title={inkName(ink)}
+                aria-label={inkName(ink)}
                 onClick={() => s.setInk(ink.value)}
                 className={`size-7 cursor-pointer rounded-full transition-all duration-200 active:scale-90 ${
                   s.ink === ink.value

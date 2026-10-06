@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "brand": "Voice to Handwriting",
+    "title": "Voice to Handwriting - Speak it, see it handwritten",
+    "description": "Speak into the page, watch your words turn into realistic handwriting, and export as PNG or PDF. A free online handwriting generator for cards, letters, journals and social media images.",
+    "about": {
+      "title": "About",
+      "description": "Voice to Handwriting is a free web tool that turns speech into handwritten pages: real-time transcription, realistic handwriting rendering, PNG/PDF export. Everything runs locally in your browser."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How Voice to Handwriting handles voice and text data, cookies and third-party advertising."
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "description": "Terms of use for Voice to Handwriting: license, boundaries and disclaimer."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contact Voice to Handwriting: feedback, bug reports and business inquiries."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Handwritten card tutorials, handwriting image tips and inspiration for social media posts."
+    }
+  },
+  "nav": {
+    "tool": "Tool",
+    "blog": "Blog",
+    "about": "About"
+  },
+  "home": {
+    "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
+    "badge": "Processed locally, text never uploaded",
+    "footerNote": "Speech recognition is provided by your browser (Web Speech API). Desktop Chrome / Edge recommended; your text never leaves your device.",
+    "blogLink": "Handwritten card tutorials and ideas",
+    "adPending": "Ad slot · set NEXT_PUBLIC_ADSENSE_CLIENT to activate"
+  },
+  "tool": {
+    "speak": "Tap to speak",
+    "stop": "Stop",
+    "listening": "Listening",
+    "unsupported": "This browser doesn't support speech recognition. Chrome / Edge recommended, or just type on the right.",
+    "errorDenied": "Microphone access denied: click the icon left of the address bar to allow the microphone, then try again",
+    "errorNetwork": "Recognition service network error, please check your connection and retry",
+    "errorStopped": "No speech detected for a while, stopped automatically",
+    "exporting": "Exporting",
+    "exportPng": "Export PNG",
+    "exportPdf": "Export PDF",
+    "sectionHandwriting": "Handwriting",
+    "font": "Font",
+    "fontSize": "Size",
+    "realism": "Realism",
+    "reseed": "Shuffle strokes",
+    "sectionPaper": "Paper",
+    "paper": "Paper",
+    "ink": "Ink",
+    "editorLabel": "Text (fix recognition mistakes)",
+    "charUnit": "chars",
+    "placeholder": "Your speech appears here — you can also paste or type directly",
+    "alignLeft": "Align left",
+    "alignCenter": "Align center",
+    "indent": "Indent first line of paragraphs",
+    "emptyTitle": "Speak, and it writes itself",
+    "emptyHint": "Tap \"Tap to speak\" below, or type on the right"
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "contact": "Contact"
+  },
+  "blog": {
+    "tagline": "Tutorials and ideas for handwritten cards and images — every guide works with the tool on the home page."
+  },
+  "notFound": {
+    "title": "This page blew away in the wind",
+    "text": "But the handwriting tool is right where it was.",
+    "back": "Back to writing"
+  }
+}

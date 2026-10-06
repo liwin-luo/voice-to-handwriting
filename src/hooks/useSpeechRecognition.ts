@@ -40,7 +40,7 @@ export function useSpeechRecognition(opts: { lang?: string; onFinal: (t: string)
   useEffect(() => setSupported(getSR() !== null), []);
   const [listening, setListening] = useState(false);
   const [interim, setInterim] = useState("");
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<"denied" | "network" | "stopped" | null>(null);
 
   const recRef = useRef<SRLike | null>(null);
   const wantRef = useRef(false);
@@ -70,9 +70,9 @@ export function useSpeechRecognition(opts: { lang?: string; onFinal: (t: string)
       if (e.error === "not-allowed") {
         wantRef.current = false;
         setListening(false);
-        setError("麦克风权限被拒绝:请点击地址栏左侧图标允许麦克风,然后重试");
+        setError("denied");
       } else if (e.error === "network") {
-        setError("识别服务网络异常,请检查网络后重试");
+        setError("network");
       }
       // no-speech / aborted 交给 onend 重启逻辑
     };
@@ -92,7 +92,7 @@ export function useSpeechRecognition(opts: { lang?: string; onFinal: (t: string)
         } else {
           wantRef.current = false;
           setListening(false);
-          setError("长时间未识别到语音,已自动停止");
+          setError("stopped");
         }
       } else {
         setListening(false);

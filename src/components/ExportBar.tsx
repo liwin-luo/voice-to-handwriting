@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { DownloadSimple, FilePdf } from "@phosphor-icons/react";
 import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
@@ -7,6 +8,7 @@ import { useEditorStore } from "@/stores/useEditorStore";
 import { PAGE_H, PAGE_W } from "./PaperView";
 
 export default function ExportBar() {
+  const t = useTranslations("tool");
   const text = useEditorStore((s) => s.text);
   const [busy, setBusy] = useState(false);
 
@@ -26,7 +28,7 @@ export default function ExportBar() {
     setBusy(true);
     try {
       const urls = await toPngPages();
-      urls.forEach((u, i) => download(u, `手写-${i + 1}.png`));
+      urls.forEach((u, i) => download(u, `handwriting-${i + 1}.png`));
     } finally {
       setBusy(false);
     }
@@ -41,7 +43,7 @@ export default function ExportBar() {
         if (i > 0) pdf.addPage([PAGE_W, PAGE_H], "portrait");
         pdf.addImage(u, "PNG", 0, 0, PAGE_W, PAGE_H);
       });
-      pdf.save("手写.pdf");
+      pdf.save("handwriting.pdf");
     } finally {
       setBusy(false);
     }
@@ -52,11 +54,11 @@ export default function ExportBar() {
     <div className="flex gap-2">
       <button onClick={exportPng} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
         <DownloadSimple className="size-4 text-zinc-500" />
-        {busy ? "导出中" : "导出 PNG"}
+        {busy ? t("exporting") : t("exportPng")}
       </button>
       <button onClick={exportPdf} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
         <FilePdf className="size-4 text-zinc-500" />
-        导出 PDF
+        {t("exportPdf")}
       </button>
     </div>
   );

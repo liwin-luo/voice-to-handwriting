@@ -80,6 +80,6 @@ describe("useSpeechRecognition", () => {
     act(() => result.current.start());
     act(() => FakeSR.instances[0].onerror?.({ error: "not-allowed" }));
     expect(result.current.listening).toBe(false);
-    expect(result.current.error).toContain("权限");
+    expect(result.current.error).toBe("denied");
   });
 });

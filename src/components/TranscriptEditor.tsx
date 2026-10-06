@@ -1,8 +1,10 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { TextAlignCenter, TextAlignLeft, TextIndent } from "@phosphor-icons/react";
 import { useEditorStore } from "@/stores/useEditorStore";
 
 export default function TranscriptEditor() {
+  const t = useTranslations("tool");
   const text = useEditorStore((s) => s.text);
   const setText = useEditorStore((s) => s.setText);
   const align = useEditorStore((s) => s.align);
@@ -20,29 +22,26 @@ export default function TranscriptEditor() {
   return (
     <section className="flex flex-col gap-1.5">
       <div className="flex items-baseline justify-between">
-        <h2 className="field-label">文字(可修改识别错字)</h2>
-        <span className="font-mono text-[11px] text-zinc-400">{text.length} 字</span>
+        <h2 className="field-label">{t("editorLabel")}</h2>
+        <span className="font-mono text-[11px] text-zinc-400">
+          {text.length} {t("charUnit")}
+        </span>
       </div>
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="说话内容会出现在这里,也可以直接粘贴或输入"
+        placeholder={t("placeholder")}
         rows={6}
         className="surface-input resize-y p-3 leading-relaxed"
       />
       {/* 文字排列:对齐 / 段落首行缩进 */}
       <div className="flex items-center gap-1.5">
-        <button
-          title="左对齐"
-          aria-label="左对齐"
-          onClick={() => setAlign("left")}
-          className={toggleCls(align === "left")}
-        >
+        <button title={t("alignLeft")} aria-label={t("alignLeft")} onClick={() => setAlign("left")} className={toggleCls(align === "left")}>
           <TextAlignLeft className="size-4" />
         </button>
         <button
-          title="居中"
-          aria-label="居中"
+          title={t("alignCenter")}
+          aria-label={t("alignCenter")}
           onClick={() => setAlign("center")}
           className={toggleCls(align === "center")}
         >
@@ -50,8 +49,8 @@ export default function TranscriptEditor() {
         </button>
         <span className="mx-1 h-4 w-px bg-zinc-200" />
         <button
-          title="段落首行缩进"
-          aria-label="段落首行缩进"
+          title={t("indent")}
+          aria-label={t("indent")}
           onClick={() => setIndent(!indent)}
           className={toggleCls(indent)}
         >

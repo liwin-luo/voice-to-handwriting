@@ -9,3 +9,9 @@ test("输入文字后渲染手写页并可导出", async ({ page }) => {
   await expect(page.locator(".paper [data-idx]").first()).toBeVisible();
   await expect(page.getByRole("button", { name: "导出 PNG" })).toBeEnabled();
 });
+
+test("英文版首页可用", async ({ page }) => {
+  await page.goto("/en");
+  await expect(page.getByRole("heading", { name: "Voice to Handwriting" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Export PNG" })).toBeDisabled(); // 无文字时禁用
+});

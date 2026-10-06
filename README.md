@@ -51,8 +51,10 @@ docs/plans/     设计文档与实施计划
 
 ## 路线图
 
-- **一期(当前)**:说→渲→导闭环
-- **二期**:Hanzi Writer 逐笔书写动画、照片合成、云端 ASR(/api/transcribe)、SEO 内容 + 广告
-- **三期**:个人笔迹预设、端侧 Whisper/sherpa-onnx、书写动画视频导出、英文版
+- **一期(已完成)**:说→渲→导闭环、文字排列控制(对齐/首行缩进)、中英双语(zh 默认 / en 路径)、合规页 + SEO 基建 + 广告位
+- **二期**:Hanzi Writer 逐笔书写动画、照片合成模式、云端 ASR(/api/transcribe)
+- **三期**:个人笔迹预设、端侧 Whisper/sherpa-onnx、书写动画视频导出
+
+国际化说明:默认中文(`/`),英文 `/en`,由 src/proxy.ts 按 Accept-Language 自动协商;文案在 `messages/*.json`,长文内容在 `src/content/**/*.{zh,en}.mdx`。
 
 详见 `docs/plans/2026-10-06-voicetohandwriting-design.md`。

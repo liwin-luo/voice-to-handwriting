@@ -1,21 +1,37 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
 
-export default function SiteFooter() {
+export default async function SiteFooter() {
+  const t = await getTranslations("footer");
+  const nav = await getTranslations("nav");
+  const meta = await getTranslations("meta");
   const icp = process.env.NEXT_PUBLIC_ICP;
   return (
     <footer className="mt-14 border-t border-zinc-200 py-7 text-[13px] text-zinc-500">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4">
         <nav className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link href="/" className="transition-colors hover:text-zinc-900">工具</Link>
-          <Link href="/blog" className="transition-colors hover:text-zinc-900">博客</Link>
-          <Link href="/about" className="transition-colors hover:text-zinc-900">关于</Link>
-          <Link href="/privacy" className="transition-colors hover:text-zinc-900">隐私政策</Link>
-          <Link href="/terms" className="transition-colors hover:text-zinc-900">使用条款</Link>
-          <Link href="/contact" className="transition-colors hover:text-zinc-900">联系我们</Link>
+          <Link href="/" className="transition-colors hover:text-zinc-900">
+            {nav("tool")}
+          </Link>
+          <Link href="/blog" className="transition-colors hover:text-zinc-900">
+            {nav("blog")}
+          </Link>
+          <Link href="/about" className="transition-colors hover:text-zinc-900">
+            {nav("about")}
+          </Link>
+          <Link href="/privacy" className="transition-colors hover:text-zinc-900">
+            {t("privacy")}
+          </Link>
+          <Link href="/terms" className="transition-colors hover:text-zinc-900">
+            {t("terms")}
+          </Link>
+          <Link href="/contact" className="transition-colors hover:text-zinc-900">
+            {t("contact")}
+          </Link>
         </nav>
         <p className="text-zinc-400">
-          © {new Date().getFullYear()} {SITE.name}
+          © {new Date().getFullYear()} {meta("brand")}
         </p>
         {icp && (
           <p>

@@ -1,5 +1,6 @@
 "use client";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
+import { useTranslations } from "next-intl";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { FONTS, useEditorStore, type TextAlign } from "@/stores/useEditorStore";
 import { tokenize, type Token } from "@/engine/tokens";
@@ -37,6 +38,7 @@ function partitionParagraphs(tokens: Token[]): ParaGroup[] {
 }
 
 export default function PaperView() {
+  const t = useTranslations("tool");
   const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent } =
     useEditorStore();
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
@@ -147,8 +149,8 @@ export default function PaperView() {
           className="shadow-paper flex flex-col items-center justify-center gap-4 rounded-xl"
           style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
         >
-          <p className="font-hand text-4xl text-zinc-300">说一段话,落笔成字</p>
-          <p className="text-sm text-zinc-400">点击下方「点击说话」,或直接在右侧输入文字</p>
+          <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
+          <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
           <ArrowDown className="size-4 animate-bounce text-zinc-300" />
         </div>
       </>
@@ -180,5 +182,3 @@ export default function PaperView() {
     </>
   );
 }
-
-export type { TextAlign };
