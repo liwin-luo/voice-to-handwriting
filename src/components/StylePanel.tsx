@@ -80,23 +80,6 @@ export default function StylePanel() {
             <option value="custom">{t("papers.custom")}</option>
           </select>
         </label>
-        <div className="flex items-center justify-between">
-          <span className="text-zinc-700">{t("watermark")}</span>
-          <button
-            role="switch"
-            aria-checked={s.watermark}
-            onClick={() => s.setWatermark(!s.watermark)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              s.watermark ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                s.watermark ? "translate-x-5" : ""
-              }`}
-            />
-          </button>
-        </div>
           {isCustomPaper && (
           <div className="mt-1 flex flex-col gap-3 rounded-lg border border-zinc-200 bg-zinc-50 p-3">
             <span className="field-label">{t("paperCustom.style")}</span>
@@ -149,19 +132,53 @@ export default function StylePanel() {
                 style={{ background: ink.value }}
               />
             ))}
-            <input
-              type="color"
+            <label
               title={t("customColor")}
               aria-label={t("customColor")}
-              value={INKS.some((ink) => ink.value === s.ink) ? "#15317e" : s.ink}
-              onChange={(e) => s.setInk(e.target.value)}
-              className={`color-swatch ${INKS.some((ink) => ink.value === s.ink) ? "" : "ring-2 ring-accent ring-offset-2 ring-offset-white"}`}
+              className={`relative inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-full transition-all duration-200 active:scale-90 ${
+                INKS.some((ink) => ink.value === s.ink)
+                  ? "ring-1 ring-zinc-200 hover:ring-zinc-300"
+                  : "ring-2 ring-accent ring-offset-2 ring-offset-white"
+              }`}
               style={{
                 background:
                   "conic-gradient(#ef4444,#f59e0b,#22c55e,#3b82f6,#8b5cf6,#ef4444)",
               }}
-            />
+            >
+              {!INKS.some((ink) => ink.value === s.ink) && (
+                <span
+                  className="size-4 rounded-full border border-white/80 shadow-sm"
+                  style={{ background: s.ink }}
+                />
+              )}
+              <input
+                type="color"
+                value={INKS.some((ink) => ink.value === s.ink) ? "#ffffff" : s.ink}
+                onChange={(e) => s.setInk(e.target.value)}
+                className="absolute inset-0 cursor-pointer opacity-0"
+              />
+            </label>
           </div>
+        </div>
+
+        {/* 导出水印:放区块最底部 */}
+        <div className="flex items-center justify-between pt-1">
+          <span className="text-zinc-700">{t("watermark")}</span>
+          <button
+            role="switch"
+            aria-checked={s.watermark}
+            aria-label={t("watermark")}
+            onClick={() => s.setWatermark(!s.watermark)}
+            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+              s.watermark ? "bg-accent" : "bg-zinc-300"
+            }`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                s.watermark ? "translate-x-5" : ""
+              }`}
+            />
+          </button>
         </div>
       </div>
     </section>
