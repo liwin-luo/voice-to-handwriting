@@ -12,12 +12,18 @@ function primaryFamily(css: string): string {
 }
 
 /** 姓名描红工作表生成器:美国教师/家长市场(姓名描红 + 三线格) */
-export default function TracingGenerator() {
+export default function TracingGenerator({
+  defaultFontId = "patrickhand",
+  defaultBandH = 90,
+}: {
+  defaultFontId?: string;
+  defaultBandH?: number;
+}) {
   const t = useTranslations("tracing");
   const [names, setNames] = useState("");
-  const [fontId, setFontId] = useState("patrickhand");
+  const [fontId, setFontId] = useState(defaultFontId);
   const [showExample, setShowExample] = useState(true);
-  const [bandH, setBandH] = useState(90);
+  const [bandH, setBandH] = useState(defaultBandH);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [w, h] = LETTER;
 

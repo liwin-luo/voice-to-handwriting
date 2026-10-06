@@ -24,6 +24,7 @@ export default async function SiteHeader() {
               { href: "/printable-paper", label: t("printablePaper") },
               { href: "/name-tracing", label: t("nameTracing") },
               { href: "/cursive", label: t("cursive") },
+              { href: "/cursive-worksheets", label: t("cursiveWorks") },
             ]}
           />
           <Link href="/history" className="transition-colors hover:text-zinc-950">

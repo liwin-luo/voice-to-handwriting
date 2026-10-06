@@ -320,5 +320,89 @@ const US_POSTS: Post[] = [
 
 POSTS.push(...US_POSTS);
 
+/** /cursive 落地页配套的 cursive 词簇长尾文章(仅英文),按 E-E-A-T 结构撰写 */
+const CURSIVE_POSTS: Post[] = [
+  {
+    slug: "how-to-write-in-cursive",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "How to write in cursive: a beginner's guide that works",
+        description:
+          "Learn cursive from scratch: the four strokes, letter families, connection rules and a 30-day plan — with free printable practice sheets.",
+      },
+    },
+  },
+  {
+    slug: "cursive-alphabet-chart",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "The cursive alphabet, organized the way you'll learn it",
+        description:
+          "Every cursive letter grouped into stroke families — lowercase and capitals, the five letters that cause most mistakes, plus a free printable chart.",
+      },
+    },
+  },
+  {
+    slug: "cursive-name-signature",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "How to write your name in cursive (and build a signature)",
+        description:
+          "Two-stage method: write your name in legible cursive with printable tracing sheets, then design a signature you can actually reproduce.",
+      },
+    },
+  },
+  {
+    slug: "is-cursive-still-taught",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Is cursive still taught in schools? The state of cursive",
+        description:
+          "Cursive left Common Core in 2010 and has been coming back since 2016 — which states require it now, what research says, and what to do about it.",
+      },
+    },
+  },
+  {
+    slug: "cursive-vs-print",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Cursive vs print: which handwriting style should you learn?",
+        description:
+          "Speed, legibility, learning curve and what studies actually show — an honest comparison of cursive and print handwriting.",
+      },
+    },
+  },
+  {
+    slug: "how-to-teach-cursive-kids",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "How to teach cursive writing to kids at home (10-min lessons)",
+        description:
+          "Readiness signs, letter-family teaching order, and 10-minute lessons with free printable cursive practice sheets for every step.",
+      },
+    },
+  },
+];
+
+POSTS.push(...CURSIVE_POSTS);
+
 // de/fr/pt 等后补语言在此合并
 mergeI18n(POSTS, EXTRA_POST_I18N);

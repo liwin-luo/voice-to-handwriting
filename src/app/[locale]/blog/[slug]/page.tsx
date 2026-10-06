@@ -11,7 +11,9 @@ import ProseShell from "@/components/ProseShell";
 import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => POSTS.map((p) => ({ locale, slug: p.slug })));
+  return routing.locales.flatMap((locale) =>
+    POSTS.filter((p) => BLOG_CONTENT[p.slug]?.[locale]).map((p) => ({ locale, slug: p.slug })),
+  );
 }
 
 export async function generateMetadata({

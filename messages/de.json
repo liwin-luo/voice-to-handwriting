@@ -47,6 +47,10 @@
     "cursive": {
       "title": "Schreibschrift-Generator - Free",
       "description": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken."
+    },
+    "cursiveWorks": {
+      "title": "Kostenloser Schreibschrift-Arbeitsblatt-Generator",
+      "description": "Kostenlose Schreibschrift-Übungsblätter aus jeder Wortliste erstellen. Nachspürbare Zeilen auf 3-Linien-Papier, ohne Wasserzeichen."
     }
   },
   "nav": {
@@ -269,5 +273,11 @@
     "intro": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken.",
     "seoTitle": "Kostenloser Schreibschrift-Generator",
     "seoText": "Schreibschrift wird kaum noch unterrichtet — dabei trainiert sie Feinmotorik und Schreibtempo und verbindet dich mit einem Jahrhundert voller Briefe.\n\nSo geht's: Text eintippen oder diktieren, eine der beiden Schreibschrift-Schriften wählen, Realismus anpassen und exportieren. Das PDF drucken und zum Üben nachspuren."
+  },
+  "cursiveWorks": {
+    "title": "Schreibschrift-Arbeitsblatt-Generator",
+    "intro": "Kostenlose Übungsbätter in Schreibschrift: Wortliste oder Satz einfügen und nachspürbare Zeilen auf 3-Linien-Papier erhalten. Für Klassen, die Schreibschrift zurückbringen.",
+    "seoTitle": "Kostenlose Schreibschrift-Arbeitsblätter zum Drucken",
+    "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Cedarville Cursive oder Dancing Script wählen, Zeilenhöhe anpassen, PDF herunterladen. Ohne Wasserzeichen, ohne Anmeldung."
   }
 }

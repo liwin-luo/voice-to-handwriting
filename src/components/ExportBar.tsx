@@ -18,8 +18,21 @@ export default function ExportBar() {
   const pageEls = () => Array.from(document.querySelectorAll<HTMLElement>(".paper"));
 
   // backgroundColor 会被 html-to-image 写到克隆节点上,覆盖纸张自身底色,故不能传
-  const toPngPages = async () =>
-    Promise.all(pageEls().map((el) => toPng(el, { pixelRatio: 2 })));
+  // html-to-image 解码截图后回调挂在 requestAnimationFrame 上;后台/被遮挡标签页的 rAF
+  // 会被浏览器暂停,导出会永远卡在"导出中"。捕获期间用 setTimeout 顶替,前后台行为一致。
+  async function withRafFallback<T>(fn: () => Promise<T>): Promise<T> {
+    const orig = window.requestAnimationFrame.bind(window);
+    window.requestAnimationFrame = ((cb: FrameRequestCallback) =>
+      window.setTimeout(() => cb(performance.now()), 16)) as typeof orig;
+    try {
+      return await fn();
+    } finally {
+      window.requestAnimationFrame = orig;
+    }
+  }
+
+  const toPngPages = () =>
+    withRafFallback(() => Promise.all(pageEls().map((el) => toPng(el, { pixelRatio: 2 }))));
 
   const download = (dataUrl: string, name: string) => {
     const a = document.createElement("a");

@@ -51,6 +51,12 @@ import dwcEn from "./diy-wedding-calligraphy.en.mdx";
 import pplEn from "./pen-pal-letters-for-kids.en.mdx";
 import ihaEn from "./how-to-improve-handwriting-adults.en.mdx";
 import hswEn from "./handwriting-practice-struggling-writers.en.mdx";
+import hwcEn from "./how-to-write-in-cursive.en.mdx";
+import cacEn from "./cursive-alphabet-chart.en.mdx";
+import cnsEn from "./cursive-name-signature.en.mdx";
+import icsEn from "./is-cursive-still-taught.en.mdx";
+import cvpEn from "./cursive-vs-print.en.mdx";
+import htcEn from "./how-to-teach-cursive-kids.en.mdx";
 
 /** slug → 语言 → 内容组件;新增文章:建 <slug>.<locale>.mdx 后在此注册。
  * 值允许 Partial:仅部分语言有正文时,页面按语言 404,sitemap/索引按 availableLocales 过滤 */
@@ -70,6 +76,12 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "pen-pal-letters-for-kids": { en: pplEn },
   "how-to-improve-handwriting-adults": { en: ihaEn },
   "handwriting-practice-struggling-writers": { en: hswEn },
+  "how-to-write-in-cursive": { en: hwcEn },
+  "cursive-alphabet-chart": { en: cacEn },
+  "cursive-name-signature": { en: cnsEn },
+  "is-cursive-still-taught": { en: icsEn },
+  "cursive-vs-print": { en: cvpEn },
+  "how-to-teach-cursive-kids": { en: htcEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

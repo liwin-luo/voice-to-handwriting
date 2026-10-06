@@ -47,6 +47,10 @@
     "cursive": {
       "title": "Cursive Writing Generator - Free",
       "description": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF."
+    },
+    "cursiveWorks": {
+      "title": "Free Cursive Worksheets Generator (Printable PDF)",
+      "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper, no watermark — built for classrooms bringing back cursive."
     }
   },
   "nav": {
@@ -269,5 +273,11 @@
     "intro": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF.",
     "seoTitle": "Free cursive generator — practice the lost art of penmanship",
     "seoText": "Cursive is barely taught in schools anymore — but learning it has real benefits: it trains fine motor skills, speeds up note-taking and connects you to a century of letters and journals worth reading.\n\nHow to use this page: type or dictate anything, pick one of the two cursive fonts (Cedarville Cursive for everyday handwriting, Dancing Script for elegant flourishes), adjust the realism slider for a natural hand, and export. Print the PDF and trace over it to practice your own cursive."
+  },
+  "cursiveWorks": {
+    "title": "Cursive Worksheets Generator",
+    "intro": "Free printable cursive practice sheets: paste any word list or sentence and get traceable cursive rows on 3-line paper. Built for classrooms bringing cursive back.",
+    "seoTitle": "Free printable cursive worksheets for the classroom",
+    "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Cedarville Cursive for everyday handwriting or Dancing Script for elegant flourishes, set the row height, and download the PDF. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice."
   }
 }

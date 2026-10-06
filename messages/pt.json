@@ -47,6 +47,10 @@
     "cursive": {
       "title": "Gerador de letra cursiva - Free",
       "description": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar."
+    },
+    "cursiveWorks": {
+      "title": "Gerador grátis de fichas de cursiva (PDF)",
+      "description": "Crie fichas de prática de cursiva grátis a partir de qualquer lista de palavras. Linhas para treinar em papel de 3 linhas, sem marca d'água."
     }
   },
   "nav": {
@@ -269,5 +273,11 @@
     "intro": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar.",
     "seoTitle": "Gerador grátis de letra cursiva",
     "seoText": "A letra cursiva quase não é mais ensinada nas escolas — mas treina a motricidade fina e acelera anotações.\n\nComo usar: digite ou fale, escolha uma das duas fontes cursivas, ajuste o realismo para um traço natural e exporte. Imprima o PDF e repasse para praticar."
+  },
+  "cursiveWorks": {
+    "title": "Gerador de fichas de cursiva",
+    "intro": "Fichas de prática de cursiva para imprimir grátis: cole qualquer lista de palavras e ganhe linhas cursivas para treinar em papel de 3 linhas. Para turmas que estão trazendo a cursiva de volta.",
+    "seoTitle": "Fichas de cursiva para imprimir grátis",
+    "seoText": "Cada vez mais estados dos EUA estão trazendo a cursiva de volta ao currículo (Flórida, Pensilvânia e outros desde 2024) — e professores precisam de materiais imediatos.\n\nComo usar: cole sua lista de palavras (alfabeto, ortografia, nomes — um por linha), escolha Cedarville Cursive ou Dancing Script, ajuste a altura e baixe o PDF. Sem marca d'água nem cadastro."
   }
 }

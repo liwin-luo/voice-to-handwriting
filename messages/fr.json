@@ -47,6 +47,10 @@
     "cursive": {
       "title": "Générateur d'écriture cursive - Free",
       "description": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner."
+    },
+    "cursiveWorks": {
+      "title": "Générateur gratuit de fiches d'écriture cursive",
+      "description": "Créez des fiches de cursive à imprimer à partir de n'importe quelle liste de mots. Lignes à repasser sur papier 3 lignes, sans filigrane."
     }
   },
   "nav": {
@@ -269,5 +273,11 @@
     "intro": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner.",
     "seoTitle": "Générateur gratuit d'écriture cursive",
     "seoText": "L'écriture cursive n'est presque plus enseignée — pourtant elle développe la motricité fine et la vitesse de prise de notes.\n\nMode d'emploi : tapez ou dictez, choisissez l'une des deux polices cursives, ajustez le réalisme et exportez. Imprimez le PDF et repassez dessus pour vous entraîner."
+  },
+  "cursiveWorks": {
+    "title": "Générateur de fiches d'écriture cursive",
+    "intro": "Des fiches de cursive à imprimer gratuitement : collez une liste de mots et obtenez des lignes à repasser sur papier 3 lignes. Pour les classes qui réintègrent la cursive.",
+    "seoTitle": "Fiches de cursive à imprimer gratuitement",
+    "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Cedarville Cursive ou Dancing Script, ajustez la hauteur et téléchargez le PDF. Sans filigrane ni inscription."
   }
 }

@@ -5,13 +5,16 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing, type Locale } from "@/i18n/routing";
 import { POSTS, getPostMeta } from "@/content/posts";
+import { BLOG_CONTENT } from "@/content/blog/registry";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "Voice to Handwriting";
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => POSTS.map((p) => ({ locale, slug: p.slug })));
+  return routing.locales.flatMap((locale) =>
+    POSTS.filter((p) => BLOG_CONTENT[p.slug]?.[locale]).map((p) => ({ locale, slug: p.slug })),
+  );
 }
 
 export default async function OgImage({

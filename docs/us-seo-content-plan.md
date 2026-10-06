@@ -68,6 +68,27 @@
 
 与现有 5 篇(voice 贺卡、手写图生成器、金句卡片、录音转手写、模板库)零关键词重叠。
 
+## 三-B、`/cursive` 新工具配套文章(第二轮,已落地)
+
+`/cursive` 落地页主打 "cursive writing generator",与第一轮的 cursive-practice-worksheets(练习表角度)互补。围绕 cursive 词簇新增 6 篇,全部内链到 `/cursive` 作为转化层:
+
+| # | slug | 目标长尾词簇 | 意图 |
+| --- | --- | --- | --- |
+| 1 | how-to-write-in-cursive | how to write in cursive for beginners / learn cursive step by step | 教程(高量级) |
+| 2 | cursive-alphabet-chart | cursive alphabet / cursive capital letters / cursive letters a-z | 参考资料 |
+| 3 | cursive-name-signature | how to write your name in cursive / cursive signature ideas | 工具+教程 |
+| 4 | is-cursive-still-taught | is cursive still taught / what states require cursive | 资讯(关键词簇带新闻轮换流量) |
+| 5 | cursive-vs-print | cursive vs print / is cursive faster than print | 对比决策 |
+| 6 | how-to-teach-cursive-kids | how to teach cursive writing / when should kids learn cursive | 家长/教师 |
+
+### E-E-A-T 落地清单(这批文章的具体做法,后续批次沿用)
+
+- **Experience(经验)**:沿用"Tested, with honest limitations"栏目,写明工具实测口径(字体非教材字体、无笔画箭头、浏览器本地渲染、免费无水印);练习方法均为可跟做的步骤而非空泛建议;
+- **Expertise(专业)**:笔画家族教学法(ovals/waves/bumps/loops)、连笔规则(o/b/v/w 高位收笔不连)、t/i 高度与 r/s 易错点等专业细节;
+- **Authoritativeness(权威)**:is-cursive-still-taught 引用 California AB 446(2023)、Texas TEKS,外链 leginfo.legislature.ca.gov / tea.texas.gov / Wikipedia;研究引用点名研究者与期刊(James & Engelhardt 2012、Berninger、Mueller & Oppenheimer 2014)并诚实标注"复制研究结果不一";
+- **Trustworthiness(可信)**:不做超纲声明(明确"cursive 不是补脑神药")、信息标注时效("as of late 2026, last reviewed October 2026")、外链指向一手机构而非媒体报道、站内 datePublished/dateModified 由 posts.ts 输出。
+- **维护建议**:is-cursive-still-taught 每年 1 月复核一次州名单与年份(该词簇有新闻属性,内容新鲜度直接影响排名)。
+
 ## 四、执行要点
 
 - **语言策略**:10 篇只做英文(默认语言,URL 无前缀,如 `/blog/name-tracing-generator`)。已同步修复多语言回退:registry 类型放宽为 `Partial<Record<Locale,…>>`,sitemap/blog 索引/静态参数只输出有内容的语言,避免非英文 URL 404 混入 sitemap 与 hreflang。

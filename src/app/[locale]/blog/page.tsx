@@ -33,7 +33,7 @@ export default async function BlogIndex({
         <p className="mt-3 text-sm text-zinc-500">{t("tagline")}</p>
       </header>
       <ul className="mt-9 flex flex-col gap-4">
-        {POSTS.map((p, i) => {
+        {POSTS.filter((p) => BLOG_CONTENT[p.slug]?.[locale as Locale]).map((p, i) => {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
           const meta = (p.i18n[locale as Locale] ?? p.i18n.en)!;
           return (
