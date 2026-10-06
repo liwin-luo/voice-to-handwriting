@@ -79,7 +79,16 @@
       "blueblack": "청흑색",
       "black": "검정",
       "red": "주홍색"
-    }
+    },
+    "importAudio": "오디오 파일 가져오기",
+    "modelFast": "빠름",
+    "modelQuality": "고품질",
+    "statusModel": "첫 사용 시 모델 다운로드 {p}%",
+    "statusDecode": "오디오 디코딩 중…",
+    "statusTranscribe": "변환 중입니다. 긴 오디오는 시간이 걸려요…",
+    "errorEmpty": "음성을 인식하지 못했어요",
+    "errorImport": "변환 실패: mp3 / wav / m4a 파일로 시도해 보세요",
+    "modelNote": "빠름: 약 80MB. 고품질: 약 250MB(중국어 정확도 향상). 모델은 한 번만 다운로드되며 오디오는 기기를 벗어나지 않습니다"
   },
   "footer": {
     "privacy": "개인정보 처리방침",

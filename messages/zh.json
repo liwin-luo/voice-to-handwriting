@@ -79,7 +79,16 @@
       "blueblack": "蓝黑",
       "black": "纯黑",
       "red": "朱红"
-    }
+    },
+    "importAudio": "导入音频文件",
+    "modelFast": "快速",
+    "modelQuality": "高质量",
+    "statusModel": "首次使用需下载模型 {p}%",
+    "statusDecode": "解码音频中…",
+    "statusTranscribe": "转写中,长音频需要一些时间…",
+    "errorEmpty": "未识别到语音内容",
+    "errorImport": "转写失败:请换 mp3 / wav / m4a 文件再试",
+    "modelNote": "快速:下载约 80MB;高质量:约 250MB,中文更准。模型仅下载一次,音频不离开设备"
   },
   "footer": {
     "privacy": "隐私政策",

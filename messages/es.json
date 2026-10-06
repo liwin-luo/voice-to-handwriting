@@ -79,7 +79,16 @@
       "blueblack": "Azul oscuro",
       "black": "Negro",
       "red": "Rojo cinabrio"
-    }
+    },
+    "importAudio": "Importar audio",
+    "modelFast": "Rápido",
+    "modelQuality": "Alta calidad",
+    "statusModel": "El primer uso descarga el modelo {p}%",
+    "statusDecode": "Decodificando audio…",
+    "statusTranscribe": "Transcribiendo — los archivos largos tardan…",
+    "errorEmpty": "No se reconoció voz en el audio",
+    "errorImport": "Falló la transcripción: prueba con mp3 / wav / m4a",
+    "modelNote": "Rápido: ~80MB. Alta calidad: ~250MB, mejor chino. El modelo se descarga una vez; el audio nunca sale de tu equipo"
   },
   "footer": {
     "privacy": "Política de privacidad",

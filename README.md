@@ -25,6 +25,14 @@ npm i -D cn-font-split
 node scripts/fonts.mjs
 ```
 
+## 音频文件转写(免费)
+
+支持上传 mp3 / wav / m4a 等音频文件,在**用户浏览器本地**用 Whisper 转写成文字再排版——零 API 成本,音频不离开设备。
+
+- 模型自托管在 `public/models/`(同源加载,无 CORS、国内可达),用 `npm run models` 下载(whisper-base 约 78MB,已提交进仓库);
+- WebGPU 可用时硬件加速,否则回退 WASM;
+- 转写语言跟随页面语言;中文易输出繁体,可用「高质量」模型(取消 `scripts/models.sh` 中 small 的注释并重跑)改善。
+
 ## 测试
 
 ```bash

@@ -79,7 +79,16 @@
       "blueblack": "Blue black",
       "black": "Black",
       "red": "Vermilion"
-    }
+    },
+    "importAudio": "Import audio file",
+    "modelFast": "Fast",
+    "modelQuality": "High quality",
+    "statusModel": "First use downloads the model {p}%",
+    "statusDecode": "Decoding audio…",
+    "statusTranscribe": "Transcribing — long files take a while…",
+    "errorEmpty": "No speech recognized in the audio",
+    "errorImport": "Transcription failed — try an mp3 / wav / m4a file",
+    "modelNote": "Fast: ~80MB download; High quality: ~250MB, better Chinese. Model downloads once, audio never leaves your device"
   },
   "footer": {
     "privacy": "Privacy Policy",

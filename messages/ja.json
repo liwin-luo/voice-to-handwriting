@@ -79,7 +79,16 @@
       "blueblack": "藍黒",
       "black": "黒",
       "red": "朱色"
-    }
+    },
+    "importAudio": "音声ファイルを読み込む",
+    "modelFast": "高速",
+    "modelQuality": "高品質",
+    "statusModel": "初回のみモデルをダウンロード {p}%",
+    "statusDecode": "デコード中…",
+    "statusTranscribe": "文字起こし中。長い音声は時間がかかります…",
+    "errorEmpty": "音声を認識できませんでした",
+    "errorImport": "変換に失敗しました。mp3 / wav / m4a をお試しください",
+    "modelNote": "高速:約 80MB。高品質:約 250MB(中国語精度向上)。モデルは一度だけダウンロード、音声は端末外に出ません"
   },
   "footer": {
     "privacy": "プライバシーポリシー",
