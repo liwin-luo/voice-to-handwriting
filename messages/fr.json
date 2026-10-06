@@ -31,6 +31,10 @@
     "templates": {
       "title": "Modèles manuscrits",
       "description": "Lettres d'amour, excuses, remerciements, anniversaires et fêtes — texte et style en un geste."
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "description": "Questions fréquentes sur la saisie vocale, la transcription audio, l'export et l'usage commercial."
     }
   },
   "nav": {
@@ -123,7 +127,8 @@
   "footer": {
     "privacy": "Confidentialité",
     "terms": "Conditions",
-    "contact": "Contact"
+    "contact": "Contact",
+    "faq": "FAQ"
   },
   "consent": {
     "text": "Nous utilisons des cookies pour afficher des publicités qui gardent cet outil gratuit. Acceptez les pubs personnalisées ou continuez avec l'essentiel.",

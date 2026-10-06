@@ -31,7 +31,11 @@
       "title": "Handwriting Templates",
       "description": "Love letters, apologies, thank-you notes, birthday and holiday wishes — copy and style in one tap, exported as handwriting."
     },
-    "keywords": "handwriting generator, voice to text, handwriting font, greeting card maker, audio transcription, handwriting online"
+    "keywords": "handwriting generator, voice to text, handwriting font, greeting card maker, audio transcription, handwriting online",
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently asked questions about voice input, audio transcription, exports and commercial use of Voice to Handwriting."
+    }
   },
   "nav": {
     "tool": "Tool",
@@ -123,7 +127,8 @@
   "footer": {
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
-    "contact": "Contact"
+    "contact": "Contact",
+    "faq": "FAQ"
   },
   "blog": {
     "tagline": "Tutorials and ideas for handwritten cards and images — every guide works with the tool on the home page."

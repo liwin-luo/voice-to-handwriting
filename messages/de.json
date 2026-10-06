@@ -31,6 +31,10 @@
     "templates": {
       "title": "Handschrift-Vorlagen",
       "description": "Liebesbriefe, Entschuldigungen, Dankesschreiben, Geburtstage und Feiertage — Text und Stil in einem Tipp."
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "description": "Häufige Fragen zu Spracheingabe, Audio-Transkription, Export und kommerzieller Nutzung."
     }
   },
   "nav": {
@@ -123,7 +127,8 @@
   "footer": {
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "faq": "Häufige Fragen"
   },
   "consent": {
     "text": "Wir verwenden Cookies, um Werbung zu zeigen, die dieses Tool kostenlos hält. Akzeptiere personalisierte Werbung oder nutze nur das Nötige.",

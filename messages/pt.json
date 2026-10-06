@@ -31,6 +31,10 @@
     "templates": {
       "title": "Modelos manuscritos",
       "description": "Cartas de amor, desculpas, agradecimentos, aniversários e festas — texto e estilo em um toque."
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "description": "Perguntas frequentes sobre entrada por voz, transcrição de áudio, exportação e uso comercial."
     }
   },
   "nav": {
@@ -123,7 +127,8 @@
   "footer": {
     "privacy": "Privacidade",
     "terms": "Termos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "faq": "Perguntas frequentes"
   },
   "consent": {
     "text": "Usamos cookies para mostrar anúncios que mantêm esta ferramenta gratuita. Aceite anúncios personalizados ou continue só com o essencial.",

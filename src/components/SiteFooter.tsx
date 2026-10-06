@@ -29,6 +29,9 @@ export default async function SiteFooter() {
           <Link href="/contact" className="transition-colors hover:text-zinc-900">
             {t("contact")}
           </Link>
+          <Link href="/faq" className="transition-colors hover:text-zinc-900">
+            {t("faq")}
+          </Link>
         </nav>
         <p className="text-zinc-400">
           © {new Date().getFullYear()} {meta("brand")}

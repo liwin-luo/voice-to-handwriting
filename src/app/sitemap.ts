@@ -5,7 +5,7 @@ import { TEMPLATES } from "@/content/templates";
 import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", "/templates", "/blog", "/about", "/privacy", "/terms", "/contact", "/history"];
+  const paths = ["", "/templates", "/blog", "/faq", "/about", "/privacy", "/terms", "/contact", "/history"];
   const entries: MetadataRoute.Sitemap = [];
 
   const localized = (p: string, locale: string) =>

@@ -31,7 +31,11 @@
       "title": "Plantillas de escritura a mano",
       "description": "Cartas de amor, disculpas, agradecimientos, cumpleaños, Día del Maestro y Año Nuevo — texto y estilo en un toque."
     },
-    "keywords": "generador de escritura a mano, voz a texto, fuente manuscrita, tarjetas escritas"
+    "keywords": "generador de escritura a mano, voz a texto, fuente manuscrita, tarjetas escritas",
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "description": "Preguntas frecuentes sobre entrada por voz, transcripción de audio, exportación y uso comercial."
+    }
   },
   "nav": {
     "tool": "Herramienta",
@@ -123,7 +127,8 @@
   "footer": {
     "privacy": "Política de privacidad",
     "terms": "Términos de uso",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "faq": "Preguntas frecuentes"
   },
   "blog": {
     "tagline": "Tutoriales e ideas de tarjetas e imágenes manuscritas — todas las guías funcionan con la herramienta de inicio."

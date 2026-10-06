@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import AdSlot from "@/components/AdSlot";
 import TemplatesBrowser, { type TemplateCard } from "@/components/TemplatesBrowser";
 import { TEMPLATES, getTemplateMeta } from "@/content/templates";
 import type { Locale } from "@/i18n/routing";
@@ -39,7 +38,6 @@ export default async function TemplatesIndex({
         <TemplatesBrowser templates={cards} />
       </div>
       <div className="rise mt-10" style={{ animationDelay: "200ms" }}>
-        <AdSlot />
       </div>
     </main>
   );
