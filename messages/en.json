@@ -2,7 +2,7 @@
   "meta": {
     "brand": "Voice to Handwriting",
     "title": "Voice to Handwriting - Speak it, see it handwritten",
-    "description": "Speak into the page, watch your words turn into realistic handwriting, and export as PNG or PDF. A free online handwriting generator for cards, letters, journals and social media images.",
+    "description": "Speak into the page and watch your words turn into realistic handwriting. Export as PNG or PDF. Free handwriting generator for cards, letters & journals.",
     "about": {
       "title": "About",
       "description": "Voice to Handwriting is a free web tool that turns speech into handwritten pages: real-time transcription, realistic handwriting rendering, PNG/PDF export. Everything runs locally in your browser."
@@ -62,7 +62,8 @@
     "printables": "Printables",
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
-    "cursive": "Cursive Writing"
+    "cursive": "Cursive Writing",
+    "cursiveWorks": "Cursive Worksheets"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -226,6 +227,8 @@
     "shareText": "A handwritten page I made with Voice to Handwriting {link}",
     "sharePlain": "A handwritten page I made with Voice to Handwriting",
     "email": "Email",
+    "barLabel": "Share this tool",
+    "copyUrl": "Copy link",
     "copyImage": "Copy image",
     "copied": "Copied",
     "copyLink": "Copy text & link",
@@ -252,9 +255,11 @@
     "redMargin": "Red margin line",
     "pageSize": "Page size",
     "downloadPdf": "Download PDF",
+    "downloadPng": "Download PNG",
     "seoTitle": "Free printable lined paper — no watermark, no signup",
     "seoText": "Every style prints edge-to-edge at exact real-world dimensions (Letter and A4), with no watermark and no account required. Pair it with our handwriting tool: print the paper, or let the generator write on it for you.",
-    "paperType": "Paper type"
+    "paperType": "Paper type",
+    "faqTitle": "Frequently asked questions"
   },
   "tracing": {
     "title": "Name Tracing Worksheet Generator",
@@ -264,15 +269,19 @@
     "font": "Font",
     "showExample": "Dark example row",
     "rowHeight": "Row height",
+    "textColor": "Text color",
     "downloadPdf": "Download PDF",
+    "downloadPng": "Download PNG",
     "seoTitle": "Free name tracing worksheets for homeschool and classroom",
-    "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark."
+    "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark.",
+    "faqTitle": "Frequently asked questions"
   },
   "cursive": {
     "title": "Cursive Writing Generator",
     "intro": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF.",
     "seoTitle": "Free cursive generator — practice the lost art of penmanship",
-    "seoText": "Cursive is barely taught in schools anymore — but learning it has real benefits: it trains fine motor skills, speeds up note-taking and connects you to a century of letters and journals worth reading.\n\nHow to use this page: type or dictate anything, pick one of the two cursive fonts (Cedarville Cursive for everyday handwriting, Dancing Script for elegant flourishes), adjust the realism slider for a natural hand, and export. Print the PDF and trace over it to practice your own cursive."
+    "seoText": "Cursive is barely taught in schools anymore — but learning it has real benefits: it trains fine motor skills, speeds up note-taking and connects you to a century of letters and journals worth reading.\n\nHow to use this page: type or dictate anything, pick one of the two cursive fonts (Cedarville Cursive for everyday handwriting, Dancing Script for elegant flourishes), adjust the realism slider for a natural hand, and export. Print the PDF and trace over it to practice your own cursive.",
+    "faqTitle": "Frequently asked questions"
   },
   "cursiveWorks": {
     "title": "Cursive Worksheets Generator",

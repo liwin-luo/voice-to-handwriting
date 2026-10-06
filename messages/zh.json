@@ -62,7 +62,8 @@
     "printables": "打印工具",
     "printablePaper": "打印纸模板",
     "nameTracing": "描红字帖",
-    "cursive": "英文连笔字"
+    "cursive": "英文连笔字",
+    "cursiveWorks": "英文连笔字工作表"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -226,6 +227,8 @@
     "shareText": "我用「声音转手写」写了一段手写文稿 {link}",
     "sharePlain": "我用「声音转手写」写了一段手写文稿",
     "email": "邮件",
+    "barLabel": "分享这个工具",
+    "copyUrl": "复制链接",
     "copyImage": "复制图片",
     "copied": "已复制",
     "copyLink": "复制文字和链接",
@@ -252,9 +255,11 @@
     "redMargin": "红色页边线",
     "pageSize": "纸张大小",
     "downloadPdf": "下载 PDF",
+    "downloadPng": "下载 PNG",
     "seoTitle": "免费可打印信纸/方格纸模板 — 无水印、无需注册",
     "seoText": "所有样式按真实尺寸精确渲染(Letter 与 A4),无水印、无需注册。配合手写生成器使用效果更佳:打印出来手写,或让生成器直接在纸上写。",
-    "paperType": "纸张类型"
+    "paperType": "纸张类型",
+    "faqTitle": "常见问题"
   },
   "tracing": {
     "title": "姓名描红字帖生成器",
@@ -264,15 +269,19 @@
     "font": "字体",
     "showExample": "深色示例行",
     "rowHeight": "行高",
+    "textColor": "文字颜色",
     "downloadPdf": "下载 PDF",
+    "downloadPng": "下载 PNG",
     "seoTitle": "免费姓名描红字帖 — 家庭教育与课堂适用",
-    "seoText": "个性化描红字帖是教手写最有效的方式之一:孩子先描示例行,再反复练习。需要多少份就生成多少份,每份 PDF 按精确尺寸打印、无水印。"
+    "seoText": "个性化描红字帖是教手写最有效的方式之一:孩子先描示例行,再反复练习。需要多少份就生成多少份,每份 PDF 按精确尺寸打印、无水印。",
+    "faqTitle": "常见问题"
   },
   "cursive": {
     "title": "英文连笔字生成器",
     "intro": "输入或说出任意内容,即时变成流畅的英文连笔字——免费、无需注册。可导出图片或 PDF,也可打印后描红练习。",
     "seoTitle": "免费英文连笔字(Cursive)生成器",
-    "seoText": "连笔字(Cursive)在学校里已经很少教了,但它对手部精细动作、笔记速度都有实打实的好处。\n\n用法:输入或说出任意内容,选择两款连笔字体之一(Cedarville 适合日常手写,Dancing Script 更华丽),调节仿真度获得自然笔触,导出图片或 PDF——打印出来描红练习效果最佳。"
+    "seoText": "连笔字(Cursive)在学校里已经很少教了,但它对手部精细动作、笔记速度都有实打实的好处。\n\n用法:输入或说出任意内容,选择两款连笔字体之一(Cedarville 适合日常手写,Dancing Script 更华丽),调节仿真度获得自然笔触,导出图片或 PDF——打印出来描红练习效果最佳。",
+    "faqTitle": "常见问题"
   },
   "cursiveWorks": {
     "title": "英文连笔字描红工作表生成器",

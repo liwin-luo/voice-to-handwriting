@@ -2,7 +2,7 @@
   "meta": {
     "brand": "Voice to Handwriting",
     "title": "Voice to Handwriting - habla y conviértelo en escritura a mano",
-    "description": "Habla a la página, convierte tu voz en texto en tiempo real y dale aspecto de escritura a mano real. Exporta en PNG o PDF. Generador de escritura a mano gratuito.",
+    "description": "Habla a la página, convierte tu voz en texto al instante y dale aspecto de escritura a mano. Exporta en PNG o PDF. Generador gratuito de escritura a mano.",
     "about": {
       "title": "Acerca de",
       "description": "Voice to Handwriting es una herramienta web gratuita que convierte tu voz en páginas escritas a mano. Todo se procesa en tu navegador."
@@ -62,7 +62,8 @@
     "printables": "Herramientas de impresión",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nombres",
-    "cursive": "Letra cursiva"
+    "cursive": "Letra cursiva",
+    "cursiveWorks": "Fichas de cursiva"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -226,6 +227,8 @@
     "shareText": "Una página manuscrita creada con Voice to Handwriting {link}",
     "sharePlain": "Una página manuscrita creada con Voice to Handwriting",
     "email": "Correo",
+    "barLabel": "Compartir esta herramienta",
+    "copyUrl": "Copiar enlace",
     "copyImage": "Copiar imagen",
     "copied": "Copiado",
     "copyLink": "Copiar texto y enlace",
@@ -252,9 +255,11 @@
     "redMargin": "Margen rojo",
     "pageSize": "Tamaño",
     "downloadPdf": "Descargar PDF",
+    "downloadPng": "Descargar PNG",
     "seoTitle": "Papel rayado y cuadriculado para imprimir gratis",
     "seoText": "Todos los estilos se imprimen a tamaño real (Letter y A4), sin marca de agua ni registro. Combínalo con nuestro generador de escritura a mano.",
-    "paperType": "Tipo de papel"
+    "paperType": "Tipo de papel",
+    "faqTitle": "Preguntas frecuentes"
   },
   "tracing": {
     "title": "Generador de fichas de caligrafía con nombres",
@@ -264,15 +269,19 @@
     "font": "Fuente",
     "showExample": "Fila de ejemplo oscura",
     "rowHeight": "Altura de fila",
+    "textColor": "Color del texto",
     "downloadPdf": "Descargar PDF",
+    "downloadPng": "Descargar PNG",
     "seoTitle": "Fichas de nombres para imprimir gratis",
-    "seoText": "Las fichas personalizadas son una de las formas más efectivas de enseñar escritura. Genera las que necesites, sin marca de agua."
+    "seoText": "Las fichas personalizadas son una de las formas más efectivas de enseñar escritura. Genera las que necesites, sin marca de agua.",
+    "faqTitle": "Preguntas frecuentes"
   },
   "cursive": {
     "title": "Generador de letra cursiva",
     "intro": "Escribe o dicta lo que quieras y verlo en letra cursiva fluida — gratis, sin registro. Exporta como imagen o PDF, o imprime para practicar.",
     "seoTitle": "Generador gratis de letra cursiva",
-    "seoText": "La letra cursiva casi ya no se enseña en las escuelas, pero entrena la motricidad fina y mejora la velocidad al tomar notas.\n\nCómo usar: escribe o dicta, elige una de las dos fuentes cursivas, ajusta el realismo para un trazo natural y exporta. Imprime el PDF y repásalo para practicar."
+    "seoText": "La letra cursiva casi ya no se enseña en las escuelas, pero entrena la motricidad fina y mejora la velocidad al tomar notas.\n\nCómo usar: escribe o dicta, elige una de las dos fuentes cursivas, ajusta el realismo para un trazo natural y exporta. Imprime el PDF y repásalo para practicar.",
+    "faqTitle": "Preguntas frecuentes"
   },
   "cursiveWorks": {
     "title": "Generador de fichas de cursiva",

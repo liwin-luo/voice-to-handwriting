@@ -62,7 +62,8 @@
     "printables": "Ferramentas de impressão",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nomes",
-    "cursive": "Letra cursiva"
+    "cursive": "Letra cursiva",
+    "cursiveWorks": "Fichas de cursiva"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -226,6 +227,8 @@
     "shareText": "Uma página manuscrita criada com Voice to Handwriting {link}",
     "sharePlain": "Uma página manuscrita criada com Voice to Handwriting",
     "email": "E-mail",
+    "barLabel": "Compartilhar esta ferramenta",
+    "copyUrl": "Copiar link",
     "copyImage": "Copiar imagem",
     "copied": "Copiado",
     "copyLink": "Copiar texto e link",
@@ -252,9 +255,11 @@
     "redMargin": "Margem vermelha",
     "pageSize": "Tamanho",
     "downloadPdf": "Baixar PDF",
+    "downloadPng": "Baixar PNG",
     "seoTitle": "Papel pautado e quadriculado para imprimir grátis",
     "seoText": "Todos os estilos são impressos em dimensões reais (Letter e A4), sem marca d'água e sem cadastro. Combine com nosso gerador de escrita à mão.",
-    "paperType": "Tipo de papel"
+    "paperType": "Tipo de papel",
+    "faqTitle": "Perguntas frequentes"
   },
   "tracing": {
     "title": "Gerador de fichas de caligrafia com nomes",
@@ -264,15 +269,19 @@
     "font": "Fonte",
     "showExample": "Linha de exemplo escura",
     "rowHeight": "Altura da linha",
+    "textColor": "Cor do texto",
     "downloadPdf": "Baixar PDF",
+    "downloadPng": "Baixar PNG",
     "seoTitle": "Fichas de nomes para treinar a escrita grátis",
-    "seoText": "Fichas personalizadas são uma das formas mais eficazes de ensinar escrita. Gere quantas precisar, sem marca d'água."
+    "seoText": "Fichas personalizadas são uma das formas mais eficazes de ensinar escrita. Gere quantas precisar, sem marca d'água.",
+    "faqTitle": "Perguntas frequentes"
   },
   "cursive": {
     "title": "Gerador de letra cursiva",
     "intro": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar.",
     "seoTitle": "Gerador grátis de letra cursiva",
-    "seoText": "A letra cursiva quase não é mais ensinada nas escolas — mas treina a motricidade fina e acelera anotações.\n\nComo usar: digite ou fale, escolha uma das duas fontes cursivas, ajuste o realismo para um traço natural e exporte. Imprima o PDF e repasse para praticar."
+    "seoText": "A letra cursiva quase não é mais ensinada nas escolas — mas treina a motricidade fina e acelera anotações.\n\nComo usar: digite ou fale, escolha uma das duas fontes cursivas, ajuste o realismo para um traço natural e exporte. Imprima o PDF e repasse para praticar.",
+    "faqTitle": "Perguntas frequentes"
   },
   "cursiveWorks": {
     "title": "Gerador de fichas de cursiva",

@@ -62,7 +62,8 @@
     "printables": "인쇄 도구",
     "printablePaper": "인쇄용 종이 템플릿",
     "nameTracing": "이름 쓰기 연습장",
-    "cursive": "필기체 생성기"
+    "cursive": "필기체 생성기",
+    "cursiveWorks": "필기체 워크시트"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -226,6 +227,8 @@
     "shareText": "Voice to Handwriting로 만든 손글씨 문서 {link}",
     "sharePlain": "Voice to Handwriting로 만든 손글씨 문서",
     "email": "이메일",
+    "barLabel": "이 도구 공유하기",
+    "copyUrl": "링크 복사",
     "copyImage": "이미지 복사",
     "copied": "복사됨",
     "copyLink": "텍스트·링크 복사",
@@ -252,9 +255,11 @@
     "redMargin": "빨간 여백선",
     "pageSize": "용지 크기",
     "downloadPdf": "PDF 다운로드",
+    "downloadPng": "PNG 다운로드",
     "seoTitle": "무료 인쇄용 줄종이·모눈종이 템플릿",
     "seoText": "모든 스타일이 실제 크기에 정확히 인쇄됩니다. 워터마크 없음, 가입 불필요. 손글씨 도구와 함께 쓰면 더 좋아요.",
-    "paperType": "용지 유형"
+    "paperType": "용지 유형",
+    "faqTitle": "자주 묻는 질문"
   },
   "tracing": {
     "title": "이름 쓰기 연습장 생성기",
@@ -264,15 +269,19 @@
     "font": "글꼴",
     "showExample": "진한 예시 줄",
     "rowHeight": "행 높이",
+    "textColor": "글자 색",
     "downloadPdf": "PDF 다운로드",
+    "downloadPng": "PNG 다운로드",
     "seoTitle": "무료 이름 쓰기 연습장",
-    "seoText": "개인화된 쓰기 연습장은 손글씨 학습에 가장 효과적인 방법입니다. 필요한 만큼 무제한 생성하세요."
+    "seoText": "개인화된 쓰기 연습장은 손글씨 학습에 가장 효과적인 방법입니다. 필요한 만큼 무제한 생성하세요.",
+    "faqTitle": "자주 묻는 질문"
   },
   "cursive": {
     "title": "필기체( Cursive ) 생성기",
     "intro": "입력하거나 말하면 흐르는 필기체로 즉시 변환됩니다. 무료로 이미지나 PDF로 내보낼 수 있고, 인쇄해서 따라 쓰기 연습도 가능해요.",
     "seoTitle": "무료 필기체( Cursive ) 생성기",
-    "seoText": "필기체는 학교에서 거의 가르치지 않지만, 소근육 발달과 필기 속도에 실제로 도움이 됩니다.\n\n사용법: 입력이나 음성으로 문장을 만들고, 두 가지 필기체 글꼴 중 고르고, 리얼리즘을 조절해 내보내세요. PDF를 인쇄해 따라 쓰면 연습에 최고입니다."
+    "seoText": "필기체는 학교에서 거의 가르치지 않지만, 소근육 발달과 필기 속도에 실제로 도움이 됩니다.\n\n사용법: 입력이나 음성으로 문장을 만들고, 두 가지 필기체 글꼴 중 고르고, 리얼리즘을 조절해 내보내세요. PDF를 인쇄해 따라 쓰면 연습에 최고입니다.",
+    "faqTitle": "자주 묻는 질문"
   },
   "cursiveWorks": {
     "title": "필기체 워크시트 생성기",

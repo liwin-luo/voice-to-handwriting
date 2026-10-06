@@ -1,9 +1,21 @@
+import type { Metadata } from "next";
 import { ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import ToolWorkspace from "@/components/ToolWorkspace";
 import HomeToolsSection from "@/components/HomeToolsSection";
 import { SITE } from "@/lib/site";
+import { buildAlternates } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: buildAlternates("/", locale as Locale) };
+}
 
 export default async function HomePage({
   params,
@@ -23,7 +35,7 @@ export default async function HomePage({
     description: meta("description"),
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Web",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "CNY" },
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   };
 
   return (

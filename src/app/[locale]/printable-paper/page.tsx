@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import PaperGenerator from "@/components/PaperGenerator";
+import ToolFaq from "@/components/ToolFaq";
+import { PAPER_FAQS, getLocalizedFaqs } from "@/content/faqs";
+import { buildAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -16,7 +19,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.printable" });
-  return { title: t("title"), description: t("description") };
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: buildAlternates("/printable-paper", locale as Locale),
+  };
 }
 
 export default async function PrintablePaperPage({
@@ -42,6 +49,7 @@ export default async function PrintablePaperPage({
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
         <p>{t("seoText")}</p>
       </section>
+      <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(PAPER_FAQS, locale as Locale)} />
     </main>
   );
 }

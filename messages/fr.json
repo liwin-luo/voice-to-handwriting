@@ -62,7 +62,8 @@
     "printables": "Outils d'impression",
     "printablePaper": "Papier à imprimer",
     "nameTracing": "Fiches de prénoms",
-    "cursive": "Écriture cursive"
+    "cursive": "Écriture cursive",
+    "cursiveWorks": "Fiches d'écriture cursive"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -226,6 +227,8 @@
     "shareText": "Une page manuscrite créée avec Voice to Handwriting {link}",
     "sharePlain": "Une page manuscrite créée avec Voice to Handwriting",
     "email": "E-mail",
+    "barLabel": "Partager cet outil",
+    "copyUrl": "Copier le lien",
     "copyImage": "Copier l'image",
     "copied": "Copié",
     "copyLink": "Copier le texte et le lien",
@@ -252,9 +255,11 @@
     "redMargin": "Marge rouge",
     "pageSize": "Format",
     "downloadPdf": "Télécharger le PDF",
+    "downloadPng": "Télécharger PNG",
     "seoTitle": "Papier ligné et quadrillé à imprimer gratuitement",
     "seoText": "Tous les styles s'impriment aux dimensions réelles (Letter et A4), sans filigrane ni inscription. Combinez-le avec notre outil d'écriture manuscrite.",
-    "paperType": "Type de papier"
+    "paperType": "Type de papier",
+    "faqTitle": "Questions fréquentes"
   },
   "tracing": {
     "title": "Générateur de fiches d'écriture prénom",
@@ -264,15 +269,19 @@
     "font": "Police",
     "showExample": "Ligne exemple en foncé",
     "rowHeight": "Hauteur de ligne",
+    "textColor": "Couleur du texte",
     "downloadPdf": "Télécharger le PDF",
+    "downloadPng": "Télécharger PNG",
     "seoTitle": "Fiches de prénoms à repasser gratuites",
-    "seoText": "Les fiches personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture. Générez-en autant que nécessaire, sans filigrane."
+    "seoText": "Les fiches personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture. Générez-en autant que nécessaire, sans filigrane.",
+    "faqTitle": "Questions fréquentes"
   },
   "cursive": {
     "title": "Générateur d'écriture cursive",
     "intro": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner.",
     "seoTitle": "Générateur gratuit d'écriture cursive",
-    "seoText": "L'écriture cursive n'est presque plus enseignée — pourtant elle développe la motricité fine et la vitesse de prise de notes.\n\nMode d'emploi : tapez ou dictez, choisissez l'une des deux polices cursives, ajustez le réalisme et exportez. Imprimez le PDF et repassez dessus pour vous entraîner."
+    "seoText": "L'écriture cursive n'est presque plus enseignée — pourtant elle développe la motricité fine et la vitesse de prise de notes.\n\nMode d'emploi : tapez ou dictez, choisissez l'une des deux polices cursives, ajustez le réalisme et exportez. Imprimez le PDF et repassez dessus pour vous entraîner.",
+    "faqTitle": "Questions fréquentes"
   },
   "cursiveWorks": {
     "title": "Générateur de fiches d'écriture cursive",

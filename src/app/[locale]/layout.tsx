@@ -8,6 +8,8 @@ import { SITE } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ConsentBanner from "@/components/ConsentBanner";
+import FontStylesheets from "@/components/FontStylesheets";
+import { DEFAULT_FONT_CSS, ASYNC_FONT_CSS } from "@/lib/fonts";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -45,19 +47,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="h-full antialiased">
       <head>
-        {/* 自托管 OFL 手写字体(cn-font-split 切片,按需加载) */}
-        <link rel="stylesheet" href="/fonts/mashanzheng/result.css" />
-        <link rel="stylesheet" href="/fonts/longcang/result.css" />
-        <link rel="stylesheet" href="/fonts/liujianmaocao/result.css" />
-        <link rel="stylesheet" href="/fonts/caveat/result.css" />
-        <link rel="stylesheet" href="/fonts/zhimangxing/result.css" />
-        <link rel="stylesheet" href="/fonts/zcoolkuaile/result.css" />
-        <link rel="stylesheet" href="/fonts/lxgwwenkai/result.css" />
-        <link rel="stylesheet" href="/fonts/patrickhand/result.css" />
-        <link rel="stylesheet" href="/fonts/kalam/result.css" />
-        <link rel="stylesheet" href="/fonts/indieflower/result.css" />
-        <link rel="stylesheet" href="/fonts/dancingscript/result.css" />
-        <link rel="stylesheet" href="/fonts/cedarvillecursive/result.css" />
+        {/* 自托管 OFL 手写字体(cn-font-split 切片,按需加载)。
+            仅默认字体阻塞加载,其余 preload + 水合后注入,避免 11 个 CSS 阻塞首屏 */}
+        <link rel="stylesheet" href={DEFAULT_FONT_CSS} />
+        {ASYNC_FONT_CSS.map((href) => (
+          <link key={href} rel="preload" href={href} as="style" />
+        ))}
         {/* AdSense:配置环境变量后自动注入 */}
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
           <script
@@ -73,6 +68,7 @@ export default async function LocaleLayout({
           <div className="flex-1">{children}</div>
           <SiteFooter />
           <ConsentBanner />
+          <FontStylesheets />
         </NextIntlClientProvider>
         <Analytics />
       </body>

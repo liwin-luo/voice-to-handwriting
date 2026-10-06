@@ -15,6 +15,219 @@ export function getFaq(faq: FaqItem, locale: Locale): FaqEntry {
   return faq.i18n[locale] ?? faq.i18n.en!;
 }
 
+/** 工具页 FAQ:仅返回当前语言有翻译的条目(避免英文 FAQ 出现在其他语言页面),
+ *  新语言翻译补齐后自动出现 */
+export function getLocalizedFaqs(faqs: FaqItem[], locale: Locale): FaqEntry[] {
+  return faqs.filter((f) => f.i18n[locale]).map((f) => f.i18n[locale]!);
+}
+
+/** /cursive 工具页 FAQ(en+zh 已译;其他语言后补) */
+export const CURSIVE_FAQS: FaqItem[] = [
+  {
+    id: "cursive-free",
+    i18n: {
+      en: {
+        q: "Is the cursive writing generator free?",
+        a: "Yes — no signup, no watermark. Both cursive fonts are open source, and PNG/PDF exports are unlimited.",
+      },
+      zh: {
+        q: "这个花体生成器免费吗?",
+        a: "免费——无需注册、没有水印。两种花体字均为开源字体,PNG/PDF 导出不限次数。",
+      },
+    },
+  },
+  {
+    id: "cursive-fonts",
+    i18n: {
+      en: {
+        q: "Which cursive fonts are available?",
+        a: "Two: Cedarville Cursive for everyday penmanship and Dancing Script for formal, looped writing. Size, realism and ink are adjustable before export.",
+      },
+      zh: {
+        q: "有哪些花体字体?",
+        a: "两种:Cedarville Cursive(日常手写体)和 Dancing Script(正式连笔体)。导出前可调整字号、仿真度和墨色。",
+      },
+    },
+  },
+  {
+    id: "cursive-trace",
+    i18n: {
+      en: {
+        q: "Can I practice cursive by tracing the output?",
+        a: "Yes — export the PDF, print it, and trace over the letters. Pair it with three-line handwriting paper for full worksheets; our beginner's guide walks through the method.",
+      },
+      zh: {
+        q: "可以照着打印稿练字吗?",
+        a: "可以——导出 PDF 打印后在字母上描摹,再配合三线格练字纸效果更好;入门教程里有完整方法。",
+      },
+    },
+  },
+  {
+    id: "cursive-name",
+    i18n: {
+      en: {
+        q: "Can I see my own name in cursive?",
+        a: "Type your name in the text box and it renders instantly — handy for signature ideas or for comparing both fonts before you practice.",
+      },
+      zh: {
+        q: "能看到自己名字的花体效果吗?",
+        a: "在文本框输入名字即可实时预览——想设计签名或对比两种字体时很方便。",
+      },
+    },
+  },
+  {
+    id: "cursive-voice",
+    i18n: {
+      en: {
+        q: "Does voice input work for cursive too?",
+        a: "It's the same editor: speak and the words render in cursive. Speech recognition works best in desktop Chrome / Edge; typing always works.",
+      },
+      zh: {
+        q: "语音输入也能生成花体吗?",
+        a: "用的是同一个编辑器:说话内容会以花体呈现。语音识别在桌面版 Chrome/Edge 效果最好,打字输入则不受限制。",
+      },
+    },
+  },
+];
+
+/** /name-tracing 工具页 FAQ */
+export const TRACING_FAQS: FaqItem[] = [
+  {
+    id: "tracing-free",
+    i18n: {
+      en: {
+        q: "Is the name tracing generator free?",
+        a: "Yes — unlimited worksheets, no account, no watermark. Everything renders in your browser and nothing you type is stored.",
+      },
+      zh: {
+        q: "姓名描红生成器免费吗?",
+        a: "免费——练习纸不限量、无需账号、无水印。全部在浏览器本地生成,输入的内容不会被保存。",
+      },
+    },
+  },
+  {
+    id: "tracing-dotted",
+    i18n: {
+      en: {
+        q: "Are the tracing letters dotted outlines?",
+        a: "No — the tracing rows are solid light-gray letters to write over. If your child needs numbered stroke arrows, pair the sheets with letter-formation cards.",
+      },
+      zh: {
+        q: "描红字母是虚线轮廓吗?",
+        a: "不是——描红行是浅灰实心字母,直接在上面书写即可。如果孩子需要笔画箭头提示,可以配合字母笔顺卡片使用。",
+      },
+    },
+  },
+  {
+    id: "tracing-class",
+    i18n: {
+      en: {
+        q: "Can I make worksheets for the whole class?",
+        a: "Type one name per line; the page loops through every name with a dark example row followed by light-gray tracing rows. Print one copy per student.",
+      },
+      zh: {
+        q: "能给全班同学生成练习纸吗?",
+        a: "每行输入一个姓名,页面会循环填充:每个名字先深色示范,后浅灰描红。每位学生打印一页即可。",
+      },
+    },
+  },
+  {
+    id: "tracing-font",
+    i18n: {
+      en: {
+        q: "Which font should I choose for preschoolers?",
+        a: "Patrick Hand — clean print-style letterforms. Start with the tallest row height and shrink it as control improves.",
+      },
+      zh: {
+        q: "学龄前孩子选什么字体?",
+        a: "推荐 Patrick Hand——接近教材的印刷体风格。行高先调到最大,等控制力提升后再逐步调小。",
+      },
+    },
+  },
+  {
+    id: "tracing-cursive",
+    i18n: {
+      en: {
+        q: "Can I practice cursive names too?",
+        a: "Yes — pick Dancing Script or Cedarville Cursive and the same three-line bands render the name in cursive for tracing.",
+      },
+      zh: {
+        q: "也能练花体名字吗?",
+        a: "可以——选择 Dancing Script 或 Cedarville Cursive,同样的三线格会以花体呈现名字供描红。",
+      },
+    },
+  },
+];
+
+/** /printable-paper 工具页 FAQ */
+export const PAPER_FAQS: FaqItem[] = [
+  {
+    id: "paper-free",
+    i18n: {
+      en: {
+        q: "Is the printable lined paper free?",
+        a: "Yes — every type and size is free, with no signup and no watermark on the PDF.",
+      },
+      zh: {
+        q: "可打印横线纸免费吗?",
+        a: "免费——所有纸型和尺寸都免费,无需注册,PDF 无水印。",
+      },
+    },
+  },
+  {
+    id: "paper-college-wide",
+    i18n: {
+      en: {
+        q: "What's the difference between college ruled and wide ruled?",
+        a: "College ruled lines are narrower (about 7mm), wide ruled wider (about 8.7mm). Younger writers usually get wide ruled; the spacing slider covers both and everything in between.",
+      },
+      zh: {
+        q: "College ruled 和 wide ruled 有什么区别?",
+        a: "College ruled 行距较窄(约 7mm),wide ruled 较宽(约 8.7mm)。低年级一般用宽行距;行距滑杆可以覆盖两种及之间的任意规格。",
+      },
+    },
+  },
+  {
+    id: "paper-a4",
+    i18n: {
+      en: {
+        q: "Does it work for A4 paper?",
+        a: "Yes — toggle between US Letter (8.5×11\") and A4 before downloading.",
+      },
+      zh: {
+        q: "支持 A4 纸吗?",
+        a: "支持——下载前可在 US Letter(8.5×11 英寸)和 A4 之间切换。",
+      },
+    },
+  },
+  {
+    id: "paper-color",
+    i18n: {
+      en: {
+        q: "Can I change the line color?",
+        a: "Yes — pick any color with the color picker; light gray is a popular low-contrast option for sensitive readers.",
+      },
+      zh: {
+        q: "可以换线条颜色吗?",
+        a: "可以——取色器任选颜色;浅灰色对比度低,适合对格线敏感的书写者。",
+      },
+    },
+  },
+  {
+    id: "paper-margin",
+    i18n: {
+      en: {
+        q: "Can I remove the red margin line?",
+        a: "Yes — toggle it off for full-width pages, or keep it for the classic notebook look.",
+      },
+      zh: {
+        q: "可以去掉红色边线吗?",
+        a: "可以——关闭开关即得整页通栏,保留则是经典笔记本样式。",
+      },
+    },
+  },
+];
+
 /** 站点 FAQ(8 语言;新问题:加一个 item 并补齐各语言) */
 export const FAQ_ITEMS: FaqItem[] = [
   {

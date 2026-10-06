@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { FilePdf } from "@phosphor-icons/react";
+import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 
@@ -24,6 +24,7 @@ export default function TracingGenerator({
   const [fontId, setFontId] = useState(defaultFontId);
   const [showExample, setShowExample] = useState(true);
   const [bandH, setBandH] = useState(defaultBandH);
+  const [textColor, setTextColor] = useState("#3a3a3a");
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [w, h] = LETTER;
 
@@ -34,14 +35,19 @@ export default function TracingGenerator({
     // 确保字体就绪后再绘制
     document.fonts.load(`80px "${family}"`).then(() => draw());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [names, fontId, showExample, bandH]);
+  }, [names, fontId, showExample, bandH, textColor]);
 
-  function draw() {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    canvas.width = w;
-    canvas.height = h;
-    const ctx = canvas.getContext("2d")!;
+  /** 支持传入离屏 ctx,供导出更高分辨率的 PNG;不传时重置并绘制预览画布 */
+  function draw(target?: CanvasRenderingContext2D) {
+    let ctx: CanvasRenderingContext2D | null = target ?? null;
+    if (!ctx) {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+      canvas.width = w;
+      canvas.height = h;
+      ctx = canvas.getContext("2d");
+    }
+    if (!ctx) return;
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, w, h);
 
@@ -84,11 +90,13 @@ export default function TracingGenerator({
       const fontSize = Math.round(H * 0.62);
       ctx.font = `${fontSize}px "${family}"`;
       ctx.textBaseline = "alphabetic";
-      // 示例行深色,描红行浅灰
-      // 每个名字的第一遍为深色示例,后续循环为浅色描红
+      // 示例行用所选颜色,描红行用同色 28% 不透明度浅化,保持可描性
       const isExampleRow = showExample && row < rows.length;
-      ctx.fillStyle = isExampleRow ? "#3a3a3a" : "#c9c9c9";
+      ctx.save();
+      ctx.globalAlpha = isExampleRow ? 1 : 0.28;
+      ctx.fillStyle = textColor;
       ctx.fillText(text, 60, y0 + H - 6);
+      ctx.restore();
     }
     void showExample;
   }
@@ -99,6 +107,27 @@ export default function TracingGenerator({
     const pdf = new jsPDF({ unit: "px", format: [w, h], orientation: "portrait" });
     pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, w, h);
     pdf.save("name-tracing-worksheet.pdf");
+  };
+
+  /** 离屏 2x 重绘,导出清晰的 PNG 图片 */
+  const downloadPng = () => {
+    const scale = 2;
+    const off = document.createElement("canvas");
+    off.width = w * scale;
+    off.height = h * scale;
+    const ctx = off.getContext("2d");
+    if (!ctx) return;
+    ctx.scale(scale, scale);
+    draw(ctx);
+    off.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "name-tracing-worksheet.png";
+      a.click();
+      URL.revokeObjectURL(url);
+    }, "image/png");
   };
 
   return (
@@ -152,10 +181,21 @@ export default function TracingGenerator({
           </span>
         </label>
 
-        <button onClick={downloadPdf} className="btn btn-primary px-4 py-2.5 text-sm">
-          <FilePdf className="size-4" />
-          {t("downloadPdf")}
-        </button>
+        <label className="flex items-center justify-between gap-2 text-sm">
+          <span className="text-zinc-700">{t("textColor")}</span>
+          <input type="color" value={textColor} onChange={(e) => setTextColor(e.target.value)} className="color-swatch" />
+        </label>
+
+        <div className="flex gap-2">
+          <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">
+            <FilePdf className="size-4" />
+            {t("downloadPdf")}
+          </button>
+          <button onClick={downloadPng} className="btn btn-ghost flex-1 px-4 py-2.5 text-sm">
+            <ImageIcon className="size-4 text-zinc-500" />
+            {t("downloadPng")}
+          </button>
+        </div>
       </aside>
 
       <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">

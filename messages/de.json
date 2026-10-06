@@ -62,7 +62,8 @@
     "printables": "Drucktools",
     "printablePaper": "Druckpapier-Vorlagen",
     "nameTracing": "Schreibübungsblätter",
-    "cursive": "Schreibschrift-Generator"
+    "cursive": "Schreibschrift-Generator",
+    "cursiveWorks": "Schreibschrift-Arbeitsblätter"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -226,6 +227,8 @@
     "shareText": "Eine handgeschriebene Seite mit Voice to Handwriting erstellt {link}",
     "sharePlain": "Eine handgeschriebene Seite mit Voice to Handwriting erstellt",
     "email": "E-Mail",
+    "barLabel": "Dieses Tool teilen",
+    "copyUrl": "Link kopieren",
     "copyImage": "Bild kopieren",
     "copied": "Kopiert",
     "copyLink": "Text & Link kopieren",
@@ -252,9 +255,11 @@
     "redMargin": "Roter Rand",
     "pageSize": "Papierformat",
     "downloadPdf": "PDF herunterladen",
+    "downloadPng": "PNG herunterladen",
     "seoTitle": "Kostenloses liniertes Papier zum Ausdrucken",
     "seoText": "Alle Styles werden in exakten realen Abmessungen gedruckt (Letter und A4), ohne Wasserzeichen und ohne Anmeldung. Kombinierbar mit unserem Handschrift-Tool.",
-    "paperType": "Papiertyp"
+    "paperType": "Papiertyp",
+    "faqTitle": "Häufige Fragen"
   },
   "tracing": {
     "title": "Namens-Schreibübungs-Generator",
@@ -264,15 +269,19 @@
     "font": "Schrift",
     "showExample": "Dunkle Beispielzeile",
     "rowHeight": "Zeilenhöhe",
+    "textColor": "Textfarbe",
     "downloadPdf": "PDF herunterladen",
+    "downloadPng": "PNG herunterladen",
     "seoTitle": "Kostenlose Namens-Schreibübungsblätter",
-    "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Schreiben zu lernen. Unbegrenzt generierbar, ohne Wasserzeichen."
+    "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Schreiben zu lernen. Unbegrenzt generierbar, ohne Wasserzeichen.",
+    "faqTitle": "Häufige Fragen"
   },
   "cursive": {
     "title": "Schreibschrift-Generator",
     "intro": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken.",
     "seoTitle": "Kostenloser Schreibschrift-Generator",
-    "seoText": "Schreibschrift wird kaum noch unterrichtet — dabei trainiert sie Feinmotorik und Schreibtempo und verbindet dich mit einem Jahrhundert voller Briefe.\n\nSo geht's: Text eintippen oder diktieren, eine der beiden Schreibschrift-Schriften wählen, Realismus anpassen und exportieren. Das PDF drucken und zum Üben nachspuren."
+    "seoText": "Schreibschrift wird kaum noch unterrichtet — dabei trainiert sie Feinmotorik und Schreibtempo und verbindet dich mit einem Jahrhundert voller Briefe.\n\nSo geht's: Text eintippen oder diktieren, eine der beiden Schreibschrift-Schriften wählen, Realismus anpassen und exportieren. Das PDF drucken und zum Üben nachspuren.",
+    "faqTitle": "Häufige Fragen"
   },
   "cursiveWorks": {
     "title": "Schreibschrift-Arbeitsblatt-Generator",

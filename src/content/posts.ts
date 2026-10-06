@@ -190,7 +190,7 @@ const US_POSTS: Post[] = [
     slug: "name-tracing-generator",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/tracing-worksheet.png",
     i18n: {
       en: {
         title: "Free name tracing generator: editable worksheets to print",
@@ -203,7 +203,7 @@ const US_POSTS: Post[] = [
     slug: "free-printable-lined-paper",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/lined-paper.png",
     i18n: {
       en: {
         title: "Free printable lined paper: college, wide, graph & 3-line",
@@ -216,7 +216,7 @@ const US_POSTS: Post[] = [
     slug: "cursive-practice-worksheets",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/cursive-workspace.png",
     i18n: {
       en: {
         title: "Custom cursive practice worksheets, free and printable",
@@ -229,7 +229,7 @@ const US_POSTS: Post[] = [
     slug: "kindergarten-handwriting-paper",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/handwriting-paper.png",
     i18n: {
       en: {
         title: "Kindergarten handwriting paper: the three lines, explained",
@@ -242,7 +242,7 @@ const US_POSTS: Post[] = [
     slug: "letter-to-santa-template",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/santa-letter.png",
     i18n: {
       en: {
         title: "Free printable letter to Santa template (kids can write it)",
@@ -255,7 +255,7 @@ const US_POSTS: Post[] = [
     slug: "handwritten-thank-you-notes",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/thank-you-note.png",
     i18n: {
       en: {
         title: "How to write a thank you note people keep (with examples)",
@@ -268,7 +268,7 @@ const US_POSTS: Post[] = [
     slug: "diy-wedding-calligraphy",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/wedding-script.png",
     i18n: {
       en: {
         title: "DIY wedding calligraphy: place cards & signs without a pro",
@@ -281,7 +281,7 @@ const US_POSTS: Post[] = [
     slug: "pen-pal-letters-for-kids",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/pen-pal-letter.png",
     i18n: {
       en: {
         title: "Pen pal letters for kids: friendly letter format & prompts",
@@ -294,7 +294,7 @@ const US_POSTS: Post[] = [
     slug: "how-to-improve-handwriting-adults",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/adult-practice.png",
     i18n: {
       en: {
         title: "How to improve your handwriting as an adult: 4-week plan",
@@ -307,7 +307,7 @@ const US_POSTS: Post[] = [
     slug: "handwriting-practice-struggling-writers",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/tracing-worksheet.png",
     i18n: {
       en: {
         title: "Handwriting practice for struggling writers (dysgraphia-friendly)",
@@ -326,7 +326,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "how-to-write-in-cursive",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/cursive-workspace.png",
     i18n: {
       en: {
         title: "How to write in cursive: a beginner's guide that works",
@@ -339,7 +339,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "cursive-alphabet-chart",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/cursive-alphabet.png",
     i18n: {
       en: {
         title: "The cursive alphabet, organized the way you'll learn it",
@@ -352,7 +352,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "cursive-name-signature",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/cursive-signature.png",
     i18n: {
       en: {
         title: "How to write your name in cursive (and build a signature)",
@@ -365,7 +365,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "is-cursive-still-taught",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/cursive-workspace.png",
     i18n: {
       en: {
         title: "Is cursive still taught in schools? The state of cursive",
@@ -378,7 +378,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "cursive-vs-print",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/cursive-workspace.png",
     i18n: {
       en: {
         title: "Cursive vs print: which handwriting style should you learn?",
@@ -391,7 +391,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "how-to-teach-cursive-kids",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "",
+    image: "/blog/tracing-cursive.png",
     i18n: {
       en: {
         title: "How to teach cursive writing to kids at home (10-min lessons)",

@@ -6,9 +6,10 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { routing, type Locale } from "@/i18n/routing";
 import { POSTS, getPostMeta } from "@/content/posts";
-import { BLOG_CONTENT } from "@/content/blog/registry";
+import { BLOG_CONTENT, postLocales } from "@/content/blog/registry";
 import ProseShell from "@/components/ProseShell";
 import { SITE } from "@/lib/site";
+import { buildAlternates, localizedUrl } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -23,7 +24,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   const meta = getPostMeta(slug, locale as Locale);
-  return meta ? { title: meta.title, description: meta.description } : {};
+  // 只声明有正文的语言变体,其余语言 URL 是 404
+  return meta
+    ? {
+        title: meta.title,
+        description: meta.description,
+        alternates: buildAlternates(`/blog/${slug}`, locale as Locale, postLocales(slug)),
+      }
+    : {};
 }
 
 /** 粗略阅读时长:中文按字数、拉丁按词数估算 */
@@ -75,7 +83,7 @@ export default async function BlogPostPage({
     author: { "@type": "Organization", name: ta("name"), url: `${SITE.url}/about` },
     publisher: { "@type": "Organization", name: ta("name"), url: SITE.url },
     image: `${SITE.url}${post?.image ?? ""}`,
-    mainEntityOfPage: `${SITE.url}/${locale === "zh" ? "" : locale + "/"}blog/${slug}`,
+    mainEntityOfPage: localizedUrl(`/blog/${slug}`, locale),
   };
 
   return (

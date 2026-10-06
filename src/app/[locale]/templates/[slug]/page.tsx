@@ -8,6 +8,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { getTemplate, getTemplateMeta, TEMPLATES } from "@/content/templates";
 import { FONTS } from "@/stores/useEditorStore";
 import { getPaper } from "@/engine/paper";
+import { buildAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => TEMPLATES.map((t) => ({ locale, slug: t.slug })));
@@ -21,7 +22,13 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const tplObj = getTemplate(slug);
   const meta = tplObj ? getTemplateMeta(tplObj, locale as Locale)! : undefined;
-  return meta ? { title: meta.title, description: meta.description } : {};
+  return meta
+    ? {
+        title: meta.title,
+        description: meta.description,
+        alternates: buildAlternates(`/templates/${slug}`, locale as Locale),
+      }
+    : {};
 }
 
 export default async function TemplateDetail({
