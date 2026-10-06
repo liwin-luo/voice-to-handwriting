@@ -43,6 +43,10 @@
     "tracing": {
       "title": "Générateur gratuit de fiches d'écriture prénom",
       "description": "Créez des fiches d'écriture personnalisées avec lignes à repasser et ligne exemple en foncé. Téléchargement PDF, idéal pour l'école à la maison."
+    },
+    "cursive": {
+      "title": "Générateur d'écriture cursive - Free",
+      "description": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner."
     }
   },
   "nav": {
@@ -123,7 +127,13 @@
       "style": "Style de lignes",
       "bg": "Couleur du papier",
       "line": "Couleur des lignes",
-      "spacing": "Interligne"
+      "spacing": "Interligne",
+      "image": "Image de fond",
+      "upload": "Ajouter une image",
+      "uploading": "Traitement…",
+      "removeImage": "Supprimer l’image",
+      "cover": "Remplir",
+      "tile": "Motif"
     },
     "importAudio": "Importer un fichier audio",
     "modelFast": "Rapide",
@@ -197,6 +207,8 @@
     "share": "Partager sur",
     "shareSystem": "Plus d'options",
     "shareText": "Une page manuscrite créée avec Voice to Handwriting {link}",
+    "sharePlain": "Une page manuscrite créée avec Voice to Handwriting",
+    "email": "E-mail",
     "copyImage": "Copier l'image",
     "copied": "Copié",
     "copyLink": "Copier le texte et le lien",
@@ -205,7 +217,8 @@
     "prevPage": "Page précédente",
     "nextPage": "Page suivante",
     "download": "Télécharger cette page",
-    "shareHint": "Astuce : copiez d'abord l'image, puis collez-la directement dans votre publication."
+    "shareHint": "Astuce : copiez d'abord l'image, puis collez-la directement dans votre publication.",
+    "pinDownload": "Télécharger l'épingle Pinterest (2:3)"
   },
   "printable": {
     "title": "Générateur de papier imprimable gratuit",
@@ -237,5 +250,11 @@
     "downloadPdf": "Télécharger le PDF",
     "seoTitle": "Fiches de prénoms à repasser gratuites",
     "seoText": "Les fiches personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture. Générez-en autant que nécessaire, sans filigrane."
+  },
+  "cursive": {
+    "title": "Générateur d'écriture cursive",
+    "intro": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner.",
+    "seoTitle": "Générateur gratuit d'écriture cursive",
+    "seoText": "L'écriture cursive n'est presque plus enseignée — pourtant elle développe la motricité fine et la vitesse de prise de notes.\n\nMode d'emploi : tapez ou dictez, choisissez l'une des deux polices cursives, ajustez le réalisme et exportez. Imprimez le PDF et repassez dessus pour vous entraîner."
   }
 }

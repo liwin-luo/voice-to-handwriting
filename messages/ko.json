@@ -43,6 +43,10 @@
     "tracing": {
       "title": "무료 이름 쓰기 연습장 생성기",
       "description": "이름을 입력하면 진한 예시 줄과 따라 쓰기 줄의 연습장을 생성해 PDF로 다운로드할 수 있습니다. homeschool에 적합."
+    },
+    "cursive": {
+      "title": "필기체( Cursive ) 생성기 - Free",
+      "description": "입력하거나 말하면 흐르는 필기체로 즉시 변환됩니다. 무료로 이미지나 PDF로 내보낼 수 있고, 인쇄해서 따라 쓰기 연습도 가능해요."
     }
   },
   "nav": {
@@ -133,7 +137,13 @@
       "style": "줄 스타일",
       "bg": "용지 색",
       "line": "줄 색",
-      "spacing": "줄 간격"
+      "spacing": "줄 간격",
+      "image": "배경 이미지",
+      "upload": "이미지 추가",
+      "uploading": "처리 중…",
+      "removeImage": "이미지 제거",
+      "cover": "채우기",
+      "tile": "타일"
     },
     "customColor": "커스텀 색상",
     "preview": "미리보기"
@@ -197,6 +207,8 @@
     "share": "공유하기",
     "shareSystem": "더보기",
     "shareText": "Voice to Handwriting로 만든 손글씨 문서 {link}",
+    "sharePlain": "Voice to Handwriting로 만든 손글씨 문서",
+    "email": "이메일",
     "copyImage": "이미지 복사",
     "copied": "복사됨",
     "copyLink": "텍스트·링크 복사",
@@ -205,7 +217,8 @@
     "prevPage": "이전 페이지",
     "nextPage": "다음 페이지",
     "download": "이 페이지 저장",
-    "shareHint": "팁: 이미지를 먼저 복사하면 SNS에 바로 붙여넣을 수 있어요."
+    "shareHint": "팁: 이미지를 먼저 복사하면 SNS에 바로 붙여넣을 수 있어요.",
+    "pinDownload": "Pinterest 핀 다운로드(2:3)"
   },
   "printable": {
     "title": "무료 인쇄용 종이 생성기",
@@ -237,5 +250,11 @@
     "downloadPdf": "PDF 다운로드",
     "seoTitle": "무료 이름 쓰기 연습장",
     "seoText": "개인화된 쓰기 연습장은 손글씨 학습에 가장 효과적인 방법입니다. 필요한 만큼 무제한 생성하세요."
+  },
+  "cursive": {
+    "title": "필기체( Cursive ) 생성기",
+    "intro": "입력하거나 말하면 흐르는 필기체로 즉시 변환됩니다. 무료로 이미지나 PDF로 내보낼 수 있고, 인쇄해서 따라 쓰기 연습도 가능해요.",
+    "seoTitle": "무료 필기체( Cursive ) 생성기",
+    "seoText": "필기체는 학교에서 거의 가르치지 않지만, 소근육 발달과 필기 속도에 실제로 도움이 됩니다.\n\n사용법: 입력이나 음성으로 문장을 만들고, 두 가지 필기체 글꼴 중 고르고, 리얼리즘을 조절해 내보내세요. PDF를 인쇄해 따라 쓰면 연습에 최고입니다."
   }
 }

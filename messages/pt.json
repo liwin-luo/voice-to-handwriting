@@ -43,6 +43,10 @@
     "tracing": {
       "title": "Gerador grátis de fichas de nomes para caligrafia",
       "description": "Crie fichas de caligrafia personalizadas com nomes, linha de exemplo escura e linhas para treinar. Download em PDF."
+    },
+    "cursive": {
+      "title": "Gerador de letra cursiva - Free",
+      "description": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar."
     }
   },
   "nav": {
@@ -123,7 +127,13 @@
       "style": "Estilo das linhas",
       "bg": "Cor do papel",
       "line": "Cor das linhas",
-      "spacing": "Espaçamento"
+      "spacing": "Espaçamento",
+      "image": "Imagem de fundo",
+      "upload": "Enviar imagem",
+      "uploading": "Processando…",
+      "removeImage": "Remover imagem",
+      "cover": "Preencher",
+      "tile": "Mosaico"
     },
     "importAudio": "Importar áudio",
     "modelFast": "Rápido",
@@ -197,6 +207,8 @@
     "share": "Compartilhar no",
     "shareSystem": "Mais opções",
     "shareText": "Uma página manuscrita criada com Voice to Handwriting {link}",
+    "sharePlain": "Uma página manuscrita criada com Voice to Handwriting",
+    "email": "E-mail",
     "copyImage": "Copiar imagem",
     "copied": "Copiado",
     "copyLink": "Copiar texto e link",
@@ -205,7 +217,8 @@
     "prevPage": "Página anterior",
     "nextPage": "Próxima página",
     "download": "Baixar esta página",
-    "shareHint": "Dica: copie a imagem e cole direto na sua publicação."
+    "shareHint": "Dica: copie a imagem e cole direto na sua publicação.",
+    "pinDownload": "Baixar pin do Pinterest (2:3)"
   },
   "printable": {
     "title": "Gerador de papel para imprimir grátis",
@@ -237,5 +250,11 @@
     "downloadPdf": "Baixar PDF",
     "seoTitle": "Fichas de nomes para treinar a escrita grátis",
     "seoText": "Fichas personalizadas são uma das formas mais eficazes de ensinar escrita. Gere quantas precisar, sem marca d'água."
+  },
+  "cursive": {
+    "title": "Gerador de letra cursiva",
+    "intro": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar.",
+    "seoTitle": "Gerador grátis de letra cursiva",
+    "seoText": "A letra cursiva quase não é mais ensinada nas escolas — mas treina a motricidade fina e acelera anotações.\n\nComo usar: digite ou fale, escolha uma das duas fontes cursivas, ajuste o realismo para um traço natural e exporte. Imprima o PDF e repasse para praticar."
   }
 }

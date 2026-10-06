@@ -42,6 +42,10 @@ export interface CustomPaperConfig {
   line: string;
   spacing: number; // px,会被钳制到 24~64
   mode: "blank" | "ruled" | "grid";
+  /** 可选背景图(data URL),铺在底色之上、格线之下 */
+  image?: string;
+  /** cover:等比缩放铺满;tile:原始尺寸平铺 */
+  imageFit?: "cover" | "tile";
 }
 
 /** 由用户配置构建自定义纸张(纯函数,可测试) */
@@ -51,10 +55,16 @@ export function makeCustomPaper(c: CustomPaperConfig): PaperPreset {
   const gridCols = `repeating-linear-gradient(to right, transparent 0 ${L - 1}px, ${c.line} ${L - 1}px ${L}px)`;
   const layers =
     c.mode === "ruled" ? ruled : c.mode === "grid" ? `${ruled}, ${gridCols}` : "";
+  const img = c.image
+    ? c.imageFit === "tile"
+      ? `url("${c.image}") repeat`
+      : `url("${c.image}") center / cover no-repeat`
+    : "";
+  const stack = [layers, img].filter(Boolean).join(", ");
   return {
     id: "custom",
     name: "Custom",
     lineHeight: L,
-    background: layers ? `${layers}, ${c.bg}` : c.bg,
+    background: stack ? `${stack}, ${c.bg}` : c.bg,
   };
 }

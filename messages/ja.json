@@ -43,6 +43,10 @@
     "tracing": {
       "title": "無料の名前なぞり書きプリント生成器",
       "description": "名前を入力すると、お手本行+なぞり行の練習プリントを生成。PDF 無料ダウンロード。 homeschool にも最適。"
+    },
+    "cursive": {
+      "title": "筆記体( Cursive )ジェネレーター - Free",
+      "description": "入力または音声で、流れるような筆記体に即変換。無料で画像や PDF に書き出せます。印刷してなぞり練習も。"
     }
   },
   "nav": {
@@ -133,7 +137,13 @@
       "style": "罫線スタイル",
       "bg": "用紙の色",
       "line": "罫線の色",
-      "spacing": "行間"
+      "spacing": "行間",
+      "image": "背景画像",
+      "upload": "画像を追加",
+      "uploading": "処理中…",
+      "removeImage": "画像を削除",
+      "cover": "全覆盖",
+      "tile": "タイル状"
     },
     "customColor": "カスタムカラー",
     "preview": "プレビュー"
@@ -197,6 +207,8 @@
     "share": "シェア先",
     "shareSystem": "その他",
     "shareText": "「Voice to Handwriting」で作った手書き文書 {link}",
+    "sharePlain": "「Voice to Handwriting」で作った手書き文書",
+    "email": "メール",
     "copyImage": "画像をコピー",
     "copied": "コピーしました",
     "copyLink": "文字とリンクをコピー",
@@ -205,7 +217,8 @@
     "prevPage": "前のページ",
     "nextPage": "次のページ",
     "download": "このページを保存",
-    "shareHint": "ヒント:先に画像をコピーして、SNS に直接貼り付けられます。"
+    "shareHint": "ヒント:先に画像をコピーして、SNS に直接貼り付けられます。",
+    "pinDownload": "Pinterest ピンをダウンロード(2:3)"
   },
   "printable": {
     "title": "無料印刷用紙ジェネレーター",
@@ -237,5 +250,11 @@
     "downloadPdf": "PDF をダウンロード",
     "seoTitle": "無料の名前なぞり書きプリント",
     "seoText": "個別化されたなぞり書きプリントは手書き学習に最も効果的。必要な枚数を何度でも生成できます。"
+  },
+  "cursive": {
+    "title": "筆記体( Cursive )ジェネレーター",
+    "intro": "入力または音声で、流れるような筆記体に即変換。無料で画像や PDF に書き出せます。印刷してなぞり練習も。",
+    "seoTitle": "無料の筆記体( Cursive )ジェネレーター",
+    "seoText": "筆記体は学校でほとんど教えられなくなりましたが、細かい動きやメモの速さに良い影響があります。\n\n使い方:入力または音声で文章を作り、2 つの筆記体フォントから選び、リアリズムを調整して書き出し。PDF を印刷してなぞる練習にも最適です。"
   }
 }

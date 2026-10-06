@@ -43,6 +43,10 @@
     "tracing": {
       "title": "Kostenloser Namens-Schreibübungsblatt-Generator",
       "description": "Kostenlose personalisierte Schreibübungsblätter mit gestrichelter Mittellinie und dunkler Beispielzeile erstellen. PDF-Download, ideal für Homeschooling."
+    },
+    "cursive": {
+      "title": "Schreibschrift-Generator - Free",
+      "description": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken."
     }
   },
   "nav": {
@@ -123,7 +127,13 @@
       "style": "Linienstil",
       "bg": "Papierfarbe",
       "line": "Linienfarbe",
-      "spacing": "Zeilenabstand"
+      "spacing": "Zeilenabstand",
+      "image": "Hintergrundbild",
+      "upload": "Bild hochladen",
+      "uploading": "Verarbeitung…",
+      "removeImage": "Bild entfernen",
+      "cover": "Füllen",
+      "tile": "Kacheln"
     },
     "importAudio": "Audiodatei importieren",
     "modelFast": "Schnell",
@@ -197,6 +207,8 @@
     "share": "Teilen auf",
     "shareSystem": "Weitere Optionen",
     "shareText": "Eine handgeschriebene Seite mit Voice to Handwriting erstellt {link}",
+    "sharePlain": "Eine handgeschriebene Seite mit Voice to Handwriting erstellt",
+    "email": "E-Mail",
     "copyImage": "Bild kopieren",
     "copied": "Kopiert",
     "copyLink": "Text & Link kopieren",
@@ -205,7 +217,8 @@
     "prevPage": "Vorherige Seite",
     "nextPage": "Nächste Seite",
     "download": "Diese Seite speichern",
-    "shareHint": "Tipp: Erst das Bild kopieren, dann direkt im Post einfügen."
+    "shareHint": "Tipp: Erst das Bild kopieren, dann direkt im Post einfügen.",
+    "pinDownload": "Pinterest-Pin herunterladen (2:3)"
   },
   "printable": {
     "title": "Druckpapier-Generator (kostenlos)",
@@ -237,5 +250,11 @@
     "downloadPdf": "PDF herunterladen",
     "seoTitle": "Kostenlose Namens-Schreibübungsblätter",
     "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Schreiben zu lernen. Unbegrenzt generierbar, ohne Wasserzeichen."
+  },
+  "cursive": {
+    "title": "Schreibschrift-Generator",
+    "intro": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken.",
+    "seoTitle": "Kostenloser Schreibschrift-Generator",
+    "seoText": "Schreibschrift wird kaum noch unterrichtet — dabei trainiert sie Feinmotorik und Schreibtempo und verbindet dich mit einem Jahrhundert voller Briefe.\n\nSo geht's: Text eintippen oder diktieren, eine der beiden Schreibschrift-Schriften wählen, Realismus anpassen und exportieren. Das PDF drucken und zum Üben nachspuren."
   }
 }

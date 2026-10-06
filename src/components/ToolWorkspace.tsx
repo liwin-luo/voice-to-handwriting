@@ -7,17 +7,37 @@ import PaperView from "./PaperView";
 import RecorderPanel from "./RecorderPanel";
 import StylePanel from "./StylePanel";
 import TranscriptEditor from "./TranscriptEditor";
+import { useRef } from "react";
 import { getTemplate, getTemplateMeta } from "@/content/templates";
 import { useEditorStore, type FontId } from "@/stores/useEditorStore";
 import type { Locale } from "@/i18n/routing";
+
+export interface ToolPreset {
+  fontId?: string;
+  paperId?: string;
+  ink?: string;
+  fontSize?: number;
+}
 
 /**
  * 布局 v2:左栏(文字编辑 → 样式)吸顶可滚动,右侧纸张预览自适应缩放。
  * 移动端单列:编辑器在最前,纸张其后。
  * 底部粘性工具栏:左侧录音+音频导入,右侧导出。
  */
-export default function ToolWorkspace() {
+export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
   const locale = useLocale();
+  const presetApplied = useRef(false);
+
+  // 落地页预设(如 /cursive):挂载时应用一次
+  useEffect(() => {
+    if (presetApplied.current || !preset) return;
+    presetApplied.current = true;
+    const s = useEditorStore.getState();
+    if (preset.fontId) s.setFontId(preset.fontId as FontId);
+    if (preset.paperId) s.setPaperId(preset.paperId);
+    if (preset.ink) s.setInk(preset.ink);
+    if (preset.fontSize) s.setFontSize(preset.fontSize);
+  }, [preset]);
 
   // 模板落地页跳转:/?template=<slug> → 一键套用文案与样式
   useEffect(() => {

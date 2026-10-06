@@ -1,13 +1,26 @@
 "use client";
+import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowsClockwise } from "@phosphor-icons/react";
+import { ArrowsClockwise, UploadSimple, X } from "@phosphor-icons/react";
 import { FONTS, INKS, useEditorStore } from "@/stores/useEditorStore";
 import { PAPERS } from "@/engine/paper";
+import { fileToPaperImage } from "@/lib/paperImage";
 
 export default function StylePanel() {
   const t = useTranslations("tool");
   const s = useEditorStore();
   const isCustomPaper = s.paperId === "custom";
+  const [uploading, setUploading] = useState(false);
+
+  const onImageChange = async (file: File | undefined) => {
+    if (!file) return;
+    setUploading(true);
+    try {
+      s.setCustomPaper({ image: await fileToPaperImage(file), imageFit: "cover" });
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
     <section className="flex flex-col divide-y divide-zinc-200 text-sm">
@@ -113,6 +126,59 @@ export default function StylePanel() {
                 <span className="font-mono text-xs text-zinc-400">{s.customPaper.spacing}px</span>
               </span>
             </label>
+            {/* 背景图片:铺在底色之上、格线之下 */}
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-zinc-700">{t("paperCustom.image")}</span>
+              {s.customPaper.image ? (
+                <span className="flex items-center gap-2">
+                  <span className="relative inline-flex">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={s.customPaper.image} alt="" className="size-8 rounded-md border border-zinc-200 object-cover" />
+                    <button
+                      title={t("paperCustom.removeImage")}
+                      aria-label={t("paperCustom.removeImage")}
+                      onClick={() => s.setCustomPaper({ image: undefined, imageFit: undefined })}
+                      className="absolute -top-1.5 -right-1.5 flex size-4 cursor-pointer items-center justify-center rounded-full bg-zinc-600 text-white hover:bg-zinc-800"
+                    >
+                      <X weight="bold" className="size-2.5" />
+                    </button>
+                  </span>
+                  <span className="flex overflow-hidden rounded-lg border border-zinc-200">
+                    {(["cover", "tile"] as const).map((f) => (
+                      <button
+                        key={f}
+                        onClick={() => s.setCustomPaper({ imageFit: f })}
+                        className={`cursor-pointer px-2 py-1 text-xs transition-colors ${
+                          (s.customPaper.imageFit ?? "cover") === f
+                            ? "bg-accent/10 text-accent"
+                            : "bg-white text-zinc-500 hover:bg-zinc-50"
+                        }`}
+                      >
+                        {t(`paperCustom.${f}`)}
+                      </button>
+                    ))}
+                  </span>
+                </span>
+              ) : (
+                <label
+                  className={`flex cursor-pointer items-center gap-1 rounded-lg border border-zinc-200 bg-white px-2.5 py-1.5 text-xs text-zinc-600 transition-colors hover:border-zinc-300 ${
+                    uploading ? "pointer-events-none opacity-50" : ""
+                  }`}
+                >
+                  <UploadSimple className="size-3.5 text-zinc-500" />
+                  {uploading ? t("paperCustom.uploading") : t("paperCustom.upload")}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(e) => {
+                      void onImageChange(e.target.files?.[0]);
+                      e.target.value = "";
+                    }}
+                  />
+                </label>
+              )}
+            </div>
           </div>
         )}
       <div className="flex flex-col gap-1.5">

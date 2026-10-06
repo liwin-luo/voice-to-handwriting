@@ -17,8 +17,9 @@ export default function ExportBar() {
 
   const pageEls = () => Array.from(document.querySelectorAll<HTMLElement>(".paper"));
 
+  // backgroundColor 会被 html-to-image 写到克隆节点上,覆盖纸张自身底色,故不能传
   const toPngPages = async () =>
-    Promise.all(pageEls().map((el) => toPng(el, { pixelRatio: 2, backgroundColor: "#ffffff" })));
+    Promise.all(pageEls().map((el) => toPng(el, { pixelRatio: 2 })));
 
   const download = (dataUrl: string, name: string) => {
     const a = document.createElement("a");

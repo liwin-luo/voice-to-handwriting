@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import type { CustomPaperConfig } from "@/engine/paper";
 
 export const FONTS = [
   { id: "mashanzheng", css: "'Ma Shan Zheng', 'Kaiti SC', 'KaiTi', serif" },
@@ -50,8 +51,8 @@ interface EditorState {
   setAlign: (a: TextAlign) => void;
   setIndent: (v: boolean) => void;
   setWatermark: (v: boolean) => void;
-  customPaper: { bg: string; line: string; spacing: number; mode: "blank" | "ruled" | "grid" };
-  setCustomPaper: (p: Partial<EditorState["customPaper"]>) => void;
+  customPaper: CustomPaperConfig;
+  setCustomPaper: (p: Partial<CustomPaperConfig>) => void;
   reseed: () => void;
   reset: () => void;
 }
@@ -67,7 +68,12 @@ const initial = {
   align: "left" as TextAlign,
   indent: false,
   watermark: true,
-  customPaper: { bg: "#fffdf8", line: "#c7d4e3", spacing: 40, mode: "ruled" as "blank" | "ruled" | "grid" },
+  customPaper: {
+    bg: "#fffdf8",
+    line: "#c7d4e3",
+    spacing: 40,
+    mode: "ruled" as "blank" | "ruled" | "grid",
+  },
 };
 
 export const useEditorStore = create<EditorState>()(

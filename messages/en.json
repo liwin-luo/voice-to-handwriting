@@ -43,6 +43,10 @@
     "tracing": {
       "title": "Free Name Tracing Worksheet Generator",
       "description": "Create free personalized name tracing worksheets with dashed midlines. One dark example row plus traceable rows — download as PDF. Perfect for homeschool."
+    },
+    "cursive": {
+      "title": "Cursive Writing Generator - Free",
+      "description": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF."
     }
   },
   "nav": {
@@ -133,7 +137,13 @@
       "style": "Line style",
       "bg": "Paper color",
       "line": "Line color",
-      "spacing": "Line spacing"
+      "spacing": "Line spacing",
+      "image": "Background image",
+      "upload": "Upload image",
+      "uploading": "Processing…",
+      "removeImage": "Remove image",
+      "cover": "Cover",
+      "tile": "Tile"
     },
     "customColor": "Custom color",
     "preview": "Preview"
@@ -197,6 +207,8 @@
     "share": "Share",
     "shareSystem": "More options",
     "shareText": "A handwritten page I made with Voice to Handwriting {link}",
+    "sharePlain": "A handwritten page I made with Voice to Handwriting",
+    "email": "Email",
     "copyImage": "Copy image",
     "copied": "Copied",
     "copyLink": "Copy text & link",
@@ -205,7 +217,8 @@
     "prevPage": "Previous page",
     "nextPage": "Next page",
     "download": "Download this page",
-    "shareHint": "Tip: copy the image first, then paste it directly into your post."
+    "shareHint": "Tip: copy the image first, then paste it directly into your post.",
+    "pinDownload": "Download Pinterest pin (2:3)"
   },
   "printable": {
     "title": "Printable Paper Generator",
@@ -237,5 +250,11 @@
     "downloadPdf": "Download PDF",
     "seoTitle": "Free name tracing worksheets for homeschool and classroom",
     "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark."
+  },
+  "cursive": {
+    "title": "Cursive Writing Generator",
+    "intro": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF.",
+    "seoTitle": "Free cursive generator — practice the lost art of penmanship",
+    "seoText": "Cursive is barely taught in schools anymore — but learning it has real benefits: it trains fine motor skills, speeds up note-taking and connects you to a century of letters and journals worth reading.\n\nHow to use this page: type or dictate anything, pick one of the two cursive fonts (Cedarville Cursive for everyday handwriting, Dancing Script for elegant flourishes), adjust the realism slider for a natural hand, and export. Print the PDF and trace over it to practice your own cursive."
   }
 }

@@ -44,4 +44,42 @@ describe("makeCustomPaper", () => {
     expect(makeCustomPaper({ bg: "#fff", line: "#000", spacing: 10, mode: "ruled" }).lineHeight).toBe(24);
     expect(makeCustomPaper({ bg: "#fff", line: "#000", spacing: 99, mode: "ruled" }).lineHeight).toBe(64);
   });
+
+  it("背景图 cover:图层顺序为格线→图片→底色", () => {
+    const p = makeCustomPaper({
+      bg: "#fffdf8",
+      line: "#c7d4e3",
+      spacing: 40,
+      mode: "ruled",
+      image: "data:image/jpeg;base64,abc",
+      imageFit: "cover",
+    });
+    expect(p.background).toContain('url("data:image/jpeg;base64,abc") center / cover no-repeat');
+    const gi = p.background.indexOf("repeating-linear-gradient");
+    const ui = p.background.indexOf("url(");
+    expect(gi).toBeGreaterThanOrEqual(0);
+    expect(gi).toBeLessThan(ui); // 格线画在图片之上
+    expect(p.background.endsWith("#fffdf8")).toBe(true);
+  });
+
+  it("背景图 tile:原尺寸平铺;缺省 fit 视为 cover", () => {
+    const tile = makeCustomPaper({
+      bg: "#fff",
+      line: "#000",
+      spacing: 40,
+      mode: "blank",
+      image: "data:image/png;base64,abc",
+      imageFit: "tile",
+    });
+    expect(tile.background).toContain('url("data:image/png;base64,abc") repeat');
+
+    const def = makeCustomPaper({
+      bg: "#fff",
+      line: "#000",
+      spacing: 40,
+      mode: "blank",
+      image: "data:image/png;base64,abc",
+    });
+    expect(def.background).toContain("cover");
+  });
 });
