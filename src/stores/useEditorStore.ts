@@ -9,6 +9,11 @@ export const FONTS = [
   { id: "liujianmaocao", css: "'Liu Jian Mao Cao', 'Kaiti SC', 'KaiTi', serif" },
   { id: "zcoolkuaile", css: "'ZCOOL KuaiLe', 'PingFang SC', sans-serif" },
   { id: "caveat", css: "'Caveat', cursive" },
+  { id: "patrickhand", css: "'Patrick Hand', 'Comic Sans MS', cursive" },
+  { id: "kalam", css: "'Kalam', 'Comic Sans MS', cursive" },
+  { id: "indieflower", css: "'Indie Flower', 'Comic Sans MS', cursive" },
+  { id: "dancingscript", css: "'Dancing Script', cursive" },
+  { id: "cedarvillecursive", css: "'Cedarville Cursive', cursive" },
 ] as const;
 export type FontId = (typeof FONTS)[number]["id"];
 

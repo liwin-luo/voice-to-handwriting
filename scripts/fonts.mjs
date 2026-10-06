@@ -8,6 +8,11 @@ const jobs = [
   { input: "fonts-src/ZhiMangXing-Regular.ttf", outDir: "public/fonts/zhimangxing", family: "Zhi Mang Xing" },
   { input: "fonts-src/ZCOOLKuaiLe-Regular.ttf", outDir: "public/fonts/zcoolkuaile", family: "ZCOOL KuaiLe" },
   { input: "fonts-src/LXGWWenKai-Regular.ttf", outDir: "public/fonts/lxgwwenkai", family: "LXGW WenKai" },
+  { input: "fonts-src/PatrickHand-Regular.ttf", outDir: "public/fonts/patrickhand", family: "Patrick Hand" },
+  { input: "fonts-src/Kalam-Regular.ttf", outDir: "public/fonts/kalam", family: "Kalam" },
+  { input: "fonts-src/IndieFlower-Regular.ttf", outDir: "public/fonts/indieflower", family: "Indie Flower" },
+  { input: "fonts-src/DancingScript[wght].ttf", outDir: "public/fonts/dancingscript", family: "Dancing Script" },
+  { input: "fonts-src/Cedarville-Cursive.ttf", outDir: "public/fonts/cedarvillecursive", family: "Cedarville Cursive" },
 ];
 
 for (const j of jobs) {

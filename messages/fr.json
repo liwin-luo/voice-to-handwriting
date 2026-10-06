@@ -35,6 +35,14 @@
     "faq": {
       "title": "Questions fréquentes",
       "description": "Questions fréquentes sur la saisie vocale, la transcription audio, l'export et l'usage commercial."
+    },
+    "printable": {
+      "title": "Générateur de papier ligné et quadrillé à imprimer (Letter et A4)",
+      "description": "Générez gratuitement du papier ligné, quadrillé et d'écriture en Letter ou A4. Sans filigrane ni inscription, téléchargement en PDF."
+    },
+    "tracing": {
+      "title": "Générateur gratuit de fiches d'écriture prénom",
+      "description": "Créez des fiches d'écriture personnalisées avec lignes à repasser et ligne exemple en foncé. Téléchargement PDF, idéal pour l'école à la maison."
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "zhimangxing": "Zhi Mang Xing · Xing",
       "liujianmaocao": "Liu Jian Mao Cao · Cao",
       "zcoolkuaile": "ZCOOL KuaiLe · Playful",
-      "caveat": "Caveat · Anglais"
+      "caveat": "Caveat · Anglais",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "Uni",
@@ -129,7 +142,9 @@
     "privacy": "Confidentialité",
     "terms": "Conditions",
     "contact": "Contact",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "printables": "Papier à imprimer",
+    "worksheets": "Fiches de prénoms"
   },
   "consent": {
     "text": "Nous utilisons des cookies pour afficher des publicités qui gardent cet outil gratuit. Acceptez les pubs personnalisées ou continuez avec l'essentiel.",
@@ -191,5 +206,36 @@
     "nextPage": "Page suivante",
     "download": "Télécharger cette page",
     "shareHint": "Astuce : copiez d'abord l'image, puis collez-la directement dans votre publication."
+  },
+  "printable": {
+    "title": "Générateur de papier imprimable gratuit",
+    "intro": "Papier ligné, quadrillé et d'écriture à imprimer gratuitement. Letter et A4, téléchargement en PDF.",
+    "typeCollege": "Seyès léger",
+    "typeWide": "Grand carreau",
+    "typeGraph": "Quadrillage",
+    "typeHandwriting": "Écriture (3 lignes)",
+    "typeBlank": "Uni",
+    "gridSize": "Taille du quadrillage",
+    "bandHeight": "Hauteur de ligne",
+    "lineSpacing": "Interligne",
+    "lineColor": "Couleur des lignes",
+    "redMargin": "Marge rouge",
+    "pageSize": "Format",
+    "downloadPdf": "Télécharger le PDF",
+    "seoTitle": "Papier ligné et quadrillé à imprimer gratuitement",
+    "seoText": "Tous les styles s'impriment aux dimensions réelles (Letter et A4), sans filigrane ni inscription. Combinez-le avec notre outil d'écriture manuscrite.",
+    "paperType": "Type de papier"
+  },
+  "tracing": {
+    "title": "Générateur de fiches d'écriture prénom",
+    "intro": "Tapez un prénom et obtenez une fiche : une ligne exemple en foncé plus des lignes à repasser, PDF gratuit.",
+    "namesLabel": "Prénoms (un par ligne)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Police",
+    "showExample": "Ligne exemple en foncé",
+    "rowHeight": "Hauteur de ligne",
+    "downloadPdf": "Télécharger le PDF",
+    "seoTitle": "Fiches de prénoms à repasser gratuites",
+    "seoText": "Les fiches personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture. Générez-en autant que nécessaire, sans filigrane."
   }
 }

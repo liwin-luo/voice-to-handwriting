@@ -35,6 +35,14 @@
     "faq": {
       "title": "常见问题",
       "description": "关于语音输入、音频转写、导出与商用权限的常见问题解答。"
+    },
+    "printable": {
+      "title": "免费可打印横线纸/方格纸生成器(Letter & A4)",
+      "description": "免费生成可打印的横线纸、方格纸和练字纸,支持 Letter 和 A4。无水印、无需注册,下载 PDF 即可打印。"
+    },
+    "tracing": {
+      "title": "免费姓名描红字帖生成器",
+      "description": "免费创建个性化姓名描红字帖,带虚线中格和深色示例行,下载 PDF 打印。适合家庭教育与课堂。"
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "caveat": "Caveat · 英文",
       "zhimangxing": "智芒行 · 行书",
       "lxgwwenkai": "霞鹜文楷 · 楷",
-      "zcoolkuaile": "站酷快乐体 · 趣"
+      "zcoolkuaile": "站酷快乐体 · 趣",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "白纸",
@@ -129,7 +142,9 @@
     "privacy": "隐私政策",
     "terms": "使用条款",
     "contact": "联系我们",
-    "faq": "常见问题"
+    "faq": "常见问题",
+    "printables": "打印纸模板",
+    "worksheets": "描红字帖"
   },
   "blog": {
     "tagline": "手写贺卡、手写配图的教程与灵感;所有教程都可以用首页工具直接跟着做。"
@@ -191,5 +206,36 @@
     "nextPage": "下一页",
     "download": "下载本页",
     "shareHint": "小提示:先复制图片,再到社交平台直接粘贴发布。"
+  },
+  "printable": {
+    "title": "可打印纸张生成器",
+    "intro": "免费生成可打印的横线纸、方格纸和三线格练字纸,支持 Letter 和 A4,下载 PDF 直接打印。",
+    "typeCollege": "大学横线",
+    "typeWide": "宽横线",
+    "typeGraph": "方格纸",
+    "typeHandwriting": "三线格练字",
+    "typeBlank": "白纸",
+    "gridSize": "格子大小",
+    "bandHeight": "行高",
+    "lineSpacing": "行距",
+    "lineColor": "线条颜色",
+    "redMargin": "红色页边线",
+    "pageSize": "纸张大小",
+    "downloadPdf": "下载 PDF",
+    "seoTitle": "免费可打印信纸/方格纸模板 — 无水印、无需注册",
+    "seoText": "所有样式按真实尺寸精确渲染(Letter 与 A4),无水印、无需注册。配合手写生成器使用效果更佳:打印出来手写,或让生成器直接在纸上写。",
+    "paperType": "纸张类型"
+  },
+  "tracing": {
+    "title": "姓名描红字帖生成器",
+    "intro": "输入名字,一键生成描红字帖:深色示例行 + 浅色描红行,三线格排版,免费下载 PDF。适合家庭教育和课堂。",
+    "namesLabel": "名字(每行一个)",
+    "namesPlaceholder": "小明\n小红\n小刚",
+    "font": "字体",
+    "showExample": "深色示例行",
+    "rowHeight": "行高",
+    "downloadPdf": "下载 PDF",
+    "seoTitle": "免费姓名描红字帖 — 家庭教育与课堂适用",
+    "seoText": "个性化描红字帖是教手写最有效的方式之一:孩子先描示例行,再反复练习。需要多少份就生成多少份,每份 PDF 按精确尺寸打印、无水印。"
   }
 }

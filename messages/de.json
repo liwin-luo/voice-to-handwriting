@@ -35,6 +35,14 @@
     "faq": {
       "title": "Häufige Fragen",
       "description": "Häufige Fragen zu Spracheingabe, Audio-Transkription, Export und kommerzieller Nutzung."
+    },
+    "printable": {
+      "title": "Kostenloser liniertes-Papier-Generator (Letter & A4)",
+      "description": "Kostenloses liniertes, kariertes und Übungs-Papier in Letter oder A4 generieren. Ohne Wasserzeichen und Anmeldung, Download als PDF."
+    },
+    "tracing": {
+      "title": "Kostenloser Namens-Schreibübungsblatt-Generator",
+      "description": "Kostenlose personalisierte Schreibübungsblätter mit gestrichelter Mittellinie und dunkler Beispielzeile erstellen. PDF-Download, ideal für Homeschooling."
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "zhimangxing": "Zhi Mang Xing · Xing",
       "liujianmaocao": "Liu Jian Mao Cao · Cao",
       "zcoolkuaile": "ZCOOL KuaiLe · Playful",
-      "caveat": "Caveat · Englisch"
+      "caveat": "Caveat · Englisch",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "Blanko",
@@ -129,7 +142,9 @@
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
     "contact": "Kontakt",
-    "faq": "Häufige Fragen"
+    "faq": "Häufige Fragen",
+    "printables": "Druckpapier",
+    "worksheets": "Schreibübungsblätter"
   },
   "consent": {
     "text": "Wir verwenden Cookies, um Werbung zu zeigen, die dieses Tool kostenlos hält. Akzeptiere personalisierte Werbung oder nutze nur das Nötige.",
@@ -191,5 +206,36 @@
     "nextPage": "Nächste Seite",
     "download": "Diese Seite speichern",
     "shareHint": "Tipp: Erst das Bild kopieren, dann direkt im Post einfügen."
+  },
+  "printable": {
+    "title": "Druckpapier-Generator (kostenlos)",
+    "intro": "Kostenloses liniertes, kariertes und Übungs-Papier zum Drucken. Letter und A4, Download als PDF.",
+    "typeCollege": "College Ruled",
+    "typeWide": "Wide Ruled",
+    "typeGraph": "Kariert",
+    "typeHandwriting": "3-Linien",
+    "typeBlank": "Blanko",
+    "gridSize": "Rastergröße",
+    "bandHeight": "Zeilenhöhe",
+    "lineSpacing": "Zeilenabstand",
+    "lineColor": "Linienfarbe",
+    "redMargin": "Roter Rand",
+    "pageSize": "Papierformat",
+    "downloadPdf": "PDF herunterladen",
+    "seoTitle": "Kostenloses liniertes Papier zum Ausdrucken",
+    "seoText": "Alle Styles werden in exakten realen Abmessungen gedruckt (Letter und A4), ohne Wasserzeichen und ohne Anmeldung. Kombinierbar mit unserem Handschrift-Tool.",
+    "paperType": "Papiertyp"
+  },
+  "tracing": {
+    "title": "Namens-Schreibübungs-Generator",
+    "intro": "Namen eingeben und ein Übungsblatt erhalten: eine dunkle Beispielzeile plus nachspürbare Zeilen, kostenloser PDF-Download.",
+    "namesLabel": "Namen (einer pro Zeile)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Schrift",
+    "showExample": "Dunkle Beispielzeile",
+    "rowHeight": "Zeilenhöhe",
+    "downloadPdf": "PDF herunterladen",
+    "seoTitle": "Kostenlose Namens-Schreibübungsblätter",
+    "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Schreiben zu lernen. Unbegrenzt generierbar, ohne Wasserzeichen."
   }
 }

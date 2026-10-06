@@ -35,6 +35,14 @@
     "faq": {
       "title": "よくある質問",
       "description": "音声入力・音声文字起こし・書き出し・商用利用についてよくある質問。"
+    },
+    "printable": {
+      "title": "無料印刷用罫線紙ジェネレーター(Letter & A4)",
+      "description": "罫線・方眼・練習用紙を無料で生成。Letter/A4 対応、透かしなし、登録不要で PDF ダウンロード。"
+    },
+    "tracing": {
+      "title": "無料の名前なぞり書きプリント生成器",
+      "description": "名前を入力すると、お手本行+なぞり行の練習プリントを生成。PDF 無料ダウンロード。 homeschool にも最適。"
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "caveat": "Caveat・英文",
       "zhimangxing": "智芒行・行書",
       "lxgwwenkai": "霞鶩文楷・楷書",
-      "zcoolkuaile": "ZCOOL 快楽体・ポップ"
+      "zcoolkuaile": "ZCOOL 快楽体・ポップ",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "無地",
@@ -129,7 +142,9 @@
     "privacy": "プライバシーポリシー",
     "terms": "利用規約",
     "contact": "お問い合わせ",
-    "faq": "よくある質問"
+    "faq": "よくある質問",
+    "printables": "印刷用紙",
+    "worksheets": "なぞり書きプリント"
   },
   "blog": {
     "tagline": "手書きカードや手書き風画像のチュートリアルとアイデア。すべてトップページのツールでそのまま再現できます。"
@@ -191,5 +206,36 @@
     "nextPage": "次のページ",
     "download": "このページを保存",
     "shareHint": "ヒント:先に画像をコピーして、SNS に直接貼り付けられます。"
+  },
+  "printable": {
+    "title": "無料印刷用紙ジェネレーター",
+    "intro": "罫線・方眼・練習用紙を無料で生成。Letter と A4 対応、PDF をダウンロードして印刷。",
+    "typeCollege": "大学ノート罫線",
+    "typeWide": "広罫線",
+    "typeGraph": "方眼",
+    "typeHandwriting": "3 線グリッド",
+    "typeBlank": "無地",
+    "gridSize": "マスサイズ",
+    "bandHeight": "行の高さ",
+    "lineSpacing": "行間",
+    "lineColor": "線の色",
+    "redMargin": "赤マージン",
+    "pageSize": "用紙サイズ",
+    "downloadPdf": "PDF をダウンロード",
+    "seoTitle": "無料印刷用罫線・方眼紙テンプレート",
+    "seoText": "すべて実際のサイズで正確に印刷できます。透かしも登録も不要。手書きツールと組み合わせればさらに便利。",
+    "paperType": "用紙タイプ"
+  },
+  "tracing": {
+    "title": "名前なぞり書きプリント生成器",
+    "intro": "名前を入力すると、お手本 1 行+なぞり書き行のプリントを生成。PDF 無料ダウンロード。",
+    "namesLabel": "名前(1 行に 1 つ)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "フォント",
+    "showExample": "お手本行(濃色)",
+    "rowHeight": "行の高さ",
+    "downloadPdf": "PDF をダウンロード",
+    "seoTitle": "無料の名前なぞり書きプリント",
+    "seoText": "個別化されたなぞり書きプリントは手書き学習に最も効果的。必要な枚数を何度でも生成できます。"
   }
 }

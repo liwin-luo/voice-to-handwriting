@@ -35,6 +35,14 @@
     "faq": {
       "title": "FAQ",
       "description": "Frequently asked questions about voice input, audio transcription, exports and commercial use of Voice to Handwriting."
+    },
+    "printable": {
+      "title": "Free Printable Lined Paper Generator (Letter & A4)",
+      "description": "Generate free printable lined, graph and handwriting paper in Letter or A4. No watermark, no signup — download as PDF and print at home."
+    },
+    "tracing": {
+      "title": "Free Name Tracing Worksheet Generator",
+      "description": "Create free personalized name tracing worksheets with dashed midlines. One dark example row plus traceable rows — download as PDF. Perfect for homeschool."
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "caveat": "Caveat · English",
       "zhimangxing": "Zhi Mang Xing · Xing",
       "lxgwwenkai": "LXGW WenKai · Kai",
-      "zcoolkuaile": "ZCOOL KuaiLe · Playful"
+      "zcoolkuaile": "ZCOOL KuaiLe · Playful",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "Blank",
@@ -129,7 +142,9 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "contact": "Contact",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "printables": "Printable Paper",
+    "worksheets": "Name Tracing"
   },
   "blog": {
     "tagline": "Tutorials and ideas for handwritten cards and images — every guide works with the tool on the home page."
@@ -191,5 +206,36 @@
     "nextPage": "Next page",
     "download": "Download this page",
     "shareHint": "Tip: copy the image first, then paste it directly into your post."
+  },
+  "printable": {
+    "title": "Printable Paper Generator",
+    "intro": "Free printable lined, graph and handwriting paper. Pick a style, download as PDF and print at home — Letter and A4.",
+    "typeCollege": "College Ruled",
+    "typeWide": "Wide Ruled",
+    "typeGraph": "Graph",
+    "typeHandwriting": "Handwriting (3-line)",
+    "typeBlank": "Blank",
+    "gridSize": "Grid size",
+    "bandHeight": "Row height",
+    "lineSpacing": "Line spacing",
+    "lineColor": "Line color",
+    "redMargin": "Red margin line",
+    "pageSize": "Page size",
+    "downloadPdf": "Download PDF",
+    "seoTitle": "Free printable lined paper — no watermark, no signup",
+    "seoText": "Every style prints edge-to-edge at exact real-world dimensions (Letter and A4), with no watermark and no account required. Pair it with our handwriting tool: print the paper, or let the generator write on it for you.",
+    "paperType": "Paper type"
+  },
+  "tracing": {
+    "title": "Name Tracing Worksheet Generator",
+    "intro": "Type a name, get a tracing worksheet: one dark example row, then traceable rows on 3-line handwriting paper. Free PDF, perfect for homeschool and classroom.",
+    "namesLabel": "Names (one per line)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Font",
+    "showExample": "Dark example row",
+    "rowHeight": "Row height",
+    "downloadPdf": "Download PDF",
+    "seoTitle": "Free name tracing worksheets for homeschool and classroom",
+    "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark."
   }
 }

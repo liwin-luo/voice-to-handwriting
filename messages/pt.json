@@ -35,6 +35,14 @@
     "faq": {
       "title": "Perguntas frequentes",
       "description": "Perguntas frequentes sobre entrada por voz, transcrição de áudio, exportação e uso comercial."
+    },
+    "printable": {
+      "title": "Gerador de papel pautado e quadriculado para imprimir (Letter e A4)",
+      "description": "Gere papel pautado, quadriculado e de caligrafia grátis em Letter ou A4. Sem marca d'água nem cadastro, download em PDF."
+    },
+    "tracing": {
+      "title": "Gerador grátis de fichas de nomes para caligrafia",
+      "description": "Crie fichas de caligrafia personalizadas com nomes, linha de exemplo escura e linhas para treinar. Download em PDF."
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "zhimangxing": "Zhi Mang Xing · Xing",
       "liujianmaocao": "Liu Jian Mao Cao · Cao",
       "zcoolkuaile": "ZCOOL KuaiLe · Divertida",
-      "caveat": "Caveat · Inglês"
+      "caveat": "Caveat · Inglês",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "Liso",
@@ -129,7 +142,9 @@
     "privacy": "Privacidade",
     "terms": "Termos",
     "contact": "Contato",
-    "faq": "Perguntas frequentes"
+    "faq": "Perguntas frequentes",
+    "printables": "Papel para imprimir",
+    "worksheets": "Fichas de nomes"
   },
   "consent": {
     "text": "Usamos cookies para mostrar anúncios que mantêm esta ferramenta gratuita. Aceite anúncios personalizados ou continue só com o essencial.",
@@ -191,5 +206,36 @@
     "nextPage": "Próxima página",
     "download": "Baixar esta página",
     "shareHint": "Dica: copie a imagem e cole direto na sua publicação."
+  },
+  "printable": {
+    "title": "Gerador de papel para imprimir grátis",
+    "intro": "Papel pautado, quadriculado e de caligrafia para imprimir grátis. Letter e A4, download em PDF.",
+    "typeCollege": "Pautado padrão",
+    "typeWide": "Pautado largo",
+    "typeGraph": "Quadriculado",
+    "typeHandwriting": "Caligrafia (3 linhas)",
+    "typeBlank": "Liso",
+    "gridSize": "Tamanho da grade",
+    "bandHeight": "Altura da linha",
+    "lineSpacing": "Espaçamento",
+    "lineColor": "Cor das linhas",
+    "redMargin": "Margem vermelha",
+    "pageSize": "Tamanho",
+    "downloadPdf": "Baixar PDF",
+    "seoTitle": "Papel pautado e quadriculado para imprimir grátis",
+    "seoText": "Todos os estilos são impressos em dimensões reais (Letter e A4), sem marca d'água e sem cadastro. Combine com nosso gerador de escrita à mão.",
+    "paperType": "Tipo de papel"
+  },
+  "tracing": {
+    "title": "Gerador de fichas de caligrafia com nomes",
+    "intro": "Digite um nome e receba uma ficha: uma linha de exemplo escura e linhas para treinar, PDF grátis.",
+    "namesLabel": "Nomes (um por linha)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Fonte",
+    "showExample": "Linha de exemplo escura",
+    "rowHeight": "Altura da linha",
+    "downloadPdf": "Baixar PDF",
+    "seoTitle": "Fichas de nomes para treinar a escrita grátis",
+    "seoText": "Fichas personalizadas são uma das formas mais eficazes de ensinar escrita. Gere quantas precisar, sem marca d'água."
   }
 }

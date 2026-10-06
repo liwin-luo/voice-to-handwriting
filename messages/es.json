@@ -35,6 +35,14 @@
     "faq": {
       "title": "Preguntas frecuentes",
       "description": "Preguntas frecuentes sobre entrada por voz, transcripción de audio, exportación y uso comercial."
+    },
+    "printable": {
+      "title": "Generador de papel rayado y cuadriculado para imprimir (Letter y A4)",
+      "description": "Genera papel rayado, cuadriculado y de caligrafía gratis en Letter o A4. Sin marca de agua ni registro, descarga en PDF."
+    },
+    "tracing": {
+      "title": "Generador gratis de fichas de nombres para repasar",
+      "description": "Crea fichas de caligrafía personalizadas con nombres, línea de ejemplo oscura y filas para repasar. Descarga en PDF."
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "caveat": "Caveat · inglés",
       "zhimangxing": "Zhi Mang Xing · Xing",
       "lxgwwenkai": "LXGW WenKai · Kai",
-      "zcoolkuaile": "ZCOOL KuaiLe · Divertida"
+      "zcoolkuaile": "ZCOOL KuaiLe · Divertida",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "En blanco",
@@ -129,7 +142,9 @@
     "privacy": "Política de privacidad",
     "terms": "Términos de uso",
     "contact": "Contacto",
-    "faq": "Preguntas frecuentes"
+    "faq": "Preguntas frecuentes",
+    "printables": "Papel imprimible",
+    "worksheets": "Fichas de nombres"
   },
   "blog": {
     "tagline": "Tutoriales e ideas de tarjetas e imágenes manuscritas — todas las guías funcionan con la herramienta de inicio."
@@ -191,5 +206,36 @@
     "nextPage": "Página siguiente",
     "download": "Descargar esta página",
     "shareHint": "Consejo: copia la imagen y pégala directamente en tu publicación."
+  },
+  "printable": {
+    "title": "Generador de papel imprimible gratis",
+    "intro": "Papel rayado, cuadriculado y de caligrafía para imprimir gratis. Letter y A4, descarga en PDF.",
+    "typeCollege": "Rayado estándar",
+    "typeWide": "Rayado ancho",
+    "typeGraph": "Cuadrícula",
+    "typeHandwriting": "Caligrafía (3 líneas)",
+    "typeBlank": "Liso",
+    "gridSize": "Tamaño de cuadrícula",
+    "bandHeight": "Altura de fila",
+    "lineSpacing": "Interlínea",
+    "lineColor": "Color de líneas",
+    "redMargin": "Margen rojo",
+    "pageSize": "Tamaño",
+    "downloadPdf": "Descargar PDF",
+    "seoTitle": "Papel rayado y cuadriculado para imprimir gratis",
+    "seoText": "Todos los estilos se imprimen a tamaño real (Letter y A4), sin marca de agua ni registro. Combínalo con nuestro generador de escritura a mano.",
+    "paperType": "Tipo de papel"
+  },
+  "tracing": {
+    "title": "Generador de fichas de caligrafía con nombres",
+    "intro": "Escribe un nombre y obtén una ficha: una fila de ejemplo oscura y filas para repasar, en PDF gratis.",
+    "namesLabel": "Nombres (uno por línea)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Fuente",
+    "showExample": "Fila de ejemplo oscura",
+    "rowHeight": "Altura de fila",
+    "downloadPdf": "Descargar PDF",
+    "seoTitle": "Fichas de nombres para imprimir gratis",
+    "seoText": "Las fichas personalizadas son una de las formas más efectivas de enseñar escritura. Genera las que necesites, sin marca de agua."
   }
 }

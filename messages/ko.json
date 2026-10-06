@@ -35,6 +35,14 @@
     "faq": {
       "title": "자주 묻는 질문",
       "description": "음성 입력, 오디오 변환, 내보내기, 상업적 이용에 대한 자주 묻는 질문."
+    },
+    "printable": {
+      "title": "무료 인쇄용 줄종이 생성기(Letter & A4)",
+      "description": "줄선 종이, 모눈종이, 연습지를 무료로 생성. Letter/A4 지원, 워터마크 없음, 가입 불필요, PDF 다운로드."
+    },
+    "tracing": {
+      "title": "무료 이름 쓰기 연습장 생성기",
+      "description": "이름을 입력하면 진한 예시 줄과 따라 쓰기 줄의 연습장을 생성해 PDF로 다운로드할 수 있습니다. homeschool에 적합."
     }
   },
   "nav": {
@@ -87,7 +95,12 @@
       "caveat": "Caveat · 영문",
       "zhimangxing": "즈망싱 · 행서",
       "lxgwwenkai": "LXGW WenKai · 해서",
-      "zcoolkuaile": "ZCOOL KuaiLe · 발랄"
+      "zcoolkuaile": "ZCOOL KuaiLe · 발랄",
+      "patrickhand": "Patrick Hand · Print",
+      "kalam": "Kalam · Neat",
+      "indieflower": "Indie Flower · Playful",
+      "dancingscript": "Dancing Script · Cursive",
+      "cedarvillecursive": "Cedarville · Cursive"
     },
     "papers": {
       "blank": "무지",
@@ -129,7 +142,9 @@
     "privacy": "개인정보 처리방침",
     "terms": "이용약관",
     "contact": "문의하기",
-    "faq": "자주 묻는 질문"
+    "faq": "자주 묻는 질문",
+    "printables": "인쇄용 종이",
+    "worksheets": "이름 쓰기 연습장"
   },
   "blog": {
     "tagline": "손글씨 카드와 손글씨 이미지 튜토리얼과 아이디어. 모든 가이드는 홈페이지 도구로 바로 따라 할 수 있어요."
@@ -191,5 +206,36 @@
     "nextPage": "다음 페이지",
     "download": "이 페이지 저장",
     "shareHint": "팁: 이미지를 먼저 복사하면 SNS에 바로 붙여넣을 수 있어요."
+  },
+  "printable": {
+    "title": "무료 인쇄용 종이 생성기",
+    "intro": "줄선 종이, 모눈종이, 연습지를 무료로 생성. Letter와 A4 지원, PDF 다운로드 후 인쇄하세요.",
+    "typeCollege": "대학 줄",
+    "typeWide": "넓은 줄",
+    "typeGraph": "모눈",
+    "typeHandwriting": "3줄 연습",
+    "typeBlank": "빈 종이",
+    "gridSize": "격자 크기",
+    "bandHeight": "행 높이",
+    "lineSpacing": "줄 간격",
+    "lineColor": "선 색",
+    "redMargin": "빨간 여백선",
+    "pageSize": "용지 크기",
+    "downloadPdf": "PDF 다운로드",
+    "seoTitle": "무료 인쇄용 줄종이·모눈종이 템플릿",
+    "seoText": "모든 스타일이 실제 크기에 정확히 인쇄됩니다. 워터마크 없음, 가입 불필요. 손글씨 도구와 함께 쓰면 더 좋아요.",
+    "paperType": "용지 유형"
+  },
+  "tracing": {
+    "title": "이름 쓰기 연습장 생성기",
+    "intro": "이름을 입력하면 진한 예시 줄 + 따라 쓰기 줄로 된 연습장을 생성. PDF 무료 다운로드.",
+    "namesLabel": "이름 (한 줄에 하나)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "글꼴",
+    "showExample": "진한 예시 줄",
+    "rowHeight": "행 높이",
+    "downloadPdf": "PDF 다운로드",
+    "seoTitle": "무료 이름 쓰기 연습장",
+    "seoText": "개인화된 쓰기 연습장은 손글씨 학습에 가장 효과적인 방법입니다. 필요한 만큼 무제한 생성하세요."
   }
 }
