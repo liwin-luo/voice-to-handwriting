@@ -166,7 +166,7 @@ export default function PaperView() {
   const content =
     pages.length === 0 ? (
       <div
-        className="shadow-paper flex flex-col items-center justify-center gap-4 rounded-xl"
+        className="shadow-paper flex flex-col items-center gap-4 rounded-xl pt-24"
         style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
       >
         <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>

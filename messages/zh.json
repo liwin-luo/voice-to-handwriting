@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "免费英文连笔字描红工作表生成器",
       "description": "粘贴任意词表,免费生成可打印的英文连笔字描红工作表。三线格排版、无水印,适合恢复连笔字教学的课堂。"
+    },
+    "writing": {
+      "title": "汉字练字帖生成器",
+      "description": "免费生成田字格练字帖:输入要练的字,选描红或对照模式,下载 PDF 打印。也支持日文原稿纸和韩文练习格。"
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "打印纸模板",
     "nameTracing": "描红字帖",
     "cursive": "英文连笔字",
-    "cursiveWorks": "英文连笔字工作表"
+    "cursiveWorks": "英文连笔字工作表",
+    "writingPractice": "练字帖"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · 日文手写",
+      "nanumpenscript": "Nanum Pen · 韩文手写"
     },
     "papers": {
       "blank": "白纸",
@@ -288,5 +295,28 @@
     "intro": "免费生成可打印的英文连笔字描红练习页:粘贴任意单词表或句子,得到三线格上的描红行。适合重新恢复连笔字教学的课堂。",
     "seoTitle": "免费可打印英文连笔字(Cursive)练习工作表",
     "seoText": "2024 年以来,美国越来越多的州(佛罗里达、宾夕法尼亚等)立法恢复连笔字教学——教师需要能立刻上手的材料。\n\n用法:粘贴你的词表(字母表、拼写词、名字,每行一个),选择 Cedarville(日常手写)或 Dancing Script(华丽花体),调整行高,下载 PDF。无水印、无需注册。\n\n课堂小技巧:每个学生打印一张深色示例页,再配正反面描红页供一周使用。"
+  },
+  "writing": {
+    "title": "汉字练字帖生成器",
+    "intro": "免费生成田字格练字帖:输入要练的字,选描红或对照模式,下载 PDF 打印。也支持日文原稿纸和韩文练习格。",
+    "scriptLabel": "文字",
+    "scriptZh": "中文 田字格",
+    "scriptJa": "日文 原稿纸",
+    "scriptKo": "韩文 원고지",
+    "textLabel": "要练习的字",
+    "textPlaceholder": "你好世界\n学而时习之",
+    "font": "字体",
+    "guideStyle": "辅助线",
+    "guideCross": "田字虚线",
+    "guideInnerbox": "内框",
+    "guideDot": "中心点",
+    "fillMode": "填充模式",
+    "modeTrace": "描红(浅灰)",
+    "modeDark": "对照(深色)",
+    "modeBlank": "空白格",
+    "cellSize": "格子大小",
+    "downloadPdf": "下载 PDF",
+    "seoTitle": "免费田字格练字帖 — 汉字/假名/谚文一键生成",
+    "seoText": "田字格是汉字练字的经典格式:虚线十字帮你看准结构。输入任意文字循环铺满整页,选描红模式打印练习,或用对照模式做字帖。支持霞鹜文楷等多款手写风格字体,无水印免费下载。"
   }
 }

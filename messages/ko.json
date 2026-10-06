@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "무료 필기체 워크시트 생성기",
       "description": "단어 목록으로 무료 인쇄용 필기체 연습 워크시트를 만드세요. 3줄 그리드, 워터마크 없음."
+    },
+    "writing": {
+      "title": "한글·한자 쓰기 연습장 생성기",
+      "description": "원고지 스타일 연습장을 무료로 생성: 연습할 글자를 입력하고, 따라 쓰기 또는 예시 모드로 인쇄하세요. 중국어田字格도 지원."
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "인쇄용 종이 템플릿",
     "nameTracing": "이름 쓰기 연습장",
     "cursive": "필기체 생성기",
-    "cursiveWorks": "필기체 워크시트"
+    "cursiveWorks": "필기체 워크시트",
+    "writingPractice": "쓰기 연습"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · 일본어 손글씨",
+      "nanumpenscript": "나눔펜 · 한글 손글씨"
     },
     "papers": {
       "blank": "무지",
@@ -288,5 +295,28 @@
     "intro": "단어장이나 문장을 붙여넣으면 3줄 그리드의 따라 쓰기 행으로 변환됩니다. 필기체를 다시 가르치는 교실을 위한 무료 PDF.",
     "seoTitle": "무료 인쇄용 필기체 워크시트",
     "seoText": "미국 여러 주(2024년 이후 플로리다·펜실베이니아 등)에서 필기체 교육을 부활시키고 있고, 교사들은 당장 쓸 수 있는 자료가 필요합니다.\n\n사용법: 단어 목록(알파벳·영단어·이름)을 붙여넣고, Cedarville 또는 Dancing Script 글꼴을 선택, 행 높이를 조절해 PDF 다운로드. 워터마크 없음, 가입 불필요."
+  },
+  "writing": {
+    "title": "한글·한자 쓰기 연습장 생성기",
+    "intro": "원고지 스타일 연습장을 무료로 생성: 연습할 글자를 입력하고, 따라 쓰기 또는 예시 모드로 인쇄하세요. 중국어田字格도 지원.",
+    "scriptLabel": "문자 종류",
+    "scriptZh": "중국어 田字格",
+    "scriptJa": "일본어 원고지",
+    "scriptKo": "한국어 원고지",
+    "textLabel": "연습할 글자",
+    "textPlaceholder": "안녕하세요\n学而时习之",
+    "font": "글꼴",
+    "guideStyle": "가이드선",
+    "guideCross": "십자 가이드",
+    "guideInnerbox": "안쪽 테두리",
+    "guideDot": "중심점",
+    "fillMode": "채우기 모드",
+    "modeTrace": "따라 쓰기(회색)",
+    "modeDark": "예시(진하게)",
+    "modeBlank": "빈 칸",
+    "cellSize": "칸 크기",
+    "downloadPdf": "PDF 다운로드",
+    "seoTitle": "무료 한글·한자 쓰기 연습장 생성기",
+    "seoText": "원고지 스타일 연습장으로 한글과 한자를 연습하세요. 연습할 글자를 입력하면 페이지 전체에 채워지고, 따라 쓰기 모드로 인쇄할 수 있습니다. A4 정확 크기, 워터마크 없음."
   }
 }

@@ -15,6 +15,8 @@ export const FONTS = [
   { id: "indieflower", css: "'Indie Flower', 'Comic Sans MS', cursive" },
   { id: "dancingscript", css: "'Dancing Script', cursive" },
   { id: "cedarvillecursive", css: "'Cedarville Cursive', cursive" },
+  { id: "kleeone", css: "'Klee One', 'Hiragino Mincho ProN', serif" },
+  { id: "nanumpenscript", css: "'Nanum Pen Script', cursive" },
 ] as const;
 export type FontId = (typeof FONTS)[number]["id"];
 

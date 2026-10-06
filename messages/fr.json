@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "Générateur gratuit de fiches d'écriture cursive",
       "description": "Créez des fiches de cursive à imprimer à partir de n'importe quelle liste de mots. Lignes à repasser sur papier 3 lignes, sans filigrane."
+    },
+    "writing": {
+      "title": "Générateur de feuilles d'écriture CJK",
+      "description": "Feuilles de pratique gratuites pour chinois, japonais et coréen : carrés tianzige, grilles genkoyoshi et cellules hangul. Tapez les caractères, imprimez le PDF."
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "Papier à imprimer",
     "nameTracing": "Fiches de prénoms",
     "cursive": "Écriture cursive",
-    "cursiveWorks": "Fiches d'écriture cursive"
+    "cursiveWorks": "Fiches d'écriture cursive",
+    "writingPractice": "Écriture CJK"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · Japonais",
+      "nanumpenscript": "Nanum Pen · Coréen"
     },
     "papers": {
       "blank": "Uni",
@@ -288,5 +295,28 @@
     "intro": "Des fiches de cursive à imprimer gratuitement : collez une liste de mots et obtenez des lignes à repasser sur papier 3 lignes. Pour les classes qui réintègrent la cursive.",
     "seoTitle": "Fiches de cursive à imprimer gratuitement",
     "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Cedarville Cursive ou Dancing Script, ajustez la hauteur et téléchargez le PDF. Sans filigrane ni inscription."
+  },
+  "writing": {
+    "title": "Générateur de feuilles d'écriture CJK",
+    "intro": "Feuilles de pratique gratuites pour chinois, japonais et coréen : carrés tianzige, grilles genkoyoshi et cellules hangul. Tapez les caractères, imprimez le PDF.",
+    "scriptLabel": "Écriture",
+    "scriptZh": "Chinois 田字格",
+    "scriptJa": "Japonais genkoyoshi",
+    "scriptKo": "Coréen 원고지",
+    "textLabel": "Caractères à pratiquer",
+    "textPlaceholder": "你好世界\n学而时习之",
+    "font": "Police",
+    "guideStyle": "Guides",
+    "guideCross": "Guides en croix",
+    "guideInnerbox": "Cadre intérieur",
+    "guideDot": "Point central",
+    "fillMode": "Mode",
+    "modeTrace": "Repasser (gris)",
+    "modeDark": "Exemple (foncé)",
+    "modeBlank": "Cases vides",
+    "cellSize": "Taille des cases",
+    "downloadPdf": "Télécharger le PDF",
+    "seoTitle": "Feuilles de pratique kanji, hanzi et hangul à imprimer gratuitement",
+    "seoText": "Carrés tianzige chinois avec guides en croix, grilles style genkoyoshi et cellules de pratique coréennes — la méthode classique pour apprendre l'écriture CJK. Répétez n'importe quel texte sur la feuille, choisissez le mode repasser ou exemple et imprimez en A4 exact. Sans filigrane."
   }
 }

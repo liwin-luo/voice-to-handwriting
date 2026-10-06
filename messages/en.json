@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "Free Cursive Worksheets Generator (Printable PDF)",
       "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper, no watermark — built for classrooms bringing back cursive."
+    },
+    "writing": {
+      "title": "Writing Practice Sheet Generator",
+      "description": "Free printable writing practice sheets for Chinese, Japanese and Korean: tianzige squares, genkoyoshi-style grids and hangul practice cells. Type the characters, print the PDF."
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
     "cursive": "Cursive Writing",
-    "cursiveWorks": "Cursive Worksheets"
+    "cursiveWorks": "Cursive Worksheets",
+    "writingPractice": "Writing Practice"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · Japanese Handwriting",
+      "nanumpenscript": "Nanum Pen · Korean Handwriting"
     },
     "papers": {
       "blank": "Blank",
@@ -288,5 +295,28 @@
     "intro": "Free printable cursive practice sheets: paste any word list or sentence and get traceable cursive rows on 3-line paper. Built for classrooms bringing cursive back.",
     "seoTitle": "Free printable cursive worksheets for the classroom",
     "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Cedarville Cursive for everyday handwriting or Dancing Script for elegant flourishes, set the row height, and download the PDF. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice."
+  },
+  "writing": {
+    "title": "Writing Practice Sheet Generator",
+    "intro": "Free printable writing practice sheets for Chinese, Japanese and Korean: tianzige squares, genkoyoshi-style grids and hangul practice cells. Type the characters, print the PDF.",
+    "scriptLabel": "Script",
+    "scriptZh": "中文 田字格",
+    "scriptJa": "日本語 原稿紙風",
+    "scriptKo": "한국어 원고지风",
+    "textLabel": "Characters to practice",
+    "textPlaceholder": "你好世界\n学而时习之",
+    "font": "Font",
+    "guideStyle": "Guide style",
+    "guideCross": "Cross guides",
+    "guideInnerbox": "Inner box",
+    "guideDot": "Center dot",
+    "fillMode": "Fill mode",
+    "modeTrace": "Trace (gray)",
+    "modeDark": "Example (dark)",
+    "modeBlank": "Empty cells",
+    "cellSize": "Cell size",
+    "downloadPdf": "Download PDF",
+    "seoTitle": "Free printable kanji, kana, hanzi and hangul practice sheets",
+    "seoText": "Chinese tianzige squares with cross guides, Japanese genkoyoshi-style grids and Korean practice cells — the classic way to learn CJK writing. Loop any text through the sheet, choose trace-gray or dark example mode, and print at exact A4 size. No watermark, no signup."
   }
 }

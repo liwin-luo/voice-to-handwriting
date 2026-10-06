@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "Gerador grátis de fichas de cursiva (PDF)",
       "description": "Crie fichas de prática de cursiva grátis a partir de qualquer lista de palavras. Linhas para treinar em papel de 3 linhas, sem marca d'água."
+    },
+    "writing": {
+      "title": "Gerador de folhas de prática CJK",
+      "description": "Folhas de prática de chinês, japonês e coreano para imprimir grátis: quadrados tianzige, grades genkoyoshi e células hangul. Digite os caracteres, baixe o PDF."
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nomes",
     "cursive": "Letra cursiva",
-    "cursiveWorks": "Fichas de cursiva"
+    "cursiveWorks": "Fichas de cursiva",
+    "writingPractice": "Caligrafia CJK"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · Japonês",
+      "nanumpenscript": "Nanum Pen · Coreano"
     },
     "papers": {
       "blank": "Liso",
@@ -288,5 +295,28 @@
     "intro": "Fichas de prática de cursiva para imprimir grátis: cole qualquer lista de palavras e ganhe linhas cursivas para treinar em papel de 3 linhas. Para turmas que estão trazendo a cursiva de volta.",
     "seoTitle": "Fichas de cursiva para imprimir grátis",
     "seoText": "Cada vez mais estados dos EUA estão trazendo a cursiva de volta ao currículo (Flórida, Pensilvânia e outros desde 2024) — e professores precisam de materiais imediatos.\n\nComo usar: cole sua lista de palavras (alfabeto, ortografia, nomes — um por linha), escolha Cedarville Cursive ou Dancing Script, ajuste a altura e baixe o PDF. Sem marca d'água nem cadastro."
+  },
+  "writing": {
+    "title": "Gerador de folhas de prática CJK",
+    "intro": "Folhas de prática de chinês, japonês e coreano para imprimir grátis: quadrados tianzige, grades genkoyoshi e células hangul. Digite os caracteres, baixe o PDF.",
+    "scriptLabel": "Escrita",
+    "scriptZh": "Chinês 田字格",
+    "scriptJa": "Japonês genkoyoshi",
+    "scriptKo": "Coreano 원고지",
+    "textLabel": "Caracteres para praticar",
+    "textPlaceholder": "你好世界\n学而时习之",
+    "font": "Fonte",
+    "guideStyle": "Guias",
+    "guideCross": "Guias em cruz",
+    "guideInnerbox": "Moldura interna",
+    "guideDot": "Ponto central",
+    "fillMode": "Modo",
+    "modeTrace": "Repasar (cinza)",
+    "modeDark": "Exemplo (escuro)",
+    "modeBlank": "Células vazias",
+    "cellSize": "Tamanho da célula",
+    "downloadPdf": "Baixar PDF",
+    "seoTitle": "Folhas de prática de kanji, hanzi e hangul para imprimir grátis",
+    "seoText": "Quadrados tianzige chineses com guias em cruz, grades estilo genkoyoshi e células de prática coreanas — o clássico para aprender escrita CJK. Repita qualquer texto na folha, escolha modo repasar ou exemplo e imprima em A4 exato. Sem marca d'água."
   }
 }

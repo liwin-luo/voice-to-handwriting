@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "Kostenloser Schreibschrift-Arbeitsblatt-Generator",
       "description": "Kostenlose Schreibschrift-Übungsblätter aus jeder Wortliste erstellen. Nachspürbare Zeilen auf 3-Linien-Papier, ohne Wasserzeichen."
+    },
+    "writing": {
+      "title": "CJK-Schreibübungs-Generator",
+      "description": "Kostenlose Übungspapiere für Chinesisch, Japanisch und Koreanisch: Tianzige-Quadrate, Genkoyoshi-Gitter und Hangul-Zellen. Text eingeben, PDF drucken."
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "Druckpapier-Vorlagen",
     "nameTracing": "Schreibübungsblätter",
     "cursive": "Schreibschrift-Generator",
-    "cursiveWorks": "Schreibschrift-Arbeitsblätter"
+    "cursiveWorks": "Schreibschrift-Arbeitsblätter",
+    "writingPractice": "Schreibübungen CJK"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · Japanisch",
+      "nanumpenscript": "Nanum Pen · Koreanisch"
     },
     "papers": {
       "blank": "Blanko",
@@ -288,5 +295,28 @@
     "intro": "Kostenlose Übungsbätter in Schreibschrift: Wortliste oder Satz einfügen und nachspürbare Zeilen auf 3-Linien-Papier erhalten. Für Klassen, die Schreibschrift zurückbringen.",
     "seoTitle": "Kostenlose Schreibschrift-Arbeitsblätter zum Drucken",
     "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Cedarville Cursive oder Dancing Script wählen, Zeilenhöhe anpassen, PDF herunterladen. Ohne Wasserzeichen, ohne Anmeldung."
+  },
+  "writing": {
+    "title": "CJK-Schreibübungs-Generator",
+    "intro": "Kostenlose Übungspapiere für Chinesisch, Japanisch und Koreanisch: Tianzige-Quadrate, Genkoyoshi-Gitter und Hangul-Zellen. Text eingeben, PDF drucken.",
+    "scriptLabel": "Schrift",
+    "scriptZh": "Chinesisch 田字格",
+    "scriptJa": "Japanisch Genkoyoshi",
+    "scriptKo": "Koreanisch 원고지",
+    "textLabel": "Übungzeichen",
+    "textPlaceholder": "你好世界\n学而时习之",
+    "font": "Schrift",
+    "guideStyle": "Hilfslinien",
+    "guideCross": "Kreuz-Hilfslinien",
+    "guideInnerbox": "Innenrahmen",
+    "guideDot": "Mittelpunkt",
+    "fillMode": "Modus",
+    "modeTrace": "Nachspuren (grau)",
+    "modeDark": "Beispiel (dunkel)",
+    "modeBlank": "Leere Zellen",
+    "cellSize": "Zellgröße",
+    "downloadPdf": "PDF herunterladen",
+    "seoTitle": "Kostenlose Kanji-, Hanzi- und Hangul-Übungspapiere",
+    "seoText": "Chinesische Tianzige-Quadrate mit Kreuz-Hilfslinien, Genkoyoshi-Gitter und koreanische Übungszellen — der klassische Weg, CJK-Schrift zu lernen. Beliebigen Text kacheln, Nachspur- oder Beispielmodus wählen und in exaktem A4 drucken. Ohne Wasserzeichen."
   }
 }

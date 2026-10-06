@@ -51,6 +51,10 @@
     "cursiveWorks": {
       "title": "無料の筆記体ワークシート生成器",
       "description": "単語リストから筆記体のなぞり書きワークシートを無料で生成。3 線グリッド、透かしなし。"
+    },
+    "writing": {
+      "title": "文字練習プリント生成器",
+      "description": "漢字・かなの練習プリントを無料で生成。原稿紙風のマスに好きな文字を入れて、なぞり書きまたはお手本モードで印刷。"
     }
   },
   "nav": {
@@ -63,7 +67,8 @@
     "printablePaper": "印刷用紙テンプレート",
     "nameTracing": "なぞり書きプリント",
     "cursive": "筆記体ジェネレーター",
-    "cursiveWorks": "筆記体ワークシート"
+    "cursiveWorks": "筆記体ワークシート",
+    "writingPractice": "文字練習"
   },
   "home": {
     "tagline": "話しかけるだけで手書きの文書に —— カード、手紙、ジャーナル、SNS 画像に",
@@ -122,7 +127,9 @@
       "kalam": "Kalam · Neat",
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
-      "cedarvillecursive": "Cedarville · Cursive"
+      "cedarvillecursive": "Cedarville · Cursive",
+      "kleeone": "Klee One · 手書き",
+      "nanumpenscript": "Nanum Pen · 韓国語手書き"
     },
     "papers": {
       "blank": "無地",
@@ -288,5 +295,28 @@
     "intro": "単語リストや文を貼り付けると、3 線グリッドのなぞり書き行に変換。筆記体復活の授業向け、無料 PDF。",
     "seoTitle": "無料で印刷できる筆記体ワークシート",
     "seoText": "米国では複数の州が筆記体教育を復活させています(2024 年以降フロリダ州・ペンシルベニア州など)。教師がすぐ使える教材が必要な今、このジェネレーターが活躍します。\n\n使い方:単語リスト(アルファベット・スペリング・名前)を貼り付け、Cedarville か Dancing Script を選び、行の高さを調整して PDF ダウンロード。透かしなし、登録不要。"
+  },
+  "writing": {
+    "title": "文字練習プリント生成器",
+    "intro": "漢字・かなの練習プリントを無料で生成。原稿紙風のマスに好きな文字を入れて、なぞり書きまたはお手本モードで印刷。",
+    "scriptLabel": "文字種",
+    "scriptZh": "中国語 田字格",
+    "scriptJa": "日本語 原稿紙風",
+    "scriptKo": "韓国語 원고지",
+    "textLabel": "練習する文字",
+    "textPlaceholder": "こんにちは\n學而時習之",
+    "font": "フォント",
+    "guideStyle": "ガイド線",
+    "guideCross": "十字ガイド",
+    "guideInnerbox": "内枠",
+    "guideDot": "中心点",
+    "fillMode": "表示モード",
+    "modeTrace": "なぞり(薄字)",
+    "modeDark": "お手本(濃色)",
+    "modeBlank": "空マス",
+    "cellSize": "マスサイズ",
+    "downloadPdf": "PDF をダウンロード",
+    "seoTitle": "無料の漢字・かな練習プリント生成器",
+    "seoText": "原稿紙風のマス目プリントで、漢字やかなの練習を。好きな文字を入力するとページ全体に敷き詰め、なぞり書きモードで印刷できます。A4 サイズ正確、透かしなし。"
   }
 }

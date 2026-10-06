@@ -13,6 +13,8 @@ const jobs = [
   { input: "fonts-src/IndieFlower-Regular.ttf", outDir: "public/fonts/indieflower", family: "Indie Flower" },
   { input: "fonts-src/DancingScript[wght].ttf", outDir: "public/fonts/dancingscript", family: "Dancing Script" },
   { input: "fonts-src/Cedarville-Cursive.ttf", outDir: "public/fonts/cedarvillecursive", family: "Cedarville Cursive" },
+  { input: "fonts-src/KleeOne-Regular.ttf", outDir: "public/fonts/kleeone", family: "Klee One" },
+  { input: "fonts-src/NanumPenScript-Regular.ttf", outDir: "public/fonts/nanumpenscript", family: "Nanum Pen Script" },
 ];
 
 for (const j of jobs) {
