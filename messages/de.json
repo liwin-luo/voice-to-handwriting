@@ -325,7 +325,8 @@
     "cellSize": "Zellgröße",
     "downloadPdf": "PDF herunterladen",
     "seoTitle": "Kostenlose Kanji-, Hanzi- und Hangul-Übungspapiere",
-    "seoText": "Chinesische Tianzige-Quadrate mit Kreuz-Hilfslinien, Genkoyoshi-Gitter und koreanische Übungszellen — der klassische Weg, CJK-Schrift zu lernen. Beliebigen Text kacheln, Nachspur- oder Beispielmodus wählen und in exaktem A4 drucken. Ohne Wasserzeichen."
+    "seoText": "Chinesische Tianzige-Quadrate mit Kreuz-Hilfslinien, Genkoyoshi-Gitter und koreanische Übungszellen — der klassische Weg, CJK-Schrift zu lernen. Beliebigen Text kacheln, Nachspur- oder Beispielmodus wählen und in exaktem A4 drucken. Ohne Wasserzeichen.",
+    "faqTitle": "Häufige Fragen"
   },
   "coloring": {
     "title": "Namens-Malvorlagen-Generator",
@@ -340,6 +341,23 @@
     "emptyTitle": "Noch keine Namen",
     "emptyHint": "Namen eingeben — die Malvorlage zeichnet sich von selbst.",
     "seoTitle": "Kostenloser Namens-Malvorlagen-Generator für Kinder",
-    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, Sterne und Herzen inklusive — exaktes Letter-Format, ohne Wasserzeichen."
+    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, Sterne und Herzen inklusive — exaktes Letter-Format, ohne Wasserzeichen.",
+    "faqTitle": "Häufige Fragen"
+  },
+  "wordwork": {
+    "title": "Wortübungsblatt-Generator",
+    "intro": "Füge deine Wochen-Wortliste ein und erhalte zwei druckbare Übungen: jedes Wort dreimal schreiben und den fehlenden Buchstaben ergänzen. Deterministisch, ohne Wasserzeichen, kostenloser PDF.",
+    "wordsLabel": "Wörter (eines pro Zeile)",
+    "wordsPlaceholder": "cat\ndog\nsun\nball",
+    "font": "Schrift",
+    "showTrace": "Erste Kopie zum Nachspuren",
+    "downloadPdf": "PDF herunterladen",
+    "a1Title": "Schreibe jedes Wort dreimal.",
+    "a2Title": "Ergänze den fehlenden Buchstaben.",
+    "emptyTitle": "Noch keine Wörter",
+    "emptyHint": "Füge deine Wochen-Wortliste ein — das Arbeitsblatt entsteht automatisch.",
+    "faqTitle": "Häufige Fragen",
+    "seoTitle": "Kostenlose Wortübungsblätter aus jeder Wortliste",
+    "seoText": "Lehrkräfte ertrinken in KI-generierten Arbeitsblättern voller Fehler. Dieser Generator ist deterministisch: Dieselbe Liste erzeugt immer dieselben sauberen, druckbaren Seiten — dreimal schreiben plus fehlenden Buchstaben ergänzen, mit Handschrift-Schriften nach Wahl, in exakter Letter-Größe und ohne Wasserzeichen."
   }
 }

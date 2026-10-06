@@ -325,7 +325,8 @@
     "cellSize": "Taille des cases",
     "downloadPdf": "Télécharger le PDF",
     "seoTitle": "Feuilles de pratique kanji, hanzi et hangul à imprimer gratuitement",
-    "seoText": "Carrés tianzige chinois avec guides en croix, grilles style genkoyoshi et cellules de pratique coréennes — la méthode classique pour apprendre l'écriture CJK. Répétez n'importe quel texte sur la feuille, choisissez le mode repasser ou exemple et imprimez en A4 exact. Sans filigrane."
+    "seoText": "Carrés tianzige chinois avec guides en croix, grilles style genkoyoshi et cellules de pratique coréennes — la méthode classique pour apprendre l'écriture CJK. Répétez n'importe quel texte sur la feuille, choisissez le mode repasser ou exemple et imprimez en A4 exact. Sans filigrane.",
+    "faqTitle": "Questions fréquentes"
   },
   "coloring": {
     "title": "Générateur de pages à colorier avec prénoms",
@@ -340,6 +341,23 @@
     "emptyTitle": "Pas encore de prénoms",
     "emptyHint": "Tapez un prénom — la page se dessine toute seule.",
     "seoTitle": "Générateur gratuit de pages à colorier avec prénoms",
-    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, étoiles et cœurs inclus — format Letter exact, sans filigrane."
+    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, étoiles et cœurs inclus — format Letter exact, sans filigrane.",
+    "faqTitle": "Questions fréquentes"
+  },
+  "wordwork": {
+    "title": "Générateur de fiches de mots",
+    "intro": "Collez votre liste de mots de la semaine et obtenez deux activités imprimables : écrire chaque mot trois fois et compléter la lettre manquante. Déterministe, sans filigrane, PDF gratuit.",
+    "wordsLabel": "Mots (un par ligne)",
+    "wordsPlaceholder": "cat\ndog\nsun\nball",
+    "font": "Police",
+    "showTrace": "Première copie à repasser",
+    "downloadPdf": "Télécharger le PDF",
+    "a1Title": "Écris chaque mot trois fois.",
+    "a2Title": "Complète la lettre manquante.",
+    "emptyTitle": "Aucun mot pour l'instant",
+    "emptyHint": "Collez votre liste de mots de la semaine — la fiche se crée toute seule.",
+    "faqTitle": "Questions fréquentes",
+    "seoTitle": "Fiches de mots gratuites à partir de n'importe quelle liste",
+    "seoText": "Les enseignants sont submergés de fiches générées par IA pleines d'erreurs. Ce générateur est déterministe : la même liste produit toujours les mêmes pages propres et imprimables — écrire trois fois plus lettres manquantes, avec les polices d'écriture au choix, au format Letter exact et sans filigrane."
   }
 }

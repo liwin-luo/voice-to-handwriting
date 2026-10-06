@@ -325,7 +325,8 @@
     "cellSize": "Cell size",
     "downloadPdf": "Download PDF",
     "seoTitle": "Free printable kanji, kana, hanzi and hangul practice sheets",
-    "seoText": "Chinese tianzige squares with cross guides, Japanese genkoyoshi-style grids and Korean practice cells — the classic way to learn CJK writing. Loop any text through the sheet, choose trace-gray or dark example mode, and print at exact A4 size. No watermark, no signup."
+    "seoText": "Chinese tianzige squares with cross guides, Japanese genkoyoshi-style grids and Korean practice cells — the classic way to learn CJK writing. Loop any text through the sheet, choose trace-gray or dark example mode, and print at exact A4 size. No watermark, no signup.",
+    "faqTitle": "Frequently asked questions"
   },
   "coloring": {
     "title": "Name Coloring Page Generator",
@@ -340,6 +341,23 @@
     "emptyTitle": "No names yet",
     "emptyHint": "Type a name and the coloring page draws itself.",
     "seoTitle": "Free name coloring page generator for kids",
-    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines, stars and hearts included — print at exact Letter size, no watermark."
+    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines, stars and hearts included — print at exact Letter size, no watermark.",
+    "faqTitle": "Frequently asked questions"
+  },
+  "wordwork": {
+    "title": "Word Work Worksheet Generator",
+    "intro": "Paste your weekly spelling list and get two printable activities: write each word three times, and fill in the missing letter. Deterministic, no watermark, free PDF.",
+    "wordsLabel": "Spelling words (one per line)",
+    "wordsPlaceholder": "cat\ndog\nsun\nball",
+    "font": "Font",
+    "showTrace": "Traceable first copy",
+    "downloadPdf": "Download PDF",
+    "a1Title": "Write each word three times.",
+    "a2Title": "Fill in the missing letter.",
+    "emptyTitle": "No words yet",
+    "emptyHint": "Paste your weekly spelling list — the worksheet builds itself.",
+    "faqTitle": "Frequently asked questions",
+    "seoTitle": "Free word work worksheets from any spelling list",
+    "seoText": "Teachers are drowning in AI-generated worksheets full of errors. This generator is deterministic: the same list always produces the same clean, printable pages — write-it-three-times plus a fill-in-the-missing-letter activity, in your choice of handwriting fonts, at exact letter size with no watermark."
   }
 }

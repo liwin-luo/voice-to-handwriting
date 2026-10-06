@@ -5,6 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import WordWorkGenerator from "@/components/WordWorkGenerator";
 import ShareBar from "@/components/ShareBar";
+import ToolFaq from "@/components/ToolFaq";
+import { WORDWORK_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -54,6 +56,7 @@ export default async function WordWorkPage({
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
+      <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(WORDWORK_FAQS, locale as Locale)} />
     </main>
   );
 }

@@ -325,7 +325,8 @@
     "cellSize": "Tamanho da célula",
     "downloadPdf": "Baixar PDF",
     "seoTitle": "Folhas de prática de kanji, hanzi e hangul para imprimir grátis",
-    "seoText": "Quadrados tianzige chineses com guias em cruz, grades estilo genkoyoshi e células de prática coreanas — o clássico para aprender escrita CJK. Repita qualquer texto na folha, escolha modo repasar ou exemplo e imprima em A4 exato. Sem marca d'água."
+    "seoText": "Quadrados tianzige chineses com guias em cruz, grades estilo genkoyoshi e células de prática coreanas — o clássico para aprender escrita CJK. Repita qualquer texto na folha, escolha modo repasar ou exemplo e imprima em A4 exato. Sem marca d'água.",
+    "faqTitle": "Perguntas frequentes"
   },
   "coloring": {
     "title": "Gerador de páginas para colorir com nomes",
@@ -340,6 +341,23 @@
     "emptyTitle": "Ainda sem nomes",
     "emptyHint": "Digite um nome e a página se desenha sozinha.",
     "seoTitle": "Gerador grátis de páginas para colorir com nomes",
-    "seoText": "Páginas para colorir com o próprio nome são um clássico: as crianças pintam as letras e aprendem a forma delas. Contornos bolha, estrelas e corações incluídos — tamanho Letter exato, sem marca d'água."
+    "seoText": "Páginas para colorir com o próprio nome são um clássico: as crianças pintam as letras e aprendem a forma delas. Contornos bolha, estrelas e corações incluídos — tamanho Letter exato, sem marca d'água.",
+    "faqTitle": "Perguntas frequentes"
+  },
+  "wordwork": {
+    "title": "Gerador de fichas de palavras",
+    "intro": "Cole sua lista semanal de palavras e receba duas atividades imprimíveis: escrever cada palavra três vezes e completar a letra que falta. Determinístico, sem marca d'água, PDF grátis.",
+    "wordsLabel": "Palavras (uma por linha)",
+    "wordsPlaceholder": "cat\ndog\nsun\nball",
+    "font": "Fonte",
+    "showTrace": "Primeira cópia para treinar",
+    "downloadPdf": "Baixar PDF",
+    "a1Title": "Escreva cada palavra três vezes.",
+    "a2Title": "Complete a letra que falta.",
+    "emptyTitle": "Ainda sem palavras",
+    "emptyHint": "Cole sua lista semanal de palavras — a ficha se monta sozinha.",
+    "faqTitle": "Perguntas frequentes",
+    "seoTitle": "Fichas de palavras grátis de qualquer lista",
+    "seoText": "Professores estão afogados em fichas geradas por IA cheias de erros. Este gerador é determinístico: a mesma lista sempre produz as mesmas páginas limpas e imprimíveis — escrever três vezes mais completar a letra que falta, com fontes de caligrafia à escolha, tamanho Letter exato e sem marca d'água."
   }
 }

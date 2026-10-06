@@ -490,3 +490,171 @@ export const FAQ_ITEMS: FaqItem[] = [
     },
   },
 ];
+
+/** /word-work 拼写练习页 FAQ(en+zh 已译;其他语言后补) */
+export const WORDWORK_FAQS: FaqItem[] = [
+  {
+    id: "wordwork-free",
+    i18n: {
+      en: {
+        q: "Is the word work generator free?",
+        a: "Yes — unlimited worksheets, no signup, no watermark. Everything is generated in your browser and your word list is never uploaded.",
+      },
+      zh: {
+        q: "拼写练习生成器免费吗?",
+        a: "免费——练习页不限量、无需注册、无水印。全部在浏览器本地生成,单词清单不会上传。",
+      },
+    },
+  },
+  {
+    id: "wordwork-activities",
+    i18n: {
+      en: {
+        q: "What activities does it generate?",
+        a: "Two per sheet: write each word three times (optionally with a traceable first copy) and a fill-in-the-missing-letter puzzle built from the same list.",
+      },
+      zh: {
+        q: "会生成哪些练习?",
+        a: "每页两种:每个单词写三遍(可选第一份为描红),以及用同一份清单生成的补全缺失字母练习。",
+      },
+    },
+  },
+  {
+    id: "wordwork-deterministic",
+    i18n: {
+      en: {
+        q: "Are the worksheets the same every time for the same list?",
+        a: "Yes — the generator is deterministic, so Monday's preview matches Friday's printout. No AI surprises or garbled words: what you paste is exactly what prints.",
+      },
+      zh: {
+        q: "同一份清单生成的内容固定吗?",
+        a: "固定——生成器是确定性的,周一预览的和周五打印的完全一致。没有 AI 随机出错,粘贴什么就打印什么。",
+      },
+    },
+  },
+  {
+    id: "wordwork-words",
+    i18n: {
+      en: {
+        q: "Which words can I use?",
+        a: "Any list: weekly spelling words, sight words, vocabulary — one word per line. Keep it to a dozen or so per sheet so the writing rows stay comfortable.",
+      },
+      zh: {
+        q: "可以用哪些单词?",
+        a: "任意清单:每周拼写词、高频词、生词——每行一个。每页建议控制在十来个以内,保证书写行距舒适。",
+      },
+    },
+  },
+];
+
+/** /writing-practice CJK 练字帖页 FAQ(en+zh 已译;其他语言后补) */
+export const WRITING_FAQS: FaqItem[] = [
+  {
+    id: "writing-grids",
+    i18n: {
+      en: {
+        q: "Which practice grids are supported?",
+        a: "Tianzige (田字格) for Chinese, genkōyoshi (原稿用紙) for Japanese and wongoji (원고지) for Korean — the grid switches with the script you choose, and cell size is adjustable.",
+      },
+      zh: {
+        q: "支持哪些练习格?",
+        a: "中文田字格、日文原稿用紙、韩文原稿纸——格子随所选文字自动切换,格径大小可调。",
+      },
+    },
+  },
+  {
+    id: "writing-fonts",
+    i18n: {
+      en: {
+        q: "Which handwriting fonts can I choose?",
+        a: "Bundled CJK handwriting fonts such as LXGW WenKai for Chinese, Klee One for Japanese and Nanum Pen for Korean, plus more playful styles — switch any time before you print.",
+      },
+      zh: {
+        q: "有哪些手写字体可选?",
+        a: "内置霞鹜文楷(中文)、Klee One(日文)、Nanum Pen(韩文)等 CJK 手写字体,还有更多可爱风格,打印前可随时切换。",
+      },
+    },
+  },
+  {
+    id: "writing-modes",
+    i18n: {
+      en: {
+        q: "Can my child trace, copy or write independently?",
+        a: "Three fill modes: light traceable characters, solid dark model characters, or blank cells with just the grid — start with tracing and fade it out as confidence grows.",
+      },
+      zh: {
+        q: "孩子可以描红、临写还是独立书写?",
+        a: "三种填充模式:浅色描红字、深色示范字、纯空白格——建议从描红开始,随着熟练度提升逐步过渡到独立书写。",
+      },
+    },
+  },
+  {
+    id: "writing-free",
+    i18n: {
+      en: {
+        q: "Is it free, and does my text stay private?",
+        a: "Yes — free PDF downloads with no watermark, and your practice text never leaves the browser.",
+      },
+      zh: {
+        q: "免费吗?练习文字会上传吗?",
+        a: "免费——PDF 不限次下载、无水印,输入的练习文字不会离开浏览器。",
+      },
+    },
+  },
+];
+
+/** /name-coloring 名字涂色页 FAQ(en+zh 已译;其他语言后补) */
+export const COLORING_FAQS: FaqItem[] = [
+  {
+    id: "coloring-free",
+    i18n: {
+      en: {
+        q: "Is the name coloring page generator free?",
+        a: "Yes — unlimited pages, no signup, no watermark. PDF and PNG downloads are free for home and classroom use.",
+      },
+      zh: {
+        q: "名字涂色页生成器免费吗?",
+        a: "免费——页数不限、无需注册、无水印。PDF 和 PNG 下载免费,家庭和课堂都能用。",
+      },
+    },
+  },
+  {
+    id: "coloring-how",
+    i18n: {
+      en: {
+        q: "How do I make a coloring page with my child's name?",
+        a: "Type the name, pick a playful font, and the page draws bubble-letter outlines of each character with stars and hearts to color.",
+      },
+      zh: {
+        q: "怎么给孩子做名字涂色页?",
+        a: "输入名字、选一个可爱字体,页面会自动画出每个字的大气泡轮廓,并配上星星爱心装饰。",
+      },
+    },
+  },
+  {
+    id: "coloring-customize",
+    i18n: {
+      en: {
+        q: "Can I adjust the outlines and decorations?",
+        a: "Yes — outline thickness is adjustable (thicker lines are easier for younger kids), the star-and-heart decorations can be switched off, and the font changes the letter shapes.",
+      },
+      zh: {
+        q: "可以调整轮廓和装饰吗?",
+        a: "可以——描边粗细可调(线条越粗越适合小龄孩子),星星爱心装饰可以关闭,换字体还能改变字形。",
+      },
+    },
+  },
+  {
+    id: "coloring-who",
+    i18n: {
+      en: {
+        q: "Who is it for?",
+        a: "Preschool and kindergarten kids learning to recognize their own name — coloring the letters doubles as letter-shape practice. Teachers use it for name-of-the-week activities; multiple names work too.",
+      },
+      zh: {
+        q: "适合多大的孩子?",
+        a: "适合正在认识自己名字的学龄前和幼儿园孩子——涂色的同时练习字形。老师也用它做“本周名字”课堂活动,支持一次输入多个名字。",
+      },
+    },
+  },
+];
