@@ -122,7 +122,8 @@
       "line": "Line color",
       "spacing": "Line spacing"
     },
-    "customColor": "Custom color"
+    "customColor": "Custom color",
+    "preview": "Preview"
   },
   "footer": {
     "privacy": "Privacy Policy",
@@ -175,5 +176,20 @@
     "updated": "Updated",
     "reading": "{m} min read",
     "testedNote": "All steps in this article were tested on desktop Chrome (October 2026, macOS). Recognition quality may vary across browsers and devices — share your own results via [Contact](/contact)."
+  },
+  "share": {
+    "preview": "Preview",
+    "share": "Share",
+    "shareSystem": "More options",
+    "shareText": "A handwritten page I made with Voice to Handwriting {link}",
+    "copyImage": "Copy image",
+    "copied": "Copied",
+    "copyLink": "Copy text & link",
+    "copyFail": "Copy failed — use the download button instead",
+    "close": "Close",
+    "prevPage": "Previous page",
+    "nextPage": "Next page",
+    "download": "Download this page",
+    "shareHint": "Tip: copy the image first, then paste it directly into your post."
   }
 }

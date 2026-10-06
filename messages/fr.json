@@ -122,7 +122,8 @@
     "errorImport": "Échec de la transcription — essayez un fichier mp3 / wav / m4a",
     "modelNote": "Rapide : ~80 Mo ; Haute qualité : ~250 Mo, meilleur pour le chinois. Le modèle se télécharge une fois ; l'audio ne quitte jamais votre appareil",
     "watermark": "Filigrane à l'export",
-    "trySample": "Essayer un exemple"
+    "trySample": "Essayer un exemple",
+    "preview": "Aperçu"
   },
   "footer": {
     "privacy": "Confidentialité",
@@ -175,5 +176,20 @@
     "updated": "Mis à jour",
     "reading": "{m} min de lecture",
     "testedNote": "Toutes les étapes ont été testées sur Chrome de bureau (octobre 2026, macOS). La qualité varie selon le navigateur et l'appareil — relisez toujours le texte important. Nous ne collectons ni texte ni audio — voir la Politique de confidentialité. Référence : MDN Web Speech API."
+  },
+  "share": {
+    "preview": "Aperçu",
+    "share": "Partager sur",
+    "shareSystem": "Plus d'options",
+    "shareText": "Une page manuscrite créée avec Voice to Handwriting {link}",
+    "copyImage": "Copier l'image",
+    "copied": "Copié",
+    "copyLink": "Copier le texte et le lien",
+    "copyFail": "Échec de la copie — utilisez le bouton de téléchargement",
+    "close": "Fermer",
+    "prevPage": "Page précédente",
+    "nextPage": "Page suivante",
+    "download": "Télécharger cette page",
+    "shareHint": "Astuce : copiez d'abord l'image, puis collez-la directement dans votre publication."
   }
 }

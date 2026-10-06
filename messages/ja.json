@@ -122,7 +122,8 @@
       "line": "罫線の色",
       "spacing": "行間"
     },
-    "customColor": "カスタムカラー"
+    "customColor": "カスタムカラー",
+    "preview": "プレビュー"
   },
   "footer": {
     "privacy": "プライバシーポリシー",
@@ -175,5 +176,20 @@
     "updated": "最終更新",
     "reading": "{m} 分で読める",
     "testedNote": "本記事の手順はデスクトップ版 Chrome で実測しました(2026 年 10 月、macOS)。ブラウザや端末により認識精度は異なる場合があります。実測結果は[お問い合わせ](/contact)からぜひ共有してください。"
+  },
+  "share": {
+    "preview": "プレビュー",
+    "share": "シェア先",
+    "shareSystem": "その他",
+    "shareText": "「Voice to Handwriting」で作った手書き文書 {link}",
+    "copyImage": "画像をコピー",
+    "copied": "コピーしました",
+    "copyLink": "文字とリンクをコピー",
+    "copyFail": "コピーに失敗しました。ダウンロードをご利用ください",
+    "close": "閉じる",
+    "prevPage": "前のページ",
+    "nextPage": "次のページ",
+    "download": "このページを保存",
+    "shareHint": "ヒント:先に画像をコピーして、SNS に直接貼り付けられます。"
   }
 }

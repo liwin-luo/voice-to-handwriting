@@ -1,17 +1,19 @@
 "use client";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { DownloadSimple, FilePdf } from "@phosphor-icons/react";
+import { DownloadSimple, Eye, FilePdf } from "@phosphor-icons/react";
 import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 import { useEditorStore } from "@/stores/useEditorStore";
-import { snapshotEditor } from "@/stores/useHistoryStore";
+import SharePreviewModal from "./SharePreviewModal";
 import { PAGE_H, PAGE_W } from "./PaperView";
 
 export default function ExportBar() {
   const t = useTranslations("tool");
   const text = useEditorStore((s) => s.text);
   const [busy, setBusy] = useState(false);
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewPages, setPreviewPages] = useState<string[]>([]);
 
   const pageEls = () => Array.from(document.querySelectorAll<HTMLElement>(".paper"));
 
@@ -30,7 +32,6 @@ export default function ExportBar() {
     try {
       const urls = await toPngPages();
       urls.forEach((u, i) => download(u, `handwriting-${i + 1}.png`));
-      snapshotEditor("export");
     } finally {
       setBusy(false);
     }
@@ -46,7 +47,16 @@ export default function ExportBar() {
         pdf.addImage(u, "PNG", 0, 0, PAGE_W, PAGE_H);
       });
       pdf.save("handwriting.pdf");
-      snapshotEditor("export");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const openPreview = async () => {
+    setBusy(true);
+    try {
+      setPreviewPages(await toPngPages());
+      setPreviewOpen(true);
     } finally {
       setBusy(false);
     }
@@ -55,6 +65,10 @@ export default function ExportBar() {
   const disabled = !text.trim() || busy;
   return (
     <div className="flex gap-2">
+      <button onClick={openPreview} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
+        <Eye className="size-4 text-zinc-500" />
+        {busy ? t("exporting") : t("preview")}
+      </button>
       <button onClick={exportPng} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
         <DownloadSimple className="size-4 text-zinc-500" />
         {busy ? t("exporting") : t("exportPng")}
@@ -63,6 +77,7 @@ export default function ExportBar() {
         <FilePdf className="size-4 text-zinc-500" />
         {t("exportPdf")}
       </button>
+      <SharePreviewModal open={previewOpen} onClose={() => setPreviewOpen(false)} pages={previewPages} />
     </div>
   );
 }

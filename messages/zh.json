@@ -122,7 +122,8 @@
       "line": "格线颜色",
       "spacing": "行距"
     },
-    "customColor": "自定义颜色"
+    "customColor": "自定义颜色",
+    "preview": "预览"
   },
   "footer": {
     "privacy": "隐私政策",
@@ -175,5 +176,20 @@
     "updated": "更新于",
     "reading": "{m} 分钟阅读",
     "testedNote": "本文所有步骤均在桌面版 Chrome 上实测(2026 年 10 月,macOS)。不同浏览器与设备的识别效果可能有差异,欢迎通过[联系我们](/contact)反馈你的实测结果。"
+  },
+  "share": {
+    "preview": "预览",
+    "share": "分享到",
+    "shareSystem": "更多方式",
+    "shareText": "我用「声音转手写」写了一段手写文稿 {link}",
+    "copyImage": "复制图片",
+    "copied": "已复制",
+    "copyLink": "复制文字和链接",
+    "copyFail": "复制失败,请改用下载按钮",
+    "close": "关闭",
+    "prevPage": "上一页",
+    "nextPage": "下一页",
+    "download": "下载本页",
+    "shareHint": "小提示:先复制图片,再到社交平台直接粘贴发布。"
   }
 }

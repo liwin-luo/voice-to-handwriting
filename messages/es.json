@@ -122,7 +122,8 @@
       "line": "Color de líneas",
       "spacing": "Interlineado"
     },
-    "customColor": "Color personalizado"
+    "customColor": "Color personalizado",
+    "preview": "Vista previa"
   },
   "footer": {
     "privacy": "Política de privacidad",
@@ -175,5 +176,20 @@
     "updated": "Actualizado",
     "reading": "{m} min de lectura",
     "testedNote": "Todos los pasos de este artículo se probaron en Chrome de escritorio (octubre de 2026, macOS). La calidad del reconocimiento puede variar según navegador y dispositivo; comparte tus resultados en [Contacto](/contact)."
+  },
+  "share": {
+    "preview": "Vista previa",
+    "share": "Compartir en",
+    "shareSystem": "Más opciones",
+    "shareText": "Una página manuscrita creada con Voice to Handwriting {link}",
+    "copyImage": "Copiar imagen",
+    "copied": "Copiado",
+    "copyLink": "Copiar texto y enlace",
+    "copyFail": "No se pudo copiar — usa el botón de descarga",
+    "close": "Cerrar",
+    "prevPage": "Página anterior",
+    "nextPage": "Página siguiente",
+    "download": "Descargar esta página",
+    "shareHint": "Consejo: copia la imagen y pégala directamente en tu publicación."
   }
 }

@@ -122,7 +122,8 @@
       "line": "줄 색",
       "spacing": "줄 간격"
     },
-    "customColor": "커스텀 색상"
+    "customColor": "커스텀 색상",
+    "preview": "미리보기"
   },
   "footer": {
     "privacy": "개인정보 처리방침",
@@ -175,5 +176,20 @@
     "updated": "업데이트",
     "reading": "{m}분 읽기",
     "testedNote": "이 글의 모든 단계는 데스크톱 Chrome에서 직접 테스트했습니다(2026년 10월, macOS). 브라우저와 기기에 따라 인식 품질이 다를 수 있으며, 테스트 결과는 [문의하기](/contact)로 공유해 주세요."
+  },
+  "share": {
+    "preview": "미리보기",
+    "share": "공유하기",
+    "shareSystem": "더보기",
+    "shareText": "Voice to Handwriting로 만든 손글씨 문서 {link}",
+    "copyImage": "이미지 복사",
+    "copied": "복사됨",
+    "copyLink": "텍스트·링크 복사",
+    "copyFail": "복사 실패 — 다운로드 버튼을 이용하세요",
+    "close": "닫기",
+    "prevPage": "이전 페이지",
+    "nextPage": "다음 페이지",
+    "download": "이 페이지 저장",
+    "shareHint": "팁: 이미지를 먼저 복사하면 SNS에 바로 붙여넣을 수 있어요."
   }
 }
