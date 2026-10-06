@@ -8,6 +8,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { POSTS, getPostMeta } from "@/content/posts";
 import { BLOG_CONTENT, postLocales } from "@/content/blog/registry";
 import ProseShell from "@/components/ProseShell";
+import RelatedLinks from "@/components/RelatedLinks";
 import { SITE } from "@/lib/site";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
 
@@ -115,6 +116,7 @@ export default async function BlogPostPage({
         />
       )}
       <Body />
+      <RelatedLinks slug={slug} locale={locale as Locale} />
     </ProseShell>
   );
 }

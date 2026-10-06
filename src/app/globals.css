@@ -48,6 +48,27 @@ body {
   }
 }
 
+/* 浮标面板弹出:从分享按钮一侧缩放浮现,尊重减少动态偏好 */
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.pop {
+  transform-origin: top center;
+  animation: pop 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pop {
+    animation: none;
+  }
+}
+
 @layer components {
   /* 按钮基底:统一的触感反馈与过渡 */
   .btn {

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { FilePdf, DownloadSimple } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
@@ -43,40 +43,29 @@ function drawHeart(ctx: CanvasRenderingContext2D, cx: number, cy: number, s: num
 export default function NameColoringGenerator() {
   const t = useTranslations("coloring");
   const [namesText, setNamesText] = useState("");
+  // 输入防抖:canvas 重绘 + toDataURL 很重,逐键执行会卡死输入
+  const [debouncedText, setDebouncedText] = useState("");
+  // 拼音等输入法组词期间暂停重绘,避免卡住候选词窗口
+  const [composing, setComposing] = useState(false);
   const [fontId, setFontId] = useState("zcoolkuaile");
   const [outline, setOutline] = useState(10); // 描边宽度
   const [decor, setDecor] = useState(true);
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [w, h] = LETTER;
 
-  const names = namesText.split("\n").map((l) => l.trim()).filter(Boolean);
-  const localeDefault = typeof document !== "undefined" && document.documentElement.lang === "zh" ? "zcoolkuaile" : "indieflower";
-
   useEffect(() => {
-    setFontId((f) => (f === "zcoolkuaile" ? f : f)); // 保留用户选择
-  }, []);
+    if (composing) return; // 组词中:不定时器,候选词挑选期间绝不重绘
+    const id = setTimeout(() => setDebouncedText(namesText), 300);
+    return () => clearTimeout(id);
+  }, [namesText, composing]);
 
-  useEffect(() => {
-    let cancelled = false;
-    const run = async () => {
-      if (!names.length) {
-        setPageUrls([]);
-        return;
-      }
-      await document.fonts.load(`200px "${family}"`).catch(() => {});
-      if (cancelled) return;
-      const urls = names.map((name) => drawPage(name));
-      if (!cancelled) setPageUrls(urls);
-    };
-    void run();
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [names, fontId, outline, decor]);
+  // useMemo 稳定引用,避免每次按键都触发重绘 effect
+  const names = useMemo(
+    () => debouncedText.split("\n").map((l) => l.trim()).filter(Boolean),
+    [debouncedText],
+  );
 
   function drawDecorations(ctx: CanvasRenderingContext2D) {
     if (!decor) return;
@@ -136,6 +125,32 @@ export default function NameColoringGenerator() {
     return canvas.toDataURL("image/png");
   }
 
+  useEffect(() => {
+    let cancelled = false;
+    const run = async () => {
+      if (!names.length) {
+        setPageUrls([]);
+        return;
+      }
+      const urls: string[] = [];
+      for (const name of names) {
+        // 传入实际文字,确保 cn-font-split 切片按需加载对应字符的字形
+        await document.fonts.load(`200px "${family}"`, name).catch(() => {});
+        if (cancelled) return;
+        urls.push(drawPage(name));
+        // 逐页让出主线程,多页时不至于一次长任务卡住交互
+        await new Promise((r) => setTimeout(r, 0));
+        if (cancelled) return;
+      }
+      if (!cancelled) setPageUrls(urls);
+    };
+    void run();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [names, fontId, outline, decor]);
+
   const downloadPng = () => {
     pageUrls.forEach((u, i) => {
       const a = document.createElement("a");
@@ -163,6 +178,8 @@ export default function NameColoringGenerator() {
           <textarea
             value={namesText}
             onChange={(e) => setNamesText(e.target.value)}
+            onCompositionStart={() => setComposing(true)}
+            onCompositionEnd={() => setComposing(false)}
             rows={4}
             placeholder={t("namesPlaceholder")}
             className="surface-input resize-y p-3 text-sm leading-relaxed"

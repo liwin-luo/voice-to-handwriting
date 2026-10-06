@@ -12,9 +12,6 @@ import {
   XLogo,
   WhatsappLogo,
   FacebookLogo,
-  TelegramLogo,
-  RedditLogo,
-  LinkedinLogo,
   EnvelopeSimple,
 } from "@phosphor-icons/react";
 import { SITE } from "@/lib/site";
@@ -24,24 +21,24 @@ interface Props {
   onClose: () => void;
   /** 每页的 PNG dataUrl(与导出一致的渲染) */
   pages: string[];
+  /** 导出水印当前状态;切换后父组件重渲染页面图 */
+  watermark: boolean;
+  onWatermarkChange: (on: boolean) => Promise<void>;
 }
 
-type ShareIntent = "x" | "whatsapp" | "facebook" | "telegram" | "reddit" | "linkedin" | "email";
+type ShareIntent = "x" | "whatsapp" | "facebook" | "email";
 
 /** 预览 + 社交分享弹窗:展示与导出一致的页面真图,支持系统分享与逐平台分享 */
-export default function SharePreviewModal({ open, onClose, pages }: Props) {
+export default function SharePreviewModal({ open, onClose, pages, watermark, onWatermarkChange }: Props) {
   const t = useTranslations("share");
+  const tTool = useTranslations("tool");
   const [index, setIndex] = useState(0);
   const [copied, setCopied] = useState<null | "image" | "link">(null);
   const [error, setError] = useState<string | null>(null);
+  // 水印切换期间图片正在重新截图,禁用开关避免连点
+  const [wmPending, setWmPending] = useState(false);
 
-  useEffect(() => {
-    if (open) {
-      setIndex(0);
-      setCopied(null);
-      setError(null);
-    }
-  }, [open]);
+  // 组件在 open 时才由父级挂载,每次打开都是全新状态,无需重置 effect
 
   // 锁住背景滚动,避免弹窗打开时页面跟着滚
   useEffect(() => {
@@ -66,6 +63,15 @@ export default function SharePreviewModal({ open, onClose, pages }: Props) {
   const shareText = t("shareText", { link: SITE.url });
   const plainText = t("sharePlain");
   const current = pages[index];
+
+  const flipWatermark = async () => {
+    setWmPending(true);
+    try {
+      await onWatermarkChange(!watermark);
+    } finally {
+      setWmPending(false);
+    }
+  };
 
   const dataUrlToBlob = async (dataUrl: string) => (await fetch(dataUrl)).blob();
 
@@ -141,20 +147,20 @@ export default function SharePreviewModal({ open, onClose, pages }: Props) {
     }
   };
 
-  /** 主流平台分享 intent,链接格式对齐各平台官方文档(与常见在线工具站一致) */
+  /** 主流平台分享 intent,链接格式对齐各平台官方文档;平台取舍与 ShareBar/useShareActions 一致 */
   const intentUrls: Record<ShareIntent, string> = {
     x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(plainText)}&url=${encodeURIComponent(SITE.url)}`,
     whatsapp: `https://wa.me/?text=${encodeURIComponent(`${plainText} ${SITE.url}`)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE.url)}`,
-    telegram: `https://t.me/share/url?url=${encodeURIComponent(SITE.url)}&text=${encodeURIComponent(plainText)}`,
-    reddit: `https://www.reddit.com/submit?url=${encodeURIComponent(SITE.url)}&title=${encodeURIComponent(plainText)}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SITE.url)}`,
     email: `mailto:?subject=${encodeURIComponent(SITE.name)}&body=${encodeURIComponent(`${plainText}\n${SITE.url}`)}`,
   };
 
   const openIntent = (target: ShareIntent) => {
     if (target === "email") {
-      window.location.href = intentUrls.email;
+      // mailto 用锚点触发,直接给 window.location.href 赋值会被 lint 视为修改外部变量
+      const a = document.createElement("a");
+      a.href = intentUrls.email;
+      a.click();
       return;
     }
     window.open(intentUrls[target], "_blank", "noopener,noreferrer");
@@ -171,9 +177,6 @@ export default function SharePreviewModal({ open, onClose, pages }: Props) {
     { id: "x", label: "X", icon: <XLogo weight="fill" className="size-3.5 text-zinc-900" /> },
     { id: "facebook", label: "Facebook", icon: <FacebookLogo weight="fill" className="size-3.5 text-[#1877F2]" /> },
     { id: "whatsapp", label: "WhatsApp", icon: <WhatsappLogo weight="fill" className="size-3.5 text-[#25D366]" /> },
-    { id: "telegram", label: "Telegram", icon: <TelegramLogo weight="fill" className="size-3.5 text-[#229ED9]" /> },
-    { id: "reddit", label: "Reddit", icon: <RedditLogo weight="fill" className="size-3.5 text-[#FF4500]" /> },
-    { id: "linkedin", label: "LinkedIn", icon: <LinkedinLogo weight="fill" className="size-3.5 text-[#0A66C2]" /> },
     { id: "email", label: t("email"), icon: <EnvelopeSimple className="size-3.5 text-zinc-500" /> },
   ];
 
@@ -235,9 +238,35 @@ export default function SharePreviewModal({ open, onClose, pages }: Props) {
           </div>
         </div>
 
-        {/* 分享区 */}
+        {/* 分享区:复制图片是社交分享的主路径,置为主按钮 */}
         <div className="border-t border-zinc-200 px-5 py-4">
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center justify-between gap-3">
+            <button onClick={copyImage} className="btn btn-primary px-4 py-2.5 text-sm">
+              {copied === "image" ? <Check className="size-4" /> : <Copy className="size-4" />}
+              {copied === "image" ? t("copied") : t("copyImage")}
+            </button>
+            <label className="flex cursor-pointer select-none items-center gap-2">
+              <span className="text-sm text-zinc-700">{tTool("watermark")}</span>
+              <button
+                role="switch"
+                aria-checked={watermark}
+                aria-label={tTool("watermark")}
+                disabled={wmPending}
+                onClick={flipWatermark}
+                className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 disabled:opacity-50 ${
+                  watermark ? "bg-accent" : "bg-zinc-300"
+                }`}
+              >
+                <span
+                  className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                    watermark ? "translate-x-5" : ""
+                  }`}
+                />
+              </button>
+            </label>
+          </div>
+
+          <div className="mt-3 flex flex-wrap items-center gap-2">
             <span className="mr-1 inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500">
               <ShareNetwork className="size-4" />
               {t("share")}
@@ -252,10 +281,6 @@ export default function SharePreviewModal({ open, onClose, pages }: Props) {
                 {b.label}
               </button>
             ))}
-            <button onClick={copyImage} className="btn btn-ghost px-3 py-1.5 text-xs">
-              {copied === "image" ? <Check className="size-3.5 text-green-600" /> : <Copy className="size-3.5 text-zinc-500" />}
-              {copied === "image" ? t("copied") : t("copyImage")}
-            </button>
             <button onClick={copyLink} className="btn btn-ghost px-3 py-1.5 text-xs">
               {copied === "link" ? <Check className="size-3.5 text-green-600" /> : null}
               {copied === "link" ? t("copied") : t("copyLink")}

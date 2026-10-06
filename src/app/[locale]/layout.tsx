@@ -8,6 +8,7 @@ import { SITE } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ConsentBanner from "@/components/ConsentBanner";
+import FloatingShare from "@/components/FloatingShare";
 import FontStylesheets from "@/components/FontStylesheets";
 import { DEFAULT_FONT_CSS, ASYNC_FONT_CSS } from "@/lib/fonts";
 import "../globals.css";
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
           <SiteHeader />
           <div className="flex-1">{children}</div>
           <SiteFooter />
+          <FloatingShare />
           <ConsentBanner />
           <FontStylesheets />
         </NextIntlClientProvider>

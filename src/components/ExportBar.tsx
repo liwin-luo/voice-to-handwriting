@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { flushSync } from "react-dom";
 import { useTranslations } from "next-intl";
 import { DownloadSimple, Eye, FilePdf } from "@phosphor-icons/react";
 import { toPng } from "html-to-image";
@@ -11,6 +12,8 @@ import { PAGE_H, PAGE_W } from "./PaperView";
 export default function ExportBar() {
   const t = useTranslations("tool");
   const text = useEditorStore((s) => s.text);
+  const watermark = useEditorStore((s) => s.watermark);
+  const setWatermark = useEditorStore((s) => s.setWatermark);
   const [busy, setBusy] = useState(false);
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewPages, setPreviewPages] = useState<string[]>([]);
@@ -76,6 +79,17 @@ export default function ExportBar() {
     }
   };
 
+  // 弹窗内的水印开关:先同步刷出无水印/有水印的 .paper DOM,再重新截图
+  const applyWatermark = async (on: boolean) => {
+    setBusy(true);
+    try {
+      flushSync(() => setWatermark(on));
+      setPreviewPages(await toPngPages());
+    } finally {
+      setBusy(false);
+    }
+  };
+
   const disabled = !text.trim() || busy;
   return (
     <div className="flex gap-2">
@@ -91,7 +105,16 @@ export default function ExportBar() {
         <FilePdf className="size-4 text-zinc-500" />
         {t("exportPdf")}
       </button>
-      <SharePreviewModal open={previewOpen} onClose={() => setPreviewOpen(false)} pages={previewPages} />
+      {/* 打开时才挂载:弹窗内部状态(页码/复制态)随挂载自然重置 */}
+      {previewOpen && (
+        <SharePreviewModal
+          open
+          onClose={() => setPreviewOpen(false)}
+          pages={previewPages}
+          watermark={watermark}
+          onWatermarkChange={applyWatermark}
+        />
+      )}
     </div>
   );
 }

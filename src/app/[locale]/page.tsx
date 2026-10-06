@@ -4,8 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import ToolWorkspace from "@/components/ToolWorkspace";
-import HomeToolsSection from "@/components/HomeToolsSection";
+import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
+import { getLocalizedFaqs, FAQ_ITEMS } from "@/content/faqs";
 import { SITE } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
 
@@ -27,6 +28,7 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("home");
   const meta = await getTranslations("meta");
+  const faqTitle = await getTranslations("meta.faq");
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -61,9 +63,7 @@ export default async function HomePage({
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />
       </div>
-      <div className="rise mt-10" style={{ animationDelay: "160ms" }}>
-        <HomeToolsSection />
-      </div>
+      <ToolFaq title={faqTitle("title")} items={getLocalizedFaqs(FAQ_ITEMS, locale as Locale)} />
       <footer className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400">
         <span>{t("footerNote")}</span>
         <Link
