@@ -27,13 +27,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "longcang", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.6, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "情书模板:写一封手写情书",
-        description: "当面说不出口的话,写下来刚刚好。行书配信纸,含蓄又真诚。",
+        title: "情书模板:手写情书怎么写才感人(含范文)",
+        description: "情书怎么写才感人?不用华丽辞藻,写具体的小事就足够。这段手写情书范文用行书配信纸,写给女朋友、男朋友或想珍惜的人,改几个字就是你的。",
         text: "见字如面。\n有些话当面说不出口,写下来刚刚好。\n遇见你之后,平凡的日子都有了光。\n往后的路,想和你一起走。",
       },
       en: {
         title: "Love letter template",
-        description: "Words easier written than said. Running script on letter paper — subtle and sincere.",
+        description: "How to write a love letter that feels real? Skip the fancy words — write the small things. A handwritten love letter sample with running script on letter paper; edit a line and it's yours.",
         text: "Dear you,\nsome words are easier written than said.\nSince meeting you, ordinary days glow.\nI'd love to walk the road ahead with you.",
       },
       ja: {
@@ -58,13 +58,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "letter", ink: "#1a1a1a", fontSize: 26, intensity: 0.5, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "道歉信模板:诚恳的道歉怎么写",
-        description: "承认、共情、给出行动。楷书黑墨,一字一句都是认真。",
+        title: "道歉信模板:道歉信怎么写才真诚(给朋友/同事)",
+        description: "道歉信怎么写才真诚?公式:承认 + 共情 + 给出行动。这段道歉信范文写给朋友、同事都适用,楷书黑墨一字一句都是认真,直接套用换成你们的事就好。",
         text: "对不起。\n那天是我的态度不好,话出口我就后悔了。\n这几天我想了很多,也明白了你的感受。\n希望能当面向你道歉,继续做彼此珍惜的人。",
       },
       en: {
         title: "Apology letter template",
-        description: "Own it, empathize, offer action. Regular script in black ink — sincerity in every stroke.",
+        description: "How to write an apology letter that sounds sincere? Own it, empathize, offer action. Works for friends and colleagues — regular script in black ink, ready to personalize.",
         text: "I'm sorry.\nMy tone the other day was wrong, and I regretted it the moment I spoke.\nI've thought it over and I understand how you felt.\nMay I apologize in person? Our friendship matters to me.",
       },
       ja: {
@@ -89,13 +89,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "longcang", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.6, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "感谢信模板:把谢谢写得有分量",
-        description: "具体回忆 + 祝福回礼,感谢才不流于客套。行书信纸。",
+        title: "感谢信模板:感谢信怎么写不流于客套",
+        description: "感谢信怎么写不流于客套?写具体的回忆。适合送给老师、同事、帮过你的任何人,行书信纸,手写出来更有分量。",
         text: "谢谢您。\n那些帮过我忙、教过我道理的瞬间,我一直记得。\n您的善意没有随时间过去,反而越来越清晰。\n愿您被同样的温柔对待。",
       },
       en: {
         title: "Thank-you letter template",
-        description: "Specific memories plus a blessing — gratitude that isn't small talk.",
+        description: "How to write a thank-you note that isn't small talk? Recall something specific — for teachers, colleagues, anyone who helped.",
         text: "Thank you.\nI still remember every moment you helped me and guided me.\nYour kindness hasn't faded with time — it's grown clearer.\nMay the same kindness find you.",
       },
       ja: {
@@ -120,13 +120,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "blank", ink: "#8c1f28", fontSize: 34, intensity: 0.7, align: "center", indent: false },
     i18n: {
       zh: {
-        title: "生日祝福模板:手写生日贺卡",
-        description: "居中排版 + 朱红墨色,祝福自带喜庆感,导出就能发。",
+        title: "生日祝福模板:生日祝福语怎么写不俗套",
+        description: "生日祝福语除了「生日快乐」还能写什么?愿所有的努力都有回响。朱红墨色居中排版的生日贺卡,导出就能发朋友圈。",
         text: "生日快乐!\n愿你所有的努力都有回响,\n想做的事都来得及,想见的人都在身边。\n新的一岁,健康和快乐都要排第一。",
       },
       en: {
         title: "Birthday wishes template",
-        description: "Centered layout in vermilion ink — festive, ready to send.",
+        description: "What to write in a birthday card beyond 'happy birthday'? Centered vermilion ink — festive and ready for social media.",
         text: "Happy birthday!\nMay every effort find its echo,\nevery plan still have time, and every loved one be near.\nIn this new year of life: health and joy first.",
       },
       ja: {
@@ -151,13 +151,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "letter", ink: "#1a1a1a", fontSize: 28, intensity: 0.55, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "教师节贺卡模板:写给老师的感谢",
-        description: "「当年嫌唠叨的话,如今都成了底气」——适合发圈也适合手抄。",
+        title: "教师节贺卡文案:教师节祝福语手写版",
+        description: "教师节贺卡文案怎么写?「当年嫌唠叨的话,如今都成了底气」——适合发朋友圈,也适合手抄成一张真正的贺卡。",
         text: "老师,谢谢您。\n黑板上的字会擦掉,您教的道理不会。\n当年嫌您唠叨的话,如今都成了我的底气。\n教师节快乐,愿您平安顺遂。",
       },
       en: {
         title: "Teachers' Day card template",
-        description: "\"What I once found nagging is now my confidence\" — for posts and for handwriting.",
+        description: "What to write in a Teachers' Day card? \"What I once found nagging is now my confidence\" — for social posts and real handwritten cards.",
         text: "Dear teacher, thank you.\nThe chalkboard gets erased; what you taught never does.\nThe words I once found nagging are now my confidence.\nHappy Teachers' Day — wishing you peace and good health.",
       },
       ja: {
@@ -182,13 +182,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "blank", ink: "#8c1f28", fontSize: 36, intensity: 0.7, align: "center", indent: false },
     i18n: {
       zh: {
-        title: "新年祝福模板:新年贺词手写版",
-        description: "朱红大字居中,过年发图就是最应景的那张。",
+        title: "新年祝福语:新年贺词手写模板",
+        description: "新年祝福语怎么写不俗套?旧岁的遗憾留在旧岁,新的一年眼里有光。朱红大字居中,跨年发图就是最应景的那张。",
         text: "新年快乐!\n旧岁的遗憾就留在旧岁,\n新的一年,愿你眼里有光,心里有底气,\n身体健康,万事顺遂,年年都是好年。",
       },
       en: {
         title: "New Year wishes template",
-        description: "Big centered vermilion characters — the most fitting image to post.",
+        description: "New Year wishes that aren't clichés? Leave the regrets in the old year. Big centered vermilion characters for the year-end post.",
         text: "Happy New Year!\nLeave last year's regrets in the old one.\nIn the year ahead: light in your eyes, confidence in your heart,\ngood health, smooth sailing — may every year be a good one.",
       },
       ja: {
@@ -213,13 +213,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "longcang", paperId: "letter", ink: "#8c1f28", fontSize: 28, intensity: 0.65, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "情人节情书模板:把喜欢写出来",
-        description: "2·14 和 520 都适用。行书配朱红墨,写给唯一的人。",
+        title: "情人节文案:情人节情书模板(520/2·14 适用)",
+        description: "情人节文案怎么写?喜欢这件事,藏是藏不住的。行书配朱红墨,写给唯一的人——手写比红包更打动人。",
         text: "致你:\n别人问我最近怎么样,我总想起你。\n喜欢这件事,藏是藏不住的,\n就像今天,我把它写成了字。",
       },
       en: {
         title: "Valentine's letter template",
-        description: "For 2.14 or any day you feel brave. Cursive in vermilion, for the one.",
+        description: "What to write for Valentine's Day? 'Liking someone this much can't stay hidden.' Cursive in vermilion — handwriting beats red envelopes.",
         text: "To you,\nwhen people ask how I've been, I think of you.\nLiking someone this much can't stay hidden —\ntoday, I turned it into words.",
       },
       ja: {
@@ -244,13 +244,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "letter", ink: "#1a1a1a", fontSize: 28, intensity: 0.55, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "母亲节贺卡模板:写给妈妈",
-        description: "不好意思说出口的感谢,手写给她最合适。",
+        title: "母亲节贺卡文案:写给妈妈的感谢信",
+        description: "母亲节贺卡文案怎么写?写具体的事:小时候您牵我过马路,现在换我牵您。手写一张给妈妈,比转账截图温暖一百倍。",
         text: "妈:\n小时候您牵我过马路,现在换我牵您。\n您总说不用买礼物,那就听我啰嗦这几句:\n注意身体,按时吃饭,我爱您。",
       },
       en: {
         title: "Mother's Day card template",
-        description: "The thanks that's hard to say aloud, handwritten for her.",
+        description: "What to write in a Mother's Day card? Something specific: 'you held my hand crossing streets; now it's my turn.' Warmer than any transfer.",
         text: "Mom,\nyou held my hand crossing streets; now it's my turn to hold yours.\nYou always say no gifts needed — so just hear this:\ntake care, eat well, I love you.",
       },
       ja: {
@@ -275,13 +275,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.55, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "父亲节贺卡模板:写给爸爸",
-        description: "和父亲的话少,更要写下来。硬朗楷书配蓝黑墨。",
+        title: "父亲节贺卡文案:写给沉默的父亲",
+        description: "父亲节贺卡文案怎么写?和父亲的话少,更要写下来:自行车后座的风、那句「没事,再来」。硬朗楷书配蓝黑墨。",
         text: "爸:\n您话不多,但童年自行车后座的风、\n考试失利时那句「没事,再来」,我都记得。\n父亲节快乐。您老了,换我罩着您。",
       },
       en: {
         title: "Father's Day card template",
-        description: "Few words with dad — so write them down. Strong regular script in blue-black.",
+        description: "What to write in a Father's Day card? Dads say little — write it down: the bicycle wind, the 'try again' after failure. Strong script for a quiet man.",
         text: "Dad,\nyou never said much, but I remember the wind on the back of your bicycle\nand that “it's fine, try again” after every failed exam.\nHappy Father's Day. You're getting older — my turn to look after you.",
       },
       ja: {
@@ -306,13 +306,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "longcang", paperId: "blank", ink: "#15317e", fontSize: 30, intensity: 0.7, align: "left", indent: false },
     i18n: {
       zh: {
-        title: "毕业赠言模板:写给同学",
-        description: "散伙饭说不出口的话,写进纪念册。行书白纸,青春感拉满。",
+        title: "毕业赠言怎么写?写给同学/室友(含范文)",
+        description: "毕业赠言怎么写?「愿多年后再见,你还是你,我们还是我们」——写给同学、室友、一起熬过考试的人,行书白纸青春感拉满。",
         text: "致 XX:\n那年一起罚站的走廊、一起补的作业,都还历历在目。\n世界很大,我们各自去闯,\n愿多年后再见,你还是你,我们还是我们。",
       },
       en: {
         title: "Graduation message template",
-        description: "For the yearbook, for the people you grew up with.",
+        description: "What to write in a graduation message? 'May you still be you, and us still us' — for classmates, roommates, exam survivors.",
         text: "To [name],\nthe corridor detentions, the homework we copied together — still vivid.\nThe world is huge; go claim your part.\nYears from now, may you still be you, and us still us.",
       },
       ja: {
@@ -337,13 +337,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.5, align: "left", indent: true },
     i18n: {
       zh: {
-        title: "慰问卡模板:早日康复",
-        description: "探病不便时,一张手写慰问卡胜过千言。",
+        title: "慰问卡怎么写?早日康复祝福语模板",
+        description: "探病祝福语怎么写?「别急着好起来,先把觉睡够」——探病不便时,一张手写慰问卡胜过千言万语。",
         text: "听说你住院了,心里一直挂念。\n别急着好起来,先把觉睡够。\n家里的事都有我们,你只管安心休养。\n等你出院,老地方,我请客。",
       },
       en: {
         title: "Get-well card template",
-        description: "When visiting is hard, a handwritten card says it all.",
+        description: "What to write in a get-well card? 'Don't rush to recover; sleep as much as you need.' A handwritten card says it all.",
         text: "Heard you're in hospital — thinking of you.\nDon't rush to recover; sleep as much as you need.\nEverything at home is covered. Just rest.\nWhen you're out, same place, my treat.",
       },
       ja: {
@@ -368,13 +368,13 @@ export const TEMPLATES: HandwritingTemplate[] = [
     style: { fontId: "mashanzheng", paperId: "blank", ink: "#8c1f28", fontSize: 34, intensity: 0.7, align: "center", indent: false },
     i18n: {
       zh: {
-        title: "婚礼祝福模板:写给新人",
-        description: "份子钱之外,一句走心的祝福更被记住。朱红居中。",
+        title: "婚礼祝福语怎么写?写给新人的手写贺词",
+        description: "婚礼祝福语怎么写不俗套?「愿往后岁月,柴米油盐都是诗」——份子钱之外,一句走心的手写祝福更被记住。",
         text: "新婚快乐!\n见过你们恋爱里的笨拙与认真,\n更相信你们把日子过好的能力。\n愿往后岁月,柴米油盐都是诗。",
       },
       en: {
         title: "Wedding congratulations template",
-        description: "Beyond the gift envelope — a heartfelt line they'll remember.",
+        description: "Wedding wishes beyond the envelope? 'May the years ahead season every day well' — a handwritten line they'll actually remember.",
         text: "Congratulations on your wedding!\nI've seen the clumsiness and seriousness of your love.\nI trust you two to turn ordinary days into poetry.\nMay the years ahead season every day well.",
       },
       ja: {
