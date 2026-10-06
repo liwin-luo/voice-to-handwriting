@@ -24,6 +24,7 @@ export async function generateMetadata({
     title: { default: t("title"), template: `%s | ${t("brand")}` },
     description: t("description"),
     keywords: ["声音转手写", "handwriting generator", "语音转文字", "手写字体", "贺卡生成"],
+    twitter: { card: "summary_large_image" },
   };
 }
 
