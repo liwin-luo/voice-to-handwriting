@@ -55,6 +55,10 @@
     "writing": {
       "title": "CJK-Schreibübungs-Generator",
       "description": "Kostenlose Übungspapiere für Chinesisch, Japanisch und Koreanisch: Tianzige-Quadrate, Genkoyoshi-Gitter und Hangul-Zellen. Text eingeben, PDF drucken."
+    },
+    "coloring": {
+      "title": "Namens-Malvorlagen-Generator",
+      "description": "Verwandle jeden Namen in druckbare Bubble-Letters zum Ausmalen. Kostenloser PDF — Kinder bemalen ihren eigenen Namen."
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "Schreibübungsblätter",
     "cursive": "Schreibschrift-Generator",
     "cursiveWorks": "Schreibschrift-Arbeitsblätter",
-    "writingPractice": "Schreibübungen CJK"
+    "writingPractice": "Schreibübungen CJK",
+    "coloring": "Namens-Malvorlagen-Generator"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -318,5 +323,20 @@
     "downloadPdf": "PDF herunterladen",
     "seoTitle": "Kostenlose Kanji-, Hanzi- und Hangul-Übungspapiere",
     "seoText": "Chinesische Tianzige-Quadrate mit Kreuz-Hilfslinien, Genkoyoshi-Gitter und koreanische Übungszellen — der klassische Weg, CJK-Schrift zu lernen. Beliebigen Text kacheln, Nachspur- oder Beispielmodus wählen und in exaktem A4 drucken. Ohne Wasserzeichen."
+  },
+  "coloring": {
+    "title": "Namens-Malvorlagen-Generator",
+    "intro": "Verwandle jeden Namen in druckbare Bubble-Letters zum Ausmalen. Kostenloser PDF — Kinder bemalen ihren eigenen Namen.",
+    "namesLabel": "Namen (einer pro Zeile)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Schrift",
+    "outlineWidth": "Konturbreite",
+    "decorations": "Sterne & Herzen",
+    "downloadPng": "PNG herunterladen",
+    "downloadPdf": "PDF herunterladen",
+    "emptyTitle": "Noch keine Namen",
+    "emptyHint": "Namen eingeben — die Malvorlage zeichnet sich von selbst.",
+    "seoTitle": "Kostenloser Namens-Malvorlagen-Generator für Kinder",
+    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, Sterne und Herzen inklusive — exaktes Letter-Format, ohne Wasserzeichen."
   }
 }

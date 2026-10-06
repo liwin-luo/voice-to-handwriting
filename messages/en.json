@@ -55,6 +55,10 @@
     "writing": {
       "title": "Writing Practice Sheet Generator",
       "description": "Free printable writing practice sheets for Chinese, Japanese and Korean: tianzige squares, genkoyoshi-style grids and hangul practice cells. Type the characters, print the PDF."
+    },
+    "coloring": {
+      "title": "Name Coloring Page Generator",
+      "description": "Turn any name into printable bubble-letter coloring pages. Free PDF — kids color their own name."
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "Name Tracing",
     "cursive": "Cursive Writing",
     "cursiveWorks": "Cursive Worksheets",
-    "writingPractice": "Writing Practice"
+    "writingPractice": "Writing Practice",
+    "coloring": "Name Coloring"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -318,5 +323,20 @@
     "downloadPdf": "Download PDF",
     "seoTitle": "Free printable kanji, kana, hanzi and hangul practice sheets",
     "seoText": "Chinese tianzige squares with cross guides, Japanese genkoyoshi-style grids and Korean practice cells — the classic way to learn CJK writing. Loop any text through the sheet, choose trace-gray or dark example mode, and print at exact A4 size. No watermark, no signup."
+  },
+  "coloring": {
+    "title": "Name Coloring Page Generator",
+    "intro": "Turn any name into printable bubble-letter coloring pages. Free PDF — kids color their own name.",
+    "namesLabel": "Names (one per line)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Font",
+    "outlineWidth": "Outline width",
+    "decorations": "Stars & hearts decorations",
+    "downloadPng": "Download PNG",
+    "downloadPdf": "Download PDF",
+    "emptyTitle": "No names yet",
+    "emptyHint": "Type a name and the coloring page draws itself.",
+    "seoTitle": "Free name coloring page generator for kids",
+    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines, stars and hearts included — print at exact Letter size, no watermark."
   }
 }

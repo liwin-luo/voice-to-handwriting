@@ -55,6 +55,10 @@
     "writing": {
       "title": "汉字练字帖生成器",
       "description": "免费生成田字格练字帖:输入要练的字,选描红或对照模式,下载 PDF 打印。也支持日文原稿纸和韩文练习格。"
+    },
+    "coloring": {
+      "title": "名字涂色页生成器",
+      "description": "把任意名字变成可打印的气泡字涂色页:孩子给自己的名字上色,顺便认字。免费 PDF。"
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "描红字帖",
     "cursive": "英文连笔字",
     "cursiveWorks": "英文连笔字工作表",
-    "writingPractice": "练字帖"
+    "writingPractice": "练字帖",
+    "coloring": "名字涂色页生成器"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -318,5 +323,20 @@
     "downloadPdf": "下载 PDF",
     "seoTitle": "免费田字格练字帖 — 汉字/假名/谚文一键生成",
     "seoText": "田字格是汉字练字的经典格式:虚线十字帮你看准结构。输入任意文字循环铺满整页,选描红模式打印练习,或用对照模式做字帖。支持霞鹜文楷等多款手写风格字体,无水印免费下载。"
+  },
+  "coloring": {
+    "title": "名字涂色页生成器",
+    "intro": "把任意名字变成可打印的气泡字涂色页:孩子给自己的名字上色,顺便认字。免费 PDF。",
+    "namesLabel": "名字(每行一个)",
+    "namesPlaceholder": "小雨\n朵朵\n乐乐",
+    "font": "字体",
+    "outlineWidth": "轮廓粗细",
+    "decorations": "星星爱心装饰",
+    "downloadPng": "下载 PNG",
+    "downloadPdf": "下载 PDF",
+    "emptyTitle": "还没有名字",
+    "emptyHint": "输入名字,涂色页自动画好。",
+    "seoTitle": "免费名字涂色页生成器 — 认字+涂色一举两得",
+    "seoText": "把孩子的名字变成大气泡轮廓字,涂色的同时认识自己的名字怎么写。可选站酷快乐体等可爱字体,自带星星爱心装饰,Letter 尺寸精确打印,无水印。"
   }
 }

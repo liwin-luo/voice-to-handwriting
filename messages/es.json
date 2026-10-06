@@ -55,6 +55,10 @@
     "writing": {
       "title": "Generador de hojas de caligrafía CJK",
       "description": "Hojas de práctica de chino, japonés y coreano para imprimir gratis: cuadrículas tianzige, estilo genkoyoshi y celdas hangul. Descarga en PDF."
+    },
+    "coloring": {
+      "title": "Generador de páginas para colorear con nombres",
+      "description": "Convierte cualquier nombre en páginas de burbujas para colorear. PDF gratis — los niños colorean su propio nombre."
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "Fichas de nombres",
     "cursive": "Letra cursiva",
     "cursiveWorks": "Fichas de cursiva",
-    "writingPractice": "Caligrafía CJK"
+    "writingPractice": "Caligrafía CJK",
+    "coloring": "Generador de páginas para colorear con nombres"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -318,5 +323,20 @@
     "downloadPdf": "Descargar PDF",
     "seoTitle": "Hojas de práctica de kanji, hanzi y hangul para imprimir gratis",
     "seoText": "Cuadrículas tianzige con guías en cruz, rejillas estilo genkoyoshi y celdas de práctica coreana: la forma clásica de aprender la escritura CJK. Repite cualquier texto por la hoja, elige modo repasar o ejemplo e imprime en A4 exacto. Sin marca de agua."
+  },
+  "coloring": {
+    "title": "Generador de páginas para colorear con nombres",
+    "intro": "Convierte cualquier nombre en páginas de burbujas para colorear. PDF gratis — los niños colorean su propio nombre.",
+    "namesLabel": "Nombres (uno por línea)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Fuente",
+    "outlineWidth": "Grosor del contorno",
+    "decorations": "Estrellas y corazones",
+    "downloadPng": "Descargar PNG",
+    "downloadPdf": "Descargar PDF",
+    "emptyTitle": "Aún no hay nombres",
+    "emptyHint": "Escribe un nombre y la página se dibuja sola.",
+    "seoTitle": "Generador gratis de páginas para colorear con nombres",
+    "seoText": "Las páginas para colorear con el propio nombre son un clásico: los niños colorean las letras mientras aprenden su forma. Contorno tipo burbuja, estrellas y corazones incluidos — tamaño Letter exacto, sin marca de agua."
   }
 }

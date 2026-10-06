@@ -55,6 +55,10 @@
     "writing": {
       "title": "Générateur de feuilles d'écriture CJK",
       "description": "Feuilles de pratique gratuites pour chinois, japonais et coréen : carrés tianzige, grilles genkoyoshi et cellules hangul. Tapez les caractères, imprimez le PDF."
+    },
+    "coloring": {
+      "title": "Générateur de pages à colorier avec prénoms",
+      "description": "Transforme n'importe quel prénom en pages à colorier lettres bulles. PDF gratuit — les enfants colorient leur propre prénom."
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "Fiches de prénoms",
     "cursive": "Écriture cursive",
     "cursiveWorks": "Fiches d'écriture cursive",
-    "writingPractice": "Écriture CJK"
+    "writingPractice": "Écriture CJK",
+    "coloring": "Générateur de pages à colorier avec prénoms"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -318,5 +323,20 @@
     "downloadPdf": "Télécharger le PDF",
     "seoTitle": "Feuilles de pratique kanji, hanzi et hangul à imprimer gratuitement",
     "seoText": "Carrés tianzige chinois avec guides en croix, grilles style genkoyoshi et cellules de pratique coréennes — la méthode classique pour apprendre l'écriture CJK. Répétez n'importe quel texte sur la feuille, choisissez le mode repasser ou exemple et imprimez en A4 exact. Sans filigrane."
+  },
+  "coloring": {
+    "title": "Générateur de pages à colorier avec prénoms",
+    "intro": "Transforme n'importe quel prénom en pages à colorier lettres bulles. PDF gratuit — les enfants colorient leur propre prénom.",
+    "namesLabel": "Prénoms (un par ligne)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Police",
+    "outlineWidth": "Épaisseur du contour",
+    "decorations": "Étoiles et cœurs",
+    "downloadPng": "Télécharger le PNG",
+    "downloadPdf": "Télécharger le PDF",
+    "emptyTitle": "Pas encore de prénoms",
+    "emptyHint": "Tapez un prénom — la page se dessine toute seule.",
+    "seoTitle": "Générateur gratuit de pages à colorier avec prénoms",
+    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, étoiles et cœurs inclus — format Letter exact, sans filigrane."
   }
 }

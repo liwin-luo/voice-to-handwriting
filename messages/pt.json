@@ -55,6 +55,10 @@
     "writing": {
       "title": "Gerador de folhas de prática CJK",
       "description": "Folhas de prática de chinês, japonês e coreano para imprimir grátis: quadrados tianzige, grades genkoyoshi e células hangul. Digite os caracteres, baixe o PDF."
+    },
+    "coloring": {
+      "title": "Gerador de páginas para colorir com nomes",
+      "description": "Transforme qualquer nome em páginas de bolhas para colorir. PDF grátis — as crianças colorrem o próprio nome."
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "Fichas de nomes",
     "cursive": "Letra cursiva",
     "cursiveWorks": "Fichas de cursiva",
-    "writingPractice": "Caligrafia CJK"
+    "writingPractice": "Caligrafia CJK",
+    "coloring": "Gerador de páginas para colorir com nomes"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -318,5 +323,20 @@
     "downloadPdf": "Baixar PDF",
     "seoTitle": "Folhas de prática de kanji, hanzi e hangul para imprimir grátis",
     "seoText": "Quadrados tianzige chineses com guias em cruz, grades estilo genkoyoshi e células de prática coreanas — o clássico para aprender escrita CJK. Repita qualquer texto na folha, escolha modo repasar ou exemplo e imprima em A4 exato. Sem marca d'água."
+  },
+  "coloring": {
+    "title": "Gerador de páginas para colorir com nomes",
+    "intro": "Transforme qualquer nome em páginas de bolhas para colorir. PDF grátis — as crianças colorrem o próprio nome.",
+    "namesLabel": "Nomes (um por linha)",
+    "namesPlaceholder": "Emma\nLiam\nOlivia",
+    "font": "Fonte",
+    "outlineWidth": "Espessura do contorno",
+    "decorations": "Estrelas e corações",
+    "downloadPng": "Baixar PNG",
+    "downloadPdf": "Baixar PDF",
+    "emptyTitle": "Ainda sem nomes",
+    "emptyHint": "Digite um nome e a página se desenha sozinha.",
+    "seoTitle": "Gerador grátis de páginas para colorir com nomes",
+    "seoText": "Páginas para colorir com o próprio nome são um clássico: as crianças pintam as letras e aprendem a forma delas. Contornos bolha, estrelas e corações incluídos — tamanho Letter exato, sem marca d'água."
   }
 }

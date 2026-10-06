@@ -55,6 +55,10 @@
     "writing": {
       "title": "한글·한자 쓰기 연습장 생성기",
       "description": "원고지 스타일 연습장을 무료로 생성: 연습할 글자를 입력하고, 따라 쓰기 또는 예시 모드로 인쇄하세요. 중국어田字格도 지원."
+    },
+    "coloring": {
+      "title": "이름 색칠 페이지 생성기",
+      "description": "아무 이름이나 버블 글자 색칠 페이지로. 무료 PDF — 아이가 자기 이름을 색칠하며 글자를 익혀요."
     }
   },
   "nav": {
@@ -68,7 +72,8 @@
     "nameTracing": "이름 쓰기 연습장",
     "cursive": "필기체 생성기",
     "cursiveWorks": "필기체 워크시트",
-    "writingPractice": "쓰기 연습"
+    "writingPractice": "쓰기 연습",
+    "coloring": "이름 색칠 페이지 생성기"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -318,5 +323,20 @@
     "downloadPdf": "PDF 다운로드",
     "seoTitle": "무료 한글·한자 쓰기 연습장 생성기",
     "seoText": "원고지 스타일 연습장으로 한글과 한자를 연습하세요. 연습할 글자를 입력하면 페이지 전체에 채워지고, 따라 쓰기 모드로 인쇄할 수 있습니다. A4 정확 크기, 워터마크 없음."
+  },
+  "coloring": {
+    "title": "이름 색칠 페이지 생성기",
+    "intro": "아무 이름이나 버블 글자 색칠 페이지로. 무료 PDF — 아이가 자기 이름을 색칠하며 글자를 익혀요.",
+    "namesLabel": "이름 (한 줄에 하나)",
+    "namesPlaceholder": "하은\n서준\n지우",
+    "font": "글꼴",
+    "outlineWidth": "테두리 굵기",
+    "decorations": "별·하트 장식",
+    "downloadPng": "PNG 다운로드",
+    "downloadPdf": "PDF 다운로드",
+    "emptyTitle": "아직 이름이 없어요",
+    "emptyHint": "이름을 입력하면 색칠 페이지가 저절로 그려져요.",
+    "seoTitle": "무료 이름 색칠 페이지 생성기",
+    "seoText": "아이 이름을 버블 아웃라인 글자로 만들어 색칠하면서 글자 모양을 익힙니다. Letter 정확 크기 인쇄, 워터마크 없음."
   }
 }
