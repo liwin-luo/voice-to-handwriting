@@ -124,11 +124,12 @@
     "restore": "恢复编辑",
     "delete": "删除",
     "clearAll": "清空历史",
-    "confirmClear": "确定清空全部历史记录?此操作不可恢复。",
     "sourceSpeech": "语音输入",
     "sourceAudio": "音频转写",
     "sourceExport": "导出",
-    "charUnit": "字"
+    "charUnit": "字",
+    "confirmDelete": "确认删除",
+    "confirmClearShort": "确认清空"
   },
   "consent": {
     "text": "我们使用 Cookie 展示广告以维持本工具免费。你可以选择接受个性化广告,或仅使用必要功能。",

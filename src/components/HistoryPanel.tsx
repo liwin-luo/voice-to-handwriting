@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowsCounterClockwise, NoteBlank, Trash, TrashSimple } from "@phosphor-icons/react";
 import { Link, useRouter } from "@/i18n/navigation";
@@ -12,6 +12,21 @@ const SOURCE_KEY: Record<HistorySource, string> = {
   export: "sourceExport",
 };
 
+/** 两段式危险操作确认:第一次点击进入待确认态,3 秒内再点才执行 */
+function useArm(timeout = 3000) {
+  const [armed, setArmed] = useState<string | null>(null);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const arm = (id: string | null) => {
+    if (timer.current) clearTimeout(timer.current);
+    setArmed(id);
+    if (id) timer.current = setTimeout(() => setArmed(null), timeout);
+  };
+  useEffect(() => () => {
+    if (timer.current) clearTimeout(timer.current);
+  }, []);
+  return [armed, arm] as const;
+}
+
 export default function HistoryPanel() {
   const t = useTranslations("history");
   const router = useRouter();
@@ -21,6 +36,8 @@ export default function HistoryPanel() {
   // persist 存储挂载后才渲染列表,避免 SSR 水合不一致
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
+  const [deleteArm, armDelete] = useArm();
+  const [clearArmed, armClear] = useArm();
 
   const restore = (e: HistoryEntry) => {
     const s = useEditorStore.getState();
@@ -39,15 +56,25 @@ export default function HistoryPanel() {
     <div className="flex flex-col gap-4">
       {mounted && entries.length > 0 && (
         <div className="flex justify-end">
-          <button
-            onClick={() => {
-              if (window.confirm(t("confirmClear"))) clear();
-            }}
-            className="btn btn-ghost px-3 py-1.5 text-xs text-zinc-500"
-          >
-            <TrashSimple className="size-3.5" />
-            {t("clearAll")}
-          </button>
+          {clearArmed ? (
+            <button
+              onClick={() => {
+                clear();
+                armClear(null);
+              }}
+              className="rounded-full bg-rose-600 px-3.5 py-1.5 text-xs font-medium text-white transition-transform active:scale-95"
+            >
+              {t("confirmClear")}
+            </button>
+          ) : (
+            <button
+              onClick={() => armClear("all")}
+              className="btn btn-ghost px-3 py-1.5 text-xs text-zinc-500"
+            >
+              <TrashSimple className="size-3.5" />
+              {t("clearAll")}
+            </button>
+          )}
         </div>
       )}
 
@@ -96,14 +123,26 @@ export default function HistoryPanel() {
                 <ArrowsCounterClockwise className="size-3.5" />
                 {t("restore")}
               </button>
-              <button
-                onClick={() => remove(e.id)}
-                title={t("delete")}
-                aria-label={t("delete")}
-                className="flex size-8 cursor-pointer items-center justify-center rounded-lg border border-zinc-200 text-zinc-400 transition-colors hover:border-rose-200 hover:text-rose-600"
-              >
-                <Trash className="size-4" />
-              </button>
+              {deleteArm === e.id ? (
+                <button
+                  onClick={() => {
+                    remove(e.id);
+                    armDelete(null);
+                  }}
+                  className="rounded-lg bg-rose-600 px-3 py-2 text-xs font-medium text-white transition-transform active:scale-95"
+                >
+                  {t("confirmDelete")}
+                </button>
+              ) : (
+                <button
+                  onClick={() => armDelete(e.id)}
+                  title={t("delete")}
+                  aria-label={t("delete")}
+                  className="flex size-8 cursor-pointer items-center justify-center rounded-lg border border-zinc-200 text-zinc-400 transition-colors hover:border-rose-200 hover:text-rose-600"
+                >
+                  <Trash className="size-4" />
+                </button>
+              )}
             </div>
           </li>
         ))}

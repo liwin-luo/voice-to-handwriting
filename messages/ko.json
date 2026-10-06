@@ -124,11 +124,12 @@
     "restore": "복원해서 편집",
     "delete": "삭제",
     "clearAll": "전체 비우기",
-    "confirmClear": "모든 기록을 지울까요? 되돌릴 수 없습니다.",
     "sourceSpeech": "음성 입력",
     "sourceAudio": "오디오 파일",
     "sourceExport": "내보내기",
-    "charUnit": "자"
+    "charUnit": "자",
+    "confirmDelete": "삭제 확인",
+    "confirmClearShort": "전체 비우기 확인"
   },
   "consent": {
     "text": "이 도구를 무료로 유지하기 위해 쿠키로 광고를 표시합니다. 맞춤 광고에 동의하거나 필수 기능만 이용할 수 있어요.",

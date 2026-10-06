@@ -124,11 +124,12 @@
     "restore": "Restore",
     "delete": "Delete",
     "clearAll": "Clear all",
-    "confirmClear": "Clear all history? This cannot be undone.",
     "sourceSpeech": "Voice input",
     "sourceAudio": "Audio file",
     "sourceExport": "Export",
-    "charUnit": "chars"
+    "charUnit": "chars",
+    "confirmDelete": "Confirm delete",
+    "confirmClearShort": "Confirm clear"
   },
   "consent": {
     "text": "We use cookies to show ads that keep this tool free. Accept personalized ads, or continue with essentials only.",

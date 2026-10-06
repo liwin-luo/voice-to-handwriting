@@ -124,11 +124,12 @@
     "restore": "復元して編集",
     "delete": "削除",
     "clearAll": "すべて消去",
-    "confirmClear": "履歴をすべて消去しますか?元に戻せません。",
     "sourceSpeech": "音声入力",
     "sourceAudio": "音声ファイル",
     "sourceExport": "書き出し",
-    "charUnit": "文字"
+    "charUnit": "文字",
+    "confirmDelete": "削除する",
+    "confirmClearShort": "すべて消去する"
   },
   "consent": {
     "text": "本ツールを無料で保つため、Cookie で広告を表示しています。パーソナライズ広告に同意するか、必要な機能だけのご利用かを選べます。",

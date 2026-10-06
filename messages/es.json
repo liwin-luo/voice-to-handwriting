@@ -124,11 +124,12 @@
     "restore": "Restaurar",
     "delete": "Eliminar",
     "clearAll": "Borrar todo",
-    "confirmClear": "¿Borrar todo el historial? No se puede deshacer.",
     "sourceSpeech": "Voz",
     "sourceAudio": "Audio",
     "sourceExport": "Exportación",
-    "charUnit": "car."
+    "charUnit": "car.",
+    "confirmDelete": "Confirmar",
+    "confirmClearShort": "Confirmar borrado"
   },
   "consent": {
     "text": "Usamos cookies para mostrar anuncios que mantienen gratis esta herramienta. Acepta anuncios personalizados o continúa solo con lo esencial.",
