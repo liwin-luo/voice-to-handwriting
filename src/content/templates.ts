@@ -208,4 +208,190 @@ export const TEMPLATES: HandwritingTemplate[] = [
       },
     },
   },
+  {
+    slug: "valentines-day",
+    style: { fontId: "longcang", paperId: "letter", ink: "#8c1f28", fontSize: 28, intensity: 0.65, align: "left", indent: true },
+    i18n: {
+      zh: {
+        title: "情人节情书模板:把喜欢写出来",
+        description: "2·14 和 520 都适用。行书配朱红墨,写给唯一的人。",
+        text: "致你:\n别人问我最近怎么样,我总想起你。\n喜欢这件事,藏是藏不住的,\n就像今天,我把它写成了字。",
+      },
+      en: {
+        title: "Valentine's letter template",
+        description: "For 2.14 or any day you feel brave. Cursive in vermilion, for the one.",
+        text: "To you,\nwhen people ask how I've been, I think of you.\nLiking someone this much can't stay hidden —\ntoday, I turned it into words.",
+      },
+      ja: {
+        title: "バレンタインのテンプレート",
+        description: "2·14 にも、勇気が出た日にも。行書×朱色のインクで、大切なあの人へ。",
+        text: "あなたへ。\n最近どう?と聞かれると、あなたのことを考えます。\n好きという気持ちは隠せないみたい。\n今日、文字にしてみました。",
+      },
+      ko: {
+        title: "발렌타인 레터 템플릿",
+        description: "2.14에도, 용기가 생긴 날에도. 행서 + 주홍 잉크.",
+        text: "너에게,\n요즘 어떻냐고 물으면 네 생각이 나.\n좋아하는 마음은 숨길 수 없나 봐.\n오늘, 글로 써 봤어.",
+      },
+      es: {
+        title: "Plantilla de carta de San Valentín",
+        description: "Para el 14 de febrero o cualquier día valiente. Cursiva en cinabrio.",
+        text: "Para ti:\ncuando me preguntan cómo estoy, pienso en ti.\nGustar así no se puede ocultar —\nhoy lo convertí en palabras.",
+      },
+    },
+  },
+  {
+    slug: "mothers-day",
+    style: { fontId: "mashanzheng", paperId: "letter", ink: "#1a1a1a", fontSize: 28, intensity: 0.55, align: "left", indent: true },
+    i18n: {
+      zh: {
+        title: "母亲节贺卡模板:写给妈妈",
+        description: "不好意思说出口的感谢,手写给她最合适。",
+        text: "妈:\n小时候您牵我过马路,现在换我牵您。\n您总说不用买礼物,那就听我啰嗦这几句:\n注意身体,按时吃饭,我爱您。",
+      },
+      en: {
+        title: "Mother's Day card template",
+        description: "The thanks that's hard to say aloud, handwritten for her.",
+        text: "Mom,\nyou held my hand crossing streets; now it's my turn to hold yours.\nYou always say no gifts needed — so just hear this:\ntake care, eat well, I love you.",
+      },
+      ja: {
+        title: "母の日のテンプレート",
+        description: "言いにくい感謝を、手書きで伝える。",
+        text: "お母さんへ。\n小さい頃は手を繋いでくれたね。今度は僕の番。\nプレゼントはいらないと言うけど、これだけ聞いて:\n体に気をつけて、ちゃんと食べて、愛してる。",
+      },
+      ko: {
+        title: "어머니 날 카드 템플릿",
+        description: "말하기 어려운 감사를 손글씨로 전합니다.",
+        text: "엄마에게:\n어릴 땐 길 건널 때 손을 잡아줬지. 이번엔 내 차례야.\n선물 필요 없다고 하시지만 이 말만은 들어줘:\n몸 조심하고 밥 챙겨 먹고, 사랑해요.",
+      },
+      es: {
+        title: "Plantilla para el Día de la Madre",
+        description: "El agradecimiento difícil de decir, escrito para ella.",
+        text: "Madre:\ncuando era pequeña me sostenías la mano al cruzar; ahora me toca a mí.\nSiempre dices que no hacen falta regalos — así que solo escucha:\ncuídate, come bien, te quiero.",
+      },
+    },
+  },
+  {
+    slug: "fathers-day",
+    style: { fontId: "mashanzheng", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.55, align: "left", indent: true },
+    i18n: {
+      zh: {
+        title: "父亲节贺卡模板:写给爸爸",
+        description: "和父亲的话少,更要写下来。硬朗楷书配蓝黑墨。",
+        text: "爸:\n您话不多,但童年自行车后座的风、\n考试失利时那句「没事,再来」,我都记得。\n父亲节快乐。您老了,换我罩着您。",
+      },
+      en: {
+        title: "Father's Day card template",
+        description: "Few words with dad — so write them down. Strong regular script in blue-black.",
+        text: "Dad,\nyou never said much, but I remember the wind on the back of your bicycle\nand that “it's fine, try again” after every failed exam.\nHappy Father's Day. You're getting older — my turn to look after you.",
+      },
+      ja: {
+        title: "父の日のテンプレート",
+        description: "言葉少めな父に、書いて伝える。楷書×藍黒。",
+        text: "お父さんへ。\n言葉少なだけど、自転車の後ろ座席の風も、\n失敗した時の「大丈夫、もう一度」も覚えてるよ。\n父の日おめでとう。今度は僕が支える番。",
+      },
+      ko: {
+        title: "아버지 날 카드 템플릿",
+        description: "말 없는 아버지께 글로 전합니다. 해서 + 청흑.",
+        text: "아버지에게:\n말은 적었지만 자전거 뒤좌석의 바람도,\n시험 망친 날의 '괜찮아, 다시 해보자'도 다 기억해요.\n아버지 날 축하드려요. 이제는 제가 지켜드릴게요.",
+      },
+      es: {
+        title: "Plantilla para el Día del Padre",
+        description: "Con papá se habla poco — escríbelo. Regular en azul oscuro.",
+        text: "Papá:\nnunca hablaste mucho, pero recuerdo el viento en la parrilla de tu bici\ny ese «está bien, inténtalo otra vez» tras cada examen.\nFeliz Día del Padre. Te toca a mí cuidarte.",
+      },
+    },
+  },
+  {
+    slug: "graduation-message",
+    style: { fontId: "longcang", paperId: "blank", ink: "#15317e", fontSize: 30, intensity: 0.7, align: "left", indent: false },
+    i18n: {
+      zh: {
+        title: "毕业赠言模板:写给同学",
+        description: "散伙饭说不出口的话,写进纪念册。行书白纸,青春感拉满。",
+        text: "致 XX:\n那年一起罚站的走廊、一起补的作业,都还历历在目。\n世界很大,我们各自去闯,\n愿多年后再见,你还是你,我们还是我们。",
+      },
+      en: {
+        title: "Graduation message template",
+        description: "For the yearbook, for the people you grew up with.",
+        text: "To [name],\nthe corridor detentions, the homework we copied together — still vivid.\nThe world is huge; go claim your part.\nYears from now, may you still be you, and us still us.",
+      },
+      ja: {
+        title: "卒業メッセージのテンプレート",
+        description: "送別会で言えない言葉を、卒業アルバムへ。",
+        text: "〇〇へ。\n一緒に居残った教室も、寄り添った日々も、まだ鮮やかです。\n世界は広い。それぞれに行こう。\n何年か先に会っても、あなたはあなた、僕らは僕らでありますように。",
+      },
+      ko: {
+        title: "졸업 메시지 템플릿",
+        description: "졸업식에서 못 할 말을 기록으로 남깁니다.",
+        text: "OO에게:\n같이 꾸중받던 복도, 같이 베낀 숙제도 아직 생생해.\n세상은 넓으니 각자 잘 지내자.\n몇 년 뒤에 만나도 너는 너, 우리는 우리였으면 좋겠어.",
+      },
+      es: {
+        title: "Plantilla de mensaje de graduación",
+        description: "Para el anuario, para quienes crecieron contigo.",
+        text: "Para [nombre]:\nel pasillo de los castigos, los deberes que copiamos juntos — siguen vivos.\nEl mundo es enorme; ve a por tu parte.\nDentro de unos años, que sigas siendo tú y nosotros nosotros.",
+      },
+    },
+  },
+  {
+    slug: "get-well-card",
+    style: { fontId: "mashanzheng", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.5, align: "left", indent: true },
+    i18n: {
+      zh: {
+        title: "慰问卡模板:早日康复",
+        description: "探病不便时,一张手写慰问卡胜过千言。",
+        text: "听说你住院了,心里一直挂念。\n别急着好起来,先把觉睡够。\n家里的事都有我们,你只管安心休养。\n等你出院,老地方,我请客。",
+      },
+      en: {
+        title: "Get-well card template",
+        description: "When visiting is hard, a handwritten card says it all.",
+        text: "Heard you're in hospital — thinking of you.\nDon't rush to recover; sleep as much as you need.\nEverything at home is covered. Just rest.\nWhen you're out, same place, my treat.",
+      },
+      ja: {
+        title: "お見舞いカードのテンプレート",
+        description: "お見舞いに行けない時こそ、手書きの一枚を。",
+        text: "入院したと聞いて、ずっと気にかけています。\n急いで治さなくていいから、しっかり寝てください。\n家のことはみんなで守るから、安心して療養して。\n退院したら、いつもの場所でご馳走します。",
+      },
+      ko: {
+        title: "위문 카드 템플릿",
+        description: "병문안이 어려울 때 손글씨 한 장으로.",
+        text: "입원했다고 들었어. 계속 마음에 걸렸어.\n빨리 나으려고 애쓰지 말고 충분히 자.\n집안 일은 우리가 다 챙길게. 너는 편안히 요양해.\n퇴원하면 그곳에서 내가 살게.",
+      },
+      es: {
+        title: "Plantilla de tarjeta de recuperación",
+        description: "Cuando visitar es difícil, una tarjeta lo dice todo.",
+        text: "Supe que estás hospitalizado — te tengo presente.\nNo te apresures a sanar; duerme lo que necesites.\nEn casa todo está cubierto. Solo descansa.\nCuando salgas, el mismo lugar, invito yo.",
+      },
+    },
+  },
+  {
+    slug: "wedding-congratulations",
+    style: { fontId: "mashanzheng", paperId: "blank", ink: "#8c1f28", fontSize: 34, intensity: 0.7, align: "center", indent: false },
+    i18n: {
+      zh: {
+        title: "婚礼祝福模板:写给新人",
+        description: "份子钱之外,一句走心的祝福更被记住。朱红居中。",
+        text: "新婚快乐!\n见过你们恋爱里的笨拙与认真,\n更相信你们把日子过好的能力。\n愿往后岁月,柴米油盐都是诗。",
+      },
+      en: {
+        title: "Wedding congratulations template",
+        description: "Beyond the gift envelope — a heartfelt line they'll remember.",
+        text: "Congratulations on your wedding!\nI've seen the clumsiness and seriousness of your love.\nI trust you two to turn ordinary days into poetry.\nMay the years ahead season every day well.",
+      },
+      ja: {
+        title: "結婚お祝いのテンプレート",
+        description: "ご祝儀だけでなく、心に残る一言を。朱色×中央揃え。",
+        text: "ご結婚おめでとう!\nお二人の恋の不器用さと真剣さを知っています。\n二人なら日常を詩に変えられると信じています。\nこれからの毎日が、よく味付けされた日々でありますように。",
+      },
+      ko: {
+        title: "결혼 축하 템플릿",
+        description: "축의금 말고 기억에 남는 한마디. 주홍 × 가운데 정렬.",
+        text: "결혼 축하해!\n사랑할 때의 서툴지만 진심이던 모습 봤으니,\n평범한 날도 시로 만드는 능력을 믿어.\n앞으로의 날들, 소소한 것들이 시가 되기를.",
+      },
+      es: {
+        title: "Plantilla de felicitación de boda",
+        description: "Más allá del sobre, una frase sincera que recordarán.",
+        text: "¡Felicidades por la boda!\nHe visto lo torpes y lo serios que fueron enamorándose.\nConfío en que convertirán los días comunes en poesía.\nQue los años que vienen sazonen bien cada día.",
+      },
+    },
+  },
 ];

@@ -140,7 +140,11 @@
   "templates": {
     "tagline": "Every template ships with copy and handwriting style — pick one and go.",
     "use": "Use this template",
-    "editHint": "Text is fully editable after applying; adjust font and paper in the panel on the left."
+    "editHint": "Text is fully editable after applying; adjust font and paper in the panel on the left.",
+    "libraryTitle": "Templates",
+    "searchPlaceholder": "Search scenarios: birthday, apology, thanks, mom…",
+    "noResult": "No matching template",
+    "noResultHint": "Try another keyword, or create freely on the tool page"
   },
   "author": {
     "name": "Voice to Handwriting Team",

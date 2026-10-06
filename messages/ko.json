@@ -140,7 +140,11 @@
   "templates": {
     "tagline": "문구와 손글씨 스타일이 세트예요. 골라서 바로 시작하세요.",
     "use": "이 템플릿 사용하기",
-    "editHint": "적용 후 텍스트는 자유롭게 수정하고, 글꼴·용지는 왼쪽 패널에서 조정할 수 있어요."
+    "editHint": "적용 후 텍스트는 자유롭게 수정하고, 글꼴·용지는 왼쪽 패널에서 조정할 수 있어요.",
+    "libraryTitle": "템플릿",
+    "searchPlaceholder": "상황 검색: 생일, 사과, 감사, 엄마…",
+    "noResult": "일치하는 템플릿이 없어요",
+    "noResultHint": "다른 키워드로 검색하거나 도구 페이지에서 자유롭게 만들어 보세요"
   },
   "author": {
     "name": "Voice to Handwriting 팀",
