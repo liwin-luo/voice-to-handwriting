@@ -3,6 +3,7 @@ import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { FONTS, useEditorStore } from "@/stores/useEditorStore";
+import { SITE } from "@/lib/site";
 import { tokenize, type Token } from "@/engine/tokens";
 import { expandPages, paginateLineTops } from "@/engine/layout";
 import { charJitter } from "@/engine/jitter";
@@ -41,8 +42,10 @@ function partitionParagraphs(tokens: Token[]): ParaGroup[] {
 
 export default function PaperView() {
   const t = useTranslations("tool");
-  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent } =
+  const th = useTranslations("home");
+  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent, watermark } =
     useEditorStore();
+  const setText = useEditorStore((s2) => s2.setText);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const paper = getPaper(paperId);
   const tokens = useMemo(() => tokenize(text), [text]);
@@ -168,6 +171,12 @@ export default function PaperView() {
       >
         <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
         <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+        <button
+          onClick={() => setText(th("sampleText"))}
+          className="btn btn-ghost mt-1 px-4 py-2 text-xs"
+        >
+          {t("trySample")}
+        </button>
         <ArrowDown className="size-4 animate-bounce text-zinc-300" />
       </div>
     ) : (
@@ -186,6 +195,11 @@ export default function PaperView() {
           <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
             {p + 1} / {pages.length}
           </span>
+          {watermark && (
+            <span className="absolute left-5 bottom-3 text-[10px] tracking-wide text-zinc-400/90 select-none">
+              {th("watermarkLabel")}
+            </span>
+          )}
         </div>
       ))
     );

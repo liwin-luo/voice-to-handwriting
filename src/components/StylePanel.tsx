@@ -78,6 +78,23 @@ export default function StylePanel() {
             ))}
           </select>
         </label>
+        <div className="flex items-center justify-between">
+          <span className="text-zinc-700">{t("watermark")}</span>
+          <button
+            role="switch"
+            aria-checked={s.watermark}
+            onClick={() => s.setWatermark(!s.watermark)}
+            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+              s.watermark ? "bg-accent" : "bg-zinc-300"
+            }`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                s.watermark ? "translate-x-5" : ""
+              }`}
+            />
+          </button>
+        </div>
         <div className="flex flex-col gap-1.5">
           <span className="text-zinc-700">{t("ink")}</span>
           <div className="flex gap-2.5 pt-0.5">

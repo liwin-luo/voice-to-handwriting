@@ -39,7 +39,9 @@
     "badge": "Processed locally, text never uploaded",
     "footerNote": "Speech recognition is provided by your browser (Web Speech API). Desktop Chrome / Edge recommended; your text never leaves your device.",
     "blogLink": "Handwritten card tutorials and ideas",
-    "adPending": "Ad slot · set NEXT_PUBLIC_ADSENSE_CLIENT to activate"
+    "adPending": "Ad slot · set NEXT_PUBLIC_ADSENSE_CLIENT to activate",
+    "sampleText": "Dear friend,\nsee these words: I spoke to a web page and they became handwriting. Type, talk, or import audio — then export as an image or PDF. Have a lovely day.",
+    "watermarkLabel": "Voice to Handwriting"
   },
   "tool": {
     "speak": "Tap to speak",
@@ -93,7 +95,9 @@
     "statusTranscribe": "Transcribing — long files take a while…",
     "errorEmpty": "No speech recognized in the audio",
     "errorImport": "Transcription failed — try an mp3 / wav / m4a file",
-    "modelNote": "Fast: ~80MB download; High quality: ~250MB, better Chinese. Model downloads once, audio never leaves your device"
+    "modelNote": "Fast: ~80MB download; High quality: ~250MB, better Chinese. Model downloads once, audio never leaves your device",
+    "watermark": "Export watermark",
+    "trySample": "Try a sample"
   },
   "footer": {
     "privacy": "Privacy Policy",

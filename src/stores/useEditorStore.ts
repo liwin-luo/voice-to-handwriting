@@ -27,6 +27,7 @@ interface EditorState {
   seed: number;
   align: TextAlign; // 文字排列:左对齐/居中
   indent: boolean; // 段落首行缩进两格
+  watermark: boolean; // 导出图品牌水印
   setText: (t: string) => void;
   appendText: (t: string) => void;
   setFontId: (id: FontId) => void;
@@ -36,6 +37,7 @@ interface EditorState {
   setIntensity: (n: number) => void;
   setAlign: (a: TextAlign) => void;
   setIndent: (v: boolean) => void;
+  setWatermark: (v: boolean) => void;
   reseed: () => void;
   reset: () => void;
 }
@@ -50,6 +52,7 @@ const initial = {
   seed: 20261006,
   align: "left" as TextAlign,
   indent: false,
+  watermark: true,
 };
 
 export const useEditorStore = create<EditorState>()(
@@ -65,6 +68,7 @@ export const useEditorStore = create<EditorState>()(
       setIntensity: (intensity) => set({ intensity }),
       setAlign: (align) => set({ align }),
       setIndent: (indent) => set({ indent }),
+      setWatermark: (watermark) => set({ watermark }),
       reseed: () => set({ seed: Math.floor(Math.random() * 2 ** 31) }),
       reset: () => set({ ...initial }),
     }),
@@ -78,6 +82,7 @@ export const useEditorStore = create<EditorState>()(
         intensity: s.intensity,
         align: s.align,
         indent: s.indent,
+        watermark: s.watermark,
       }), // 只持久化样式偏好,不持久化正文
     },
   ),

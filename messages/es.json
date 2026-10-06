@@ -39,7 +39,9 @@
     "badge": "Procesado en tu navegador, el texto nunca se sube",
     "footerNote": "El reconocimiento de voz usa la función del navegador (Web Speech API). Recomendado: Chrome / Edge de escritorio. Tu texto nunca sale de tu dispositivo.",
     "blogLink": "Tutoriales e ideas de tarjetas manuscritas",
-    "adPending": "Espacio publicitario · se activa con NEXT_PUBLIC_ADSENSE_CLIENT"
+    "adPending": "Espacio publicitario · se activa con NEXT_PUBLIC_ADSENSE_CLIENT",
+    "sampleText": "Querido amigo:\nhablé a una página web y estas palabras se volvieron escritura a mano. Puedes escribir, hablar o importar audio. ¡Buen día!",
+    "watermarkLabel": "Voice to Handwriting"
   },
   "tool": {
     "speak": "Toca y habla",
@@ -93,7 +95,9 @@
     "statusTranscribe": "Transcribiendo — los archivos largos tardan…",
     "errorEmpty": "No se reconoció voz en el audio",
     "errorImport": "Falló la transcripción: prueba con mp3 / wav / m4a",
-    "modelNote": "Rápido: ~80MB. Alta calidad: ~250MB, mejor chino. El modelo se descarga una vez; el audio nunca sale de tu equipo"
+    "modelNote": "Rápido: ~80MB. Alta calidad: ~250MB, mejor chino. El modelo se descarga una vez; el audio nunca sale de tu equipo",
+    "watermark": "Marca de agua al exportar",
+    "trySample": "Probar un ejemplo"
   },
   "footer": {
     "privacy": "Política de privacidad",

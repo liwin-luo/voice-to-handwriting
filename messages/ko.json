@@ -39,7 +39,9 @@
     "badge": "브라우저에서 처리, 텍스트는 전송되지 않습니다",
     "footerNote": "음성 인식은 브라우저 기능(Web Speech API)을 사용합니다. 데스크톱 Chrome / Edge 권장. 텍스트는 서버로 전송되지 않습니다.",
     "blogLink": "손글씨 카드 튜토리얼과 아이디어",
-    "adPending": "광고 자리 · NEXT_PUBLIC_ADSENSE_CLIENT 설정 후 표시"
+    "adPending": "광고 자리 · NEXT_PUBLIC_ADSENSE_CLIENT 설정 후 표시",
+    "sampleText": "친구에게:\n웹페이지에 말을 했더니 그대로 손글씨가 되었어요. 타이핑, 말하기, 오디오 가져오기 모두 가능해요. 오늘도 좋은 하루 보내요.",
+    "watermarkLabel": "Voice to Handwriting"
   },
   "tool": {
     "speak": "눌러서 말하기",
@@ -93,7 +95,9 @@
     "statusTranscribe": "변환 중입니다. 긴 오디오는 시간이 걸려요…",
     "errorEmpty": "음성을 인식하지 못했어요",
     "errorImport": "변환 실패: mp3 / wav / m4a 파일로 시도해 보세요",
-    "modelNote": "빠름: 약 80MB. 고품질: 약 250MB(중국어 정확도 향상). 모델은 한 번만 다운로드되며 오디오는 기기를 벗어나지 않습니다"
+    "modelNote": "빠름: 약 80MB. 고품질: 약 250MB(중국어 정확도 향상). 모델은 한 번만 다운로드되며 오디오는 기기를 벗어나지 않습니다",
+    "watermark": "내보내기 워터마크",
+    "trySample": "예시 써보기"
   },
   "footer": {
     "privacy": "개인정보 처리방침",

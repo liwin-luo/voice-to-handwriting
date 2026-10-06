@@ -39,7 +39,9 @@
     "badge": "浏览器本地处理,文字不上传",
     "footerNote": "语音识别由浏览器提供(Web Speech API),推荐桌面版 Chrome / Edge;文字内容不会上传服务器。",
     "blogLink": "手写贺卡教程与灵感",
-    "adPending": "广告位 · 配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效"
+    "adPending": "广告位 · 配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效",
+    "sampleText": "亲爱的朋友:\n见字如面。这段文字是用声音写成的——对着网页说一段话,就能变成这样的手写文稿。祝你今天也有好心情。",
+    "watermarkLabel": "声音转手写 · voicetohandwriting.com"
   },
   "tool": {
     "speak": "点击说话",
@@ -93,7 +95,9 @@
     "statusTranscribe": "转写中,长音频需要一些时间…",
     "errorEmpty": "未识别到语音内容",
     "errorImport": "转写失败:请换 mp3 / wav / m4a 文件再试",
-    "modelNote": "快速:下载约 80MB;高质量:约 250MB,中文更准。模型仅下载一次,音频不离开设备"
+    "modelNote": "快速:下载约 80MB;高质量:约 250MB,中文更准。模型仅下载一次,音频不离开设备",
+    "watermark": "导出水印",
+    "trySample": "试试示例"
   },
   "footer": {
     "privacy": "隐私政策",

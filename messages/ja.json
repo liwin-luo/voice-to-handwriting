@@ -39,7 +39,9 @@
     "badge": "ブラウザ内で処理、テキストは送信されません",
     "footerNote": "音声認識はブラウザ機能(Web Speech API)を使用します。デスクトップ版 Chrome / Edge 推奨。テキストはサーバーに送信されません。",
     "blogLink": "手書きカードの作り方とアイデア",
-    "adPending": "広告枠 · NEXT_PUBLIC_ADSENSE_CLIENT 設定後に表示"
+    "adPending": "広告枠 · NEXT_PUBLIC_ADSENSE_CLIENT 設定後に表示",
+    "sampleText": "親愛なる友人へ。\nこれはウェブページに向かって話したことが、そのまま手書きの文書になったものです。入力でも音声でも作れます。良い一日を。",
+    "watermarkLabel": "Voice to Handwriting"
   },
   "tool": {
     "speak": "タップして話す",
@@ -93,7 +95,9 @@
     "statusTranscribe": "文字起こし中。長い音声は時間がかかります…",
     "errorEmpty": "音声を認識できませんでした",
     "errorImport": "変換に失敗しました。mp3 / wav / m4a をお試しください",
-    "modelNote": "高速:約 80MB。高品質:約 250MB(中国語精度向上)。モデルは一度だけダウンロード、音声は端末外に出ません"
+    "modelNote": "高速:約 80MB。高品質:約 250MB(中国語精度向上)。モデルは一度だけダウンロード、音声は端末外に出ません",
+    "watermark": "書き出しウォーターマーク",
+    "trySample": "サンプルを試す"
   },
   "footer": {
     "privacy": "プライバシーポリシー",
