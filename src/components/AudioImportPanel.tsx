@@ -8,6 +8,7 @@ import {
   type TranscribeProgress,
 } from "@/lib/transcribe";
 import { useEditorStore } from "@/stores/useEditorStore";
+import { snapshotEditor } from "@/stores/useHistoryStore";
 
 /** 导入音频文件 → 浏览器本地转写(Whisper)→ 文字进编辑器 */
 export default function AudioImportPanel() {
@@ -27,7 +28,10 @@ export default function AudioImportPanel() {
     setProgress(null);
     try {
       const text = await transcribeAudioFile(file, model, setProgress, locale);
-      if (text) appendText(text);
+      if (text) {
+        appendText(text);
+        snapshotEditor("audio");
+      }
       else setError(t("errorEmpty"));
     } catch (e) {
       console.error(e);

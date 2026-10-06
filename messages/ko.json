@@ -22,12 +22,17 @@
     "blog": {
       "title": "블로그",
       "description": "손글씨 카드 만들기와 손글씨 이미지 활용 팁."
+    },
+    "history": {
+      "title": "기록",
+      "description": "로컬에 저장된 변환 기록: 텍스트와 스타일 스냅샷을 한 번에 복원해 이어서 편집할 수 있습니다. 브라우저에만 저장됩니다."
     }
   },
   "nav": {
     "tool": "도구",
     "blog": "블로그",
-    "about": "소개"
+    "about": "소개",
+    "history": "기록"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -102,5 +107,18 @@
     "title": "이 페이지는 바람에 날아간 것 같아요",
     "text": "하지만 손글씨 도구는 늘 여기에 있습니다.",
     "back": "손글씨로 돌아가기"
+  },
+  "history": {
+    "emptyTitle": "아직 기록이 없어요",
+    "emptyHint": "내보내기, 녹음 종료, 오디오 변환 성공 시 스냅샷이 저장됩니다",
+    "goTool": "손글씨 쓰러 가기",
+    "restore": "복원해서 편집",
+    "delete": "삭제",
+    "clearAll": "전체 비우기",
+    "confirmClear": "모든 기록을 지울까요? 되돌릴 수 없습니다.",
+    "sourceSpeech": "음성 입력",
+    "sourceAudio": "오디오 파일",
+    "sourceExport": "내보내기",
+    "charUnit": "자"
   }
 }

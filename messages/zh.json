@@ -22,12 +22,17 @@
     "blog": {
       "title": "博客",
       "description": "手写贺卡教程、手写体图片生成技巧、手写文案配图灵感 —— 用声音写手写的实践指南。"
+    },
+    "history": {
+      "title": "历史记录",
+      "description": "本地保存的手写转换历史:文本与样式快照,可一键恢复继续编辑。仅存于你的浏览器。"
     }
   },
   "nav": {
     "tool": "工具",
     "blog": "博客",
-    "about": "关于"
+    "about": "关于",
+    "history": "历史"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -102,5 +107,18 @@
     "title": "这个页面被风吹走了",
     "text": "不过手写工具一直都在。",
     "back": "回去写手写"
+  },
+  "history": {
+    "emptyTitle": "还没有历史记录",
+    "emptyHint": "导出、录音结束或音频转写成功时会自动存一份快照",
+    "goTool": "去写手写",
+    "restore": "恢复编辑",
+    "delete": "删除",
+    "clearAll": "清空历史",
+    "confirmClear": "确定清空全部历史记录?此操作不可恢复。",
+    "sourceSpeech": "语音输入",
+    "sourceAudio": "音频转写",
+    "sourceExport": "导出",
+    "charUnit": "字"
   }
 }

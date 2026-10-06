@@ -22,12 +22,17 @@
     "blog": {
       "title": "Blog",
       "description": "Tutoriales de tarjetas escritas a mano e ideas para imágenes manuscritas."
+    },
+    "history": {
+      "title": "Historial",
+      "description": "Tus conversiones guardadas localmente: instantáneas de texto y estilo, restaurables con un clic. Solo en tu navegador."
     }
   },
   "nav": {
     "tool": "Herramienta",
     "blog": "Blog",
-    "about": "Acerca de"
+    "about": "Acerca de",
+    "history": "Historial"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -102,5 +107,18 @@
     "title": "Esta página se voló con el viento",
     "text": "Pero la herramienta de escritura a mano sigue aquí.",
     "back": "Volver a escribir"
+  },
+  "history": {
+    "emptyTitle": "Aún no hay historial",
+    "emptyHint": "Se guarda una instantánea al exportar, terminar una grabación o transcribir un audio",
+    "goTool": "Escribir a mano",
+    "restore": "Restaurar",
+    "delete": "Eliminar",
+    "clearAll": "Borrar todo",
+    "confirmClear": "¿Borrar todo el historial? No se puede deshacer.",
+    "sourceSpeech": "Voz",
+    "sourceAudio": "Audio",
+    "sourceExport": "Exportación",
+    "charUnit": "car."
   }
 }

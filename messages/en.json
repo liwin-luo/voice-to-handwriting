@@ -22,12 +22,17 @@
     "blog": {
       "title": "Blog",
       "description": "Handwritten card tutorials, handwriting image tips and inspiration for social media posts."
+    },
+    "history": {
+      "title": "History",
+      "description": "Your local handwriting conversions: text and style snapshots, restorable in one click. Stored only in your browser."
     }
   },
   "nav": {
     "tool": "Tool",
     "blog": "Blog",
-    "about": "About"
+    "about": "About",
+    "history": "History"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -102,5 +107,18 @@
     "title": "This page blew away in the wind",
     "text": "But the handwriting tool is right where it was.",
     "back": "Back to writing"
+  },
+  "history": {
+    "emptyTitle": "No history yet",
+    "emptyHint": "A snapshot is saved when you export, finish a recording, or transcribe an audio file",
+    "goTool": "Start writing",
+    "restore": "Restore",
+    "delete": "Delete",
+    "clearAll": "Clear all",
+    "confirmClear": "Clear all history? This cannot be undone.",
+    "sourceSpeech": "Voice input",
+    "sourceAudio": "Audio file",
+    "sourceExport": "Export",
+    "charUnit": "chars"
   }
 }

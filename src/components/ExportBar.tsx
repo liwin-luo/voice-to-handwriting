@@ -5,6 +5,7 @@ import { DownloadSimple, FilePdf } from "@phosphor-icons/react";
 import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 import { useEditorStore } from "@/stores/useEditorStore";
+import { snapshotEditor } from "@/stores/useHistoryStore";
 import { PAGE_H, PAGE_W } from "./PaperView";
 
 export default function ExportBar() {
@@ -29,6 +30,7 @@ export default function ExportBar() {
     try {
       const urls = await toPngPages();
       urls.forEach((u, i) => download(u, `handwriting-${i + 1}.png`));
+      snapshotEditor("export");
     } finally {
       setBusy(false);
     }
@@ -44,6 +46,7 @@ export default function ExportBar() {
         pdf.addImage(u, "PNG", 0, 0, PAGE_W, PAGE_H);
       });
       pdf.save("handwriting.pdf");
+      snapshotEditor("export");
     } finally {
       setBusy(false);
     }
