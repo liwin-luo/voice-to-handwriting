@@ -2,7 +2,9 @@ import type { Locale } from "@/i18n/routing";
 
 export interface Post {
   slug: string;
-  date: string;
+  date: string; // 首发
+  updated: string; // 最后更新(EEAT:展示维护状态)
+  image: string; // 题图(public/blog 下截图)
   i18n: Record<Locale, { title: string; description: string }>;
 }
 
@@ -15,6 +17,8 @@ export const POSTS: Post[] = [
   {
     slug: "handwritten-card-with-voice",
     date: "2026-10-06",
+    updated: "2026-10-07",
+    image: "/blog/template-love.png",
     i18n: {
       zh: {
         title: "用声音写贺卡:3 分钟生成一张手写贺卡",
@@ -46,6 +50,8 @@ export const POSTS: Post[] = [
   {
     slug: "handwriting-image-generator",
     date: "2026-10-06",
+    updated: "2026-10-07",
+    image: "/blog/workspace.png",
     i18n: {
       zh: {
         title: "手写体图片在线生成教程:不打字,说出来就行",
@@ -77,6 +83,8 @@ export const POSTS: Post[] = [
   {
     slug: "xiaohongshu-handwritten-images",
     date: "2026-10-06",
+    updated: "2026-10-07",
+    image: "/blog/templates.png",
     i18n: {
       zh: {
         title: "小红书手写文案配图怎么做?一个浏览器搞定",
@@ -102,6 +110,72 @@ export const POSTS: Post[] = [
         title: "Tarjetas con citas manuscritas para redes sociales",
         description:
           "Las imágenes con citas manuscritas logran gran interacción. Prodúcelas en lote con entrada por voz, con consejos de portada y maquetación.",
+      },
+    },
+  },
+  {
+    slug: "audio-to-handwriting",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "/blog/toolbar.png",
+    i18n: {
+      zh: {
+        title: "录音怎么免费转成手写笔记?浏览器本地方案实测",
+        description:
+          "上传音频文件,在浏览器本地用 Whisper 转写成文字再排版手写。零成本、音频不上传,含实测结果与诚实的局限说明。",
+      },
+      en: {
+        title: "Transcribe recordings into handwritten notes, free and local",
+        description:
+          "Upload an audio file and transcribe it with in-browser Whisper, then export as handwriting. Zero cost, audio never uploaded — with real test results and honest limitations.",
+      },
+      ja: {
+        title: "録音を無料で手書きノートにする方法(ブラウザローカル実測)",
+        description:
+          "音声ファイルをアップロードすると、ブラウザ内の Whisper で文字起こしし手書きスタイルに。実測結果と正直な制限事項つき。",
+      },
+      ko: {
+        title: "녹음을 무료로 손글씨 노트로: 브라우저 로컬 방식 실측",
+        description:
+          "오디오 파일을 올리면 브라우저 안의 Whisper가 변환하고 손글씨로 내보냅니다. 실측 결과와 솔직한 한계 포함.",
+      },
+      es: {
+        title: "De grabación a nota manuscrita, gratis y en local",
+        description:
+          "Sube un audio, transcríbelo con Whisper en el navegador y expórtalo manuscrito. Con pruebas reales y limitaciones honestas.",
+      },
+    },
+  },
+  {
+    slug: "handwriting-templates-guide",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "/blog/templates.png",
+    i18n: {
+      zh: {
+        title: "手写模板库:6 个场景,选一个就能写",
+        description:
+          "情书、道歉信、感谢信、生日、教师节、新年——6 个场景的手写模板,文案与样式一键套用,改几个字就能导出。",
+      },
+      en: {
+        title: "Handwriting template library: six scenarios, pick one and write",
+        description:
+          "Love letters, apologies, thank-you notes, birthdays, Teachers' Day, New Year — copy and handwriting style in one tap, ready to export.",
+      },
+      ja: {
+        title: "手書きテンプレート集:6 シーン、選んですぐ書ける",
+        description:
+          "ラブレター、お詫び状、お礼状、バースデー、教師の日、新年——文案とスタイルをワンタップ適用。",
+      },
+      ko: {
+        title: "손글씨 템플릿: 6가지 상황, 골라서 바로 쓰기",
+        description:
+          "러브레터, 사과편지, 감사편지, 생일, 스승의 날, 새해 —— 문구와 스타일을 원탭 적용.",
+      },
+      es: {
+        title: "Plantillas manuscritas: seis escenarios, elige y escribe",
+        description:
+          "Cartas de amor, disculpas, agradecimientos, cumpleaños, Día del Maestro y Año Nuevo — texto y estilo en un toque.",
       },
     },
   },

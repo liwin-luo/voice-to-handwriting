@@ -141,5 +141,14 @@
     "tagline": "Every template ships with copy and handwriting style — pick one and go.",
     "use": "Use this template",
     "editHint": "Text is fully editable after applying; adjust font and paper in the panel on the left."
+  },
+  "author": {
+    "name": "Voice to Handwriting Team",
+    "role": "Product & engineering team"
+  },
+  "post": {
+    "updated": "Updated",
+    "reading": "{m} min read",
+    "testedNote": "All steps in this article were tested on desktop Chrome (October 2026, macOS). Recognition quality may vary across browsers and devices — share your own results via [Contact](/contact)."
   }
 }

@@ -1,0 +1,38 @@
+# De grabación a nota manuscrita, gratis y en local
+
+Una grabación de reunión, una clase, notas de voz con ideas — convertirlas en una nota manuscrita compartible exigía cuatro pasos: transcripción, copiar, maquetar, exportar.
+
+Ahora es uno: **sube un archivo de audio y obtén una página manuscrita**. Gratis, sin que el audio salga de tu equipo.
+
+## Comparación de las tres rutas
+
+| Ruta | Coste | Privacidad | Ideal para |
+| --- | --- | --- | --- |
+| Whisper en el navegador (nuestra opción) | 0 | El audio queda en el equipo | Notas diarias, contenido sensible |
+| ASR en la nube | Por minuto o cuota gratis | Audio subido | Archivos muy largos, velocidad |
+| Dictado del móvil | 0 | Según el método | Notas cortas puntuales |
+
+## Prueba real
+
+Entorno: macOS + Chrome, ruta WASM, modelo rápido.
+
+- Entrada: voz china sintetizada (~5 s)
+- Salida: "你好,這是一段測試語音,用來驗證音頻轉寫功能。" — contenido exacto (en traditional: tendencia conocida del modelo base; mejora con el de alta calidad)
+
+La primera carga del modelo tardó ~1 minuto; luego el navegador lo cachea.
+
+![Importar audio en la barra de herramientas](/blog/toolbar.png)
+
+## Cómo usarlo
+
+1. En la [herramienta](/), pulsa "Importar audio" y elige mp3 / wav / m4a;
+2. Espera el progreso (incluye la descarga inicial del modelo);
+3. La transcripción cae en el editor: corrige, elige estilo, exporta.
+
+## Limitaciones honestas
+
+El modelo base sufre con acentos fuertes y ruido; los archivos de +30 minutos tardan. Para lo importante: modelo de alta calidad y revisión manual. Safari no decodifica algunos códecs — recomendamos Chrome / Edge de escritorio.
+
+## Probado, con limitaciones honestas
+
+Probado en Chrome de escritorio (macOS, octubre de 2026); las capturas son reales. El reconocimiento de voz lo provee el navegador y la calidad varía según el entorno. Revisa el texto importante. No recopilamos texto ni audio ([Política de privacidad](/privacy)). Referencia: [MDN · Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API).

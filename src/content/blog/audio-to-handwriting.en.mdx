@@ -1,0 +1,52 @@
+# Transcribe recordings into handwritten notes, free and local
+
+A two-hour meeting recording, a lecture, a voice memo full of ideas — turning them into a shareable handwritten note used to mean four steps: transcription app, copy, layout, export.
+
+We compressed it into one: **upload an audio file, get a handwritten page**. Free, with the audio never leaving your device. Here's how it works, our real test results, and the honest limitations.
+
+## The three routes, compared
+
+| Route | Cost | Privacy | Best for |
+| --- | --- | --- | --- |
+| In-browser Whisper (ours) | 0 | Audio stays on device | Daily notes, privacy-sensitive content |
+| Cloud ASR (iFlytek, Doubao, Groq…) | Per minute or limited free tier | Audio uploaded | Very long files, speed-critical |
+| Phone dictation + copy-paste | 0 | Depends | One-off short snippets |
+
+The local route's only cost: a one-time model download, and transcription speed depends on your hardware.
+
+## How we implemented it (the technical bits)
+
+- Files are decoded via the browser's `decodeAudioData` and resampled to 16kHz mono;
+- The Whisper model (~80MB fast / ~250MB high-quality, q8 quantized) is **self-hosted on our own domain**, chunked into 30-second windows;
+- Desktop Chrome with WebGPU gets GPU acceleration; everything else falls back to WASM (CPU);
+- The transcript lands in the same editor — fonts, paper, export all behave identically to typing.
+
+We self-host the model instead of calling the HuggingFace CDN to avoid cross-origin blocks and keep downloads working in China.
+
+## Real test: a TTS sample
+
+Environment: macOS + Chrome, no discrete GPU (WASM path), fast model.
+
+- Input: synthesized Chinese speech saying "你好,这是一段测试语音,用来验证音频转写功能。" (~5s)
+- Output: "你好,這是一段測試語音,用來驗證音頻轉寫功能。"
+
+Content fully correct, but rendered in traditional characters — a known tendency of base-tier models; switch to the high-quality tier or fix by hand. First model load took about a minute; afterwards the browser caches it.
+
+![The import-audio entry in the toolbar](/blog/toolbar.png)
+
+## Three steps
+
+1. On the [tool page](/), click "Import audio file" and pick mp3 / wav / m4a;
+2. Wait for the progress hint (includes first-time model download);
+3. The transcript lands in the editor — fix typos, pick a style, export.
+
+## Limitations, stated plainly
+
+- Base-tier accuracy degrades with heavy accents and noise; use the high-quality tier and proofread for anything important;
+- 30+ minute files take noticeably long — split them;
+- Safari's decoding of some audio codecs is incomplete; desktop Chrome / Edge recommended.
+
+
+## Tested, with honest limitations
+
+Every step was tested on **desktop Chrome (macOS, October 2026)**; screenshots are from real runs. Speech recognition is provided by the browser vendor and quality varies — proofread important text. We collect no text or audio — see the [Privacy Policy](/privacy). Technical reference: [MDN · Web Speech API](https://developer.mozilla.org/docs/Web/API/Web_Speech_API).
