@@ -11,6 +11,9 @@
     "fonts": "node scripts/fonts.mjs"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@next/mdx": "^16.3.8",
+    "@types/mdx": "^2.0.14",
     "html-to-image": "^1.11.13",
     "jspdf": "^4.2.1",
     "next": "16.3.8",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.20",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/react": "^16.3.3",
     "@types/node": "^20",
