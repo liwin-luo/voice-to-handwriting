@@ -2,6 +2,7 @@ import { ShieldCheck } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import ToolWorkspace from "@/components/ToolWorkspace";
+import HomeToolsSection from "@/components/HomeToolsSection";
 import { SITE } from "@/lib/site";
 
 export default async function HomePage({
@@ -45,6 +46,7 @@ export default async function HomePage({
         <ToolWorkspace />
       </div>
       <div className="rise mt-10" style={{ animationDelay: "160ms" }}>
+        <HomeToolsSection />
       </div>
       <footer className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400">
         <span>{t("footerNote")}</span>

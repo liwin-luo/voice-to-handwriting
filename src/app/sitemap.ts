@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { POSTS } from "@/content/posts";
+import { postLocales } from "@/content/blog/registry";
 import { TEMPLATES } from "@/content/templates";
 import { routing } from "@/i18n/routing";
 
@@ -37,14 +38,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
     for (const post of POSTS) {
+      // 仅输出有正文的语言变体,避免英-only 文章的其他语言 URL 404
+      const available = postLocales(post.slug);
       const p = `/blog/${post.slug}`;
-      entries.push({
-        url: localized(p, locale),
-        lastModified: new Date(post.date),
-        changeFrequency: "monthly",
-        priority: 0.6,
-        alternates: alternatesFor(p),
-      });
+      for (const locale of available) {
+        entries.push({
+          url: localized(p, locale),
+          lastModified: new Date(post.date),
+          changeFrequency: "monthly",
+          priority: 0.6,
+          alternates: {
+            languages: Object.fromEntries(available.map((l) => [l, localized(p, l)])),
+          },
+        });
+      }
     }
   }
   return entries;

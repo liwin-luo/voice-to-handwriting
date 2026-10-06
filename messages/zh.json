@@ -54,7 +54,11 @@
     "blog": "博客",
     "about": "关于",
     "history": "历史",
-    "templates": "模板"
+    "templates": "模板",
+    "printables": "打印工具",
+    "printablePaper": "打印纸模板",
+    "nameTracing": "描红字帖",
+    "cursive": "英文连笔字"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -63,7 +67,16 @@
     "blogLink": "手写贺卡教程与灵感",
     "adPending": "广告位 · 配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效",
     "sampleText": "亲爱的朋友:\n见字如面。这段文字是用声音写成的——对着网页说一段话,就能变成这样的手写文稿。祝你今天也有好心情。",
-    "watermarkLabel": "声音转手写 · voicetohandwriting.online"
+    "watermarkLabel": "声音转手写 · voicetohandwriting.online",
+    "moreTools": {
+      "title": "更多免费工具",
+      "printablePaperTitle": "可打印纸张",
+      "printablePaperDesc": "横线、方格、三线格练字纸 — 免费 PDF 无水印。",
+      "nameTracingTitle": "姓名描红字帖",
+      "nameTracingDesc": "给孩子和课堂的个性化描红练习。",
+      "cursiveTitle": "英文连笔字",
+      "cursiveDesc": "输入或说话,即时变流畅连笔字,可打印描红。"
+    }
   },
   "tool": {
     "speak": "点击说话",

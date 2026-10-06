@@ -54,7 +54,11 @@
     "blog": "블로그",
     "about": "소개",
     "history": "기록",
-    "templates": "템플릿"
+    "templates": "템플릿",
+    "printables": "인쇄 도구",
+    "printablePaper": "인쇄용 종이 템플릿",
+    "nameTracing": "이름 쓰기 연습장",
+    "cursive": "필기체 생성기"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -63,7 +67,16 @@
     "blogLink": "손글씨 카드 튜토리얼과 아이디어",
     "adPending": "광고 자리 · NEXT_PUBLIC_ADSENSE_CLIENT 설정 후 표시",
     "sampleText": "친구에게:\n웹페이지에 말을 했더니 그대로 손글씨가 되었어요. 타이핑, 말하기, 오디오 가져오기 모두 가능해요. 오늘도 좋은 하루 보내요.",
-    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online"
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
+    "moreTools": {
+      "title": "더 많은 무료 도구",
+      "printablePaperTitle": "인쇄용 종이",
+      "printablePaperDesc": "줄선·모눈·3줄 연습용지 — 무료 PDF, 워터마크 없음.",
+      "nameTracingTitle": "이름 쓰기 연습장",
+      "nameTracingDesc": "아이와 교실을 위한 개인화 쓰기 연습.",
+      "cursiveTitle": "필기체 생성기",
+      "cursiveDesc": "입력이나 음성으로 흐르는 필기체로. 인쇄해서 따라 쓰기도 가능."
+    }
   },
   "tool": {
     "speak": "눌러서 말하기",

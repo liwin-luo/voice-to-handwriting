@@ -3,6 +3,7 @@ import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { POSTS } from "@/content/posts";
+import { BLOG_CONTENT } from "@/content/blog/registry";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({

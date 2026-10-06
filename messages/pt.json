@@ -54,7 +54,11 @@
     "templates": "Modelos",
     "history": "Histórico",
     "blog": "Blog",
-    "about": "Sobre"
+    "about": "Sobre",
+    "printables": "Ferramentas de impressão",
+    "printablePaper": "Papel para imprimir",
+    "nameTracing": "Fichas de nomes",
+    "cursive": "Letra cursiva"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -63,7 +67,16 @@
     "blogLink": "Tutoriais e ideias de cartões manuscritos",
     "adPending": "Espaço de anúncio · ativado com NEXT_PUBLIC_ADSENSE_CLIENT",
     "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
-    "sampleText": "Querido amigo,\nfalei para uma página da web e estas palavras viraram escrita à mão. Dê um toque, fale ou importe um áudio — e exporte em imagem ou PDF. Tenha um ótimo dia!"
+    "sampleText": "Querido amigo,\nfalei para uma página da web e estas palavras viraram escrita à mão. Dê um toque, fale ou importe um áudio — e exporte em imagem ou PDF. Tenha um ótimo dia!",
+    "moreTools": {
+      "title": "Mais ferramentas grátis",
+      "printablePaperTitle": "Papel para imprimir",
+      "printablePaperDesc": "Papel pautado, quadriculado e de caligrafia — PDF grátis, sem marca d'água.",
+      "nameTracingTitle": "Fichas de nomes",
+      "nameTracingDesc": "Fichas personalizadas para crianças, homeschool e sala de aula.",
+      "cursiveTitle": "Letra cursiva",
+      "cursiveDesc": "Digite ou fale — cursiva fluida, imprimível para praticar."
+    }
   },
   "tool": {
     "speak": "Toque e fale",

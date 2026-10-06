@@ -184,5 +184,141 @@ export const POSTS: Post[] = [
   },
 ];
 
+/** 面向美国用户的长尾词文章:仅英文(默认语言),其他语言按 availableLocales 过滤,不进 sitemap */
+const US_POSTS: Post[] = [
+  {
+    slug: "name-tracing-generator",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Free name tracing generator: editable worksheets to print",
+        description:
+          "Type any name, print a personalized tracing worksheet in seconds — example row, light-gray tracing, three-line guides, free PDF. No signup.",
+      },
+    },
+  },
+  {
+    slug: "free-printable-lined-paper",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Free printable lined paper: college, wide, graph & 3-line",
+        description:
+          "Print college-ruled, wide-ruled, graph and three-line handwriting paper on Letter or A4 — choose line color and spacing, download a crisp free PDF.",
+      },
+    },
+  },
+  {
+    slug: "cursive-practice-worksheets",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Custom cursive practice worksheets, free and printable",
+        description:
+          "Generate cursive practice sheets from any name or sentence with real cursive fonts, three-line guides and free PDF downloads.",
+      },
+    },
+  },
+  {
+    slug: "kindergarten-handwriting-paper",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Kindergarten handwriting paper: the three lines, explained",
+        description:
+          "What the top, dashed and bottom lines teach, tall/small/tail letter families, and free printable three-line handwriting paper for kindergarten.",
+      },
+    },
+  },
+  {
+    slug: "letter-to-santa-template",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Free printable letter to Santa template (kids can write it)",
+        description:
+          "A print-ready letter to Santa template: speak or type the words, print in a friendly handwriting font, add a traced signature. Free PDF.",
+      },
+    },
+  },
+  {
+    slug: "handwritten-thank-you-notes",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "How to write a thank you note people keep (with examples)",
+        description:
+          "The four-part thank you note formula with copy-ready examples for weddings, interviews and teachers — plus options if your handwriting is bad.",
+      },
+    },
+  },
+  {
+    slug: "diy-wedding-calligraphy",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "DIY wedding calligraphy: place cards & signs without a pro",
+        description:
+          "Calligraphy-style place cards, menus, signs and vow keepsakes from your own printer — script fonts, cardstock tips and the window-tracing trick.",
+      },
+    },
+  },
+  {
+    slug: "pen-pal-letters-for-kids",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Pen pal letters for kids: friendly letter format & prompts",
+        description:
+          "The five parts of a friendly letter, prompt ideas that get replies, and free printable pen pal paper matched to your child's handwriting.",
+      },
+    },
+  },
+  {
+    slug: "how-to-improve-handwriting-adults",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "How to improve your handwriting as an adult: 4-week plan",
+        description:
+          "Diagnose size, spacing, slant and baseline, then drill with a 15-minute daily plan — free custom practice sheets from your own sentences.",
+      },
+    },
+  },
+  {
+    slug: "handwriting-practice-struggling-writers",
+    date: "2026-10-07",
+    updated: "2026-10-07",
+    image: "",
+    i18n: {
+      en: {
+        title: "Handwriting practice for struggling writers (dysgraphia-friendly)",
+        description:
+          "Low-pressure handwriting adjustments for kids who fight the pencil: taller bands, light-gray tracing, short sessions and voice input.",
+      },
+    },
+  },
+];
+
+POSTS.push(...US_POSTS);
+
 // de/fr/pt 等后补语言在此合并
 mergeI18n(POSTS, EXTRA_POST_I18N);

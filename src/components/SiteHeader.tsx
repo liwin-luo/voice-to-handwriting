@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Logo from "./Logo";
+import NavDropdown from "./NavDropdown";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitch from "./LocaleSwitch";
 
@@ -13,13 +14,18 @@ export default async function SiteHeader() {
           <Logo className="size-6 text-accent transition-transform duration-300 group-hover:-rotate-6" />
           <span className="font-hand text-xl leading-none">{brand("brand")}</span>
         </Link>
-        <nav className="flex items-center gap-5 text-zinc-600">
+        <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-zinc-600">
           <Link href="/" className="transition-colors hover:text-zinc-950">
             {t("tool")}
           </Link>
-          <Link href="/templates" className="transition-colors hover:text-zinc-950">
-            {t("templates")}
-          </Link>
+          <NavDropdown
+            label={t("printables")}
+            items={[
+              { href: "/printable-paper", label: t("printablePaper") },
+              { href: "/name-tracing", label: t("nameTracing") },
+              { href: "/cursive", label: t("cursive") },
+            ]}
+          />
           <Link href="/history" className="transition-colors hover:text-zinc-950">
             {t("history")}
           </Link>

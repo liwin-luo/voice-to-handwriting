@@ -54,7 +54,11 @@
     "blog": "Blog",
     "about": "Acerca de",
     "history": "Historial",
-    "templates": "Plantillas"
+    "templates": "Plantillas",
+    "printables": "Herramientas de impresión",
+    "printablePaper": "Papel para imprimir",
+    "nameTracing": "Fichas de nombres",
+    "cursive": "Letra cursiva"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -63,7 +67,16 @@
     "blogLink": "Tutoriales e ideas de tarjetas manuscritas",
     "adPending": "Espacio publicitario · se activa con NEXT_PUBLIC_ADSENSE_CLIENT",
     "sampleText": "Querido amigo:\nhablé a una página web y estas palabras se volvieron escritura a mano. Puedes escribir, hablar o importar audio. ¡Buen día!",
-    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online"
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
+    "moreTools": {
+      "title": "Más herramientas gratis",
+      "printablePaperTitle": "Papel para imprimir",
+      "printablePaperDesc": "Papel rayado, cuadriculado y de caligrafía — PDF gratis, sin marca de agua.",
+      "nameTracingTitle": "Fichas de nombres",
+      "nameTracingDesc": "Fichas personalizadas para niños, homeschool y clase.",
+      "cursiveTitle": "Letra cursiva",
+      "cursiveDesc": "Escribe o habla y lo convierte en cursiva fluida. Imprime para practicar."
+    }
   },
   "tool": {
     "speak": "Toca y habla",

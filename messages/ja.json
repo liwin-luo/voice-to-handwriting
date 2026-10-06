@@ -54,7 +54,11 @@
     "blog": "ブログ",
     "about": "このサイトについて",
     "history": "履歴",
-    "templates": "テンプレート"
+    "templates": "テンプレート",
+    "printables": "印刷ツール",
+    "printablePaper": "印刷用紙テンプレート",
+    "nameTracing": "なぞり書きプリント",
+    "cursive": "筆記体ジェネレーター"
   },
   "home": {
     "tagline": "話しかけるだけで手書きの文書に —— カード、手紙、ジャーナル、SNS 画像に",
@@ -63,7 +67,16 @@
     "blogLink": "手書きカードの作り方とアイデア",
     "adPending": "広告枠 · NEXT_PUBLIC_ADSENSE_CLIENT 設定後に表示",
     "sampleText": "親愛なる友人へ。\nこれはウェブページに向かって話したことが、そのまま手書きの文書になったものです。入力でも音声でも作れます。良い一日を。",
-    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online"
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
+    "moreTools": {
+      "title": "その他の無料ツール",
+      "printablePaperTitle": "印刷用紙",
+      "printablePaperDesc": "罫線・方眼・3 線グリッドの練習紙 — 無料 PDF、透かしなし。",
+      "nameTracingTitle": "なぞり書きプリント",
+      "nameTracingDesc": "子供や教室のための個別化なぞり書き練習。",
+      "cursiveTitle": "筆記体ジェネレーター",
+      "cursiveDesc": "入力や音声で流れるような筆記体に。印刷してなぞり練習も。"
+    }
   },
   "tool": {
     "speak": "タップして話す",

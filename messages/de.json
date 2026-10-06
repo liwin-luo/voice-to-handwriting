@@ -54,7 +54,11 @@
     "templates": "Vorlagen",
     "history": "Verlauf",
     "blog": "Blog",
-    "about": "Über"
+    "about": "Über",
+    "printables": "Drucktools",
+    "printablePaper": "Druckpapier-Vorlagen",
+    "nameTracing": "Schreibübungsblätter",
+    "cursive": "Schreibschrift-Generator"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -63,7 +67,16 @@
     "blogLink": "Tutorials & Ideen für handgeschriebene Karten",
     "adPending": "Werbefläche · aktiviert mit NEXT_PUBLIC_ADSENSE_CLIENT",
     "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
-    "sampleText": "Liebe Freundin, lieber Freund,\nich habe einer Webseite zugeprochen und diese Worte wurden Handschrift. Tippen, sprechen oder Audio importieren – und als Bild oder PDF exportieren. Einen schönen Tag!"
+    "sampleText": "Liebe Freundin, lieber Freund,\nich habe einer Webseite zugeprochen und diese Worte wurden Handschrift. Tippen, sprechen oder Audio importieren – und als Bild oder PDF exportieren. Einen schönen Tag!",
+    "moreTools": {
+      "title": "Weitere kostenlose Tools",
+      "printablePaperTitle": "Druckpapier",
+      "printablePaperDesc": "Liniertes, kariertes und 3-Linien-Übungspapier — kostenloser PDF, ohne Wasserzeichen.",
+      "nameTracingTitle": "Schreibübungsblätter",
+      "nameTracingDesc": "Personalisierte Übungsblätter für Kinder, Homeschooling und Klasse.",
+      "cursiveTitle": "Schreibschrift-Generator",
+      "cursiveDesc": "Tippen oder sprechen — fließende Schreibschrift, zum Üben druckbar."
+    }
   },
   "tool": {
     "speak": "Tippen & sprechen",

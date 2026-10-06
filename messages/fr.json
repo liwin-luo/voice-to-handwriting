@@ -54,7 +54,11 @@
     "templates": "Modèles",
     "history": "Historique",
     "blog": "Blog",
-    "about": "À propos"
+    "about": "À propos",
+    "printables": "Outils d'impression",
+    "printablePaper": "Papier à imprimer",
+    "nameTracing": "Fiches de prénoms",
+    "cursive": "Écriture cursive"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -63,7 +67,16 @@
     "blogLink": "Tutoriels et idées de cartes manuscrites",
     "adPending": "Emplacement pub · activé avec NEXT_PUBLIC_ADSENSE_CLIENT",
     "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online",
-    "sampleText": "Cher ami, chère amie,\nj'ai parlé à une page web et ces mots sont devenus de l'écriture manuscrite. Tapez, parlez ou importez un audio — puis exportez en image ou PDF. Belle journée !"
+    "sampleText": "Cher ami, chère amie,\nj'ai parlé à une page web et ces mots sont devenus de l'écriture manuscrite. Tapez, parlez ou importez un audio — puis exportez en image ou PDF. Belle journée !",
+    "moreTools": {
+      "title": "Plus d'outils gratuits",
+      "printablePaperTitle": "Papier à imprimer",
+      "printablePaperDesc": "Papier ligné, quadrillé et d'écriture — PDF gratuit, sans filigrane.",
+      "nameTracingTitle": "Fiches de prénoms",
+      "nameTracingDesc": "Fiches personnalisées pour enfants, école à la maison et classe.",
+      "cursiveTitle": "Écriture cursive",
+      "cursiveDesc": "Tapez ou dictez — cursive fluide, imprimable pour vous entraîner."
+    }
   },
   "tool": {
     "speak": "Appuyer et parler",

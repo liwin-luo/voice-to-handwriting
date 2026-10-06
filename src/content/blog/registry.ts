@@ -41,11 +41,40 @@ import tplJa from "./handwriting-templates-guide.ja.mdx";
 import tplKo from "./handwriting-templates-guide.ko.mdx";
 import tplEs from "./handwriting-templates-guide.es.mdx";
 
-/** slug → 语言 → 内容组件;新增文章:建 <slug>.<locale>.mdx 后在此注册 */
-export const BLOG_CONTENT: Record<string, Record<Locale, ComponentType>> = {
+import ntgEn from "./name-tracing-generator.en.mdx";
+import plpEn from "./free-printable-lined-paper.en.mdx";
+import cpwEn from "./cursive-practice-worksheets.en.mdx";
+import khpEn from "./kindergarten-handwriting-paper.en.mdx";
+import lstEn from "./letter-to-santa-template.en.mdx";
+import htnEn from "./handwritten-thank-you-notes.en.mdx";
+import dwcEn from "./diy-wedding-calligraphy.en.mdx";
+import pplEn from "./pen-pal-letters-for-kids.en.mdx";
+import ihaEn from "./how-to-improve-handwriting-adults.en.mdx";
+import hswEn from "./handwriting-practice-struggling-writers.en.mdx";
+
+/** slug → 语言 → 内容组件;新增文章:建 <slug>.<locale>.mdx 后在此注册。
+ * 值允许 Partial:仅部分语言有正文时,页面按语言 404,sitemap/索引按 availableLocales 过滤 */
+export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>> = {
   "handwritten-card-with-voice": { zh: cardZh, en: cardEn, ja: cardJa, ko: cardKo, es: cardEs, de: cardDe, fr: cardFr, pt: cardPt },
   "handwriting-image-generator": { zh: genZh, en: genEn, ja: genJa, ko: genKo, es: genEs, de: genDe, fr: genFr, pt: genPt },
   "xiaohongshu-handwritten-images": { zh: xhsZh, en: xhsEn, ja: xhsJa, ko: xhsKo, es: xhsEs, de: xhsDe, fr: xhsFr, pt: xhsPt },
   "audio-to-handwriting": { zh: audioZh, en: audioEn, ja: audioJa, ko: audioKo, es: audioEs, de: audioDe, fr: audioFr, pt: audioPt },
   "handwriting-templates-guide": { zh: tplZh, en: tplEn, ja: tplJa, ko: tplKo, es: tplEs, de: tplGDe, fr: tplGFr, pt: tplGPt },
+  "name-tracing-generator": { en: ntgEn },
+  "free-printable-lined-paper": { en: plpEn },
+  "cursive-practice-worksheets": { en: cpwEn },
+  "kindergarten-handwriting-paper": { en: khpEn },
+  "letter-to-santa-template": { en: lstEn },
+  "handwritten-thank-you-notes": { en: htnEn },
+  "diy-wedding-calligraphy": { en: dwcEn },
+  "pen-pal-letters-for-kids": { en: pplEn },
+  "how-to-improve-handwriting-adults": { en: ihaEn },
+  "handwriting-practice-struggling-writers": { en: hswEn },
 };
+
+/** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */
+export function postLocales(slug: string): Locale[] {
+  const entry = BLOG_CONTENT[slug];
+  if (!entry) return [];
+  return (Object.keys(entry) as Locale[]).filter((l) => Boolean(entry[l]));
+}
