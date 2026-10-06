@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { charJitter, hash2, mulberry32 } from "./jitter";
+import { charJitter, hash2, mulberry32, styleFingerprint } from "./jitter";
 
 describe("mulberry32", () => {
   it("同种子产生相同序列", () => {
@@ -22,19 +22,27 @@ describe("charJitter", () => {
   });
 
   it("intensity=0 时无抖动", () => {
-    const j = charJitter(0, 1, 0);
-    expect(j.rotate).toBe(0);
-    expect(j.translateY).toBe(0);
-    expect(j.scale).toBe(1);
-    expect(j.opacity).toBe(1);
+    for (const idx of [0, 7, 33]) {
+      const j = charJitter(idx, 1, 0);
+      expect(j.rotate).toBe(0);
+      expect(j.translateY).toBe(0);
+      expect(j.scale).toBe(1);
+      expect(j.letterSpacing).toBe(0);
+      expect(j.opacity).toBe(1);
+    }
   });
 
   it("不同 index 抖动不同且在范围内", () => {
     const rotates = Array.from({ length: 20 }, (_, i) => charJitter(i, 5, 1).rotate);
     expect(new Set(rotates).size).toBeGreaterThan(5);
     for (const r of rotates) {
-      expect(r).toBeGreaterThanOrEqual(-2);
-      expect(r).toBeLessThanOrEqual(2);
+      expect(Math.abs(r)).toBeLessThanOrEqual(7); // 全局倾斜 ±5 + 逐字 ±2
     }
+  });
+
+  it("不同 seed 的全局倾斜有明显差异(换笔迹可感知)", () => {
+    const slants = Array.from({ length: 12 }, (_, seed) => styleFingerprint(seed * 7919).slant);
+    const spread = Math.max(...slants) - Math.min(...slants);
+    expect(spread).toBeGreaterThan(2);
   });
 });
