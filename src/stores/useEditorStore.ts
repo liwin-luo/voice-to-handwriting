@@ -3,8 +3,11 @@ import { persist } from "zustand/middleware";
 
 export const FONTS = [
   { id: "mashanzheng", css: "'Ma Shan Zheng', 'Kaiti SC', 'KaiTi', serif" },
+  { id: "lxgwwenkai", css: "'LXGW WenKai', 'Kaiti SC', 'KaiTi', serif" },
   { id: "longcang", css: "'Long Cang', 'Kaiti SC', 'KaiTi', serif" },
+  { id: "zhimangxing", css: "'Zhi Mang Xing', 'Kaiti SC', 'KaiTi', serif" },
   { id: "liujianmaocao", css: "'Liu Jian Mao Cao', 'Kaiti SC', 'KaiTi', serif" },
+  { id: "zcoolkuaile", css: "'ZCOOL KuaiLe', 'PingFang SC', sans-serif" },
   { id: "caveat", css: "'Caveat', cursive" },
 ] as const;
 export type FontId = (typeof FONTS)[number]["id"];
@@ -13,6 +16,10 @@ export const INKS = [
   { id: "blueblack", value: "#15317e" },
   { id: "black", value: "#1a1a1a" },
   { id: "red", value: "#8c1f28" },
+  { id: "indigo", value: "#303f9f" },
+  { id: "green", value: "#1b4332" },
+  { id: "brown", value: "#6d4c41" },
+  { id: "gray", value: "#4b5563" },
 ] as const;
 
 export type TextAlign = "left" | "center";
@@ -38,6 +45,8 @@ interface EditorState {
   setAlign: (a: TextAlign) => void;
   setIndent: (v: boolean) => void;
   setWatermark: (v: boolean) => void;
+  customPaper: { bg: string; line: string; spacing: number; mode: "blank" | "ruled" | "grid" };
+  setCustomPaper: (p: Partial<EditorState["customPaper"]>) => void;
   reseed: () => void;
   reset: () => void;
 }
@@ -53,6 +62,7 @@ const initial = {
   align: "left" as TextAlign,
   indent: false,
   watermark: true,
+  customPaper: { bg: "#fffdf8", line: "#c7d4e3", spacing: 40, mode: "ruled" as "blank" | "ruled" | "grid" },
 };
 
 export const useEditorStore = create<EditorState>()(
@@ -69,6 +79,7 @@ export const useEditorStore = create<EditorState>()(
       setAlign: (align) => set({ align }),
       setIndent: (indent) => set({ indent }),
       setWatermark: (watermark) => set({ watermark }),
+      setCustomPaper: (patch) => set((s) => ({ customPaper: { ...s.customPaper, ...patch } })),
       reseed: () => set({ seed: Math.floor(Math.random() * 2 ** 31) }),
       reset: () => set({ ...initial }),
     }),
@@ -83,6 +94,7 @@ export const useEditorStore = create<EditorState>()(
         align: s.align,
         indent: s.indent,
         watermark: s.watermark,
+        customPaper: s.customPaper,
       }), // 只持久化样式偏好,不持久化正文
     },
   ),

@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 import { tokenize, type Token } from "@/engine/tokens";
 import { expandPages, paginateLineTops } from "@/engine/layout";
 import { charJitter } from "@/engine/jitter";
-import { getPaper } from "@/engine/paper";
+import { getPaper, makeCustomPaper } from "@/engine/paper";
 
 export const PAGE_W = 794; // A4 @96dpi
 export const PAGE_H = 1123;
@@ -43,11 +43,11 @@ function partitionParagraphs(tokens: Token[]): ParaGroup[] {
 export default function PaperView() {
   const t = useTranslations("tool");
   const th = useTranslations("home");
-  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent, watermark } =
+  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent, watermark, customPaper } =
     useEditorStore();
   const setText = useEditorStore((s2) => s2.setText);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
-  const paper = getPaper(paperId);
+  const paper = paperId === "custom" ? makeCustomPaper(customPaper) : getPaper(paperId);
   const tokens = useMemo(() => tokenize(text), [text]);
   const [pages, setPages] = useState<Token[][]>([]);
   const measureRef = useRef<HTMLDivElement>(null);

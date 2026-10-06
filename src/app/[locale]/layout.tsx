@@ -50,6 +50,9 @@ export default async function LocaleLayout({
         <link rel="stylesheet" href="/fonts/longcang/result.css" />
         <link rel="stylesheet" href="/fonts/liujianmaocao/result.css" />
         <link rel="stylesheet" href="/fonts/caveat/result.css" />
+        <link rel="stylesheet" href="/fonts/zhimangxing/result.css" />
+        <link rel="stylesheet" href="/fonts/zcoolkuaile/result.css" />
+        <link rel="stylesheet" href="/fonts/lxgwwenkai/result.css" />
         {/* AdSense:配置环境变量后自动注入 */}
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
           <script

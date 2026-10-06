@@ -85,6 +85,29 @@ body {
       inset 0 1px 0 rgba(255, 255, 255, 0.9),
       0 16px 40px -16px rgba(23, 23, 23, 0.16);
   }
+  .color-swatch {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 9999px;
+    padding: 0;
+    cursor: pointer;
+    background: none;
+  }
+  .color-swatch::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  .color-swatch::-webkit-color-swatch {
+    border: 1px solid rgba(23, 23, 23, 0.12);
+    border-radius: 9999px;
+  }
+  .color-swatch::-moz-color-swatch {
+    border: 1px solid rgba(23, 23, 23, 0.12);
+    border-radius: 9999px;
+  }
   .shadow-paper {
     box-shadow: 0 24px 48px -24px rgba(23, 23, 23, 0.18);
   }

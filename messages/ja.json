@@ -80,18 +80,26 @@
       "mashanzheng": "馬善政・楷書",
       "longcang": "龍蔵・行書",
       "liujianmaocao": "柳建毛草・草書",
-      "caveat": "Caveat・英文"
+      "caveat": "Caveat・英文",
+      "zhimangxing": "智芒行・行書",
+      "lxgwwenkai": "霞鶩文楷・楷書",
+      "zcoolkuaile": "ZCOOL 快楽体・ポップ"
     },
     "papers": {
       "blank": "無地",
       "ruled": "横罫線",
       "grid": "方眼",
-      "letter": "レターペーパー"
+      "letter": "レターペーパー",
+      "custom": "カスタム"
     },
     "inks": {
       "blueblack": "藍黒",
       "black": "黒",
-      "red": "朱色"
+      "red": "朱色",
+      "indigo": "藍インク",
+      "green": "緑",
+      "brown": "ブラウン",
+      "gray": "鉛筆グレー"
     },
     "importAudio": "音声ファイルを読み込む",
     "modelFast": "高速",
@@ -103,7 +111,14 @@
     "errorImport": "変換に失敗しました。mp3 / wav / m4a をお試しください",
     "modelNote": "高速:約 80MB。高品質:約 250MB(中国語精度向上)。モデルは一度だけダウンロード、音声は端末外に出ません",
     "watermark": "書き出しウォーターマーク",
-    "trySample": "サンプルを試す"
+    "trySample": "サンプルを試す",
+    "paperCustom": {
+      "style": "罫線スタイル",
+      "bg": "用紙の色",
+      "line": "罫線の色",
+      "spacing": "行間"
+    },
+    "customColor": "カスタムカラー"
   },
   "footer": {
     "privacy": "プライバシーポリシー",

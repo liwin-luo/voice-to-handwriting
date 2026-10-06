@@ -80,18 +80,26 @@
       "mashanzheng": "马善政 · 楷",
       "longcang": "龙藏 · 行",
       "liujianmaocao": "柳建毛草 · 草",
-      "caveat": "Caveat · 英文"
+      "caveat": "Caveat · 英文",
+      "zhimangxing": "智芒行 · 行书",
+      "lxgwwenkai": "霞鹜文楷 · 楷",
+      "zcoolkuaile": "站酷快乐体 · 趣"
     },
     "papers": {
       "blank": "白纸",
       "ruled": "横线",
       "grid": "方格",
-      "letter": "信纸"
+      "letter": "信纸",
+      "custom": "自定义"
     },
     "inks": {
       "blueblack": "蓝黑",
       "black": "纯黑",
-      "red": "朱红"
+      "red": "朱红",
+      "indigo": "靛蓝",
+      "green": "墨绿",
+      "brown": "深棕",
+      "gray": "铅灰"
     },
     "importAudio": "导入音频文件",
     "modelFast": "快速",
@@ -103,7 +111,14 @@
     "errorImport": "转写失败:请换 mp3 / wav / m4a 文件再试",
     "modelNote": "快速:下载约 80MB;高质量:约 250MB,中文更准。模型仅下载一次,音频不离开设备",
     "watermark": "导出水印",
-    "trySample": "试试示例"
+    "trySample": "试试示例",
+    "paperCustom": {
+      "style": "格线样式",
+      "bg": "纸张底色",
+      "line": "格线颜色",
+      "spacing": "行距"
+    },
+    "customColor": "自定义颜色"
   },
   "footer": {
     "privacy": "隐私政策",

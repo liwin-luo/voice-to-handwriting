@@ -80,18 +80,26 @@
       "mashanzheng": "마산정 · 해서",
       "longcang": "룽창 · 행서",
       "liujianmaocao": "류젠마오차오 · 초서",
-      "caveat": "Caveat · 영문"
+      "caveat": "Caveat · 영문",
+      "zhimangxing": "즈망싱 · 행서",
+      "lxgwwenkai": "LXGW WenKai · 해서",
+      "zcoolkuaile": "ZCOOL KuaiLe · 발랄"
     },
     "papers": {
       "blank": "무지",
       "ruled": "줄선 용지",
       "grid": "모눈",
-      "letter": "편지지"
+      "letter": "편지지",
+      "custom": "커스텀"
     },
     "inks": {
       "blueblack": "청흑색",
       "black": "검정",
-      "red": "주홍색"
+      "red": "주홍색",
+      "indigo": "인디고",
+      "green": "초록",
+      "brown": "브라운",
+      "gray": "연필 회색"
     },
     "importAudio": "오디오 파일 가져오기",
     "modelFast": "빠름",
@@ -103,7 +111,14 @@
     "errorImport": "변환 실패: mp3 / wav / m4a 파일로 시도해 보세요",
     "modelNote": "빠름: 약 80MB. 고품질: 약 250MB(중국어 정확도 향상). 모델은 한 번만 다운로드되며 오디오는 기기를 벗어나지 않습니다",
     "watermark": "내보내기 워터마크",
-    "trySample": "예시 써보기"
+    "trySample": "예시 써보기",
+    "paperCustom": {
+      "style": "줄 스타일",
+      "bg": "용지 색",
+      "line": "줄 색",
+      "spacing": "줄 간격"
+    },
+    "customColor": "커스텀 색상"
   },
   "footer": {
     "privacy": "개인정보 처리방침",

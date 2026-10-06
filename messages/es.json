@@ -80,18 +80,26 @@
       "mashanzheng": "Ma Shan Zheng · Kai",
       "longcang": "Long Cang · Xing",
       "liujianmaocao": "Liu Jian Mao Cao · Cao",
-      "caveat": "Caveat · inglés"
+      "caveat": "Caveat · inglés",
+      "zhimangxing": "Zhi Mang Xing · Xing",
+      "lxgwwenkai": "LXGW WenKai · Kai",
+      "zcoolkuaile": "ZCOOL KuaiLe · Divertida"
     },
     "papers": {
       "blank": "En blanco",
       "ruled": "Rayado",
       "grid": "Cuadrícula",
-      "letter": "Carta"
+      "letter": "Carta",
+      "custom": "Personalizado"
     },
     "inks": {
       "blueblack": "Azul oscuro",
       "black": "Negro",
-      "red": "Rojo cinabrio"
+      "red": "Rojo cinabrio",
+      "indigo": "Azul índigo",
+      "green": "Verde oscuro",
+      "brown": "Marrón",
+      "gray": "Grafito"
     },
     "importAudio": "Importar audio",
     "modelFast": "Rápido",
@@ -103,7 +111,14 @@
     "errorImport": "Falló la transcripción: prueba con mp3 / wav / m4a",
     "modelNote": "Rápido: ~80MB. Alta calidad: ~250MB, mejor chino. El modelo se descarga una vez; el audio nunca sale de tu equipo",
     "watermark": "Marca de agua al exportar",
-    "trySample": "Probar un ejemplo"
+    "trySample": "Probar un ejemplo",
+    "paperCustom": {
+      "style": "Estilo de líneas",
+      "bg": "Color del papel",
+      "line": "Color de líneas",
+      "spacing": "Interlineado"
+    },
+    "customColor": "Color personalizado"
   },
   "footer": {
     "privacy": "Política de privacidad",

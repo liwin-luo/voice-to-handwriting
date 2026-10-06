@@ -1,5 +1,5 @@
 export interface PaperPreset {
-  id: "blank" | "ruled" | "grid" | "letter";
+  id: "blank" | "ruled" | "grid" | "letter" | "custom";
   name: string;
   /** 文本行高(px),横线/方格纸的格线间距与它一致 */
   lineHeight: number;
@@ -35,4 +35,26 @@ export const PAPERS: PaperPreset[] = [
 
 export function getPaper(id: string): PaperPreset {
   return PAPERS.find((p) => p.id === id) ?? PAPERS[0];
+}
+
+export interface CustomPaperConfig {
+  bg: string;
+  line: string;
+  spacing: number; // px,会被钳制到 24~64
+  mode: "blank" | "ruled" | "grid";
+}
+
+/** 由用户配置构建自定义纸张(纯函数,可测试) */
+export function makeCustomPaper(c: CustomPaperConfig): PaperPreset {
+  const L = Math.min(64, Math.max(24, Math.round(c.spacing)));
+  const ruled = `repeating-linear-gradient(to bottom, transparent 0 ${L - 1}px, ${c.line} ${L - 1}px ${L}px)`;
+  const gridCols = `repeating-linear-gradient(to right, transparent 0 ${L - 1}px, ${c.line} ${L - 1}px ${L}px)`;
+  const layers =
+    c.mode === "ruled" ? ruled : c.mode === "grid" ? `${ruled}, ${gridCols}` : "";
+  return {
+    id: "custom",
+    name: "Custom",
+    lineHeight: L,
+    background: layers ? `${layers}, ${c.bg}` : c.bg,
+  };
 }

@@ -80,18 +80,26 @@
       "mashanzheng": "Ma Shan Zheng · Kai",
       "longcang": "Long Cang · Running",
       "liujianmaocao": "Liu Jian Mao Cao · Cursive",
-      "caveat": "Caveat · English"
+      "caveat": "Caveat · English",
+      "zhimangxing": "Zhi Mang Xing · Xing",
+      "lxgwwenkai": "LXGW WenKai · Kai",
+      "zcoolkuaile": "ZCOOL KuaiLe · Playful"
     },
     "papers": {
       "blank": "Blank",
       "ruled": "Ruled",
       "grid": "Grid",
-      "letter": "Letter"
+      "letter": "Letter",
+      "custom": "Custom"
     },
     "inks": {
       "blueblack": "Blue black",
       "black": "Black",
-      "red": "Vermilion"
+      "red": "Vermilion",
+      "indigo": "Indigo",
+      "green": "Dark green",
+      "brown": "Brown",
+      "gray": "Pencil gray"
     },
     "importAudio": "Import audio file",
     "modelFast": "Fast",
@@ -103,7 +111,14 @@
     "errorImport": "Transcription failed — try an mp3 / wav / m4a file",
     "modelNote": "Fast: ~80MB download; High quality: ~250MB, better Chinese. Model downloads once, audio never leaves your device",
     "watermark": "Export watermark",
-    "trySample": "Try a sample"
+    "trySample": "Try a sample",
+    "paperCustom": {
+      "style": "Line style",
+      "bg": "Paper color",
+      "line": "Line color",
+      "spacing": "Line spacing"
+    },
+    "customColor": "Custom color"
   },
   "footer": {
     "privacy": "Privacy Policy",
