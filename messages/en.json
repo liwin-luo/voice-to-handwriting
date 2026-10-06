@@ -73,7 +73,8 @@
     "cursive": "Cursive Writing",
     "cursiveWorks": "Cursive Worksheets",
     "writingPractice": "Writing Practice",
-    "coloring": "Name Coloring"
+    "coloring": "Name Coloring",
+    "wordWork": "Word Work"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -228,6 +229,8 @@
     "role": "Product & engineering team"
   },
   "post": {
+    "tryTools": "Try it yourself",
+    "related": "Keep reading",
     "updated": "Updated",
     "reading": "{m} min read",
     "testedNote": "All steps in this article were tested on desktop Chrome (October 2026, macOS). Recognition quality may vary across browsers and devices — share your own results via [Contact](/contact)."

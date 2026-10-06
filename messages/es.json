@@ -73,7 +73,8 @@
     "cursive": "Letra cursiva",
     "cursiveWorks": "Fichas de cursiva",
     "writingPractice": "Caligrafía CJK",
-    "coloring": "Generador de páginas para colorear con nombres"
+    "coloring": "Generador de páginas para colorear con nombres",
+    "wordWork": "Fichas de palabras"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -228,6 +229,8 @@
     "role": "Equipo de producto e ingeniería"
   },
   "post": {
+    "tryTools": "Pruébalo tú mismo",
+    "related": "Sigue leyendo",
     "updated": "Actualizado",
     "reading": "{m} min de lectura",
     "testedNote": "Todos los pasos de este artículo se probaron en Chrome de escritorio (octubre de 2026, macOS). La calidad del reconocimiento puede variar según navegador y dispositivo; comparte tus resultados en [Contacto](/contact)."

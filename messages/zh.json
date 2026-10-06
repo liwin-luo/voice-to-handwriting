@@ -73,7 +73,8 @@
     "cursive": "英文连笔字",
     "cursiveWorks": "英文连笔字工作表",
     "writingPractice": "练字帖",
-    "coloring": "名字涂色页生成器"
+    "coloring": "名字涂色页生成器",
+    "wordWork": "拼写练习"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -228,6 +229,8 @@
     "role": "产品与工程团队"
   },
   "post": {
+    "tryTools": "动手试试",
+    "related": "继续阅读",
     "updated": "更新于",
     "reading": "{m} 分钟阅读",
     "testedNote": "本文所有步骤均在桌面版 Chrome 上实测(2026 年 10 月,macOS)。不同浏览器与设备的识别效果可能有差异,欢迎通过[联系我们](/contact)反馈你的实测结果。"

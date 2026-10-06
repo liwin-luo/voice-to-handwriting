@@ -73,7 +73,8 @@
     "cursive": "Écriture cursive",
     "cursiveWorks": "Fiches d'écriture cursive",
     "writingPractice": "Écriture CJK",
-    "coloring": "Générateur de pages à colorier avec prénoms"
+    "coloring": "Générateur de pages à colorier avec prénoms",
+    "wordWork": "Fiches de mots"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -228,6 +229,8 @@
     "role": "Équipe produit & ingénierie"
   },
   "post": {
+    "tryTools": "Essayez vous-même",
+    "related": "À lire aussi",
     "updated": "Mis à jour",
     "reading": "{m} min de lecture",
     "testedNote": "Toutes les étapes ont été testées sur Chrome de bureau (octobre 2026, macOS). La qualité varie selon le navigateur et l'appareil — relisez toujours le texte important. Nous ne collectons ni texte ni audio — voir la Politique de confidentialité. Référence : MDN Web Speech API."

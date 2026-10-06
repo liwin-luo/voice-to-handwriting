@@ -73,7 +73,8 @@
     "cursive": "필기체 생성기",
     "cursiveWorks": "필기체 워크시트",
     "writingPractice": "쓰기 연습",
-    "coloring": "이름 색칠 페이지 생성기"
+    "coloring": "이름 색칠 페이지 생성기",
+    "wordWork": "철자 연습"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -228,6 +229,8 @@
     "role": "제품·엔지니어링 팀"
   },
   "post": {
+    "tryTools": "직접 해보기",
+    "related": "함께 읽으면 좋은 글",
     "updated": "업데이트",
     "reading": "{m}분 읽기",
     "testedNote": "이 글의 모든 단계는 데스크톱 Chrome에서 직접 테스트했습니다(2026년 10월, macOS). 브라우저와 기기에 따라 인식 품질이 다를 수 있으며, 테스트 결과는 [문의하기](/contact)로 공유해 주세요."

@@ -73,7 +73,8 @@
     "cursive": "Letra cursiva",
     "cursiveWorks": "Fichas de cursiva",
     "writingPractice": "Caligrafia CJK",
-    "coloring": "Gerador de páginas para colorir com nomes"
+    "coloring": "Gerador de páginas para colorir com nomes",
+    "wordWork": "Fichas de palavras"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -228,6 +229,8 @@
     "role": "Equipe de produto e engenharia"
   },
   "post": {
+    "tryTools": "Experimente você mesmo",
+    "related": "Continue lendo",
     "updated": "Atualizado",
     "reading": "{m} min de leitura",
     "testedNote": "Todos os passos foram testados no Chrome de desktop (outubro de 2026, macOS). A qualidade varia conforme navegador e aparelho — revise textos importantes. Não coletamos texto nem áudio — veja a Política de Privacidade. Referência: MDN Web Speech API."

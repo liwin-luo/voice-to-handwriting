@@ -73,7 +73,8 @@
     "cursive": "Schreibschrift-Generator",
     "cursiveWorks": "Schreibschrift-Arbeitsblätter",
     "writingPractice": "Schreibübungen CJK",
-    "coloring": "Namens-Malvorlagen-Generator"
+    "coloring": "Namens-Malvorlagen-Generator",
+    "wordWork": "Wortübungsblätter"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -228,6 +229,8 @@
     "role": "Produkt- & Engineering-Team"
   },
   "post": {
+    "tryTools": "Selbst ausprobieren",
+    "related": "Weiterlesen",
     "updated": "Aktualisiert",
     "reading": "{m} Min. Lesezeit",
     "testedNote": "Alle Schritte wurden in Chrome für Desktop getestet (Oktober 2026, macOS). Die Qualität variiert je nach Browser und Gerät — wichtigen Text immer prüfen. Wir erfassen keinen Text oder Audio — siehe Datenschutzerklärung. Referenz: MDN Web Speech API."
