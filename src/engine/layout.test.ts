@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { expandPages, paginateLineTops } from "./layout";
+import { tokenize } from "./tokens";
 
 describe("paginateLineTops", () => {
   it("同一行的字符进入同一页", () => {
@@ -56,5 +57,25 @@ describe("expandPages", () => {
       { kind: "cjk" },
     ]);
     expect(result).toEqual([[0, 1, 2, 3]]);
+  });
+});
+
+describe("多段落分页回路(回归:换行后文字错乱)", () => {
+  it("多段落 + 尾随换行:每页 token 列表还原出原始段落", () => {
+    const text = "计划;h\njhl'\nytt'vhvkkhk\n";
+    const tokens = tokenize(text);
+    // 模拟测量:三行,top 分别为 0/40/80;换行符无测量值
+    const tops = [0, 0, 0, -1, 40, -1, 80, -1];
+    const boxes = tokens
+      .map((t, i) => ({ index: i, top: tops[i] }))
+      .filter((b) => b.top >= 0);
+    const pages = expandPages(paginateLineTops(boxes, 1027), tokens);
+    // 单页应包含全部 8 个 token,且按索引升序(乱序/重复都会导致渲染错乱)
+    expect(pages).toEqual([[0, 1, 2, 3, 4, 5, 6, 7]]);
+    // 按页还原的文字应与原文一致
+    const restored = pages[0]
+      .map((i) => (tokens[i].kind === "newline" ? "\n" : tokens[i].text))
+      .join("");
+    expect(restored).toBe(text);
   });
 });
