@@ -30,7 +30,8 @@
     "templates": {
       "title": "手写模板库",
       "description": "情书、道歉信、感谢信、生日祝福、教师节贺卡、新年祝福 —— 文案与样式一键套用,生成手写文稿。"
-    }
+    },
+    "keywords": "声音转手写, 手写体生成, 语音转文字, 手写字体, 贺卡生成, 录音转文字"
   },
   "nav": {
     "tool": "工具",
@@ -46,7 +47,7 @@
     "blogLink": "手写贺卡教程与灵感",
     "adPending": "广告位 · 配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效",
     "sampleText": "亲爱的朋友:\n见字如面。这段文字是用声音写成的——对着网页说一段话,就能变成这样的手写文稿。祝你今天也有好心情。",
-    "watermarkLabel": "声音转手写 · voicetohandwriting.com"
+    "watermarkLabel": "声音转手写 · voicetohandwriting.online"
   },
   "tool": {
     "speak": "点击说话",

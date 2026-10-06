@@ -2,8 +2,8 @@ import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
   locales: ["zh", "en", "ja", "ko", "es"],
-  defaultLocale: "zh",
-  localePrefix: "as-needed", // 默认语言中文无前缀,其余 /en /ja /ko /es
+  defaultLocale: "en",
+  localePrefix: "as-needed", // 默认语言英语无前缀(/),其余 /zh /ja /ko /es
 });
 
 export type Locale = (typeof routing.locales)[number];

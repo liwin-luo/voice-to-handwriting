@@ -67,6 +67,6 @@ docs/plans/     设计文档与实施计划
 - **二期**:Hanzi Writer 逐笔书写动画、照片合成模式、云端 ASR(/api/transcribe)
 - **三期**:个人笔迹预设、端侧 Whisper/sherpa-onnx、书写动画视频导出
 
-国际化说明:支持 **中文(默认)/ 英文 / 日语 / 韩语 / 西语** 共 5 种语言(`/` `/en` `/ja` `/ko` `/es`),由 src/proxy.ts 按 Accept-Language 自动协商;界面文案在 `messages/*.json`,长文内容在 `src/content/**/*.{zh,en,ja,ko,es}.mdx`。
+国际化说明:支持 **英文(默认,`/`)/ 中文(`/zh`)/ 日语(`/ja`)/ 韩语(`/ko`)/ 西语(`/es`)** 共 5 种语言,由 src/proxy.ts 按 Accept-Language 自动协商;界面文案在 `messages/*.json`,长文内容在 `src/content/**/*.{zh,en,ja,ko,es}.mdx`。生产域名 voicetohandwriting.online。
 
 详见 `docs/plans/2026-10-06-voicetohandwriting-design.md`。

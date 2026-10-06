@@ -30,7 +30,8 @@
     "templates": {
       "title": "손글씨 템플릿",
       "description": "러브레터, 사과편지, 감사편지, 생일, 스승의 날, 새해 인사 —— 문구와 스타일을 한 번에 적용하세요."
-    }
+    },
+    "keywords": "손글씨 생성기, 음성 인식, 손글씨 폰트, 축하 카드 만들기"
   },
   "nav": {
     "tool": "도구",
@@ -46,7 +47,7 @@
     "blogLink": "손글씨 카드 튜토리얼과 아이디어",
     "adPending": "광고 자리 · NEXT_PUBLIC_ADSENSE_CLIENT 설정 후 표시",
     "sampleText": "친구에게:\n웹페이지에 말을 했더니 그대로 손글씨가 되었어요. 타이핑, 말하기, 오디오 가져오기 모두 가능해요. 오늘도 좋은 하루 보내요.",
-    "watermarkLabel": "Voice to Handwriting"
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online"
   },
   "tool": {
     "speak": "눌러서 말하기",

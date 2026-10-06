@@ -30,7 +30,8 @@
     "templates": {
       "title": "手書きテンプレート集",
       "description": "ラブレター、お詫び状、お礼状、バースデー、教師の日、新年 —— 文案とスタイルをワンタップで適用。"
-    }
+    },
+    "keywords": "手書きジェネレーター, 音声文字起こし, 手書きフォント, グリーティングカード作成"
   },
   "nav": {
     "tool": "ツール",
@@ -46,7 +47,7 @@
     "blogLink": "手書きカードの作り方とアイデア",
     "adPending": "広告枠 · NEXT_PUBLIC_ADSENSE_CLIENT 設定後に表示",
     "sampleText": "親愛なる友人へ。\nこれはウェブページに向かって話したことが、そのまま手書きの文書になったものです。入力でも音声でも作れます。良い一日を。",
-    "watermarkLabel": "Voice to Handwriting"
+    "watermarkLabel": "Voice to Handwriting · voicetohandwriting.online"
   },
   "tool": {
     "speak": "タップして話す",
