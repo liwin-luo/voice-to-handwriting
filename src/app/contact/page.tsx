@@ -13,8 +13,11 @@ export default function ContactPage() {
         <h1>联系我们</h1>
         <p>欢迎通过邮件联系,我们通常在 3 个工作日内回复:</p>
         <p>
-          📧{" "}
-          <a href={`mailto:${SITE.email}`}>
+          邮箱:{" "}
+          <a
+            href={`mailto:${SITE.email}`}
+            className="font-medium text-accent underline underline-offset-2 hover:text-accent-strong"
+          >
             {SITE.email}
           </a>
         </p>

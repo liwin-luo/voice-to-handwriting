@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 
 /**
- * 广告位:未配置 NEXT_PUBLIC_ADSENSE_CLIENT 时渲染占位框(开发态可见),
+ * 广告位:未配置 NEXT_PUBLIC_ADSENSE_CLIENT 时渲染低调占位框,
  * 配置后渲染 AdSense 单元。导出流程中不插广告(产品红线)。
  */
 export default function AdSlot({ slot }: { slot?: string }) {
@@ -20,8 +20,8 @@ export default function AdSlot({ slot }: { slot?: string }) {
 
   if (!client) {
     return (
-      <div className="flex min-h-24 items-center justify-center rounded border border-dashed border-neutral-300 text-xs text-neutral-400">
-        广告位(配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效)
+      <div className="flex h-20 items-center justify-center rounded-xl bg-zinc-100/60 text-[11px] tracking-wide text-zinc-400">
+        广告位 · 配置 NEXT_PUBLIC_ADSENSE_CLIENT 后生效
       </div>
     );
   }

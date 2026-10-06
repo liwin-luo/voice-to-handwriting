@@ -1,4 +1,5 @@
 "use client";
+import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { FONTS, useEditorStore } from "@/stores/useEditorStore";
 import { tokenize, type Token } from "@/engine/tokens";
@@ -68,9 +69,39 @@ export default function PaperView() {
     );
   };
 
+  if (pages.length === 0) {
+    return (
+      <>
+        {/* 隐藏测量容器:与可见页同宽同行高,仅用于拿每字符 offsetTop */}
+        <div
+          ref={measureRef}
+          aria-hidden
+          style={{
+            position: "absolute",
+            visibility: "hidden",
+            left: -99999,
+            width: PAGE_W - PADDING * 2,
+            whiteSpace: "pre-wrap",
+            wordBreak: "break-word",
+          }}
+        >
+          {tokens.map(rendered)}
+        </div>
+        {/* 精心构图的空状态:用产品自己的手写字体说话 */}
+        <div
+          className="shadow-paper flex flex-col items-center justify-center gap-4 rounded-xl"
+          style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
+        >
+          <p className="font-hand text-4xl text-zinc-300">说一段话,落笔成字</p>
+          <p className="text-sm text-zinc-400">点击下方「点击说话」,或直接在右侧输入文字</p>
+          <ArrowDown className="size-4 animate-bounce text-zinc-300" />
+        </div>
+      </>
+    );
+  }
+
   return (
-    <div className="flex flex-col items-center gap-6">
-      {/* 隐藏测量容器:与可见页同宽同行高,仅用于拿每字符 offsetTop */}
+    <>
       <div
         ref={measureRef}
         aria-hidden
@@ -85,33 +116,27 @@ export default function PaperView() {
       >
         {tokens.map(rendered)}
       </div>
-
-      {pages.length === 0 && (
-        <div
-          className="flex items-center justify-center rounded shadow"
-          style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
-        >
-          <p className="text-neutral-400">点击下方麦克风开始说话,或直接输入文字</p>
-        </div>
-      )}
-
-      {pages.map((pageTokens, p) => (
-        <div
-          key={p}
-          className="paper relative overflow-hidden rounded shadow"
-          style={{
-            width: PAGE_W,
-            height: PAGE_H,
-            background: paper.background,
-            padding: PADDING,
-          }}
-        >
-          <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
-            {pageTokens.map(rendered)}
+      <div className="flex flex-col items-center gap-6">
+        {pages.map((pageTokens, p) => (
+          <div
+            key={p}
+            className="paper shadow-paper relative overflow-hidden rounded-xl"
+            style={{
+              width: PAGE_W,
+              height: PAGE_H,
+              background: paper.background,
+              padding: PADDING,
+            }}
+          >
+            <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
+              {pageTokens.map(rendered)}
+            </div>
+            <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
+              {p + 1} / {pages.length}
+            </span>
           </div>
-          <span className="absolute bottom-3 right-5 text-xs text-neutral-400">{p + 1}</span>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }

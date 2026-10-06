@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { DownloadSimple, FilePdf } from "@phosphor-icons/react";
 import { toPng } from "html-to-image";
 import { jsPDF } from "jspdf";
 import { useEditorStore } from "@/stores/useEditorStore";
@@ -49,18 +50,12 @@ export default function ExportBar() {
   const disabled = !text.trim() || busy;
   return (
     <div className="flex gap-2">
-      <button
-        onClick={exportPng}
-        disabled={disabled}
-        className="rounded border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-50 disabled:opacity-40"
-      >
-        {busy ? "导出中…" : "导出 PNG"}
+      <button onClick={exportPng} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
+        <DownloadSimple className="size-4 text-zinc-500" />
+        {busy ? "导出中" : "导出 PNG"}
       </button>
-      <button
-        onClick={exportPdf}
-        disabled={disabled}
-        className="rounded border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-50 disabled:opacity-40"
-      >
+      <button onClick={exportPdf} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
+        <FilePdf className="size-4 text-zinc-500" />
         导出 PDF
       </button>
     </div>
