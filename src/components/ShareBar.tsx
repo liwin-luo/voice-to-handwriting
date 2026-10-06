@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useState, useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import {
   ShareNetwork,

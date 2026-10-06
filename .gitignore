@@ -47,3 +47,6 @@ ww_apply.py
 vth-*.mjs
 ww_apply.py
 vth-debug*.mjs
+
+# playwright test artifacts
+/test-results
