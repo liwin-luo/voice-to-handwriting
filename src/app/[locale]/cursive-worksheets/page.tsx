@@ -4,6 +4,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import TracingGenerator from "@/components/TracingGenerator";
+import ShareBar from "@/components/ShareBar";
 import { buildAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -42,6 +43,9 @@ export default async function CursiveWorksheetsPage({
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <TracingGenerator defaultFontId="cedarvillecursive" defaultBandH={100} />
+      </div>
+      <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
+        <ShareBar />
       </div>
       <section
         className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"

@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import ToolWorkspace from "@/components/ToolWorkspace";
 import HomeToolsSection from "@/components/HomeToolsSection";
+import ShareBar from "@/components/ShareBar";
 import { SITE } from "@/lib/site";
 import { buildAlternates } from "@/lib/seo";
 
@@ -56,6 +57,9 @@ export default async function HomePage({
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <ToolWorkspace />
+      </div>
+      <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
+        <ShareBar />
       </div>
       <div className="rise mt-10" style={{ animationDelay: "160ms" }}>
         <HomeToolsSection />

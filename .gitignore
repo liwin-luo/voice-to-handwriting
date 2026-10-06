@@ -40,3 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 fonts-src/
+.idea/
+vth-*.mjs
+ww_apply.py
+.idea/
+vth-*.mjs
+ww_apply.py
+vth-debug*.mjs

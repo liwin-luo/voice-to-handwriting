@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import TracingGenerator from "@/components/TracingGenerator";
 import ToolFaq from "@/components/ToolFaq";
+import ShareBar from "@/components/ShareBar";
 import { TRACING_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 
@@ -44,6 +45,9 @@ export default async function NameTracingPage({
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <TracingGenerator />
+      </div>
+      <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
+        <ShareBar />
       </div>
       <section className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600" style={{ animationDelay: "160ms" }}>
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>

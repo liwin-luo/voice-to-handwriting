@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import {
   ShareNetwork,
@@ -17,6 +17,9 @@ import {
 
 type Intent = "x" | "facebook" | "whatsapp" | "pinterest" | "telegram" | "reddit" | "linkedin" | "email";
 
+/** 值只来自客户端环境(非订阅源),无需真正的 store 订阅 */
+const subscribeNoop = () => () => {};
+
 /**
  * 快捷分享条:把当前工具页链接分享到社交平台。
  * 不接收 props —— 运行时取 location.href 与 document.title,
@@ -24,12 +27,13 @@ type Intent = "x" | "facebook" | "whatsapp" | "pinterest" | "telegram" | "reddit
  */
 export default function ShareBar() {
   const t = useTranslations("share");
-  const [hasNative, setHasNative] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    setHasNative(typeof navigator !== "undefined" && !!navigator.share);
-  }, []);
+  // 服务端/水合首帧返回 false,水合后再取真实能力,避免按钮列表水合不匹配
+  const hasNative = useSyncExternalStore(
+    subscribeNoop,
+    () => typeof navigator !== "undefined" && !!navigator.share,
+    () => false,
+  );
 
   const url = () => window.location.href;
   const title = () => document.title;
@@ -49,7 +53,10 @@ export default function ShareBar() {
 
   const openIntent = (target: Intent) => {
     if (target === "email") {
-      window.location.href = intentUrls.email();
+      // mailto 用锚点触发,直接给 window.location.href 赋值会被 lint 视为修改外部变量
+      const a = document.createElement("a");
+      a.href = intentUrls.email();
+      a.click();
       return;
     }
     window.open(intentUrls[target](), "_blank", "noopener,noreferrer");

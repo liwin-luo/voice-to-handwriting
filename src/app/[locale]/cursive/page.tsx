@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import ToolWorkspace from "@/components/ToolWorkspace";
 import ToolFaq from "@/components/ToolFaq";
+import ShareBar from "@/components/ShareBar";
 import { CURSIVE_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 
@@ -46,6 +47,9 @@ export default async function CursivePage({
         <ToolWorkspace
           preset={{ fontId: "cedarvillecursive", paperId: "blank", ink: "#1a1a1a", fontSize: 36 }}
         />
+      </div>
+      <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
+        <ShareBar />
       </div>
       <section
         className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"

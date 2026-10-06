@@ -4,6 +4,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import WordWorkGenerator from "@/components/WordWorkGenerator";
+import ShareBar from "@/components/ShareBar";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -37,6 +38,9 @@ export default async function WordWorkPage({
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <WordWorkGenerator />
+      </div>
+      <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
+        <ShareBar />
       </div>
       <section
         className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"
