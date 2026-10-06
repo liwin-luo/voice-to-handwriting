@@ -1,0 +1,68 @@
+"use client";
+import { useState } from "react";
+import { toPng } from "html-to-image";
+import { jsPDF } from "jspdf";
+import { useEditorStore } from "@/stores/useEditorStore";
+import { PAGE_H, PAGE_W } from "./PaperView";
+
+export default function ExportBar() {
+  const text = useEditorStore((s) => s.text);
+  const [busy, setBusy] = useState(false);
+
+  const pageEls = () => Array.from(document.querySelectorAll<HTMLElement>(".paper"));
+
+  const toPngPages = async () =>
+    Promise.all(pageEls().map((el) => toPng(el, { pixelRatio: 2, backgroundColor: "#ffffff" })));
+
+  const download = (dataUrl: string, name: string) => {
+    const a = document.createElement("a");
+    a.href = dataUrl;
+    a.download = name;
+    a.click();
+  };
+
+  const exportPng = async () => {
+    setBusy(true);
+    try {
+      const urls = await toPngPages();
+      urls.forEach((u, i) => download(u, `手写-${i + 1}.png`));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const exportPdf = async () => {
+    setBusy(true);
+    try {
+      const urls = await toPngPages();
+      const pdf = new jsPDF({ unit: "px", format: [PAGE_W, PAGE_H], orientation: "portrait" });
+      urls.forEach((u, i) => {
+        if (i > 0) pdf.addPage([PAGE_W, PAGE_H], "portrait");
+        pdf.addImage(u, "PNG", 0, 0, PAGE_W, PAGE_H);
+      });
+      pdf.save("手写.pdf");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const disabled = !text.trim() || busy;
+  return (
+    <div className="flex gap-2">
+      <button
+        onClick={exportPng}
+        disabled={disabled}
+        className="rounded border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-50 disabled:opacity-40"
+      >
+        {busy ? "导出中…" : "导出 PNG"}
+      </button>
+      <button
+        onClick={exportPdf}
+        disabled={disabled}
+        className="rounded border border-neutral-300 px-4 py-2 text-sm hover:bg-neutral-50 disabled:opacity-40"
+      >
+        导出 PDF
+      </button>
+    </div>
+  );
+}
