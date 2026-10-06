@@ -1,0 +1,17 @@
+/** 品牌 logo:对话气泡 + 声波纹(见 src/app/icon.svg 同源设计) */
+export default function Logo({ className = "size-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" className={className} aria-hidden focusable="false">
+      <path
+        fill="currentColor"
+        d="M7 3h18a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H14l-6 6v-6H7a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5z"
+      />
+      <g fill="#ffffff">
+        <rect x="7" y="9" width="3" height="8" rx="1.5" />
+        <rect x="11.5" y="6" width="3" height="14" rx="1.5" />
+        <rect x="16" y="5" width="3" height="16" rx="1.5" />
+        <rect x="20.5" y="8" width="3" height="10" rx="1.5" />
+      </g>
+    </svg>
+  );
+}
