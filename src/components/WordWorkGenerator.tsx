@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { FilePdf } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
+import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 
 const LETTER: [number, number] = [816, 1056];
 const WORDS_PER_PAGE_A1 = 8; // 写三遍:每页 8 词
@@ -28,10 +29,15 @@ export default function WordWorkGenerator() {
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [w, h] = LETTER;
 
-  const words = wordsText.split("\n").map((l) => l.trim()).filter(Boolean);
+  // 多页 canvas + toDataURL 很重:输入防抖 + 组词期间暂停
+  const [debouncedWordsText, compositionProps] = useDebouncedImeSafe(wordsText);
+  // useMemo 稳定引用,避免每次按键都触发重绘 effect
+  const words = useMemo(
+    () => debouncedWordsText.split("\n").map((l) => l.trim()).filter(Boolean),
+    [debouncedWordsText],
+  );
 
   function splitPages(list: string[], per: number): string[][] {
     const out: string[][] = [];
@@ -141,14 +147,20 @@ export default function WordWorkGenerator() {
         setPageUrls([]);
         return;
       }
-      // 确保手写字体就绪
-      await document.fonts.load(`30px "${family}"`).catch(() => {});
+      // 传入实际文字,确保手写字体切片按需加载对应字形
+      await document.fonts.load(`30px "${family}"`, words.join(" ")).catch(() => {});
+      if (cancelled) return;
       const urls: string[] = [];
       for (const page of splitPages(words, WORDS_PER_PAGE_A1)) {
         urls.push(drawWrite3Page(page).toDataURL("image/png"));
+        // 逐页让出主线程,多页时不至于一次长任务卡住交互
+        await new Promise((r) => setTimeout(r, 0));
+        if (cancelled) return;
       }
       for (const page of splitPages(words, WORDS_PER_PAGE_A2)) {
         urls.push(drawMissingPage(page).toDataURL("image/png"));
+        await new Promise((r) => setTimeout(r, 0));
+        if (cancelled) return;
       }
       if (!cancelled) setPageUrls(urls);
     };
@@ -177,6 +189,7 @@ export default function WordWorkGenerator() {
           <textarea
             value={wordsText}
             onChange={(e) => setWordsText(e.target.value)}
+            {...compositionProps}
             rows={6}
             placeholder={t("wordsPlaceholder")}
             className="surface-input resize-y p-3 text-sm leading-relaxed"

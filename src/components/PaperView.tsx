@@ -3,7 +3,6 @@ import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { FONTS, useEditorStore } from "@/stores/useEditorStore";
-import { SITE } from "@/lib/site";
 import { tokenize, type Token } from "@/engine/tokens";
 import { expandPages, paginateLineTops } from "@/engine/layout";
 import { charJitter } from "@/engine/jitter";
@@ -45,10 +44,21 @@ export default function PaperView() {
   const th = useTranslations("home");
   const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent, watermark, customPaper } =
     useEditorStore();
+  const composing = useEditorStore((s) => s.composing);
   const setText = useEditorStore((s2) => s2.setText);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const paper = paperId === "custom" ? makeCustomPaper(customPaper) : getPaper(paperId);
-  const tokens = useMemo(() => tokenize(text), [text]);
+
+  // 长文本逐键重排版(tokenize + 隐藏 DOM 测量 + 分页渲染)很重:
+  // 输入防抖,且 IME 组词期间完全暂停(组词事件在 TranscriptEditor 上报)
+  const [deferredText, setDeferredText] = useState("");
+  useEffect(() => {
+    if (composing) return; // 组词中:不定时器,选字期间绝不重排版
+    const id = setTimeout(() => setDeferredText(text), 300);
+    return () => clearTimeout(id);
+  }, [text, composing]);
+
+  const tokens = useMemo(() => tokenize(deferredText), [deferredText]);
   const [pages, setPages] = useState<Token[][]>([]);
   const measureRef = useRef<HTMLDivElement>(null);
 
@@ -65,12 +75,17 @@ export default function PaperView() {
     return () => ro.disconnect();
   }, []);
 
-  const charStyle = {
-    fontFamily: font.css,
-    fontSize,
-    color: ink,
-    lineHeight: `${paper.lineHeight}px`,
-  } as const;
+  // 稳定引用:重组件的 useMemo 依赖
+  const charStyle = useMemo(
+    () =>
+      ({
+        fontFamily: font.css,
+        fontSize,
+        color: ink,
+        lineHeight: `${paper.lineHeight}px`,
+      }) as const,
+    [font.css, fontSize, ink, paper.lineHeight],
+  );
 
   // 真段落起点 = 文首或紧跟换行的 token;跨页续行不在此集合,不加缩进
   const paraStarts = useMemo(
@@ -105,104 +120,111 @@ export default function PaperView() {
     };
   }, [tokens, fontSize, paper.lineHeight, font.css]);
 
-  const rendered = (tok: Token, i: number) => {
-    const j = charJitter(i, seed, intensity);
-    return (
-      <span
-        key={i}
-        data-idx={i}
-        style={{
-          ...charStyle,
-          display: "inline-block",
-          transform: `rotate(${j.rotate}deg) translateY(${j.translateY}px) scale(${j.scale})`,
-          letterSpacing: tok.kind === "word" ? `${j.letterSpacing * 0.3}px` : `${j.letterSpacing}px`,
-          opacity: j.opacity,
-          whiteSpace: "pre",
-        }}
-      >
-        {tok.kind === "space" ? "\u00A0" : tok.text}
-      </span>
-    );
-  };
-
-  /** 段落流渲染:测量容器与可见页共用,保证 offsetTop 一致 */
-  const tokenFlow = (list: Token[]) => (
-    <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
-      {partitionParagraphs(list).map((group, gi) =>
-        group.items.length === 0 ? (
-          <div key={gi} style={{ height: paper.lineHeight }} />
-        ) : (
-          <div
-            key={gi}
-            style={{
-              textAlign: align,
-              // 仅"真段落起点"缩进两格;跨页续行不缩进
-              textIndent:
-                indent && group.startIndex !== -1 && paraStarts.has(group.startIndex) ? "2em" : 0,
-            }}
-          >
-            {group.items.map(([idx, tok]) => rendered(tok, idx))}
-          </div>
-        ),
-      )}
-    </div>
-  );
-
-  const measureNode = (
-    <div
-      ref={measureRef}
-      aria-hidden
-      style={{
-        position: "absolute",
-        visibility: "hidden",
-        left: -99999,
-        width: PAGE_W - PADDING * 2,
-      }}
-    >
-      {tokenFlow(tokens)}
-    </div>
-  );
-
-  const content =
-    pages.length === 0 ? (
-      <div
-        className="shadow-paper flex flex-col items-center gap-4 rounded-xl pt-24"
-        style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
-      >
-        <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
-        <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
-        <button
-          onClick={() => setText(th("sampleText"))}
-          className="btn btn-ghost mt-1 px-4 py-2 text-xs"
-        >
-          {t("trySample")}
-        </button>
-        <ArrowDown className="size-4 animate-bounce text-zinc-300" />
-      </div>
-    ) : (
-      pages.map((pageTokens, p) => (
-        <div
-          key={p}
-          className="paper shadow-paper relative overflow-hidden rounded-xl"
+  // 渲染整棵 token 树(每字符 jitter + 分页)很重:仅在排版相关状态变化时重算,
+  // 输入组词/逐键 store 更新时直接复用,保证编辑器输入流畅
+  const { measureNode, content } = useMemo(() => {
+    const rendered = (tok: Token, i: number) => {
+      const j = charJitter(i, seed, intensity);
+      return (
+        <span
+          key={i}
+          data-idx={i}
           style={{
-            width: PAGE_W,
-            height: PAGE_H,
-            background: paper.background,
-            padding: PADDING,
+            ...charStyle,
+            display: "inline-block",
+            transform: `rotate(${j.rotate}deg) translateY(${j.translateY}px) scale(${j.scale})`,
+            letterSpacing: tok.kind === "word" ? `${j.letterSpacing * 0.3}px` : `${j.letterSpacing}px`,
+            opacity: j.opacity,
+            whiteSpace: "pre",
           }}
         >
-          {tokenFlow(pageTokens)}
-          <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
-            {p + 1} / {pages.length}
-          </span>
-          {watermark && (
-            <span className="absolute left-5 bottom-3 text-[10px] tracking-wide text-zinc-400/90 select-none">
-              {th("watermarkLabel")}
-            </span>
-          )}
-        </div>
-      ))
+          {tok.kind === "space" ? "\u00A0" : tok.text}
+        </span>
+      );
+    };
+
+    /** 段落流渲染:测量容器与可见页共用,保证 offsetTop 一致 */
+    const tokenFlow = (list: Token[]) => (
+      <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
+        {partitionParagraphs(list).map((group, gi) =>
+          group.items.length === 0 ? (
+            <div key={gi} style={{ height: paper.lineHeight }} />
+          ) : (
+            <div
+              key={gi}
+              style={{
+                textAlign: align,
+                // 仅"真段落起点"缩进两格;跨页续行不缩进
+                textIndent:
+                  indent && group.startIndex !== -1 && paraStarts.has(group.startIndex) ? "2em" : 0,
+              }}
+            >
+              {group.items.map(([idx, tok]) => rendered(tok, idx))}
+            </div>
+          ),
+        )}
+      </div>
     );
+
+    const measureNode = (
+      <div
+        ref={measureRef}
+        aria-hidden
+        style={{
+          position: "absolute",
+          visibility: "hidden",
+          left: -99999,
+          width: PAGE_W - PADDING * 2,
+        }}
+      >
+        {tokenFlow(tokens)}
+      </div>
+    );
+
+    const content =
+      pages.length === 0 ? (
+        <div
+          className="shadow-paper flex flex-col items-center gap-4 rounded-xl pt-24"
+          style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
+        >
+          <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
+          <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+          <button
+            onClick={() => setText(th("sampleText"))}
+            className="btn btn-ghost mt-1 px-4 py-2 text-xs"
+          >
+            {t("trySample")}
+          </button>
+          <ArrowDown className="size-4 animate-bounce text-zinc-300" />
+        </div>
+      ) : (
+        pages.map((pageTokens, p) => (
+          <div
+            key={p}
+            className="paper shadow-paper relative overflow-hidden rounded-xl"
+            style={{
+              width: PAGE_W,
+              height: PAGE_H,
+              background: paper.background,
+              padding: PADDING,
+            }}
+          >
+            {tokenFlow(pageTokens)}
+            <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
+              {p + 1} / {pages.length}
+            </span>
+            {watermark && (
+              <span className="absolute left-5 bottom-3 text-[10px] tracking-wide text-zinc-400/90 select-none">
+                {th("watermarkLabel")}
+              </span>
+            )}
+          </div>
+        ))
+      );
+
+    return { measureNode, content };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tokens, pages, paraStarts, charStyle, align, indent, watermark, paper.background, paper.lineHeight, seed, intensity, t, th]);
 
   const contentH =
     pages.length === 0 ? PAGE_H : pages.length * PAGE_H + (pages.length - 1) * PAGE_GAP;

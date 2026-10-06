@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { FilePdf, DownloadSimple } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
+import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 
 const LETTER: [number, number] = [816, 1056];
 
@@ -43,10 +44,6 @@ function drawHeart(ctx: CanvasRenderingContext2D, cx: number, cy: number, s: num
 export default function NameColoringGenerator() {
   const t = useTranslations("coloring");
   const [namesText, setNamesText] = useState("");
-  // 输入防抖:canvas 重绘 + toDataURL 很重,逐键执行会卡死输入
-  const [debouncedText, setDebouncedText] = useState("");
-  // 拼音等输入法组词期间暂停重绘,避免卡住候选词窗口
-  const [composing, setComposing] = useState(false);
   const [fontId, setFontId] = useState("zcoolkuaile");
   const [outline, setOutline] = useState(10); // 描边宽度
   const [decor, setDecor] = useState(true);
@@ -55,11 +52,7 @@ export default function NameColoringGenerator() {
   const family = primaryFamily(font.css);
   const [w, h] = LETTER;
 
-  useEffect(() => {
-    if (composing) return; // 组词中:不定时器,候选词挑选期间绝不重绘
-    const id = setTimeout(() => setDebouncedText(namesText), 300);
-    return () => clearTimeout(id);
-  }, [namesText, composing]);
+  const [debouncedText, compositionProps] = useDebouncedImeSafe(namesText);
 
   // useMemo 稳定引用,避免每次按键都触发重绘 effect
   const names = useMemo(
@@ -178,8 +171,7 @@ export default function NameColoringGenerator() {
           <textarea
             value={namesText}
             onChange={(e) => setNamesText(e.target.value)}
-            onCompositionStart={() => setComposing(true)}
-            onCompositionEnd={() => setComposing(false)}
+            {...compositionProps}
             rows={4}
             placeholder={t("namesPlaceholder")}
             className="surface-input resize-y p-3 text-sm leading-relaxed"

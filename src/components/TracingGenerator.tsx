@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
+import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 
 const LETTER: [number, number] = [816, 1056];
 
@@ -30,12 +31,22 @@ export default function TracingGenerator({
 
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
+  // 整页重绘 + 字体加载较重:输入防抖 + 组词期间暂停
+  const [drawNames, compositionProps] = useDebouncedImeSafe(names);
 
   useEffect(() => {
-    // 确保字体就绪后再绘制
-    document.fonts.load(`80px "${family}"`).then(() => draw());
+    let cancelled = false;
+    const run = async () => {
+      // 传入实际文字,确保字体切片按需加载对应字形后再绘制
+      await document.fonts.load(`80px "${family}"`, drawNames).catch(() => {});
+      if (!cancelled) draw();
+    };
+    void run();
+    return () => {
+      cancelled = true;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [names, fontId, showExample, bandH, textColor]);
+  }, [drawNames, fontId, showExample, bandH, textColor]);
 
   /** 支持传入离屏 ctx,供导出更高分辨率的 PNG;不传时重置并绘制预览画布 */
   function draw(target?: CanvasRenderingContext2D) {
@@ -53,7 +64,7 @@ export default function TracingGenerator({
 
     const top = 40;
     const H = bandH;
-    const inputLines = names.split("\n").map((l) => l.trim()).filter(Boolean);
+    const inputLines = drawNames.split("\n").map((l) => l.trim()).filter(Boolean);
     const rows = inputLines.length ? inputLines : [""];
 
     // 循环填充整页:每行输入重复占多行格子
@@ -138,6 +149,7 @@ export default function TracingGenerator({
           <textarea
             value={names}
             onChange={(e) => setNames(e.target.value)}
+            {...compositionProps}
             rows={4}
             placeholder={t("namesPlaceholder")}
             className="surface-input resize-y p-3 text-sm leading-relaxed"

@@ -43,6 +43,7 @@ interface EditorState {
   align: TextAlign; // 文字排列:左对齐/居中
   indent: boolean; // 段落首行缩进两格
   watermark: boolean; // 导出图品牌水印
+  composing: boolean; // 输入法组词中(用于暂停重预览,不持久化)
   setText: (t: string) => void;
   appendText: (t: string) => void;
   setFontId: (id: FontId) => void;
@@ -53,6 +54,7 @@ interface EditorState {
   setAlign: (a: TextAlign) => void;
   setIndent: (v: boolean) => void;
   setWatermark: (v: boolean) => void;
+  setComposing: (v: boolean) => void;
   customPaper: CustomPaperConfig;
   setCustomPaper: (p: Partial<CustomPaperConfig>) => void;
   reseed: () => void;
@@ -70,6 +72,7 @@ const initial = {
   align: "left" as TextAlign,
   indent: false,
   watermark: true,
+  composing: false,
   customPaper: {
     bg: "#fffdf8",
     line: "#c7d4e3",
@@ -92,6 +95,7 @@ export const useEditorStore = create<EditorState>()(
       setAlign: (align) => set({ align }),
       setIndent: (indent) => set({ indent }),
       setWatermark: (watermark) => set({ watermark }),
+      setComposing: (composing) => set({ composing }),
       setCustomPaper: (patch) => set((s) => ({ customPaper: { ...s.customPaper, ...patch } })),
       reseed: () => set({ seed: Math.floor(Math.random() * 2 ** 31) }),
       reset: () => set({ ...initial }),

@@ -7,6 +7,7 @@ export default function TranscriptEditor() {
   const t = useTranslations("tool");
   const text = useEditorStore((s) => s.text);
   const setText = useEditorStore((s) => s.setText);
+  const setComposing = useEditorStore((s) => s.setComposing);
   const align = useEditorStore((s) => s.align);
   const setAlign = useEditorStore((s) => s.setAlign);
   const indent = useEditorStore((s) => s.indent);
@@ -30,6 +31,8 @@ export default function TranscriptEditor() {
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
+        onCompositionStart={() => setComposing(true)}
+        onCompositionEnd={() => setComposing(false)}
         placeholder={t("placeholder")}
         rows={6}
         className="surface-input resize-y p-3 leading-relaxed"

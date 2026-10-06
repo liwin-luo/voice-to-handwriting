@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { FilePdf } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
+import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 
 const A4: [number, number] = [794, 1123];
 
@@ -33,9 +34,13 @@ export default function WritingPracticeGenerator({
 
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
+  // 整页 canvas 重绘很重:输入防抖 + 组词期间暂停
+  const [drawText, compositionProps] = useDebouncedImeSafe(text);
 
-  // 切脚本时联动默认字体与格线
-  useEffect(() => {
+  // 切脚本时联动默认字体与格线(渲染期调整状态,避免 effect 级联渲染)
+  const [prevScript, setPrevScript] = useState(script);
+  if (prevScript !== script) {
+    setPrevScript(script);
     if (script === "ja") {
       setFontId("kleeone");
       setGuide("innerbox");
@@ -46,12 +51,7 @@ export default function WritingPracticeGenerator({
       setFontId("lxgwwenkai");
       setGuide("cross");
     }
-  }, [script]);
-
-  useEffect(() => {
-    draw();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [text, cell, guide, fillMode, fontId, script]);
+  }
 
   function draw() {
     const canvas = canvasRef.current;
@@ -72,7 +72,7 @@ export default function WritingPracticeGenerator({
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
 
-    const chars = [...text.replace(/\s/g, "")];
+    const chars = [...drawText.replace(/\s/g, "")];
     const fillAll = fillMode !== "blank";
     // 循环铺满整页(练字场景:反复书写)
     let charIdx = 0;
@@ -128,6 +128,20 @@ export default function WritingPracticeGenerator({
     }
   }
 
+  useEffect(() => {
+    let cancelled = false;
+    const run = async () => {
+      // 传入实际文字,确保字体切片按需加载对应字形后再绘制
+      await document.fonts.load(`52px "${family}"`, drawText).catch(() => {});
+      if (!cancelled) draw();
+    };
+    void run();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [drawText, cell, guide, fillMode, fontId, script]);
+
   const downloadPdf = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -179,6 +193,7 @@ export default function WritingPracticeGenerator({
           <textarea
             value={text}
             onChange={(e) => setText(e.target.value)}
+            {...compositionProps}
             rows={3}
             placeholder={t("textPlaceholder")}
             className="surface-input resize-y p-3 text-sm leading-relaxed"
