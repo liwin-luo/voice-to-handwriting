@@ -210,7 +210,8 @@ export default function PaperView() {
   return (
     <>
       {measureNode}
-      <div ref={wrapRef} style={{ height: contentH * scale }}>
+      {/* overflow-hidden:裁掉 scale 后残留的未缩放布局盒,避免透明区域拦截点击 */}
+      <div ref={wrapRef} style={{ height: contentH * scale }} className="overflow-hidden">
         <div
           className="flex flex-col items-center gap-6"
           style={{ width: PAGE_W, transform: `scale(${scale})`, transformOrigin: "top left" }}

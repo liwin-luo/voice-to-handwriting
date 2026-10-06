@@ -47,7 +47,7 @@ export default function ToolWorkspace() {
         <PaperView />
       </div>
       {/* 粘性玻璃操作栏:滚动阅读长文时输入/导出始终可达 */}
-      <div className="glass-bar sticky bottom-4 z-20 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5">
+      <div className="glass-bar sticky bottom-4 z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5">
         <div className="flex flex-wrap items-start gap-6">
           <RecorderPanel />
           <AudioImportPanel />
