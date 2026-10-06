@@ -26,13 +26,18 @@
     "history": {
       "title": "History",
       "description": "Your local handwriting conversions: text and style snapshots, restorable in one click. Stored only in your browser."
+    },
+    "templates": {
+      "title": "Handwriting Templates",
+      "description": "Love letters, apologies, thank-you notes, birthday and holiday wishes — copy and style in one tap, exported as handwriting."
     }
   },
   "nav": {
     "tool": "Tool",
     "blog": "Blog",
     "about": "About",
-    "history": "History"
+    "history": "History",
+    "templates": "Templates"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -130,5 +135,10 @@
     "privacy": "Privacy Policy",
     "accept": "Accept",
     "reject": "Reject"
+  },
+  "templates": {
+    "tagline": "Every template ships with copy and handwriting style — pick one and go.",
+    "use": "Use this template",
+    "editHint": "Text is fully editable after applying; adjust font and paper in the panel on the left."
   }
 }

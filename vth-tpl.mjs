@@ -1,0 +1,16 @@
+import { chromium } from "@playwright/test";
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1440, height: 1100 } });
+await page.goto("http://localhost:3000/templates", { extraHTTPHeaders: { "Accept-Language": "zh-CN" } });
+await page.screenshot({ path: "/tmp/vth-tpl-index.png" });
+await page.goto("http://localhost:3000/templates/love-letter");
+await page.screenshot({ path: "/tmp/vth-tpl-detail.png" });
+await page.getByRole("link", { name: "使用此模板" }).click();
+await page.waitForTimeout(1500);
+console.log("url:", page.url());
+const ta = await page.getByPlaceholder(/说话内容会出现在这里/).inputValue();
+console.log("applied text:", JSON.stringify(ta.slice(0, 24)));
+const font = await page.locator(".paper span[data-idx]").first().evaluate((el) => getComputedStyle(el).fontFamily.slice(0, 30));
+console.log("font applied:", font);
+await page.screenshot({ path: "/tmp/vth-tpl-applied.png" });
+await browser.close();

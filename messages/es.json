@@ -26,13 +26,18 @@
     "history": {
       "title": "Historial",
       "description": "Tus conversiones guardadas localmente: instantáneas de texto y estilo, restaurables con un clic. Solo en tu navegador."
+    },
+    "templates": {
+      "title": "Plantillas de escritura a mano",
+      "description": "Cartas de amor, disculpas, agradecimientos, cumpleaños, Día del Maestro y Año Nuevo — texto y estilo en un toque."
     }
   },
   "nav": {
     "tool": "Herramienta",
     "blog": "Blog",
     "about": "Acerca de",
-    "history": "Historial"
+    "history": "Historial",
+    "templates": "Plantillas"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -130,5 +135,10 @@
     "privacy": "Política de privacidad",
     "accept": "Aceptar",
     "reject": "Rechazar"
+  },
+  "templates": {
+    "tagline": "Cada plantilla incluye texto y estilo manuscrito — elige una y empieza.",
+    "use": "Usar esta plantilla",
+    "editHint": "El texto es editable tras aplicarla; ajusta fuente y papel en el panel izquierdo."
   }
 }

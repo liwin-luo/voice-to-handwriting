@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 import { POSTS } from "@/content/posts";
+import { TEMPLATES } from "@/content/templates";
 import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -19,6 +20,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: "weekly",
         priority: p === "" ? 1 : 0.7,
+      });
+    }
+    for (const tpl of TEMPLATES) {
+      entries.push({
+        url:
+          locale === routing.defaultLocale
+            ? `${SITE.url}/templates/${tpl.slug}`
+            : `${SITE.url}/${locale}/templates/${tpl.slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.7,
       });
     }
     for (const post of POSTS) {

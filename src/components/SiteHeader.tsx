@@ -20,6 +20,9 @@ export default async function SiteHeader() {
           <Link href="/" className="transition-colors hover:text-zinc-950">
             {t("tool")}
           </Link>
+          <Link href="/templates" className="transition-colors hover:text-zinc-950">
+            {t("templates")}
+          </Link>
           <Link href="/history" className="transition-colors hover:text-zinc-950">
             {t("history")}
           </Link>
