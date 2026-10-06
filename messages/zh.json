@@ -124,5 +124,11 @@
     "sourceAudio": "音频转写",
     "sourceExport": "导出",
     "charUnit": "字"
+  },
+  "consent": {
+    "text": "我们使用 Cookie 展示广告以维持本工具免费。你可以选择接受个性化广告,或仅使用必要功能。",
+    "privacy": "隐私政策",
+    "accept": "接受",
+    "reject": "拒绝"
   }
 }

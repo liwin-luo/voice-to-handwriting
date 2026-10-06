@@ -124,5 +124,11 @@
     "sourceAudio": "Audio",
     "sourceExport": "Exportación",
     "charUnit": "car."
+  },
+  "consent": {
+    "text": "Usamos cookies para mostrar anuncios que mantienen gratis esta herramienta. Acepta anuncios personalizados o continúa solo con lo esencial.",
+    "privacy": "Política de privacidad",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
   }
 }

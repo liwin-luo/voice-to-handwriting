@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -6,6 +7,7 @@ import { routing } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ConsentBanner from "@/components/ConsentBanner";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -62,7 +64,9 @@ export default async function LocaleLayout({
           <SiteHeader />
           <div className="flex-1">{children}</div>
           <SiteFooter />
+          <ConsentBanner />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

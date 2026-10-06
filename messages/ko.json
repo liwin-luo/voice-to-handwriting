@@ -124,5 +124,11 @@
     "sourceAudio": "오디오 파일",
     "sourceExport": "내보내기",
     "charUnit": "자"
+  },
+  "consent": {
+    "text": "이 도구를 무료로 유지하기 위해 쿠키로 광고를 표시합니다. 맞춤 광고에 동의하거나 필수 기능만 이용할 수 있어요.",
+    "privacy": "개인정보 처리방침",
+    "accept": "동의",
+    "reject": "거부"
   }
 }

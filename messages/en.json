@@ -124,5 +124,11 @@
     "sourceAudio": "Audio file",
     "sourceExport": "Export",
     "charUnit": "chars"
+  },
+  "consent": {
+    "text": "We use cookies to show ads that keep this tool free. Accept personalized ads, or continue with essentials only.",
+    "privacy": "Privacy Policy",
+    "accept": "Accept",
+    "reject": "Reject"
   }
 }
