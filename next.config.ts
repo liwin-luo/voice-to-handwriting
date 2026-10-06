@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   pageExtensions: ["tsx", "ts", "mdx"],
 };
 
-const withMDX = createMDX({});
+const withMDX = createMDX({ options: { remarkPlugins: [["remark-gfm"]] } });
 const withNextIntl = createNextIntlPlugin();
 
 export default withNextIntl(withMDX(nextConfig));
