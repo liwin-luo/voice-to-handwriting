@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "brand": "Voice to Handwriting",
+    "title": "Voice to Handwriting - 말하면 손글씨로",
+    "description": "웹페이지에 말을 하면 실시간으로 텍스트가 되고, 진짜 손글씨처럼 렌더링됩니다. PNG / PDF로 내보낼 수 있는 무료 온라인 손글씨 생성기.",
+    "about": {
+      "title": "소개",
+      "description": "Voice to Handwriting는 음성을 손글씨 페이지로 바꾸는 무료 웹 도구입니다. 모든 처리는 브라우저 안에서 끝납니다."
+    },
+    "privacy": {
+      "title": "개인정보 처리방침",
+      "description": "음성·텍스트 데이터, 쿠키 및 제3자 광고의 처리 방식 안내."
+    },
+    "terms": {
+      "title": "이용약관",
+      "description": "본 도구의 이용 조건과 면책 조항."
+    },
+    "contact": {
+      "title": "문의하기",
+      "description": "피드백, 버그 신고, 비즈니스 문의."
+    },
+    "blog": {
+      "title": "블로그",
+      "description": "손글씨 카드 만들기와 손글씨 이미지 활용 팁."
+    }
+  },
+  "nav": {
+    "tool": "도구",
+    "blog": "블로그",
+    "about": "소개"
+  },
+  "home": {
+    "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
+    "badge": "브라우저에서 처리, 텍스트는 전송되지 않습니다",
+    "footerNote": "음성 인식은 브라우저 기능(Web Speech API)을 사용합니다. 데스크톱 Chrome / Edge 권장. 텍스트는 서버로 전송되지 않습니다.",
+    "blogLink": "손글씨 카드 튜토리얼과 아이디어",
+    "adPending": "광고 자리 · NEXT_PUBLIC_ADSENSE_CLIENT 설정 후 표시"
+  },
+  "tool": {
+    "speak": "눌러서 말하기",
+    "stop": "중지",
+    "listening": "듣고 있어요",
+    "unsupported": "이 브라우저는 음성 인식을 지원하지 않습니다. Chrome / Edge를 권장합니다. 왼쪽에서 직접 입력할 수도 있어요.",
+    "errorDenied": "마이크가 거부되었습니다: 주소창 왼쪽 아이콘에서 마이크를 허용한 뒤 다시 시도해 주세요",
+    "errorNetwork": "인식 서비스 네트워크 오류입니다. 연결을 확인해 주세요",
+    "errorStopped": "한동안 음성이 감지되지 않아 자동 중지되었습니다",
+    "exporting": "내보내는 중",
+    "exportPng": "PNG 내보내기",
+    "exportPdf": "PDF 내보내기",
+    "sectionHandwriting": "필적",
+    "font": "글꼴",
+    "fontSize": "크기",
+    "realism": "리얼리즘",
+    "reseed": "필적 바꾸기",
+    "sectionPaper": "용지",
+    "paper": "용지",
+    "ink": "잉크",
+    "editorLabel": "텍스트(인식 오류 수정)",
+    "charUnit": "자",
+    "placeholder": "말한 내용이 여기에 나타납니다. 직접 입력하거나 붙여넣을 수도 있어요",
+    "alignLeft": "왼쪽 정렬",
+    "alignCenter": "가운데 정렬",
+    "indent": "문단 첫 줄 들여쓰기",
+    "emptyTitle": "말하면, 글씨가 됩니다",
+    "emptyHint": "아래 \"눌러서 말하기\"를 누르거나 왼쪽에서 입력하세요",
+    "fonts": {
+      "mashanzheng": "마산정 · 해서",
+      "longcang": "룽창 · 행서",
+      "liujianmaocao": "류젠마오차오 · 초서",
+      "caveat": "Caveat · 영문"
+    },
+    "papers": {
+      "blank": "무지",
+      "ruled": "줄선 용지",
+      "grid": "모눈",
+      "letter": "편지지"
+    },
+    "inks": {
+      "blueblack": "청흑색",
+      "black": "검정",
+      "red": "주홍색"
+    }
+  },
+  "footer": {
+    "privacy": "개인정보 처리방침",
+    "terms": "이용약관",
+    "contact": "문의하기"
+  },
+  "blog": {
+    "tagline": "손글씨 카드와 손글씨 이미지 튜토리얼과 아이디어. 모든 가이드는 홈페이지 도구로 바로 따라 할 수 있어요."
+  },
+  "notFound": {
+    "title": "이 페이지는 바람에 날아간 것 같아요",
+    "text": "하지만 손글씨 도구는 늘 여기에 있습니다.",
+    "back": "손글씨로 돌아가기"
+  }
+}

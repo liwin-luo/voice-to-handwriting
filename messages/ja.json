@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "brand": "Voice to Handwriting",
+    "title": "声で手書き文字に - Voice to Handwriting",
+    "description": "ページに向かって話すだけで、リアルタイムに文字起こしされ、本物の手書き風に変換。PNG / PDF で書き出せる無料オンライン手書きジェネレーターです。",
+    "about": {
+      "title": "このサイトについて",
+      "description": "Voice to Handwriting は、音声を手書き風ページに変える無料ウェブツールです。すべての処理はブラウザ内で完結します。"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "description": "音声・テキストデータ、Cookie、第三者広告の取り扱いについて。"
+    },
+    "terms": {
+      "title": "利用規約",
+      "description": "本ツールの利用条件と免責事項。"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "description": "ご意見・不具合報告・ビジネスのお問い合わせ。"
+    },
+    "blog": {
+      "title": "ブログ",
+      "description": "手書きカードの作り方や手書き風画像の活用術。"
+    }
+  },
+  "nav": {
+    "tool": "ツール",
+    "blog": "ブログ",
+    "about": "このサイトについて"
+  },
+  "home": {
+    "tagline": "話しかけるだけで手書きの文書に —— カード、手紙、ジャーナル、SNS 画像に",
+    "badge": "ブラウザ内で処理、テキストは送信されません",
+    "footerNote": "音声認識はブラウザ機能(Web Speech API)を使用します。デスクトップ版 Chrome / Edge 推奨。テキストはサーバーに送信されません。",
+    "blogLink": "手書きカードの作り方とアイデア",
+    "adPending": "広告枠 · NEXT_PUBLIC_ADSENSE_CLIENT 設定後に表示"
+  },
+  "tool": {
+    "speak": "タップして話す",
+    "stop": "停止",
+    "listening": "認識中",
+    "unsupported": "このブラウザは音声認識に対応していません。Chrome / Edge を推奨します。左の文字入力もご利用ください。",
+    "errorDenied": "マイクが拒否されました:アドレスバー左のアイコンからマイクを許可して、もう一度お試しください",
+    "errorNetwork": "認識サービスのネットワークエラーです。接続を確認してください",
+    "errorStopped": "しばらく音声が検出されないため、自動停止しました",
+    "exporting": "書き出し中",
+    "exportPng": "PNG 書き出し",
+    "exportPdf": "PDF 書き出し",
+    "sectionHandwriting": "筆跡",
+    "font": "フォント",
+    "fontSize": "サイズ",
+    "realism": "リアリティ",
+    "reseed": "筆跡を変える",
+    "sectionPaper": "用紙",
+    "paper": "用紙",
+    "ink": "インク",
+    "editorLabel": "文字(誤変換はここで修正)",
+    "charUnit": "文字",
+    "placeholder": "話した内容がここに入ります。直接入力や貼り付けもできます",
+    "alignLeft": "左揃え",
+    "alignCenter": "中央揃え",
+    "indent": "段落の字下げ",
+    "emptyTitle": "話せば、書き上がる",
+    "emptyHint": "下の「タップして話す」を押すか、左の文字欄に入力してください",
+    "fonts": {
+      "mashanzheng": "馬善政・楷書",
+      "longcang": "龍蔵・行書",
+      "liujianmaocao": "柳建毛草・草書",
+      "caveat": "Caveat・英文"
+    },
+    "papers": {
+      "blank": "無地",
+      "ruled": "横罫線",
+      "grid": "方眼",
+      "letter": "レターペーパー"
+    },
+    "inks": {
+      "blueblack": "藍黒",
+      "black": "黒",
+      "red": "朱色"
+    }
+  },
+  "footer": {
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ"
+  },
+  "blog": {
+    "tagline": "手書きカードや手書き風画像のチュートリアルとアイデア。すべてトップページのツールでそのまま再現できます。"
+  },
+  "notFound": {
+    "title": "ページが風に飛ばされたようです",
+    "text": "でも手書きツールはいつでもここにあります。",
+    "back": "手書きに戻る"
+  }
+}

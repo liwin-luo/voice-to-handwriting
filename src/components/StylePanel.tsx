@@ -6,12 +6,7 @@ import { PAPERS } from "@/engine/paper";
 
 export default function StylePanel() {
   const t = useTranslations("tool");
-  const locale = useLocale();
   const s = useEditorStore();
-
-  const fontName = (f: (typeof FONTS)[number]) => (locale === "en" ? f.nameEn : f.name);
-  const paperName = (p: (typeof PAPERS)[number]) => (locale === "en" ? p.nameEn : p.name);
-  const inkName = (i: (typeof INKS)[number]) => (locale === "en" ? i.nameEn : i.name);
 
   return (
     <section className="flex flex-col divide-y divide-zinc-200 text-sm">
@@ -27,7 +22,7 @@ export default function StylePanel() {
           >
             {FONTS.map((f) => (
               <option key={f.id} value={f.id}>
-                {fontName(f)}
+                {t(`fonts.${f.id}`)}
               </option>
             ))}
           </select>
@@ -78,7 +73,7 @@ export default function StylePanel() {
           >
             {PAPERS.map((p) => (
               <option key={p.id} value={p.id}>
-                {paperName(p)}
+                {t(`papers.${p.id}`)}
               </option>
             ))}
           </select>
@@ -89,8 +84,8 @@ export default function StylePanel() {
             {INKS.map((ink) => (
               <button
                 key={ink.id}
-                title={inkName(ink)}
-                aria-label={inkName(ink)}
+                title={t(`inks.${ink.id}`)}
+                aria-label={t(`inks.${ink.id}`)}
                 onClick={() => s.setInk(ink.value)}
                 className={`size-7 cursor-pointer rounded-full transition-all duration-200 active:scale-90 ${
                   s.ink === ink.value

@@ -1,19 +1,29 @@
 "use client";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { LOCALE_LABELS, routing } from "@/i18n/routing";
 
-/** 语言切换:替换当前路径到另一语言 */
+/** 语言切换:5 语言 chip 组,替换当前路径到目标语言 */
 export default function LocaleSwitch() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const other = locale === "zh" ? "en" : "zh";
+
   return (
-    <button
-      onClick={() => router.replace(pathname, { locale: other })}
-      className="cursor-pointer rounded-full border border-zinc-200 px-2.5 py-1 text-xs text-zinc-500 transition-colors hover:border-zinc-300 hover:text-zinc-800"
-    >
-      {other === "en" ? "EN" : "中文"}
-    </button>
+    <div className="flex items-center gap-1">
+      {routing.locales.map((l) => (
+        <button
+          key={l}
+          onClick={() => router.replace(pathname, { locale: l })}
+          className={`cursor-pointer rounded-full px-2 py-1 text-xs transition-colors ${
+            l === locale
+              ? "bg-accent/10 font-medium text-accent"
+              : "text-zinc-400 hover:bg-zinc-100 hover:text-zinc-700"
+          }`}
+        >
+          {LOCALE_LABELS[l]}
+        </button>
+      ))}
+    </div>
   );
 }

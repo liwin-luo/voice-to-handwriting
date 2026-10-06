@@ -2,17 +2,17 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export const FONTS = [
-  { id: "mashanzheng", name: "马善政 · 楷", nameEn: "Ma Shan Zheng · Kai", css: "'Ma Shan Zheng', 'Kaiti SC', 'KaiTi', serif" },
-  { id: "longcang", name: "龙藏 · 行", nameEn: "Long Cang · Running", css: "'Long Cang', 'Kaiti SC', 'KaiTi', serif" },
-  { id: "liujianmaocao", name: "柳建毛草 · 草", nameEn: "Liu Jian Mao Cao · Cursive", css: "'Liu Jian Mao Cao', 'Kaiti SC', 'KaiTi', serif" },
-  { id: "caveat", name: "Caveat · 英文", nameEn: "Caveat · English", css: "'Caveat', cursive" },
+  { id: "mashanzheng", css: "'Ma Shan Zheng', 'Kaiti SC', 'KaiTi', serif" },
+  { id: "longcang", css: "'Long Cang', 'Kaiti SC', 'KaiTi', serif" },
+  { id: "liujianmaocao", css: "'Liu Jian Mao Cao', 'Kaiti SC', 'KaiTi', serif" },
+  { id: "caveat", css: "'Caveat', cursive" },
 ] as const;
 export type FontId = (typeof FONTS)[number]["id"];
 
 export const INKS = [
-  { id: "blueblack", name: "蓝黑", nameEn: "Blue black", value: "#15317e" },
-  { id: "black", name: "纯黑", nameEn: "Black", value: "#1a1a1a" },
-  { id: "red", name: "朱红", nameEn: "Vermilion", value: "#8c1f28" },
+  { id: "blueblack", value: "#15317e" },
+  { id: "black", value: "#1a1a1a" },
+  { id: "red", value: "#8c1f28" },
 ] as const;
 
 export type TextAlign = "left" | "center";

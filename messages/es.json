@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "brand": "Voice to Handwriting",
+    "title": "Voice to Handwriting - habla y conviértelo en escritura a mano",
+    "description": "Habla a la página, convierte tu voz en texto en tiempo real y dale aspecto de escritura a mano real. Exporta en PNG o PDF. Generador de escritura a mano gratuito.",
+    "about": {
+      "title": "Acerca de",
+      "description": "Voice to Handwriting es una herramienta web gratuita que convierte tu voz en páginas escritas a mano. Todo se procesa en tu navegador."
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "description": "Cómo se tratan los datos de voz y texto, las cookies y la publicidad de terceros."
+    },
+    "terms": {
+      "title": "Términos de uso",
+      "description": "Condiciones de uso, límites y aviso legal de la herramienta."
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "Sugerencias, informe de errores y consultas comerciales."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Tutoriales de tarjetas escritas a mano e ideas para imágenes manuscritas."
+    }
+  },
+  "nav": {
+    "tool": "Herramienta",
+    "blog": "Blog",
+    "about": "Acerca de"
+  },
+  "home": {
+    "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
+    "badge": "Procesado en tu navegador, el texto nunca se sube",
+    "footerNote": "El reconocimiento de voz usa la función del navegador (Web Speech API). Recomendado: Chrome / Edge de escritorio. Tu texto nunca sale de tu dispositivo.",
+    "blogLink": "Tutoriales e ideas de tarjetas manuscritas",
+    "adPending": "Espacio publicitario · se activa con NEXT_PUBLIC_ADSENSE_CLIENT"
+  },
+  "tool": {
+    "speak": "Toca y habla",
+    "stop": "Detener",
+    "listening": "Escuchando",
+    "unsupported": "Este navegador no admite reconocimiento de voz. Recomendamos Chrome / Edge, o escribe directamente a la izquierda.",
+    "errorDenied": "Micrófono denegado: haz clic en el icono a la izquierda de la barra de direcciones para permitirlo y reintenta",
+    "errorNetwork": "Error de red en el servicio de reconocimiento. Comprueba tu conexión",
+    "errorStopped": "No se detectó voz durante un tiempo; se detuvo automáticamente",
+    "exporting": "Exportando",
+    "exportPng": "Exportar PNG",
+    "exportPdf": "Exportar PDF",
+    "sectionHandwriting": "Caligrafía",
+    "font": "Fuente",
+    "fontSize": "Tamaño",
+    "realism": "Realismo",
+    "reseed": "Cambiar trazo",
+    "sectionPaper": "Papel",
+    "paper": "Papel",
+    "ink": "Tinta",
+    "editorLabel": "Texto (corrige errores de reconocimiento)",
+    "charUnit": "car.",
+    "placeholder": "Tu voz aparece aquí — también puedes pegar o escribir directamente",
+    "alignLeft": "Alinear a la izquierda",
+    "alignCenter": "Centrar",
+    "indent": "Sangría en la primera línea",
+    "emptyTitle": "Habla, y se escribe solo",
+    "emptyHint": "Pulsa \"Toca y hablar\" abajo, o escribe en el panel izquierdo",
+    "fonts": {
+      "mashanzheng": "Ma Shan Zheng · Kai",
+      "longcang": "Long Cang · Xing",
+      "liujianmaocao": "Liu Jian Mao Cao · Cao",
+      "caveat": "Caveat · inglés"
+    },
+    "papers": {
+      "blank": "En blanco",
+      "ruled": "Rayado",
+      "grid": "Cuadrícula",
+      "letter": "Carta"
+    },
+    "inks": {
+      "blueblack": "Azul oscuro",
+      "black": "Negro",
+      "red": "Rojo cinabrio"
+    }
+  },
+  "footer": {
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "contact": "Contacto"
+  },
+  "blog": {
+    "tagline": "Tutoriales e ideas de tarjetas e imágenes manuscritas — todas las guías funcionan con la herramienta de inicio."
+  },
+  "notFound": {
+    "title": "Esta página se voló con el viento",
+    "text": "Pero la herramienta de escritura a mano sigue aquí.",
+    "back": "Volver a escribir"
+  }
+}

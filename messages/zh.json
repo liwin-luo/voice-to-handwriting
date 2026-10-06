@@ -62,7 +62,24 @@
     "alignCenter": "居中",
     "indent": "段落首行缩进",
     "emptyTitle": "说一段话,落笔成字",
-    "emptyHint": "点击下方「点击说话」,或直接在右侧输入文字"
+    "emptyHint": "点击下方「点击说话」,或直接在左侧文字框输入",
+    "fonts": {
+      "mashanzheng": "马善政 · 楷",
+      "longcang": "龙藏 · 行",
+      "liujianmaocao": "柳建毛草 · 草",
+      "caveat": "Caveat · 英文"
+    },
+    "papers": {
+      "blank": "白纸",
+      "ruled": "横线",
+      "grid": "方格",
+      "letter": "信纸"
+    },
+    "inks": {
+      "blueblack": "蓝黑",
+      "black": "纯黑",
+      "red": "朱红"
+    }
   },
   "footer": {
     "privacy": "隐私政策",

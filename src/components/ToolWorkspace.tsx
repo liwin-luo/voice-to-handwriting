@@ -5,15 +5,19 @@ import RecorderPanel from "./RecorderPanel";
 import StylePanel from "./StylePanel";
 import TranscriptEditor from "./TranscriptEditor";
 
+/**
+ * 布局 v2:左栏(文字编辑 → 样式)吸顶可滚动,右侧纸张预览自适应缩放。
+ * 移动端单列:编辑器在最前,纸张其后。
+ */
 export default function ToolWorkspace() {
   return (
     <div className="flex flex-col gap-5">
-      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[auto_300px]">
-        <PaperView />
-        <aside className="flex flex-col gap-6 lg:sticky lg:top-20">
-          <StylePanel />
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[320px_auto]">
+        <aside className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
           <TranscriptEditor />
+          <StylePanel />
         </aside>
+        <PaperView />
       </div>
       {/* 粘性玻璃操作栏:滚动阅读长文时录音/导出始终可达 */}
       <div className="glass-bar sticky bottom-4 z-20 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5">

@@ -62,7 +62,24 @@
     "alignCenter": "Align center",
     "indent": "Indent first line of paragraphs",
     "emptyTitle": "Speak, and it writes itself",
-    "emptyHint": "Tap \"Tap to speak\" below, or type on the right"
+    "emptyHint": "Tap \"Tap to speak\" below, or type in the editor on the left",
+    "fonts": {
+      "mashanzheng": "Ma Shan Zheng · Kai",
+      "longcang": "Long Cang · Running",
+      "liujianmaocao": "Liu Jian Mao Cao · Cursive",
+      "caveat": "Caveat · English"
+    },
+    "papers": {
+      "blank": "Blank",
+      "ruled": "Ruled",
+      "grid": "Grid",
+      "letter": "Letter"
+    },
+    "inks": {
+      "blueblack": "Blue black",
+      "black": "Black",
+      "red": "Vermilion"
+    }
   },
   "footer": {
     "privacy": "Privacy Policy",

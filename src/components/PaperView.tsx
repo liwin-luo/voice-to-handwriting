@@ -1,8 +1,8 @@
 "use client";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
-import { FONTS, useEditorStore, type TextAlign } from "@/stores/useEditorStore";
+import { FONTS, useEditorStore } from "@/stores/useEditorStore";
 import { tokenize, type Token } from "@/engine/tokens";
 import { expandPages, paginateLineTops } from "@/engine/layout";
 import { charJitter } from "@/engine/jitter";
@@ -11,9 +11,11 @@ import { getPaper } from "@/engine/paper";
 export const PAGE_W = 794; // A4 @96dpi
 export const PAGE_H = 1123;
 const PADDING = 48;
+const PAGE_GAP = 24; // 与 gap-6 保持一致
 
 interface ParaGroup {
-  tokens: Token[];
+  /** [全局 token 索引, token]:索引必须全局唯一,jitter 与测量分页都依赖它 */
+  items: Array<[number, Token]>;
   /** 该组首字符的全局 token 索引(-1 表示空段落) */
   startIndex: number;
 }
@@ -21,19 +23,19 @@ interface ParaGroup {
 /** 把 token 序列按 newline 边界切成段落组;newline 本身不渲染 */
 function partitionParagraphs(tokens: Token[]): ParaGroup[] {
   const groups: ParaGroup[] = [];
-  let current: Token[] = [];
+  let items: Array<[number, Token]> = [];
   let startIndex = -1;
   tokens.forEach((t, i) => {
     if (t.kind === "newline") {
-      groups.push({ tokens: current, startIndex });
-      current = [];
-      startIndex = -1; // 待定:若下一个不是 newline,则是真段落起点
+      groups.push({ items, startIndex });
+      items = [];
+      startIndex = -1;
     } else {
       if (startIndex === -1) startIndex = i;
-      current.push(t);
+      items.push([i, t]);
     }
   });
-  groups.push({ tokens: current, startIndex });
+  groups.push({ items, startIndex });
   return groups;
 }
 
@@ -47,6 +49,19 @@ export default function PaperView() {
   const [pages, setPages] = useState<Token[][]>([]);
   const measureRef = useRef<HTMLDivElement>(null);
 
+  // 纸张按容器宽度自适应缩放(仅 transform,不影响导出像素)
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const update = () => setScale(Math.min(1, el.clientWidth / PAGE_W));
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
   const charStyle = {
     fontFamily: font.css,
     fontSize,
@@ -56,7 +71,12 @@ export default function PaperView() {
 
   // 真段落起点 = 文首或紧跟换行的 token;跨页续行不在此集合,不加缩进
   const paraStarts = useMemo(
-    () => new Set(tokens.map((t, i) => (i === 0 || tokens[i - 1].kind === "newline" ? i : -1)).filter((i) => i >= 0)),
+    () =>
+      new Set(
+        tokens
+          .map((tok, i) => (i === 0 || tokens[i - 1].kind === "newline" ? i : -1))
+          .filter((i) => i >= 0),
+      ),
     [tokens],
   );
 
@@ -82,7 +102,7 @@ export default function PaperView() {
     };
   }, [tokens, fontSize, paper.lineHeight, font.css]);
 
-  const rendered = (t: Token, i: number) => {
+  const rendered = (tok: Token, i: number) => {
     const j = charJitter(i, seed, intensity);
     return (
       <span
@@ -92,12 +112,12 @@ export default function PaperView() {
           ...charStyle,
           display: "inline-block",
           transform: `rotate(${j.rotate}deg) translateY(${j.translateY}px) scale(${j.scale})`,
-          letterSpacing: t.kind === "word" ? `${j.letterSpacing * 0.3}px` : `${j.letterSpacing}px`,
+          letterSpacing: tok.kind === "word" ? `${j.letterSpacing * 0.3}px` : `${j.letterSpacing}px`,
           opacity: j.opacity,
           whiteSpace: "pre",
         }}
       >
-        {t.kind === "space" ? "\u00A0" : t.text}
+        {tok.kind === "space" ? "\u00A0" : tok.text}
       </span>
     );
   };
@@ -106,8 +126,7 @@ export default function PaperView() {
   const tokenFlow = (list: Token[]) => (
     <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word" }}>
       {partitionParagraphs(list).map((group, gi) =>
-        group.tokens.length === 0 ? (
-          // 空段落:占一行高度
+        group.items.length === 0 ? (
           <div key={gi} style={{ height: paper.lineHeight }} />
         ) : (
           <div
@@ -115,10 +134,11 @@ export default function PaperView() {
             style={{
               textAlign: align,
               // 仅"真段落起点"缩进两格;跨页续行不缩进
-              textIndent: indent && group.startIndex !== -1 && paraStarts.has(group.startIndex) ? "2em" : 0,
+              textIndent:
+                indent && group.startIndex !== -1 && paraStarts.has(group.startIndex) ? "2em" : 0,
             }}
           >
-            {group.tokens.map(rendered)}
+            {group.items.map(([idx, tok]) => rendered(tok, idx))}
           </div>
         ),
       )}
@@ -140,44 +160,49 @@ export default function PaperView() {
     </div>
   );
 
-  if (pages.length === 0) {
-    return (
-      <>
-        {measureNode}
-        {/* 精心构图的空状态:用产品自己的手写字体说话 */}
+  const content =
+    pages.length === 0 ? (
+      <div
+        className="shadow-paper flex flex-col items-center justify-center gap-4 rounded-xl"
+        style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
+      >
+        <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
+        <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+        <ArrowDown className="size-4 animate-bounce text-zinc-300" />
+      </div>
+    ) : (
+      pages.map((pageTokens, p) => (
         <div
-          className="shadow-paper flex flex-col items-center justify-center gap-4 rounded-xl"
-          style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
+          key={p}
+          className="paper shadow-paper relative overflow-hidden rounded-xl"
+          style={{
+            width: PAGE_W,
+            height: PAGE_H,
+            background: paper.background,
+            padding: PADDING,
+          }}
         >
-          <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
-          <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
-          <ArrowDown className="size-4 animate-bounce text-zinc-300" />
+          {tokenFlow(pageTokens)}
+          <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
+            {p + 1} / {pages.length}
+          </span>
         </div>
-      </>
+      ))
     );
-  }
+
+  const contentH =
+    pages.length === 0 ? PAGE_H : pages.length * PAGE_H + (pages.length - 1) * PAGE_GAP;
 
   return (
     <>
       {measureNode}
-      <div className="flex flex-col items-center gap-6">
-        {pages.map((pageTokens, p) => (
-          <div
-            key={p}
-            className="paper shadow-paper relative overflow-hidden rounded-xl"
-            style={{
-              width: PAGE_W,
-              height: PAGE_H,
-              background: paper.background,
-              padding: PADDING,
-            }}
-          >
-            {tokenFlow(pageTokens)}
-            <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
-              {p + 1} / {pages.length}
-            </span>
-          </div>
-        ))}
+      <div ref={wrapRef} style={{ height: contentH * scale }}>
+        <div
+          className="flex flex-col items-center gap-6"
+          style={{ width: PAGE_W, transform: `scale(${scale})`, transformOrigin: "top left" }}
+        >
+          {content}
+        </div>
       </div>
     </>
   );
