@@ -166,6 +166,10 @@ function metrics(input: CapacityInput): Metrics {
   const count = perPageOf(glyphs * lines, input.script);
   const letterSpacingEm = input.gap === "tight" ? -0.04 : input.gap === "loose" ? 0.16 : 0;
   const fontBase = isWordScript(input.script) ? Math.max(LATIN_PX, pitch * 0.42) : pitch * 0.92;
+  // 拉丁手写字体的墨迹大约只占 em 的一半,字号要放大才够 4mm。
+  // 中日韩书法字几乎占满 em;再除 0.5 会高过行距,上下行叠在一起。
+  const emFill = isWordScript(input.script) ? 0.5 : 1;
+  const visual = Math.min(fontBase * sizeScale, pitch * 0.86);
   return {
     ...base,
     ...count,
@@ -174,7 +178,7 @@ function metrics(input: CapacityInput): Metrics {
     pitch,
     cell: null,
     gapLocked: false,
-    fontSize: Math.max(12, Math.round((fontBase * sizeScale) / 0.5)),
+    fontSize: Math.max(12, Math.round(visual / emFill)),
     letterSpacingEm,
   };
 }

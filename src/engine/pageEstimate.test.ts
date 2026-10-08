@@ -31,6 +31,17 @@ describe("estimate", () => {
     expect(estimate({ ...base, script: "de" }).perPage).toBe(176);
   });
 
+  it("中日韩字号不超过行距，避免上下行叠字", () => {
+    for (const script of ["zh", "ja", "ko"] as const) {
+      for (const size of ["small", "normal", "large"] as const) {
+        const est = estimate({ ...base, script, size, paper: "college" });
+        expect(est.fontSize).toBeLessThanOrEqual(est.pitch);
+        const wide = estimate({ ...base, script, size, paper: "kindergarten" });
+        expect(wide.fontSize).toBeLessThanOrEqual(wide.pitch);
+      }
+    }
+  });
+
   it("中文 college ruled 按字计，方格与原稿纸锁住字间距", () => {
     const zh = estimate({ ...base, script: "zh" });
     expect(zh.unit).toBe("char");
