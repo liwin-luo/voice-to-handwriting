@@ -67,7 +67,7 @@ export default async function BlogPostPage({
     dateModified: post?.updated,
     author: { "@type": "Person", name: author.name, url: `${SITE.url}/about` },
     publisher: { "@type": "Organization", name: ta("name"), url: SITE.url },
-    image: `${SITE.url}${post?.image ?? ""}`,
+    ...(post?.image ? { image: `${SITE.url}${post.image}` } : {}),
     mainEntityOfPage: localizedUrl(`/blog/${slug}`, locale),
   };
 

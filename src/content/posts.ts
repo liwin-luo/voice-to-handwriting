@@ -8,7 +8,7 @@ export interface Post {
   author: AuthorId;
   date: string; // 首发
   updated: string; // 最后更新(EEAT:展示维护状态)
-  image: string; // 题图(public/blog 下截图)
+  image?: string; // 题图(public/blog);缺省时列表卡片用标题占位
   i18n: Partial<Record<Locale, { title: string; description: string }>>;
 }
 
@@ -177,7 +177,6 @@ export const POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/toolbar.png",
     i18n: {
       zh: {
         title: "录音怎么免费转成手写笔记?浏览器本地方案实测",

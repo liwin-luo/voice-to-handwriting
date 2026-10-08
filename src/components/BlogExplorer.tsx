@@ -12,7 +12,7 @@ export interface BlogCardData {
   description: string;
   date: string;
   updated: string;
-  image: string;
+  image?: string;
   author: string;
   minutes: number;
   tools: string[];
@@ -26,6 +26,28 @@ export interface ToolOption {
 type SortKey = "newest" | "oldest" | "updated";
 
 const PAGE_SIZE = 12;
+
+/** 无题图时的封面:横线纸 + 装订线,标题写在纸面中央 */
+function TitleCover({ title, featured }: { title: string; featured: boolean }) {
+  return (
+    <span className="absolute inset-0 flex items-center overflow-hidden bg-[#f6f3ec] pr-5 pl-4">
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(to_bottom,transparent_0_27px,rgba(21,49,126,0.08)_27px_28px)]"
+      />
+      <span aria-hidden className="pointer-events-none absolute inset-y-3 left-6 w-px bg-[#e7b4b4]" />
+      <span
+        className={`relative w-full min-w-0 pl-5 font-semibold tracking-tight text-accent ${
+          featured
+            ? "text-[1.7rem] leading-[1.22] md:pl-6 md:text-[2.45rem] md:leading-[1.15]"
+            : "line-clamp-4 text-[1.5rem] leading-[1.28]"
+        }`}
+      >
+        {title}
+      </span>
+    </span>
+  );
+}
 
 /** 分页页码窗口:总数少时全部展示,多时以当前页为中心收拢 */
 function pageWindow(current: number, total: number): (number | "…")[] {
@@ -237,27 +259,33 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
                       featured ? "aspect-[16/9] md:aspect-auto md:w-1/2" : "aspect-[16/10] w-full"
                     }`}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={p.image}
-                      alt=""
-                      width={1440}
-                      height={900}
-                      loading={featured ? "eager" : "lazy"}
-                      decoding="async"
-                      className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
+                    {p.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={p.image}
+                        alt=""
+                        width={1440}
+                        height={900}
+                        loading={featured ? "eager" : "lazy"}
+                        decoding="async"
+                        className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <TitleCover title={p.title} featured={featured} />
+                    )}
                   </span>
                   <span
                     className={`flex flex-1 flex-col ${featured ? "justify-center gap-3 p-6 md:p-8" : "gap-2 p-5"}`}
                   >
-                    <span
-                      className={`font-semibold text-zinc-900 transition-colors group-hover:text-accent ${
-                        featured ? "text-xl md:text-2xl" : "text-[17px]"
-                      }`}
-                    >
-                      {p.title}
-                    </span>
+                    {p.image && (
+                      <span
+                        className={`font-semibold text-zinc-900 transition-colors group-hover:text-accent ${
+                          featured ? "text-xl md:text-2xl" : "text-[17px]"
+                        }`}
+                      >
+                        {p.title}
+                      </span>
+                    )}
                     <span
                       className={`text-sm leading-relaxed text-zinc-500 ${featured ? "" : "line-clamp-3"}`}
                     >

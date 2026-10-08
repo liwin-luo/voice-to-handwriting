@@ -122,7 +122,7 @@
 
 1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);动笔前先按选题簇选定写作角色,通读 `docs/personas/` 对应角色卡,按其文风规则写作;
 2. `registry.ts` 注册组件;
-3. `posts.ts` 登记元数据:`slug / author / date / updated / image` + i18n title/description;`author` **必填**(TS 类型限定只能取 `src/content/authors.ts` 已注册的角色,角色体系见 `docs/personas/README.md`);题图放 `public/blog/`(约 1440×900 横图,**必须**提交);
+3. `posts.ts` 登记元数据:`slug / author / date / updated / image` + i18n title/description;`author` **必填**(TS 类型限定只能取 `src/content/authors.ts` 已注册的角色,角色体系见 `docs/personas/README.md`);题图可选,有则放 `public/blog/`(约 1440×900 横图,**必须**提交),没有时列表卡片用标题占位;
 4. `related.ts` 登记 `RELATED[slug]`(§3.3)。
 
 漏 1–3 任一步会导致页面 404 或不进 sitemap;漏第 4 步会被自动校验拦截。
@@ -220,7 +220,7 @@
 | `BLOG_CONTENT` 与 `POSTS` 双向一致(不出现幽灵 slug) | §3.4 |
 | 每篇 POSTS 都有 `RELATED[slug]`,且 tools ≥ 1、路径都在 `TOOL_LABEL_KEY`、posts 都存在且非自身 | §3.3 |
 | 每个有正文的 (slug, locale) 都存在对应 MDX 源文件且恰好一个 H1 | §2.5、§3.4 |
-| 文章题图文件真实存在于 `public/` | §3.4 |
+| 文章题图若填写,文件真实存在于 `public/`;允许无题图 | §3.4 |
 
 人工抽查(改了页面级代码时):`npm run dev` 后抽查 en + 一个前缀语言的 view-source,确认 canonical/hreflang/JSON-LD 齐全;部署后抽查 `/sitemap.xml` 与 `npm run indexnow <url>`。
 

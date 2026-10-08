@@ -56,9 +56,9 @@ describe("规范 §3.4:POSTS 元数据", () => {
     expect(new Date(post.updated) >= new Date(post.date)).toBe(true);
   });
 
-  it.each(POSTS.map((p) => p.slug))("%s 题图真实存在于 public/", (slug) => {
+  it.each(POSTS.map((p) => p.slug))("%s 题图若有则真实存在于 public/", (slug) => {
     const post = POSTS.find((p) => p.slug === slug)!;
-    expect(post.image, `${slug} 缺 image 字段`).toBeTruthy();
+    if (!post.image) return;
     expect(existsSync(path.join(ROOT, "public", post.image)), `${post.image} 不存在`).toBe(true);
   });
 });
