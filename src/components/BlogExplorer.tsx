@@ -103,14 +103,11 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
   };
 
   const optionKey = toolOptions.map((o) => o.label).join("\0");
-  const showMore = !expanded && overflowing;
+  const showToggle = overflowing;
 
   // 按整行可用宽度计隐藏数,不读 clip 自身宽度(藏起的 chip 会离开文档流,clip 会变窄)。
+  // 展开按钮始终占「+N」的宽度,避免换成箭头后第一行再挤进一颗。
   useLayoutEffect(() => {
-    if (expanded) {
-      setVisibleCount((v) => (v === null ? v : null));
-      return;
-    }
     const measure = () => {
       const cluster = clusterRef.current;
       const clip = clipRef.current;
@@ -140,74 +137,72 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
     const ro = new ResizeObserver(measure);
     ro.observe(node);
     return () => ro.disconnect();
-  }, [expanded, optionKey, overflowing, hiddenCount]);
+  }, [optionKey, overflowing, hiddenCount]);
 
   const chip = (active: boolean) =>
     `btn h-8 whitespace-nowrap rounded-full border px-3.5 text-[13px] ${
       active ? "border-accent bg-accent text-white" : "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:text-zinc-900"
     }`;
 
-  // 收起时放不下的 chip 离开文档流,避免末颗被切掉一半;展开时全部回位
-  const concealed = (index: number) => !expanded && visibleCount != null && index >= visibleCount;
+  // 放不下的 chip 始终离开第一行,展开时原样排到下一行,第一行不重排
+  const concealed = (index: number) => visibleCount != null && index >= visibleCount;
   const activeIndex = tool == null ? 0 : toolOptions.findIndex((o) => o.href === tool) + 1;
+  const topics: { key: string; href: string | null; label: string }[] = [
+    { key: "all", href: null, label: t("filterAll") },
+    ...toolOptions.map((o) => ({ key: o.href, href: o.href, label: o.label })),
+  ];
+  const topicButton = (topic: (typeof topics)[number], hidden: boolean) => {
+    const active = topic.href === null ? tool === null : tool === topic.href;
+    return (
+      <button
+        key={topic.key}
+        type="button"
+        onClick={() => pickTool(topic.href)}
+        className={`${chip(active)} ${hidden ? "pointer-events-none invisible absolute" : ""}`}
+        aria-pressed={active}
+        aria-hidden={hidden || undefined}
+        tabIndex={hidden ? -1 : 0}
+      >
+        {topic.label}
+      </button>
+    );
+  };
 
   return (
     <section>
-      {/* 筛选 + 排序工具栏:筛选行单行裁切,+N 展开 */}
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div ref={clusterRef} className="relative flex w-full min-w-0 items-center gap-2 md:w-auto md:flex-1">
-          <Funnel className="size-4 shrink-0 text-zinc-400" aria-hidden />
-          <div
-            ref={clipRef}
-            className={`flex min-w-0 gap-2 ${expanded ? "flex-wrap" : "flex-nowrap overflow-hidden"}`}
-          >
+      {/* 筛选 + 排序:第一行固定,+N 展开后多出来的主题排到下一行 */}
+      <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+        <div className="flex w-full min-w-0 flex-col gap-2 md:w-auto md:flex-1">
+          <div ref={clusterRef} className="relative flex min-w-0 items-center gap-2">
+            <Funnel className="size-4 shrink-0 text-zinc-400" aria-hidden />
+            <div ref={clipRef} className="flex min-w-0 flex-nowrap gap-2 overflow-hidden">
+              {topics.map((topic, index) => topicButton(topic, concealed(index)))}
+            </div>
             <button
+              ref={moreRef}
               type="button"
-              onClick={() => pickTool(null)}
-              className={`${chip(tool === null)} ${concealed(0) ? "pointer-events-none invisible absolute" : ""}`}
-              aria-pressed={tool === null}
-              aria-hidden={concealed(0) ? true : undefined}
-              tabIndex={concealed(0) ? -1 : 0}
+              onClick={() => setExpanded((open) => !open)}
+              className={`${chip(!expanded && concealed(activeIndex))} shrink-0 ${showToggle ? "relative" : "pointer-events-none absolute opacity-0"}`}
+              aria-hidden={showToggle ? undefined : true}
+              aria-expanded={showToggle ? expanded : undefined}
+              aria-label={expanded ? t("fewerFilters") : t("moreFilters", { n: Math.max(hiddenCount, 1) })}
+              tabIndex={showToggle ? 0 : -1}
             >
-              {t("filterAll")}
+              <span aria-hidden className={`inline-flex items-center gap-1 ${expanded ? "invisible" : ""}`}>
+                +{Math.max(hiddenCount, 1)}
+                <CaretDown className="size-3.5" />
+              </span>
+              {expanded && (
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <CaretUp className="size-3.5" aria-hidden />
+                </span>
+              )}
             </button>
-            {toolOptions.map((o, i) => (
-              <button
-                key={o.href}
-                type="button"
-                onClick={() => pickTool(o.href)}
-                className={`${chip(tool === o.href)} ${concealed(i + 1) ? "pointer-events-none invisible absolute" : ""}`}
-                aria-pressed={tool === o.href}
-                aria-hidden={concealed(i + 1) ? true : undefined}
-                tabIndex={concealed(i + 1) ? -1 : 0}
-              >
-                {o.label}
-              </button>
-            ))}
           </div>
-          <button
-            ref={moreRef}
-            type="button"
-            onClick={() => setExpanded(true)}
-            className={`${chip(concealed(activeIndex))} shrink-0 ${showMore ? "" : "pointer-events-none absolute opacity-0"}`}
-            aria-hidden={showMore ? undefined : true}
-            aria-expanded={showMore ? false : undefined}
-            aria-label={t("moreFilters", { n: Math.max(hiddenCount, 1) })}
-            tabIndex={showMore ? 0 : -1}
-          >
-            +{Math.max(hiddenCount, 1)}
-            <CaretDown className="size-3.5" aria-hidden />
-          </button>
-          {expanded && overflowing && (
-            <button
-              type="button"
-              onClick={() => setExpanded(false)}
-              className={`${chip(false)} shrink-0`}
-              aria-expanded
-              aria-label={t("fewerFilters")}
-            >
-              <CaretUp className="size-3.5" aria-hidden />
-            </button>
+          {expanded && visibleCount != null && visibleCount < topics.length && (
+            <div className="flex flex-wrap gap-2 pl-6">
+              {topics.slice(visibleCount).map((topic) => topicButton(topic, false))}
+            </div>
           )}
         </div>
         <div className="flex shrink-0 items-center gap-2">
