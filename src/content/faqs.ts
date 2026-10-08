@@ -1872,3 +1872,118 @@ export const DOCTOR_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /handwriting-workbook-generator 工具页 FAQ(8 语言) */
+export const WORKBOOK_FAQS: FaqItem[] = [
+  {
+    id: "workbook-free",
+    i18n: {
+      en: {
+        q: "Is the workbook generator free?",
+        a: "Yes — no signup, no watermark, unlimited downloads. Each workbook exports as a single Letter-size PDF with a cover page and one page group per word, ready to print at home or school.",
+      },
+      zh: {
+        q: "练习册生成器免费吗?",
+        a: "免费——无需注册、没有水印、下载不限次。每本练习册导出为一个 Letter 尺寸 PDF,含封面和每词一组练习页,在家或学校都能直接打印。",
+      },
+      ja: {
+        q: "ワークブック生成器は無料ですか?",
+        a: "はい——登録不要、透かしなし、ダウンロード無制限。ワークブックは表紙つきのレターサイズ PDF 1 冊として書き出され、家庭でも学校でもそのまま印刷できます。",
+      },
+      ko: {
+        q: "워크북 생성기는 무료인가요?",
+        a: "네 — 가입도 워터마크도 없고 다운로드 횟수 제한도 없습니다. 워크북은 표지와 단어별 연습 페이지를 포함한 Letter 규격 PDF 한 파일로 내보내져 집이나 학교에서 바로 인쇄할 수 있어요.",
+      },
+      es: {
+        q: "¿El generador de cuadernos es gratis?",
+        a: "Sí — sin registro, sin marca de agua y descargas ilimitadas. Cada cuaderno se exporta como un PDF tamaño Carta con portada y un grupo de páginas por palabra, listo para imprimir en casa o en la escuela.",
+      },
+      de: {
+        q: "Ist der Übungsheft-Generator kostenlos?",
+        a: "Ja — ohne Anmeldung, ohne Wasserzeichen, unbegrenzte Downloads. Jedes Heft wird als ein Letter-PDF mit Deckblatt und einer Seitengruppe pro Wort exportiert, druckfertig für Zuhause oder die Schule.",
+      },
+      fr: {
+        q: "Le générateur de cahier est-il gratuit ?",
+        a: "Oui — sans inscription, sans filigrane, téléchargements illimités. Chaque cahier est exporté en un seul PDF format Letter avec couverture et un groupe de pages par mot, prêt à imprimer à la maison ou en classe.",
+      },
+      pt: {
+        q: "O gerador de caderno é grátis?",
+        a: "Sim — sem cadastro, sem marca d'água, downloads ilimitados. Cada caderno é exportado como um único PDF tamanho Letter com capa e um grupo de páginas por palavra, pronto para imprimir em casa ou na escola.",
+      },
+    },
+  },
+  {
+    id: "workbook-what-to-put",
+    i18n: {
+      en: {
+        q: "What should I put in my handwriting workbook?",
+        a: "One word per line, up to 60 words. Popular lists: the alphabet for preschoolers, your child's name, Dolch or Fry sight words for kindergarten, this week's spelling list, or themed words (animals, colors, holidays). Each word gets an example row plus traceable rows on three-line guides.",
+      },
+      zh: {
+        q: "练习册里放什么内容好?",
+        a: "每行一个词,最多 60 个。常见用法:学龄前放字母表、放孩子的名字,幼儿园放 Sight Words 高频词,小学生放本周拼写词表,或按主题来一组(动物、颜色、节日)。每个词都会生成一行示例和多行描红,配三线格。",
+      },
+      ja: {
+        q: "ワークブックには何を入れればいい?",
+        a: "1 行に 1 語、最大 60 語。定番は:未就学児のアルファベット、お子さまの名前、小学低学年のスペリングリスト、テーマごとの単語(動物・色・行事)など。各単語にお手本行となぞり行が 3 線ガイド付きで生成されます。",
+      },
+      ko: {
+        q: "워크북에 무엇을 넣으면 좋을까요?",
+        a: "한 줄에 한 단어, 최대 60개. 인기 목록: 유아 알파벳, 아이 이름, 저학년 이번 주 단어 목록, 테마 단어(동물·색·명절) 등. 각 단어마다 3선 가이드 위에 예시 줄과 따라 쓰기 줄이 만들어집니다.",
+      },
+      es: {
+        q: "¿Qué pongo en mi cuaderno de caligrafía?",
+        a: "Una palabra por línea, hasta 60. Listas populares: el alfabeto para preescolar, el nombre de tu hijo, sight words de kinder, la lista de ortografía semanal o palabras por tema (animales, colores, fiestas). Cada palabra recibe una fila de ejemplo y filas para repasar sobre guía de tres líneas.",
+      },
+      de: {
+        q: "Was gehört in mein Übungsheft?",
+        a: "Ein Wort pro Zeile, bis zu 60 Wörter. Beliebte Listen: das Alphabet für Vorschulkinder, der Name deines Kindes, die Wochenliste für die Schule oder Themenwörter (Tiere, Farben, Feste). Jedes Wort bekommt eine Beispielzeile plus Spurzeilen auf Drei-Linien-Guides.",
+      },
+      fr: {
+        q: "Que mettre dans mon cahier d'écriture ?",
+        a: "Un mot par ligne, jusqu'à 60. Listes populaires : l'alphabet pour les maternelles, le prénom de votre enfant, la liste d'orthographe de la semaine ou des mots par thème (animaux, couleurs, fêtes). Chaque mot reçoit une ligne modèle et des lignes à repasser sur guides trois lignes.",
+      },
+      pt: {
+        q: "O que coloco no meu caderno de caligrafia?",
+        a: "Uma palavra por linha, até 60. Listas populares: o alfabeto para a pré-escola, o nome do seu filho, a lista de ortografia da semana ou palavras por tema (animais, cores, datas). Cada palavra ganha uma linha de exemplo e linhas para treinar sobre guia de três linhas.",
+      },
+    },
+  },
+  {
+    id: "workbook-print-cursive",
+    i18n: {
+      en: {
+        q: "Can I make a print or a cursive workbook?",
+        a: "Both. Pick any font in the font menu — Patrick Hand for clean print practice, Cedarville Cursive or Dancing Script for cursive, or Kalam for a everyday pen look. The guide rows (top line, dashed midline, baseline) stay the same either way.",
+      },
+      zh: {
+        q: "能做印刷体或连笔体的练习册吗?",
+        a: "都可以。在字体菜单里任选:Patrick Hand 适合干净利落的印刷体练习,Cedarville Cursive / Dancing Script 适合连笔体,Kalam 是日常手写感。无论哪种,三线格(顶线、虚线中线、基线)保持一致。",
+      },
+      ja: {
+        q: "印刷体でも筆記体でも作れますか?",
+        a: "どちらも OK。フォントメニューで好きな書体を:きれいな印刷体なら Patrick Hand、筆記体なら Cedarville Cursive や Dancing Script、日常の手書き風なら Kalam。3 線ガイド(頂線・点線中央線・ベースライン)はどの書体でも同じです。",
+      },
+      ko: {
+        q: "인쇄체나 필기체 워크북 모두 만들 수 있나요?",
+        a: "둘 다 됩니다. 글꼴 메뉴에서 아무거나 고르세요 — 깔끔한 인쇄체 연습은 Patrick Hand, 필기체는 Cedarville Cursive나 Dancing Script, 일상 손글씨 느낌은 Kalam. 가이드 줄(윗선, 점선 중앙선, 베이스라인)은 어느 글꼴이든 동일합니다.",
+      },
+      es: {
+        q: "¿Puedo hacer un cuaderno en imprenta o en cursiva?",
+        a: "Ambos. Elige cualquier tipografía del menú — Patrick Hand para imprenta limpia, Cedarville Cursive o Dancing Script para cursiva, o Kalam para un aire de pluma cotidiana. Las guías (línea superior, media discontinua, base) se mantienen igual.",
+      },
+      de: {
+        q: "Geht ein Heft in Druckschrift oder Schreibschrift?",
+        a: "Beides. Wähle eine Schrift im Menü — Patrick Hand für saubere Druckschrift, Cedarville Cursive oder Dancing Script für Schreibschrift, oder Kalam für den Alltags-Stift-Look. Die Guide-Zeilen (Topline, gestrichelte Mittellinie, Grundlinie) bleiben immer gleich.",
+      },
+      fr: {
+        q: "Cahier en écriture droite ou en cursive ?",
+        a: "Les deux. Choisissez n'importe quelle police du menu — Patrick Hand pour une droite bien nette, Cedarville Cursive ou Dancing Script pour la cursive, ou Kalam pour un style stylo du quotidien. Les guides (ligne du haut, médiane pointillée, ligne de base) restent identiques.",
+      },
+      pt: {
+        q: "Dá para fazer caderno em letra de fôrma ou cursiva?",
+        a: "Os dois. Escolha qualquer fonte no menu — Patrick Hand para fôrma limpa, Cedarville Cursive ou Dancing Script para cursiva, ou Kalam para um ar de caneta do dia a dia. As guias (linha de cima, linha do meio tracejada, base) ficam iguais em qualquer fonte.",
+      },
+    },
+  },
+];

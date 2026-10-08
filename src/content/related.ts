@@ -11,6 +11,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/daily-cursive-handwriting-practice": "dailyCursive",
   "/handwriting-personality-quiz": "quiz",
   "/doctor-handwriting-generator": "doctor",
+  "/handwriting-workbook-generator": "workbook",
 };
 
 export interface RelatedConfig {

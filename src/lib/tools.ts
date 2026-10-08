@@ -37,6 +37,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
       { href: "/writing-practice", navKey: "writingPractice", metaKey: "writing" },
       { href: "/word-work", navKey: "wordWork", metaKey: "wordwork" },
       { href: "/name-coloring", navKey: "coloring", metaKey: "coloring" },
+      { href: "/handwriting-workbook-generator", navKey: "workbook", metaKey: "workbook" },
     ],
   },
   {

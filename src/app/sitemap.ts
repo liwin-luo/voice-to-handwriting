@@ -6,7 +6,7 @@ import { routing } from "@/i18n/routing";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
 
 /** /history 是本地工具页,薄内容不进 sitemap */
-const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-worksheets", "/daily-cursive-handwriting-practice", "/handwriting-personality-quiz", "/doctor-handwriting-generator", "/printable-paper", "/name-tracing", "/word-work", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact"];
+const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-worksheets", "/daily-cursive-handwriting-practice", "/handwriting-personality-quiz", "/doctor-handwriting-generator", "/handwriting-workbook-generator", "/printable-paper", "/name-tracing", "/word-work", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact"];
 const YEARLY_PATHS = new Set(["/privacy", "/terms", "/contact", "/about"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {

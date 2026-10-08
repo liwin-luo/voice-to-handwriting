@@ -72,7 +72,10 @@
       "title": "Gerador de letra de médico — Receita falsa num clique (de brincadeira)",
       "description": "Digite ou dite qualquer coisa e este gerador de letra de médico transforma em rabisco ilegível de receita numa folha com ℞. Grátis, exporta PNG ou PDF."
     },
-    "quiz": {
+    "workbook": {
+        "title": "Gerador de caderno de caligrafia (PDF imprimível)",
+        "description": "Crie em segundos um caderno de caligrafia em PDF: capa, o alfabeto ou sua lista de palavras, linha de exemplo e linhas para treinar com guia de três linhas. Grátis, sem cadastro, sem marca d'água."
+    },    "quiz": {
       "title": "Quiz de personalidade pela letra — O que a sua escrita diz sobre você?",
       "description": "12 perguntas visuais em cerca de 2 minutos: um perfil divertido e dicas de prática sob medida. Grátis, sem upload de foto e sem cadastro."
     },
@@ -97,6 +100,7 @@
     "wordWork": "Fichas de palavras",
     "quiz": "Quiz de letra",
     "doctor": "Letra de médico",
+    "workbook": "Caderno",
     "allTools": "Todas as ferramentas",
     "groupWrite": "Escrever & gerar",
     "groupPractice": "Folhas de prática & impressão",
@@ -330,7 +334,24 @@
     "faqTitle": "Perguntas frequentes",
     "disclaimer": "Só para diversão — o resultado é uma pegadinha, não um documento médico. Não use para enganar ninguém."
   },
-  "cursive": {
+  "workbook": {
+      "title": "Gerador de caderno de caligrafia",
+      "intro": "Um caderno inteiro num clique: capa, um grupo por palavra (linha de exemplo + linhas para treinar), exportado como um único PDF.",
+      "defaultTitle": "Meu caderno de caligrafia",
+      "titleLabel": "Título do caderno",
+      "wordsLabel": "Lista de palavras — uma por linha",
+      "wordsPlaceholder": "apple\nball\ncat",
+      "font": "Fonte",
+      "showCover": "Capa",
+      "showExample": "Linha de exemplo",
+      "downloadPdf": "Baixar caderno em PDF",
+      "pageN": "Página {n}",
+      "stats": "{pages} páginas · {words} palavras",
+      "coverBelongsTo": "Este caderno pertence a:",
+      "seoTitle": "Cadernos de caligrafia imprimíveis para casa e sala de aula",
+      "seoText": "O caderno estrutura o treino: cada palavra com a linha de exemplo primeiro, depois repetições para treinar sobre guia de três linhas com linha do meio tracejada.\n\nComo usar:cole sua lista — o alfabeto para a pré-escola, sight words para o 1º ano, a lista de ortografia da semana — escolha letra de fôrma ou cursiva e baixe o PDF. Imprima tudo ou só as páginas que faltarem.\n\nIdeias:um caderno com o nome do seu filho, um caderno de férias, ou um conjunto para a turma com a lista de cada aluno. Tudo no navegador — sem cadastro, sem marca d'água.",
+      "faqTitle": "Perguntas frequentes"
+  },  "cursive": {
     "title": "Gerador de letra cursiva",
     "intro": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar.",
     "seoTitle": "Gerador grátis de letra cursiva",
