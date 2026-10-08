@@ -71,6 +71,10 @@
     "quiz": {
       "title": "Quiz de personalidade pela letra — O que a sua escrita diz sobre você?",
       "description": "12 perguntas visuais em cerca de 2 minutos: um perfil divertido e dicas de prática sob medida. Grátis, sem upload de foto e sem cadastro."
+    },
+    "tools": {
+      "title": "Todas as ferramentas de letra grátis",
+      "description": "Tudo num lugar: voz para letra, cursiva, caligrafia para calcar, folhas de prática e o quiz de personalidade."
     }
   },
   "nav": {
@@ -79,7 +83,6 @@
     "history": "Histórico",
     "blog": "Blog",
     "about": "Sobre",
-    "printables": "Ferramentas de impressão",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nomes",
     "cursive": "Letra cursiva",
@@ -88,7 +91,11 @@
     "writingPractice": "Caligrafia CJK",
     "coloring": "Gerador de páginas para colorir com nomes",
     "wordWork": "Fichas de palavras",
-    "quiz": "Quiz de letra"
+    "quiz": "Quiz de letra",
+    "allTools": "Todas as ferramentas",
+    "groupWrite": "Escrever & gerar",
+    "groupPractice": "Folhas de prática & impressão",
+    "groupFun": "Só por diversão"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -106,7 +113,8 @@
       "nameTracingDesc": "Fichas personalizadas para crianças, homeschool e sala de aula.",
       "cursiveTitle": "Letra cursiva",
       "cursiveDesc": "Digite ou fale — cursiva fluida, imprimível para praticar."
-    }
+    },
+    "allToolsLink": "Ver todas as ferramentas grátis"
   },
   "tool": {
     "speak": "Toque e fale",
@@ -398,5 +406,9 @@
     "faqTitle": "Perguntas frequentes",
     "seoTitle": "Fichas de palavras grátis de qualquer lista",
     "seoText": "Professores estão afogados em fichas geradas por IA cheias de erros. Este gerador é determinístico: a mesma lista sempre produz as mesmas páginas limpas e imprimíveis — escrever três vezes mais completar a letra que falta, com fontes de caligrafia à escolha, tamanho Letter exato e sem marca d'água."
+  },
+  "tools": {
+    "title": "Todas as ferramentas de letra grátis",
+    "intro": "Tudo do site num só lugar: voz para letra, cursiva, folhas de prática para imprimir e um quiz de letra só por diversão. Tudo grátis, sem cadastro — o que você escreve não sai do navegador."
   }
 }

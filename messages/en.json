@@ -71,6 +71,10 @@
     "quiz": {
       "title": "Free Handwriting Personality Quiz — What Does Your Handwriting Say About You?",
       "description": "Answer 12 quick questions about your handwriting and get a fun personality profile with practice tips. Free, no upload, no signup — about 2 minutes."
+    },
+    "tools": {
+      "title": "All Free Handwriting Tools",
+      "description": "Every free handwriting tool in one place: voice-to-handwriting, cursive, tracing, practice sheets and the personality quiz."
     }
   },
   "nav": {
@@ -79,7 +83,6 @@
     "about": "About",
     "history": "History",
     "templates": "Templates",
-    "printables": "Printables",
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
     "cursive": "Cursive Writing",
@@ -88,7 +91,11 @@
     "writingPractice": "Writing Practice",
     "coloring": "Name Coloring",
     "wordWork": "Word Work",
-    "quiz": "Handwriting Quiz"
+    "quiz": "Handwriting Quiz",
+    "allTools": "All tools",
+    "groupWrite": "Write & generate",
+    "groupPractice": "Practice sheets & printing",
+    "groupFun": "Just for fun"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -106,7 +113,8 @@
       "nameTracingDesc": "Personalized tracing sheets for kids, homeschool and classroom.",
       "cursiveTitle": "Cursive Practice",
       "cursiveDesc": "Type or speak anything in flowing cursive — and print to trace."
-    }
+    },
+    "allToolsLink": "Browse all free tools"
   },
   "tool": {
     "speak": "Tap to speak",
@@ -398,5 +406,9 @@
     "faqTitle": "Frequently asked questions",
     "seoTitle": "Free word work worksheets from any spelling list",
     "seoText": "Teachers are drowning in AI-generated worksheets full of errors. This generator is deterministic: the same list always produces the same clean, printable pages — write-it-three-times plus a fill-in-the-missing-letter activity, in your choice of handwriting fonts, at exact letter size with no watermark."
+  },
+  "tools": {
+    "title": "All free handwriting tools",
+    "intro": "Everything on this site in one place — speak-to-handwriting, cursive, printable practice sheets, and a just-for-fun handwriting quiz. All free, no signup, and nothing you write leaves your browser."
   }
 }

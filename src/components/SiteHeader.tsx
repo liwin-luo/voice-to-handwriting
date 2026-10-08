@@ -3,10 +3,19 @@ import Logo from "./Logo";
 import NavDropdown from "./NavDropdown";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitch from "./LocaleSwitch";
+import { TOOL_GROUPS } from "@/lib/tools";
 
 export default async function SiteHeader() {
   const t = await getTranslations("nav");
   const brand = await getTranslations("meta");
+  const groups = TOOL_GROUPS.map((g) => ({
+    label: t(g.labelKey),
+    items: g.tools.map((tool) => ({
+      href: tool.href,
+      label: tool.brand ? brand("brand") : t(tool.navKey),
+    })),
+  }));
+
   return (
     <header className="sticky top-0 z-30 border-b border-zinc-200/80 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 text-sm">
@@ -18,20 +27,7 @@ export default async function SiteHeader() {
           <Link href="/" className="transition-colors hover:text-zinc-950">
             {t("tool")}
           </Link>
-          <NavDropdown
-            label={t("printables")}
-            items={[
-              { href: "/printable-paper", label: t("printablePaper") },
-              { href: "/name-tracing", label: t("nameTracing") },
-              { href: "/cursive", label: t("cursive") },
-              { href: "/cursive-worksheets", label: t("cursiveWorks") },
-              { href: "/daily-cursive-handwriting-practice", label: t("dailyCursive") },
-              { href: "/writing-practice", label: t("writingPractice") },
-              { href: "/name-coloring", label: t("coloring") },
-              { href: "/word-work", label: t("wordWork") },
-              { href: "/handwriting-personality-quiz", label: t("quiz") },
-            ]}
-          />
+          <NavDropdown label={t("allTools")} groups={groups} />
           <Link href="/history" className="transition-colors hover:text-zinc-950">
             {t("history")}
           </Link>

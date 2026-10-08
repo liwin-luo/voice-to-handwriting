@@ -71,6 +71,10 @@
     "quiz": {
       "title": "Quiz de personnalité par l'écriture — Que dit votre écriture sur vous ?",
       "description": "12 questions visuelles en 2 minutes environ : un profil amusant et des conseils d'entraînement personnalisés. Gratuit, sans photo, sans inscription."
+    },
+    "tools": {
+      "title": "Tous les outils d'écriture gratuits",
+      "description": "Tout au même endroit : voix vers écriture, cursive, modèles à reproduire, feuilles d'exercices et le quiz de personnalité."
     }
   },
   "nav": {
@@ -79,7 +83,6 @@
     "history": "Historique",
     "blog": "Blog",
     "about": "À propos",
-    "printables": "Outils d'impression",
     "printablePaper": "Papier à imprimer",
     "nameTracing": "Fiches de prénoms",
     "cursive": "Écriture cursive",
@@ -88,7 +91,11 @@
     "writingPractice": "Écriture CJK",
     "coloring": "Générateur de pages à colorier avec prénoms",
     "wordWork": "Fiches de mots",
-    "quiz": "Quiz d'écriture"
+    "quiz": "Quiz d'écriture",
+    "allTools": "Tous les outils",
+    "groupWrite": "Écrire & générer",
+    "groupPractice": "Feuilles d'exercices & impression",
+    "groupFun": "Pour le fun"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -106,7 +113,8 @@
       "nameTracingDesc": "Fiches personnalisées pour enfants, école à la maison et classe.",
       "cursiveTitle": "Écriture cursive",
       "cursiveDesc": "Tapez ou dictez — cursive fluide, imprimable pour vous entraîner."
-    }
+    },
+    "allToolsLink": "Voir tous les outils gratuits"
   },
   "tool": {
     "speak": "Appuyer et parler",
@@ -398,5 +406,9 @@
     "faqTitle": "Questions fréquentes",
     "seoTitle": "Fiches de mots gratuites à partir de n'importe quelle liste",
     "seoText": "Les enseignants sont submergés de fiches générées par IA pleines d'erreurs. Ce générateur est déterministe : la même liste produit toujours les mêmes pages propres et imprimables — écrire trois fois plus lettres manquantes, avec les polices d'écriture au choix, au format Letter exact et sans filigrane."
+  },
+  "tools": {
+    "title": "Tous les outils d'écriture gratuits",
+    "intro": "Tout le site au même endroit : voix vers écriture, cursive, feuilles d'exercices à imprimer et un quiz d'écriture juste pour le fun. Tout est gratuit, sans inscription — ce que vous écrivez ne quitte pas votre navigateur."
   }
 }

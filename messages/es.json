@@ -71,6 +71,10 @@
     "quiz": {
       "title": "Test de personalidad por tu letra — ¿Qué dice tu escritura sobre ti?",
       "description": "12 preguntas visuales de unos 2 minutos: un perfil divertido y consejos de práctica a medida. Gratis, sin subir fotos y sin registro."
+    },
+    "tools": {
+      "title": "Todas las herramientas de escritura gratis",
+      "description": "Todo en un sitio: voz a letra, cursiva, calcos, hojas de práctica y el test de personalidad."
     }
   },
   "nav": {
@@ -79,7 +83,6 @@
     "about": "Acerca de",
     "history": "Historial",
     "templates": "Plantillas",
-    "printables": "Herramientas de impresión",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nombres",
     "cursive": "Letra cursiva",
@@ -88,7 +91,11 @@
     "writingPractice": "Caligrafía CJK",
     "coloring": "Generador de páginas para colorear con nombres",
     "wordWork": "Fichas de palabras",
-    "quiz": "Test de letra"
+    "quiz": "Test de letra",
+    "allTools": "Todas las herramientas",
+    "groupWrite": "Escribir y generar",
+    "groupPractice": "Hojas de práctica e impresión",
+    "groupFun": "Solo por diversión"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -106,7 +113,8 @@
       "nameTracingDesc": "Fichas personalizadas para niños, homeschool y clase.",
       "cursiveTitle": "Letra cursiva",
       "cursiveDesc": "Escribe o habla y lo convierte en cursiva fluida. Imprime para practicar."
-    }
+    },
+    "allToolsLink": "Ver todas las herramientas gratis"
   },
   "tool": {
     "speak": "Toca y habla",
@@ -398,5 +406,9 @@
     "faqTitle": "Preguntas frecuentes",
     "seoTitle": "Fichas de palabras gratis desde cualquier lista",
     "seoText": "Los docentes están ahogados en fichas generadas por IA llenas de errores. Este generador es determinista: la misma lista siempre produce las mismas páginas limpias e imprimibles — escribir tres veces más completar la letra que falta, con fuentes de caligrafía a elegir, tamaño Letter exacto y sin marca de agua."
+  },
+  "tools": {
+    "title": "Todas las herramientas de escritura gratis",
+    "intro": "Todo el sitio en un lugar: voz a letra, cursiva, hojas de práctica para imprimir y un test de letra solo por diversión. Todo gratis, sin registro: lo que escribes no sale de tu navegador."
   }
 }

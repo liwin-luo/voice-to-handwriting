@@ -9,17 +9,23 @@ export interface NavItem {
   label: string;
 }
 
-/** 页头下拉菜单:悬停/点击展开,移动端点击可用 */
-export default function NavDropdown({
-  label,
-  items,
-}: {
+export interface NavGroup {
+  /** 分组标签(已在父组件翻译好) */
   label: string;
   items: NavItem[];
+}
+
+/** 页头分组下拉菜单:悬停/点击展开,移动端点击可用 */
+export default function NavDropdown({
+  label,
+  groups,
+}: {
+  label: string;
+  groups: NavGroup[];
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isActive = items.some((i) => pathname === i.href);
+  const isActive = groups.some((g) => g.items.some((i) => pathname === i.href));
 
   return (
     <div
@@ -30,6 +36,7 @@ export default function NavDropdown({
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-haspopup="menu"
         className={`flex cursor-pointer items-center gap-1 transition-colors hover:text-zinc-950 ${
           isActive ? "text-zinc-950" : "text-zinc-600"
         }`}
@@ -43,15 +50,29 @@ export default function NavDropdown({
           className="absolute left-0 top-full z-40 pt-2"
           onClick={() => setOpen(false)}
         >
-          <div className="w-56 rounded-xl border border-zinc-200 bg-white p-1.5 shadow-[0_16px_40px_-16px_rgba(23,23,23,0.25)]">
-            {items.map((i) => (
-              <Link
-                key={i.href}
-                href={i.href}
-                className="block rounded-lg px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
-              >
-                {i.label}
-              </Link>
+          <div
+            role="menu"
+            className="w-64 rounded-xl border border-zinc-200 bg-white p-2 shadow-[0_16px_40px_-16px_rgba(23,23,23,0.25)]"
+          >
+            {groups.map((g, gi) => (
+              <div key={g.label} className={gi > 0 ? "mt-1 border-t border-zinc-100 pt-1.5" : ""}>
+                <p
+                  aria-hidden
+                  className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wide text-zinc-400"
+                >
+                  {g.label}
+                </p>
+                {g.items.map((i) => (
+                  <Link
+                    key={i.href}
+                    href={i.href}
+                    role="menuitem"
+                    className="block rounded-lg px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
+                  >
+                    {i.label}
+                  </Link>
+                ))}
+              </div>
             ))}
           </div>
         </div>

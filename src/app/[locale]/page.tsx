@@ -67,6 +67,12 @@ export default async function HomePage({
       <footer className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400">
         <span>{t("footerNote")}</span>
         <Link
+          href="/tools"
+          className="text-accent underline underline-offset-2 hover:text-accent-strong"
+        >
+          {t("allToolsLink")}
+        </Link>
+        <Link
           href="/blog"
           className="text-accent underline underline-offset-2 hover:text-accent-strong"
         >

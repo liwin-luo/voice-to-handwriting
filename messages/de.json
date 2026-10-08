@@ -71,6 +71,10 @@
     "quiz": {
       "title": "Handschrift-Persönlichkeitsquiz — Was sagt deine Handschrift über dich?",
       "description": "12 visuelle Fragen in etwa 2 Minuten: ein Spaß-Profil plus passende Übungstipps. Kostenlos, ohne Foto-Upload, ohne Anmeldung."
+    },
+    "tools": {
+      "title": "Alle kostenlosen Handschrift-Werkzeuge",
+      "description": "Alles an einem Ort: Sprache-zu-Handschrift, Schreibschrift, Spurenvorlagen, Übungsblätter und das Persönlichkeitsquiz."
     }
   },
   "nav": {
@@ -79,7 +83,6 @@
     "history": "Verlauf",
     "blog": "Blog",
     "about": "Über",
-    "printables": "Drucktools",
     "printablePaper": "Druckpapier-Vorlagen",
     "nameTracing": "Schreibübungsblätter",
     "cursive": "Schreibschrift-Generator",
@@ -88,7 +91,11 @@
     "writingPractice": "Schreibübungen CJK",
     "coloring": "Namens-Malvorlagen-Generator",
     "wordWork": "Wortübungsblätter",
-    "quiz": "Handschrift-Quiz"
+    "quiz": "Handschrift-Quiz",
+    "allTools": "Alle Werkzeuge",
+    "groupWrite": "Schreiben & Generieren",
+    "groupPractice": "Übungsblätter & Drucken",
+    "groupFun": "Nur zum Spaß"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -106,7 +113,8 @@
       "nameTracingDesc": "Personalisierte Übungsblätter für Kinder, Homeschooling und Klasse.",
       "cursiveTitle": "Schreibschrift-Generator",
       "cursiveDesc": "Tippen oder sprechen — fließende Schreibschrift, zum Üben druckbar."
-    }
+    },
+    "allToolsLink": "Alle kostenlosen Werkzeuge ansehen"
   },
   "tool": {
     "speak": "Tippen & sprechen",
@@ -398,5 +406,9 @@
     "faqTitle": "Häufige Fragen",
     "seoTitle": "Kostenlose Wortübungsblätter aus jeder Wortliste",
     "seoText": "Lehrkräfte ertrinken in KI-generierten Arbeitsblättern voller Fehler. Dieser Generator ist deterministisch: Dieselbe Liste erzeugt immer dieselben sauberen, druckbaren Seiten — dreimal schreiben plus fehlenden Buchstaben ergänzen, mit Handschrift-Schriften nach Wahl, in exakter Letter-Größe und ohne Wasserzeichen."
+  },
+  "tools": {
+    "title": "Alle kostenlosen Handschrift-Werkzeuge",
+    "intro": "Alle Werkzeuge dieser Seite an einem Ort: Sprache-zu-Handschrift, Schreibschrift, druckbare Übungsblätter und ein spaßiges Schrift-Quiz. Alles kostenlos, ohne Anmeldung — was du schreibst, bleibt im Browser."
   }
 }
