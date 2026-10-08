@@ -50,3 +50,6 @@ vth-debug*.mjs
 
 # playwright test artifacts
 /test-results
+
+# zcode local session data
+/.zcode/
