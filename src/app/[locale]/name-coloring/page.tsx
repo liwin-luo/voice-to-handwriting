@@ -8,6 +8,7 @@ import ShareBar from "@/components/ShareBar";
 import ToolFaq from "@/components/ToolFaq";
 import { COLORING_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
+import { coloringFontId, defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -44,7 +45,7 @@ export default async function NameColoringPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <NameColoringGenerator />
+        <NameColoringGenerator defaultFormat={defaultPageFormat(locale)} defaultFontId={coloringFontId(locale)} />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "声で手書き文字に - Voice to Handwriting",
+    "title": "手書きジェネレーター — 話すか入力して印刷",
     "description": "ページに向かって話すだけで、リアルタイムに文字起こしされ、本物の手書き風に変換。PNG / PDF で書き出せる無料オンライン手書きジェネレーターです。",
     "about": {
       "title": "このサイトについて",
@@ -65,7 +65,7 @@
       "description": "任意のスペリングリストを2種類のプリントに:各単語を3回書く+欠けている文字を埋める。決定的出力、無料・透かしなし・登録不要。"
     },
     "doctor": {
-      "title": "医者字ジェネレーター — 天書処方箋を一瞬で(ネタ用)",
+      "title": "医者字ジェネレーター — 読めない℞パッド（ネタ）",
       "description": "入力も音声も自由。文章を医者の走り字で ℞ 処方箋に書き込みます。無料のネタ制作ツール、PNG/PDF 書き出し対応。"
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "筆跡クイズ",
     "doctor": "医者字",
     "workbook": "ドリル帳",
+    "menu": "メニュー",
     "allTools": "すべてのツール",
     "groupWrite": "書く・作る",
     "groupPractice": "練習用紙・印刷",
@@ -119,7 +120,8 @@
       "cursiveTitle": "筆記体ジェネレーター",
       "cursiveDesc": "入力や音声で流れるような筆記体に。印刷してなぞり練習も。"
     },
-    "allToolsLink": "無料ツールをすべて見る"
+    "allToolsLink": "無料ツールをすべて見る",
+    "h1": "話すか入力すると、手書きの一枚になる"
   },
   "tool": {
     "speak": "タップして話す",
@@ -206,7 +208,10 @@
       "tile": "タイル状"
     },
     "customColor": "カスタムカラー",
-    "preview": "プレビュー"
+    "preview": "プレビュー",
+    "pageFormat": "用紙サイズ",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "プライバシーポリシー",
@@ -220,6 +225,8 @@
     "tagline": "手書きカードや手書き風画像のチュートリアルとアイデア。すべてトップページのツールでそのまま再現できます。",
     "count": "ガイド {n} 本",
     "filterAll": "すべて",
+    "moreFilters": "他 {n} 件のトピックを表示",
+    "fewerFilters": "トピックを閉じる",
     "sortLabel": "並べ替え",
     "sortNewest": "新しい順",
     "sortOldest": "古い順",
@@ -327,6 +334,9 @@
     "font": "フォント",
     "showExample": "お手本行(濃色)",
     "rowHeight": "行の高さ",
+    "gradeYoung": "4–5歳",
+    "gradeMid": "5–6歳",
+    "gradeOlder": "7–8歳",
     "textColor": "文字の色",
     "downloadPdf": "PDF をダウンロード",
     "downloadPng": "PNGをダウンロード",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "無料の筆記ツールすべて",
     "intro": "本サイトのツールをひとまとめに。音声から手書き、カリグラフィー、印刷できる練習用紙、そして筆跡クイズ。すべて無料・登録不要で、書いた内容はブラウザから出ません。"
+  },
+  "sheet": {
+    "pageSize": "用紙サイズ",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "名前",
+    "dateLine": "日付"
   }
 }

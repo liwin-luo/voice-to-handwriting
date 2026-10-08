@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { ArrowRight, CaretLeft, CaretRight, Funnel } from "@phosphor-icons/react";
+import { ArrowRight, CaretDown, CaretLeft, CaretRight, CaretUp, Funnel } from "@phosphor-icons/react";
 import { Link } from "@/i18n/navigation";
+import { hiddenChipCount } from "@/components/chipOverflow";
 
 export interface BlogCardData {
   slug: string;
@@ -47,6 +48,14 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
   const [tool, setTool] = useState<string | null>(null);
   const [sort, setSort] = useState<SortKey>("newest");
   const [page, setPage] = useState(1);
+  // 筛选行默认单行:放不下时收进「+N」展开按钮,点击展开为多行
+  const clusterRef = useRef<HTMLDivElement>(null);
+  const clipRef = useRef<HTMLDivElement>(null);
+  const moreRef = useRef<HTMLButtonElement>(null);
+  const [overflowing, setOverflowing] = useState(false);
+  const [hiddenCount, setHiddenCount] = useState(0);
+  const [visibleCount, setVisibleCount] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   const filtered = useMemo(() => {
     const list = tool ? posts.filter((p) => p.tools.includes(tool)) : posts.slice();
@@ -71,31 +80,113 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
     setPage(1);
   };
 
+  const optionKey = toolOptions.map((o) => o.label).join("\0");
+  const showMore = !expanded && overflowing;
+
+  // 按整行可用宽度计隐藏数,不读 clip 自身宽度(藏起的 chip 会离开文档流,clip 会变窄)。
+  useLayoutEffect(() => {
+    if (expanded) {
+      setVisibleCount((v) => (v === null ? v : null));
+      return;
+    }
+    const measure = () => {
+      const cluster = clusterRef.current;
+      const clip = clipRef.current;
+      const more = moreRef.current;
+      if (!cluster || !clip || !more) return;
+      const chipGap = Number.parseFloat(getComputedStyle(clip).columnGap) || 0;
+      const rowGap = Number.parseFloat(getComputedStyle(cluster).columnGap) || 0;
+      const buttons = [...clip.querySelectorAll(":scope > button")] as HTMLElement[];
+      const widths = buttons.map((b) => b.offsetWidth);
+      const funnel = cluster.querySelector("svg");
+      const funnelW = funnel ? funnel.getBoundingClientRect().width : 0;
+      let avail = cluster.clientWidth - funnelW - rowGap;
+      const moreInFlow = getComputedStyle(more).position !== "absolute";
+      if (moreInFlow) avail -= more.offsetWidth + rowGap;
+      let hidden = hiddenChipCount(widths, chipGap, avail);
+      if (hidden > 0 && !moreInFlow) {
+        hidden = hiddenChipCount(widths, chipGap, avail - more.offsetWidth - rowGap);
+      }
+      const visible = widths.length - hidden;
+      setVisibleCount((v) => (v === visible ? v : visible));
+      setHiddenCount((n) => (n === hidden ? n : hidden));
+      setOverflowing((flag) => (flag === hidden > 0 ? flag : hidden > 0));
+    };
+    measure();
+    const node = clusterRef.current;
+    if (!node) return;
+    const ro = new ResizeObserver(measure);
+    ro.observe(node);
+    return () => ro.disconnect();
+  }, [expanded, optionKey, overflowing, hiddenCount]);
+
   const chip = (active: boolean) =>
     `btn h-8 whitespace-nowrap rounded-full border px-3.5 text-[13px] ${
       active ? "border-accent bg-accent text-white" : "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:text-zinc-900"
     }`;
 
+  // 收起时放不下的 chip 离开文档流,避免末颗被切掉一半;展开时全部回位
+  const concealed = (index: number) => !expanded && visibleCount != null && index >= visibleCount;
+  const activeIndex = tool == null ? 0 : toolOptions.findIndex((o) => o.href === tool) + 1;
+
   return (
     <section>
-      {/* 筛选 + 排序工具栏 */}
+      {/* 筛选 + 排序工具栏:筛选行单行裁切,+N 展开 */}
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible md:pb-0">
+        <div ref={clusterRef} className="relative flex w-full min-w-0 items-center gap-2 md:w-auto md:flex-1">
           <Funnel className="size-4 shrink-0 text-zinc-400" aria-hidden />
-          <button type="button" onClick={() => pickTool(null)} className={chip(tool === null)} aria-pressed={tool === null}>
-            {t("filterAll")}
-          </button>
-          {toolOptions.map((o) => (
+          <div
+            ref={clipRef}
+            className={`flex min-w-0 gap-2 ${expanded ? "flex-wrap" : "flex-nowrap overflow-hidden"}`}
+          >
             <button
-              key={o.href}
               type="button"
-              onClick={() => pickTool(o.href)}
-              className={chip(tool === o.href)}
-              aria-pressed={tool === o.href}
+              onClick={() => pickTool(null)}
+              className={`${chip(tool === null)} ${concealed(0) ? "pointer-events-none invisible absolute" : ""}`}
+              aria-pressed={tool === null}
+              aria-hidden={concealed(0) ? true : undefined}
+              tabIndex={concealed(0) ? -1 : 0}
             >
-              {o.label}
+              {t("filterAll")}
             </button>
-          ))}
+            {toolOptions.map((o, i) => (
+              <button
+                key={o.href}
+                type="button"
+                onClick={() => pickTool(o.href)}
+                className={`${chip(tool === o.href)} ${concealed(i + 1) ? "pointer-events-none invisible absolute" : ""}`}
+                aria-pressed={tool === o.href}
+                aria-hidden={concealed(i + 1) ? true : undefined}
+                tabIndex={concealed(i + 1) ? -1 : 0}
+              >
+                {o.label}
+              </button>
+            ))}
+          </div>
+          <button
+            ref={moreRef}
+            type="button"
+            onClick={() => setExpanded(true)}
+            className={`${chip(concealed(activeIndex))} shrink-0 ${showMore ? "" : "pointer-events-none absolute opacity-0"}`}
+            aria-hidden={showMore ? undefined : true}
+            aria-expanded={showMore ? false : undefined}
+            aria-label={t("moreFilters", { n: Math.max(hiddenCount, 1) })}
+            tabIndex={showMore ? 0 : -1}
+          >
+            +{Math.max(hiddenCount, 1)}
+            <CaretDown className="size-3.5" aria-hidden />
+          </button>
+          {expanded && overflowing && (
+            <button
+              type="button"
+              onClick={() => setExpanded(false)}
+              className={`${chip(false)} shrink-0`}
+              aria-expanded
+              aria-label={t("fewerFilters")}
+            >
+              <CaretUp className="size-3.5" aria-hidden />
+            </button>
+          )}
         </div>
         <div className="flex shrink-0 items-center gap-2">
           <label htmlFor="blog-sort" className="field-label whitespace-nowrap">

@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { CustomPaperConfig } from "@/engine/paper";
+import type { PageFormat } from "@/lib/localeDefaults";
 
 export const FONTS = [
   { id: "mashanzheng", css: "'Ma Shan Zheng', 'Kaiti SC', 'KaiTi', serif" },
@@ -44,10 +45,19 @@ interface EditorState {
   indent: boolean; // 段落首行缩进两格
   watermark: boolean; // 导出图品牌水印
   composing: boolean; // 输入法组词中(用于暂停重预览,不持久化)
+  /** 用户手动选过字体后不再按语言覆盖 */
+  fontChosen: boolean;
+  pageFormat: PageFormat;
+  /** 用户手动选过纸张尺寸后不再按语言覆盖 */
+  pageFormatChosen: boolean;
   setText: (t: string) => void;
   appendText: (t: string) => void;
   setFontId: (id: FontId) => void;
+  /** 语言默认或落地页预设:不记成用户选择 */
+  applyFontId: (id: FontId) => void;
   setPaperId: (id: string) => void;
+  setPageFormat: (format: PageFormat) => void;
+  applyPageFormat: (format: PageFormat) => void;
   setInk: (v: string) => void;
   setFontSize: (n: number) => void;
   setIntensity: (n: number) => void;
@@ -63,7 +73,10 @@ interface EditorState {
 
 const initial = {
   text: "",
-  fontId: "mashanzheng" as FontId,
+  fontId: "patrickhand" as FontId,
+  fontChosen: false,
+  pageFormat: "letter" as PageFormat,
+  pageFormatChosen: false,
   paperId: "ruled",
   ink: INKS[0].value,
   fontSize: 28,
@@ -81,14 +94,27 @@ const initial = {
   },
 };
 
+/** v0 没有 fontChosen:非默认马善政视为用户选过,避免升级后被语言默认盖掉。 */
+export function migrateEditorPrefs(persisted: unknown, version: number): object {
+  const saved = (persisted ?? {}) as Record<string, unknown>;
+  if (version < 1) {
+    const fontId = saved.fontId;
+    return { ...saved, fontChosen: typeof fontId === "string" && fontId !== "mashanzheng" };
+  }
+  return saved;
+}
+
 export const useEditorStore = create<EditorState>()(
   persist(
     (set) => ({
       ...initial,
       setText: (text) => set({ text }),
       appendText: (t) => set((s) => ({ text: s.text + t })),
-      setFontId: (fontId) => set({ fontId }),
+      setFontId: (fontId) => set({ fontId, fontChosen: true }),
+      applyFontId: (fontId) => set({ fontId }),
       setPaperId: (paperId) => set({ paperId }),
+      setPageFormat: (pageFormat) => set({ pageFormat, pageFormatChosen: true }),
+      applyPageFormat: (pageFormat) => set({ pageFormat }),
       setInk: (ink) => set({ ink }),
       setFontSize: (fontSize) => set({ fontSize }),
       setIntensity: (intensity) => set({ intensity }),
@@ -102,8 +128,13 @@ export const useEditorStore = create<EditorState>()(
     }),
     {
       name: "vth-prefs",
+      version: 1,
+      migrate: (persisted, version) => migrateEditorPrefs(persisted, version),
       partialize: (s) => ({
         fontId: s.fontId,
+        fontChosen: s.fontChosen,
+        pageFormat: s.pageFormat,
+        pageFormatChosen: s.pageFormatChosen,
         paperId: s.paperId,
         ink: s.ink,
         fontSize: s.fontSize,

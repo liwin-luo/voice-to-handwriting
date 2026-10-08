@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FilePdf, DownloadSimple } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
-
-const LETTER: [number, number] = [816, 1056];
+import { coloringFontId, fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import PageFormatToggle from "./PageFormatToggle";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
@@ -41,16 +41,25 @@ function drawHeart(ctx: CanvasRenderingContext2D, cx: number, cy: number, s: num
 }
 
 /** 名字涂色页生成器:轮廓大字 + 装饰图案,打印给娃涂色 */
-export default function NameColoringGenerator() {
+export default function NameColoringGenerator({
+  defaultFormat,
+  defaultFontId,
+}: {
+  defaultFormat: PageFormat;
+  defaultFontId?: string;
+}) {
   const t = useTranslations("coloring");
+  const locale = useLocale();
   const [namesText, setNamesText] = useState("");
-  const [fontId, setFontId] = useState("zcoolkuaile");
+  const [fontId, setFontId] = useState(defaultFontId ?? coloringFontId(locale));
+  const [format, setFormat] = useState<PageFormat>(defaultFormat);
+  const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
   const [outline, setOutline] = useState(10); // 描边宽度
   const [decor, setDecor] = useState(true);
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
-  const [w, h] = LETTER;
+  const { w, h } = PAGE_FORMATS[format];
 
   const [debouncedText, compositionProps] = useDebouncedImeSafe(namesText);
 
@@ -142,7 +151,7 @@ export default function NameColoringGenerator() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [names, fontId, outline, decor]);
+  }, [names, fontId, outline, decor, format]);
 
   const downloadPng = () => {
     pageUrls.forEach((u, i) => {
@@ -181,7 +190,7 @@ export default function NameColoringGenerator() {
         <div className="flex flex-col gap-1.5">
           <span className="field-label">{t("font")}</span>
           <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {FONTS.map((f) => (
+            {fontOptions.map((f) => (
               <option key={f.id} value={f.id}>
                 {primaryFamily(f.css)}
               </option>
@@ -214,6 +223,8 @@ export default function NameColoringGenerator() {
             />
           </button>
         </label>
+
+        <PageFormatToggle value={format} onChange={setFormat} />
 
         <div className="flex flex-col gap-1.5">
           <button onClick={downloadPng} disabled={!pageUrls.length} className="btn btn-primary px-4 py-2.5 text-sm disabled:opacity-40">

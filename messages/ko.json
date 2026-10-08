@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "Voice to Handwriting - 말하면 손글씨로",
+    "title": "손글씨 생성기 — 말하거나 입력하면 인쇄",
     "description": "웹페이지에 말을 하면 실시간으로 텍스트가 되고, 진짜 손글씨처럼 렌더링됩니다. PNG / PDF로 내보낼 수 있는 무료 온라인 손글씨 생성기.",
     "about": {
       "title": "소개",
@@ -65,7 +65,7 @@
       "description": "어떤 단어 목록이든 두 가지 인쇄 활동으로: 단어마다 세 번 쓰기 + 빠진 글자 채우기. 결정적 출력, 무료, 워터마크 없음, 가입 불필요."
     },
     "doctor": {
-      "title": "의사 글씨 생성기 — 천서 처방전 한 방(재미용)",
+      "title": "의사 글씨 생성기 — 읽기 어려운 ℞ 패드(재미용)",
       "description": "텍스트 입력이나 말로 받아쓰기만 하면 알아볼 수 없는 의사 처방전 흘려쓰기로 변환합니다. ℞ 용지 기본, PNG/PDF 내보내기 무료."
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "글씨 퀴즈",
     "doctor": "의사 글씨",
     "workbook": "워크북",
+    "menu": "메뉴",
     "allTools": "모든 도구",
     "groupWrite": "쓰기 & 만들기",
     "groupPractice": "연습지 & 인쇄",
@@ -119,7 +120,8 @@
       "cursiveTitle": "필기체 생성기",
       "cursiveDesc": "입력이나 음성으로 흐르는 필기체로. 인쇄해서 따라 쓰기도 가능."
     },
-    "allToolsLink": "모든 무료 도구 보기"
+    "allToolsLink": "모든 무료 도구 보기",
+    "h1": "말하거나 입력하면 손글씨 한 장이 됩니다"
   },
   "tool": {
     "speak": "눌러서 말하기",
@@ -206,7 +208,10 @@
       "tile": "타일"
     },
     "customColor": "커스텀 색상",
-    "preview": "미리보기"
+    "preview": "미리보기",
+    "pageFormat": "용지 크기",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "개인정보 처리방침",
@@ -220,6 +225,8 @@
     "tagline": "손글씨 카드와 손글씨 이미지 튜토리얼과 아이디어. 모든 가이드는 홈페이지 도구로 바로 따라 할 수 있어요.",
     "count": "가이드 {n}편",
     "filterAll": "전체",
+    "moreFilters": "토픽 {n}개 더 보기",
+    "fewerFilters": "토픽 접기",
     "sortLabel": "정렬",
     "sortNewest": "최신순",
     "sortOldest": "오래된순",
@@ -327,6 +334,9 @@
     "font": "글꼴",
     "showExample": "진한 예시 줄",
     "rowHeight": "행 높이",
+    "gradeYoung": "4–5세",
+    "gradeMid": "5–6세",
+    "gradeOlder": "7–8세",
     "textColor": "글자 색",
     "downloadPdf": "PDF 다운로드",
     "downloadPng": "PNG 다운로드",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "모든 무료 손글씨 도구",
     "intro": "이 사이트의 모든 도구를 한곳에: 음성→손글씨, 필기체, 인쇄용 연습지, 그리고 재미로 보는 글씨 퀴즈. 모두 무료, 가입 없이, 쓴 내용은 브라우저 밖으로 나가지 않아요."
+  },
+  "sheet": {
+    "pageSize": "용지 크기",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "이름",
+    "dateLine": "날짜"
   }
 }

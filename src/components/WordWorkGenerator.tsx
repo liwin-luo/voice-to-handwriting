@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FilePdf } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
-
-const LETTER: [number, number] = [816, 1056];
+import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import PageFormatToggle from "./PageFormatToggle";
 const WORDS_PER_PAGE_A1 = 8; // 写三遍:每页 8 词
 const WORDS_PER_PAGE_A2 = 16; // 缺字母:每页 16 词
 
@@ -21,15 +21,19 @@ function missingIndex(word: string): number {
 }
 
 /** 拼写清单 Word Work 生成器:词表 → 写三遍 + 缺字母填空,确定性、可打印 */
-export default function WordWorkGenerator() {
+export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: PageFormat }) {
   const t = useTranslations("wordwork");
+  const sheet = useTranslations("sheet");
+  const locale = useLocale();
   const [wordsText, setWordsText] = useState("");
   const [fontId, setFontId] = useState("patrickhand");
   const [showTrace, setShowTrace] = useState(true);
+  const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
-  const [w, h] = LETTER;
+  const { w, h } = PAGE_FORMATS[format];
+  const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
 
   // 多页 canvas + toDataURL 很重:输入防抖 + 组词期间暂停
   const [debouncedWordsText, compositionProps] = useDebouncedImeSafe(wordsText);
@@ -48,8 +52,8 @@ export default function WordWorkGenerator() {
   function drawNameDate(ctx: CanvasRenderingContext2D) {
     ctx.fillStyle = "#52525b";
     ctx.font = '20px sans-serif';
-    ctx.fillText("Name: ______________________", 60, 56);
-    ctx.fillText("Date: ____________", w - 300, 56);
+    ctx.fillText(`${sheet("nameLine")}: ______________________`, 60, 56);
+    ctx.fillText(`${sheet("dateLine")}: ____________`, w - 280, 56);
   }
 
   function drawActivityTitle(ctx: CanvasRenderingContext2D, title: string, y: number) {
@@ -169,7 +173,7 @@ export default function WordWorkGenerator() {
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [words, fontId, showTrace]);
+  }, [words, fontId, showTrace, format]);
 
   const downloadPdf = () => {
     if (!pageUrls.length) return;
@@ -199,7 +203,7 @@ export default function WordWorkGenerator() {
         <div className="flex flex-col gap-1.5">
           <span className="field-label">{t("font")}</span>
           <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {FONTS.map((f) => (
+            {fontOptions.map((f) => (
               <option key={f.id} value={f.id}>
                 {primaryFamily(f.css)}
               </option>
@@ -224,6 +228,8 @@ export default function WordWorkGenerator() {
             />
           </button>
         </label>
+
+        <PageFormatToggle value={format} onChange={setFormat} />
 
         <button onClick={downloadPdf} disabled={!pageUrls.length} className="btn btn-primary px-4 py-2.5 text-sm disabled:opacity-40">
           <FilePdf className="size-4" />

@@ -7,9 +7,8 @@ import { tokenize, type Token } from "@/engine/tokens";
 import { expandPages, paginateLineTops } from "@/engine/layout";
 import { charJitter } from "@/engine/jitter";
 import { getPaper, makeCustomPaper } from "@/engine/paper";
+import { PAGE_FORMATS } from "@/lib/localeDefaults";
 
-export const PAGE_W = 794; // A4 @96dpi
-export const PAGE_H = 1123;
 const PADDING = 48;
 const PAGE_GAP = 24; // 与 gap-6 保持一致
 
@@ -42,8 +41,9 @@ function partitionParagraphs(tokens: Token[]): ParaGroup[] {
 export default function PaperView() {
   const t = useTranslations("tool");
   const th = useTranslations("home");
-  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent, watermark, customPaper } =
+  const { text, fontId, paperId, ink, fontSize, intensity, seed, align, indent, watermark, customPaper, pageFormat } =
     useEditorStore();
+  const { w: pageW, h: pageH } = PAGE_FORMATS[pageFormat];
   const composing = useEditorStore((s) => s.composing);
   const setText = useEditorStore((s2) => s2.setText);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
@@ -68,12 +68,12 @@ export default function PaperView() {
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
-    const update = () => setScale(Math.min(1, el.clientWidth / PAGE_W));
+    const update = () => setScale(Math.min(1, el.clientWidth / pageW));
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [pageW]);
 
   // 稳定引用:重组件的 useMemo 依赖
   const charStyle = useMemo(
@@ -107,7 +107,7 @@ export default function PaperView() {
         index: Number(s.dataset.idx),
         top: s.offsetTop,
       }));
-      const groups = paginateLineTops(boxes, PAGE_H - PADDING * 2);
+      const groups = paginateLineTops(boxes, pageH - PADDING * 2);
       setPages(expandPages(groups, tokens).map((g) => g.map((i) => tokens[i])));
     };
     measure();
@@ -118,7 +118,7 @@ export default function PaperView() {
     return () => {
       cancelled = true;
     };
-  }, [tokens, fontSize, paper.lineHeight, font.css]);
+  }, [tokens, fontSize, paper.lineHeight, font.css, pageW, pageH]);
 
   // 渲染整棵 token 树(每字符 jitter + 分页)很重:仅在排版相关状态变化时重算,
   // 输入组词/逐键 store 更新时直接复用,保证编辑器输入流畅
@@ -174,7 +174,7 @@ export default function PaperView() {
           position: "absolute",
           visibility: "hidden",
           left: -99999,
-          width: PAGE_W - PADDING * 2,
+          width: pageW - PADDING * 2,
         }}
       >
         {tokenFlow(tokens)}
@@ -185,7 +185,7 @@ export default function PaperView() {
       pages.length === 0 ? (
         <div
           className="shadow-paper flex flex-col items-center gap-4 rounded-xl pt-24"
-          style={{ width: PAGE_W, height: PAGE_H, background: paper.background }}
+          style={{ width: pageW, height: pageH, background: paper.background }}
         >
           <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
           <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
@@ -203,8 +203,8 @@ export default function PaperView() {
             key={p}
             className="paper shadow-paper relative overflow-hidden rounded-xl"
             style={{
-              width: PAGE_W,
-              height: PAGE_H,
+              width: pageW,
+              height: pageH,
               background: paper.background,
               padding: PADDING,
             }}
@@ -224,10 +224,10 @@ export default function PaperView() {
 
     return { measureNode, content };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tokens, pages, paraStarts, charStyle, align, indent, watermark, paper.background, paper.lineHeight, seed, intensity, t, th]);
+  }, [tokens, pages, paraStarts, charStyle, align, indent, watermark, paper.background, paper.lineHeight, seed, intensity, t, th, pageW, pageH]);
 
   const contentH =
-    pages.length === 0 ? PAGE_H : pages.length * PAGE_H + (pages.length - 1) * PAGE_GAP;
+    pages.length === 0 ? pageH : pages.length * pageH + (pages.length - 1) * PAGE_GAP;
 
   return (
     <>
@@ -236,7 +236,7 @@ export default function PaperView() {
       <div ref={wrapRef} style={{ height: contentH * scale }} className="overflow-hidden">
         <div
           className="flex flex-col items-center gap-6"
-          style={{ width: PAGE_W, transform: `scale(${scale})`, transformOrigin: "top left" }}
+          style={{ width: pageW, transform: `scale(${scale})`, transformOrigin: "top left" }}
         >
           {content}
         </div>

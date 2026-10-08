@@ -5,10 +5,10 @@ export default function Logo({ className = "size-6" }: { className?: string }) {
       <rect width="32" height="32" rx="7" fill="currentColor" />
       <path
         fill="#ffffff"
-        d="M16 26.5C12.8 22.6 9.5 18.2 9.5 13 9.5 8.9 12.4 6 16 6s6.5 2.9 6.5 7c0 5.2-3.3 9.6-6.5 13.5Z"
+        d="M16 27.5 9.8 14.2C9.8 8.7 12.2 5.5 16 5.5s6.2 3.2 6.2 8.7L16 27.5Z"
       />
-      <circle cx="16" cy="13.5" r="2" fill="currentColor" />
-      <rect x="15.3" y="16" width="1.4" height="8" rx="0.7" fill="currentColor" />
+      <circle cx="16" cy="13.2" r="1.6" fill="currentColor" />
+      <path stroke="currentColor" strokeWidth="1.2" d="M16 15.4v9" />
     </svg>
   );
 }

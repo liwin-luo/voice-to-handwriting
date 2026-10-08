@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "声音转手写",
-    "title": "声音转手写 - 说话即手写",
+    "title": "手写体生成器 — 说话或打字，打印成手写页",
     "description": "对着网页说一段话,实时转成文字并渲染成逼真手写体,一键导出 PNG / PDF。免费在线手写体生成工具,适合贺卡、书信、手账与文案配图。",
     "about": {
       "title": "关于",
@@ -65,7 +65,7 @@
       "description": "把任意拼写词表变成两种可打印练习:每个单词写三遍 + 补全缺失字母。确定性输出,免费无水印,无需注册。"
     },
     "doctor": {
-      "title": "医生潦草字生成器 — 一键生成天书处方(娱乐)",
+      "title": "医生潦草字生成器 — 看不懂的处方笺，仅供娱乐",
       "description": "输入或口述任意文字,生成器把它写成难以辨认的医生处方体,自带 ℞ 处方笺。免费整活工具,支持导出 PNG/PDF。"
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "笔迹测验",
     "doctor": "医生字迹",
     "workbook": "练习册",
+    "menu": "菜单",
     "allTools": "全部工具",
     "groupWrite": "写字与生成",
     "groupPractice": "练习纸与打印",
@@ -119,7 +120,8 @@
       "cursiveTitle": "英文连笔字",
       "cursiveDesc": "输入或说话,即时变流畅连笔字,可打印描红。"
     },
-    "allToolsLink": "浏览全部免费工具"
+    "allToolsLink": "浏览全部免费工具",
+    "h1": "说一段或打一段，得到一页手写"
   },
   "tool": {
     "speak": "点击说话",
@@ -206,7 +208,10 @@
       "tile": "平铺"
     },
     "customColor": "自定义颜色",
-    "preview": "预览"
+    "preview": "预览",
+    "pageFormat": "纸张尺寸",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "隐私政策",
@@ -220,6 +225,8 @@
     "tagline": "手写贺卡、手写配图的教程与灵感;所有教程都可以用首页工具直接跟着做。",
     "count": "{n} 篇指南",
     "filterAll": "全部",
+    "moreFilters": "展开其余 {n} 个主题",
+    "fewerFilters": "收起主题",
     "sortLabel": "排序",
     "sortNewest": "最新优先",
     "sortOldest": "最早优先",
@@ -327,6 +334,9 @@
     "font": "字体",
     "showExample": "深色示例行",
     "rowHeight": "行高",
+    "gradeYoung": "4–5 岁",
+    "gradeMid": "5–6 岁",
+    "gradeOlder": "7–8 岁",
     "textColor": "文字颜色",
     "downloadPdf": "下载 PDF",
     "downloadPng": "下载 PNG",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "全部免费手写工具",
     "intro": "本站所有工具一站直达:语音转手写、花体字、各类可打印练习纸,以及趣味笔迹测验。全部免费、无需注册,你写的内容不会离开浏览器。"
+  },
+  "sheet": {
+    "pageSize": "纸张尺寸",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "姓名",
+    "dateLine": "日期"
   }
 }

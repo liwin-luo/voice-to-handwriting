@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "Voice to Handwriting - habla y conviértelo en escritura a mano",
+    "title": "Generador de escritura a mano — habla o escribe y imprime",
     "description": "Habla a la página, convierte tu voz en texto al instante y dale aspecto de escritura a mano. Exporta en PNG o PDF. Generador gratuito de escritura a mano.",
     "about": {
       "title": "Acerca de",
@@ -65,7 +65,7 @@
       "description": "Convierte cualquier lista de ortografía en dos actividades imprimibles: escribir cada palabra tres veces y completar la letra que falta. Determinista, gratis, sin marca de agua."
     },
     "doctor": {
-      "title": "Generador de letra de médico — Receta falsa en un clic (de broma)",
+      "title": "Generador de letra de médico — receta ilegible, solo por diversión",
       "description": "Escribe o dicta lo que quieras y este generador de letra de médico lo convierte en un garabato ilegible de receta sobre una hoja con ℞. Gratis, exporta PNG o PDF."
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "Test de letra",
     "doctor": "Letra de médico",
     "workbook": "Cuaderno",
+    "menu": "Menú",
     "allTools": "Todas las herramientas",
     "groupWrite": "Escribir y generar",
     "groupPractice": "Hojas de práctica e impresión",
@@ -119,7 +120,8 @@
       "cursiveTitle": "Letra cursiva",
       "cursiveDesc": "Escribe o habla y lo convierte en cursiva fluida. Imprime para practicar."
     },
-    "allToolsLink": "Ver todas las herramientas gratis"
+    "allToolsLink": "Ver todas las herramientas gratis",
+    "h1": "Habla o escribe, y obtén una página manuscrita"
   },
   "tool": {
     "speak": "Toca y habla",
@@ -206,7 +208,10 @@
       "tile": "Mosaico"
     },
     "customColor": "Color personalizado",
-    "preview": "Vista previa"
+    "preview": "Vista previa",
+    "pageFormat": "Tamaño",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "Política de privacidad",
@@ -220,6 +225,8 @@
     "tagline": "Tutoriales e ideas de tarjetas e imágenes manuscritas — todas las guías funcionan con la herramienta de inicio.",
     "count": "{n} guías",
     "filterAll": "Todos",
+    "moreFilters": "Mostrar {n} temas más",
+    "fewerFilters": "Mostrar menos temas",
     "sortLabel": "Ordenar",
     "sortNewest": "Más recientes",
     "sortOldest": "Más antiguos",
@@ -327,6 +334,9 @@
     "font": "Fuente",
     "showExample": "Fila de ejemplo oscura",
     "rowHeight": "Altura de fila",
+    "gradeYoung": "4–5 años",
+    "gradeMid": "5–6 años",
+    "gradeOlder": "7–8 años",
     "textColor": "Color del texto",
     "downloadPdf": "Descargar PDF",
     "downloadPng": "Descargar PNG",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "Todas las herramientas de escritura gratis",
     "intro": "Todo el sitio en un lugar: voz a letra, cursiva, hojas de práctica para imprimir y un test de letra solo por diversión. Todo gratis, sin registro: lo que escribes no sale de tu navegador."
+  },
+  "sheet": {
+    "pageSize": "Tamaño",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "Nombre",
+    "dateLine": "Fecha"
   }
 }

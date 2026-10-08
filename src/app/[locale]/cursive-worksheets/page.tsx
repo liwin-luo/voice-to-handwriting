@@ -6,6 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import TracingGenerator from "@/components/TracingGenerator";
 import ShareBar from "@/components/ShareBar";
 import { buildAlternates } from "@/lib/seo";
+import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -42,7 +43,7 @@ export default async function CursiveWorksheetsPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <TracingGenerator defaultFontId="cedarvillecursive" defaultBandH={100} />
+        <TracingGenerator defaultFontId="cedarvillecursive" defaultBandH={100} defaultFormat={defaultPageFormat(locale)} />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

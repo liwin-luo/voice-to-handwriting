@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "Voice to Handwriting - Sprich, und es wird Handschrift",
+    "title": "Handschrift-Generator — sprechen oder tippen, dann drucken",
     "description": "Sprich einen Absatz in die Webseite, werde in Echtzeit zu Text und echter Handschrift, exportiere PNG/PDF. Kostenloser Handschrift-Generator.",
     "keywords": "handschrift generator, sprache zu text, handschrift schriftart, grusskarte erstellen, audio transkribieren",
     "about": {
@@ -65,7 +65,7 @@
       "description": "Verwandle jede Rechtschreibliste in zwei druckbare Übungen: jedes Wort dreimal schreiben und den fehlenden Buchstaben ergänzen. Deterministisch, kostenlos, ohne Wasserzeichen."
     },
     "doctor": {
-      "title": "Arzt-Krakel-Schrift-Generator — Fake-Rezept in Sekunden (nur Spaß)",
+      "title": "Arzt-Krakel-Schrift-Generator — unlesbares ℞-Blatt, nur zum Spaß",
       "description": "Tippe oder diktiere alles, und dieser Arzt-Schrift-Generator schreibt es als unlesbares Rezept-Gekritzel auf ein ℞-Blatt. Gratis Gag-Geschenk-Idee, Export als PNG oder PDF."
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "Handschrift-Quiz",
     "doctor": "Arzt-Schrift",
     "workbook": "Übungsheft",
+    "menu": "Menü",
     "allTools": "Alle Werkzeuge",
     "groupWrite": "Schreiben & Generieren",
     "groupPractice": "Übungsblätter & Drucken",
@@ -119,7 +120,8 @@
       "cursiveTitle": "Schreibschrift-Generator",
       "cursiveDesc": "Tippen oder sprechen — fließende Schreibschrift, zum Üben druckbar."
     },
-    "allToolsLink": "Alle kostenlosen Werkzeuge ansehen"
+    "allToolsLink": "Alle kostenlosen Werkzeuge ansehen",
+    "h1": "Sprich oder tippe, und du bekommst eine handgeschriebene Seite"
   },
   "tool": {
     "speak": "Tippen & sprechen",
@@ -206,7 +208,10 @@
     "modelNote": "Schnell: ~80MB; Hohe Qualität: ~250MB, besser für Chinesisch. Modell wird einmal geladen, Audio verlässt dein Gerät nie",
     "watermark": "Export-Wasserzeichen",
     "trySample": "Beispiel testen",
-    "preview": "Vorschau"
+    "preview": "Vorschau",
+    "pageFormat": "Papierformat",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "Datenschutz",
@@ -226,6 +231,8 @@
     "tagline": "Tutorials und Ideen für handgeschriebene Karten — jede Anleitung funktioniert direkt mit dem Werkzeug.",
     "count": "{n} Ratgeber",
     "filterAll": "Alle",
+    "moreFilters": "{n} weitere Themen anzeigen",
+    "fewerFilters": "Weniger Themen anzeigen",
     "sortLabel": "Sortieren",
     "sortNewest": "Neueste zuerst",
     "sortOldest": "Älteste zuerst",
@@ -327,6 +334,9 @@
     "font": "Schrift",
     "showExample": "Dunkle Beispielzeile",
     "rowHeight": "Zeilenhöhe",
+    "gradeYoung": "4–5 Jahre",
+    "gradeMid": "5–6 Jahre",
+    "gradeOlder": "7–8 Jahre",
     "textColor": "Textfarbe",
     "downloadPdf": "PDF herunterladen",
     "downloadPng": "PNG herunterladen",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "Alle kostenlosen Handschrift-Werkzeuge",
     "intro": "Alle Werkzeuge dieser Seite an einem Ort: Sprache-zu-Handschrift, Schreibschrift, druckbare Übungsblätter und ein spaßiges Schrift-Quiz. Alles kostenlos, ohne Anmeldung — was du schreibst, bleibt im Browser."
+  },
+  "sheet": {
+    "pageSize": "Papierformat",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "Name",
+    "dateLine": "Datum"
   }
 }

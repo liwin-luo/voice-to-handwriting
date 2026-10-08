@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "Voice to Handwriting - Speak it, see it handwritten",
+    "title": "Handwriting Generator — Speak or Type, Then Print",
     "description": "Speak into the page and watch your words turn into realistic handwriting. Export as PNG or PDF. Free handwriting generator for cards, letters & journals.",
     "about": {
       "title": "About",
@@ -65,7 +65,7 @@
       "description": "Turn any spelling list into two printable activities: write each word three times and fill in the missing letter. Deterministic, free, no watermark, no signup."
     },
     "doctor": {
-      "title": "Doctor Handwriting Generator — Fake Prescription Maker (For Fun)",
+      "title": "Doctor Handwriting Generator — Illegible Rx Pad, Just for Fun",
       "description": "Type or speak anything and this doctor handwriting generator writes it as an illegible prescription scrawl on an ℞ pad. Free gag gift maker — download as PNG or PDF."
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "Handwriting Quiz",
     "doctor": "Doctor Handwriting",
     "workbook": "Workbook Maker",
+    "menu": "Menu",
     "allTools": "All tools",
     "groupWrite": "Write & generate",
     "groupPractice": "Practice sheets & printing",
@@ -119,7 +120,8 @@
       "cursiveTitle": "Cursive Practice",
       "cursiveDesc": "Type or speak anything in flowing cursive — and print to trace."
     },
-    "allToolsLink": "Browse all free tools"
+    "allToolsLink": "Browse all free tools",
+    "h1": "Speak or type, and get a handwritten page"
   },
   "tool": {
     "speak": "Tap to speak",
@@ -206,7 +208,10 @@
       "tile": "Tile"
     },
     "customColor": "Custom color",
-    "preview": "Preview"
+    "preview": "Preview",
+    "pageFormat": "Page size",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "Privacy Policy",
@@ -220,6 +225,8 @@
     "tagline": "Tutorials and ideas for handwritten cards and images — every guide works with the tool on the home page.",
     "count": "{n} guides",
     "filterAll": "All topics",
+    "moreFilters": "Show {n} more topics",
+    "fewerFilters": "Show fewer topics",
     "sortLabel": "Sort",
     "sortNewest": "Newest first",
     "sortOldest": "Oldest first",
@@ -327,6 +334,9 @@
     "font": "Font",
     "showExample": "Dark example row",
     "rowHeight": "Row height",
+    "gradeYoung": "Pre-K",
+    "gradeMid": "Kindergarten",
+    "gradeOlder": "Grade 2",
     "textColor": "Text color",
     "downloadPdf": "Download PDF",
     "downloadPng": "Download PNG",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "All free handwriting tools",
     "intro": "Everything on this site in one place — speak-to-handwriting, cursive, printable practice sheets, and a just-for-fun handwriting quiz. All free, no signup, and nothing you write leaves your browser."
+  },
+  "sheet": {
+    "pageSize": "Page size",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "Name",
+    "dateLine": "Date"
   }
 }

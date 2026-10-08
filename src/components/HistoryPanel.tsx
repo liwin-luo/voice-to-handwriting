@@ -1,9 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowsCounterClockwise, NoteBlank, Trash, TrashSimple } from "@phosphor-icons/react";
 import { useHistoryStore, type HistoryEntry, type HistorySource } from "@/stores/useHistoryStore";
 import { useEditorStore } from "@/stores/useEditorStore";
+
+const emptySubscribe = () => () => {};
 
 const SOURCE_KEY: Record<HistorySource, string> = {
   speech: "sourceSpeech",
@@ -32,9 +34,8 @@ export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
   const entries = useHistoryStore((s) => s.entries);
   const remove = useHistoryStore((s) => s.remove);
   const clear = useHistoryStore((s) => s.clear);
-  // persist 存储挂载后才渲染列表,避免 SSR 水合不一致
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // persist 存储水合后才渲染列表,避免 SSR 水合不一致(客户端恒真,服务端恒假)
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const [deleteArm, armDelete] = useArm();
   const [clearArmed, armClear] = useArm();
 

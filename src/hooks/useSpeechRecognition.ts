@@ -34,7 +34,7 @@ function getSR(): SRCtor | null {
  * - 连续快速失败(重启 50 次)则报错停止,避免死循环
  */
 export function useSpeechRecognition(opts: { lang?: string; onFinal: (t: string) => void }) {
-  const { lang = "zh-CN", onFinal } = opts;
+  const { lang = "en-US", onFinal } = opts;
   // SSR 与客户端首帧统一为 false,挂载后再探测,避免水合不一致
   const [supported, setSupported] = useState(false);
   useEffect(() => setSupported(getSR() !== null), []);

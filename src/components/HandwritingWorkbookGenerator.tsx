@@ -1,13 +1,12 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FilePdf } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
-
-const W = 816; // Letter @96dpi
-const H = 1056;
+import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import PageFormatToggle from "./PageFormatToggle";
 const TOP = 56;
 const BOTTOM = 56;
 const WORDS_PER_PAGE = 5;
@@ -24,10 +23,16 @@ function primaryFamily(css: string): string {
 /** 手写练习册生成器:封面 + 每词一组(示例行+描红行)的多页 Letter PDF */
 export default function HandwritingWorkbookGenerator({
   defaultFontId = "patrickhand",
+  defaultFormat,
 }: {
   defaultFontId?: string;
+  defaultFormat: PageFormat;
 }) {
   const t = useTranslations("workbook");
+  const locale = useLocale();
+  const [format, setFormat] = useState<PageFormat>(defaultFormat);
+  const { w: W, h: H } = PAGE_FORMATS[format];
+  const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
   const [title, setTitle] = useState("");
   const [words, setWords] = useState(DEFAULT_WORDS);
   const [fontId, setFontId] = useState(defaultFontId);
@@ -119,9 +124,15 @@ export default function HandwritingWorkbookGenerator({
           ctx.font = `${fontSize}px "${family}"`;
           ctx.textBaseline = "alphabetic";
           ctx.save();
-          ctx.globalAlpha = showExample && r === 0 ? 1 : 0.28;
-          ctx.fillStyle = "#3a3a3a";
-          ctx.fillText(word, 68, y0 + bandH - 6);
+          if (showExample && r === 0) {
+            ctx.fillStyle = "#3a3a3a";
+            ctx.fillText(word, 68, y0 + bandH - 6);
+          } else {
+            ctx.strokeStyle = "#3a3a3a";
+            ctx.lineWidth = 1.15;
+            ctx.setLineDash([2.5, 2.5]);
+            ctx.strokeText(word, 68, y0 + bandH - 6);
+          }
           ctx.restore();
         }
         y0 += bandH;
@@ -217,7 +228,7 @@ export default function HandwritingWorkbookGenerator({
       document.fonts.removeEventListener?.("loadingdone", drawAll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookTitle, pages, fontId, showCover, showExample]);
+  }, [bookTitle, pages, fontId, showCover, showExample, format]);
 
   const downloadPdf = () => {
     const canvases = wrapRef.current?.querySelectorAll<HTMLCanvasElement>("canvas");
@@ -261,7 +272,7 @@ export default function HandwritingWorkbookGenerator({
         <div className="flex flex-col gap-1.5">
           <span className="field-label">{t("font")}</span>
           <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {FONTS.map((f) => (
+            {fontOptions.map((f) => (
               <option key={f.id} value={f.id}>
                 {primaryFamily(f.css)}
               </option>
@@ -304,6 +315,8 @@ export default function HandwritingWorkbookGenerator({
             />
           </button>
         </label>
+
+        <PageFormatToggle value={format} onChange={setFormat} />
 
         <p className="text-xs text-zinc-400">{t("stats", { pages: pageCount, words: wordList.length })}</p>
 

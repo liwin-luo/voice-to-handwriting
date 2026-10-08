@@ -21,7 +21,7 @@ export default function CursiveLettersHub({ locale }: { locale: Locale }) {
             href={`/cursive/letter/${l.slug}`}
             className="group flex flex-col items-center gap-1 rounded-2xl border border-zinc-200 bg-white px-3 py-4 transition-colors hover:border-accent/40"
           >
-            <span className="text-3xl leading-none text-zinc-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
+            <span className="pb-2 text-3xl leading-none text-zinc-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
               {l.letter}
             </span>
             <span className="text-[11px] leading-tight text-zinc-400">

@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
-
-const LETTER: [number, number] = [816, 1056];
+import { fontOrder, formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import { TRACE_GRADES, gradeForBand, tracingLines } from "@/lib/traceGrades";
+import PageFormatToggle from "./PageFormatToggle";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
@@ -16,18 +17,24 @@ function primaryFamily(css: string): string {
 export default function TracingGenerator({
   defaultFontId = "patrickhand",
   defaultBandH = 90,
+  defaultFormat,
 }: {
   defaultFontId?: string;
   defaultBandH?: number;
+  defaultFormat: PageFormat;
 }) {
   const t = useTranslations("tracing");
+  const sheet = useTranslations("sheet");
+  const locale = useLocale();
   const [names, setNames] = useState("");
   const [fontId, setFontId] = useState(defaultFontId);
   const [showExample, setShowExample] = useState(true);
   const [bandH, setBandH] = useState(defaultBandH);
   const [textColor, setTextColor] = useState("#3a3a3a");
+  const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [w, h] = LETTER;
+  const { w, h } = PAGE_FORMATS[format];
+  const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
 
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
@@ -37,8 +44,9 @@ export default function TracingGenerator({
   useEffect(() => {
     let cancelled = false;
     const run = async () => {
+      const sample = tracingLines(drawNames, t("namesPlaceholder")).join("");
       // 传入实际文字,确保字体切片按需加载对应字形后再绘制
-      await document.fonts.load(`80px "${family}"`, drawNames).catch(() => {});
+      await document.fonts.load(`80px "${family}"`, sample).catch(() => {});
       if (!cancelled) draw();
     };
     void run();
@@ -46,7 +54,7 @@ export default function TracingGenerator({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drawNames, fontId, showExample, bandH, textColor]);
+  }, [drawNames, fontId, showExample, bandH, textColor, format]);
 
   /** 支持传入离屏 ctx,供导出更高分辨率的 PNG;不传时重置并绘制预览画布 */
   function draw(target?: CanvasRenderingContext2D) {
@@ -62,10 +70,14 @@ export default function TracingGenerator({
     ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, w, h);
 
-    const top = 40;
+    ctx.fillStyle = "#52525b";
+    ctx.font = "18px sans-serif";
+    ctx.fillText(`${sheet("nameLine")}: ____________________`, 48, 32);
+    ctx.fillText(`${sheet("dateLine")}: ____________`, w - 260, 32);
+
+    const top = 52;
     const H = bandH;
-    const inputLines = drawNames.split("\n").map((l) => l.trim()).filter(Boolean);
-    const rows = inputLines.length ? inputLines : [""];
+    const rows = tracingLines(drawNames, t("namesPlaceholder"));
 
     // 循环填充整页:每行输入重复占多行格子
     let row = 0;
@@ -104,9 +116,15 @@ export default function TracingGenerator({
       // 示例行用所选颜色,描红行用同色 28% 不透明度浅化,保持可描性
       const isExampleRow = showExample && row < rows.length;
       ctx.save();
-      ctx.globalAlpha = isExampleRow ? 1 : 0.28;
-      ctx.fillStyle = textColor;
-      ctx.fillText(text, 60, y0 + H - 6);
+      if (isExampleRow) {
+        ctx.fillStyle = textColor;
+        ctx.fillText(text, 60, y0 + H - 6);
+      } else {
+        ctx.strokeStyle = textColor;
+        ctx.lineWidth = 1.15;
+        ctx.setLineDash([2.5, 2.5]);
+        ctx.strokeText(text, 60, y0 + H - 6);
+      }
       ctx.restore();
     }
     void showExample;
@@ -159,7 +177,7 @@ export default function TracingGenerator({
         <div className="flex flex-col gap-1.5">
           <span className="field-label">{t("font")}</span>
           <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {FONTS.map((f) => (
+            {fontOptions.map((f) => (
               <option key={f.id} value={f.id}>
                 {primaryFamily(f.css)}
               </option>
@@ -185,18 +203,49 @@ export default function TracingGenerator({
           </button>
         </label>
 
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("rowHeight")}</span>
-          <span className="flex flex-1 items-center gap-2">
-            <input type="range" min={60} max={120} value={bandH} onChange={(e) => setBandH(Number(e.target.value))} className="accent-accent" />
-            <span className="font-mono text-xs text-zinc-400">{bandH}px</span>
-          </span>
-        </label>
+        <div className="flex flex-col gap-1.5">
+          <span className="field-label">{t("rowHeight")}</span>
+          <div className="flex flex-wrap gap-1.5">
+            {TRACE_GRADES.map((g) => {
+              const selected = gradeForBand(bandH) === g.id;
+              const label = { young: t("gradeYoung"), mid: t("gradeMid"), older: t("gradeOlder") }[g.id];
+              return (
+                <button
+                  key={g.id}
+                  type="button"
+                  aria-pressed={selected}
+                  onClick={() => setBandH(g.bandH)}
+                  className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                    selected
+                      ? "border-accent bg-accent/5 text-accent"
+                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+          <label className="flex items-center gap-2 text-sm">
+            <input
+              type="range"
+              min={60}
+              max={120}
+              value={bandH}
+              onChange={(e) => setBandH(Number(e.target.value))}
+              className="accent-accent flex-1"
+              aria-label={t("rowHeight")}
+            />
+            <span className="font-mono text-xs text-zinc-400">{formatLength(bandH, locale)}</span>
+          </label>
+        </div>
 
         <label className="flex items-center justify-between gap-2 text-sm">
           <span className="text-zinc-700">{t("textColor")}</span>
           <input type="color" value={textColor} onChange={(e) => setTextColor(e.target.value)} className="color-swatch" />
         </label>
+
+        <PageFormatToggle value={format} onChange={setFormat} />
 
         <div className="flex gap-2">
           <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">

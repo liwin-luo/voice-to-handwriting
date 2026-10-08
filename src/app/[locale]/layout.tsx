@@ -10,7 +10,7 @@ import SiteFooter from "@/components/SiteFooter";
 import ConsentBanner from "@/components/ConsentBanner";
 import FloatingShare from "@/components/FloatingShare";
 import FontStylesheets from "@/components/FontStylesheets";
-import { DEFAULT_FONT_CSS, ASYNC_FONT_CSS } from "@/lib/fonts";
+import { ASYNC_FONT_CSS, blockingFontHrefs } from "@/lib/fonts";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -44,14 +44,17 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const messages = await getMessages();
+  const blockingFonts = blockingFontHrefs(locale);
 
   return (
     <html lang={locale} className="h-full antialiased">
       <head>
         {/* 自托管 OFL 手写字体(cn-font-split 切片,按需加载)。
             仅默认字体阻塞加载,其余 preload + 水合后注入,避免 11 个 CSS 阻塞首屏 */}
-        <link rel="stylesheet" href={DEFAULT_FONT_CSS} />
-        {ASYNC_FONT_CSS.map((href) => (
+        {blockingFonts.map((href) => (
+          <link key={href} rel="stylesheet" href={href} />
+        ))}
+        {ASYNC_FONT_CSS.filter((href) => !blockingFonts.includes(href)).map((href) => (
           <link key={href} rel="preload" href={href} as="style" />
         ))}
         {/* AdSense 脚本由 ConsentBanner 在用户同意后才注入(components/ConsentBanner.tsx);

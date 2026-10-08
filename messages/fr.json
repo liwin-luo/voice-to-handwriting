@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "Voice to Handwriting - Parlez, et ce sera écrit à la main",
+    "title": "Générateur d'écriture manuscrite — parlez ou tapez, puis imprimez",
     "description": "Parlez à la page, votre voix devient du texte en temps réel puis de la vraie écriture manuscrite. Exportez en PNG/PDF. Générateur d'écriture manuscrite gratuit.",
     "keywords": "générateur écriture manuscrite, voix en texte, police manuscrite, faire une carte, transcrire audio",
     "about": {
@@ -65,7 +65,7 @@
       "description": "Transformez n'importe quelle liste d'orthographe en deux activités imprimables : écrire chaque mot trois fois et compléter la lettre manquante. Déterministe, gratuit, sans filigrane."
     },
     "doctor": {
-      "title": "Générateur d'écriture de médecin — Fausse ordonnance en un clic (pour rire)",
+      "title": "Générateur d'écriture de médecin — ordonnance illisible, pour rire",
       "description": "Écrivez ou dictez n'importe quoi : ce générateur d'écriture de médecin le transforme en gribouillis illisibles d'ordonnance sur une feuille avec ℞. Gratuit, export PNG ou PDF."
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "Quiz d'écriture",
     "doctor": "Écriture de médecin",
     "workbook": "Cahier",
+    "menu": "Menu",
     "allTools": "Tous les outils",
     "groupWrite": "Écrire & générer",
     "groupPractice": "Feuilles d'exercices & impression",
@@ -119,7 +120,8 @@
       "cursiveTitle": "Écriture cursive",
       "cursiveDesc": "Tapez ou dictez — cursive fluide, imprimable pour vous entraîner."
     },
-    "allToolsLink": "Voir tous les outils gratuits"
+    "allToolsLink": "Voir tous les outils gratuits",
+    "h1": "Parlez ou tapez, et obtenez une page manuscrite"
   },
   "tool": {
     "speak": "Appuyer et parler",
@@ -206,7 +208,10 @@
     "modelNote": "Rapide : ~80 Mo ; Haute qualité : ~250 Mo, meilleur pour le chinois. Le modèle se télécharge une fois ; l'audio ne quitte jamais votre appareil",
     "watermark": "Filigrane à l'export",
     "trySample": "Essayer un exemple",
-    "preview": "Aperçu"
+    "preview": "Aperçu",
+    "pageFormat": "Format",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "Confidentialité",
@@ -226,6 +231,8 @@
     "tagline": "Tutoriels et idées de cartes manuscrites — chaque guide fonctionne avec l'outil de la page d'accueil.",
     "count": "{n} guides",
     "filterAll": "Tous",
+    "moreFilters": "Afficher {n} sujets de plus",
+    "fewerFilters": "Afficher moins de sujets",
     "sortLabel": "Trier",
     "sortNewest": "Plus récents",
     "sortOldest": "Plus anciens",
@@ -327,6 +334,9 @@
     "font": "Police",
     "showExample": "Ligne exemple en foncé",
     "rowHeight": "Hauteur de ligne",
+    "gradeYoung": "4–5 ans",
+    "gradeMid": "5–6 ans",
+    "gradeOlder": "7–8 ans",
     "textColor": "Couleur du texte",
     "downloadPdf": "Télécharger le PDF",
     "downloadPng": "Télécharger PNG",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "Tous les outils d'écriture gratuits",
     "intro": "Tout le site au même endroit : voix vers écriture, cursive, feuilles d'exercices à imprimer et un quiz d'écriture juste pour le fun. Tout est gratuit, sans inscription — ce que vous écrivez ne quitte pas votre navigateur."
+  },
+  "sheet": {
+    "pageSize": "Format",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "Nom",
+    "dateLine": "Date"
   }
 }

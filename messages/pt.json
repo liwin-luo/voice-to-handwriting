@@ -1,7 +1,7 @@
 {
   "meta": {
     "brand": "Voice to Handwriting",
-    "title": "Voice to Handwriting - Fale e vire escrita à mão",
+    "title": "Gerador de escrita à mão — fale ou digite e imprima",
     "description": "Fale para a página, sua voz vira texto em tempo real e ganha aparência de escrita à mão de verdade. Exporte em PNG/PDF. Gerador de escrita à mão gratuito.",
     "keywords": "gerador de escrita a mão, voz para texto, fonte manuscrita, fazer cartão, transcrever áudio",
     "about": {
@@ -65,7 +65,7 @@
       "description": "Transforme qualquer lista de ortografia em duas atividades imprimíveis: escrever cada palavra três vezes e completar a letra que falta. Determinístico, grátis, sem marca d'água."
     },
     "doctor": {
-      "title": "Gerador de letra de médico — Receita falsa num clique (de brincadeira)",
+      "title": "Gerador de letra de médico — receita ilegível, só por diversão",
       "description": "Digite ou dite qualquer coisa e este gerador de letra de médico transforma em rabisco ilegível de receita numa folha com ℞. Grátis, exporta PNG ou PDF."
     },
     "workbook": {
@@ -97,6 +97,7 @@
     "quiz": "Quiz de letra",
     "doctor": "Letra de médico",
     "workbook": "Caderno",
+    "menu": "Menu",
     "allTools": "Todas as ferramentas",
     "groupWrite": "Escrever & gerar",
     "groupPractice": "Folhas de prática & impressão",
@@ -119,7 +120,8 @@
       "cursiveTitle": "Letra cursiva",
       "cursiveDesc": "Digite ou fale — cursiva fluida, imprimível para praticar."
     },
-    "allToolsLink": "Ver todas as ferramentas grátis"
+    "allToolsLink": "Ver todas as ferramentas grátis",
+    "h1": "Fale ou digite e receba uma página manuscrita"
   },
   "tool": {
     "speak": "Toque e fale",
@@ -206,7 +208,10 @@
     "modelNote": "Rápido: ~80MB; Alta qualidade: ~250MB, melhor para chinês. O modelo é baixado uma vez; o áudio nunca sai do seu aparelho",
     "watermark": "Marca d'água na exportação",
     "trySample": "Testar um exemplo",
-    "preview": "Pré-visualizar"
+    "preview": "Pré-visualizar",
+    "pageFormat": "Tamanho",
+    "formatLetter": "US Letter",
+    "formatA4": "A4"
   },
   "footer": {
     "privacy": "Privacidade",
@@ -226,6 +231,8 @@
     "tagline": "Tutoriais e ideias de cartões manuscritos — todos os guias funcionam com a ferramenta da página inicial.",
     "count": "{n} guias",
     "filterAll": "Todos",
+    "moreFilters": "Mostrar mais {n} tópicos",
+    "fewerFilters": "Mostrar menos tópicos",
     "sortLabel": "Ordenar",
     "sortNewest": "Mais recentes",
     "sortOldest": "Mais antigos",
@@ -327,6 +334,9 @@
     "font": "Fonte",
     "showExample": "Linha de exemplo escura",
     "rowHeight": "Altura da linha",
+    "gradeYoung": "4–5 anos",
+    "gradeMid": "5–6 anos",
+    "gradeOlder": "7–8 anos",
     "textColor": "Cor do texto",
     "downloadPdf": "Baixar PDF",
     "downloadPng": "Baixar PNG",
@@ -457,5 +467,12 @@
   "tools": {
     "title": "Todas as ferramentas de letra grátis",
     "intro": "Tudo do site num só lugar: voz para letra, cursiva, folhas de prática para imprimir e um quiz de letra só por diversão. Tudo grátis, sem cadastro — o que você escreve não sai do navegador."
+  },
+  "sheet": {
+    "pageSize": "Tamanho",
+    "sizeLetter": "US Letter",
+    "sizeA4": "A4",
+    "nameLine": "Nome",
+    "dateLine": "Data"
   }
 }

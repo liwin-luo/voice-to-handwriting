@@ -14,15 +14,12 @@ import xhsZh from "./xiaohongshu-handwritten-images.zh.mdx";
 import xhsEn from "./xiaohongshu-handwritten-images.en.mdx";
 import xhsJa from "./xiaohongshu-handwritten-images.ja.mdx";
 import xhsKo from "./xiaohongshu-handwritten-images.ko.mdx";
-import xhsEs from "./xiaohongshu-handwritten-images.es.mdx";
 import cardDe from "./handwritten-card-with-voice.de.mdx";
 import cardFr from "./handwritten-card-with-voice.fr.mdx";
 import cardPt from "./handwritten-card-with-voice.pt.mdx";
 import genDe from "./handwriting-image-generator.de.mdx";
 import genFr from "./handwriting-image-generator.fr.mdx";
 import genPt from "./handwriting-image-generator.pt.mdx";
-import xhsDe from "./xiaohongshu-handwritten-images.de.mdx";
-import xhsFr from "./xiaohongshu-handwritten-images.fr.mdx";
 import xhsPt from "./xiaohongshu-handwritten-images.pt.mdx";
 import audioDe from "./audio-to-handwriting.de.mdx";
 import audioFr from "./audio-to-handwriting.fr.mdx";
@@ -164,9 +161,6 @@ import cnsPt from "./cursive-name-signature.pt.mdx";
 import icsZh from "./is-cursive-still-taught.zh.mdx";
 import icsJa from "./is-cursive-still-taught.ja.mdx";
 import icsKo from "./is-cursive-still-taught.ko.mdx";
-import icsDe from "./is-cursive-still-taught.de.mdx";
-import icsFr from "./is-cursive-still-taught.fr.mdx";
-import icsEs from "./is-cursive-still-taught.es.mdx";
 import icsPt from "./is-cursive-still-taught.pt.mdx";
 import cvpZh from "./cursive-vs-print.zh.mdx";
 import cvpJa from "./cursive-vs-print.ja.mdx";
@@ -203,7 +197,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "what-does-your-handwriting-say-about-you": { zh: wdzh, en: wden, ja: wdja, ko: wdko, es: wdes, de: wdde, fr: wdfr, pt: wdpt },
   "handwritten-card-with-voice": { zh: cardZh, en: cardEn, ja: cardJa, ko: cardKo, es: cardEs, de: cardDe, fr: cardFr, pt: cardPt },
   "handwriting-image-generator": { zh: genZh, en: genEn, ja: genJa, ko: genKo, es: genEs, de: genDe, fr: genFr, pt: genPt },
-  "xiaohongshu-handwritten-images": { zh: xhsZh, en: xhsEn, ja: xhsJa, ko: xhsKo, es: xhsEs, de: xhsDe, fr: xhsFr, pt: xhsPt },
+  "xiaohongshu-handwritten-images": { zh: xhsZh, en: xhsEn, ja: xhsJa, ko: xhsKo, pt: xhsPt },
   "audio-to-handwriting": { zh: audioZh, en: audioEn, ja: audioJa, ko: audioKo, es: audioEs, de: audioDe, fr: audioFr, pt: audioPt },
   "handwriting-templates-guide": { zh: tplZh, en: tplEn, ja: tplJa, ko: tplKo, es: tplEs, de: tplGDe, fr: tplGFr, pt: tplGPt },
   "name-tracing-generator": { en: ntgEn, zh: ntgZh, ja: ntgJa, ko: ntgKo, de: ntgDe, fr: ntgFr, es: ntgEs, pt: ntgPt },
@@ -219,7 +213,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "how-to-write-in-cursive": { en: hwcEn, zh: hwcZh, ja: hwcJa, ko: hwcKo, de: hwcDe, fr: hwcFr, es: hwcEs, pt: hwcPt },
   "cursive-alphabet-chart": { en: cacEn, zh: cacZh, ja: cacJa, ko: cacKo, de: cacDe, fr: cacFr, es: cacEs, pt: cacPt },
   "cursive-name-signature": { en: cnsEn, zh: cnsZh, ja: cnsJa, ko: cnsKo, de: cnsDe, fr: cnsFr, es: cnsEs, pt: cnsPt },
-  "is-cursive-still-taught": { en: icsEn, zh: icsZh, ja: icsJa, ko: icsKo, de: icsDe, fr: icsFr, es: icsEs, pt: icsPt },
+  "is-cursive-still-taught": { en: icsEn, zh: icsZh, ja: icsJa, ko: icsKo, pt: icsPt },
   "cursive-vs-print": { en: cvpEn, zh: cvpZh, ja: cvpJa, ko: cvpKo, de: cvpDe, fr: cvpFr, es: cvpEs, pt: cvpPt },
   "how-to-teach-cursive-kids": { en: htcEn, zh: htcZh, ja: htcJa, ko: htcKo, de: htcDe, fr: htcFr, es: htcEs, pt: htcPt },
   "handwriting-vs-typing-brain": { en: bvtEn, zh: bvtZh, ja: bvtJa, ko: bvtKo, de: bvtDe, fr: bvtFr, es: bvtEs, pt: bvtPt },

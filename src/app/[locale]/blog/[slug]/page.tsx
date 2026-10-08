@@ -24,8 +24,9 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  // 没有正文的语言变体是 404,不能再输出文章标题(否则软 404 仍挂着原文 title)
+  if (!BLOG_CONTENT[slug]?.[locale as Locale]) return {};
   const meta = getPostMeta(slug, locale as Locale);
-  // 只声明有正文的语言变体,其余语言 URL 是 404
   return meta
     ? {
         title: meta.title,

@@ -254,35 +254,35 @@ export const TRACING_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Are the tracing letters dotted outlines?",
-        a: "No — the tracing rows are solid light-gray letters to write over. If your child needs numbered stroke arrows, pair the sheets with letter-formation cards.",
+        a: "The practice rows are dashed outlines of the whole letter, so a child can trace the shape. They are not numbered stroke arrows. If your child needs arrow cards, pair the sheet with a letter-formation chart.",
       },
       zh: {
         q: "描红字母是虚线轮廓吗?",
-        a: "不是——描红行是浅灰实心字母,直接在上面书写即可。如果孩子需要笔画箭头提示,可以配合字母笔顺卡片使用。",
+        a: "描红行是整字的虚线轮廓,可以顺着字形描。没有编号笔顺箭头。如果需要箭头提示,请配合字母笔顺卡使用。",
       },
       ja: {
         q: "なぞる文字は点線の輪郭ですか?",
-        a: "いいえ——なぞり書きの行は薄い灰色の塗り文字です。筆順の矢印が必要な場合は、文字の筆順カードと併用してください。",
+        a: "練習行は文字全体の破線アウトラインです。番号付きの筆順矢印はありません。矢印が必要なら筆順カードと併用してください。",
       },
       ko: {
         q: "따라 쓰는 글자가 점선 윤곽인가요?",
-        a: "아니요 — 연습 행은 그 위에 쓰는 옅은 회색 실선 글자예요. 획순 화살표가 필요하면 글자 모양 카드와 함께 사용하세요.",
+        a: "연습 행은 글자 전체의 파선 윤곽입니다. 번호가 있는 획순 화살표는 없습니다. 화살표가 필요하면 글자 모양 카드와 함께 쓰세요.",
       },
       es: {
         q: "¿Las letras para calcar son contornos punteados?",
-        a: "No — las filas de calco son letras gris claro sólidas para escribir encima. Si tu hijo necesita flechas de trazo numeradas, combina las fichas con tarjetas de formación de letras.",
+        a: "Las filas de práctica son el contorno punteado de la letra completa. No llevan flechas de trazo numeradas. Si las necesitas, combina la ficha con una tarjeta de formación.",
       },
       de: {
         q: "Sind die Nachspur-Buchstaben gepunktete Umrisse?",
-        a: "Nein — die Übungszeilen zeigen vollständige hellgraue Buchstaben zum Drüberschreiben. Wenn dein Kind nummerierte Strichpfeile braucht, kombiniere die Blätter mit Buchstaben-Karten.",
+        a: "Die Übungszeilen sind gestrichelte Umrisse des ganzen Buchstabens. Nummerierte Strichpfeile gibt es nicht. Wenn dein Kind Pfeile braucht, kombiniere das Blatt mit einer Buchstabenkarte.",
       },
       fr: {
         q: "Les lettres à repasser sont-elles en pointillés ?",
-        a: "Non — les lignes de repassage sont des lettres gris clair pleines à recouvrir. Si votre enfant a besoin de flèches de tracé numérotées, associez les fiches à des cartes de formation des lettres.",
+        a: "Les lignes d'exercice sont le contour en pointillés de la lettre entière. Il n'y a pas de flèches de tracé numérotées. S'il en faut, associez la fiche à une carte de formation.",
       },
       pt: {
         q: "As letras para calcar são contornos pontilhados?",
-        a: "Não — as linhas de caligrafia são letras cinza-claro sólidas para escrever por cima. Se seu filho precisa de setas de traço numeradas, combine as fichas com cartões de formação de letras.",
+        a: "As linhas de prática são o contorno tracejado da letra inteira. Não há setas de traço numeradas. Se precisar delas, junte a ficha a um cartão de formação.",
       },
     },
   },
@@ -291,35 +291,35 @@ export const TRACING_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Can I make worksheets for the whole class?",
-        a: "Type one name per line; the page loops through every name with a dark example row followed by light-gray tracing rows. Print one copy per student.",
+        a: "Type one name per line; the page loops through every name with a dark example row followed by dashed tracing rows. Print one copy per student.",
       },
       zh: {
         q: "能给全班同学生成练习纸吗?",
-        a: "每行输入一个姓名,页面会循环填充:每个名字先深色示范,后浅灰描红。每位学生打印一页即可。",
+        a: "每行输入一个姓名,页面会循环填充:每个名字先深色示范,后虚线描红。每位学生打印一页即可。",
       },
       ja: {
         q: "クラス全員分のプリントを作れますか?",
-        a: "1 行に 1 つの名前を入力すると、各名前について濃い色のお手本行 + 薄い灰色のなぞり行が順に生成されます。児童の数だけ印刷してください。",
+        a: "1 行に 1 つの名前を入力すると、各名前について濃い色のお手本行と破線のなぞり行が順に生成されます。児童の数だけ印刷してください。",
       },
       ko: {
         q: "반 전체 학생 연습장을 만들 수 있나요?",
-        a: "한 줄에 이름을 하나씩 입력하면 페이지가 각 이름마다 진한 예시 행과 옅은 회색 연습 행을 차례로 만들어 줍니다. 학생 수만큼 인쇄하세요.",
+        a: "한 줄에 이름을 하나씩 입력하면 페이지가 각 이름마다 진한 예시 행과 파선 연습 행을 차례로 만들어 줍니다. 학생 수만큼 인쇄하세요.",
       },
       es: {
         q: "¿Puedo hacer fichas para toda la clase?",
-        a: "Escribe un nombre por línea; la página recorre cada nombre con una fila de ejemplo oscura seguida de filas grises para calcar. Imprime una copia por alumno.",
+        a: "Escribe un nombre por línea; la página recorre cada nombre con una fila de ejemplo oscura seguida de filas de contorno punteado. Imprime una copia por alumno.",
       },
       de: {
         q: "Kann ich Arbeitsblätter für die ganze Klasse erstellen?",
-        a: "Tippe pro Zeile einen Namen; die Seite durchläuft jeden Namen mit einer dunklen Beispielzeile gefolgt von hellgrauen Nachspurzeilen. Ein Ausdruck pro Kind genügt.",
+        a: "Tippe pro Zeile einen Namen; die Seite durchläuft jeden Namen mit einer dunklen Beispielzeile gefolgt von gestrichelten Nachspurzeilen. Ein Ausdruck pro Kind genügt.",
       },
       fr: {
         q: "Puis-je créer des fiches pour toute la classe ?",
-        a: "Tapez un prénom par ligne ; la page enchaîne chaque prénom avec une ligne d'exemple foncée suivie de lignes gris clair à repasser. Imprimez une copie par élève.",
+        a: "Tapez un prénom par ligne ; la page enchaîne chaque prénom avec une ligne d'exemple foncée suivie de lignes en pointillés. Imprimez une copie par élève.",
       },
       pt: {
         q: "Posso criar fichas para a turma inteira?",
-        a: "Digite um nome por linha; a página percorre cada nome com uma linha de exemplo escura seguida de linhas cinza-claro para calcar. Imprima uma cópia por aluno.",
+        a: "Digite um nome por linha; a página percorre cada nome com uma linha de exemplo escura seguida de linhas de contorno tracejado. Imprima uma cópia por aluno.",
       },
     },
   },

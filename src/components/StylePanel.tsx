@@ -5,10 +5,14 @@ import { ArrowsClockwise, UploadSimple, X } from "@phosphor-icons/react";
 import { FONTS, INKS, useEditorStore } from "@/stores/useEditorStore";
 import { PAPERS } from "@/engine/paper";
 import { fileToPaperImage } from "@/lib/paperImage";
+import { fontOrder } from "@/lib/localeDefaults";
+import PageFormatToggle from "./PageFormatToggle";
 
 export default function StylePanel() {
   const t = useTranslations("tool");
+  const locale = useLocale();
   const s = useEditorStore();
+  const fonts = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
   const isCustomPaper = s.paperId === "custom";
   const [uploading, setUploading] = useState(false);
 
@@ -34,7 +38,7 @@ export default function StylePanel() {
             onChange={(e) => s.setFontId(e.target.value as typeof s.fontId)}
             className="select-field"
           >
-            {FONTS.map((f) => (
+            {fonts.map((f) => (
               <option key={f.id} value={f.id}>
                 {t(`fonts.${f.id}`)}
               </option>
@@ -78,6 +82,7 @@ export default function StylePanel() {
       {/* 纸面 */}
       <div className="flex flex-col gap-4 py-5">
         <h2 className="field-label">{t("sectionPaper")}</h2>
+        <PageFormatToggle value={s.pageFormat} onChange={s.setPageFormat} />
         <label className="flex flex-col gap-1.5">
           <span className="text-zinc-700">{t("paper")}</span>
           <select

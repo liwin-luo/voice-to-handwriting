@@ -8,6 +8,7 @@ import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { TRACING_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
+import { defaultFontId, defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -44,7 +45,7 @@ export default async function NameTracingPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <TracingGenerator />
+        <TracingGenerator defaultFontId={defaultFontId(locale)} defaultFormat={defaultPageFormat(locale)} />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

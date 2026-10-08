@@ -1,26 +1,37 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
-
-const SIZES: Record<"letter" | "a4", [number, number]> = {
-  letter: [816, 1056], // 8.5×11in @96dpi(美国默认)
-  a4: [794, 1123],
-};
+import { formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import PageFormatToggle from "./PageFormatToggle";
 
 type PaperType = "college" | "wide" | "graph" | "handwriting" | "blank";
 
+function spacingFor(type: PaperType): number {
+  if (type === "college") return 27; // 9/32 in, college ruled
+  if (type === "wide") return 33; // 11/32 in, wide ruled
+  if (type === "handwriting") return 28;
+  return 26;
+}
+
 /** 可打印纸张生成器:Canvas 精确绘制,导出打印级 PDF */
-export default function PaperGenerator() {
+export default function PaperGenerator({
+  defaultType = "college",
+  defaultFormat,
+}: {
+  defaultType?: PaperType;
+  defaultFormat: PageFormat;
+}) {
   const t = useTranslations("printable");
-  const [size, setSize] = useState<"letter" | "a4">("letter");
-  const [type, setType] = useState<PaperType>("college");
+  const locale = useLocale();
+  const [size, setSize] = useState<PageFormat>(defaultFormat);
+  const [type, setType] = useState<PaperType>(defaultType);
   const [lineColor, setLineColor] = useState("#a8c0d8");
-  const [spacing, setSpacing] = useState(26);
+  const [spacing, setSpacing] = useState(spacingFor(defaultType));
   const [showMargin, setShowMargin] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [w, h] = SIZES[size];
+  const { w, h } = PAGE_FORMATS[size];
 
   useEffect(() => {
     draw();
@@ -58,7 +69,7 @@ export default function PaperGenerator() {
     const bottom = 36;
 
     if (type === "college" || type === "wide") {
-      const L = type === "college" ? 26 : 33;
+      const L = spacing;
       for (let y = top + L; y <= h - bottom; y += L) line(ctx, 0, y, w, y);
     } else if (type === "graph") {
       for (let y = top; y <= h - bottom; y += spacing) line(ctx, 0, y, w, y, false, 0.8);
@@ -130,7 +141,10 @@ export default function PaperGenerator() {
             {types.map((tp) => (
               <button
                 key={tp.id}
-                onClick={() => setType(tp.id)}
+                onClick={() => {
+                  setType(tp.id);
+                  setSpacing(spacingFor(tp.id));
+                }}
                 className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                   type === tp.id
                     ? "border-accent bg-accent/5 text-accent"
@@ -157,7 +171,9 @@ export default function PaperGenerator() {
                 onChange={(e) => setSpacing(Number(e.target.value))}
                 className="accent-accent"
               />
-              <span className="font-mono text-xs text-zinc-400">{spacing}px</span>
+              <span className="font-mono text-xs text-zinc-400">
+                {formatLength(type === "handwriting" ? Math.max(60, spacing * 3) : spacing, locale)}
+              </span>
             </span>
           </label>
         )}
@@ -185,24 +201,7 @@ export default function PaperGenerator() {
           </button>
         </label>
 
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("pageSize")}</span>
-          <div className="flex gap-1.5">
-            {(["letter", "a4"] as const).map((s) => (
-              <button
-                key={s}
-                onClick={() => setSize(s)}
-                className={`flex-1 cursor-pointer rounded-lg border px-2 py-1.5 text-xs uppercase transition-colors ${
-                  size === s
-                    ? "border-accent bg-accent/5 text-accent"
-                    : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
-                }`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-        </div>
+        <PageFormatToggle value={size} onChange={setSize} />
 
         <div className="flex gap-2">
           <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">

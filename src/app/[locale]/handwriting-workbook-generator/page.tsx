@@ -8,6 +8,7 @@ import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { WORKBOOK_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
+import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -44,7 +45,7 @@ export default async function HandwritingWorkbookPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <HandwritingWorkbookGenerator />
+        <HandwritingWorkbookGenerator defaultFormat={defaultPageFormat(locale)} />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

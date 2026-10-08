@@ -8,6 +8,7 @@ import ShareBar from "@/components/ShareBar";
 import ToolFaq from "@/components/ToolFaq";
 import { DAILY_CURSIVE_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
+import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -44,7 +45,7 @@ export default async function DailyCursivePracticePage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <DailyCursivePracticeGenerator />
+        <DailyCursivePracticeGenerator defaultFormat={defaultPageFormat(locale)} />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

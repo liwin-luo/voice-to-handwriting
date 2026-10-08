@@ -1,15 +1,18 @@
 "use client";
 import { Microphone, Stop } from "@phosphor-icons/react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEditorStore } from "@/stores/useEditorStore";
 import { snapshotEditor } from "@/stores/useHistoryStore";
 import { useSpeechRecognition } from "@/hooks/useSpeechRecognition";
+import { speechLang } from "@/lib/localeDefaults";
 
 export default function RecorderPanel() {
   const t = useTranslations("tool");
+  const locale = useLocale();
   const appendText = useEditorStore((s) => s.appendText);
   const text = useEditorStore((s) => s.text);
   const { supported, listening, interim, error, start, stop } = useSpeechRecognition({
+    lang: speechLang(locale),
     onFinal: appendText,
   });
 

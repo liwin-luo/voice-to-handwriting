@@ -5,26 +5,39 @@ import { useTranslations } from "next-intl";
 import { ShareNetwork, X } from "@phosphor-icons/react";
 import { useShareActions } from "./useShareActions";
 
+/** 文章页没有分享横条,浮标常驻。列表页(/blog、/zh/blog)不算。 */
+function isBlogPostRoute(pathname: string) {
+  const parts = pathname.split("/").filter(Boolean);
+  const i = parts.indexOf("blog");
+  return i >= 0 && parts.length > i + 1;
+}
+
 /**
  * 桌面端悬浮分享浮标:屏幕右侧垂直居中,单图标按钮,点击展开竖排分享面板。
- * 仅在带 ShareBar 的工具页出现,且横条滚出视口后才显示,避免同一屏出现两份分享入口。
- * 移动端不渲染(小屏下悬浮控件会遮挡工具操作)。
+ * 工具页:横条滚出视口后才显示,避免同一屏出现两份分享入口。
+ * 博客文章页:没有横条,浮标常驻。列表页不显示。
+ * 移动端不渲染(小屏下悬浮控件会遮挡操作)。
  */
 export default function FloatingShare() {
   const t = useTranslations("share");
   const pathname = usePathname();
   const { buttons, onShare } = useShareActions();
   const [open, setOpen] = useState(false);
-  // 默认视为横条在视口内(浮标隐藏):SSR/水合首帧不闪现,无横条的页面也永不显示
-  const [barOnScreen, setBarOnScreen] = useState(true);
+  // 工具页默认视为横条在视口内(浮标隐藏),避免 SSR/水合首帧闪现;
+  // 文章页没有横条,首帧即显示
+  const [barOnScreen, setBarOnScreen] = useState(() => !isBlogPostRoute(pathname));
   const rootRef = useRef<HTMLDivElement>(null);
 
   // 观察 #share-bar:横条滚出视口才显示浮标;路由切换后对新的横条重新观察
   useEffect(() => {
     const bar = document.getElementById("share-bar");
     if (!bar) {
-      // 当前页面没有横条(博客、关于等):恢复默认隐藏。放进微任务,避免在 effect 里同步 setState 造成级联渲染
-      queueMicrotask(() => setBarOnScreen(true));
+      // 文章页常驻浮标;列表、关于等无横条页面保持隐藏。放进微任务,避免在 effect 里同步 setState 造成级联渲染
+      const show = isBlogPostRoute(pathname);
+      queueMicrotask(() => {
+        setBarOnScreen(!show);
+        setOpen(false);
+      });
       return;
     }
     const observer = new IntersectionObserver(([entry]) => {

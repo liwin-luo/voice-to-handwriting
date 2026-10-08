@@ -8,12 +8,14 @@ import { jsPDF } from "jspdf";
 import { useEditorStore } from "@/stores/useEditorStore";
 import { snapshotEditor } from "@/stores/useHistoryStore";
 import SharePreviewModal from "./SharePreviewModal";
-import { PAGE_H, PAGE_W } from "./PaperView";
+import { PAGE_FORMATS } from "@/lib/localeDefaults";
 
 export default function ExportBar() {
   const t = useTranslations("tool");
   const text = useEditorStore((s) => s.text);
   const watermark = useEditorStore((s) => s.watermark);
+  const pageFormat = useEditorStore((s) => s.pageFormat);
+  const { w: pageW, h: pageH } = PAGE_FORMATS[pageFormat];
   const setWatermark = useEditorStore((s) => s.setWatermark);
   const [busy, setBusy] = useState(false);
   const [previewOpen, setPreviewOpen] = useState(false);
@@ -60,10 +62,10 @@ export default function ExportBar() {
     setBusy(true);
     try {
       const urls = await toPngPages();
-      const pdf = new jsPDF({ unit: "px", format: [PAGE_W, PAGE_H], orientation: "portrait" });
+      const pdf = new jsPDF({ unit: "px", format: [pageW, pageH], orientation: "portrait" });
       urls.forEach((u, i) => {
-        if (i > 0) pdf.addPage([PAGE_W, PAGE_H], "portrait");
-        pdf.addImage(u, "PNG", 0, 0, PAGE_W, PAGE_H);
+        if (i > 0) pdf.addPage([pageW, pageH], "portrait");
+        pdf.addImage(u, "PNG", 0, 0, pageW, pageH);
       });
       pdf.save("handwriting.pdf");
       snapshotEditor("export"); // 导出完成,存历史快照
