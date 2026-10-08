@@ -24,10 +24,6 @@
       "title": "Blog",
       "description": "Tutoriels et idées pour des cartes et images manuscrites."
     },
-    "history": {
-      "title": "Historique",
-      "description": "Vos conversions enregistrées localement : instantanés de texte et de style, restaurables en un clic."
-    },
     "templates": {
       "title": "Modèles manuscrits",
       "description": "Lettres d'amour, excuses, remerciements, anniversaires et fêtes — texte et style en un geste."
@@ -73,9 +69,10 @@
       "description": "Écrivez ou dictez n'importe quoi : ce générateur d'écriture de médecin le transforme en gribouillis illisibles d'ordonnance sur une feuille avec ℞. Gratuit, export PNG ou PDF."
     },
     "workbook": {
-        "title": "Générateur de cahier d'écriture (PDF imprimable)",
-        "description": "Créez en quelques secondes un cahier d'écriture en PDF : couverture, alphabet ou votre liste de mots, ligne modèle et lignes à repasser sur guides trois lignes. Gratuit, sans inscription, sans filigrane."
-    },    "quiz": {
+      "title": "Générateur de cahier d'écriture (PDF imprimable)",
+      "description": "Créez en quelques secondes un cahier d'écriture en PDF : couverture, alphabet ou votre liste de mots, ligne modèle et lignes à repasser sur guides trois lignes. Gratuit, sans inscription, sans filigrane."
+    },
+    "quiz": {
       "title": "Quiz de personnalité par l'écriture — Que dit votre écriture sur vous ?",
       "description": "12 questions visuelles en 2 minutes environ : un profil amusant et des conseils d'entraînement personnalisés. Gratuit, sans photo, sans inscription."
     },
@@ -87,7 +84,6 @@
   "nav": {
     "tool": "Outil",
     "templates": "Modèles",
-    "history": "Historique",
     "blog": "Blog",
     "about": "À propos",
     "printablePaper": "Papier à imprimer",
@@ -227,12 +223,24 @@
     "reject": "Refuser"
   },
   "blog": {
-    "tagline": "Tutoriels et idées de cartes manuscrites — chaque guide fonctionne avec l'outil de la page d'accueil."
+    "tagline": "Tutoriels et idées de cartes manuscrites — chaque guide fonctionne avec l'outil de la page d'accueil.",
+    "count": "{n} guides",
+    "filterAll": "Tous",
+    "sortLabel": "Trier",
+    "sortNewest": "Plus récents",
+    "sortOldest": "Plus anciens",
+    "sortUpdated": "Mis à jour récemment",
+    "pagePrev": "Page précédente",
+    "pageNext": "Page suivante",
+    "pageAria": "Page {current} sur {total}",
+    "noPosts": "Aucun guide pour ce filtre."
   },
   "history": {
+    "open": "Historique",
+    "close": "Fermer",
+    "title": "Historique",
     "emptyTitle": "Pas encore d'historique",
     "emptyHint": "Un instantané est enregistré à l'export, à la fin d'un enregistrement ou après une transcription réussie",
-    "goTool": "Écrire maintenant",
     "restore": "Restaurer",
     "delete": "Supprimer",
     "clearAll": "Tout effacer",
@@ -326,7 +334,7 @@
     "seoText": "Les fiches de lettres à repasser personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture : l'enfant suit la ligne d'exemple, puis répète. Générez-en autant que nécessaire — chaque PDF s'imprime aux dimensions exactes des lettres, sans filigrane.",
     "faqTitle": "Questions fréquentes"
   },
-    "doctor": {
+  "doctor": {
     "title": "Générateur d'écriture de médecin",
     "intro": "Tapez ou dictez n'importe quel texte et voyez-le devenir une « ordonnance » illisible en un instant — gribouillis compris. Pour les blagues, les cadeaux et les cartes.",
     "seoTitle": "La célèbre écriture de médecin, générée",
@@ -335,23 +343,24 @@
     "disclaimer": "Pour rire uniquement — le résultat est une blague, pas un document médical. Ne l'utilisez pas pour tromper qui que ce soit."
   },
   "workbook": {
-      "title": "Générateur de cahier d'écriture",
-      "intro": "Un cahier entier en un clic : couverture, un groupe par mot (ligne modèle + lignes à repasser), exporté en un seul PDF prêt à imprimer.",
-      "defaultTitle": "Mon cahier d'écriture",
-      "titleLabel": "Titre du cahier",
-      "wordsLabel": "Liste de mots — un par ligne",
-      "wordsPlaceholder": "apple\nball\ncat",
-      "font": "Police",
-      "showCover": "Couverture",
-      "showExample": "Ligne modèle",
-      "downloadPdf": "Télécharger le cahier en PDF",
-      "pageN": "Page {n}",
-      "stats": "{pages} pages · {words} mots",
-      "coverBelongsTo": "Ce cahier appartient à :",
-      "seoTitle": "Cahiers d'écriture imprimables pour la maison et la classe",
-      "seoText": "Le cahier structure l'entraînement : chaque mot avec sa ligne modèle d'abord, puis des répétitions à repasser sur des guides trois lignes à ligne médiane pointillée.\n\nMode d'emploi :collez votre liste — l'alphabet pour les maternelles, les sight words au CP, la liste d'orthographe de la semaine — choisissez écriture droite ou cursive et téléchargez le PDF. Imprimez tout ou seulement les pages manquantes.\n\nIdées :un cahier au prénom de votre enfant, un cahier d'été, ou un lot pour la classe avec la liste de chaque élève. Tout se génère dans votre navigateur — sans inscription, sans filigrane.",
-      "faqTitle": "Questions fréquentes"
-  },  "cursive": {
+    "title": "Générateur de cahier d'écriture",
+    "intro": "Un cahier entier en un clic : couverture, un groupe par mot (ligne modèle + lignes à repasser), exporté en un seul PDF prêt à imprimer.",
+    "defaultTitle": "Mon cahier d'écriture",
+    "titleLabel": "Titre du cahier",
+    "wordsLabel": "Liste de mots — un par ligne",
+    "wordsPlaceholder": "apple\nball\ncat",
+    "font": "Police",
+    "showCover": "Couverture",
+    "showExample": "Ligne modèle",
+    "downloadPdf": "Télécharger le cahier en PDF",
+    "pageN": "Page {n}",
+    "stats": "{pages} pages · {words} mots",
+    "coverBelongsTo": "Ce cahier appartient à :",
+    "seoTitle": "Cahiers d'écriture imprimables pour la maison et la classe",
+    "seoText": "Le cahier structure l'entraînement : chaque mot avec sa ligne modèle d'abord, puis des répétitions à repasser sur des guides trois lignes à ligne médiane pointillée.\n\nMode d'emploi :collez votre liste — l'alphabet pour les maternelles, les sight words au CP, la liste d'orthographe de la semaine — choisissez écriture droite ou cursive et téléchargez le PDF. Imprimez tout ou seulement les pages manquantes.\n\nIdées :un cahier au prénom de votre enfant, un cahier d'été, ou un lot pour la classe avec la liste de chaque élève. Tout se génère dans votre navigateur — sans inscription, sans filigrane.",
+    "faqTitle": "Questions fréquentes"
+  },
+  "cursive": {
     "title": "Générateur d'écriture cursive",
     "intro": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner.",
     "seoTitle": "Générateur gratuit d'écriture cursive",

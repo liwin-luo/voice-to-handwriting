@@ -36,6 +36,23 @@ export default function HandwritingWorkbookGenerator({
   const [drawTitle, titleComposition] = useDebouncedImeSafe(title);
   const [drawWords, wordsComposition] = useDebouncedImeSafe(words);
 
+  // 字母矩阵页跳转:/handwriting-workbook-generator?words=f,fan,... → 预填词表。
+  // 不能放进 useState 初始化器:SSR 初始值会与客户端不同,触发 hydration mismatch
+  useEffect(() => {
+    const raw = new URLSearchParams(window.location.search).get("words");
+    if (!raw) return;
+    const list = raw
+      .split(/[,\n]/)
+      .map((w) => w.trim())
+      .filter(Boolean)
+      .slice(0, MAX_WORDS);
+    if (list.length === 0) return;
+    // 一次性摄入外部 URL 状态,非派生状态反模式
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setWords(list.join("\n"));
+    window.history.replaceState(null, "", window.location.pathname);
+  }, []);
+
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
 

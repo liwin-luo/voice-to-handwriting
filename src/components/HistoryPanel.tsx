@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowsCounterClockwise, NoteBlank, Trash, TrashSimple } from "@phosphor-icons/react";
-import { Link, useRouter } from "@/i18n/navigation";
 import { useHistoryStore, type HistoryEntry, type HistorySource } from "@/stores/useHistoryStore";
 import { useEditorStore } from "@/stores/useEditorStore";
 
@@ -27,9 +26,9 @@ function useArm(timeout = 3000) {
   return [armed, arm] as const;
 }
 
-export default function HistoryPanel() {
+/** 仅在工具内历史抽屉中使用;恢复后由 onRestore(通常是关闭抽屉)接管 */
+export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
   const t = useTranslations("history");
-  const router = useRouter();
   const entries = useHistoryStore((s) => s.entries);
   const remove = useHistoryStore((s) => s.remove);
   const clear = useHistoryStore((s) => s.clear);
@@ -49,7 +48,7 @@ export default function HistoryPanel() {
     s.setIntensity(e.style.intensity);
     s.setAlign(e.style.align);
     s.setIndent(e.style.indent);
-    router.push("/");
+    onRestore();
   };
 
   return (
@@ -64,7 +63,7 @@ export default function HistoryPanel() {
               }}
               className="rounded-full bg-rose-600 px-3.5 py-1.5 text-xs font-medium text-white transition-transform active:scale-95"
             >
-              {t("confirmClear")}
+              {t("confirmClearShort")}
             </button>
           ) : (
             <button
@@ -83,9 +82,6 @@ export default function HistoryPanel() {
           <NoteBlank className="size-10 text-zinc-300" />
           <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
           <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
-          <Link href="/" className="btn btn-primary mt-1 px-5 py-2.5">
-            {t("goTool")}
-          </Link>
         </div>
       )}
 

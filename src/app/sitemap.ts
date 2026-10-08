@@ -2,10 +2,11 @@ import type { MetadataRoute } from "next";
 import { POSTS } from "@/content/posts";
 import { postLocales } from "@/content/blog/registry";
 import { TEMPLATES } from "@/content/templates";
+import { CURSIVE_LETTERS } from "@/content/cursiveLetters";
 import { routing } from "@/i18n/routing";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
 
-/** /history 是本地工具页,薄内容不进 sitemap */
+/** 内容仅来自 localStorage 的本地工具页禁止进 sitemap */
 const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-worksheets", "/daily-cursive-handwriting-practice", "/handwriting-personality-quiz", "/doctor-handwriting-generator", "/handwriting-workbook-generator", "/printable-paper", "/name-tracing", "/word-work", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact"];
 const YEARLY_PATHS = new Set(["/privacy", "/terms", "/contact", "/about"]);
 
@@ -30,6 +31,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.7,
         alternates: { languages: buildAlternates(p, locale).languages },
+      });
+    }
+  }
+  // 字母矩阵页:仅输出有文案的语言变体(Phase 0 只有 en,避免非英文 URL 404 混入 sitemap)
+  for (const l of CURSIVE_LETTERS) {
+    const p = `/cursive/letter/${l.slug}`;
+    const available = routing.locales.filter((locale) => Boolean(l.copy[locale]));
+    for (const locale of available) {
+      entries.push({
+        url: localizedUrl(p, locale),
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: { languages: buildAlternates(p, locale, available).languages },
       });
     }
   }

@@ -37,10 +37,10 @@ export const useHistoryStore = create<HistoryState>()(
       entries: [],
       add: (entry) =>
         set((s) => ({
-          // 最新在前,去重连续相同文本,超出上限裁剪
+          // 最新在前;同文本跨来源去重(导出快照会覆盖早先的录音快照,保留最终样式),超出上限裁剪
           entries: [
             { ...entry, id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`, savedAt: Date.now() },
-            ...s.entries.filter((e) => !(e.text === entry.text && e.source === entry.source)),
+            ...s.entries.filter((e) => e.text !== entry.text),
           ].slice(0, MAX_ENTRIES),
         })),
       remove: (id) => set((s) => ({ entries: s.entries.filter((e) => e.id !== id) })),

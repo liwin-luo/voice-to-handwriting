@@ -23,11 +23,13 @@ describe("useHistoryStore", () => {
     expect(entries[0].text).toBe("第二");
   });
 
-  it("连续相同文本+来源去重", () => {
+  it("相同文本去重(跨来源,保留最新快照)", () => {
     const h = useHistoryStore.getState();
+    h.add({ text: "同文", source: "speech", style });
     h.add({ text: "同文", source: "export", style });
-    h.add({ text: "同文", source: "export", style });
-    expect(useHistoryStore.getState().entries).toHaveLength(1);
+    const entries = useHistoryStore.getState().entries;
+    expect(entries).toHaveLength(1);
+    expect(entries[0].source).toBe("export");
   });
 
   it("上限 50 条,旧的被裁剪", () => {

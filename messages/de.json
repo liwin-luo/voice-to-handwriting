@@ -24,10 +24,6 @@
       "title": "Blog",
       "description": "Anleitungen und Ideen für handgeschriebene Karten und Bilder."
     },
-    "history": {
-      "title": "Verlauf",
-      "description": "Lokal gespeicherte Konvertierungen: Text- und Stil-Schnappschüsse, mit einem Klick wiederherstellbar."
-    },
     "templates": {
       "title": "Handschrift-Vorlagen",
       "description": "Liebesbriefe, Entschuldigungen, Dankesschreiben, Geburtstage und Feiertage — Text und Stil in einem Tipp."
@@ -73,9 +69,10 @@
       "description": "Tippe oder diktiere alles, und dieser Arzt-Schrift-Generator schreibt es als unlesbares Rezept-Gekritzel auf ein ℞-Blatt. Gratis Gag-Geschenk-Idee, Export als PNG oder PDF."
     },
     "workbook": {
-        "title": "Handschrift-Übungsheft-Generator (druckbares PDF)",
-        "description": "Erstelle in Sekunden ein druckbares Übungsheft als PDF: Deckblatt, Alphabet oder eigene Wortliste, Beispielzeile und nachspurbare Zeilen mit Drei-Linien-Guide. Kostenlos, ohne Anmeldung, ohne Wasserzeichen."
-    },    "quiz": {
+      "title": "Handschrift-Übungsheft-Generator (druckbares PDF)",
+      "description": "Erstelle in Sekunden ein druckbares Übungsheft als PDF: Deckblatt, Alphabet oder eigene Wortliste, Beispielzeile und nachspurbare Zeilen mit Drei-Linien-Guide. Kostenlos, ohne Anmeldung, ohne Wasserzeichen."
+    },
+    "quiz": {
       "title": "Handschrift-Persönlichkeitstest — Was sagt deine Handschrift über dich?",
       "description": "12 visuelle Fragen in etwa 2 Minuten: ein Spaß-Profil plus passende Übungstipps. Kostenlos, ohne Foto-Upload, ohne Anmeldung."
     },
@@ -87,7 +84,6 @@
   "nav": {
     "tool": "Werkzeug",
     "templates": "Vorlagen",
-    "history": "Verlauf",
     "blog": "Blog",
     "about": "Über",
     "printablePaper": "Druckpapier-Vorlagen",
@@ -227,12 +223,24 @@
     "reject": "Ablehnen"
   },
   "blog": {
-    "tagline": "Tutorials und Ideen für handgeschriebene Karten — jede Anleitung funktioniert direkt mit dem Werkzeug."
+    "tagline": "Tutorials und Ideen für handgeschriebene Karten — jede Anleitung funktioniert direkt mit dem Werkzeug.",
+    "count": "{n} Ratgeber",
+    "filterAll": "Alle",
+    "sortLabel": "Sortieren",
+    "sortNewest": "Neueste zuerst",
+    "sortOldest": "Älteste zuerst",
+    "sortUpdated": "Zuletzt aktualisiert",
+    "pagePrev": "Vorherige Seite",
+    "pageNext": "Nächste Seite",
+    "pageAria": "Seite {current} von {total}",
+    "noPosts": "Keine Ratgeber für diesen Filter."
   },
   "history": {
+    "open": "Verlauf",
+    "close": "Schließen",
+    "title": "Verlauf",
     "emptyTitle": "Noch kein Verlauf",
     "emptyHint": "Beim Exportieren, nach der Aufnahme oder erfolgreicher Transkription wird ein Schnappschuss gespeichert",
-    "goTool": "Jetzt schreiben",
     "restore": "Wiederherstellen",
     "delete": "Löschen",
     "clearAll": "Alles löschen",
@@ -326,7 +334,7 @@
     "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Kindern das Schreiben beizubringen: Das Kind geht die Beispielzeile nach und wiederholt sie dann. Generiere so viele Blätter, wie du brauchst — jedes PDF druckt in exakter Buchstabengröße und ohne Wasserzeichen.",
     "faqTitle": "Häufige Fragen"
   },
-    "doctor": {
+  "doctor": {
     "title": "Arzt-Krakel-Schrift-Generator",
     "intro": "Tippe oder diktiere, was du willst — und es wird im Handumdrehen zu einem unlesbaren „ärztlichen Rezept“, Gekritzel inklusive. Für Scherzgeschenke, Partygags und Gute-Besserung-Karten.",
     "seoTitle": "Die berühmte Arztschrift, automatisch erzeugt",
@@ -335,23 +343,24 @@
     "disclaimer": "Nur zum Spaß — das Ergebnis ist ein Scherzartikel, kein medizinisches Dokument. Nicht zum Täuschen verwenden."
   },
   "workbook": {
-      "title": "Handschrift-Übungsheft-Generator",
-      "intro": "Ein ganzes Übungsheft auf einen Klick: Deckblatt, pro Wort eine Gruppe (Beispielzeile + Spurzeilen), exportiert als ein druckfertiges PDF.",
-      "defaultTitle": "Mein Schreibübungsheft",
-      "titleLabel": "Buchtitel",
-      "wordsLabel": "Wortliste — eine pro Zeile",
-      "wordsPlaceholder": "apple\nball\ncat",
-      "font": "Schrift",
-      "showCover": "Deckblatt",
-      "showExample": "Beispielzeile",
-      "downloadPdf": "Übungsheft-PDF herunterladen",
-      "pageN": "Seite {n}",
-      "stats": "{pages} Seiten · {words} Wörter",
-      "coverBelongsTo": "Dieses Heft gehört:",
-      "seoTitle": "Druckbare Handschrift-Übungshefte für Zuhause und Klasse",
-      "seoText": "Ein Heft strukturiert das Üben: jedes Wort mit Beispiel zuerst, dann Wiederholungen zum Nachspuren auf Drei-Linien-Guides mit gestrichelter Mittellinie.\n\nSo geht’s:Liste einfügen — das Alphabet für Vorschulkinder, Sight Words für die erste Klasse, die Wochenliste für größere — Druckschrift oder Schreibschrift wählen und das PDF laden. Ganz drucken oder nur fehlende Seiten.\n\nIdeen:ein Namensheft für dein Kind, ein Sommerheft, oder ein Klassensatz mit der Liste jedes Kindes. Alles im Browser — ohne Anmeldung, ohne Wasserzeichen.",
-      "faqTitle": "Häufige Fragen"
-  },  "cursive": {
+    "title": "Handschrift-Übungsheft-Generator",
+    "intro": "Ein ganzes Übungsheft auf einen Klick: Deckblatt, pro Wort eine Gruppe (Beispielzeile + Spurzeilen), exportiert als ein druckfertiges PDF.",
+    "defaultTitle": "Mein Schreibübungsheft",
+    "titleLabel": "Buchtitel",
+    "wordsLabel": "Wortliste — eine pro Zeile",
+    "wordsPlaceholder": "apple\nball\ncat",
+    "font": "Schrift",
+    "showCover": "Deckblatt",
+    "showExample": "Beispielzeile",
+    "downloadPdf": "Übungsheft-PDF herunterladen",
+    "pageN": "Seite {n}",
+    "stats": "{pages} Seiten · {words} Wörter",
+    "coverBelongsTo": "Dieses Heft gehört:",
+    "seoTitle": "Druckbare Handschrift-Übungshefte für Zuhause und Klasse",
+    "seoText": "Ein Heft strukturiert das Üben: jedes Wort mit Beispiel zuerst, dann Wiederholungen zum Nachspuren auf Drei-Linien-Guides mit gestrichelter Mittellinie.\n\nSo geht’s:Liste einfügen — das Alphabet für Vorschulkinder, Sight Words für die erste Klasse, die Wochenliste für größere — Druckschrift oder Schreibschrift wählen und das PDF laden. Ganz drucken oder nur fehlende Seiten.\n\nIdeen:ein Namensheft für dein Kind, ein Sommerheft, oder ein Klassensatz mit der Liste jedes Kindes. Alles im Browser — ohne Anmeldung, ohne Wasserzeichen.",
+    "faqTitle": "Häufige Fragen"
+  },
+  "cursive": {
     "title": "Schreibschrift-Generator",
     "intro": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken.",
     "seoTitle": "Kostenloser Schreibschrift-Generator",

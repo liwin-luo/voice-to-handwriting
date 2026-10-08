@@ -63,7 +63,7 @@
 
 ### 2.3 sitemap / robots / 收录
 
-- 新增路由**必须**同步加进 `src/app/sitemap.ts` 的 `PATHS`(文章与模板页自动纳入,无需手动);`/history` 这类薄工具页**禁止**进 sitemap。
+- 新增路由**必须**同步加进 `src/app/sitemap.ts` 的 `PATHS`(文章与模板页自动纳入,无需手动);内容仅来自 localStorage 的本地工具页(无公开内容)**禁止**进 sitemap。
 - `lastmod` **必须**用真实日期(文章用其 date/updated),**禁止**全站统一刷成构建时间——会被 Google 判为不可信信号。
 - 部署后**应当**对新增/有变化的 URL 执行 `npm run indexnow <url>`;**禁止**日常反复全量提交(会被 IndexNow 视为滥用)。
 
@@ -120,9 +120,9 @@
 
 ### 3.4 新文章接线四步(缺一不可)
 
-1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);
+1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);动笔前先按选题簇选定写作角色,通读 `docs/personas/` 对应角色卡,按其文风规则写作;
 2. `registry.ts` 注册组件;
-3. `posts.ts` 登记元数据:`slug / date / updated / image` + i18n title/description;题图放 `public/blog/`(约 1440×900 横图,**必须**提交);
+3. `posts.ts` 登记元数据:`slug / author / date / updated / image` + i18n title/description;`author` **必填**(TS 类型限定只能取 `src/content/authors.ts` 已注册的角色,角色体系见 `docs/personas/README.md`);题图放 `public/blog/`(约 1440×900 横图,**必须**提交);
 4. `related.ts` 登记 `RELATED[slug]`(§3.3)。
 
 漏 1–3 任一步会导致页面 404 或不进 sitemap;漏第 4 步会被自动校验拦截。
@@ -216,7 +216,7 @@
 | 校验项 | 对应规范 |
 |---|---|
 | 8 个 `messages/*.json` 扁平 key 集合与 en 完全一致 | §1.2 |
-| 每篇 POSTS 有非空 en title/description,slug 合法,date/updated 合法 | §2.5、§3.4 |
+| 每篇 POSTS 有非空 en title/description,slug 合法,date/updated 合法,author 已注册(类型级校验,`tsc` 拦截) | §2.5、§3.4 |
 | `BLOG_CONTENT` 与 `POSTS` 双向一致(不出现幽灵 slug) | §3.4 |
 | 每篇 POSTS 都有 `RELATED[slug]`,且 tools ≥ 1、路径都在 `TOOL_LABEL_KEY`、posts 都存在且非自身 | §3.3 |
 | 每个有正文的 (slug, locale) 都存在对应 MDX 源文件且恰好一个 H1 | §2.5、§3.4 |

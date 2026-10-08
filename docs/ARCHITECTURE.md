@@ -103,7 +103,6 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
 | `/faq` | FAQ 聚合页 + FAQPage JSON-LD | `FAQ_ITEMS` + `getFaq` |
 | `/about` `/privacy` `/terms` `/contact` | 静态页 | `makeStaticPage(key)` 工厂(`src/lib/staticPage.tsx`)从 `PAGE_CONTENT` 取 MDX |
-| `/history` | 本地历史(不进 sitemap) | `HistoryPanel` |
 | `[...rest]` | 兜底 notFound | — |
 
 ### 4.3 手写渲染引擎(src/engine/,纯函数、有单测)
@@ -122,7 +121,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | store | 内容 | persist key | 说明 |
 |---|---|---|---|
 | `useEditorStore` | text + 全部样式(fontId/paperId/ink/fontSize/intensity/seed/align/indent/watermark/customPaper) | `vth-prefs` | **只持久化样式,不持久化正文**;`FONTS`(14 款)与 `INKS`(7 色)常量也定义在此文件 |
-| `useHistoryStore` | 快照数组(text + style + source) | `vth-history` | 上限 50 条,最新在前,连续重复去重 |
+| `useHistoryStore` | 快照数组(text + style + source) | `vth-history` | 上限 50 条,最新在前,同文本跨来源去重;经工具内 `HistoryDrawer` 查看/恢复(独立 /history 页已移除,308 回首页) |
 
 自定义约定:所有 localStorage key 用 `vth-` 前缀;用户上传纸张背景图必须先过 `lib/paperImage.ts` 的 `fileToPaperImage` 压缩(长边 1600 JPEG),否则会撑爆 localStorage 配额导致**全部样式偏好丢失**。
 
@@ -162,7 +161,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 ### 4.9 SEO 基建
 
 - `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)。
-- `app/sitemap.ts`:15 条静态路径 × 8 语言 + 全部模板页 + 博客(仅 postLocales);`/history` 薄内容不进。
+- `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 字母矩阵页 + 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
 - IndexNow(`scripts/indexnow-submit.mjs`,`npm run indexnow`):无参提交 sitemap 全量,带参数提交指定 URL;密钥文件在 `public/fd1dfcff….txt`。**日常只提交有变化的 URL**,反复全量提交会被视为滥用。

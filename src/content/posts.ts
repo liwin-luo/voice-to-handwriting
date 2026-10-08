@@ -1,8 +1,11 @@
 import { mergeI18n, EXTRA_POST_I18N } from "@/content/extra-locales";
+import type { AuthorId } from "@/content/authors";
 import type { Locale } from "@/i18n/routing";
 
 export interface Post {
   slug: string;
+  /** 写作角色(笔名署名,必填):决定全文语气与选题边界,角色卡见 docs/personas/ */
+  author: AuthorId;
   date: string; // 首发
   updated: string; // 最后更新(EEAT:展示维护状态)
   image: string; // 题图(public/blog 下截图)
@@ -15,10 +18,12 @@ export function getPostMeta(slug: string, locale: Locale) {
   return post ? (post.i18n[locale] ?? post.i18n.en) : undefined;
 }
 
-/** 博客索引:新增文章在 src/content/blog/<slug>.<locale>.mdx 建文件并注册到 registry 后,在此登记 */
+/** 博客索引:新增文章在 src/content/blog/<slug>.<locale>.mdx 建文件并注册到 registry 后,在此登记。
+ *  author 必填:先按选题选角色(docs/personas/),再按该角色卡的文风写作。 */
 export const POSTS: Post[] = [
   {
     slug: "what-does-your-handwriting-say-about-you",
+    author: "mara-voss",
     date: "2026-10-08",
     updated: "2026-10-08",
     image: "/blog/adult-practice.png",
@@ -67,6 +72,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "handwritten-card-with-voice",
+    author: "june-park",
     date: "2026-10-06",
     updated: "2026-10-07",
     image: "/blog/template-love.png",
@@ -100,6 +106,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "handwriting-image-generator",
+    author: "theo-lindgren",
     date: "2026-10-06",
     updated: "2026-10-07",
     image: "/blog/workspace.png",
@@ -133,6 +140,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "xiaohongshu-handwritten-images",
+    author: "theo-lindgren",
     date: "2026-10-06",
     updated: "2026-10-07",
     image: "/blog/templates.png",
@@ -166,6 +174,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "audio-to-handwriting",
+    author: "theo-lindgren",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/toolbar.png",
@@ -199,6 +208,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: "handwriting-templates-guide",
+    author: "theo-lindgren",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/templates.png",
@@ -232,10 +242,11 @@ export const POSTS: Post[] = [
   },
 ];
 
-/** 面向美国用户的长尾词文章:仅英文(默认语言),其他语言按 availableLocales 过滤,不进 sitemap */
+/** 面向美国用户的长尾词文章:正文已有全部 8 种语言 */
 const US_POSTS: Post[] = [
   {
     slug: "name-tracing-generator",
+    author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/tracing-worksheet.png",
@@ -249,6 +260,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "free-printable-lined-paper",
+    author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/lined-paper.png",
@@ -262,6 +274,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "cursive-practice-worksheets",
+    author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/cursive-workspace.png",
@@ -275,6 +288,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "kindergarten-handwriting-paper",
+    author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/handwriting-paper.png",
@@ -288,6 +302,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "letter-to-santa-template",
+    author: "june-park",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/santa-letter.png",
@@ -301,6 +316,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "handwritten-thank-you-notes",
+    author: "june-park",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/thank-you-note.png",
@@ -314,6 +330,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "diy-wedding-calligraphy",
+    author: "june-park",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/wedding-script.png",
@@ -327,6 +344,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "pen-pal-letters-for-kids",
+    author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/pen-pal-letter.png",
@@ -340,6 +358,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "how-to-improve-handwriting-adults",
+    author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/adult-practice.png",
@@ -353,6 +372,7 @@ const US_POSTS: Post[] = [
   },
   {
     slug: "handwriting-practice-struggling-writers",
+    author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/tracing-worksheet.png",
@@ -368,10 +388,11 @@ const US_POSTS: Post[] = [
 
 POSTS.push(...US_POSTS);
 
-/** /cursive 落地页配套的 cursive 词簇长尾文章(仅英文),按 E-E-A-T 结构撰写 */
+/** /cursive 落地页配套的 cursive 词簇长尾文章,正文已有全部 8 种语言,按 E-E-A-T 结构撰写 */
 const CURSIVE_POSTS: Post[] = [
   {
     slug: "how-to-write-in-cursive",
+    author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/cursive-workspace.png",
@@ -385,6 +406,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "cursive-alphabet-chart",
+    author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/cursive-alphabet.png",
@@ -398,6 +420,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "cursive-name-signature",
+    author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/cursive-signature.png",
@@ -411,6 +434,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "is-cursive-still-taught",
+    author: "mara-voss",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/cursive-workspace.png",
@@ -424,6 +448,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "cursive-vs-print",
+    author: "mara-voss",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/cursive-workspace.png",
@@ -437,6 +462,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "how-to-teach-cursive-kids",
+    author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
     image: "/blog/tracing-cursive.png",
@@ -450,6 +476,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "handwriting-vs-typing-brain",
+    author: "mara-voss",
     date: "2026-10-08",
     updated: "2026-10-08",
     image: "/blog/handwriting-vs-typing-brain.png",
@@ -463,6 +490,7 @@ const CURSIVE_POSTS: Post[] = [
   },
   {
     slug: "how-to-improve-your-handwriting",
+    author: "wes-morales",
     date: "2026-10-08",
     updated: "2026-10-08",
     image: "/blog/improve-your-handwriting.png",

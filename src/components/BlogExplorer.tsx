@@ -1,0 +1,242 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
+import { ArrowRight, CaretLeft, CaretRight, Funnel } from "@phosphor-icons/react";
+import { Link } from "@/i18n/navigation";
+
+export interface BlogCardData {
+  slug: string;
+  title: string;
+  description: string;
+  date: string;
+  updated: string;
+  image: string;
+  author: string;
+  minutes: number;
+  tools: string[];
+}
+
+export interface ToolOption {
+  href: string;
+  label: string;
+}
+
+type SortKey = "newest" | "oldest" | "updated";
+
+const PAGE_SIZE = 12;
+
+/** 分页页码窗口:总数少时全部展示,多时以当前页为中心收拢 */
+function pageWindow(current: number, total: number): (number | "…")[] {
+  if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+  const pages = new Set<number>([1, total, current - 1, current, current + 1]);
+  const sorted = [...pages].filter((n) => n >= 1 && n <= total).sort((a, b) => a - b);
+  const out: (number | "…")[] = [];
+  let prev = 0;
+  for (const n of sorted) {
+    if (n - prev > 1) out.push("…");
+    out.push(n);
+    prev = n;
+  }
+  return out;
+}
+
+export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardData[]; toolOptions: ToolOption[] }) {
+  const t = useTranslations("blog");
+  const tPost = useTranslations("post");
+  const [tool, setTool] = useState<string | null>(null);
+  const [sort, setSort] = useState<SortKey>("newest");
+  const [page, setPage] = useState(1);
+
+  const filtered = useMemo(() => {
+    const list = tool ? posts.filter((p) => p.tools.includes(tool)) : posts.slice();
+    const byNewest = (a: BlogCardData, b: BlogCardData) =>
+      b.date.localeCompare(a.date) || b.updated.localeCompare(a.updated) || a.slug.localeCompare(b.slug);
+    list.sort(
+      sort === "oldest"
+        ? (a, b) => -byNewest(a, b)
+        : sort === "updated"
+          ? (a, b) => b.updated.localeCompare(a.updated) || byNewest(a, b)
+          : byNewest,
+    );
+    return list;
+  }, [posts, tool, sort]);
+
+  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const pagePosts = filtered.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE);
+
+  const pickTool = (href: string | null) => {
+    setTool(href);
+    setPage(1);
+  };
+
+  const chip = (active: boolean) =>
+    `btn h-8 whitespace-nowrap rounded-full border px-3.5 text-[13px] ${
+      active ? "border-accent bg-accent text-white" : "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:text-zinc-900"
+    }`;
+
+  return (
+    <section>
+      {/* 筛选 + 排序工具栏 */}
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 md:flex-wrap md:overflow-visible md:pb-0">
+          <Funnel className="size-4 shrink-0 text-zinc-400" aria-hidden />
+          <button type="button" onClick={() => pickTool(null)} className={chip(tool === null)} aria-pressed={tool === null}>
+            {t("filterAll")}
+          </button>
+          {toolOptions.map((o) => (
+            <button
+              key={o.href}
+              type="button"
+              onClick={() => pickTool(o.href)}
+              className={chip(tool === o.href)}
+              aria-pressed={tool === o.href}
+            >
+              {o.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
+          <label htmlFor="blog-sort" className="field-label whitespace-nowrap">
+            {t("sortLabel")}
+          </label>
+          <select
+            id="blog-sort"
+            value={sort}
+            onChange={(e) => {
+              setSort(e.target.value as SortKey);
+              setPage(1);
+            }}
+            className="select-field w-auto"
+          >
+            <option value="newest">{t("sortNewest")}</option>
+            <option value="oldest">{t("sortOldest")}</option>
+            <option value="updated">{t("sortUpdated")}</option>
+          </select>
+        </div>
+      </div>
+
+      <p className="mt-4 text-xs text-zinc-400">
+        {t("count", { n: filtered.length })}
+      </p>
+
+      {pagePosts.length === 0 ? (
+        <div className="mt-10 rounded-2xl border border-dashed border-zinc-300 p-10 text-center text-sm text-zinc-500">
+          {t("noPosts")}
+        </div>
+      ) : (
+        <ul className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {pagePosts.map((p, i) => {
+            const featured = safePage === 1 && i === 0;
+            return (
+              <li
+                key={`${tool}-${sort}-${safePage}-${p.slug}`}
+                className={`rise ${featured ? "sm:col-span-2 lg:col-span-3" : ""}`}
+                style={{ animationDelay: `${Math.min(i, 8) * 45}ms` }}
+              >
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className={`group flex h-full overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all duration-300 hover:border-zinc-300 hover:shadow-[0_16px_32px_-20px_rgba(23,23,23,0.2)] ${
+                    featured ? "flex-col md:flex-row" : "flex-col"
+                  }`}
+                >
+                  <span
+                    className={`relative block shrink-0 overflow-hidden bg-zinc-100 ${
+                      featured ? "aspect-[16/9] md:aspect-auto md:w-1/2" : "aspect-[16/10] w-full"
+                    }`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.image}
+                      alt=""
+                      width={1440}
+                      height={900}
+                      loading={featured ? "eager" : "lazy"}
+                      decoding="async"
+                      className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </span>
+                  <span
+                    className={`flex flex-1 flex-col ${featured ? "justify-center gap-3 p-6 md:p-8" : "gap-2 p-5"}`}
+                  >
+                    <span
+                      className={`font-semibold text-zinc-900 transition-colors group-hover:text-accent ${
+                        featured ? "text-xl md:text-2xl" : "text-[17px]"
+                      }`}
+                    >
+                      {p.title}
+                    </span>
+                    <span
+                      className={`text-sm leading-relaxed text-zinc-500 ${featured ? "" : "line-clamp-3"}`}
+                    >
+                      {p.description}
+                    </span>
+                    <span className="mt-auto flex flex-wrap items-center gap-x-2 pt-2 text-[11px] text-zinc-400">
+                      <span className="font-medium">{p.author}</span>
+                      <span className="text-zinc-300">·</span>
+                      <time dateTime={p.date} className="font-mono">
+                        {p.date}
+                      </time>
+                      <span className="text-zinc-300">·</span>
+                      <span>{tPost("reading", { m: p.minutes })}</span>
+                      {featured && (
+                        <span className="ml-auto inline-flex items-center gap-1 text-accent">
+                          {tPost("tryTools")}
+                          <ArrowRight className="size-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
+                        </span>
+                      )}
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+
+      {totalPages > 1 && (
+        <nav className="mt-9 flex items-center justify-center gap-1.5" aria-label="Pagination">
+          <button
+            type="button"
+            onClick={() => setPage(safePage - 1)}
+            disabled={safePage === 1}
+            aria-label={t("pagePrev")}
+            className="btn btn-ghost size-9 rounded-full p-0"
+          >
+            <CaretLeft className="size-4" aria-hidden />
+          </button>
+          {pageWindow(safePage, totalPages).map((n, idx) =>
+            n === "…" ? (
+              <span key={`gap-${idx}`} className="px-1 text-sm text-zinc-400">
+                …
+              </span>
+            ) : (
+              <button
+                key={n}
+                type="button"
+                onClick={() => setPage(n)}
+                aria-current={n === safePage ? "page" : undefined}
+                aria-label={t("pageAria", { current: n, total: totalPages })}
+                className={`btn size-9 rounded-full p-0 font-mono text-[13px] ${
+                  n === safePage ? "btn-primary" : "btn-ghost"
+                }`}
+              >
+                {n}
+              </button>
+            ),
+          )}
+          <button
+            type="button"
+            onClick={() => setPage(safePage + 1)}
+            disabled={safePage === totalPages}
+            aria-label={t("pageNext")}
+            className="btn btn-ghost size-9 rounded-full p-0"
+          >
+            <CaretRight className="size-4" aria-hidden />
+          </button>
+        </nav>
+      )}
+    </section>
+  );
+}

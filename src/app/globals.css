@@ -69,6 +69,26 @@ body {
   }
 }
 
+/* 右侧抽屉滑入:轻微位移 + 淡入,尊重减少动态偏好 */
+@keyframes drawer {
+  from {
+    opacity: 0.5;
+    transform: translateX(48px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.drawer-panel {
+  animation: drawer 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .drawer-panel {
+    animation: none;
+  }
+}
+
 @layer components {
   /* 按钮基底:统一的触感反馈与过渡 */
   .btn {

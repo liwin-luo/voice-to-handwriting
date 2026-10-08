@@ -23,10 +23,6 @@
       "title": "Blog",
       "description": "Tutoriales de tarjetas escritas a mano e ideas para imágenes manuscritas."
     },
-    "history": {
-      "title": "Historial",
-      "description": "Tus conversiones guardadas localmente: instantáneas de texto y estilo, restaurables con un clic. Solo en tu navegador."
-    },
     "templates": {
       "title": "Plantillas de escritura a mano",
       "description": "Cartas de amor, disculpas, agradecimientos, cumpleaños, Día del Maestro y Año Nuevo — texto y estilo en un toque."
@@ -73,9 +69,10 @@
       "description": "Escribe o dicta lo que quieras y este generador de letra de médico lo convierte en un garabato ilegible de receta sobre una hoja con ℞. Gratis, exporta PNG o PDF."
     },
     "workbook": {
-        "title": "Generador de cuaderno de caligrafía (PDF imprimible)",
-        "description": "Crea en segundos un cuaderno de caligrafía en PDF: portada, el alfabeto o tu lista de palabras, fila de ejemplo y filas para repasar con guía de tres líneas. Gratis, sin registro, sin marca de agua."
-    },    "quiz": {
+      "title": "Generador de cuaderno de caligrafía (PDF imprimible)",
+      "description": "Crea en segundos un cuaderno de caligrafía en PDF: portada, el alfabeto o tu lista de palabras, fila de ejemplo y filas para repasar con guía de tres líneas. Gratis, sin registro, sin marca de agua."
+    },
+    "quiz": {
       "title": "Test de personalidad por tu letra — ¿Qué dice tu escritura sobre ti?",
       "description": "12 preguntas visuales de unos 2 minutos: un perfil divertido y consejos de práctica a medida. Gratis, sin subir fotos y sin registro."
     },
@@ -88,7 +85,6 @@
     "tool": "Herramienta",
     "blog": "Blog",
     "about": "Acerca de",
-    "history": "Historial",
     "templates": "Plantillas",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nombres",
@@ -221,7 +217,17 @@
     "worksheets": "Fichas de nombres"
   },
   "blog": {
-    "tagline": "Tutoriales e ideas de tarjetas e imágenes manuscritas — todas las guías funcionan con la herramienta de inicio."
+    "tagline": "Tutoriales e ideas de tarjetas e imágenes manuscritas — todas las guías funcionan con la herramienta de inicio.",
+    "count": "{n} guías",
+    "filterAll": "Todos",
+    "sortLabel": "Ordenar",
+    "sortNewest": "Más recientes",
+    "sortOldest": "Más antiguos",
+    "sortUpdated": "Actualizadas recientemente",
+    "pagePrev": "Página anterior",
+    "pageNext": "Página siguiente",
+    "pageAria": "Página {current} de {total}",
+    "noPosts": "No hay guías para este filtro."
   },
   "notFound": {
     "title": "Esta página se voló con el viento",
@@ -229,9 +235,11 @@
     "back": "Volver a escribir"
   },
   "history": {
+    "open": "Historial",
+    "close": "Cerrar",
+    "title": "Historial",
     "emptyTitle": "Aún no hay historial",
     "emptyHint": "Se guarda una instantánea al exportar, terminar una grabación o transcribir un audio",
-    "goTool": "Escribir a mano",
     "restore": "Restaurar",
     "delete": "Eliminar",
     "clearAll": "Borrar todo",
@@ -326,7 +334,7 @@
     "seoText": "Las fichas personalizadas para calcar son una de las formas más efectivas de enseñar escritura: el niño sigue la fila de ejemplo y luego repite. Genera todas las que necesites — cada PDF se imprime con el tamaño exacto de letra y sin marca de agua.",
     "faqTitle": "Preguntas frecuentes"
   },
-    "doctor": {
+  "doctor": {
     "title": "Generador de letra de médico",
     "intro": "Escribe o dicta cualquier texto y conviértelo al instante en una \"receta médica\" ilegible — garabatos incluidos. Para bromas, regalos y tarjetas.",
     "seoTitle": "La famosa letra de médico, generada",
@@ -335,23 +343,24 @@
     "disclaimer": "Solo para diversión — el resultado es una broma, no un documento médico. No lo uses para engañar a nadie."
   },
   "workbook": {
-      "title": "Generador de cuaderno de caligrafía",
-      "intro": "Un cuaderno entero de un clic: portada, un grupo por palabra (fila de ejemplo + filas para repasar) y exportación a un único PDF.",
-      "defaultTitle": "Mi cuaderno de caligrafía",
-      "titleLabel": "Título del cuaderno",
-      "wordsLabel": "Lista de palabras — una por línea",
-      "wordsPlaceholder": "apple\nball\ncat",
-      "font": "Tipografía",
-      "showCover": "Portada",
-      "showExample": "Fila de ejemplo",
-      "downloadPdf": "Descargar cuaderno en PDF",
-      "pageN": "Página {n}",
-      "stats": "{pages} páginas · {words} palabras",
-      "coverBelongsTo": "Este libro pertenece a:",
-      "seoTitle": "Cuadernos de caligrafía imprimibles para casa y aula",
-      "seoText": "Un cuaderno ordena la práctica: cada palabra con su ejemplo primero y repeticiones para repasar sobre guía de tres líneas con línea media discontinua.\n\nCómo usarlo:pega tu lista — el alfabeto para preescolar, sight words para kinder, la lista de ortografía semanal — elige letra de imprenta o cursiva y descarga el PDF. Imprime todo el libro o solo las páginas que falten.\n\nIdeas:un cuaderno con el nombre de tu hijo, un cuaderno de verano, o un set para la clase con la lista de cada alumno. Todo se genera en tu navegador — sin registro, sin marca de agua.",
-      "faqTitle": "Preguntas frecuentes"
-  },  "cursive": {
+    "title": "Generador de cuaderno de caligrafía",
+    "intro": "Un cuaderno entero de un clic: portada, un grupo por palabra (fila de ejemplo + filas para repasar) y exportación a un único PDF.",
+    "defaultTitle": "Mi cuaderno de caligrafía",
+    "titleLabel": "Título del cuaderno",
+    "wordsLabel": "Lista de palabras — una por línea",
+    "wordsPlaceholder": "apple\nball\ncat",
+    "font": "Tipografía",
+    "showCover": "Portada",
+    "showExample": "Fila de ejemplo",
+    "downloadPdf": "Descargar cuaderno en PDF",
+    "pageN": "Página {n}",
+    "stats": "{pages} páginas · {words} palabras",
+    "coverBelongsTo": "Este libro pertenece a:",
+    "seoTitle": "Cuadernos de caligrafía imprimibles para casa y aula",
+    "seoText": "Un cuaderno ordena la práctica: cada palabra con su ejemplo primero y repeticiones para repasar sobre guía de tres líneas con línea media discontinua.\n\nCómo usarlo:pega tu lista — el alfabeto para preescolar, sight words para kinder, la lista de ortografía semanal — elige letra de imprenta o cursiva y descarga el PDF. Imprime todo el libro o solo las páginas que falten.\n\nIdeas:un cuaderno con el nombre de tu hijo, un cuaderno de verano, o un set para la clase con la lista de cada alumno. Todo se genera en tu navegador — sin registro, sin marca de agua.",
+    "faqTitle": "Preguntas frecuentes"
+  },
+  "cursive": {
     "title": "Generador de letra cursiva",
     "intro": "Escribe o dicta lo que quieras y verlo en letra cursiva fluida — gratis, sin registro. Exporta como imagen o PDF, o imprime para practicar.",
     "seoTitle": "Generador gratis de letra cursiva",

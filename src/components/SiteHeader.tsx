@@ -28,9 +28,6 @@ export default async function SiteHeader() {
             {t("tool")}
           </Link>
           <NavDropdown label={t("allTools")} groups={groups} />
-          <Link href="/history" className="transition-colors hover:text-zinc-950">
-            {t("history")}
-          </Link>
           <Link href="/blog" className="transition-colors hover:text-zinc-950">
             {t("blog")}
           </Link>

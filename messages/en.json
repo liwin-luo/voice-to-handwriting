@@ -23,10 +23,6 @@
       "title": "Blog",
       "description": "Handwritten card tutorials, handwriting image tips and inspiration for social media posts."
     },
-    "history": {
-      "title": "History",
-      "description": "Your local handwriting conversions: text and style snapshots, restorable in one click. Stored only in your browser."
-    },
     "templates": {
       "title": "Handwriting Templates",
       "description": "Love letters, apologies, thank-you notes, birthday and holiday wishes — copy and style in one tap, exported as handwriting."
@@ -73,9 +69,10 @@
       "description": "Type or speak anything and this doctor handwriting generator writes it as an illegible prescription scrawl on an ℞ pad. Free gag gift maker — download as PNG or PDF."
     },
     "workbook": {
-        "title": "Free Handwriting Workbook Generator (Printable PDF)",
-        "description": "Create a printable handwriting workbook PDF in seconds: a cover page, the alphabet or your own word list, example and traceable rows on three-line guides. Free, no signup, no watermark."
-    },    "quiz": {
+      "title": "Free Handwriting Workbook Generator (Printable PDF)",
+      "description": "Create a printable handwriting workbook PDF in seconds: a cover page, the alphabet or your own word list, example and traceable rows on three-line guides. Free, no signup, no watermark."
+    },
+    "quiz": {
       "title": "Free Handwriting Personality Test — What Does Your Handwriting Say About You?",
       "description": "Take this free handwriting personality test: 12 quick questions about your handwriting reveal a fun personality profile plus practice tips. No upload, no signup — about 2 minutes."
     },
@@ -88,7 +85,6 @@
     "tool": "Tool",
     "blog": "Blog",
     "about": "About",
-    "history": "History",
     "templates": "Templates",
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
@@ -221,7 +217,17 @@
     "worksheets": "Name Tracing"
   },
   "blog": {
-    "tagline": "Tutorials and ideas for handwritten cards and images — every guide works with the tool on the home page."
+    "tagline": "Tutorials and ideas for handwritten cards and images — every guide works with the tool on the home page.",
+    "count": "{n} guides",
+    "filterAll": "All topics",
+    "sortLabel": "Sort",
+    "sortNewest": "Newest first",
+    "sortOldest": "Oldest first",
+    "sortUpdated": "Recently updated",
+    "pagePrev": "Previous page",
+    "pageNext": "Next page",
+    "pageAria": "Page {current} of {total}",
+    "noPosts": "No guides match this filter yet."
   },
   "notFound": {
     "title": "This page blew away in the wind",
@@ -229,9 +235,11 @@
     "back": "Back to writing"
   },
   "history": {
+    "open": "History",
+    "close": "Close",
+    "title": "History",
     "emptyTitle": "No history yet",
     "emptyHint": "A snapshot is saved when you export, finish a recording, or transcribe an audio file",
-    "goTool": "Start writing",
     "restore": "Restore",
     "delete": "Delete",
     "clearAll": "Clear all",
@@ -326,7 +334,7 @@
     "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark.",
     "faqTitle": "Frequently asked questions"
   },
-    "doctor": {
+  "doctor": {
     "title": "Doctor Handwriting Generator",
     "intro": "Type or dictate anything and watch it become an unreadable doctor's prescription — scrawl included. Purely for fun: gag gifts, party jokes and get-well cards.",
     "seoTitle": "The famous doctor handwriting, generated",
@@ -335,23 +343,24 @@
     "disclaimer": "For fun only — the output is a gag, not a medical document. Never use it to deceive anyone."
   },
   "workbook": {
-      "title": "Handwriting Workbook Generator",
-      "intro": "Build a whole practice book in one click: cover page, one group per word with an example row and traceable rows, exported as a single print-ready PDF.",
-      "defaultTitle": "My Handwriting Workbook",
-      "titleLabel": "Book title",
-      "wordsLabel": "Word list — one per line",
-      "wordsPlaceholder": "apple\nball\ncat",
-      "font": "Font",
-      "showCover": "Cover page",
-      "showExample": "Example row",
-      "downloadPdf": "Download workbook PDF",
-      "pageN": "Page {n}",
-      "stats": "{pages} pages · {words} words",
-      "coverBelongsTo": "This book belongs to:",
-      "seoTitle": "Printable handwriting workbooks for home and classroom",
-      "seoText": "A workbook keeps practice structured: one word per group, example first, then traceable repetitions on three-line guides with a dashed midline.\n\nHow to use: paste your list — the alphabet for preschoolers, sight words for kindergarten, this week's spelling list for older kids — pick a print or cursive font, and download the PDF. Print the whole book, or just the pages you need.\n\nIdeas: a name book for your child, a summer bridge workbook, a classroom set with each student's word list. Everything renders in your browser — no signup, no watermark.",
-      "faqTitle": "Frequently asked questions"
-  },  "cursive": {
+    "title": "Handwriting Workbook Generator",
+    "intro": "Build a whole practice book in one click: cover page, one group per word with an example row and traceable rows, exported as a single print-ready PDF.",
+    "defaultTitle": "My Handwriting Workbook",
+    "titleLabel": "Book title",
+    "wordsLabel": "Word list — one per line",
+    "wordsPlaceholder": "apple\nball\ncat",
+    "font": "Font",
+    "showCover": "Cover page",
+    "showExample": "Example row",
+    "downloadPdf": "Download workbook PDF",
+    "pageN": "Page {n}",
+    "stats": "{pages} pages · {words} words",
+    "coverBelongsTo": "This book belongs to:",
+    "seoTitle": "Printable handwriting workbooks for home and classroom",
+    "seoText": "A workbook keeps practice structured: one word per group, example first, then traceable repetitions on three-line guides with a dashed midline.\n\nHow to use: paste your list — the alphabet for preschoolers, sight words for kindergarten, this week's spelling list for older kids — pick a print or cursive font, and download the PDF. Print the whole book, or just the pages you need.\n\nIdeas: a name book for your child, a summer bridge workbook, a classroom set with each student's word list. Everything renders in your browser — no signup, no watermark.",
+    "faqTitle": "Frequently asked questions"
+  },
+  "cursive": {
     "title": "Cursive Writing Generator",
     "intro": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF.",
     "seoTitle": "Free cursive generator — practice the lost art of penmanship",

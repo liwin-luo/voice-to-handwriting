@@ -1,8 +1,10 @@
 "use client";
-import { useEffect } from "react";
-import { useLocale } from "next-intl";
+import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { ClockCounterClockwise } from "@phosphor-icons/react";
 import AudioImportPanel from "./AudioImportPanel";
 import ExportBar from "./ExportBar";
+import HistoryDrawer from "./HistoryDrawer";
 import PaperView from "./PaperView";
 import RecorderPanel from "./RecorderPanel";
 import StylePanel from "./StylePanel";
@@ -27,7 +29,9 @@ export interface ToolPreset {
  */
 export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
   const locale = useLocale();
+  const tHistory = useTranslations("history");
   const presetApplied = useRef(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   // 落地页预设(如 /cursive):挂载时应用一次
   useEffect(() => {
@@ -73,9 +77,15 @@ export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
         <div className="flex flex-wrap items-start gap-6">
           <RecorderPanel />
           <AudioImportPanel />
+          <button onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
+            <ClockCounterClockwise className="size-4 text-zinc-500" />
+            {tHistory("open")}
+          </button>
         </div>
         <ExportBar />
       </div>
+      {/* 打开时才挂载:抽屉内部状态(persist 水合/两段确认)随挂载自然重置 */}
+      {historyOpen && <HistoryDrawer onClose={() => setHistoryOpen(false)} />}
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
 import { POSTS } from "@/content/posts";
+import { getAuthor } from "@/content/authors";
 import { BLOG_CONTENT } from "@/content/blog/registry";
+import { RELATED, TOOL_LABEL_KEY } from "@/content/related";
+import BlogExplorer, { type BlogCardData, type ToolOption } from "@/components/BlogExplorer";
+import { postReadingMinutes } from "@/lib/reading";
 import { buildAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
@@ -30,37 +32,38 @@ export default async function BlogIndex({
   setRequestLocale(locale);
   const t = await getTranslations("blog");
   const tm = await getTranslations("meta.blog");
+  const tNav = await getTranslations("nav");
+
+  const cards: BlogCardData[] = POSTS.filter((p) => BLOG_CONTENT[p.slug]?.[locale as Locale]).map((p) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const meta = (p.i18n[locale as Locale] ?? p.i18n.en)!;
+    return {
+      slug: p.slug,
+      title: meta.title,
+      description: meta.description,
+      date: p.date,
+      updated: p.updated,
+      image: p.image,
+      author: getAuthor(p.author, locale as Locale).name,
+      minutes: postReadingMinutes(p.slug, locale),
+      tools: RELATED[p.slug]?.tools ?? [],
+    };
+  });
+
+  // 筛选项 = 本语言文章实际关联的工具,按 TOOL_LABEL_KEY 的顺序稳定输出
+  const used = new Set(cards.flatMap((c) => c.tools));
+  const toolOptions: ToolOption[] = Object.keys(TOOL_LABEL_KEY)
+    .filter((href) => used.has(href))
+    .map((href) => ({ href, label: tNav(TOOL_LABEL_KEY[href]) }));
 
   return (
-    <main className="mx-auto max-w-3xl px-4 py-10">
+    <main className="mx-auto max-w-5xl px-4 py-10">
       <header className="rise">
         <h1 className="font-hand text-4xl leading-none">{tm("title")}</h1>
-        <p className="mt-3 text-sm text-zinc-500">{t("tagline")}</p>
+        <p className="mt-3 max-w-2xl text-sm text-zinc-500">{t("tagline")}</p>
       </header>
-      <ul className="mt-9 flex flex-col gap-4">
-        {POSTS.filter((p) => BLOG_CONTENT[p.slug]?.[locale as Locale]).map((p, i) => {
-          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          const meta = (p.i18n[locale as Locale] ?? p.i18n.en)!;
-          return (
-            <li key={p.slug} className="rise" style={{ animationDelay: `${80 + i * 60}ms` }}>
-              <Link
-                href={`/blog/${p.slug}`}
-                className="group flex flex-col gap-1.5 rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 hover:border-zinc-300 hover:shadow-[0_16px_32px_-20px_rgba(23,23,23,0.2)]"
-              >
-                <span className="flex items-center justify-between gap-3">
-                  <span className="text-[17px] font-semibold text-zinc-900 transition-colors group-hover:text-accent">
-                    {meta.title}
-                  </span>
-                  <ArrowRight className="size-4 shrink-0 text-zinc-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent" />
-                </span>
-                <span className="text-sm leading-relaxed text-zinc-500">{meta.description}</span>
-                <time className="font-mono text-[11px] text-zinc-400">{p.date}</time>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <div className="rise mt-10" style={{ animationDelay: "260ms" }}>
+      <div className="rise mt-8" style={{ animationDelay: "80ms" }}>
+        <BlogExplorer posts={cards} toolOptions={toolOptions} />
       </div>
     </main>
   );

@@ -6,6 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import ToolWorkspace from "@/components/ToolWorkspace";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
+import CursiveLettersHub from "@/components/CursiveLettersHub";
 import { CURSIVE_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 
@@ -58,6 +59,7 @@ export default async function CursivePage({
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
+      <CursiveLettersHub locale={locale as Locale} />
       <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(CURSIVE_FAQS, locale as Locale)} />
     </main>
   );
