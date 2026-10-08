@@ -191,7 +191,8 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
                 );
               })}
             </ul>
-            <p className="mt-6 text-right text-[10px] text-zinc-300">
+            <p className="mt-6 text-[10px] leading-snug text-zinc-400">{c.disclaimer}</p>
+            <p className="mt-1 text-right text-[10px] text-zinc-300">
               Voice to Handwriting · voicetohandwriting.online
             </p>
           </div>
@@ -204,6 +205,7 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
               {c.retake}
             </button>
           </div>
+          <p className="mt-3 text-xs text-zinc-400">{c.disclaimer}</p>
 
           <div className="mt-8 grid gap-3">
             <h3 className="text-lg font-semibold text-zinc-900">{c.dimsHeading}</h3>
