@@ -54,14 +54,8 @@ export default async function LocaleLayout({
         {ASYNC_FONT_CSS.map((href) => (
           <link key={href} rel="preload" href={href} as="style" />
         ))}
-        {/* AdSense:配置环境变量后自动注入 */}
-        {process.env.NEXT_PUBLIC_ADSENSE_CLIENT && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-          />
-        )}
+        {/* AdSense 脚本由 ConsentBanner 在用户同意后才注入(components/ConsentBanner.tsx);
+            此处不得预加载,否则拒绝 Cookie 的用户也会被加载广告脚本 */}
       </head>
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider messages={messages}>
