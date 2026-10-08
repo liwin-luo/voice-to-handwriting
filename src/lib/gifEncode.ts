@@ -101,7 +101,7 @@ export function encodeGif(opts: {
   frames: Uint8Array[];
   palette: Uint8Array;
   delayCs: number;
-}): Uint8Array {
+}): Uint8Array<ArrayBuffer> {
   const { width, height, frames, delayCs } = opts;
   const colorCount = Math.floor(opts.palette.length / 3);
   let tableBits = 0;
