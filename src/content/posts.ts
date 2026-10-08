@@ -524,7 +524,7 @@ const CURSIVE_POSTS: Post[] = [
       en: {
         title: "Handwriting repeater: loop a sentence until the strokes stick",
         description:
-          "Free handwriting repeater settings: Patrick Hand, trace guide on, loop on. Watch the pen, then download the lined PNG.",
+          "Free handwriting repeater settings: Patrick Hand, trace guide on, loop on. Watch the pen, then download a looping GIF of one pass.",
       },
     },
   },

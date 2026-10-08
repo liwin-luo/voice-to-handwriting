@@ -74,7 +74,7 @@
     },
     "repeater": {
       "title": "Free Handwriting Repeater — Loop Any Sentence on Lined Paper",
-      "description": "Type a word or sentence and this free handwriting repeater writes it on lined paper, then loops. Follow the pen, then download a PNG or PDF. No signup."
+      "description": "Type a word or sentence and this free handwriting repeater writes it on lined paper, then loops. Follow the pen, then download a GIF of one pass. No signup."
     },
     "quiz": {
       "title": "Free Handwriting Personality Test — What Does Your Handwriting Say About You?",
@@ -377,7 +377,7 @@
   },
   "repeater": {
     "title": "Handwriting Repeater",
-    "intro": "Type a word or a short sentence and watch a pen write it on lined paper, then write it again. Free, no signup — download the finished line as a PNG or PDF.",
+    "intro": "Type a word or a short sentence and watch a pen write it on lined paper, then write it again. Free, no signup — download a looping GIF of one pass.",
     "textLabel": "Text",
     "textPlaceholder": "Type a word or a short sentence",
     "hint": "Up to 240 characters. A short line loops more clearly than a paragraph.",
@@ -395,11 +395,11 @@
     "play": "Play",
     "pause": "Pause",
     "replay": "Replay",
-    "downloadPng": "Download PNG",
-    "downloadPdf": "Download PDF",
+    "downloadGif": "Download GIF",
+    "downloadGifBusy": "Preparing GIF…",
     "stageLabel": "Handwriting animation on lined paper",
     "seoTitle": "A handwriting repeater that loops the model",
-    "seoText": "A still example shows the finished letter. A repeater shows the letter appearing, then does it again, so you can watch size, spacing, and where the letter sits on the line.\n\nType a sentence, a name, or use the alphabet and number drills. Leave the trace guide on to see the faint model under the pen. Loop plays the line until you pause it. Download PNG or PDF for the finished sentence plus two blank ruled lines to copy.\n\nThe pen uncovers each letter from left to right in the font you picked. It is a model to copy, not a textbook stroke-order diagram.",
+    "seoText": "A still example shows the finished letter. A repeater shows the letter appearing, then does it again, so you can watch size, spacing, and where the letter sits on the line.\n\nType a sentence, a name, or use the alphabet and number drills. Leave the trace guide on to see the faint model under the pen. Loop plays the line until you pause it. Download GIF saves one writing pass, including the pause at the end, and the file loops. Two blank ruled lines stay under the sentence to copy.\n\nThe pen uncovers each letter from left to right in the font you picked. It is a model to copy, not a textbook stroke-order diagram.",
     "faqTitle": "Frequently asked questions",
     "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
     "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"

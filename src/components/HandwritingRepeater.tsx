@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowsCounterClockwise, DownloadSimple, FilePdf, Pause, Play } from "@phosphor-icons/react";
-import { jsPDF } from "jspdf";
+import { ArrowsCounterClockwise, DownloadSimple, Pause, Play } from "@phosphor-icons/react";
 import { FONTS } from "@/stores/useEditorStore";
 import { defaultFontId, fontOrder } from "@/lib/localeDefaults";
+import { encodeGif, indexRgb332, palette332 } from "@/lib/gifEncode";
 import { layoutRepeaterText, repeaterFrame, type RepeaterFrame, type RepeaterGlyph } from "@/engine/repeater";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 
@@ -157,7 +157,7 @@ function Switch({
   );
 }
 
-/** 手写循环演示:横线纸上逐字揭开,写完可循环,并导出写完的那一帧 */
+/** 手写循环演示:横线纸上逐字揭开,写完可循环,并导出这一遍的 GIF */
 export default function HandwritingRepeater() {
   const t = useTranslations("repeater");
   const locale = useLocale();
@@ -169,6 +169,8 @@ export default function HandwritingRepeater() {
   const [loop, setLoop] = useState(true);
   const [trace, setTrace] = useState(true);
   const [playing, setPlaying] = useState(true);
+  const [exporting, setExporting] = useState(false);
+  const [ready, setReady] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const elapsedRef = useRef(0);
   const playingRef = useRef(true);
@@ -200,6 +202,7 @@ export default function HandwritingRepeater() {
     let cancelled = false;
     let raf = 0;
     elapsedRef.current = 0;
+    setReady(false);
     reduceRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceRef.current) {
       playingRef.current = false;
@@ -223,6 +226,7 @@ export default function HandwritingRepeater() {
       });
       const height = stageHeight(glyphs);
       snapshotRef.current = { glyphs, family, height };
+      if (!cancelled) setReady(glyphs.length > 0);
       const dpr = Math.min(2, window.devicePixelRatio || 1);
       let last = performance.now();
 
@@ -255,52 +259,55 @@ export default function HandwritingRepeater() {
     // 墨色、速度、循环走上面的 ref,不放进依赖:否则每次拨动都会重载字体并把进度清零
   }, [debounced, family]);
 
-  function renderStill(): HTMLCanvasElement | null {
+  const downloadGif = async () => {
     const { glyphs, family: fam, height } = snapshotRef.current;
-    const scale = 2;
-    const off = document.createElement("canvas");
-    off.width = STAGE_W * scale;
-    off.height = height * scale;
-    const ctx = off.getContext("2d");
-    if (!ctx) return null;
-    ctx.scale(scale, scale);
-    paint(
-      ctx,
-      glyphs,
-      { doneCount: glyphs.length, partial: 1, holding: false, finished: true },
-      fam,
-      inkRef.current,
-      false,
-      height,
-    );
-    return off;
-  }
+    if (!glyphs.length || exporting) return;
+    setExporting(true);
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    try {
+      const full = document.createElement("canvas");
+      full.width = STAGE_W;
+      full.height = height;
+      const fullCtx = full.getContext("2d");
+      const exportW = 640;
+      const exportH = Math.max(1, Math.round(height * (exportW / STAGE_W)));
+      const small = document.createElement("canvas");
+      small.width = exportW;
+      small.height = exportH;
+      const smallCtx = small.getContext("2d", { willReadFrequently: true });
+      if (!fullCtx || !smallCtx) return;
 
-  const downloadPng = () => {
-    const off = renderStill();
-    if (!off) return;
-    off.toBlob((blob) => {
-      if (!blob) return;
+      const ms = msRef.current;
+      const cycle = glyphs.length * ms + HOLD_MS;
+      // 索引字节大约卡在 16MB。句子越高,帧越少,整段时长仍被这些帧均分。
+      const frameCount = Math.max(8, Math.min(80, Math.floor(16_000_000 / (exportW * exportH))));
+      const step = cycle / frameCount;
+      const delayCs = Math.max(2, Math.round(step / 10));
+      const frames: Uint8Array[] = [];
+      for (let i = 0; i < frameCount; i++) {
+        const frame = repeaterFrame(i * step, glyphs.length, ms, HOLD_MS, false);
+        paint(fullCtx, glyphs, frame, fam, inkRef.current, traceRef.current, height);
+        smallCtx.drawImage(full, 0, 0, exportW, exportH);
+        const img = smallCtx.getImageData(0, 0, exportW, exportH);
+        const indices = new Uint8Array(exportW * exportH);
+        const data = img.data;
+        for (let p = 0, q = 0; p < data.length; p += 4, q++) {
+          indices[q] = indexRgb332(data[p], data[p + 1], data[p + 2]);
+        }
+        frames.push(indices);
+        if (i % 4 === 3) await new Promise((resolve) => setTimeout(resolve, 0));
+      }
+      const gif = encodeGif({ width: exportW, height: exportH, frames, palette: palette332(), delayCs });
+      const blob = new Blob([gif], { type: "image/gif" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "handwriting-repeater.png";
+      a.download = "handwriting-repeater.gif";
       a.click();
-      URL.revokeObjectURL(url);
-    }, "image/png");
-  };
-
-  const downloadPdf = () => {
-    const { height } = snapshotRef.current;
-    const off = renderStill();
-    if (!off) return;
-    const pdf = new jsPDF({
-      unit: "px",
-      format: [STAGE_W, height],
-      orientation: height > STAGE_W ? "portrait" : "landscape",
-    });
-    pdf.addImage(off.toDataURL("image/png"), "PNG", 0, 0, STAGE_W, height);
-    pdf.save("handwriting-repeater.pdf");
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    } finally {
+      setExporting(false);
+    }
   };
 
   const replay = () => {
@@ -408,16 +415,15 @@ export default function HandwritingRepeater() {
           </button>
         </div>
 
-        <div className="flex gap-2">
-          <button type="button" onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">
-            <FilePdf className="size-4" />
-            {t("downloadPdf")}
-          </button>
-          <button type="button" onClick={downloadPng} className="btn btn-ghost flex-1 px-4 py-2.5 text-sm">
-            <DownloadSimple className="size-4 text-zinc-500" />
-            {t("downloadPng")}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => void downloadGif()}
+          disabled={exporting || !ready}
+          className="btn btn-primary w-full px-4 py-2.5 text-sm"
+        >
+          <DownloadSimple className="size-4" />
+          {exporting ? t("downloadGifBusy") : t("downloadGif")}
+        </button>
       </aside>
 
       <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">

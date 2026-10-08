@@ -1995,35 +1995,35 @@ export const REPEATER_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Is the handwriting repeater free?",
-        a: "Yes — no signup and no watermark. The animation runs in your browser, and PNG and PDF downloads are unlimited.",
+        a: "Yes — no signup and no watermark. The animation runs in your browser, and GIF downloads are unlimited.",
       },
       zh: {
         q: "手写循环演示免费吗?",
-        a: "免费——无需注册,也没有水印。动画在你的浏览器里播放,PNG 和 PDF 下载不限次数。",
+        a: "免费——无需注册,也没有水印。动画在你的浏览器里播放,GIF 下载不限次数。",
       },
       ja: {
         q: "手書きリピーターは無料ですか?",
-        a: "はい。登録も透かしもありません。アニメーションはブラウザの中で再生され、PNG と PDF の保存に回数制限はありません。",
+        a: "はい。登録も透かしもありません。アニメーションはブラウザの中で再生され、GIF の保存に回数制限はありません。",
       },
       ko: {
         q: "손글씨 리피터는 무료인가요?",
-        a: "네. 가입도 워터마크도 없습니다. 애니메이션은 브라우저 안에서 재생되고, PNG와 PDF 받기에 횟수 제한이 없습니다.",
+        a: "네. 가입도 워터마크도 없습니다. 애니메이션은 브라우저 안에서 재생되고, GIF 받기에 횟수 제한이 없습니다.",
       },
       es: {
         q: "¿El repetidor de escritura es gratis?",
-        a: "Sí: sin registro y sin marca de agua. La animación corre en tu navegador, y las descargas en PNG y PDF no tienen límite.",
+        a: "Sí: sin registro y sin marca de agua. La animación corre en tu navegador, y las descargas en GIF no tienen límite.",
       },
       de: {
         q: "Ist die Schreib-Wiederholung kostenlos?",
-        a: "Ja — ohne Anmeldung und ohne Wasserzeichen. Die Animation läuft in deinem Browser, PNG- und PDF-Downloads sind nicht begrenzt.",
+        a: "Ja — ohne Anmeldung und ohne Wasserzeichen. Die Animation läuft in deinem Browser, GIF-Downloads sind nicht begrenzt.",
       },
       fr: {
         q: "Le répéteur d'écriture est-il gratuit ?",
-        a: "Oui — sans inscription et sans filigrane. L'animation tourne dans votre navigateur, et les téléchargements PNG et PDF ne sont pas limités.",
+        a: "Oui — sans inscription et sans filigrane. L'animation tourne dans votre navigateur, et les téléchargements GIF ne sont pas limités.",
       },
       pt: {
         q: "O repetidor de escrita é grátis?",
-        a: "Sim — sem cadastro e sem marca d'água. A animação roda no seu navegador, e os downloads em PNG e PDF não têm limite.",
+        a: "Sim — sem cadastro e sem marca d'água. A animação roda no seu navegador, e os downloads em GIF não têm limite.",
       },
     },
   },
@@ -2068,36 +2068,36 @@ export const REPEATER_FAQS: FaqItem[] = [
     id: "repeater-print",
     i18n: {
       en: {
-        q: "Can I print the sentence?",
-        a: "Yes. Download PNG or PDF. The file is the finished sentence on ruled lines, with two blank lines under it to copy. The moving loop stays on the screen.",
+        q: "Can I save the animation?",
+        a: "Yes. Download GIF saves one writing pass, including the pause at the end, and the file loops. It is drawn in your browser. The two blank lines stay in the picture. It is a loop to watch, not a print worksheet.",
       },
       zh: {
-        q: "这句话能打印吗?",
-        a: "可以。下载 PNG 或 PDF。文件里是写完的句子,落在横线上,下面还有两行空白可以照着抄。循环动画本身留在屏幕上。",
+        q: "动画能保存下来吗?",
+        a: "可以。下载 GIF 会保存写完的一遍,包括结尾的停顿,文件会循环播放。画面在浏览器里生成。句子下面的两行空白也在图里。这是用来再看一遍的循环,不是打印用的练习纸。",
       },
       ja: {
-        q: "この文は印刷できますか?",
-        a: "できます。PNG または PDF を保存してください。ファイルには書き終わった文と、その下に写すための空白罫線が 2 行入っています。動くループは画面に残ります。",
+        q: "アニメーションを保存できますか?",
+        a: "できます。GIF を保存すると、書き終わりの一回分(最後の一呼吸を含む)が入り、ファイルはループします。描画はブラウザの中です。文の下の空白罫線 2 行も入ります。見るためのループで、印刷用の練習紙ではありません。",
       },
       ko: {
-        q: "이 문장을 인쇄할 수 있나요?",
-        a: "네. PNG 또는 PDF로 받으세요. 파일에는 다 쓴 문장과, 그 아래 베껴 쓸 빈 줄 두 줄이 들어 있습니다. 움직이는 반복은 화면에 남습니다.",
+        q: "애니메이션을 저장할 수 있나요?",
+        a: "네. GIF 받기는 한 번 다 쓰는 과정과 끝의 멈춤을 담고, 파일은 반복됩니다. 그림은 브라우저 안에서 만들어집니다. 문장 아래 빈 줄 두 줄도 들어갑니다. 다시 보기 위한 반복이지, 인쇄용 연습지는 아닙니다.",
       },
       es: {
-        q: "¿Puedo imprimir la frase?",
-        a: "Sí. Descarga el PNG o el PDF. El archivo trae la frase terminada sobre líneas pautadas y dos líneas en blanco debajo para copiar. El bucle en movimiento se queda en la pantalla.",
+        q: "¿Puedo guardar la animación?",
+        a: "Sí. Descargar GIF guarda una pasada completa, incluida la pausa del final, y el archivo se repite. Se dibuja en tu navegador. Las dos líneas en blanco siguen en la imagen. Es un bucle para volver a verlo, no una ficha para imprimir.",
       },
       de: {
-        q: "Kann ich den Satz drucken?",
-        a: "Ja. Lade PNG oder PDF. Die Datei enthält den fertigen Satz auf linierten Zeilen und darunter zwei leere Zeilen zum Abschreiben. Die bewegte Schleife bleibt auf dem Bildschirm.",
+        q: "Kann ich die Animation speichern?",
+        a: "Ja. GIF laden speichert einen Schreibdurchgang samt Pause am Ende, und die Datei wiederholt sich. Gezeichnet wird im Browser. Die zwei leeren Zeilen bleiben im Bild. Es ist eine Schleife zum Nochmal-Ansehen, kein Druckblatt.",
       },
       fr: {
-        q: "Puis-je imprimer la phrase ?",
-        a: "Oui. Téléchargez le PNG ou le PDF. Le fichier contient la phrase terminée sur des lignes, avec deux lignes vides en dessous à recopier. La boucle animée reste à l'écran.",
+        q: "Puis-je enregistrer l'animation ?",
+        a: "Oui. Télécharger le GIF enregistre un passage complet, pause finale comprise, et le fichier boucle. Le dessin se fait dans votre navigateur. Les deux lignes vides restent dans l'image. C'est une boucle à revoir, pas une fiche à imprimer.",
       },
       pt: {
-        q: "Dá para imprimir a frase?",
-        a: "Sim. Baixe o PNG ou o PDF. O arquivo traz a frase pronta nas linhas pautadas e duas linhas em branco embaixo para copiar. A repetição em movimento fica na tela.",
+        q: "Dá para salvar a animação?",
+        a: "Sim. Baixar GIF guarda uma passada completa, com a pausa no fim, e o arquivo repete. O desenho acontece no navegador. As duas linhas em branco continuam na imagem. É um loop para ver de novo, não uma ficha para imprimir.",
       },
     },
   },

@@ -74,7 +74,7 @@
     },
     "repeater": {
       "title": "Repetidor de escritura a mano — mira la frase y vuelve a verla",
-      "description": "Escribe una palabra o una frase y este repetidor de escritura a mano la traza en papel pautado y la repite. Sigue el bolígrafo y descarga un PNG o un PDF. Gratis, sin registro."
+      "description": "Escribe una palabra o una frase y este repetidor de escritura a mano la traza en papel pautado y la repite. Sigue el bolígrafo y descarga un GIF de una pasada. Gratis, sin registro."
     },
     "quiz": {
       "title": "Test de personalidad por tu letra — ¿Qué dice tu escritura sobre ti?",
@@ -377,7 +377,7 @@
   },
   "repeater": {
     "title": "Repetidor de escritura",
-    "intro": "Escribe una palabra o una frase corta y mira cómo un bolígrafo la traza en papel pautado, y luego otra vez. Gratis, sin registro: descarga la línea terminada en PNG o PDF.",
+    "intro": "Escribe una palabra o una frase corta y mira cómo un bolígrafo la traza en papel pautado, y luego otra vez. Gratis, sin registro: descarga un GIF en bucle de una pasada.",
     "textLabel": "Texto",
     "textPlaceholder": "Escribe una palabra o una frase corta",
     "hint": "Hasta 240 caracteres. Una línea corta se repite con más claridad que un párrafo.",
@@ -395,11 +395,11 @@
     "play": "Reproducir",
     "pause": "Pausa",
     "replay": "Otra vez",
-    "downloadPng": "Descargar PNG",
-    "downloadPdf": "Descargar PDF",
+    "downloadGif": "Descargar GIF",
+    "downloadGifBusy": "Preparando el GIF…",
     "stageLabel": "Animación de escritura sobre papel pautado",
     "seoTitle": "Un repetidor que vuelve a escribir el modelo",
-    "seoText": "Un modelo quieto solo muestra la letra terminada. El repetidor muestra cómo aparece y la escribe otra vez, para ver el tamaño, el espacio y en qué línea se apoya.\n\nEscribe una frase o un nombre, o usa los ejercicios de alfabeto y números. Con la guía tenue, el modelo claro queda bajo el bolígrafo. El bucle sigue hasta que lo pauses. El PNG o el PDF trae la frase terminada y dos líneas pautadas en blanco para copiar.\n\nEl bolígrafo descubre cada letra de izquierda a derecha, en la fuente que elegiste. Es un modelo para copiar, no un diagrama de orden de trazos de un libro de texto.",
+    "seoText": "Un modelo quieto solo muestra la letra terminada. El repetidor muestra cómo aparece y la escribe otra vez, para ver el tamaño, el espacio y en qué línea se apoya.\n\nEscribe una frase o un nombre, o usa los ejercicios de alfabeto y números. Con la guía tenue, el modelo claro queda bajo el bolígrafo. El bucle sigue hasta que lo pauses. Descargar GIF guarda una pasada completa, incluida la pausa del final, y el archivo se repite. Debajo quedan dos líneas pautadas en blanco para copiar.\n\nEl bolígrafo descubre cada letra de izquierda a derecha, en la fuente que elegiste. Es un modelo para copiar, no un diagrama de orden de trazos de un libro de texto.",
     "faqTitle": "Preguntas frecuentes",
     "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
     "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"

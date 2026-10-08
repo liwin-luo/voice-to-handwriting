@@ -74,7 +74,7 @@
     },
     "repeater": {
       "title": "Handwriting Repeater — Satz schreiben lassen und wiederholen",
-      "description": "Tippe ein Wort oder einen Satz. Dieser Handwriting Repeater schreibt ihn auf liniertes Papier und wiederholt ihn. Folge dem Stift und lade ein PNG oder PDF herunter. Kostenlos, ohne Anmeldung."
+      "description": "Tippe ein Wort oder einen Satz. Dieser Handwriting Repeater schreibt ihn auf liniertes Papier und wiederholt ihn. Folge dem Stift und lade ein GIF von einem Durchgang. Kostenlos, ohne Anmeldung."
     },
     "quiz": {
       "title": "Handschrift-Persönlichkeitstest — Was sagt deine Handschrift über dich?",
@@ -377,7 +377,7 @@
   },
   "repeater": {
     "title": "Schreib-Wiederholung",
-    "intro": "Tippe ein Wort oder einen kurzen Satz und sieh zu, wie ein Stift ihn auf liniertes Papier schreibt — und dann noch einmal. Kostenlos, ohne Anmeldung. Die fertige Zeile kannst du als PNG oder PDF laden.",
+    "intro": "Tippe ein Wort oder einen kurzen Satz und sieh zu, wie ein Stift ihn auf liniertes Papier schreibt — und dann noch einmal. Kostenlos, ohne Anmeldung. Lade ein GIF, das einen Durchgang wiederholt.",
     "textLabel": "Text",
     "textPlaceholder": "Wort oder kurzen Satz tippen",
     "hint": "Bis zu 240 Zeichen. Eine kurze Zeile wiederholt sich klarer als ein Absatz.",
@@ -395,11 +395,11 @@
     "play": "Abspielen",
     "pause": "Pause",
     "replay": "Nochmal",
-    "downloadPng": "PNG laden",
-    "downloadPdf": "PDF laden",
+    "downloadGif": "GIF laden",
+    "downloadGifBusy": "GIF wird erstellt…",
     "stageLabel": "Schreibanimation auf liniertem Papier",
     "seoTitle": "Eine Wiederholung, die die Vorlage noch einmal schreibt",
-    "seoText": "Eine stille Vorlage zeigt nur den fertigen Buchstaben. Die Wiederholung zeigt, wie er entsteht, und schreibt ihn noch einmal — für Größe, Abstand und die Linie, auf der er sitzt.\n\nTippe einen Satz oder einen Namen, oder nimm die Alphabet- und Zahlenübungen. Mit der blassen Vorlage bleibt die helle Form unter dem Stift. Die Schleife läuft, bis du pausierst. PNG oder PDF enthalten den fertigen Satz und zwei leere linierte Zeilen zum Abschreiben.\n\nDer Stift deckt jeden Buchstaben von links nach rechts auf, in der Schrift, die du gewählt hast. Das ist eine Vorlage zum Abschreiben, kein Strichfolge-Diagramm aus dem Lehrbuch.",
+    "seoText": "Eine stille Vorlage zeigt nur den fertigen Buchstaben. Die Wiederholung zeigt, wie er entsteht, und schreibt ihn noch einmal — für Größe, Abstand und die Linie, auf der er sitzt.\n\nTippe einen Satz oder einen Namen, oder nimm die Alphabet- und Zahlenübungen. Mit der blassen Vorlage bleibt die helle Form unter dem Stift. Die Schleife läuft, bis du pausierst. GIF laden speichert einen Schreibdurchgang samt Pause am Ende, und die Datei wiederholt sich. Darunter bleiben zwei leere linierte Zeilen zum Abschreiben.\n\nDer Stift deckt jeden Buchstaben von links nach rechts auf, in der Schrift, die du gewählt hast. Das ist eine Vorlage zum Abschreiben, kein Strichfolge-Diagramm aus dem Lehrbuch.",
     "faqTitle": "Häufige Fragen",
     "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
     "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"

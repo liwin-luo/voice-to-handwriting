@@ -74,7 +74,7 @@
     },
     "repeater": {
       "title": "Repetidor de escrita à mão — a frase se escreve e recomeça",
-      "description": "Digite uma palavra ou frase e este repetidor de escrita à mão escreve no papel pautado e repete. Acompanhe a caneta e baixe um PNG ou PDF. Grátis, sem cadastro."
+      "description": "Digite uma palavra ou frase e este repetidor de escrita à mão escreve no papel pautado e repete. Acompanhe a caneta e baixe um GIF de uma passada. Grátis, sem cadastro."
     },
     "quiz": {
       "title": "Quiz de personalidade pela letra — O que a sua escrita diz sobre você?",
@@ -377,7 +377,7 @@
   },
   "repeater": {
     "title": "Repetidor de escrita",
-    "intro": "Digite uma palavra ou uma frase curta e veja uma caneta escrevê-la no papel pautado, e depois de novo. Grátis, sem cadastro — baixe a linha pronta em PNG ou PDF.",
+    "intro": "Digite uma palavra ou uma frase curta e veja uma caneta escrevê-la no papel pautado, e depois de novo. Grátis, sem cadastro — baixe um GIF em loop de uma passada.",
     "textLabel": "Texto",
     "textPlaceholder": "Digite uma palavra ou uma frase curta",
     "hint": "Até 240 caracteres. Uma linha curta repete com mais clareza do que um parágrafo.",
@@ -395,11 +395,11 @@
     "play": "Reproduzir",
     "pause": "Pausar",
     "replay": "De novo",
-    "downloadPng": "Baixar PNG",
-    "downloadPdf": "Baixar PDF",
+    "downloadGif": "Baixar GIF",
+    "downloadGifBusy": "Preparando o GIF…",
     "stageLabel": "Animação de escrita em papel pautado",
     "seoTitle": "Um repetidor que escreve o modelo de novo",
-    "seoText": "Um modelo parado só mostra a letra pronta. O repetidor mostra a letra aparecendo e escreve de novo, para ver o tamanho, o espaço e em que linha ela se apoia.\n\nDigite uma frase ou um nome, ou use os exercícios de alfabeto e números. Com a guia clara, a forma pálida fica sob a caneta. A repetição continua até você pausar. O PNG ou o PDF traz a frase pronta e duas linhas pautadas em branco para copiar.\n\nA caneta revela cada letra da esquerda para a direita, na fonte que você escolheu. É um modelo para copiar, não um diagrama de ordem dos traços de livro didático.",
+    "seoText": "Um modelo parado só mostra a letra pronta. O repetidor mostra a letra aparecendo e escreve de novo, para ver o tamanho, o espaço e em que linha ela se apoia.\n\nDigite uma frase ou um nome, ou use os exercícios de alfabeto e números. Com a guia clara, a forma pálida fica sob a caneta. A repetição continua até você pausar. Baixar GIF guarda uma passada completa, com a pausa no fim, e o arquivo repete. Abaixo ficam duas linhas pautadas em branco para copiar.\n\nA caneta revela cada letra da esquerda para a direita, na fonte que você escolheu. É um modelo para copiar, não um diagrama de ordem dos traços de livro didático.",
     "faqTitle": "Perguntas frequentes",
     "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
     "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"

@@ -153,7 +153,7 @@
 ## 八、`/handwriting-repeater` 循环书写演示(2026-10-08 落地)
 
 - **主词**:handwriting repeater(规划表 §6.5,+30%)。次词:handwriting animation / watch letters being written,由工具页正文与 FAQ 承接,不另开页。
-- **形态**:横线纸上逐字从左到右揭开,笔尖跟随;速度、字体、墨色、淡字底稿、循环。写完的一帧导出 PNG/PDF,句下留两行空白横线。
+- **形态**:横线纸上逐字从左到右揭开,笔尖跟随;速度、字体、墨色、淡字底稿、循环。导出这一遍书写的循环 GIF(含结尾停顿),句下留两行空白横线。
 - **角色**:Theo Lindgren(工具桌)。体验资产:桌面 Chrome + macOS + 2026-10 的具体参数表(Patrick Hand、速度默认、底稿开、循环开、pangram)+ 动画中途截图。
 - **落地**:文章 `handwriting-repeater`(en)。内链 `/handwriting-repeater`、`/name-tracing`、`/handwriting-workbook-generator`。
 - **局限(页面与文章都写明)**:揭开方向是从左到右,不是教材笔顺;连笔只展示字体里的完成形。
