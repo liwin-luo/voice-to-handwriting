@@ -9,8 +9,8 @@ test.describe("英文版", () => {
     await expect(page.getByRole("heading", { name: "Write & generate" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Practice sheets & printing" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Just for fun" })).toBeVisible();
-    // 13 个工具卡都在(3 写字 + 8 练习 + 2 趣味)
-    await expect(page.getByRole("main").getByRole("link")).toHaveCount(13);
+    // 14 个工具卡都在(3 写字 + 9 练习 + 2 趣味)
+    await expect(page.getByRole("main").getByRole("link")).toHaveCount(14);
     await expect(page.getByRole("main").getByRole("link", { name: "Handwriting Quiz" })).toBeVisible();
   });
 

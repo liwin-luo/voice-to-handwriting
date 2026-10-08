@@ -72,6 +72,10 @@
       "title": "Handschrift-Übungsheft-Generator (druckbares PDF)",
       "description": "Erstelle in Sekunden ein druckbares Übungsheft als PDF: Deckblatt, Alphabet oder eigene Wortliste, Beispielzeile und nachspurbare Zeilen mit Drei-Linien-Guide. Kostenlos, ohne Anmeldung, ohne Wasserzeichen."
     },
+    "repeater": {
+      "title": "Handwriting Repeater — Satz schreiben lassen und wiederholen",
+      "description": "Tippe ein Wort oder einen Satz. Dieser Handwriting Repeater schreibt ihn auf liniertes Papier und wiederholt ihn. Folge dem Stift und lade ein PNG oder PDF herunter. Kostenlos, ohne Anmeldung."
+    },
     "quiz": {
       "title": "Handschrift-Persönlichkeitstest — Was sagt deine Handschrift über dich?",
       "description": "12 visuelle Fragen in etwa 2 Minuten: ein Spaß-Profil plus passende Übungstipps. Kostenlos, ohne Foto-Upload, ohne Anmeldung."
@@ -97,6 +101,7 @@
     "quiz": "Handschrift-Quiz",
     "doctor": "Arzt-Schrift",
     "workbook": "Übungsheft",
+    "repeater": "Schreib-Wiederholung",
     "menu": "Menü",
     "allTools": "Alle Werkzeuge",
     "groupWrite": "Schreiben & Generieren",
@@ -369,6 +374,35 @@
     "seoTitle": "Druckbare Handschrift-Übungshefte für Zuhause und Klasse",
     "seoText": "Ein Heft strukturiert das Üben: jedes Wort mit Beispiel zuerst, dann Wiederholungen zum Nachspuren auf Drei-Linien-Guides mit gestrichelter Mittellinie.\n\nSo geht’s:Liste einfügen — das Alphabet für Vorschulkinder, Sight Words für die erste Klasse, die Wochenliste für größere — Druckschrift oder Schreibschrift wählen und das PDF laden. Ganz drucken oder nur fehlende Seiten.\n\nIdeen:ein Namensheft für dein Kind, ein Sommerheft, oder ein Klassensatz mit der Liste jedes Kindes. Alles im Browser — ohne Anmeldung, ohne Wasserzeichen.",
     "faqTitle": "Häufige Fragen"
+  },
+  "repeater": {
+    "title": "Schreib-Wiederholung",
+    "intro": "Tippe ein Wort oder einen kurzen Satz und sieh zu, wie ein Stift ihn auf liniertes Papier schreibt — und dann noch einmal. Kostenlos, ohne Anmeldung. Die fertige Zeile kannst du als PNG oder PDF laden.",
+    "textLabel": "Text",
+    "textPlaceholder": "Wort oder kurzen Satz tippen",
+    "hint": "Bis zu 240 Zeichen. Eine kurze Zeile wiederholt sich klarer als ein Absatz.",
+    "sampleSentence": "Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.",
+    "presetSentence": "Satz",
+    "presetAlphabet": "Alphabet",
+    "presetNumbers": "Zahlen",
+    "font": "Schrift",
+    "speed": "Schreibtempo",
+    "speedSlow": "Langsam",
+    "speedFast": "Schnell",
+    "ink": "Tinte",
+    "loop": "Wiederholen",
+    "trace": "Blasse Vorlage",
+    "play": "Abspielen",
+    "pause": "Pause",
+    "replay": "Nochmal",
+    "downloadPng": "PNG laden",
+    "downloadPdf": "PDF laden",
+    "stageLabel": "Schreibanimation auf liniertem Papier",
+    "seoTitle": "Eine Wiederholung, die die Vorlage noch einmal schreibt",
+    "seoText": "Eine stille Vorlage zeigt nur den fertigen Buchstaben. Die Wiederholung zeigt, wie er entsteht, und schreibt ihn noch einmal — für Größe, Abstand und die Linie, auf der er sitzt.\n\nTippe einen Satz oder einen Namen, oder nimm die Alphabet- und Zahlenübungen. Mit der blassen Vorlage bleibt die helle Form unter dem Stift. Die Schleife läuft, bis du pausierst. PNG oder PDF enthalten den fertigen Satz und zwei leere linierte Zeilen zum Abschreiben.\n\nDer Stift deckt jeden Buchstaben von links nach rechts auf, in der Schrift, die du gewählt hast. Das ist eine Vorlage zum Abschreiben, kein Strichfolge-Diagramm aus dem Lehrbuch.",
+    "faqTitle": "Häufige Fragen",
+    "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
+    "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"
   },
   "cursive": {
     "title": "Schreibschrift-Generator",

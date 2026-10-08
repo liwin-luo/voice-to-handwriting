@@ -12,6 +12,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/handwriting-personality-quiz": "quiz",
   "/doctor-handwriting-generator": "doctor",
   "/handwriting-workbook-generator": "workbook",
+  "/handwriting-repeater": "repeater",
 };
 
 export interface RelatedConfig {
@@ -129,6 +130,24 @@ export const RELATED: Record<string, RelatedConfig> = {
   "how-to-improve-your-handwriting": {
     tools: ["/handwriting-workbook-generator", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/printable-paper"],
     posts: ["handwriting-vs-typing-brain", "how-to-improve-handwriting-adults", "handwriting-practice-struggling-writers"],
+  },
+
+  // 教师词表簇:sight word / spelling 描红,导流 name-tracing 与 workbook
+  "sight-word-tracing-worksheets": {
+    tools: ["/name-tracing", "/handwriting-workbook-generator", "/printable-paper"],
+    posts: ["name-tracing-generator", "kindergarten-handwriting-paper", "handwriting-practice-struggling-writers"],
+  },
+
+  // 成人练习册:词表组册,与「怎么练好字」计划文拆开
+  "handwriting-workbook": {
+    tools: ["/handwriting-workbook-generator", "/printable-paper"],
+    posts: ["how-to-improve-handwriting-adults", "how-to-improve-your-handwriting", "free-printable-lined-paper"],
+  },
+
+  // 循环书写演示:文章教参数,导流 repeater;练习册与描红承接「要打印一整张」
+  "handwriting-repeater": {
+    tools: ["/handwriting-repeater", "/name-tracing", "/handwriting-workbook-generator"],
+    posts: ["handwriting-workbook", "how-to-improve-your-handwriting", "sight-word-tracing-worksheets"],
   },
 };
 

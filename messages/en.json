@@ -72,6 +72,10 @@
       "title": "Free Handwriting Workbook Generator (Printable PDF)",
       "description": "Create a printable handwriting workbook PDF in seconds: a cover page, the alphabet or your own word list, example and traceable rows on three-line guides. Free, no signup, no watermark."
     },
+    "repeater": {
+      "title": "Free Handwriting Repeater — Loop Any Sentence on Lined Paper",
+      "description": "Type a word or sentence and this free handwriting repeater writes it on lined paper, then loops. Follow the pen, then download a PNG or PDF. No signup."
+    },
     "quiz": {
       "title": "Free Handwriting Personality Test — What Does Your Handwriting Say About You?",
       "description": "Take this free handwriting personality test: 12 quick questions about your handwriting reveal a fun personality profile plus practice tips. No upload, no signup — about 2 minutes."
@@ -97,6 +101,7 @@
     "quiz": "Handwriting Quiz",
     "doctor": "Doctor Handwriting",
     "workbook": "Workbook Maker",
+    "repeater": "Handwriting Repeater",
     "menu": "Menu",
     "allTools": "All tools",
     "groupWrite": "Write & generate",
@@ -369,6 +374,35 @@
     "seoTitle": "Printable handwriting workbooks for home and classroom",
     "seoText": "A workbook keeps practice structured: one word per group, example first, then traceable repetitions on three-line guides with a dashed midline.\n\nHow to use: paste your list — the alphabet for preschoolers, sight words for kindergarten, this week's spelling list for older kids — pick a print or cursive font, and download the PDF. Print the whole book, or just the pages you need.\n\nIdeas: a name book for your child, a summer bridge workbook, a classroom set with each student's word list. Everything renders in your browser — no signup, no watermark.",
     "faqTitle": "Frequently asked questions"
+  },
+  "repeater": {
+    "title": "Handwriting Repeater",
+    "intro": "Type a word or a short sentence and watch a pen write it on lined paper, then write it again. Free, no signup — download the finished line as a PNG or PDF.",
+    "textLabel": "Text",
+    "textPlaceholder": "Type a word or a short sentence",
+    "hint": "Up to 240 characters. A short line loops more clearly than a paragraph.",
+    "sampleSentence": "The quick brown fox jumps over the lazy dog.",
+    "presetSentence": "Sentence",
+    "presetAlphabet": "Alphabet",
+    "presetNumbers": "Numbers",
+    "font": "Font",
+    "speed": "Writing speed",
+    "speedSlow": "Slow",
+    "speedFast": "Fast",
+    "ink": "Ink",
+    "loop": "Loop",
+    "trace": "Trace guide",
+    "play": "Play",
+    "pause": "Pause",
+    "replay": "Replay",
+    "downloadPng": "Download PNG",
+    "downloadPdf": "Download PDF",
+    "stageLabel": "Handwriting animation on lined paper",
+    "seoTitle": "A handwriting repeater that loops the model",
+    "seoText": "A still example shows the finished letter. A repeater shows the letter appearing, then does it again, so you can watch size, spacing, and where the letter sits on the line.\n\nType a sentence, a name, or use the alphabet and number drills. Leave the trace guide on to see the faint model under the pen. Loop plays the line until you pause it. Download PNG or PDF for the finished sentence plus two blank ruled lines to copy.\n\nThe pen uncovers each letter from left to right in the font you picked. It is a model to copy, not a textbook stroke-order diagram.",
+    "faqTitle": "Frequently asked questions",
+    "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
+    "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"
   },
   "cursive": {
     "title": "Cursive Writing Generator",

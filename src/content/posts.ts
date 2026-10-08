@@ -501,6 +501,46 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "sight-word-tracing-worksheets",
+    author: "clara-hartley",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    i18n: {
+      en: {
+        title: "Sight word tracing worksheets you can print before homework",
+        description:
+          "A kindergarten sight word tracing sheet with exact generator settings: eight starter words, row size by age, and the same page for this week's spelling list.",
+      },
+    },
+  },
+  {
+    slug: "handwriting-repeater",
+    author: "theo-lindgren",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    image: "/blog/handwriting-repeater.png",
+    i18n: {
+      en: {
+        title: "Handwriting repeater: loop a sentence until the strokes stick",
+        description:
+          "Free handwriting repeater settings: Patrick Hand, trace guide on, loop on. Watch the pen, then download the lined PNG.",
+      },
+    },
+  },
+  {
+    slug: "handwriting-workbook",
+    author: "wes-morales",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    i18n: {
+      en: {
+        title: "A handwriting workbook built from words you actually write",
+        description:
+          "A two-week adult handwriting workbook: fifteen lines, the exact generator settings, and a 15-minute daily drill. Print it, then make the next one.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

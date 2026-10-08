@@ -138,7 +138,29 @@
 
 1. **字迹变字体工具**(对标 calligraphr,+40%):上传字迹模板 → opentype.js 客户端生成 TTF。周级工程,反哺主工具(用户用自己的字体转写语音),可付费化。
 2. **手写分析互动簇**:handwriting analysis(33)/ handwriting personality(27)/ study of handwriting(14)/ graphology,合计约 97;做"看特征自助分析"向导 + 2–3 篇 graphology 科普,与 quiz 打通。
-3. **handwriting repeater**(+30%):文字笔画动画循环演示工具(SVG stroke animation)。
+3. ~~**handwriting repeater**(+30%)~~:已落地,见 §八。
 4. **多语种手写簇**(japanese/chinese/russian/korean/arabic/greek 合计约 40):暂缓;若做,先试日语假名描红(复用 name-tracing)。
 5. **季节页**:national handwriting day(+30%,1 月 23 日)活动页,12 月底排期。
 6. **字体风格补齐**:bubbly / italic / palmer method 三个小风格页或 preset。
+
+## 七、sight word tracing 配套文章(2026-10-08)
+
+- **主词**:sight word tracing worksheets(自动补全同簇:sight word tracing kindergarten / free / sheets;规划表 §2「spelling word handwriting practice / sight word tracing sheet」)。
+- **选题依据**:当日 `scripts/trends-backlog.mjs`(geo=US,近 7 天)六个种子词的 Rising 均为空,随后 12 个月相关查询被 Trends 429 限流。不接大众日榜新闻。该词是规划表里尚未有独立文章、且工具已能承接的长尾;10 月教师检索季(sight words / tracing / handwriting)与之重合。
+- **角色**:Clara Hartley(课堂桌)。体验资产:分龄行高表 + 八词起步清单与生成器具体参数(Pre-K / Kindergarten / Grade 2 按钮,Patrick Hand,深色示例行开)。
+- **落地**:`sight-word-tracing-worksheets`(en)。内链 `/name-tracing`、`/handwriting-workbook-generator`、`/printable-paper`。与 name-tracing-generator(姓名)拆开,避免同簇互搏。
+
+## 八、`/handwriting-repeater` 循环书写演示(2026-10-08 落地)
+
+- **主词**:handwriting repeater(规划表 §6.5,+30%)。次词:handwriting animation / watch letters being written,由工具页正文与 FAQ 承接,不另开页。
+- **形态**:横线纸上逐字从左到右揭开,笔尖跟随;速度、字体、墨色、淡字底稿、循环。写完的一帧导出 PNG/PDF,句下留两行空白横线。
+- **角色**:Theo Lindgren(工具桌)。体验资产:桌面 Chrome + macOS + 2026-10 的具体参数表(Patrick Hand、速度默认、底稿开、循环开、pangram)+ 动画中途截图。
+- **落地**:文章 `handwriting-repeater`(en)。内链 `/handwriting-repeater`、`/name-tracing`、`/handwriting-workbook-generator`。
+- **局限(页面与文章都写明)**:揭开方向是从左到右,不是教材笔顺;连笔只展示字体里的完成形。
+
+## 九、handwriting workbook 配套文章(2026-10-08)
+
+- **主词**:handwriting workbook(同簇 handwriting workbook printable)。全球近 30 天相关查询热度 1、涨幅 +50%。工具页已在,改进类文章只顺带内链,没有独立稿。
+- **不接**:同批里 handwriting personality test(测验页与 what-does-your-handwriting 已覆盖)、text to handwriting(低价值转换词)。handwriting repeater 已单独落地,见 §八。
+- **角色**:Wes Morales(练习桌)。读者是成人。体验资产:十五行词表(字母 / 本周词 / 短句)+ 生成器参数表 + 14 天 × 15 分钟日程。
+- **落地**:`handwriting-workbook`(en)。内链 `/handwriting-workbook-generator`、`/printable-paper`。与 how-to-improve-handwriting-adults(四周计划)拆开,文内互链。儿童词表指回 Clara 的 sight-word 文,不在本篇展开。

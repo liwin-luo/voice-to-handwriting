@@ -31,6 +31,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
     labelKey: "groupPractice",
     tools: [
       { href: "/name-tracing", navKey: "nameTracing", metaKey: "tracing" },
+      { href: "/handwriting-repeater", navKey: "repeater", metaKey: "repeater" },
       { href: "/printable-paper", navKey: "printablePaper", metaKey: "printable" },
       { href: "/cursive-worksheets", navKey: "cursiveWorks", metaKey: "cursiveWorks" },
       { href: "/daily-cursive-handwriting-practice", navKey: "dailyCursive", metaKey: "dailyCursive" },

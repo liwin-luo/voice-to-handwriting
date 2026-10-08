@@ -72,6 +72,10 @@
       "title": "Générateur de cahier d'écriture (PDF imprimable)",
       "description": "Créez en quelques secondes un cahier d'écriture en PDF : couverture, alphabet ou votre liste de mots, ligne modèle et lignes à repasser sur guides trois lignes. Gratuit, sans inscription, sans filigrane."
     },
+    "repeater": {
+      "title": "Répéteur d'écriture manuscrite — la phrase s'écrit, puis recommence",
+      "description": "Saisissez un mot ou une phrase : ce répéteur d'écriture manuscrite l'écrit sur du papier ligné, puis recommence. Suivez le stylo et téléchargez un PNG ou un PDF. Gratuit, sans inscription."
+    },
     "quiz": {
       "title": "Quiz de personnalité par l'écriture — Que dit votre écriture sur vous ?",
       "description": "12 questions visuelles en 2 minutes environ : un profil amusant et des conseils d'entraînement personnalisés. Gratuit, sans photo, sans inscription."
@@ -97,6 +101,7 @@
     "quiz": "Quiz d'écriture",
     "doctor": "Écriture de médecin",
     "workbook": "Cahier",
+    "repeater": "Répéteur d'écriture",
     "menu": "Menu",
     "allTools": "Tous les outils",
     "groupWrite": "Écrire & générer",
@@ -369,6 +374,35 @@
     "seoTitle": "Cahiers d'écriture imprimables pour la maison et la classe",
     "seoText": "Le cahier structure l'entraînement : chaque mot avec sa ligne modèle d'abord, puis des répétitions à repasser sur des guides trois lignes à ligne médiane pointillée.\n\nMode d'emploi :collez votre liste — l'alphabet pour les maternelles, les sight words au CP, la liste d'orthographe de la semaine — choisissez écriture droite ou cursive et téléchargez le PDF. Imprimez tout ou seulement les pages manquantes.\n\nIdées :un cahier au prénom de votre enfant, un cahier d'été, ou un lot pour la classe avec la liste de chaque élève. Tout se génère dans votre navigateur — sans inscription, sans filigrane.",
     "faqTitle": "Questions fréquentes"
+  },
+  "repeater": {
+    "title": "Répéteur d'écriture",
+    "intro": "Saisissez un mot ou une courte phrase et regardez un stylo l'écrire sur du papier ligné, puis l'écrire encore. Gratuit, sans inscription — téléchargez la ligne terminée en PNG ou en PDF.",
+    "textLabel": "Texte",
+    "textPlaceholder": "Saisissez un mot ou une courte phrase",
+    "hint": "240 caractères maximum. Une ligne courte se répète plus clairement qu'un paragraphe.",
+    "sampleSentence": "Portez ce vieux whisky au juge blond qui fume.",
+    "presetSentence": "Phrase",
+    "presetAlphabet": "Alphabet",
+    "presetNumbers": "Chiffres",
+    "font": "Police",
+    "speed": "Vitesse",
+    "speedSlow": "Lente",
+    "speedFast": "Rapide",
+    "ink": "Encre",
+    "loop": "Boucle",
+    "trace": "Modèle pâle",
+    "play": "Lecture",
+    "pause": "Pause",
+    "replay": "Rejouer",
+    "downloadPng": "Télécharger le PNG",
+    "downloadPdf": "Télécharger le PDF",
+    "stageLabel": "Animation d'écriture sur papier ligné",
+    "seoTitle": "Un répéteur qui réécrit le modèle",
+    "seoText": "Un modèle immobile ne montre que la lettre finie. Le répéteur montre la lettre qui apparaît, puis la réécrit, pour voir la taille, l'espacement et la ligne où elle se pose.\n\nSaisissez une phrase ou un prénom, ou utilisez les exercices alphabet et chiffres. Avec le modèle pâle, la forme claire reste sous le stylo. La boucle continue jusqu'à la pause. Le PNG ou le PDF contient la phrase terminée et deux lignes lignées vides à recopier.\n\nLe stylo découvre chaque lettre de gauche à droite, dans la police choisie. C'est un modèle à recopier, pas un schéma d'ordre des traits de manuel.",
+    "faqTitle": "Questions fréquentes",
+    "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
+    "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"
   },
   "cursive": {
     "title": "Générateur d'écriture cursive",

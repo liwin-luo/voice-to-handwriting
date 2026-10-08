@@ -72,6 +72,10 @@
       "title": "Gerador de caderno de caligrafia (PDF imprimível)",
       "description": "Crie em segundos um caderno de caligrafia em PDF: capa, o alfabeto ou sua lista de palavras, linha de exemplo e linhas para treinar com guia de três linhas. Grátis, sem cadastro, sem marca d'água."
     },
+    "repeater": {
+      "title": "Repetidor de escrita à mão — a frase se escreve e recomeça",
+      "description": "Digite uma palavra ou frase e este repetidor de escrita à mão escreve no papel pautado e repete. Acompanhe a caneta e baixe um PNG ou PDF. Grátis, sem cadastro."
+    },
     "quiz": {
       "title": "Quiz de personalidade pela letra — O que a sua escrita diz sobre você?",
       "description": "12 perguntas visuais em cerca de 2 minutos: um perfil divertido e dicas de prática sob medida. Grátis, sem upload de foto e sem cadastro."
@@ -97,6 +101,7 @@
     "quiz": "Quiz de letra",
     "doctor": "Letra de médico",
     "workbook": "Caderno",
+    "repeater": "Repetidor de escrita",
     "menu": "Menu",
     "allTools": "Todas as ferramentas",
     "groupWrite": "Escrever & gerar",
@@ -369,6 +374,35 @@
     "seoTitle": "Cadernos de caligrafia imprimíveis para casa e sala de aula",
     "seoText": "O caderno estrutura o treino: cada palavra com a linha de exemplo primeiro, depois repetições para treinar sobre guia de três linhas com linha do meio tracejada.\n\nComo usar:cole sua lista — o alfabeto para a pré-escola, sight words para o 1º ano, a lista de ortografia da semana — escolha letra de fôrma ou cursiva e baixe o PDF. Imprima tudo ou só as páginas que faltarem.\n\nIdeias:um caderno com o nome do seu filho, um caderno de férias, ou um conjunto para a turma com a lista de cada aluno. Tudo no navegador — sem cadastro, sem marca d'água.",
     "faqTitle": "Perguntas frequentes"
+  },
+  "repeater": {
+    "title": "Repetidor de escrita",
+    "intro": "Digite uma palavra ou uma frase curta e veja uma caneta escrevê-la no papel pautado, e depois de novo. Grátis, sem cadastro — baixe a linha pronta em PNG ou PDF.",
+    "textLabel": "Texto",
+    "textPlaceholder": "Digite uma palavra ou uma frase curta",
+    "hint": "Até 240 caracteres. Uma linha curta repete com mais clareza do que um parágrafo.",
+    "sampleSentence": "Um pequeno jabuti xereta viu dez cegonhas felizes.",
+    "presetSentence": "Frase",
+    "presetAlphabet": "Alfabeto",
+    "presetNumbers": "Números",
+    "font": "Fonte",
+    "speed": "Velocidade",
+    "speedSlow": "Lenta",
+    "speedFast": "Rápida",
+    "ink": "Tinta",
+    "loop": "Repetir",
+    "trace": "Guia clara",
+    "play": "Reproduzir",
+    "pause": "Pausar",
+    "replay": "De novo",
+    "downloadPng": "Baixar PNG",
+    "downloadPdf": "Baixar PDF",
+    "stageLabel": "Animação de escrita em papel pautado",
+    "seoTitle": "Um repetidor que escreve o modelo de novo",
+    "seoText": "Um modelo parado só mostra a letra pronta. O repetidor mostra a letra aparecendo e escreve de novo, para ver o tamanho, o espaço e em que linha ela se apoia.\n\nDigite uma frase ou um nome, ou use os exercícios de alfabeto e números. Com a guia clara, a forma pálida fica sob a caneta. A repetição continua até você pausar. O PNG ou o PDF traz a frase pronta e duas linhas pautadas em branco para copiar.\n\nA caneta revela cada letra da esquerda para a direita, na fonte que você escolheu. É um modelo para copiar, não um diagrama de ordem dos traços de livro didático.",
+    "faqTitle": "Perguntas frequentes",
+    "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
+    "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"
   },
   "cursive": {
     "title": "Gerador de letra cursiva",

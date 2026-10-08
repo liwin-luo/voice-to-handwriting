@@ -72,6 +72,10 @@
       "title": "Generador de cuaderno de caligrafía (PDF imprimible)",
       "description": "Crea en segundos un cuaderno de caligrafía en PDF: portada, el alfabeto o tu lista de palabras, fila de ejemplo y filas para repasar con guía de tres líneas. Gratis, sin registro, sin marca de agua."
     },
+    "repeater": {
+      "title": "Repetidor de escritura a mano — mira la frase y vuelve a verla",
+      "description": "Escribe una palabra o una frase y este repetidor de escritura a mano la traza en papel pautado y la repite. Sigue el bolígrafo y descarga un PNG o un PDF. Gratis, sin registro."
+    },
     "quiz": {
       "title": "Test de personalidad por tu letra — ¿Qué dice tu escritura sobre ti?",
       "description": "12 preguntas visuales de unos 2 minutos: un perfil divertido y consejos de práctica a medida. Gratis, sin subir fotos y sin registro."
@@ -97,6 +101,7 @@
     "quiz": "Test de letra",
     "doctor": "Letra de médico",
     "workbook": "Cuaderno",
+    "repeater": "Repetidor de escritura",
     "menu": "Menú",
     "allTools": "Todas las herramientas",
     "groupWrite": "Escribir y generar",
@@ -369,6 +374,35 @@
     "seoTitle": "Cuadernos de caligrafía imprimibles para casa y aula",
     "seoText": "Un cuaderno ordena la práctica: cada palabra con su ejemplo primero y repeticiones para repasar sobre guía de tres líneas con línea media discontinua.\n\nCómo usarlo:pega tu lista — el alfabeto para preescolar, sight words para kinder, la lista de ortografía semanal — elige letra de imprenta o cursiva y descarga el PDF. Imprime todo el libro o solo las páginas que falten.\n\nIdeas:un cuaderno con el nombre de tu hijo, un cuaderno de verano, o un set para la clase con la lista de cada alumno. Todo se genera en tu navegador — sin registro, sin marca de agua.",
     "faqTitle": "Preguntas frecuentes"
+  },
+  "repeater": {
+    "title": "Repetidor de escritura",
+    "intro": "Escribe una palabra o una frase corta y mira cómo un bolígrafo la traza en papel pautado, y luego otra vez. Gratis, sin registro: descarga la línea terminada en PNG o PDF.",
+    "textLabel": "Texto",
+    "textPlaceholder": "Escribe una palabra o una frase corta",
+    "hint": "Hasta 240 caracteres. Una línea corta se repite con más claridad que un párrafo.",
+    "sampleSentence": "El veloz murciélago hindú comía feliz cardillo y kiwi.",
+    "presetSentence": "Frase",
+    "presetAlphabet": "Alfabeto",
+    "presetNumbers": "Números",
+    "font": "Fuente",
+    "speed": "Velocidad",
+    "speedSlow": "Lenta",
+    "speedFast": "Rápida",
+    "ink": "Tinta",
+    "loop": "Bucle",
+    "trace": "Guía tenue",
+    "play": "Reproducir",
+    "pause": "Pausa",
+    "replay": "Otra vez",
+    "downloadPng": "Descargar PNG",
+    "downloadPdf": "Descargar PDF",
+    "stageLabel": "Animación de escritura sobre papel pautado",
+    "seoTitle": "Un repetidor que vuelve a escribir el modelo",
+    "seoText": "Un modelo quieto solo muestra la letra terminada. El repetidor muestra cómo aparece y la escribe otra vez, para ver el tamaño, el espacio y en qué línea se apoya.\n\nEscribe una frase o un nombre, o usa los ejercicios de alfabeto y números. Con la guía tenue, el modelo claro queda bajo el bolígrafo. El bucle sigue hasta que lo pauses. El PNG o el PDF trae la frase terminada y dos líneas pautadas en blanco para copiar.\n\nEl bolígrafo descubre cada letra de izquierda a derecha, en la fuente que elegiste. Es un modelo para copiar, no un diagrama de orden de trazos de un libro de texto.",
+    "faqTitle": "Preguntas frecuentes",
+    "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
+    "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"
   },
   "cursive": {
     "title": "Generador de letra cursiva",

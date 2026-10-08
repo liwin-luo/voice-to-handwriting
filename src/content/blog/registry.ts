@@ -64,6 +64,9 @@ import wdfr from "./what-does-your-handwriting-say-about-you.fr.mdx";
 import wdpt from "./what-does-your-handwriting-say-about-you.pt.mdx";
 import bvtEn from "./handwriting-vs-typing-brain.en.mdx";
 import hiyEn from "./how-to-improve-your-handwriting.en.mdx";
+import swtEn from "./sight-word-tracing-worksheets.en.mdx";
+import hrpEn from "./handwriting-repeater.en.mdx";
+import hwbEn from "./handwriting-workbook.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -218,6 +221,9 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "how-to-teach-cursive-kids": { en: htcEn, zh: htcZh, ja: htcJa, ko: htcKo, de: htcDe, fr: htcFr, es: htcEs, pt: htcPt },
   "handwriting-vs-typing-brain": { en: bvtEn, zh: bvtZh, ja: bvtJa, ko: bvtKo, de: bvtDe, fr: bvtFr, es: bvtEs, pt: bvtPt },
   "how-to-improve-your-handwriting": { en: hiyEn, zh: hiyZh, ja: hiyJa, ko: hiyKo, de: hiyDe, fr: hiyFr, es: hiyEs, pt: hiyPt },
+  "sight-word-tracing-worksheets": { en: swtEn },
+  "handwriting-repeater": { en: hrpEn },
+  "handwriting-workbook": { en: hwbEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

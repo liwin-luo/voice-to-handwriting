@@ -1987,3 +1987,118 @@ export const WORKBOOK_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /handwriting-repeater 循环书写演示 FAQ(8 语言) */
+export const REPEATER_FAQS: FaqItem[] = [
+  {
+    id: "repeater-free",
+    i18n: {
+      en: {
+        q: "Is the handwriting repeater free?",
+        a: "Yes — no signup and no watermark. The animation runs in your browser, and PNG and PDF downloads are unlimited.",
+      },
+      zh: {
+        q: "手写循环演示免费吗?",
+        a: "免费——无需注册,也没有水印。动画在你的浏览器里播放,PNG 和 PDF 下载不限次数。",
+      },
+      ja: {
+        q: "手書きリピーターは無料ですか?",
+        a: "はい。登録も透かしもありません。アニメーションはブラウザの中で再生され、PNG と PDF の保存に回数制限はありません。",
+      },
+      ko: {
+        q: "손글씨 리피터는 무료인가요?",
+        a: "네. 가입도 워터마크도 없습니다. 애니메이션은 브라우저 안에서 재생되고, PNG와 PDF 받기에 횟수 제한이 없습니다.",
+      },
+      es: {
+        q: "¿El repetidor de escritura es gratis?",
+        a: "Sí: sin registro y sin marca de agua. La animación corre en tu navegador, y las descargas en PNG y PDF no tienen límite.",
+      },
+      de: {
+        q: "Ist die Schreib-Wiederholung kostenlos?",
+        a: "Ja — ohne Anmeldung und ohne Wasserzeichen. Die Animation läuft in deinem Browser, PNG- und PDF-Downloads sind nicht begrenzt.",
+      },
+      fr: {
+        q: "Le répéteur d'écriture est-il gratuit ?",
+        a: "Oui — sans inscription et sans filigrane. L'animation tourne dans votre navigateur, et les téléchargements PNG et PDF ne sont pas limités.",
+      },
+      pt: {
+        q: "O repetidor de escrita é grátis?",
+        a: "Sim — sem cadastro e sem marca d'água. A animação roda no seu navegador, e os downloads em PNG e PDF não têm limite.",
+      },
+    },
+  },
+  {
+    id: "repeater-stroke-order",
+    i18n: {
+      en: {
+        q: "Does the repeater show real stroke order?",
+        a: "It uncovers each letter from left to right in the font you picked, then loops. That shows size, spacing, and where the letter sits on the line. It is not a textbook stroke-order diagram, and cursive entry strokes are not marked.",
+      },
+      zh: {
+        q: "它展示的是真正的笔顺吗?",
+        a: "它按你选的字体,从左到右把每个字揭开,然后循环。能看出大小、间距,以及字落在哪条线上。这不是教材笔顺图,连笔的起笔也不会单独标出来。",
+      },
+      ja: {
+        q: "本当の筆順を見せてくれますか?",
+        a: "選んだフォントの形を、左から右へ一文字ずつ開いてからループします。大きさ、間隔、文字がどの線に乗るかは分かります。教科書の筆順図ではなく、筆記体の入りの筆も印は付きません。",
+      },
+      ko: {
+        q: "실제 획순을 보여 주나요?",
+        a: "고른 글꼴의 모양을 왼쪽에서 오른쪽으로 한 글자씩 연 다음 반복합니다. 크기, 간격, 글자가 어느 줄에 앉는지는 보입니다. 교과서 획순 그림은 아니고, 필기체의 시작 획도 표시하지 않습니다.",
+      },
+      es: {
+        q: "¿Muestra el orden real de los trazos?",
+        a: "Descubre cada letra de izquierda a derecha en la fuente elegida y luego la repite. Así se ve el tamaño, el espacio y en qué línea se apoya. No es un diagrama de orden de trazos de un libro, y no marca por dónde entra la cursiva.",
+      },
+      de: {
+        q: "Zeigt sie die echte Strichfolge?",
+        a: "Sie deckt jeden Buchstaben von links nach rechts in der gewählten Schrift auf und wiederholt ihn dann. Größe, Abstand und die Linie, auf der der Buchstabe sitzt, sind zu sehen. Es ist kein Strichfolge-Diagramm aus dem Lehrbuch, und Einstiege in der Schreibschrift sind nicht markiert.",
+      },
+      fr: {
+        q: "Est-ce le vrai ordre des traits ?",
+        a: "Chaque lettre est découverte de gauche à droite dans la police choisie, puis la ligne recommence. On voit la taille, l'espacement et la ligne d'appui. Ce n'est pas un schéma d'ordre des traits de manuel, et l'attaque de la cursive n'est pas marquée.",
+      },
+      pt: {
+        q: "Ele mostra a ordem real dos traços?",
+        a: "Revela cada letra da esquerda para a direita na fonte escolhida e depois repete. Dá para ver o tamanho, o espaço e em que linha a letra se apoia. Não é um diagrama de ordem dos traços de livro, e a entrada da cursiva não vem marcada.",
+      },
+    },
+  },
+  {
+    id: "repeater-print",
+    i18n: {
+      en: {
+        q: "Can I print the sentence?",
+        a: "Yes. Download PNG or PDF. The file is the finished sentence on ruled lines, with two blank lines under it to copy. The moving loop stays on the screen.",
+      },
+      zh: {
+        q: "这句话能打印吗?",
+        a: "可以。下载 PNG 或 PDF。文件里是写完的句子,落在横线上,下面还有两行空白可以照着抄。循环动画本身留在屏幕上。",
+      },
+      ja: {
+        q: "この文は印刷できますか?",
+        a: "できます。PNG または PDF を保存してください。ファイルには書き終わった文と、その下に写すための空白罫線が 2 行入っています。動くループは画面に残ります。",
+      },
+      ko: {
+        q: "이 문장을 인쇄할 수 있나요?",
+        a: "네. PNG 또는 PDF로 받으세요. 파일에는 다 쓴 문장과, 그 아래 베껴 쓸 빈 줄 두 줄이 들어 있습니다. 움직이는 반복은 화면에 남습니다.",
+      },
+      es: {
+        q: "¿Puedo imprimir la frase?",
+        a: "Sí. Descarga el PNG o el PDF. El archivo trae la frase terminada sobre líneas pautadas y dos líneas en blanco debajo para copiar. El bucle en movimiento se queda en la pantalla.",
+      },
+      de: {
+        q: "Kann ich den Satz drucken?",
+        a: "Ja. Lade PNG oder PDF. Die Datei enthält den fertigen Satz auf linierten Zeilen und darunter zwei leere Zeilen zum Abschreiben. Die bewegte Schleife bleibt auf dem Bildschirm.",
+      },
+      fr: {
+        q: "Puis-je imprimer la phrase ?",
+        a: "Oui. Téléchargez le PNG ou le PDF. Le fichier contient la phrase terminée sur des lignes, avec deux lignes vides en dessous à recopier. La boucle animée reste à l'écran.",
+      },
+      pt: {
+        q: "Dá para imprimir a frase?",
+        a: "Sim. Baixe o PNG ou o PDF. O arquivo traz a frase pronta nas linhas pautadas e duas linhas em branco embaixo para copiar. A repetição em movimento fica na tela.",
+      },
+    },
+  },
+];
