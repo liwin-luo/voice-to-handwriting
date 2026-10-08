@@ -343,6 +343,26 @@ export const EXTRA_TEMPLATE_I18N: Record<string, Partial<Record<Locale, Template
       text: "Felicidades pelo casamento!\nVi a torpeza e a seriedade do amor de vocês.\nConfio que vão transformar dias comuns em poesia.\nQue os anos que vêm tempere bem cada dia.",
     },
   },
+  "letter-from-santa": {
+    de: {
+      title: "Brief-vom-Weihnachtsmann-Vorlage (handschriftlich, druckbar)",
+      description:
+        "Ein handschriftlicher Brief vom Nordpol: warme Worte in Santas Schrift auf festlichem Papier. Eine Zeile ändern, drucken, am Heiligabend unter den Baum legen.",
+      text: "Frohe Weihnachten!\nHo ho ho! Ich bin’s, der Weihnachtsmann. Die Elfen und Rentiere haben abgestimmt: Du stehst offiziell auf der Braven-Liste (doppelt überprüft).\nAn Heiligabend bitte ein Plätzchen für mich und ein paar Karotten für die Rentiere dalassen.\nMach weiter so — neugierig und freundlich.\nDer Weihnachtsmann, Nordpol",
+    },
+    fr: {
+      title: "Modèle de lettre du Père Noël (imprimable)",
+      description:
+        "Une lettre manuscrite du pôle Nord : des mots chaleureux en écriture du Père Noël sur papier festif. Modifiez une ligne, imprimez, déposez sous le sapin le réveillon.",
+      text: "Joyeux Noël !\nHo ho ho ! C’est moi, le Père Noël. Les lutins et les rennes ont voté : tu es officiellement sur la liste des sages (vérifiée deux fois).\nLe réveillon, laisse-moi un cookie et quelques carottes pour les rennes.\nContinue d’être curieux et gentil.\nLe Père Noël, pôle Nord",
+    },
+    pt: {
+      title: "Modelo de carta do Papai Noel (imprimível)",
+      description:
+        "Uma carta manuscrita do Polo Norte: palavras carinhosas na letra do Papai Noel em papel festivo. Edite, imprima e deixe sob a árvore na véspera de Natal.",
+      text: "Feliz Natal!\nHo ho ho! Sou eu, o Papai Noel. Os elfos e as renas votaram: você está oficialmente na lista dos bonzinhos (checada duas vezes).\nNa véspera, deixe um biscoito para mim e cenouras para as renas.\nContinue curioso e gentil.\nPapai Noel, Polo Norte",
+    },
+  },
 };
 
 /** 将后补语言的 i18n 合并进目标数组(Post[] / Template[]) */

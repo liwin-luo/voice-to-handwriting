@@ -2,10 +2,10 @@ import { describe, expect, it } from "vitest";
 import { PAPERS, getPaper, makeCustomPaper } from "./paper";
 
 describe("paper presets", () => {
-  it("包含五种纸张且 id 唯一", () => {
+  it("包含六种纸张且 id 唯一", () => {
     const ids = PAPERS.map((p) => p.id);
     expect(new Set(ids).size).toBe(PAPERS.length);
-    expect(ids).toEqual(["blank", "ruled", "grid", "letter", "rx"]);
+    expect(ids).toEqual(["blank", "ruled", "grid", "letter", "rx", "festive"]);
   });
 
   it("getPaper 找不到时回退 blank", () => {

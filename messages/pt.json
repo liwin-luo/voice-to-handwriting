@@ -170,6 +170,7 @@
       "grid": "Quadriculado",
       "letter": "Carta",
       "rx": "Receita",
+      "festive": "Festivo",
       "custom": "Personalizado"
     },
     "inks": {

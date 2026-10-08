@@ -1,5 +1,5 @@
 export interface PaperPreset {
-  id: "blank" | "ruled" | "grid" | "letter" | "rx" | "custom";
+  id: "blank" | "ruled" | "grid" | "letter" | "rx" | "festive" | "custom";
   name: string;
   /** 文本行高(px),横线/方格纸的格线间距与它一致 */
   lineHeight: number;
@@ -12,6 +12,10 @@ const L = 40; // 格线间距
 /** Rx 处方笺装饰层(SVG data URI):顶部色带 + ℞ 符号(白描边防横线穿过)+ 右下签名线 + 左下日期线 */
 const RX_DECOR =
   `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='794' height='1123' viewBox='0 0 794 1123'%3E%3Crect width='794' height='48' fill='%23f1f5f9'/%3E%3Cline x1='0' y1='48' x2='794' y2='48' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='46' y='168' font-family='Georgia, serif' font-size='88' fill='%23475569' stroke='%23ffffff' stroke-width='10' paint-order='stroke'%3E%E2%84%9E%3C/text%3E%3Cline x1='434' y1='1016' x2='746' y2='1016' stroke='%2394a3b8' stroke-width='2'/%3E%3Cline x1='48' y1='1062' x2='300' y2='1062' stroke='%23cbd5e1' stroke-width='2'/%3E%3C/svg%3E") no-repeat`;
+
+/** 节日纸装饰层(SVG data URI):糖果条纹顶带 + 雪花角饰 + 底部绿线 */
+const FESTIVE_DECOR =
+  `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='794' height='1123' viewBox='0 0 794 1123'%3E%3Cdefs%3E%3Cpattern id='candy' width='24' height='22' patternTransform='rotate(45)' patternUnits='userSpaceOnUse'%3E%3Crect width='12' height='22' fill='%23dc2626'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='794' height='20' fill='url(%23candy)'/%3E%3Crect y='22' width='794' height='3' fill='%23166534'/%3E%3Ctext x='60' y='72' font-size='26' fill='%2360a5fa' text-anchor='middle'%3E%E2%9D%84%3C/text%3E%3Ctext x='734' y='72' font-size='26' fill='%2360a5fa' text-anchor='middle'%3E%E2%9D%84%3C/text%3E%3Ctext x='180' y='58' font-size='14' fill='%2393c5fd' text-anchor='middle'%3E%E2%9D%84%3C/text%3E%3Ctext x='614' y='58' font-size='14' fill='%2393c5fd' text-anchor='middle'%3E%E2%9D%84%3C/text%3E%3Cline x1='48' y1='1113' x2='746' y2='1113' stroke='%23166534' stroke-width='2'/%3E%3C/svg%3E") no-repeat`;
 
 export const PAPERS: PaperPreset[] = [
   { id: "blank", name: "白纸", lineHeight: 36, background: "#ffffff" },
@@ -40,6 +44,12 @@ export const PAPERS: PaperPreset[] = [
     name: "处方笺",
     lineHeight: 48,
     background: `${RX_DECOR}, repeating-linear-gradient(to bottom, transparent 0 47px, #c7d4e3 47px 48px), #ffffff`,
+  },
+  {
+    id: "festive",
+    name: "节日",
+    lineHeight: 40,
+    background: `${FESTIVE_DECOR}, repeating-linear-gradient(to bottom, transparent 0 39px, #e3d1c2 39px 40px), #fffcf5`,
   },
 ];
 

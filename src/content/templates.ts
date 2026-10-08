@@ -406,6 +406,37 @@ export const TEMPLATES: HandwritingTemplate[] = [
       },
     },
   },
+  {
+    slug: "letter-from-santa",
+    style: { fontId: "caveat", paperId: "festive", ink: "#8c1f28", fontSize: 30, intensity: 0.55, align: "left", indent: false },
+    i18n: {
+      zh: {
+        title: "圣诞老人来信模板(手写体,可打印)",
+        description: "给孩子一封「北极来的亲笔信」:手写字体配节日信纸,写上孩子这一年的闪光点,平安夜前打印放在圣诞树下。改几个字就是您家的专属来信。",
+        text: "圣诞快乐!\n咳咳——是我,圣诞老人!小精灵们说你这一年又善良又爱思考,驯鹿们一致同意把你写进「好孩子名单」(我们核对了两遍)。\n平安夜记得给我留一块饼干,给驯鹿留几根胡萝卜。\n继续做那个闪闪发光的自己。\n圣诞老人 于北极",
+      },
+      en: {
+        title: "Letter from Santa template (handwriting, printable)",
+        description: "A handwritten letter from the North Pole: warm wishes in Santa's own script on festive paper. Edit a line, print it, and leave it under the tree on Christmas Eve.",
+        text: "Merry Christmas!\nHo ho ho! It's me, Santa. The elves and the reindeer voted: you are officially on the Nice List (we checked it twice).\nOn Christmas Eve please leave a cookie out for me and a few carrots for the reindeer.\nKeep being curious and kind.\nSanta Claus, North Pole",
+      },
+      ja: {
+        title: "サンタからの手紙テンプレート(手書き風・印刷OK)",
+        description: "北極からの手書きのお手紙。サンタの字で祝福の一言を。文章を少し直して印刷すれば、クリスマスイブにツリーの下へ。",
+        text: "メリークリスマス!\nホホホ!僕だよ、サンタだよ。トナカイたちの投票で、きみはしっかり「いい子リスト」に入っていたよ(2回確認したよ)。\nクリスマスイブにはクッキーをひとつ、トナカイにはにんじんをよろしく。\nこれからもその優しさと好奇心を大切にね。\n北極から、サンタより",
+      },
+      ko: {
+        title: "산타 편지 템플릿(손글씨, 인쇄 가능)",
+        description: "북극에서 온 손편지. 산타 글씨로 축하와 격려를 전해요. 몇 줄만 고쳐 인쇄하면 크리스마스 이브 트리 아래에.",
+        text: "메리 크리스마스!\n호호호! 나야, 산타. 올 한해 친절하고 호기심 많았던 너는 만장일치로 '착한 아이 명단'에 올랐어(두 번 확인했지).\n크리스마스 이브에는 쿠키 한 조각, 순록에게는 당근 잊지 말기.\n계속 빛나는 아이로 자라거라.\n북극에서, 산타가",
+      },
+      es: {
+        title: "Plantilla de carta de Santa (imprimible)",
+        description: "Una carta manuscrita del Polo Norte con deseo y ánimo en letra de Santa. Edita, imprime y déjala bajo el árbol en Nochebuena.",
+        text: "¡Feliz Navidad!\n¡Oh, oh, oh! Soy Santa. Los elfos y los renos votaron y estás en la Lista de los Buenos (la revisamos dos veces).\nEn Nochebuena no olvides dejarme una galleta, y zanahorias para los renos.\nSigue siendo tan curioso y amable.\nSanta Claus, Polo Norte",
+      },
+    },
+  },
 ];
 
 mergeI18n(TEMPLATES, EXTRA_TEMPLATE_I18N);
