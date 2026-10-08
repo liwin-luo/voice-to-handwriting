@@ -7,7 +7,7 @@ test.describe("英文版", () => {
 
   test("quiz 全流程:开始 → 12 题作答 → 结果卡与练字链接", async ({ page }) => {
     await page.goto("/handwriting-personality-quiz");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("Handwriting Personality Quiz");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("Handwriting Personality Test");
 
     // 服务端 HTML 即含科普与免责(规范 §2.2)
     await expect(page.getByRole("heading", { name: "Is handwriting analysis real?" })).toBeVisible();
@@ -50,7 +50,7 @@ test.describe("中文版", () => {
 
   test("中文版渲染完整中文内容", async ({ page }) => {
     await page.goto("/zh/handwriting-personality-quiz");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("笔迹性格小测验");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("手写性格测试");
     await expect(page.getByText("笔迹分析是科学的吗?")).toBeVisible();
     await page.getByRole("button", { name: "开始测试" }).click();
     await expect(page.getByTestId("quiz-option").first()).toBeVisible();

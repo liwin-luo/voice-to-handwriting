@@ -77,9 +77,9 @@ export interface QuizLocaleContent {
 }
 
 const en: QuizLocaleContent = {
-  title: "Handwriting Personality Quiz",
+  title: "Handwriting Personality Test",
   intro:
-    "12 quick questions about how you write — no photo upload, nothing recorded. You'll get a fun handwriting profile at the end, plus practice tips for the habits behind your letters.",
+    "This handwriting personality test asks 12 quick questions about how you write — no photo upload, nothing recorded. You'll get a fun handwriting profile at the end, plus practice tips for the habits behind your letters.",
   start: "Start the quiz",
   back: "Back",
   retake: "Retake the quiz",
@@ -349,9 +349,9 @@ const en: QuizLocaleContent = {
 };
 
 const zh: QuizLocaleContent = {
-  title: "笔迹性格小测验",
+  title: "手写性格测试",
   intro:
-    "12 道快速选择题,看看你平时怎么写字——无需上传照片,也不会记录任何内容。最后你会得到一份趣味笔迹画像,以及针对你书写习惯的练习建议。",
+    "这份手写性格测试用 12 道快速选择题看看你平时怎么写字——无需上传照片,也不会记录任何内容。最后你会得到一份趣味笔迹画像,以及针对你书写习惯的练习建议。",
   start: "开始测试",
   back: "上一题",
   retake: "再测一次",
@@ -615,9 +615,9 @@ const zh: QuizLocaleContent = {
 };
 
 const ja: QuizLocaleContent = {
-  title: "筆跡性格クイズ",
+  title: "筆跡パーソナリティテスト",
   intro:
-    "いつもの書き方について 12 問に答えるだけ。写真のアップロードも記録も一切ありません。最後に楽しい筆跡プロフィールと、文字の癖に合わせた練習のヒントをお届けします。",
+    "この筆跡パーソナリティテストは、いつもの書き方について 12 問に答えるだけ。写真のアップロードも記録も一切ありません。最後に楽しい筆跡プロフィールと、文字の癖に合わせた練習のヒントをお届けします。",
   start: "クイズを始める",
   back: "前の質問へ",
   retake: "もう一回やる",
@@ -881,9 +881,9 @@ const ja: QuizLocaleContent = {
 };
 
 const ko: QuizLocaleContent = {
-  title: "글씨체 성격 퀴즈",
+  title: "글씨 성격 테스트",
   intro:
-    "평소 쓰는 글씨에 대한 12개의 짧은 질문 — 사진 업로드도, 기록도 없습니다. 마지막에는 재미로 보는 글씨 프로필과 글씨 습관에 맞운 연습 팁을 받아요.",
+    "이 글씨 성격 테스트는 평소 쓰는 글씨에 대한 12개의 짧은 질문으로 이루어집니다 — 사진 업로드도, 기록도 없습니다. 마지막에는 재미로 보는 글씨 프로필과 글씨 습관에 맞운 연습 팁을 받아요.",
   start: "퀴즈 시작",
   back: "이전 질문",
   retake: "다시 하기",
@@ -1413,9 +1413,9 @@ const es: QuizLocaleContent = {
 };
 
 const de: QuizLocaleContent = {
-  title: "Handschrift-Persönlichkeitsquiz",
+  title: "Handschrift-Persönlichkeitstest",
   intro:
-    "12 kurze Fragen darüber, wie du schreibst — kein Foto-Upload, nichts wird gespeichert. Am Ende bekommst du ein Spaße-Handschrift-Profil plus Übungstipps für die Gewohnheiten hinter deinen Buchstaben.",
+    "Dieser Handschrift-Persönlichkeitstest stellt 12 kurze Fragen darüber, wie du schreibst — kein Foto-Upload, nichts wird gespeichert. Am Ende bekommst du ein Spaße-Handschrift-Profil plus Übungstipps für die Gewohnheiten hinter deinen Buchstaben.",
   start: "Quiz starten",
   back: "Zurück",
   retake: "Quiz wiederholen",

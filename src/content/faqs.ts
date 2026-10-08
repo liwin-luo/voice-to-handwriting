@@ -1498,6 +1498,43 @@ export const DAILY_CURSIVE_FAQS: FaqItem[] = [
 /** /handwriting-personality-quiz 笔迹性格测验页 FAQ(8 语言) */
 export const QUIZ_FAQS: FaqItem[] = [
   {
+    id: "quiz-what-is",
+    i18n: {
+      en: {
+        q: "What is a handwriting personality test?",
+        a: "It's a light quiz that links the way you write with a fun personality profile. This one shows you sample writing styles — you pick the ones closest to yours — and returns a profile plus practice tips for the habits behind your letters. It's for fun: graphology itself isn't scientific, but the practice tips target real, trainable habits like size, spacing and baseline.",
+      },
+      zh: {
+        q: "什么是手写性格测试?",
+        a: "手写性格测试是一种把书写方式和趣味性格画像关联起来的小测验。这里的版本会展示多种笔迹样张,选出最接近你的,就能得到对应的性格画像和针对书写习惯的练字建议。它仅供娱乐:笔迹学本身并不科学,但练习建议针对的是真实、可训练的习惯,比如字号、间距和基线。",
+      },
+      ja: {
+        q: "筆跡パーソナリティテストとは何ですか?",
+        a: "書き方と楽しい性格プロフィールを結びつける軽いテストです。こちらの版では筆跡サンプルが表示され、自分に一番近いものを選ぶと、プロフィールと文字の癖に合わせた練習のヒントが返ってきます。あくまで娯楽です:グラフォロジー自体は科学的ではありませんが、練習のヒントは大きさ・間隔・ベースラインといった、実際に訓練できる習慣を対象にしています。",
+      },
+      ko: {
+        q: "글씨 성격 테스트란 무엇인가요?",
+        a: "쓰는 방식과 재미로 보는 성격 프로필을 연결하는 가벼운 테스트입니다. 이 버전은 필적 샘플을 보여주고 가장 비슷한 것을 고르면, 프로필과 글씨 습관에 맞운 연습 팁을 알려줍니다. 재미용입니다: 그래폴로지 자체는 과학적이지 않지만, 연습 팁은 크기·간격·베이스라인처럼 실제로 훈련 가능한 습관을 대상으로 합니다.",
+      },
+      es: {
+        q: "¿Qué es un test de personalidad por la letra?",
+        a: "Es un test ligero que conecta tu forma de escribir con un perfil de personalidad divertido. Esta versión te muestra muestras de escritura —eliges las más parecidas a la tuya— y te devuelve un perfil con consejos de práctica para los hábitos detrás de tus letras. Es solo diversión: la grafología no es científica, pero los consejos atacan hábitos reales y entrenables como tamaño, espaciado y línea base.",
+      },
+      de: {
+        q: "Was ist ein Handschrift-Persönlichkeitstest?",
+        a: "Ein leichter Test, der deine Schreibweise mit einem spaßigen Persönlichkeitsprofil verknüpft. Diese Version zeigt dir Schriftmuster — du wählst die aus, die deinen am nächsten kommen — und liefert ein Profil plus Übungstipps für die Gewohnheiten hinter deinen Buchstaben. Nur zum Spaß: Die Graphologie ist nicht wissenschaftlich, aber die Tipps zielen auf echte, trainierbare Gewohnheiten wie Größe, Abstände und Grundlinie.",
+      },
+      fr: {
+        q: "Qu'est-ce qu'un test de personnalité par l'écriture ?",
+        a: "C'est un petit test qui relie votre façon d'écrire à un profil de personnalité amusant. Cette version vous montre des échantillons d'écriture — vous choisissez ceux qui ressemblent le plus aux vôtres — et renvoie un profil avec des conseils pour travailler les habitudes derrière vos lettres. C'est juste pour le plaisir : la graphologie n'est pas une science, mais les conseils ciblent des habitudes réelles et entraînables comme la taille, l'espacement et la ligne de base.",
+      },
+      pt: {
+        q: "O que é um teste de personalidade pela letra?",
+        a: "É um teste leve que liga o seu jeito de escrever a um perfil de personalidade divertido. Esta versão mostra amostras de escrita — você escolhe as mais parecidas com a sua — e devolve um perfil com dicas de prática para os hábitos por trás das suas letras. É só diversão: a grafologia não é científica, mas as dicas miram hábitos reais e treináveis como tamanho, espaçamento e linha de base.",
+      },
+    },
+  },
+  {
     id: "quiz-accurate",
     i18n: {
       en: {
