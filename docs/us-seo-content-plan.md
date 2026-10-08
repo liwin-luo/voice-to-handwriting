@@ -96,3 +96,11 @@
 - **站内结构**:工具页(/name-tracing、/printable-paper)是转化层,文章是流量层——每篇文章首屏一个 CTA、FAQ 区对齐 PAA,文章间互链成"练字主题簇"。
 - **E-E-A-T**:所有"实测/局限"段落保持诚实口径(描红为浅灰实心字母而非虚线轮廓、行距为近似值、字体为开源 Google 字体等),这是与竞品内容拉开信任差距的杠杆,不要在改稿中删掉。
 - **红线**:不碰"把打印稿伪装成手写作业交差"话术(教育诚信风险);不使用 "Handwriting Without Tears" 等注册商标做对比;dysgraphia 文章只做练习建议并引导专业评估,不做医疗声明。
+
+## 五、`/handwriting-personality-quiz` 笔迹测验工具配套规划(2026-10-08 登记即动工)
+
+- **落地页**:`/handwriting-personality-quiz`,8 语言全量。主词 handwriting personality quiz(估 2K–5K/月)+ what does your handwriting say about you quiz(估 1K–3K/月)。
+- **定位**:娱乐向视觉 quiz(看图选择、无需上传,2 分钟)+ 结果页每个维度配练字建议直链站内工具(差异化闭环,SERP 无竞品做);页内 "Is handwriting analysis real?" 段落诚实承接 graphology 词簇与怀疑论流量。
+- **配套文章**:`what-does-your-handwriting-say-about-you`(信息主词 what does your handwriting say about you,估 10K–30K/月),8 语言正文(用户要求全语言,高于 §3.2 优先级基线),正文内链 quiz 工具与练字工具。
+- **后续选题**(未排期):signature analysis personality(独立簇,估 1K–3K/月,可做签名版 quiz 或文章);handwriting slant/spacing/pressure meaning 等单特征长尾(quiz 结果页维度段落先行承接);is handwriting analysis real / pseudoscience(信任流量)。
+- **红线**:娱乐定位+免责声明贯穿(全部竞品标配);科学共识段落(Neter & Ben-Shakhar 1989 meta 分析)不可删;不做严肃性格断言、招聘/情感兼容暗示;不碰医疗与儿童发育评估。

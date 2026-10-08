@@ -658,3 +658,297 @@ export const COLORING_FAQS: FaqItem[] = [
     },
   },
 ];
+
+export const DAILY_CURSIVE_FAQS: FaqItem[] = [
+  {
+    id: "daily-free",
+    i18n: {
+      en: {
+        q: "Is the daily cursive practice really free?",
+        a: "Yes — every daily sheet is free to download and print, with no signup and no watermark. Print as many copies as you need for your family or classroom.",
+      },
+      zh: {
+        q: "每日草书练习真的免费吗?",
+        a: "免费——每天的练习页都可以随意下载打印,无需注册、没有水印,家庭和课堂用都可以不限份数。",
+      },
+    },
+  },
+  {
+    id: "daily-content",
+    i18n: {
+      en: {
+        q: "What is on each daily sheet?",
+        a: "One printable page with a complete practice ladder: a stroke warm-up row, the cursive letters of the day, three words that use them, and one sentence to trace and then copy on the blank lines. Ten to fifteen minutes, done.",
+      },
+      zh: {
+        q: "每天的练习页上有什么?",
+        a: "一页完整的练习阶梯:一行笔画热身、当日草书字母、用到这些字母的三个单词,以及一句先描红再在空白行临写的句子。十到十五分钟就能练完。",
+      },
+    },
+  },
+  {
+    id: "daily-changes",
+    i18n: {
+      en: {
+        q: "Does the worksheet really change every day?",
+        a: "Yes — the letters, words and sentence are picked deterministically from the date, so a new sheet appears every day. Everyone printing on the same date gets the same sheet, which makes it easy to follow along as a class or with a friend.",
+      },
+      zh: {
+        q: "练习内容真的每天都不一样吗?",
+        a: "是的——字母、单词和句子都由日期确定性抽取,每天自动换新。同一天打印的所有人拿到同一份,方便全班或和朋友一起跟练。",
+      },
+    },
+  },
+  {
+    id: "daily-levels",
+    i18n: {
+      en: {
+        q: "Is it for kids or for adults?",
+        a: "Both. The Kids level uses bigger lines and simple words and sentences; the Adults level uses smaller lines with proverbs and sayings. Switch levels any time — the sheet adjusts instantly.",
+      },
+      zh: {
+        q: "适合儿童还是成人?",
+        a: "都适合。儿童难度行距更大,单词句子更简单;成人难度行距更小,句子换成谚语格言。随时切换难度,练习页立即更新。",
+      },
+    },
+  },
+  {
+    id: "daily-week",
+    i18n: {
+      en: {
+        q: "Can I print a whole week at once?",
+        a: "Yes — the week button bundles Monday through Sunday into one seven-page PDF, each page with that day's own letters, words and sentence. Great for printing the week ahead on Monday.",
+      },
+      zh: {
+        q: "可以一次打印一整周吗?",
+        a: "可以——点击「本周套装」按钮,周一到周日合并成一个 7 页 PDF,每页都是当天的字母、单词和句子。适合周一一次性打完一周的量。",
+      },
+    },
+  },
+];
+
+/** /handwriting-personality-quiz 笔迹性格测验页 FAQ(8 语言) */
+export const QUIZ_FAQS: FaqItem[] = [
+  {
+    id: "quiz-accurate",
+    i18n: {
+      en: {
+        q: "Is this quiz scientifically accurate?",
+        a: "No — and we say so up front. Graphology (reading personality from handwriting) has been debunked in meta-analyses, so the profile is for fun. What is real: the practice tips, which target trainable habits like letter size, spacing and baseline.",
+      },
+      zh: {
+        q: "这个测验有科学依据吗?",
+        a: "没有——我们开门见山地承认。笔迹学(从笔迹推断性格)已被多项荟萃分析证伪,所以画像部分纯属娱乐。真实有效的是练习建议:它们针对字号、间距、基线这些可以通过训练改善的习惯。",
+      },
+      ja: {
+        q: "このクイズは科学的に正確ですか?",
+        a: "いいえ——最初にはっきりお伝えします。グラフォロジー(筆跡から性格を読む)はメタ分析で否定されており、プロフィールはあくまで娯楽です。本物は練習ヒントのほう。文字の大きさ・間隔・ベースラインなど、訓練で変えられる習慣を対象にしています。",
+      },
+      ko: {
+        q: "이 퀴즈는 과학적으로 정확한가요?",
+        a: "아니요 — 처음부터 솔직하게 말씀드려요. 그래폴로지(글씨로 성격 읽기)는 메타분석에서 반박됐고, 프로필은 재미용입니다. 실제인 것은 연습 팁: 글자 크기, 간격, 베이스라인처럼 훈련으로 바꿀 수 있는 습관을 대상으로 합니다.",
+      },
+      es: {
+        q: "¿Este test es científicamente preciso?",
+        a: "No — y lo decimos desde el principio. La grafología (leer la personalidad en la letra) está refutada por metaanálisis, así que el perfil es solo diversión. Lo real son los consejos de práctica: atacan hábitos entrenables como el tamaño, el espaciado y la línea base.",
+      },
+      de: {
+        q: "Ist dieses Quiz wissenschaftlich fundiert?",
+        a: "Nein — und wir sagen das ganz offen. Die Graphologie (Persönlichkeit aus Schrift zu lesen) wurde in Metaanalysen widerlegt; das Profil ist also nur Spaß. Echt sind die Übungstipps: Sie zielen auf trainierbare Gewohnheiten wie Buchstabengröße, Abstände und Grundlinie.",
+      },
+      fr: {
+        q: "Ce quiz est-il scientifiquement fiable ?",
+        a: "Non — et nous le disons d'emblée. La graphologie (lire la personnalité dans l'écriture) est réfutée par les méta-analyses ; le profil est donc purement ludique. Ce qui est réel : les conseils d'entraînement, qui ciblent des habitudes travaillables comme la taille, l'espacement et la ligne de base.",
+      },
+      pt: {
+        q: "Este quiz é cientificamente preciso?",
+        a: "Não — e dizemos isso de cara. A grafologia (ler personalidade na letra) foi refutada por meta-análises, então o perfil é só diversão. O que é real: as dicas de prática, que miram hábitos treináveis como tamanho, espaçamento e linha de base.",
+      },
+    },
+  },
+  {
+    id: "quiz-forensic",
+    i18n: {
+      en: {
+        q: "Is handwriting analysis the same as forensic document examination?",
+        a: "No. Forensic document examiners compare writing to establish authorship or detect forgery for courts — a validated profession with real accuracy studies. Graphology claims personality traits, which research does not support.",
+      },
+      zh: {
+        q: "笔迹分析和法庭笔迹鉴定是一回事吗?",
+        a: "不是。法庭文书鉴定人通过比对笔迹判断文件作者或识别伪造,是为司法服务的、经过实证检验的职业;而笔迹学声称能看出性格,这一点并没有研究支持。",
+      },
+      ja: {
+        q: "筆跡分析は法科学の文書鑑定と同じですか?",
+        a: "違います。法科学の文書鑑定は、筆跡の比較から作者や偽造を判定する裁判向けの専門職で、精度の実証研究があります。一方グラフォロジーは性格の推定を主張しますが、これは研究裏付けがありません。",
+      },
+      ko: {
+        q: "글씨 분석과 법과학 문서감정은 같은 건가요?",
+        a: "아니요. 법과학 문서감정관은 필적 비교로 작성자나 위조를 판별하는 검증된 전문 직업입니다. 그래폴로지는 성격을 주장하지만, 이는 연구 뒷받침이 없어요.",
+      },
+      es: {
+        q: "¿El análisis de la letra es lo mismo que la pericia caligráfica forense?",
+        a: "No. Los peritos forenses comparan escritos para determinar autoría o detectar falsificaciones para los tribunales: una profesión validada con estudios de precisión reales. La grafología atribuye rasgos de personalidad, y eso la investigación no lo respalda.",
+      },
+      de: {
+        q: "Ist Handschriftenanalyse dasselbe wie forensische Dokumentenprüfung?",
+        a: "Nein. Forensische Dokumentensachverständige vergleichen Schriften, um Verfasserschaft oder Fälschungen für Gerichte festzustellen — ein validierter Beruf mit echten Genauigkeitsstudien. Die Graphologie behauptet Persönlichkeitsmerkmale, was die Forschung nicht stützt.",
+      },
+      fr: {
+        q: "L'analyse d'écriture, est-ce la même chose que l'expertise judiciaire en écritures ?",
+        a: "Non. Les experts en documents judiciaires comparent les écritures pour établir une paternité d'écriture ou détecter une falsification devant les tribunaux — un métier validé, avec de vraies études de fiabilité. La graphologie attribue des traits de personnalité, et cela, la recherche ne le soutient pas.",
+      },
+      pt: {
+        q: "Análise de letra é a mesma coisa que perícia grafotécnica?",
+        a: "Não. Peritos grafotécnicos comparam escritos para apurar autoria ou detectar falsificações para a Justiça — uma profissão validada, com estudos reais de precisão. A grafologia atribui traços de personalidade, e é isso que a pesquisa não sustenta.",
+      },
+    },
+  },
+  {
+    id: "quiz-upload",
+    i18n: {
+      en: {
+        q: "Do I need to upload a photo of my handwriting?",
+        a: "No. Every question shows printed letter samples to compare against — nothing is uploaded, nothing is stored, and the quiz keeps working offline once the page has loaded.",
+      },
+      zh: {
+        q: "需要上传我的手写照片吗?",
+        a: "不需要。每道题都是印刷字母样张,对照选择即可——不上传任何内容、不保存任何数据,页面加载完成后离线也能作答。",
+      },
+      ja: {
+        q: "自分の字の写真をアップロードする必要はありますか?",
+        a: "いいえ。すべての質問には印刷された文字見本が表示され、見比べて選ぶだけ。アップロードも保存も一切なく、ページを読み込めばオフラインでも答えられます。",
+      },
+      ko: {
+        q: "제 글씨 사진을 올려야 하나요?",
+        a: "아니요. 모든 질문에는 인쇄된 글자 샘플이 보여서 비교해 고르기만 하면 됩니다 — 아무것도 업로드되거나 저장되지 않고, 페이지만 로드되면 오프라인에서도 동작해요.",
+      },
+      es: {
+        q: "¿Tengo que subir una foto de mi letra?",
+        a: "No. Cada pregunta muestra muestras impresas de letras para comparar — no se sube nada, no se guarda nada, y el test sigue funcionando sin conexión una vez cargada la página.",
+      },
+      de: {
+        q: "Muss ich ein Foto meiner Handschrift hochladen?",
+        a: "Nein. Jede Frage zeigt gedruckte Buchstabenmuster zum Vergleichen — nichts wird hochgeladen, nichts gespeichert, und nach dem Laden funktioniert das Quiz auch offline.",
+      },
+      fr: {
+        q: "Faut-il téléverser une photo de mon écriture ?",
+        a: "Non. Chaque question affiche des échantillons de lettres imprimés à comparer — rien n'est téléversé, rien n'est stocké, et le quiz marche hors ligne une fois la page chargée.",
+      },
+      pt: {
+        q: "Preciso enviar uma foto da minha letra?",
+        a: "Não. Toda pergunta mostra amostras impressas de letras para comparar — nada é enviado, nada é armazenado, e o quiz continua funcionando offline depois que a página carrega.",
+      },
+    },
+  },
+  {
+    id: "quiz-share",
+    i18n: {
+      en: {
+        q: "Can I save or share my result?",
+        a: "Yes — download your result card as a PNG and share it anywhere. The card shows only your profile name and dimension bars, no personal data.",
+      },
+      zh: {
+        q: "可以保存或分享结果吗?",
+        a: "可以——把结果卡片下载为 PNG,随时分享。卡片上只有档案名称和维度条,不含任何个人信息。",
+      },
+      ja: {
+        q: "結果を保存・シェアできますか?",
+        a: "はい。結果カードを PNG としてダウンロードして、どこでもシェアできます。カードにはプロフィール名と次元バーだけが表示され、個人情報は含まれません。",
+      },
+      ko: {
+        q: "결과를 저장하거나 공유할 수 있나요?",
+        a: "네 — 결과 카드를 PNG로 내려받아 어디든 공유하세요. 카드에는 프로필 이름과 차원 막대만 있고 개인정보는 없습니다.",
+      },
+      es: {
+        q: "¿Puedo guardar o compartir mi resultado?",
+        a: "Sí — descarga tu tarjeta de resultado en PNG y compártela donde quieras. La tarjeta muestra solo el nombre del perfil y las barras por dimensión, sin datos personales.",
+      },
+      de: {
+        q: "Kann ich mein Ergebnis speichern oder teilen?",
+        a: "Ja — lade deine Ergebniskarte als PNG herunter und teile sie überall. Die Karte zeigt nur Profilname und Dimensionsbalken, keine persönlichen Daten.",
+      },
+      fr: {
+        q: "Puis-je enregistrer ou partager mon résultat ?",
+        a: "Oui — téléchargez votre carte de résultat en PNG et partagez-la où vous voulez. La carte n'affiche que le nom du profil et les barres par dimension, sans donnée personnelle.",
+      },
+      pt: {
+        q: "Posso salvar ou compartilhar meu resultado?",
+        a: "Sim — baixe seu cartão de resultado em PNG e compartilhe onde quiser. O cartão mostra só o nome do perfil e as barras por dimensão, sem dados pessoais.",
+      },
+    },
+  },
+  {
+    id: "quiz-languages",
+    i18n: {
+      en: {
+        q: "Which languages is the quiz available in?",
+        a: "Eight: English, Spanish, French, German, Portuguese, Chinese, Japanese and Korean. The letter samples show Latin script, since the quiz is about how you write the Latin alphabet.",
+      },
+      zh: {
+        q: "这个测验支持哪些语言?",
+        a: "八种:英语、西班牙语、法语、德语、葡萄牙语、中文、日语和韩语。字母样张为拉丁字母,因为测验关注的是你写拉丁字母的习惯。",
+      },
+      ja: {
+        q: "クイズは何語で使えますか?",
+        a: "8 言語:英語、スペイン語、フランス語、ドイツ語、ポルトガル語、中国語、日本語、韓国語。文字見本はラテン文字です(ラテン文字の書き方についてのクイズのため)。",
+      },
+      ko: {
+        q: "퀴즈는 어떤 언어로 되어 있나요?",
+        a: "8개 언어: 영어, 스페인어, 프랑스어, 독일어, 포르투갈어, 중국어, 일본어, 한국어. 글자 샘플은 라틴 문자입니다 — 퀴즈가 라틴 알파벳 쓰기에 관한 것이기 때문이에요.",
+      },
+      es: {
+        q: "¿En qué idiomas está disponible el test?",
+        a: "En ocho: inglés, español, francés, alemán, portugués, chino, japonés y coreano. Las muestras de letras están en alfabeto latino, porque el test va sobre cómo escribes el alfabeto latino.",
+      },
+      de: {
+        q: "In welchen Sprachen gibt es das Quiz?",
+        a: "In acht: Englisch, Spanisch, Französisch, Deutsch, Portugiesisch, Chinesisch, Japanisch und Koreanisch. Die Buchstabenmuster sind lateinisch, weil es darum geht, wie du das lateinische Alphabet schreibst.",
+      },
+      fr: {
+        q: "Dans quelles langues le quiz est-il disponible ?",
+        a: "Huit : anglais, espagnol, français, allemand, portugais, chinois, japonais et coréen. Les échantillons de lettres sont en alphabet latin, puisque le quiz porte sur votre façon d'écrire l'alphabet latin.",
+      },
+      pt: {
+        q: "Em quais idiomas o quiz está disponível?",
+        a: "Em oito: inglês, espanhol, francês, alemão, português, chinês, japonês e coreano. As amostras de letras são em alfabeto latino, já que o quiz trata de como você escreve o alfabeto latino.",
+      },
+    },
+  },
+  {
+    id: "quiz-improve",
+    i18n: {
+      en: {
+        q: "Can I improve my handwriting based on my result?",
+        a: "That's the point! Each dimension in your result links to a free practice tool matched to that habit — three-line paper for a straight baseline, rhythm rows for even size, and so on. No signup, no watermark.",
+      },
+      zh: {
+        q: "能根据结果改善我的字吗?",
+        a: "这正是本测验的落点!结果里的每个维度都配有对应的免费练习工具——基线不平练三线格、字号不稳练节奏行,以此类推。无需注册,没有水印。",
+      },
+      ja: {
+        q: "結果をもとに字を上達させられますか?",
+        a: "それがこのクイズの狙いです!結果の各次元には、その習慣に合った無料練習ツールがリンクされています——ベースラインには 3 線ノート、均一なサイズにはリズム行、など。登録も透かしもありません。",
+      },
+      ko: {
+        q: "결과를 바탕으로 글씨를 고칠 수 있나요?",
+        a: "그게 이 퀴즈의 목표입니다! 결과의 각 차원에는 그 습관에 맞는 무료 연습 도구가 연결됩니다 — 곧은 베이스라인은 3선 용지, 균일한 크기는 리듬 행 등. 가입도 워터마크도 없어요.",
+      },
+      es: {
+        q: "¿Puedo mejorar mi letra a partir de mi resultado?",
+        a: "¡Ese es el objetivo! Cada dimensión del resultado enlaza a una herramienta de práctica gratuita para ese hábito: papel de tres líneas para la línea base, filas con ritmo para un tamaño uniforme, etcétera. Sin registro ni marca de agua.",
+      },
+      de: {
+        q: "Kann ich mit meinem Ergebnis meine Handschrift verbessern?",
+        a: "Genau das ist der Sinn! Jede Dimension im Ergebnis verlinkt ein passendes kostenloses Übungswerkzeug — Drei-Linien-Papier für die Grundlinie, Rhythmuszeilen für gleichmäßige Größe und so weiter. Ohne Anmeldung, ohne Wasserzeichen.",
+      },
+      fr: {
+        q: "Puis-je améliorer mon écriture à partir de mon résultat ?",
+        a: "C'est tout l'objectif ! Chaque dimension du résultat renvoie vers un outil d'entraînement gratuit adapté à cette habitude — papier séyès pour la ligne de base, lignes-rythmes pour une taille régulière, etc. Sans inscription, sans filigrane.",
+      },
+      pt: {
+        q: "Posso melhorar minha letra a partir do resultado?",
+        a: "Esse é o objetivo! Cada dimensão do resultado leva a uma ferramenta de prática gratuita para aquele hábito — papel de três linhas para a linha de base, linhas com ritmo para tamanho uniforme, e por aí vai. Sem cadastro, sem marca d'água.",
+      },
+    },
+  },
+];

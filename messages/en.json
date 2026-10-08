@@ -52,6 +52,10 @@
       "title": "Free Cursive Worksheets Generator (Printable PDF)",
       "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper, no watermark — built for classrooms bringing back cursive."
     },
+    "dailyCursive": {
+      "title": "Free Daily Cursive Handwriting Practice PDF (Printable)",
+      "description": "A fresh cursive handwriting practice sheet every day — warm-up strokes, letters, words and a sentence on one printable page. Free PDF for kids and adults, no signup, no watermark."
+    },
     "writing": {
       "title": "Writing Practice Sheet Generator",
       "description": "Free printable writing practice sheets for Chinese, Japanese and Korean: tianzige squares, genkoyoshi-style grids and hangul practice cells. Type the characters, print the PDF."
@@ -59,6 +63,14 @@
     "coloring": {
       "title": "Name Coloring Page Generator",
       "description": "Turn any name into printable bubble-letter coloring pages. Free PDF — kids color their own name."
+    },
+    "wordwork": {
+      "title": "Word Work Worksheet Generator (Printable PDF)",
+      "description": "Turn any spelling list into two printable activities: write each word three times and fill in the missing letter. Deterministic, free, no watermark, no signup."
+    },
+    "quiz": {
+      "title": "Free Handwriting Personality Quiz — What Does Your Handwriting Say About You?",
+      "description": "Answer 12 quick questions about your handwriting and get a fun personality profile with practice tips. Free, no upload, no signup — about 2 minutes."
     }
   },
   "nav": {
@@ -72,9 +84,11 @@
     "nameTracing": "Name Tracing",
     "cursive": "Cursive Writing",
     "cursiveWorks": "Cursive Worksheets",
+    "dailyCursive": "Daily Cursive Practice",
     "writingPractice": "Writing Practice",
     "coloring": "Name Coloring",
-    "wordWork": "Word Work"
+    "wordWork": "Word Work",
+    "quiz": "Handwriting Quiz"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -303,6 +317,31 @@
     "intro": "Free printable cursive practice sheets: paste any word list or sentence and get traceable cursive rows on 3-line paper. Built for classrooms bringing cursive back.",
     "seoTitle": "Free printable cursive worksheets for the classroom",
     "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Cedarville Cursive for everyday handwriting or Dancing Script for elegant flourishes, set the row height, and download the PDF. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice."
+  },
+  "dailyCursive": {
+    "title": "Daily Cursive Handwriting Practice",
+    "intro": "One printable cursive worksheet for every day of the year: warm-up strokes, the letters of the day, three words and one sentence to trace and copy. Pick kids or adults, add a name, and download today's PDF — no signup.",
+    "todayLabel": "Today's sheet",
+    "todayBadge": "New daily",
+    "levelLabel": "Level",
+    "levelKids": "Kids",
+    "levelAdults": "Adults",
+    "font": "Font",
+    "nameLabel": "Name on the sheet (optional)",
+    "namePlaceholder": "Type a name…",
+    "downloadPdf": "Download today's PDF",
+    "downloadWeek": "This week (7 pages)",
+    "downloadPng": "Download PNG",
+    "backTomorrow": "A new sheet is generated every day — come back tomorrow for fresh letters, words and a new sentence.",
+    "sheetTitle": "Daily Cursive Practice",
+    "warmup": "Warm-up",
+    "letters": "Letters",
+    "words": "Words",
+    "sentence": "Sentence",
+    "nameField": "Name",
+    "faqTitle": "Frequently asked questions",
+    "seoTitle": "A daily cursive practice routine that actually sticks",
+    "seoText": "Short, daily practice is how cursive sticks: ten to fifteen minutes a day builds muscle memory far faster than one long weekly session. This page gives you a ready-made routine — every sheet pairs a stroke warm-up with the letters of the day, three words that use them, and one sentence to trace and then copy on the blank lines below.\n\nThe sheet changes every day. A deterministic daily pick means everyone printing on the same date gets the same worksheet, so it is easy to follow along with a class or a friend. Choose the Kids level for larger lines and simple words, or the Adults level for smaller lines and proverbs to trace. Add a name before printing to keep pages from mixing up in the classroom.\n\nNeed a whole week at once? The week button bundles Monday through Sunday into a single PDF. If you would rather practice your own spelling list or sentences, the cursive worksheets generator makes traceable pages from any text."
   },
   "writing": {
     "title": "Writing Practice Sheet Generator",

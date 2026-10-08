@@ -52,6 +52,10 @@
       "title": "Generador gratis de fichas de cursiva (PDF imprimible)",
       "description": "Crea fichas de práctica de cursiva gratis desde cualquier lista de palabras. Filas caligráficas sobre papel de 3 líneas, sin marca de agua."
     },
+    "dailyCursive": {
+      "title": "PDF diario de práctica de caligrafía cursiva (imprimible gratis)",
+      "description": "Una nueva hoja de práctica de cursiva cada día: trazos de calentamiento, letras del día, palabras y una frase para calcar. PDF gratis para niños y adultos, sin registro ni marca de agua."
+    },
     "writing": {
       "title": "Generador de hojas de caligrafía CJK",
       "description": "Hojas de práctica de chino, japonés y coreano para imprimir gratis: cuadrículas tianzige, estilo genkoyoshi y celdas hangul. Descarga en PDF."
@@ -59,6 +63,14 @@
     "coloring": {
       "title": "Generador de páginas para colorear con nombres",
       "description": "Convierte cualquier nombre en páginas de burbujas para colorear. PDF gratis — los niños colorean su propio nombre."
+    },
+    "wordwork": {
+      "title": "Generador de hojas de trabajo de palabras (PDF imprimible)",
+      "description": "Convierte cualquier lista de ortografía en dos actividades imprimibles: escribir cada palabra tres veces y completar la letra que falta. Determinista, gratis, sin marca de agua."
+    },
+    "quiz": {
+      "title": "Test de personalidad por tu letra — ¿Qué dice tu escritura sobre ti?",
+      "description": "12 preguntas visuales de unos 2 minutos: un perfil divertido y consejos de práctica a medida. Gratis, sin subir fotos y sin registro."
     }
   },
   "nav": {
@@ -72,9 +84,11 @@
     "nameTracing": "Fichas de nombres",
     "cursive": "Letra cursiva",
     "cursiveWorks": "Fichas de cursiva",
+    "dailyCursive": "Práctica diaria de cursiva",
     "writingPractice": "Caligrafía CJK",
     "coloring": "Generador de páginas para colorear con nombres",
-    "wordWork": "Fichas de palabras"
+    "wordWork": "Fichas de palabras",
+    "quiz": "Test de letra"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -303,6 +317,31 @@
     "intro": "Hojas de práctica de cursiva para imprimir gratis: pega cualquier lista de palabras y obtén filas caligráficas para repasar sobre papel de 3 líneas. Para aulas que recuperan la cursiva.",
     "seoTitle": "Fichas de cursiva para imprimir gratis",
     "seoText": "Cada vez más estados de EE. UU. están devolviendo la cursiva al currículo (Florida, Pensilvania y otros desde 2024) — y los maestros necesitan materiales de inmediato.\n\nCómo usar: pega tu lista de palabras (alfabeto, ortografía, nombres — uno por línea), elige Cedarville Cursive o Dancing Script, ajusta la altura de fila y descarga el PDF. Sin marca de agua ni registro."
+  },
+  "dailyCursive": {
+    "title": "Práctica diaria de escritura cursiva",
+    "intro": "Una hoja imprimible de cursiva para cada día: trazos de calentamiento, las letras del día, tres palabras y una frase para calcar y copiar. Elige niños o adultos, añade un nombre y descarga el PDF de hoy, sin registro.",
+    "todayLabel": "Hoja de hoy",
+    "todayBadge": "Nueva cada día",
+    "levelLabel": "Nivel",
+    "levelKids": "Niños",
+    "levelAdults": "Adultos",
+    "font": "Fuente",
+    "nameLabel": "Nombre en la hoja (opcional)",
+    "namePlaceholder": "Escribe un nombre…",
+    "downloadPdf": "Descargar el PDF de hoy",
+    "downloadWeek": "Esta semana (7 páginas)",
+    "downloadPng": "Descargar PNG",
+    "backTomorrow": "Cada día se genera una hoja nueva: vuelve mañana para letras, palabras y una frase nuevas.",
+    "sheetTitle": "Práctica diaria de cursiva",
+    "warmup": "Calentamiento",
+    "letters": "Letras",
+    "words": "Palabras",
+    "sentence": "Frase",
+    "nameField": "Nombre",
+    "faqTitle": "Preguntas frecuentes",
+    "seoTitle": "Una rutina diaria de cursiva que de verdad funciona",
+    "seoText": "La práctica corta y diaria es lo que hace que la cursiva se fije: diez o quince minutos al día crean memoria muscular mucho más rápido que una sesión larga semanal. Esta página te da la rutina lista para usar: cada hoja combina un calentamiento de trazos con las letras del día, tres palabras que las usan y una frase para calcar y copiar en las líneas en blanco.\n\nLa hoja cambia cada día. La selección diaria determinista significa que todas las personas que impriman en la misma fecha reciben la misma hoja, ideal para seguir el ritmo en clase o con un amigo. Elige el nivel Niños para líneas más grandes y palabras sencillas, o el nivel Adultos para líneas más pequeñas y refranes. Añade un nombre antes de imprimir para que las hojas no se mezclen en el aula.\n\n¿Necesitas una semana entera de una vez? El botón semanal agrupa de lunes a domingo en un solo PDF. Si prefieres practicar con tu propia lista de palabras o frases, el generador de hojas de cursiva crea páginas para calcar con cualquier texto."
   },
   "writing": {
     "title": "Generador de hojas de caligrafía CJK",

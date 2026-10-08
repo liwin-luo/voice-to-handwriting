@@ -52,6 +52,10 @@
       "title": "Kostenloser Schreibschrift-Arbeitsblatt-Generator",
       "description": "Kostenlose Schreibschrift-Übungsblätter aus jeder Wortliste erstellen. Nachspürbare Zeilen auf 3-Linien-Papier, ohne Wasserzeichen."
     },
+    "dailyCursive": {
+      "title": "Tägliche Schreibschrift-Übung als PDF (kostenlos druckbar)",
+      "description": "Jeden Tag ein neues Schreibschrift-Arbeitsblatt: Aufwärmstriche, Buchstaben des Tages, Wörter und ein Satz zum Nachspuren. Kostenloses PDF für Kinder und Erwachsene, ohne Anmeldung, ohne Wasserzeichen."
+    },
     "writing": {
       "title": "CJK-Schreibübungs-Generator",
       "description": "Kostenlose Übungspapiere für Chinesisch, Japanisch und Koreanisch: Tianzige-Quadrate, Genkoyoshi-Gitter und Hangul-Zellen. Text eingeben, PDF drucken."
@@ -59,6 +63,14 @@
     "coloring": {
       "title": "Namens-Malvorlagen-Generator",
       "description": "Verwandle jeden Namen in druckbare Bubble-Letters zum Ausmalen. Kostenloser PDF — Kinder bemalen ihren eigenen Namen."
+    },
+    "wordwork": {
+      "title": "Wortarbeit-Arbeitsblatt-Generator (druckbares PDF)",
+      "description": "Verwandle jede Rechtschreibliste in zwei druckbare Übungen: jedes Wort dreimal schreiben und den fehlenden Buchstaben ergänzen. Deterministisch, kostenlos, ohne Wasserzeichen."
+    },
+    "quiz": {
+      "title": "Handschrift-Persönlichkeitsquiz — Was sagt deine Handschrift über dich?",
+      "description": "12 visuelle Fragen in etwa 2 Minuten: ein Spaß-Profil plus passende Übungstipps. Kostenlos, ohne Foto-Upload, ohne Anmeldung."
     }
   },
   "nav": {
@@ -72,9 +84,11 @@
     "nameTracing": "Schreibübungsblätter",
     "cursive": "Schreibschrift-Generator",
     "cursiveWorks": "Schreibschrift-Arbeitsblätter",
+    "dailyCursive": "Tägliche Schreibschriftübung",
     "writingPractice": "Schreibübungen CJK",
     "coloring": "Namens-Malvorlagen-Generator",
-    "wordWork": "Wortübungsblätter"
+    "wordWork": "Wortübungsblätter",
+    "quiz": "Handschrift-Quiz"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -303,6 +317,31 @@
     "intro": "Kostenlose Übungsbätter in Schreibschrift: Wortliste oder Satz einfügen und nachspürbare Zeilen auf 3-Linien-Papier erhalten. Für Klassen, die Schreibschrift zurückbringen.",
     "seoTitle": "Kostenlose Schreibschrift-Arbeitsblätter zum Drucken",
     "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Cedarville Cursive oder Dancing Script wählen, Zeilenhöhe anpassen, PDF herunterladen. Ohne Wasserzeichen, ohne Anmeldung."
+  },
+  "dailyCursive": {
+    "title": "Tägliche Schreibschrift-Übung",
+    "intro": "Ein druckbares Schreibschrift-Arbeitsblatt für jeden Tag: Aufwärmstriche, die Buchstaben des Tages, drei Wörter und ein Satz zum Nachspuren und Abschreiben. Kinder oder Erwachsene wählen, Name eingeben und das PDF von heute herunterladen — ohne Anmeldung.",
+    "todayLabel": "Blatt von heute",
+    "todayBadge": "Täglich neu",
+    "levelLabel": "Stufe",
+    "levelKids": "Kinder",
+    "levelAdults": "Erwachsene",
+    "font": "Schrift",
+    "nameLabel": "Name auf dem Blatt (optional)",
+    "namePlaceholder": "Namen eingeben…",
+    "downloadPdf": "Heutiges PDF herunterladen",
+    "downloadWeek": "Diese Woche (7 Seiten)",
+    "downloadPng": "PNG herunterladen",
+    "backTomorrow": "Jeden Tag entsteht ein neues Blatt — komm morgen wieder für frische Buchstaben, Wörter und einen neuen Satz.",
+    "sheetTitle": "Tägliche Schreibschriftübung",
+    "warmup": "Aufwärmen",
+    "letters": "Buchstaben",
+    "words": "Wörter",
+    "sentence": "Satz",
+    "nameField": "Name",
+    "faqTitle": "Häufige Fragen",
+    "seoTitle": "Eine tägliche Schreibschrift-Routine, die wirklich hält",
+    "seoText": "Kurzes tägliches Üben ist es, was Schreibschrift sitzen lässt: zehn bis fünfzehn Minuten pro Tag bauen Muskelgedächtnis viel schneller auf als eine lange Wochensitzung. Diese Seite liefert die fertige Routine: Jedes Blatt paart ein Strich-Aufwärmen mit den Buchstaben des Tages, drei Wörtern daraus und einem Satz zum Nachspuren und anschließenden Abschreiben auf den leeren Linien.\n\nDas Blatt wechselt täglich. Die deterministische Tagesauswahl bedeutet: Alle, die am selben Datum drucken, bekommen dasselbe Arbeitsblatt — ideal, um mit der Klasse oder mit Freunden mitzuhalten. Die Kinderstufe hat größere Linien und einfache Wörter, die Erwachsenenstufe feinere Linien und Sprichwörter. Vor dem Drucken einen Namen eingeben, damit die Blätter im Klassenzimmer nicht vermischt werden.\n\nGanze Woche auf einmal? Der Wochen-Button bündelt Montag bis Sonntag in einem PDF. Wer mit der eigenen Wortliste üben möchte, erzeugt mit dem Schreibschrift-Generator Spurseiten aus beliebigem Text."
   },
   "writing": {
     "title": "CJK-Schreibübungs-Generator",

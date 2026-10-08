@@ -18,6 +18,54 @@ export function getPostMeta(slug: string, locale: Locale) {
 /** 博客索引:新增文章在 src/content/blog/<slug>.<locale>.mdx 建文件并注册到 registry 后,在此登记 */
 export const POSTS: Post[] = [
   {
+    slug: "what-does-your-handwriting-say-about-you",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    image: "/blog/adult-practice.png",
+    i18n: {
+      en: {
+        title: "What does your handwriting say about you? The honest guide",
+        description:
+          "The five features people read in handwriting — slant, size, spacing, baseline, pressure — what science actually says, and how to change the habits you don't like.",
+      },
+      zh: {
+        title: "你的字迹说明了什么?诚实版解读指南",
+        description:
+          "人们从字迹里读的五个特征——倾斜、字号、间距、基线、笔压,科学到底怎么说,以及如何改掉你不喜欢的书写习惯。附 2 分钟笔迹性格小测验。",
+      },
+      ja: {
+        title: "あなたの字は何を語る?正直な筆跡ガイド",
+        description:
+          "筆跡で読まれる 5 つの特徴——傾き・サイズ・間隔・ベースライン・筆圧。科学が実際に支持することと、気に入らない習慣の直し方。2 分の筆跡クイズ付き。",
+      },
+      ko: {
+        title: "당신의 글씨는 무엇을 말할까? 솔직한 필적 가이드",
+        description:
+          "글씨에서 읽는 다섯 가지 특징 — 기울기, 크기, 간격, 베이스라인, 필압. 과학이 실제로 말하는 것과 마음에 들지 않는 습관을 바꾸는 방법. 2분 짜리 글씨 퀴즈 포함.",
+      },
+      es: {
+        title: "¿Qué dice tu letra sobre ti? La guía honesta",
+        description:
+          "Los cinco rasgos que la gente lee en la letra — inclinación, tamaño, espaciado, línea base, presión — lo que dice la ciencia y cómo cambiar los hábitos que no te gustan.",
+      },
+      de: {
+        title: "Was verrät deine Handschrift? Der ehrliche Ratgeber",
+        description:
+          "Die fünf Merkmale, die in Handschrift gelesen werden — Neigung, Größe, Abstände, Grundlinie, Druck — was die Wissenschaft sagt und wie du unliebsame Gewohnheiten änderst.",
+      },
+      fr: {
+        title: "Que dit votre écriture sur vous ? Le guide honnête",
+        description:
+          "Les cinq traits que l'on lit dans l'écriture — inclinaison, taille, espaces, ligne de base, pression — ce que dit la science et comment changer les habitudes qui vous déplaisent.",
+      },
+      pt: {
+        title: "O que a sua letra diz sobre você? O guia honesto",
+        description:
+          "Os cinco traços que as pessoas leem na letra — inclinação, tamanho, espaçamento, linha de base, pressão — o que a ciência diz e como mudar os hábitos que você não gosta.",
+      },
+    },
+  },
+  {
     slug: "handwritten-card-with-voice",
     date: "2026-10-06",
     updated: "2026-10-07",

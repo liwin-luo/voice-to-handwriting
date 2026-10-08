@@ -25,9 +25,11 @@ export default async function SiteHeader() {
               { href: "/name-tracing", label: t("nameTracing") },
               { href: "/cursive", label: t("cursive") },
               { href: "/cursive-worksheets", label: t("cursiveWorks") },
+              { href: "/daily-cursive-handwriting-practice", label: t("dailyCursive") },
               { href: "/writing-practice", label: t("writingPractice") },
               { href: "/name-coloring", label: t("coloring") },
               { href: "/word-work", label: t("wordWork") },
+              { href: "/handwriting-personality-quiz", label: t("quiz") },
             ]}
           />
           <Link href="/history" className="transition-colors hover:text-zinc-950">

@@ -52,6 +52,10 @@
       "title": "Générateur gratuit de fiches d'écriture cursive",
       "description": "Créez des fiches de cursive à imprimer à partir de n'importe quelle liste de mots. Lignes à repasser sur papier 3 lignes, sans filigrane."
     },
+    "dailyCursive": {
+      "title": "PDF quotidien de pratique de l'écriture cursive (imprimable gratuit)",
+      "description": "Une nouvelle fiche de pratique cursive chaque jour : échauffement de traits, lettres du jour, mots et une phrase à reproduire. PDF gratuit pour enfants et adultes, sans inscription ni filigrane."
+    },
     "writing": {
       "title": "Générateur de feuilles d'écriture CJK",
       "description": "Feuilles de pratique gratuites pour chinois, japonais et coréen : carrés tianzige, grilles genkoyoshi et cellules hangul. Tapez les caractères, imprimez le PDF."
@@ -59,6 +63,14 @@
     "coloring": {
       "title": "Générateur de pages à colorier avec prénoms",
       "description": "Transforme n'importe quel prénom en pages à colorier lettres bulles. PDF gratuit — les enfants colorient leur propre prénom."
+    },
+    "wordwork": {
+      "title": "Générateur de fiches de mots (PDF imprimable)",
+      "description": "Transformez n'importe quelle liste d'orthographe en deux activités imprimables : écrire chaque mot trois fois et compléter la lettre manquante. Déterministe, gratuit, sans filigrane."
+    },
+    "quiz": {
+      "title": "Quiz de personnalité par l'écriture — Que dit votre écriture sur vous ?",
+      "description": "12 questions visuelles en 2 minutes environ : un profil amusant et des conseils d'entraînement personnalisés. Gratuit, sans photo, sans inscription."
     }
   },
   "nav": {
@@ -72,9 +84,11 @@
     "nameTracing": "Fiches de prénoms",
     "cursive": "Écriture cursive",
     "cursiveWorks": "Fiches d'écriture cursive",
+    "dailyCursive": "Pratique cursive quotidienne",
     "writingPractice": "Écriture CJK",
     "coloring": "Générateur de pages à colorier avec prénoms",
-    "wordWork": "Fiches de mots"
+    "wordWork": "Fiches de mots",
+    "quiz": "Quiz d'écriture"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -303,6 +317,31 @@
     "intro": "Des fiches de cursive à imprimer gratuitement : collez une liste de mots et obtenez des lignes à repasser sur papier 3 lignes. Pour les classes qui réintègrent la cursive.",
     "seoTitle": "Fiches de cursive à imprimer gratuitement",
     "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Cedarville Cursive ou Dancing Script, ajustez la hauteur et téléchargez le PDF. Sans filigrane ni inscription."
+  },
+  "dailyCursive": {
+    "title": "Pratique quotidienne de l'écriture cursive",
+    "intro": "Une fiche de cursive imprimable pour chaque jour : échauffement des traits, les lettres du jour, trois mots et une phrase à calquer puis recopier. Choisissez enfants ou adultes, ajoutez un prénom et téléchargez le PDF du jour, sans inscription.",
+    "todayLabel": "Fiche du jour",
+    "todayBadge": "Nouveau chaque jour",
+    "levelLabel": "Niveau",
+    "levelKids": "Enfants",
+    "levelAdults": "Adultes",
+    "font": "Police",
+    "nameLabel": "Prénom sur la fiche (facultatif)",
+    "namePlaceholder": "Saisir un prénom…",
+    "downloadPdf": "Télécharger le PDF du jour",
+    "downloadWeek": "Cette semaine (7 pages)",
+    "downloadPng": "Télécharger le PNG",
+    "backTomorrow": "Une nouvelle fiche est générée chaque jour : revenez demain pour de nouvelles lettres, mots et phrases.",
+    "sheetTitle": "Pratique cursive du jour",
+    "warmup": "Échauffement",
+    "letters": "Lettres",
+    "words": "Mots",
+    "sentence": "Phrase",
+    "nameField": "Prénom",
+    "faqTitle": "Questions fréquentes",
+    "seoTitle": "Une routine de cursive quotidienne qui tient vraiment",
+    "seoText": "La pratique courte et quotidienne est la clé de la cursive : dix à quinze minutes par jour créent la mémoire musculaire bien plus vite qu'une longue séance hebdomadaire. Cette page fournit la routine toute prête : chaque fiche associe un échauffement de traits aux lettres du jour, trois mots qui les utilisent et une phrase à calquer puis recopier sur les lignes vides.\n\nLa fiche change chaque jour. Le tirage quotidien déterministe signifie que toutes les personnes qui impriment le même jour obtiennent la même fiche, parfait pour suivre en classe ou entre amis. Le niveau Enfants offre des lignes plus grandes et des mots simples ; le niveau Adultes des lignes plus fines et des proverbes. Ajoutez un prénom avant l'impression pour éviter que les fiches ne se mélangent en classe.\n\nBesoin d'une semaine entière d'un coup ? Le bouton hebdomadaire regroupe du lundi au dimanche dans un seul PDF. Pour vous entraîner sur votre propre liste de mots, le générateur de fiches de cursive crée des pages à calquer à partir de n'importe quel texte."
   },
   "writing": {
     "title": "Générateur de feuilles d'écriture CJK",

@@ -57,10 +57,19 @@ import cnsEn from "./cursive-name-signature.en.mdx";
 import icsEn from "./is-cursive-still-taught.en.mdx";
 import cvpEn from "./cursive-vs-print.en.mdx";
 import htcEn from "./how-to-teach-cursive-kids.en.mdx";
+import wdzh from "./what-does-your-handwriting-say-about-you.zh.mdx";
+import wden from "./what-does-your-handwriting-say-about-you.en.mdx";
+import wdja from "./what-does-your-handwriting-say-about-you.ja.mdx";
+import wdko from "./what-does-your-handwriting-say-about-you.ko.mdx";
+import wdes from "./what-does-your-handwriting-say-about-you.es.mdx";
+import wdde from "./what-does-your-handwriting-say-about-you.de.mdx";
+import wdfr from "./what-does-your-handwriting-say-about-you.fr.mdx";
+import wdpt from "./what-does-your-handwriting-say-about-you.pt.mdx";
 
 /** slug → 语言 → 内容组件;新增文章:建 <slug>.<locale>.mdx 后在此注册。
  * 值允许 Partial:仅部分语言有正文时,页面按语言 404,sitemap/索引按 availableLocales 过滤 */
 export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>> = {
+  "what-does-your-handwriting-say-about-you": { zh: wdzh, en: wden, ja: wdja, ko: wdko, es: wdes, de: wdde, fr: wdfr, pt: wdpt },
   "handwritten-card-with-voice": { zh: cardZh, en: cardEn, ja: cardJa, ko: cardKo, es: cardEs, de: cardDe, fr: cardFr, pt: cardPt },
   "handwriting-image-generator": { zh: genZh, en: genEn, ja: genJa, ko: genKo, es: genEs, de: genDe, fr: genFr, pt: genPt },
   "xiaohongshu-handwritten-images": { zh: xhsZh, en: xhsEn, ja: xhsJa, ko: xhsKo, es: xhsEs, de: xhsDe, fr: xhsFr, pt: xhsPt },
