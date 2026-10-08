@@ -239,7 +239,9 @@
     "noResult": "Aucun modèle correspondant",
     "noResultHint": "Essayez un autre mot ou créez librement dans l'outil",
     "use": "Utiliser ce modèle",
-    "editHint": "Le texte reste modifiable après application ; police et papier s'ajustent dans le panneau de gauche."
+    "editHint": "Le texte reste modifiable après application ; police et papier s'ajustent dans le panneau de gauche.",
+    "seoTitle": "Comment utiliser la bibliothèque de modèles d'écriture",
+    "seoText": "Chaque modèle associe un texte prêt à l'emploi à un style d'écriture, pour envoyer une carte sans rester devant une page blanche. Choisissez un message, ouvrez-le dans l'éditeur, ajustez police, papier et encre, puis exportez en PNG ou PDF. Toutes les polices sont open source (SIL OFL), les exports ne portent aucun filigrane, et tout est généré dans votre navigateur — votre texte reste sur votre appareil."
   },
   "notFound": {
     "title": "Cette page s'est envolée",
@@ -294,7 +296,7 @@
     "downloadPdf": "Télécharger le PDF",
     "downloadPng": "Télécharger PNG",
     "seoTitle": "Papier ligné et quadrillé à imprimer gratuitement",
-    "seoText": "Tous les styles s'impriment aux dimensions réelles (Letter et A4), sans filigrane ni inscription. Combinez-le avec notre outil d'écriture manuscrite.",
+    "seoText": "Chaque style s'imprime bord à bord aux dimensions réelles exactes (Letter et A4), sans filigrane ni inscription. Associez-le à notre générateur d'écriture : imprimez le papier et écrivez vous-même, ou laissez le générateur écrire à votre place.",
     "paperType": "Type de papier",
     "faqTitle": "Questions fréquentes"
   },
@@ -310,7 +312,7 @@
     "downloadPdf": "Télécharger le PDF",
     "downloadPng": "Télécharger PNG",
     "seoTitle": "Fiches de prénoms à repasser gratuites",
-    "seoText": "Les fiches personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture. Générez-en autant que nécessaire, sans filigrane.",
+    "seoText": "Les fiches de lettres à repasser personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture : l'enfant suit la ligne d'exemple, puis répète. Générez-en autant que nécessaire — chaque PDF s'imprime aux dimensions exactes des lettres, sans filigrane.",
     "faqTitle": "Questions fréquentes"
   },
   "cursive": {

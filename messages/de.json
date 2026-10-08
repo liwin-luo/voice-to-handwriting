@@ -239,7 +239,9 @@
     "noResult": "Keine passende Vorlage",
     "noResultHint": "Anderes Stichwort versuchen oder im Werkzeug frei schreiben",
     "use": "Diese Vorlage verwenden",
-    "editHint": "Der Text bleibt nach dem Anwenden frei bearbeitbar; Schrift und Papier kannst du im linken Panel anpassen."
+    "editHint": "Der Text bleibt nach dem Anwenden frei bearbeitbar; Schrift und Papier kannst du im linken Panel anpassen.",
+    "seoTitle": "So nutzt du die Handschrift-Vorlagen",
+    "seoText": "Jede Vorlage kombiniert fertigen Text mit einem Handschrift-Stil, damit du ohne leeres Blatt direkt losschicken kannst. Wähle eine Botschaft, öffne sie im Editor und passe Schrift, Papier und Tinte an, bevor du als PNG oder PDF exportierst. Alle Schriften sind open source (SIL OFL), Exporte kommen ohne Wasserzeichen, und alles entsteht in deinem Browser — dein Text bleibt auf deinem Gerät."
   },
   "notFound": {
     "title": "Diese Seite ist weggeweht",
@@ -294,7 +296,7 @@
     "downloadPdf": "PDF herunterladen",
     "downloadPng": "PNG herunterladen",
     "seoTitle": "Kostenloses liniertes Papier zum Ausdrucken",
-    "seoText": "Alle Styles werden in exakten realen Abmessungen gedruckt (Letter und A4), ohne Wasserzeichen und ohne Anmeldung. Kombinierbar mit unserem Handschrift-Tool.",
+    "seoText": "Jeder Stil wird randlos in exakten realen Abmessungen gedruckt (Letter und A4), ohne Wasserzeichen und ohne Anmeldung. Kombiniere ihn mit unserem Handschrift-Generator: Drucke das Papier und schreibe selbst — oder lass den Generator für dich darauf schreiben.",
     "paperType": "Papiertyp",
     "faqTitle": "Häufige Fragen"
   },
@@ -310,7 +312,7 @@
     "downloadPdf": "PDF herunterladen",
     "downloadPng": "PNG herunterladen",
     "seoTitle": "Kostenlose Namens-Schreibübungsblätter",
-    "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Schreiben zu lernen. Unbegrenzt generierbar, ohne Wasserzeichen.",
+    "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Kindern das Schreiben beizubringen: Das Kind geht die Beispielzeile nach und wiederholt sie dann. Generiere so viele Blätter, wie du brauchst — jedes PDF druckt in exakter Buchstabengröße und ohne Wasserzeichen.",
     "faqTitle": "Häufige Fragen"
   },
   "cursive": {

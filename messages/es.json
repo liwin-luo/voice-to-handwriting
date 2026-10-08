@@ -244,7 +244,9 @@
     "libraryTitle": "Plantillas",
     "searchPlaceholder": "Buscar escenarios: cumpleaños, disculpa, gracias, mamá…",
     "noResult": "No hay plantillas que coincidan",
-    "noResultHint": "Prueba otra palabra o crea libremente en la herramienta"
+    "noResultHint": "Prueba otra palabra o crea libremente en la herramienta",
+    "seoTitle": "Cómo usar la biblioteca de plantillas de escritura a mano",
+    "seoText": "Cada plantilla combina un texto listo con un estilo de letra, para que puedas enviar una tarjeta sin quedarte mirando una página en blanco. Elige un mensaje, ábrelo en el editor y ajusta fuente, papel y tinta antes de exportar en PNG o PDF. Todas las fuentes son open source (SIL OFL), las exportaciones no llevan marca de agua y todo se genera en tu navegador: el texto que elijas se queda en tu dispositivo."
   },
   "author": {
     "name": "Equipo de Voice to Handwriting",
@@ -294,7 +296,7 @@
     "downloadPdf": "Descargar PDF",
     "downloadPng": "Descargar PNG",
     "seoTitle": "Papel rayado y cuadriculado para imprimir gratis",
-    "seoText": "Todos los estilos se imprimen a tamaño real (Letter y A4), sin marca de agua ni registro. Combínalo con nuestro generador de escritura a mano.",
+    "seoText": "Cada estilo se imprime de borde a borde con dimensiones reales exactas (Letter y A4), sin marca de agua ni registro. Combínalo con nuestro generador de escritura: imprime el papel y escribe tú, o deja que el generador escriba por ti.",
     "paperType": "Tipo de papel",
     "faqTitle": "Preguntas frecuentes"
   },
@@ -310,7 +312,7 @@
     "downloadPdf": "Descargar PDF",
     "downloadPng": "Descargar PNG",
     "seoTitle": "Fichas de nombres para imprimir gratis",
-    "seoText": "Las fichas personalizadas son una de las formas más efectivas de enseñar escritura. Genera las que necesites, sin marca de agua.",
+    "seoText": "Las fichas personalizadas para calcar son una de las formas más efectivas de enseñar escritura: el niño sigue la fila de ejemplo y luego repite. Genera todas las que necesites — cada PDF se imprime con el tamaño exacto de letra y sin marca de agua.",
     "faqTitle": "Preguntas frecuentes"
   },
   "cursive": {

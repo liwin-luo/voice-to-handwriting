@@ -239,7 +239,9 @@
     "noResult": "Nenhum modelo correspondente",
     "noResultHint": "Tente outra palavra ou crie livremente na ferramenta",
     "use": "Usar este modelo",
-    "editHint": "O texto continua editável após aplicar; fonte e papel se ajustam no painel à esquerda."
+    "editHint": "O texto continua editável após aplicar; fonte e papel se ajustam no painel à esquerda.",
+    "seoTitle": "Como usar a biblioteca de modelos de escrita à mão",
+    "seoText": "Cada modelo combina um texto pronto com um estilo de letra, para você enviar um cartão sem ficar olhando uma página em branco. Escolha uma mensagem, abra no editor, ajuste fonte, papel e tinta e exporte em PNG ou PDF. Todas as fontes são open source (SIL OFL), as exportações não têm marca d'água e tudo é gerado no seu navegador — o texto que você escolher fica no seu dispositivo."
   },
   "notFound": {
     "title": "Esta página voou com o vento",
@@ -294,7 +296,7 @@
     "downloadPdf": "Baixar PDF",
     "downloadPng": "Baixar PNG",
     "seoTitle": "Papel pautado e quadriculado para imprimir grátis",
-    "seoText": "Todos os estilos são impressos em dimensões reais (Letter e A4), sem marca d'água e sem cadastro. Combine com nosso gerador de escrita à mão.",
+    "seoText": "Cada estilo é impresso de ponta a ponta em dimensões reais exatas (Letter e A4), sem marca d'água e sem cadastro. Combine com o nosso gerador de escrita: imprima o papel e escreva você, ou deixe o gerador escrever por você.",
     "paperType": "Tipo de papel",
     "faqTitle": "Perguntas frequentes"
   },
@@ -310,7 +312,7 @@
     "downloadPdf": "Baixar PDF",
     "downloadPng": "Baixar PNG",
     "seoTitle": "Fichas de nomes para treinar a escrita grátis",
-    "seoText": "Fichas personalizadas são uma das formas mais eficazes de ensinar escrita. Gere quantas precisar, sem marca d'água.",
+    "seoText": "As fichas personalizadas para calcar são uma das formas mais eficazes de ensinar caligrafia: a criança segue a linha de exemplo e depois repete. Gere quantas precisar — cada PDF é impresso no tamanho exato das letras e sem marca d'água.",
     "faqTitle": "Perguntas frequentes"
   },
   "cursive": {

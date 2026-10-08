@@ -42,8 +42,13 @@ export default async function TemplatesIndex({
       <div className="rise mt-9" style={{ animationDelay: "60ms" }}>
         <TemplatesBrowser templates={cards} />
       </div>
-      <div className="rise mt-10" style={{ animationDelay: "200ms" }}>
-      </div>
+      <section
+        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"
+        style={{ animationDelay: "200ms" }}
+      >
+        <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
+        <p className="whitespace-pre-line">{t("seoText")}</p>
+      </section>
     </main>
   );
 }

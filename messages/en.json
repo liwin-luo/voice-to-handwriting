@@ -244,7 +244,9 @@
     "libraryTitle": "Templates",
     "searchPlaceholder": "Search scenarios: birthday, apology, thanks, mom…",
     "noResult": "No matching template",
-    "noResultHint": "Try another keyword, or create freely on the tool page"
+    "noResultHint": "Try another keyword, or create freely on the tool page",
+    "seoTitle": "How to use the handwriting template library",
+    "seoText": "Each template pairs ready-made copy with a handwriting style, so you can send a card without staring at a blank page. Pick a message, open it in the editor, and adjust font, paper and ink before exporting as PNG or PDF. All fonts are open source (SIL OFL), exports carry no watermark, and everything is generated in your browser — the text you choose stays on your device."
   },
   "author": {
     "name": "Voice to Handwriting Team",
