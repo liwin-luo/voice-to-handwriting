@@ -529,6 +529,19 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
+    slug: "how-many-sheets-handwriting",
+    author: "theo-lindgren",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    i18n: {
+      en: {
+        title: "How many sheets does handwritten text take?",
+        description:
+          "500 words on college-ruled US Letter takes 3 sheets — about 220 words a side. The calculator settings, then what changes when you paste the real text.",
+      },
+    },
+  },
+  {
     slug: "handwriting-workbook",
     author: "wes-morales",
     date: "2026-10-08",

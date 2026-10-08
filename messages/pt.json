@@ -83,6 +83,10 @@
     "tools": {
       "title": "Todas as ferramentas de letra grátis",
       "description": "Tudo num lugar: voz para letra, cursiva, caligrafia para calcar, folhas de prática e o quiz de personalidade."
+    },
+    "pageCalc": {
+      "title": "Calculadora de páginas manuscritas — quantas folhas um texto ocupa",
+      "description": "Estima quantas folhas um texto escrito à mão ocupa. Pauta estreita, larga, quadriculado ou genkō, com prévia de cada página. Grátis, sem conta."
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "Todas as ferramentas",
     "groupWrite": "Escrever & gerar",
     "groupPractice": "Folhas de prática & impressão",
-    "groupFun": "Só por diversão"
+    "groupFun": "Só por diversão",
+    "pageCalc": "Calculadora de folhas"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -329,7 +334,8 @@
     "seoTitle": "Papel pautado e quadriculado para imprimir grátis",
     "seoText": "Cada estilo é impresso de ponta a ponta em dimensões reais exatas (Letter e A4), sem marca d'água e sem cadastro. Combine com o nosso gerador de escrita: imprima o papel e escreva você, ou deixe o gerador escrever por você.",
     "paperType": "Tipo de papel",
-    "faqTitle": "Perguntas frequentes"
+    "faqTitle": "Perguntas frequentes",
+    "calculatorCta": "Calcular quantas folhas um texto ocupa"
   },
   "tracing": {
     "title": "Gerador de fichas de caligrafia com nomes",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "Nome",
     "dateLine": "Data"
+  },
+  "pageCalc": {
+    "title": "Calculadora de páginas manuscritas",
+    "intro": "Cole um texto ou digite um número e veja quantas folhas são necessárias. Escolha o papel, o tamanho da letra e o espaçamento. Grátis, sem conta.",
+    "textLabel": "Texto",
+    "textPlaceholder": "Cole ou digite o texto que vai escrever à mão",
+    "textHint": "Até 20.000 caracteres. Se houver texto, vale o texto.",
+    "sample": "Usar um exemplo",
+    "countLabel": "Palavras ou caracteres",
+    "countHint": "Vale quando a caixa está vazia. Línguas latinas contam palavras; chinês, japonês e coreano contam caracteres.",
+    "usingText": "A contagem de páginas vem do texto.",
+    "scriptLabel": "Língua da escrita",
+    "paperLabel": "Papel",
+    "pitchLabel": "Entrelinha",
+    "sizeLabel": "Tamanho da letra",
+    "gapLabel": "Espaçamento",
+    "gapLocked": "Um caractere por casa: o espaçamento segue a grade.",
+    "gapLockedShort": "Grade",
+    "sidesLabel": "Lados",
+    "sidesOne": "Um lado",
+    "sidesTwo": "Os dois lados",
+    "summaryCount": "{sheets, plural, one {# folha} other {# folhas}} para {count} {unit}. Cerca de {perPage} {unit} por lado. O último lado termina na linha {line}.",
+    "summaryText": "{pages, plural, one {# lado} other {# lados}}, {sheets, plural, one {# folha} other {# folhas}}. O último lado termina na linha {line}.",
+    "range": "Mais junto: cerca de {tight} {unit} por lado. Mais aberto: cerca de {loose}.",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} palavras · {chars} caracteres",
+    "enterPrompt": "Digite um número ou cole um texto para ver quantas folhas são necessárias.",
+    "omitted": "{count} páginas não mostradas",
+    "pageMark": "{n} / {total}",
+    "printBlank": "Imprimir este papel em branco",
+    "openTool": "Abrir na ferramenta de escrita",
+    "seoTitle": "Quantas folhas um texto manuscrito ocupa",
+    "seoText": "Uma página digitada e uma manuscrita não têm o mesmo tamanho. Em papel Letter de pauta estreita, uma letra latina média cabe em cerca de 220 palavras por lado. A pauta larga cabe menos. Chinês, japonês e coreano contam caracteres, e o quadriculado leva um por casa.\n\nCole o texto que vai escrever e esta página o compõe numa fonte manuscrita no papel escolhido. O número de folhas sai dessa composição. Um número sem texto usa a mesma entrelinha e uma letra de 4 mm como ponto de partida, com uma estimativa mais junta e outra mais aberta ao lado.\n\nImprima a folha em branco ou envie o texto para a ferramenta de escrita e exporte PNG ou PDF. O que você digita não é enviado.",
+    "faqTitle": "Perguntas frequentes",
+    "script": {
+      "en": "Inglês",
+      "es": "Espanhol",
+      "fr": "Francês",
+      "de": "Alemão",
+      "pt": "Português",
+      "zh": "Chinês",
+      "ja": "Japonês",
+      "ko": "Coreano"
+    },
+    "paper": {
+      "college": "Pauta estreita",
+      "wide": "Pauta larga",
+      "kindergarten": "Pauta infantil",
+      "graph": "Quadriculado",
+      "genkou400": "Genkō de 400 casas",
+      "genkou200": "Genkō de 200 casas",
+      "custom": "Entrelinha personalizada"
+    },
+    "size": {
+      "small": "Pequena",
+      "normal": "Normal",
+      "large": "Grande"
+    },
+    "gap": {
+      "tight": "Junto",
+      "normal": "Normal",
+      "loose": "Aberto"
+    },
+    "unitWord": "palavras",
+    "unitChar": "caracteres",
+    "textStatsChars": "{chars} caracteres"
   }
 }

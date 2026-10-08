@@ -67,6 +67,7 @@ import hiyEn from "./how-to-improve-your-handwriting.en.mdx";
 import swtEn from "./sight-word-tracing-worksheets.en.mdx";
 import hrpEn from "./handwriting-repeater.en.mdx";
 import hwbEn from "./handwriting-workbook.en.mdx";
+import hshEn from "./how-many-sheets-handwriting.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -224,6 +225,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "sight-word-tracing-worksheets": { en: swtEn },
   "handwriting-repeater": { en: hrpEn },
   "handwriting-workbook": { en: hwbEn },
+  "how-many-sheets-handwriting": { en: hshEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

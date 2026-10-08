@@ -83,6 +83,10 @@
     "tools": {
       "title": "Alle kostenlosen Handschrift-Werkzeuge",
       "description": "Alles an einem Ort: Sprache-zu-Handschrift, Schreibschrift, Spurenvorlagen, Übungsblätter und das Persönlichkeitsquiz."
+    },
+    "pageCalc": {
+      "title": "Seitenzähler für Handschrift — wie viele Blätter ein Text braucht",
+      "description": "Schätzt, wie viele Blätter ein handschriftlicher Text braucht. Eng liniert, weit liniert, Kästchen oder Genkō, mit Seitenvorschau. Kostenlos, ohne Konto."
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "Alle Werkzeuge",
     "groupWrite": "Schreiben & Generieren",
     "groupPractice": "Übungsblätter & Drucken",
-    "groupFun": "Nur zum Spaß"
+    "groupFun": "Nur zum Spaß",
+    "pageCalc": "Blätterrechner"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -329,7 +334,8 @@
     "seoTitle": "Kostenloses liniertes Papier zum Ausdrucken",
     "seoText": "Jeder Stil wird randlos in exakten realen Abmessungen gedruckt (Letter und A4), ohne Wasserzeichen und ohne Anmeldung. Kombiniere ihn mit unserem Handschrift-Generator: Drucke das Papier und schreibe selbst — oder lass den Generator für dich darauf schreiben.",
     "paperType": "Papiertyp",
-    "faqTitle": "Häufige Fragen"
+    "faqTitle": "Häufige Fragen",
+    "calculatorCta": "Ausrechnen, wie viele Blätter ein Text braucht"
   },
   "tracing": {
     "title": "Namens-Schreibübungs-Generator",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "Name",
     "dateLine": "Datum"
+  },
+  "pageCalc": {
+    "title": "Seitenzähler für Handschrift",
+    "intro": "Text einfügen oder eine Zahl eingeben und sehen, wie viele Blätter es werden. Papier, Schriftgröße und Abstand sind wählbar. Kostenlos, ohne Konto.",
+    "textLabel": "Text",
+    "textPlaceholder": "Den Text einfügen oder tippen, den du von Hand schreiben willst",
+    "textHint": "Bis 20.000 Zeichen. Steht Text im Feld, gilt der Text.",
+    "sample": "Beispiel einsetzen",
+    "countLabel": "Wörter oder Zeichen",
+    "countHint": "Gilt, wenn das Feld leer ist. Lateinische Schriften zählen Wörter, Chinesisch, Japanisch und Koreanisch Zeichen.",
+    "usingText": "Die Seitenzahl kommt aus dem Text.",
+    "scriptLabel": "Schreibsprache",
+    "paperLabel": "Papier",
+    "pitchLabel": "Zeilenabstand",
+    "sizeLabel": "Schriftgröße",
+    "gapLabel": "Zeichenabstand",
+    "gapLocked": "Ein Zeichen pro Kästchen, der Abstand folgt dem Raster.",
+    "gapLockedShort": "Raster",
+    "sidesLabel": "Seiten",
+    "sidesOne": "Eine Seite",
+    "sidesTwo": "Beide Seiten",
+    "summaryCount": "{sheets, plural, one {# Blatt} other {# Blätter}} für {count} {unit}. Etwa {perPage} {unit} pro Seite. Die letzte Seite endet in Zeile {line}.",
+    "summaryText": "{pages, plural, one {# Seite} other {# Seiten}}, {sheets, plural, one {# Blatt} other {# Blätter}}. Die letzte Seite endet in Zeile {line}.",
+    "range": "Enger Abstand: etwa {tight} {unit} pro Seite. Weiter Abstand: etwa {loose}.",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} Wörter · {chars} Zeichen",
+    "enterPrompt": "Zahl eingeben oder Text einfügen, dann siehst du die Blattzahl.",
+    "omitted": "{count} Seiten nicht gezeigt",
+    "pageMark": "{n} / {total}",
+    "printBlank": "Dieses leere Papier drucken",
+    "openTool": "Im Schreibwerkzeug öffnen",
+    "seoTitle": "Wie viele Blätter Handschrift braucht",
+    "seoText": "Eine getippte Seite und eine handgeschriebene sind nicht gleich lang. Auf US Letter, eng liniert, passen bei einer durchschnittlichen lateinischen Hand etwa 220 Wörter auf eine Seite. Weit liniert passt weniger. Chinesisch, Japanisch und Koreanisch zählen Zeichen, Kästchenpapier ein Zeichen pro Feld.\n\nFüge den Text ein, den du schreiben willst. Die Seite setzt ihn in einer Schreibschrift auf das gewählte Papier, und die Blattzahl kommt aus diesem Satz. Eine Zahl ohne Text nimmt denselben Zeilenabstand und 4 mm Buchstabenbreite als Ausgang, dazu eine engere und eine weitere Schätzung.\n\nDrucke das leere Blatt, oder schick den Text ins Schreibwerkzeug und exportiere PNG oder PDF. Eingegebenes wird nicht hochgeladen.",
+    "faqTitle": "Häufige Fragen",
+    "script": {
+      "en": "Englisch",
+      "es": "Spanisch",
+      "fr": "Französisch",
+      "de": "Deutsch",
+      "pt": "Portugiesisch",
+      "zh": "Chinesisch",
+      "ja": "Japanisch",
+      "ko": "Koreanisch"
+    },
+    "paper": {
+      "college": "Eng liniert",
+      "wide": "Weit liniert",
+      "kindergarten": "Drei Linien",
+      "graph": "Kästchen",
+      "genkou400": "Genkō 400 Felder",
+      "genkou200": "Genkō 200 Felder",
+      "custom": "Eigener Zeilenabstand"
+    },
+    "size": {
+      "small": "Klein",
+      "normal": "Normal",
+      "large": "Groß"
+    },
+    "gap": {
+      "tight": "Eng",
+      "normal": "Normal",
+      "loose": "Weit"
+    },
+    "unitWord": "Wörter",
+    "unitChar": "Zeichen",
+    "textStatsChars": "{chars} Zeichen"
   }
 }

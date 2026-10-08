@@ -83,6 +83,10 @@
     "tools": {
       "title": "Todas las herramientas de escritura gratis",
       "description": "Todo en un sitio: voz a letra, cursiva, calcos, hojas de práctica y el test de personalidad."
+    },
+    "pageCalc": {
+      "title": "Calculadora de páginas manuscritas — cuántas hojas hace falta",
+      "description": "Calcula cuántas hojas ocupa un texto escrito a mano. Elige pauta estrecha, ancha, cuadrícula o genkō y previsualiza cada página. Gratis, sin registro."
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "Todas las herramientas",
     "groupWrite": "Escribir y generar",
     "groupPractice": "Hojas de práctica e impresión",
-    "groupFun": "Solo por diversión"
+    "groupFun": "Solo por diversión",
+    "pageCalc": "Calculadora de hojas"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -329,7 +334,8 @@
     "seoTitle": "Papel rayado y cuadriculado para imprimir gratis",
     "seoText": "Cada estilo se imprime de borde a borde con dimensiones reales exactas (Letter y A4), sin marca de agua ni registro. Combínalo con nuestro generador de escritura: imprime el papel y escribe tú, o deja que el generador escriba por ti.",
     "paperType": "Tipo de papel",
-    "faqTitle": "Preguntas frecuentes"
+    "faqTitle": "Preguntas frecuentes",
+    "calculatorCta": "Calcular cuántas hojas ocupa un texto"
   },
   "tracing": {
     "title": "Generador de fichas de caligrafía con nombres",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "Nombre",
     "dateLine": "Fecha"
+  },
+  "pageCalc": {
+    "title": "Calculadora de páginas manuscritas",
+    "intro": "Pega un texto o escribe una cifra y mira cuántas hojas hacen falta. Elige el papel, el tamaño de letra y el espaciado. Gratis, sin registro.",
+    "textLabel": "Texto",
+    "textPlaceholder": "Pega o escribe el texto que vas a escribir a mano",
+    "textHint": "Hasta 20.000 caracteres. Si hay texto, manda el texto.",
+    "sample": "Usar un ejemplo",
+    "countLabel": "Palabras o caracteres",
+    "countHint": "Se usa cuando el cuadro está vacío. Las lenguas latinas cuentan palabras; chino, japonés y coreano, caracteres.",
+    "usingText": "El número de páginas sale del texto.",
+    "scriptLabel": "Idioma de escritura",
+    "paperLabel": "Papel",
+    "pitchLabel": "Interlineado",
+    "sizeLabel": "Tamaño de letra",
+    "gapLabel": "Espaciado",
+    "gapLocked": "Un carácter por casilla: el espaciado lo marca la cuadrícula.",
+    "gapLockedShort": "Cuadrícula",
+    "sidesLabel": "Caras",
+    "sidesOne": "Una cara",
+    "sidesTwo": "Las dos caras",
+    "summaryCount": "{sheets, plural, one {# hoja} other {# hojas}} para {count} {unit}. Unas {perPage} {unit} por cara. La última cara llega a la línea {line}.",
+    "summaryText": "{pages, plural, one {# cara} other {# caras}}, {sheets, plural, one {# hoja} other {# hojas}}. La última cara llega a la línea {line}.",
+    "range": "Con espaciado más junto caben unas {tight} {unit} por cara; más abierto, unas {loose}.",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} palabras · {chars} caracteres",
+    "enterPrompt": "Escribe una cifra o pega un texto para ver cuántas hojas hacen falta.",
+    "omitted": "{count} páginas no mostradas",
+    "pageMark": "{n} / {total}",
+    "printBlank": "Imprimir este papel en blanco",
+    "openTool": "Abrir en la herramienta de escritura",
+    "seoTitle": "Cuántas hojas ocupa un texto manuscrito",
+    "seoText": "Una página mecanografiada y una manuscrita no miden lo mismo. En papel Letter de pauta estrecha, una letra latina media cabe en unas 220 palabras por cara. La pauta ancha cabe menos. El chino, el japonés y el coreano se cuentan por caracteres, y la cuadrícula lleva uno por casilla.\n\nPega el texto que vas a escribir y esta página lo compone con una fuente manuscrita en el papel elegido. El número de hojas sale de esa composición. Si solo hay una cifra, el punto de partida es el mismo interlineado y una letra de 4 mm, con una cifra más junta y otra más abierta al lado.\n\nImprime la hoja en blanco o pasa el texto a la herramienta de escritura para exportar PNG o PDF. Lo que escribes no se sube.",
+    "faqTitle": "Preguntas frecuentes",
+    "script": {
+      "en": "Inglés",
+      "es": "Español",
+      "fr": "Francés",
+      "de": "Alemán",
+      "pt": "Portugués",
+      "zh": "Chino",
+      "ja": "Japonés",
+      "ko": "Coreano"
+    },
+    "paper": {
+      "college": "Pauta estrecha",
+      "wide": "Pauta ancha",
+      "kindergarten": "Pauta de infantil",
+      "graph": "Cuadrícula",
+      "genkou400": "Genkō de 400 casillas",
+      "genkou200": "Genkō de 200 casillas",
+      "custom": "Interlineado a medida"
+    },
+    "size": {
+      "small": "Pequeña",
+      "normal": "Normal",
+      "large": "Grande"
+    },
+    "gap": {
+      "tight": "Junto",
+      "normal": "Normal",
+      "loose": "Abierto"
+    },
+    "unitWord": "palabras",
+    "unitChar": "caracteres",
+    "textStatsChars": "{chars} caracteres"
   }
 }

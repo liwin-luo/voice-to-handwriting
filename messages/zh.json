@@ -83,6 +83,10 @@
     "tools": {
       "title": "全部免费手写工具",
       "description": "一站汇集所有免费手写工具:语音转手写、花体字、描红、各类练习纸与笔迹测验。"
+    },
+    "pageCalc": {
+      "title": "手写用纸计算器 — 一段文字要几张纸",
+      "description": "估算手写文字需要几张纸。可选窄行、宽行、方格或原稿纸，并预览每一页。免费，无需注册。"
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "全部工具",
     "groupWrite": "写字与生成",
     "groupPractice": "练习纸与打印",
-    "groupFun": "趣味"
+    "groupFun": "趣味",
+    "pageCalc": "用纸计算器"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -329,7 +334,8 @@
     "seoTitle": "免费可打印信纸/方格纸模板 — 无水印、无需注册",
     "seoText": "所有样式按真实尺寸精确渲染(Letter 与 A4),无水印、无需注册。配合手写生成器使用效果更佳:打印出来手写,或让生成器直接在纸上写。",
     "paperType": "纸张类型",
-    "faqTitle": "常见问题"
+    "faqTitle": "常见问题",
+    "calculatorCta": "算一段文字要几张纸"
   },
   "tracing": {
     "title": "姓名描红字帖生成器",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "姓名",
     "dateLine": "日期"
+  },
+  "pageCalc": {
+    "title": "手写用纸计算器",
+    "intro": "贴上正文或填一个数字，看大概要几张纸。可选纸型、字号和字间距。免费，无需注册。",
+    "textLabel": "正文",
+    "textPlaceholder": "贴上或输入准备手写的文字",
+    "textHint": "最多 20000 字。有正文时以正文为准。",
+    "sample": "填入示例",
+    "countLabel": "词数或字数",
+    "countHint": "文本框为空时使用。拉丁文字按词计，中文、日文、韩文按字计。",
+    "usingText": "当前页数按文本框里的文字计算。",
+    "scriptLabel": "书写语言",
+    "paperLabel": "纸张",
+    "pitchLabel": "行距",
+    "sizeLabel": "字号",
+    "gapLabel": "字间距",
+    "gapLocked": "一字一格，字间距由格子决定。",
+    "gapLockedShort": "按格",
+    "sidesLabel": "单双面",
+    "sidesOne": "单面",
+    "sidesTwo": "双面",
+    "summaryCount": "{count} {unit}大约 {sheets} 张。一面约 {perPage} {unit}，最后一面写到第 {line} 行。",
+    "summaryText": "{pages} 面，{sheets} 张。最后一面写到第 {line} 行。",
+    "range": "字间距更紧时一面约 {tight} {unit}，更松时约 {loose}。",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} 个词 · {chars} 个字",
+    "enterPrompt": "填写数量或贴上正文，查看需要几张纸。",
+    "omitted": "中间省略 {count} 页",
+    "pageMark": "{n} / {total}",
+    "printBlank": "打印这种空白纸",
+    "openTool": "带到手写工具",
+    "seoTitle": "手写一段文字大概要几张纸",
+    "seoText": "打字的一页和手写的一页不一样长。美式 Letter、窄行横线、普通拉丁字母，一面大约 220 个词。宽行更少。中文、日文、韩文按字计，方格纸一字一格。\n\n把要写的文字贴进来，这一页会用对应的手写字体排到所选的纸上，页数来自这次排版。只填数字、不贴正文时，用同一行距和 4 毫米字母宽做起点，旁边给出更紧和更松两档。\n\n可以去打印空白纸，也可以把这段文字带到手写工具里导出 PNG 或 PDF。输入的内容不会上传。",
+    "faqTitle": "常见问题",
+    "script": {
+      "en": "英语",
+      "es": "西班牙语",
+      "fr": "法语",
+      "de": "德语",
+      "pt": "葡萄牙语",
+      "zh": "中文",
+      "ja": "日语",
+      "ko": "韩语"
+    },
+    "paper": {
+      "college": "窄行横线",
+      "wide": "宽行横线",
+      "kindergarten": "三线格",
+      "graph": "方格",
+      "genkou400": "400 字原稿纸",
+      "genkou200": "200 字原稿纸",
+      "custom": "自定义行距"
+    },
+    "size": {
+      "small": "小",
+      "normal": "普通",
+      "large": "大"
+    },
+    "gap": {
+      "tight": "紧",
+      "normal": "普通",
+      "loose": "松"
+    },
+    "unitWord": "个词",
+    "unitChar": "个字",
+    "textStatsChars": "{chars} 个字"
   }
 }

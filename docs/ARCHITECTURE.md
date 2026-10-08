@@ -96,6 +96,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-worksheets` | 连笔字描红工作表 | `TracingGenerator`(cedarvillecursive) |
 | `/name-tracing` | 姓名描红字帖 | `TracingGenerator`(patrickhand),`TRACING_FAQS` |
 | `/printable-paper` | 横线/方格纸生成 | `PaperGenerator`,`PAPER_FAQS` |
+| `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览) | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/word-work` | 拼写练习(写三遍+缺字母) | `WordWorkGenerator`,`WORDWORK_FAQS` |
 | `/writing-practice` | CJK 练字表(田字格/原稿纸) | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
 | `/name-coloring` | 名字涂色页 | `NameColoringGenerator`,`COLORING_FAQS` |
@@ -113,6 +114,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `layout.ts` | `paginateLineTops`(按隐藏 DOM 测得的行 top 分页,跨页行整体下移)+ `expandPages`(把 newline token 插回所属页) |
 | `jitter.ts` | `mulberry32`/`hash2` 伪随机;`styleFingerprint(seed)` 全局笔迹指纹;`charJitter(charIndex, seed, intensity)` → rotate/translateY/scale/letterSpacing/opacity |
 | `paper.ts` | 纸张预设 blank/ruled/grid/letter(CSS background 画格线)+ `makeCustomPaper`(用户自定义,spacing 钳制 24–64px,支持背景图 cover/tile) |
+| `pageEstimate.ts` | 手写页数估算:纸型行距、字号/字距、单双面张数、原稿纸按格分页、预览截断、带到首页的 sessionStorage 载荷。横线纸贴正文后的真实分页仍走 `layout.ts` |
 
 引擎与 UI 解耦,改渲染算法只需动这里并跑 `npm run test`。
 

@@ -83,6 +83,10 @@
     "tools": {
       "title": "無料の筆記ツール一覧",
       "description": "音声→手書き、カリグラフィー、なぞり書き、練習用紙、筆跡クイズなど、すべての無料ツールをここに。"
+    },
+    "pageCalc": {
+      "title": "手書き枚数計算機 — 文章は何枚になるか",
+      "description": "手書きの文章が何枚になるかを見積もります。細罫、広罫、方眼、原稿用紙を選び、各ページをプレビュー。登録不要。"
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "すべてのツール",
     "groupWrite": "書く・作る",
     "groupPractice": "練習用紙・印刷",
-    "groupFun": "お楽しみ"
+    "groupFun": "お楽しみ",
+    "pageCalc": "枚数計算機"
   },
   "home": {
     "tagline": "話しかけるだけで手書きの文書に —— カード、手紙、ジャーナル、SNS 画像に",
@@ -329,7 +334,8 @@
     "seoTitle": "無料印刷用罫線・方眼紙テンプレート",
     "seoText": "すべて実際のサイズで正確に印刷できます。透かしも登録も不要。手書きツールと組み合わせればさらに便利。",
     "paperType": "用紙タイプ",
-    "faqTitle": "よくある質問"
+    "faqTitle": "よくある質問",
+    "calculatorCta": "文章が何枚になるか計算する"
   },
   "tracing": {
     "title": "名前なぞり書きプリント生成器",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "名前",
     "dateLine": "日付"
+  },
+  "pageCalc": {
+    "title": "手書き枚数計算機",
+    "intro": "文章を貼るか文字数を入れると、何枚いるかが分かります。用紙、文字サイズ、字間を選べます。無料、登録不要。",
+    "textLabel": "本文",
+    "textPlaceholder": "手書きする文章を貼るか入力",
+    "textHint": "2万字まで。本文があるときは数字よりこちらを使います。",
+    "sample": "例文を入れる",
+    "countLabel": "語数または文字数",
+    "countHint": "本文が空のときに使います。欧文は語数、中国語・日本語・韓国語は文字数です。",
+    "usingText": "ページ数は本文から計算しています。",
+    "scriptLabel": "書く言語",
+    "paperLabel": "用紙",
+    "pitchLabel": "行間",
+    "sizeLabel": "文字サイズ",
+    "gapLabel": "字間",
+    "gapLocked": "1マス1字なので、字間はマスに従います。",
+    "gapLockedShort": "マス",
+    "sidesLabel": "裏表",
+    "sidesOne": "片面",
+    "sidesTwo": "両面",
+    "summaryCount": "{count} {unit}で約 {sheets} 枚。片面約 {perPage} {unit}、最後の面は {line} 行目まで。",
+    "summaryText": "{pages} 面、{sheets} 枚。最後の面は {line} 行目まで。",
+    "range": "字間を詰めると片面約 {tight} {unit}、広げると約 {loose}。",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} 語 · {chars} 字",
+    "enterPrompt": "数を入れるか本文を貼ると、必要な枚数が出ます。",
+    "omitted": "あいだの {count} ページは省略",
+    "pageMark": "{n} / {total}",
+    "printBlank": "この白紙を印刷",
+    "openTool": "手書きツールで開く",
+    "seoTitle": "手書きだと何枚になるか",
+    "seoText": "タイプした1ページと手書きの1ページは長さが違います。レター判の細罫、普通の欧文で片面約220語。広罫はそれより少なくなります。中国語・日本語・韓国語は文字数で、方眼は1マス1字です。\n\n書く文章を貼ると、選んだ用紙の上に手書きフォントで並べ、その組版から枚数を出します。数字だけのときは同じ行間と4mmの字幅を起点にし、詰めと広げの目安も出します。\n\n白紙を印刷するか、本文を手書きツールへ渡してPNGかPDFにできます。入力は送信されません。",
+    "faqTitle": "よくある質問",
+    "script": {
+      "en": "英語",
+      "es": "スペイン語",
+      "fr": "フランス語",
+      "de": "ドイツ語",
+      "pt": "ポルトガル語",
+      "zh": "中国語",
+      "ja": "日本語",
+      "ko": "韓国語"
+    },
+    "paper": {
+      "college": "細罫",
+      "wide": "広罫",
+      "kindergarten": "3本線",
+      "graph": "方眼",
+      "genkou400": "400字詰め原稿用紙",
+      "genkou200": "200字詰め原稿用紙",
+      "custom": "行間を指定"
+    },
+    "size": {
+      "small": "小",
+      "normal": "普通",
+      "large": "大"
+    },
+    "gap": {
+      "tight": "詰め",
+      "normal": "普通",
+      "loose": "広め"
+    },
+    "unitWord": "語",
+    "unitChar": "字",
+    "textStatsChars": "{chars} 字"
   }
 }

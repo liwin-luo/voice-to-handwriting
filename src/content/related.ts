@@ -13,6 +13,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/doctor-handwriting-generator": "doctor",
   "/handwriting-workbook-generator": "workbook",
   "/handwriting-repeater": "repeater",
+  "/handwriting-page-calculator": "pageCalc",
 };
 
 export interface RelatedConfig {
@@ -80,7 +81,7 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // 纸张/练字集群
   "free-printable-lined-paper": {
-    tools: ["/printable-paper", "/name-tracing"],
+    tools: ["/printable-paper", "/handwriting-page-calculator", "/name-tracing"],
     posts: ["kindergarten-handwriting-paper", "pen-pal-letters-for-kids", "cursive-practice-worksheets"],
   },
   "kindergarten-handwriting-paper": {
@@ -148,6 +149,12 @@ export const RELATED: Record<string, RelatedConfig> = {
   "handwriting-repeater": {
     tools: ["/handwriting-repeater", "/name-tracing", "/handwriting-workbook-generator"],
     posts: ["handwriting-workbook", "how-to-improve-your-handwriting", "sight-word-tracing-worksheets"],
+  },
+
+  // 手写用纸页数:数字估算与贴正文预览,导流计算器与空白纸
+  "how-many-sheets-handwriting": {
+    tools: ["/handwriting-page-calculator", "/printable-paper"],
+    posts: ["free-printable-lined-paper", "kindergarten-handwriting-paper", "how-to-improve-handwriting-adults"],
   },
 };
 

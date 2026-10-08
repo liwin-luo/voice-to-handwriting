@@ -83,6 +83,10 @@
     "tools": {
       "title": "모든 무료 손글씨 도구",
       "description": "음성→손글씨, 필기체, 따라 쓰기, 연습지, 글씨 퀴즈까지 모든 무료 도구를 한곳에."
+    },
+    "pageCalc": {
+      "title": "손글씨 용지 계산기 — 글이 몇 장인지",
+      "description": "손글씨가 몇 장인지 가늠합니다. 좁은 줄, 넓은 줄, 모눈, 원고지를 고르고 각 페이지를 미리 봅니다. 가입 없음."
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "모든 도구",
     "groupWrite": "쓰기 & 만들기",
     "groupPractice": "연습지 & 인쇄",
-    "groupFun": "재미"
+    "groupFun": "재미",
+    "pageCalc": "용지 계산기"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -329,7 +334,8 @@
     "seoTitle": "무료 인쇄용 줄종이·모눈종이 템플릿",
     "seoText": "모든 스타일이 실제 크기에 정확히 인쇄됩니다. 워터마크 없음, 가입 불필요. 손글씨 도구와 함께 쓰면 더 좋아요.",
     "paperType": "용지 유형",
-    "faqTitle": "자주 묻는 질문"
+    "faqTitle": "자주 묻는 질문",
+    "calculatorCta": "글이 몇 장인지 계산하기"
   },
   "tracing": {
     "title": "이름 쓰기 연습장 생성기",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "이름",
     "dateLine": "날짜"
+  },
+  "pageCalc": {
+    "title": "손글씨 용지 계산기",
+    "intro": "글을 붙여 넣거나 숫자를 넣으면 몇 장인지 나옵니다. 종이, 글자 크기, 자간을 고를 수 있습니다. 무료, 가입 없음.",
+    "textLabel": "본문",
+    "textPlaceholder": "손으로 쓸 글을 붙여 넣거나 입력",
+    "textHint": "2만 자까지. 본문이 있으면 숫자 대신 본문을 씁니다.",
+    "sample": "예시 넣기",
+    "countLabel": "단어 수 또는 글자 수",
+    "countHint": "칸이 비어 있을 때 씁니다. 라틴 문자는 단어, 중국어·일본어·한국어는 글자입니다.",
+    "usingText": "쪽수는 본문으로 계산합니다.",
+    "scriptLabel": "쓰는 언어",
+    "paperLabel": "종이",
+    "pitchLabel": "줄 간격",
+    "sizeLabel": "글자 크기",
+    "gapLabel": "자간",
+    "gapLocked": "한 칸에 한 글자이므로 자간은 칸을 따릅니다.",
+    "gapLockedShort": "칸",
+    "sidesLabel": "양면",
+    "sidesOne": "단면",
+    "sidesTwo": "양면",
+    "summaryCount": "{count} {unit}이면 약 {sheets}장. 한 면에 약 {perPage} {unit}, 마지막 면은 {line}행까지.",
+    "summaryText": "{pages}면, {sheets}장. 마지막 면은 {line}행까지.",
+    "range": "자간을 좁히면 한 면에 약 {tight} {unit}, 넓히면 약 {loose}.",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words}단어 · {chars}자",
+    "enterPrompt": "숫자를 넣거나 글을 붙이면 필요한 장수가 나옵니다.",
+    "omitted": "가운데 {count}쪽은 생략",
+    "pageMark": "{n} / {total}",
+    "printBlank": "이 빈 종이 인쇄",
+    "openTool": "손글씨 도구에서 열기",
+    "seoTitle": "손글씨로는 몇 장인가",
+    "seoText": "타자로 친 한 쪽과 손글씨 한 쪽은 길이가 다릅니다. 레터 용지 좁은 줄, 보통 라틴 글씨로 한 면에 약 220단어. 넓은 줄은 더 적습니다. 중국어·일본어·한국어는 글자 수이고, 모눈은 한 칸에 한 글자입니다.\n\n쓸 글을 붙이면 고른 종이 위에 손글씨 글꼴로 배치하고, 그 배치로 장수를 냅니다. 숫자만 있으면 같은 줄 간격과 4mm 글자 너비를 기준으로, 더 좁은 값과 더 넓은 값도 함께 보여 줍니다.\n\n빈 종이를 인쇄하거나, 글을 손글씨 도구로 넘겨 PNG나 PDF로 받을 수 있습니다. 입력은 올라가지 않습니다.",
+    "faqTitle": "자주 묻는 질문",
+    "script": {
+      "en": "영어",
+      "es": "스페인어",
+      "fr": "프랑스어",
+      "de": "독일어",
+      "pt": "포르투갈어",
+      "zh": "중국어",
+      "ja": "일본어",
+      "ko": "한국어"
+    },
+    "paper": {
+      "college": "좁은 줄",
+      "wide": "넓은 줄",
+      "kindergarten": "3선",
+      "graph": "모눈",
+      "genkou400": "400자 원고지",
+      "genkou200": "200자 원고지",
+      "custom": "줄 간격 직접"
+    },
+    "size": {
+      "small": "작게",
+      "normal": "보통",
+      "large": "크게"
+    },
+    "gap": {
+      "tight": "좁게",
+      "normal": "보통",
+      "loose": "넓게"
+    },
+    "unitWord": "단어",
+    "unitChar": "자",
+    "textStatsChars": "{chars}자"
   }
 }

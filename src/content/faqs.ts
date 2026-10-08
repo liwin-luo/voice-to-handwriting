@@ -2102,3 +2102,118 @@ export const REPEATER_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /handwriting-page-calculator 工具页 FAQ(8 语言) */
+export const PAGE_CALC_FAQS: FaqItem[] = [
+  {
+    id: "page-calc-free",
+    i18n: {
+      en: {
+        q: "Is the handwriting page calculator free?",
+        a: "Yes. No signup, and the text stays in your browser. It is not uploaded.",
+      },
+      zh: {
+        q: "这个用纸计算器免费吗?",
+        a: "免费,不用注册。文字只留在浏览器里,不会上传。",
+      },
+      ja: {
+        q: "この枚数計算機は無料ですか?",
+        a: "無料で、登録も不要です。文章はブラウザ内に留まり、送信されません。",
+      },
+      ko: {
+        q: "이 용지 계산기는 무료인가요?",
+        a: "무료이고 가입도 없습니다. 글은 브라우저 안에만 있고 올라가지 않습니다.",
+      },
+      es: {
+        q: "¿La calculadora de páginas manuscritas es gratis?",
+        a: "Sí. Sin registro. El texto se queda en el navegador y no se sube.",
+      },
+      de: {
+        q: "Ist der Seitenzähler kostenlos?",
+        a: "Ja. Ohne Konto. Der Text bleibt im Browser und wird nicht hochgeladen.",
+      },
+      fr: {
+        q: "Le calculateur de pages manuscrites est-il gratuit ?",
+        a: "Oui. Sans compte. Le texte reste dans le navigateur et n'est pas envoyé.",
+      },
+      pt: {
+        q: "A calculadora de páginas manuscritas é grátis?",
+        a: "Sim. Sem conta. O texto fica no navegador e não é enviado.",
+      },
+    },
+  },
+  {
+    id: "page-calc-number",
+    i18n: {
+      en: {
+        q: "Why do the number and the pasted text disagree?",
+        a: "A number uses a model: about 4 mm per Latin letter, or a nearly square character on ruled paper, with a tighter and a looser figure beside it. Pasted text is measured in the handwriting font, so the page count follows that layout.",
+      },
+      zh: {
+        q: "为什么只填数字和贴上正文的结果不一样?",
+        a: "只填数字时用的是模型:拉丁字母大约 4 毫米宽,横线上的方块字接近行高,旁边还有更紧和更松两档。贴上正文后按手写字体的真实宽度排版,页数以这次排版为准。",
+      },
+      ja: {
+        q: "数字だけと本文を貼ったときで結果が違うのはなぜですか?",
+        a: "数字だけはモデルです。欧文は約4mm、罫線上の文字は行の高さに近い幅で、詰めと広げも出します。本文を貼ると手書きフォントの実幅で組むので、枚数はその組版に従います。",
+      },
+      ko: {
+        q: "숫자만 넣을 때와 글을 붙일 때 결과가 다른 이유는?",
+        a: "숫자만 있으면 모델입니다. 라틴 글자는 약 4mm, 줄 위의 네모 글자는 줄 높이에 가깝고, 더 좁은 값과 더 넓은 값도 나옵니다. 글을 붙이면 손글씨 글꼴의 실제 너비로 배치하므로 쪽수는 그 배치를 따릅니다.",
+      },
+      es: {
+        q: "¿Por qué el número y el texto pegado no coinciden?",
+        a: "El número usa un modelo: unos 4 mm por letra latina, o un carácter casi cuadrado en papel pautado, con una cifra más junta y otra más abierta. El texto pegado se mide en la fuente manuscrita, y las páginas salen de esa composición.",
+      },
+      de: {
+        q: "Warum weichen Zahl und eingefügter Text voneinander ab?",
+        a: "Eine Zahl benutzt ein Modell: etwa 4 mm pro lateinischem Buchstaben, oder ein fast quadratisches Zeichen auf Linien, dazu eine engere und eine weitere Schätzung. Eingefügter Text wird in der Schreibschrift gemessen, die Seitenzahl folgt diesem Satz.",
+      },
+      fr: {
+        q: "Pourquoi le nombre et le texte collé ne donnent-ils pas la même chose ?",
+        a: "Le nombre suit un modèle : environ 4 mm par lettre latine, ou un caractère presque carré sur du papier ligné, avec une estimation plus serrée et une plus large. Le texte collé est mesuré dans la police manuscrite, et les pages viennent de cette mise en page.",
+      },
+      pt: {
+        q: "Por que o número e o texto colado não batem?",
+        a: "O número usa um modelo: cerca de 4 mm por letra latina, ou um caractere quase quadrado no papel pautado, com uma estimativa mais junta e outra mais aberta. O texto colado é medido na fonte manuscrita, e as páginas saem dessa composição.",
+      },
+    },
+  },
+  {
+    id: "page-calc-grid",
+    i18n: {
+      en: {
+        q: "What happens on graph paper and genkou?",
+        a: "One character per cell, including punctuation. The spacing slider does not apply. A 400-square genkou sheet holds 400 characters; a 200-square sheet holds 200.",
+      },
+      zh: {
+        q: "方格纸和原稿纸怎么算?",
+        a: "一字一格,标点也占一格。字间距滑杆不起作用。400 字原稿纸一面 400 字,200 字原稿纸一面 200 字。",
+      },
+      ja: {
+        q: "方眼と原稿用紙はどう数えますか?",
+        a: "1マス1字で、句読点も1マスです。字間のスライダーは効きません。400字詰めは400字、200字詰めは200字です。",
+      },
+      ko: {
+        q: "모눈과 원고지는 어떻게 세나요?",
+        a: "한 칸에 한 글자이고 문장부호도 한 칸입니다. 자간 슬라이더는 적용되지 않습니다. 400자 원고지는 400자, 200자 원고지는 200자입니다.",
+      },
+      es: {
+        q: "¿Cómo cuentan la cuadrícula y el genkō?",
+        a: "Un carácter por casilla, puntuación incluida. El control de espaciado no actúa. Un genkō de 400 casillas cabe 400 caracteres; uno de 200, 200.",
+      },
+      de: {
+        q: "Wie zählen Kästchenpapier und Genkō?",
+        a: "Ein Zeichen pro Feld, Satzzeichen mitgezählt. Der Abstandsregler gilt nicht. Genkō mit 400 Feldern fasst 400 Zeichen, mit 200 Feldern 200.",
+      },
+      fr: {
+        q: "Comment comptent la grille et le genkō ?",
+        a: "Un caractère par case, ponctuation comprise. Le curseur d'espacement ne s'applique pas. Un genkō de 400 cases contient 400 caractères ; un de 200 en contient 200.",
+      },
+      pt: {
+        q: "Como contam o quadriculado e o genkō?",
+        a: "Um caractere por casa, pontuação incluída. O controle de espaçamento não vale. Um genkō de 400 casas cabe 400 caracteres; um de 200 cabe 200.",
+      },
+    },
+  },
+];

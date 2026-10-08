@@ -83,6 +83,10 @@
     "tools": {
       "title": "Tous les outils d'écriture gratuits",
       "description": "Tout au même endroit : voix vers écriture, cursive, modèles à reproduire, feuilles d'exercices et le quiz de personnalité."
+    },
+    "pageCalc": {
+      "title": "Calculateur de pages manuscrites — combien de feuilles",
+      "description": "Estime combien de feuilles prend un texte écrit à la main. Interligne étroit, large, grille ou genkō, avec aperçu de chaque page. Gratuit, sans compte."
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "Tous les outils",
     "groupWrite": "Écrire & générer",
     "groupPractice": "Feuilles d'exercices & impression",
-    "groupFun": "Pour le fun"
+    "groupFun": "Pour le fun",
+    "pageCalc": "Calculateur de feuilles"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -329,7 +334,8 @@
     "seoTitle": "Papier ligné et quadrillé à imprimer gratuitement",
     "seoText": "Chaque style s'imprime bord à bord aux dimensions réelles exactes (Letter et A4), sans filigrane ni inscription. Associez-le à notre générateur d'écriture : imprimez le papier et écrivez vous-même, ou laissez le générateur écrire à votre place.",
     "paperType": "Type de papier",
-    "faqTitle": "Questions fréquentes"
+    "faqTitle": "Questions fréquentes",
+    "calculatorCta": "Calculer combien de feuilles prend un texte"
   },
   "tracing": {
     "title": "Générateur de fiches d'écriture prénom",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "Nom",
     "dateLine": "Date"
+  },
+  "pageCalc": {
+    "title": "Calculateur de pages manuscrites",
+    "intro": "Collez un texte ou entrez un nombre pour voir combien de feuilles il faut. Choisissez le papier, la taille des lettres et l'espacement. Gratuit, sans compte.",
+    "textLabel": "Texte",
+    "textPlaceholder": "Collez ou saisissez le texte à écrire à la main",
+    "textHint": "20 000 caractères au plus. S'il y a un texte, c'est lui qui compte.",
+    "sample": "Mettre un exemple",
+    "countLabel": "Mots ou caractères",
+    "countHint": "Sert quand la zone est vide. Les langues latines comptent les mots ; le chinois, le japonais et le coréen, les caractères.",
+    "usingText": "Le nombre de pages vient du texte.",
+    "scriptLabel": "Langue d'écriture",
+    "paperLabel": "Papier",
+    "pitchLabel": "Interligne",
+    "sizeLabel": "Taille des lettres",
+    "gapLabel": "Espacement",
+    "gapLocked": "Un caractère par case : l'espacement suit la grille.",
+    "gapLockedShort": "Grille",
+    "sidesLabel": "Faces",
+    "sidesOne": "Une face",
+    "sidesTwo": "Recto verso",
+    "summaryCount": "{sheets, plural, one {# feuille} other {# feuilles}} pour {count} {unit}. Environ {perPage} {unit} par face. La dernière face s'arrête à la ligne {line}.",
+    "summaryText": "{pages, plural, one {# face} other {# faces}}, {sheets, plural, one {# feuille} other {# feuilles}}. La dernière face s'arrête à la ligne {line}.",
+    "range": "Plus serré : environ {tight} {unit} par face. Plus large : environ {loose}.",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} mots · {chars} caractères",
+    "enterPrompt": "Entrez un nombre ou collez un texte pour voir combien de feuilles il faut.",
+    "omitted": "{count} pages non affichées",
+    "pageMark": "{n} / {total}",
+    "printBlank": "Imprimer ce papier vierge",
+    "openTool": "Ouvrir dans l'outil d'écriture",
+    "seoTitle": "Combien de feuilles pour un texte manuscrit",
+    "seoText": "Une page dactylographiée et une page manuscrite n'ont pas la même longueur. Sur du Letter à interligne étroit, une écriture latine moyenne tient environ 220 mots par face. L'interligne large en tient moins. Le chinois, le japonais et le coréen se comptent en caractères, et le papier quadrillé met un caractère par case.\n\nCollez le texte à écrire : la page le compose dans une police manuscrite sur le papier choisi, et le nombre de feuilles vient de cette mise en page. Un nombre sans texte part du même interligne et d'une lettre de 4 mm, avec une estimation plus serrée et une plus large à côté.\n\nImprimez la feuille vierge, ou envoyez le texte vers l'outil d'écriture pour un PNG ou un PDF. Ce que vous tapez n'est pas envoyé.",
+    "faqTitle": "Questions fréquentes",
+    "script": {
+      "en": "Anglais",
+      "es": "Espagnol",
+      "fr": "Français",
+      "de": "Allemand",
+      "pt": "Portugais",
+      "zh": "Chinois",
+      "ja": "Japonais",
+      "ko": "Coréen"
+    },
+    "paper": {
+      "college": "Interligne étroit",
+      "wide": "Interligne large",
+      "kindergarten": "Trois lignes",
+      "graph": "Grille",
+      "genkou400": "Genkō 400 cases",
+      "genkou200": "Genkō 200 cases",
+      "custom": "Interligne personnalisé"
+    },
+    "size": {
+      "small": "Petite",
+      "normal": "Normale",
+      "large": "Grande"
+    },
+    "gap": {
+      "tight": "Serré",
+      "normal": "Normal",
+      "loose": "Large"
+    },
+    "unitWord": "mots",
+    "unitChar": "caractères",
+    "textStatsChars": "{chars} caractères"
   }
 }

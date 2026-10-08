@@ -11,8 +11,9 @@ import StylePanel from "./StylePanel";
 import TranscriptEditor from "./TranscriptEditor";
 import { useRef } from "react";
 import { getTemplate, getTemplateMeta } from "@/content/templates";
-import { useEditorStore, type FontId } from "@/stores/useEditorStore";
+import { FONTS, useEditorStore, type FontId } from "@/stores/useEditorStore";
 import type { Locale } from "@/i18n/routing";
+import { parseHandoff } from "@/engine/pageEstimate";
 import { defaultFontId, defaultPageFormat, templateFontId } from "@/lib/localeDefaults";
 
 export interface ToolPreset {
@@ -41,6 +42,18 @@ export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
       if (booted.current) return;
       booted.current = true;
       const s = useEditorStore.getState();
+      const handRaw = sessionStorage.getItem("vth-page-calc");
+      if (handRaw) sessionStorage.removeItem("vth-page-calc");
+      const hand = handRaw ? parseHandoff(handRaw) : null;
+      if (hand) {
+        s.setText(hand.text);
+        if (FONTS.some((f) => f.id === hand.fontId)) s.applyFontId(hand.fontId as FontId);
+        s.setFontSize(hand.fontSize);
+        s.setPageFormat(hand.pageFormat);
+        s.setPaperId("custom");
+        s.setCustomPaper({ spacing: hand.spacing, mode: hand.mode });
+        return;
+      }
       const slug = new URLSearchParams(window.location.search).get("template");
       const tpl = slug ? getTemplate(slug) : undefined;
       if (tpl) {

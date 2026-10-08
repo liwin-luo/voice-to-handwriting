@@ -164,3 +164,10 @@
 - **不接**:同批里 handwriting personality test(测验页与 what-does-your-handwriting 已覆盖)、text to handwriting(低价值转换词)。handwriting repeater 已单独落地,见 §八。
 - **角色**:Wes Morales(练习桌)。读者是成人。体验资产:十五行词表(字母 / 本周词 / 短句)+ 生成器参数表 + 14 天 × 15 分钟日程。
 - **落地**:`handwriting-workbook`(en)。内链 `/handwriting-workbook-generator`、`/printable-paper`。与 how-to-improve-handwriting-adults(四周计划)拆开,文内互链。儿童词表指回 Clara 的 sight-word 文,不在本篇展开。
+
+## 十、`/handwriting-page-calculator` 手写用纸页数(2026-10-08)
+
+- **主词**:handwriting page calculator / how many pages is handwritten text。不追裸词 calculator。
+- **形态**:只填数字时按行距和 4 mm 字母估算(Letter + college ruled + 普通字 = 220 词/面),并给出紧/松两档;贴正文后按手写字体真实宽度分页并预览。纸型含 college、wide、三线格、方格、400/200 字原稿纸、自定义行距。8 种书写语言。
+- **角色**:Theo Lindgren。配套文 `how-many-sheets-handwriting`(en)。
+- **落地**:工具 `/handwriting-page-calculator`。内链 `/printable-paper` 与首页手写工具。空白纸入口在 `/printable-paper`。

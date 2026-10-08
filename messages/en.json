@@ -83,6 +83,10 @@
     "tools": {
       "title": "All Free Handwriting Tools",
       "description": "Every free handwriting tool in one place: voice-to-handwriting, cursive, tracing, practice sheets and the personality quiz."
+    },
+    "pageCalc": {
+      "title": "Handwriting Page Calculator — How Many Sheets for Handwritten Text?",
+      "description": "See how many sheets handwritten text needs. Choose college ruled, wide ruled, grid, or genkou paper, then preview each page. Free, no signup."
     }
   },
   "nav": {
@@ -106,7 +110,8 @@
     "allTools": "All tools",
     "groupWrite": "Write & generate",
     "groupPractice": "Practice sheets & printing",
-    "groupFun": "Just for fun"
+    "groupFun": "Just for fun",
+    "pageCalc": "Page Calculator"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -329,7 +334,8 @@
     "seoTitle": "Free printable lined paper — no watermark, no signup",
     "seoText": "Every style prints edge-to-edge at exact real-world dimensions (Letter and A4), with no watermark and no account required. Pair it with our handwriting tool: print the paper, or let the generator write on it for you.",
     "paperType": "Paper type",
-    "faqTitle": "Frequently asked questions"
+    "faqTitle": "Frequently asked questions",
+    "calculatorCta": "Count how many sheets a text needs"
   },
   "tracing": {
     "title": "Name Tracing Worksheet Generator",
@@ -508,5 +514,71 @@
     "sizeA4": "A4",
     "nameLine": "Name",
     "dateLine": "Date"
+  },
+  "pageCalc": {
+    "title": "Handwriting Page Calculator",
+    "intro": "Paste a text or enter a count and see how many sheets it takes. Pick the paper, the letter size, and the spacing. Free, no signup.",
+    "textLabel": "Text",
+    "textPlaceholder": "Paste or type the text you will write by hand",
+    "textHint": "Up to 20,000 characters. Text replaces the number.",
+    "sample": "Use a sample",
+    "countLabel": "Word or character count",
+    "countHint": "Used when the box is empty. Latin scripts count words; Chinese, Japanese, and Korean count characters.",
+    "usingText": "The text box is setting the page count.",
+    "scriptLabel": "Writing language",
+    "paperLabel": "Paper",
+    "pitchLabel": "Line spacing",
+    "sizeLabel": "Letter size",
+    "gapLabel": "Letter spacing",
+    "gapLocked": "One character per cell, so spacing follows the grid.",
+    "gapLockedShort": "Grid",
+    "sidesLabel": "Sides",
+    "sidesOne": "One side",
+    "sidesTwo": "Both sides",
+    "summaryCount": "{sheets, plural, one {# sheet} other {# sheets}} for {count} {unit}. About {perPage} {unit} on a side. The last side ends on line {line}.",
+    "summaryText": "{pages, plural, one {# side} other {# sides}}, {sheets, plural, one {# sheet} other {# sheets}}. The last side ends on line {line}.",
+    "range": "Tighter spacing fits about {tight} {unit} a side. Looser spacing fits about {loose}.",
+    "assumption": "{paper} · {size} · {gap} · {format} · {sides}",
+    "textStats": "{words} words · {chars} characters",
+    "enterPrompt": "Enter a count or paste text to see how many sheets you need.",
+    "omitted": "{count} pages not shown",
+    "pageMark": "{n} / {total}",
+    "printBlank": "Print this blank paper",
+    "openTool": "Open in the handwriting tool",
+    "seoTitle": "How many sheets does handwriting take?",
+    "seoText": "A typed page and a handwritten page are not the same length. On US Letter college-ruled paper, an average Latin hand fits about 220 words on one side. Wide ruled fits fewer. Chinese, Japanese, and Korean count characters, and square grid paper holds one character per cell.\n\nPaste the text you need to write and this page lays it out in a handwriting font on the paper you picked. The sheet count comes from that layout. A number with no text uses the same line spacing and a 4 mm letter as the starting guess, with a tighter and a looser figure beside it.\n\nPrint the blank sheet, or send the text to the handwriting tool to export a PNG or PDF. Nothing you type is uploaded.",
+    "faqTitle": "Frequently asked questions",
+    "script": {
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French",
+      "de": "German",
+      "pt": "Portuguese",
+      "zh": "Chinese",
+      "ja": "Japanese",
+      "ko": "Korean"
+    },
+    "paper": {
+      "college": "College ruled",
+      "wide": "Wide ruled",
+      "kindergarten": "Kindergarten lines",
+      "graph": "Graph",
+      "genkou400": "400-square genkou",
+      "genkou200": "200-square genkou",
+      "custom": "Custom line spacing"
+    },
+    "size": {
+      "small": "Small",
+      "normal": "Normal",
+      "large": "Large"
+    },
+    "gap": {
+      "tight": "Tight",
+      "normal": "Normal",
+      "loose": "Loose"
+    },
+    "unitWord": "words",
+    "unitChar": "characters",
+    "textStatsChars": "{chars} characters"
   }
 }
