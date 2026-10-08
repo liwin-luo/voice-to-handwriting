@@ -173,26 +173,31 @@ export default function HandwritingWorkbookGenerator({
 
   useEffect(() => {
     let cancelled = false;
-    const run = async () => {
-      const sample = bookTitle + wordList.join("");
-      await document.fonts.load(`64px "${family}"`, sample).catch(() => {});
-      if (cancelled) return;
+    const drawAll = () => {
       const canvases = wrapRef.current?.querySelectorAll<HTMLCanvasElement>("canvas");
-      if (!canvases) return;
-      const hasCover = showCover;
+      if (!canvases || cancelled) return;
       canvases.forEach((canvas, i) => {
-        const pageIndex = hasCover ? i - 1 : i;
+        const pageIndex = showCover ? i - 1 : i;
         canvas.width = W;
         canvas.height = H;
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
-        if (hasCover && i === 0) drawCover(ctx);
+        if (showCover && i === 0) drawCover(ctx);
         else drawWordsPage(ctx, pages[pageIndex] ?? [], pageIndex);
       });
     };
+    const run = async () => {
+      // 传入实际文字,确保字体切片按需加载对应字形后再绘制
+      await document.fonts.load(`64px "${family}"`, bookTitle + wordList.join("")).catch(() => {});
+      drawAll();
+    };
     void run();
+    // 字体样式表在布局层水合后才注入,首帧可能拿到的还是兜底字体:
+    // 任一字体加载完成时整册重画一次
+    document.fonts.addEventListener?.("loadingdone", drawAll);
     return () => {
       cancelled = true;
+      document.fonts.removeEventListener?.("loadingdone", drawAll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bookTitle, pages, fontId, showCover, showExample]);
