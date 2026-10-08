@@ -1,14 +1,21 @@
-/** 品牌 logo:钢笔尖(手写工具站),与 src/app/icon.svg 同源设计 */
+/** 品牌 logo:钢笔尖 + 尖下刚划过的一笔。与 src/app/icon.svg 同源 */
 export default function Logo({ className = "size-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 32 32" className={className} aria-hidden focusable="false">
       <rect width="32" height="32" rx="7" fill="currentColor" />
       <path
         fill="#ffffff"
-        d="M16 27.5 9.8 14.2C9.8 8.7 12.2 5.5 16 5.5s6.2 3.2 6.2 8.7L16 27.5Z"
+        d="M11.15 8.5C11.15 5.6 13.15 4.35 16 4.35 18.85 4.35 20.85 5.6 20.85 8.5V11.4C20.7 13.7 19.05 16.3 17.05 18.9 16.7 20.15 16.85 20.75 16.4 21.15 16.15 21.45 15.85 21.45 15.6 21.15 15.15 20.75 15.3 20.15 14.95 18.9 12.95 16.3 11.3 13.7 11.15 11.4V8.5z"
       />
-      <circle cx="16" cy="13.2" r="1.6" fill="currentColor" />
-      <path stroke="currentColor" strokeWidth="1.2" d="M16 15.4v9" />
+      <circle cx="16" cy="9.2" r="1.75" fill="currentColor" />
+      <path stroke="currentColor" strokeWidth="1.05" strokeLinecap="butt" d="M16 11v9.55" />
+      <path
+        d="M10 26.15C15.2 26.4 19.4 26.2 22.9 25.7"
+        fill="none"
+        stroke="#ffffff"
+        strokeWidth="2.6"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
