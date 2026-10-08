@@ -120,6 +120,16 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/handwriting-personality-quiz", "/printable-paper", "/name-tracing"],
     posts: ["how-to-improve-handwriting-adults", "cursive-vs-print", "is-cursive-still-taught"],
   },
+
+  // 上升词两篇:脑科学 Breakout 簇 + 练好字攻略簇,互链并导流 workbook/练习工具
+  "handwriting-vs-typing-brain": {
+    tools: ["/handwriting-workbook-generator", "/daily-cursive-handwriting-practice", "/printable-paper"],
+    posts: ["how-to-improve-your-handwriting", "how-to-improve-handwriting-adults", "is-cursive-still-taught"],
+  },
+  "how-to-improve-your-handwriting": {
+    tools: ["/handwriting-workbook-generator", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/printable-paper"],
+    posts: ["handwriting-vs-typing-brain", "how-to-improve-handwriting-adults", "handwriting-practice-struggling-writers"],
+  },
 };
 
 /** 文章在当前语言是否有正文(给相关文章链接防 404) */

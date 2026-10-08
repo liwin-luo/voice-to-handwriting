@@ -448,6 +448,32 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "handwriting-vs-typing-brain",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    image: "/blog/handwriting-vs-typing-brain.png",
+    i18n: {
+      en: {
+        title: "Handwriting vs typing: what the brain research actually says",
+        description:
+          "EEG studies, the Mueller & Oppenheimer note-taking debate, and what research does — and doesn't — say about handwriting and cognitive decline.",
+      },
+    },
+  },
+  {
+    slug: "how-to-improve-your-handwriting",
+    date: "2026-10-08",
+    updated: "2026-10-08",
+    image: "/blog/improve-your-handwriting.png",
+    i18n: {
+      en: {
+        title: "How to improve your handwriting: the complete guide",
+        description:
+          "Diagnose the four levers (size, spacing, baseline, slant), run a 15-minute daily routine, pick a model style — with free printable practice tools.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

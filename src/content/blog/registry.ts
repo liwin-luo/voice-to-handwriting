@@ -65,6 +65,8 @@ import wdes from "./what-does-your-handwriting-say-about-you.es.mdx";
 import wdde from "./what-does-your-handwriting-say-about-you.de.mdx";
 import wdfr from "./what-does-your-handwriting-say-about-you.fr.mdx";
 import wdpt from "./what-does-your-handwriting-say-about-you.pt.mdx";
+import bvtEn from "./handwriting-vs-typing-brain.en.mdx";
+import hiyEn from "./how-to-improve-your-handwriting.en.mdx";
 
 /** slug → 语言 → 内容组件;新增文章:建 <slug>.<locale>.mdx 后在此注册。
  * 值允许 Partial:仅部分语言有正文时,页面按语言 404,sitemap/索引按 availableLocales 过滤 */
@@ -91,6 +93,8 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "is-cursive-still-taught": { en: icsEn },
   "cursive-vs-print": { en: cvpEn },
   "how-to-teach-cursive-kids": { en: htcEn },
+  "handwriting-vs-typing-brain": { en: bvtEn },
+  "how-to-improve-your-handwriting": { en: hiyEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */
