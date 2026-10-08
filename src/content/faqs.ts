@@ -1757,3 +1757,118 @@ export const QUIZ_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /doctor-handwriting-generator 工具页 FAQ(8 语言) */
+export const DOCTOR_FAQS: FaqItem[] = [
+  {
+    id: "doctor-why-messy",
+    i18n: {
+      en: {
+        q: "Why is doctors' handwriting so messy?",
+        a: "Volume and speed. A hospital doctor writes thousands of notes a year, often standing, between patients — so letters collapse into shorthand scrawl. Interestingly, studies comparing doctors with other professionals found their handwriting is only slightly worse; the legend owes a lot to prescriptions' private abbreviations and, of course, memes.",
+      },
+      zh: {
+        q: "为什么医生的字都那么潦草?",
+        a: "主要是量大和速度快。住院医生一年要写几千份记录,常常站着写、在病人之间抢时间,字母就缩并成了速记式的潦草。有趣的是,有研究把医生和其他职业的字迹做对比,发现其实只差一点;「天书」的名声更多来自处方里外人看不懂的缩写,当然还有表情包的推波助澜。",
+      },
+      ja: {
+        q: "お医者さんの字はなぜ汚いのですか?",
+        a: "量と速さです。入院医師は年間何千件も記録を書き、立ったまま患者の合間に走り書きするため、文字が速記のような走り字になります。興味深いことに、他職種との比較研究では医師の字はわずかに悪い程度という結果も。伝説の理由は、処方箋の略語が他人に読めないことと、いうまでもなくミームです。",
+      },
+      ko: {
+        q: "의사들 글씨는 왜 그렇게 흘려 쓰나요?",
+        a: "양과 속도 때문입니다. 병원 의사는 한 해에 수천 건의 기록을, 서 있는 채로 환자 사이 짬짬이 작성하느라 글자가 속기처럼 뭉개집니다. 흥미롭게도 다른 직군과 비교한 연구에서는 차이가 아주 작았어요. '천서(天書)' 이미지는 처방전의 축약어와, 물론 밈 덕분에 커졌죠.",
+      },
+      es: {
+        q: "¿Por qué la letra de los médicos es tan ilegible?",
+        a: "Volumen y velocidad. Un médico de hospital escribe miles de notas al año, a menudo de pie y entre pacientes, así que las letras se derrumban en garabatos de taquigrafía. Curiosamente, estudios que comparan a médicos con otros profesionales hallaron diferencias mínimas; su fama se debe a las abreviaturas privadas de las recetas y, por supuesto, a los memes.",
+      },
+      de: {
+        q: "Warum ist die Schrift von Ärzten so krakelig?",
+        a: "Menge und Tempo. Ein Klinikarzt schreibt tausende Notizen pro Jahr, oft stehend und zwischen Patienten — die Buchstaben zerfallen zu kurzschriftigen Gekritzel. Interessanterweise fanden Studien nur geringe Unterschiede zu anderen Berufen; der Ruf entsteht durch die kryptischen Abkürzungen auf Rezepten und, nun ja, Memes.",
+      },
+      fr: {
+        q: "Pourquoi les médecins écrivent-ils aussi mal ?",
+        a: "Le volume et la vitesse. Un médecin hospitalier rédige des milliers de notes par an, souvent debout, entre deux patients — les lettres s'effondrent en gribouillis sténographiques. Fait intéressant : des études comparant médecins et autres professionnels n'ont trouvé qu'un léger écart ; sa réputation vient des abréviations privées des ordonnances et, évidemment, des mèmes.",
+      },
+      pt: {
+        q: "Por que a letra dos médicos é tão ilegível?",
+        a: "Volume e velocidade. Um médico hospitalar escreve milhares de anotações por ano, muitas vezes em pé, no intervalo entre pacientes — as letras viram rabiscos de taquigrafia. Curiosamente, estudos comparando médicos com outros profissionais encontraram diferenças mínimas; a fama vem das abreviações privadas das receitas e, claro, dos memes.",
+      },
+    },
+  },
+  {
+    id: "doctor-not-real",
+    i18n: {
+      en: {
+        q: "Is this a real prescription?",
+        a: "No — it's a gag. The output is a novelty image/PDF for jokes, gifts and party laughs: a fake \"prescription\" telling a friend to take two vacations a day, for example. It is not a medical document and must never be used to deceive a pharmacy, an employer or anyone else.",
+      },
+      zh: {
+        q: "生成的是真处方吗?",
+        a: "不是——这只是个整活工具。输出的是娱乐用的图片/PDF,用来开玩笑、送恶搞礼物、聚会活跃气氛,比如给朋友开一张「每日度假两次」的假处方。它不是医疗文件,绝不能用来欺骗药房、雇主或任何人。",
+      },
+      ja: {
+        q: "これは本物の処方箋になりますか?",
+        a: "いいえ——完全なネタ工具です。出力は冗談・ギフト・パーティー向けの画像/PDF。「1日に休暇2回処方」のような偽処方箋を作って楽しむためのものです。医療文書ではないため、薬局や勤務先などを騙す用途には絶対に使わないでください。",
+      },
+      ko: {
+        q: "이것은 진짜 처방전인가요?",
+        a: "아니요 — 순수한 개그 도구입니다. 결과물은 농담·선물·파티용 이미지/PDF예요. 예를 들어 친구에게 '하루 휴가 2회 복용' 가짜 처방전을 만들어 주는 거죠. 의료 문서가 아니며, 약국이나 직장 등 누구를 속이는 데도 절대 사용하면 안 됩니다.",
+      },
+      es: {
+        q: "¿Esto es una receta médica real?",
+        a: "No — es una broma. El resultado es una imagen/PDF de regalo para hacer reír: una \"receta\" falsa que manda a un amigo tomarse dos vacaciones al día, por ejemplo. No es un documento médico y nunca debe usarse para engañar a una farmacia, a un empleador ni a nadie.",
+      },
+      de: {
+        q: "Ist das ein echtes Rezept?",
+        a: "Nein — es ist ein Scherz. Das Ergebnis ist ein Novitäten-Bild/PDF für Witze, Geschenke und Partylaunen: ein gefälschtes „Rezept“, das einem Freund z. B. zwei Urlaube täglich verschreibt. Es ist kein medizinisches Dokument und darf niemals verwendet werden, um eine Apotheke, einen Arbeitgeber oder sonst jemanden zu täuschen.",
+      },
+      fr: {
+        q: "C'est une vraie ordonnance ?",
+        a: "Non — c'est un gag. Le résultat est une image/PDF novelty pour les blagues, les cadeaux et les fêtes : une fausse « ordonnance » qui prescrit à un ami deux vacances par jour, par exemple. Ce n'est pas un document médical et ne doit jamais servir à tromper une pharmacie, un employeur ou qui que ce soit.",
+      },
+      pt: {
+        q: "Isso é uma receita médica de verdade?",
+        a: "Não — é uma pegadinha. O resultado é uma imagem/PDF de brinquedo para piadas, presentes e festas: uma \"receita\" falsa mandando um amigo tomar dois passeios por dia, por exemplo. Não é um documento médico e nunca deve ser usado para enganar farmácia, empregador ou qualquer pessoa.",
+      },
+    },
+  },
+  {
+    id: "doctor-how-to",
+    i18n: {
+      en: {
+        q: "How do I make my own doctor handwriting note?",
+        a: "Type or dictate your text, and the generator writes it in a scrawl on an Rx pad. Push the realism slider toward 100% for maximum illegibility, pick the ℞ paper, then export a PNG or a print-ready PDF. Popular uses: gag prescriptions, \"doctor's orders\" notes excusing chores, and get-well cards with mock side effects like \"may cause napping\".",
+      },
+      zh: {
+        q: "怎么自己做一张医生字迹便条?",
+        a: "输入或口述你的文字,生成器会把它以潦草笔迹写到 ℞ 处方笺上。把仿真度滑杆拉到接近 100% 最有「天书」效果,然后导出 PNG 或可打印 PDF。常见玩法:恶搞处方、豁免家务的「医嘱」便条、写着「副作用:可能犯困」的探病卡。",
+      },
+      ja: {
+        q: "自分だけの医者字メモの作り方は?",
+        a: "テキストを入力または音声で口述すると、ジェネレーターが ℞ 処方箋に走り字で書き込みます。リアリズム調整を 100% 近くまで上げると最高に読めなくなります。PNG または印刷用 PDF に書き出して、ドネーション処方箋や「医師の指示:家事免除」メモ、「副作用:眠気」のお見舞いカードなどに。",
+      },
+      ko: {
+        q: "의사 글씨 메모를 직접 만들려면?",
+        a: "텍스트를 입력하거나 말로 받아쓰면 생성기가 ℞ 처방전 위에 흘려쓴 글씨로 적어 줍니다. 사실감 슬라이더를 100% 근처로 올리면 가장 알아볼 수 없게 됩니다. PNG 또는 인쇄용 PDF로 내보내 개그 처방전, '의사 지시: 집안일 면제' 메모, '부작용: 졸음' 위문 카드 등으로 써 보세요.",
+      },
+      es: {
+        q: "¿Cómo creo mi propia nota con letra de médico?",
+        a: "Escribe o dicta tu texto, y el generador lo escribe en garabatos sobre una receta con ℞. Sube el control de realismo hacia el 100% para máxima ilegibilidad y exporta un PNG o un PDF listo para imprimir. Usos populares: recetas-broma, notas de \"órdenes médicas\" que eximen de tareas y tarjetas de recuperación con efectos secundarios falsos como \"puede provocar siestas\".",
+      },
+      de: {
+        q: "Wie erstelle ich meine eigene Notiz in Artzkrakel-Schrift?",
+        a: "Tippe oder diktiere deinen Text, und der Generator schreibt ihn als Gekritzel auf ein ℞-Rezept. Schiebe den Realismus-Regler Richtung 100 % für maximale Unlesbarkeit und exportiere ein PNG oder ein druckfertiges PDF. Beliebte Einsätze: Scherzrezepte, „ärztliche Anordnung“-Zettel gegen Hausarbeit und Gute-Besserung-Karten mit Scheiben-Nebenwirkungen wie „kann Schläfrigkeit verursachen“.",
+      },
+      fr: {
+        q: "Comment créer ma propre note en écriture de médecin ?",
+        a: "Saisissez ou dictez votre texte, et le générateur l'écrit en gribouillis sur une ordonnance avec ℞. Poussez le curseur de réalisme vers 100 % pour une illisibilité maximale, puis exportez un PNG ou un PDF prêt à imprimer. Usages populaires : ordonnances-blagues, mots « sur ordonnance médicale » qui exemptent de corvées, et cartes de rétablissement avec des effets secondaires fictifs comme « peut provoquer des siestes ».",
+      },
+      pt: {
+        q: "Como faço minha própria nota com letra de médico?",
+        a: "Digite ou dite seu texto, e o gerador escreve em rabiscos numa receita com ℞. Empurre o controle de realismo para perto de 100% para ilegibilidade máxima e exporte um PNG ou um PDF pronto para imprimir. Usos populares: receitas de brincadeira, bilhetes de \"determinação médica\" que livram de tarefas e cartões de melhoras com efeitos colaterais fictícios como \"pode causar sono\".",
+      },
+    },
+  },
+];

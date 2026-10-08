@@ -68,6 +68,10 @@
       "title": "Wortarbeit-Arbeitsblatt-Generator (druckbares PDF)",
       "description": "Verwandle jede Rechtschreibliste in zwei druckbare Übungen: jedes Wort dreimal schreiben und den fehlenden Buchstaben ergänzen. Deterministisch, kostenlos, ohne Wasserzeichen."
     },
+    "doctor": {
+      "title": "Arzt-Krakel-Schrift-Generator — Fake-Rezept in Sekunden (nur Spaß)",
+      "description": "Tippe oder diktiere alles, und dieser Arzt-Schrift-Generator schreibt es als unlesbares Rezept-Gekritzel auf ein ℞-Blatt. Gratis Gag-Geschenk-Idee, Export als PNG oder PDF."
+    },
     "quiz": {
       "title": "Handschrift-Persönlichkeitstest — Was sagt deine Handschrift über dich?",
       "description": "12 visuelle Fragen in etwa 2 Minuten: ein Spaß-Profil plus passende Übungstipps. Kostenlos, ohne Foto-Upload, ohne Anmeldung."
@@ -92,6 +96,7 @@
     "coloring": "Namens-Malvorlagen-Generator",
     "wordWork": "Wortübungsblätter",
     "quiz": "Handschrift-Quiz",
+    "doctor": "Arzt-Schrift",
     "allTools": "Alle Werkzeuge",
     "groupWrite": "Schreiben & Generieren",
     "groupPractice": "Übungsblätter & Drucken",
@@ -164,6 +169,7 @@
       "ruled": "Liniert",
       "grid": "Kariert",
       "letter": "Brief",
+      "rx": "Rezept",
       "custom": "Eigene"
     },
     "inks": {
@@ -314,6 +320,14 @@
     "seoTitle": "Kostenlose Namens-Schreibübungsblätter",
     "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Kindern das Schreiben beizubringen: Das Kind geht die Beispielzeile nach und wiederholt sie dann. Generiere so viele Blätter, wie du brauchst — jedes PDF druckt in exakter Buchstabengröße und ohne Wasserzeichen.",
     "faqTitle": "Häufige Fragen"
+  },
+    "doctor": {
+    "title": "Arzt-Krakel-Schrift-Generator",
+    "intro": "Tippe oder diktiere, was du willst — und es wird im Handumdrehen zu einem unlesbaren „ärztlichen Rezept“, Gekritzel inklusive. Für Scherzgeschenke, Partygags und Gute-Besserung-Karten.",
+    "seoTitle": "Die berühmte Arztschrift, automatisch erzeugt",
+    "seoText": "Ärzte schreiben nicht schlecht, weil sie nicht schreiben können — sie schreiben zu viel und zu schnell: Ein Klinikarzt verfasst tausende Notizen pro Jahr, und die Buchstaben zerfallen zu Kurzschrift-Gekritzel. Dieses ℞-Blatt bringt genau diesen „für Außenstehende unlesbar“-Charme zurück — den Inhalt bestimmst aber du.\n\nSo geht’s:Tippe oder diktiere, was du „verschreiben“ willst — etwa „Ärztliche Anordnung: täglich zwei Urlaubstage, dreimal Milchtee“ — schiebe den Realismus-Regler über 90 % und exportiere PNG oder druckfertiges PDF.\n\nHinweis:Es ist nur Spaß und kein medizinisches Dokument. Nicht verwenden, um Apotheken, Chefs oder irgendwen zu täuschen.",
+    "faqTitle": "Häufige Fragen",
+    "disclaimer": "Nur zum Spaß — das Ergebnis ist ein Scherzartikel, kein medizinisches Dokument. Nicht zum Täuschen verwenden."
   },
   "cursive": {
     "title": "Schreibschrift-Generator",

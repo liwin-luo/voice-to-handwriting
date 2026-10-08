@@ -17,6 +17,7 @@ export interface ToolPreset {
   paperId?: string;
   ink?: string;
   fontSize?: number;
+  intensity?: number;
 }
 
 /**
@@ -37,6 +38,7 @@ export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
     if (preset.paperId) s.setPaperId(preset.paperId);
     if (preset.ink) s.setInk(preset.ink);
     if (preset.fontSize) s.setFontSize(preset.fontSize);
+    if (preset.intensity !== undefined) s.setIntensity(preset.intensity);
   }, [preset]);
 
   // 模板落地页跳转:/?template=<slug> → 一键套用文案与样式

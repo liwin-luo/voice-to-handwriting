@@ -68,6 +68,10 @@
       "title": "Gerador de folhas de trabalho de palavras (PDF imprimível)",
       "description": "Transforme qualquer lista de ortografia em duas atividades imprimíveis: escrever cada palavra três vezes e completar a letra que falta. Determinístico, grátis, sem marca d'água."
     },
+    "doctor": {
+      "title": "Gerador de letra de médico — Receita falsa num clique (de brincadeira)",
+      "description": "Digite ou dite qualquer coisa e este gerador de letra de médico transforma em rabisco ilegível de receita numa folha com ℞. Grátis, exporta PNG ou PDF."
+    },
     "quiz": {
       "title": "Quiz de personalidade pela letra — O que a sua escrita diz sobre você?",
       "description": "12 perguntas visuais em cerca de 2 minutos: um perfil divertido e dicas de prática sob medida. Grátis, sem upload de foto e sem cadastro."
@@ -92,6 +96,7 @@
     "coloring": "Gerador de páginas para colorir com nomes",
     "wordWork": "Fichas de palavras",
     "quiz": "Quiz de letra",
+    "doctor": "Letra de médico",
     "allTools": "Todas as ferramentas",
     "groupWrite": "Escrever & gerar",
     "groupPractice": "Folhas de prática & impressão",
@@ -164,6 +169,7 @@
       "ruled": "Pautado",
       "grid": "Quadriculado",
       "letter": "Carta",
+      "rx": "Receita",
       "custom": "Personalizado"
     },
     "inks": {
@@ -314,6 +320,14 @@
     "seoTitle": "Fichas de nomes para treinar a escrita grátis",
     "seoText": "As fichas personalizadas para calcar são uma das formas mais eficazes de ensinar caligrafia: a criança segue a linha de exemplo e depois repete. Gere quantas precisar — cada PDF é impresso no tamanho exato das letras e sem marca d'água.",
     "faqTitle": "Perguntas frequentes"
+  },
+    "doctor": {
+    "title": "Gerador de letra de médico",
+    "intro": "Digite ou dite qualquer texto e veja virar uma \"receita médica\" ilegível na hora — rabiscos incluídos. Para pegadinhas, presentes e cartões.",
+    "seoTitle": "A famosa letra de médico, gerada",
+    "seoText": "Médicos não escrevem mal por não saber escrever — escrevem demais e rápido demais: um médico hospitalar redige milhares de anotações por ano e as letras viram taquigrafia. Esta folha com ℞ recria esse charme de \"ilegível para leigos\" — mas o conteúdo você escolhe.\n\nComo usar:digite ou dite o que quer \"receitar\" — por exemplo, \"Determinação médica: dois dias de folga por dia, chá com leite em todas as refeições\" — suba o realismo acima de 90% e exporte PNG ou PDF para imprimir.\n\nAtenção:é só brincadeira, não é documento médico. Não use para enganar farmácia, chefe ou ninguém.",
+    "faqTitle": "Perguntas frequentes",
+    "disclaimer": "Só para diversão — o resultado é uma pegadinha, não um documento médico. Não use para enganar ninguém."
   },
   "cursive": {
     "title": "Gerador de letra cursiva",

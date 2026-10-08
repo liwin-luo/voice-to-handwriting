@@ -68,6 +68,10 @@
       "title": "Generador de hojas de trabajo de palabras (PDF imprimible)",
       "description": "Convierte cualquier lista de ortografía en dos actividades imprimibles: escribir cada palabra tres veces y completar la letra que falta. Determinista, gratis, sin marca de agua."
     },
+    "doctor": {
+      "title": "Generador de letra de médico — Receta falsa en un clic (de broma)",
+      "description": "Escribe o dicta lo que quieras y este generador de letra de médico lo convierte en un garabato ilegible de receta sobre una hoja con ℞. Gratis, exporta PNG o PDF."
+    },
     "quiz": {
       "title": "Test de personalidad por tu letra — ¿Qué dice tu escritura sobre ti?",
       "description": "12 preguntas visuales de unos 2 minutos: un perfil divertido y consejos de práctica a medida. Gratis, sin subir fotos y sin registro."
@@ -92,6 +96,7 @@
     "coloring": "Generador de páginas para colorear con nombres",
     "wordWork": "Fichas de palabras",
     "quiz": "Test de letra",
+    "doctor": "Letra de médico",
     "allTools": "Todas las herramientas",
     "groupWrite": "Escribir y generar",
     "groupPractice": "Hojas de práctica e impresión",
@@ -164,6 +169,7 @@
       "ruled": "Rayado",
       "grid": "Cuadrícula",
       "letter": "Carta",
+      "rx": "Receta",
       "custom": "Personalizado"
     },
     "inks": {
@@ -314,6 +320,14 @@
     "seoTitle": "Fichas de nombres para imprimir gratis",
     "seoText": "Las fichas personalizadas para calcar son una de las formas más efectivas de enseñar escritura: el niño sigue la fila de ejemplo y luego repite. Genera todas las que necesites — cada PDF se imprime con el tamaño exacto de letra y sin marca de agua.",
     "faqTitle": "Preguntas frecuentes"
+  },
+    "doctor": {
+    "title": "Generador de letra de médico",
+    "intro": "Escribe o dicta cualquier texto y conviértelo al instante en una \"receta médica\" ilegible — garabatos incluidos. Para bromas, regalos y tarjetas.",
+    "seoTitle": "La famosa letra de médico, generada",
+    "seoText": "La letra de los médicos no es ilegible porque escriban mal, sino porque escriben muchísimo y a toda velocidad: un médico de hospital redacta miles de notas al año y las letras se derrumban en taquigrafía. Esta hoja con ℞ reproduce ese aire incomprensible, pero el contenido lo eliges tú.\n\nCómo usarla:escribe o dicta lo que quieras \"recetar\" — por ejemplo, \"Indicación médica: dos vacaciones al día, té con leche en cada comida\" — sube el realismo por encima del 90% y exporta PNG o PDF para imprimir.\n\nOjo:es solo diversión, no es un documento médico. No la uses para engañar a una farmacia, a tu jefe ni a nadie.",
+    "faqTitle": "Preguntas frecuentes",
+    "disclaimer": "Solo para diversión — el resultado es una broma, no un documento médico. No lo uses para engañar a nadie."
   },
   "cursive": {
     "title": "Generador de letra cursiva",

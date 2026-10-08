@@ -41,6 +41,9 @@ export const TOOL_GROUPS: ToolGroup[] = [
   },
   {
     labelKey: "groupFun",
-    tools: [{ href: "/handwriting-personality-quiz", navKey: "quiz", metaKey: "quiz" }],
+    tools: [
+      { href: "/handwriting-personality-quiz", navKey: "quiz", metaKey: "quiz" },
+      { href: "/doctor-handwriting-generator", navKey: "doctor", metaKey: "doctor" },
+    ],
   },
 ];

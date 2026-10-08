@@ -1,5 +1,5 @@
 export interface PaperPreset {
-  id: "blank" | "ruled" | "grid" | "letter" | "custom";
+  id: "blank" | "ruled" | "grid" | "letter" | "rx" | "custom";
   name: string;
   /** 文本行高(px),横线/方格纸的格线间距与它一致 */
   lineHeight: number;
@@ -8,6 +8,10 @@ export interface PaperPreset {
 }
 
 const L = 40; // 格线间距
+
+/** Rx 处方笺装饰层(SVG data URI):顶部色带 + ℞ 符号(白描边防横线穿过)+ 右下签名线 + 左下日期线 */
+const RX_DECOR =
+  `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='794' height='1123' viewBox='0 0 794 1123'%3E%3Crect width='794' height='48' fill='%23f1f5f9'/%3E%3Cline x1='0' y1='48' x2='794' y2='48' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='46' y='168' font-family='Georgia, serif' font-size='88' fill='%23475569' stroke='%23ffffff' stroke-width='10' paint-order='stroke'%3E%E2%84%9E%3C/text%3E%3Cline x1='434' y1='1016' x2='746' y2='1016' stroke='%2394a3b8' stroke-width='2'/%3E%3Cline x1='48' y1='1062' x2='300' y2='1062' stroke='%23cbd5e1' stroke-width='2'/%3E%3C/svg%3E") no-repeat`;
 
 export const PAPERS: PaperPreset[] = [
   { id: "blank", name: "白纸", lineHeight: 36, background: "#ffffff" },
@@ -20,16 +24,22 @@ export const PAPERS: PaperPreset[] = [
   {
     id: "grid",
     name: "方格",
-   
+
     lineHeight: L,
     background: `repeating-linear-gradient(to bottom, transparent 0 ${L - 1}px, #d9e2ec ${L - 1}px ${L}px), repeating-linear-gradient(to right, transparent 0 ${L - 1}px, #d9e2ec ${L - 1}px ${L}px), #ffffff`,
   },
   {
     id: "letter",
     name: "信纸",
-   
+
     lineHeight: L,
     background: `linear-gradient(to right, transparent 0 46px, #e3b3b8 46px 48px, transparent 48px), repeating-linear-gradient(to bottom, transparent 0 ${L - 1}px, #c7d4e3 ${L - 1}px ${L}px), #fffdf8`,
+  },
+  {
+    id: "rx",
+    name: "处方笺",
+    lineHeight: 48,
+    background: `${RX_DECOR}, repeating-linear-gradient(to bottom, transparent 0 47px, #c7d4e3 47px 48px), #ffffff`,
   },
 ];
 

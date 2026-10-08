@@ -104,3 +104,40 @@
 - **配套文章**:`what-does-your-handwriting-say-about-you`(信息主词 what does your handwriting say about you,估 10K–30K/月),8 语言正文(用户要求全语言,高于 §3.2 优先级基线),正文内链 quiz 工具与练字工具。
 - **后续选题**(未排期):signature analysis personality(独立簇,估 1K–3K/月,可做签名版 quiz 或文章);handwriting slant/spacing/pressure meaning 等单特征长尾(quiz 结果页维度段落先行承接);is handwriting analysis real / pseudoscience(信任流量)。
 - **红线**:娱乐定位+免责声明贯穿(全部竞品标配);科学共识段落(Neter & Ben-Shakhar 1989 meta 分析)不可删;不做严肃性格断言、招聘/情感兼容暗示;不碰医疗与儿童发育评估。
+
+## 六、上升搜索词批量登记(2026-10-08,Rising Searches US 数据驱动)
+
+数据源:Google Trends Rising searches(handwriting 相关,US,近 12 个月)。按「现有页面吃到的词 → 新工具 → 内容簇」三层落地。
+
+### 6.1 `/doctor-handwriting-generator` — Doctor 手写体生成器(新工具,本轮动工)
+
+- **主词**:doctor handwriting generator(次词 doctor handwriting translator / fake prescription maker;rising 表内 "doctor handwriting" +20%)。
+- **形态**:克隆 /cursive 的 ToolWorkspace preset 模式;新增 "rx" 处方笺纸张(SVG data URI 装饰层 + ℞ 符号 + 签名线),preset 默认 Caveat + 仿真度 90%。
+- **定位**:娱乐/gag gift 工具,页面与 FAQ 全程免责声明(for fun,非医疗文件,禁止用于欺骗);红线:不做任何真实处方暗示。
+- **配套文章**:暂不设独立文章,靠 /tools 与导航入口 + 社媒整活传播;后续可加 "doctor handwriting legend" 趣味文。
+
+### 6.2 `letter-from-santa` 模板(本轮动工,赶 12 月窗口)
+
+- **主词**:letter from santa template / santa handwriting(rising 表内 "santa handwriting" +100%)。
+- **形态**:TEMPLATES 新增一项 + 新增 "festive" 节日纸张(糖果条纹边);全 8 语言范文;走 /?template= 预填 + 现有导出管线。
+- **配套文章**:现有 §四 已要求 "Letter to Santa 10 月上线";后续可加 letter-to-santa-template 文章内链该模板。
+
+### 6.3 `/handwriting-workbook-generator` — Workbook 生成器(新工具,本轮动工)
+
+- **主词**:handwriting workbook generator(rising 簇:workbook +100% / book +40% / books +20%,合计热度约 60 且全线上涨;次词 handwriting workbook printable)。
+- **形态**:新组件 HandwritingWorkbookGenerator:封面 + A–Z 字母页 + 单词页 + 句子页,渲染多个 .paper 页,复用 ExportBar 一次导出整本 PDF;印刷/草书两种预设。
+- **配套文章**:how-to-improve-your-handwriting 支柱文(6.4)内链转化。
+
+### 6.4 内容簇(EN 先行,本轮两篇)
+
+- `handwriting-vs-typing-brain`:承接两条 Breakout(handwriting cognitive decline research / handwriting vs typing brain activity study);引用 James & Engelhardt 2012、Mueller & Oppenheimer 2014 等,与 is-cursive-still-taught 同口径的 E-E-A-T 做法;内链 /daily-cursive-handwriting-practice、/handwriting-workbook-generator。
+- `how-to-improve-your-handwriting`:承接 best/good/perfect/messy handwriting 簇(合计热度约 159);步骤式教程,内链全部练习工具(workbook、cursive-worksheets、printable-paper、daily-cursive)。
+
+### 6.5 P2 Roadmap(登记待排期,本轮不做)
+
+1. **字迹变字体工具**(对标 calligraphr,+40%):上传字迹模板 → opentype.js 客户端生成 TTF。周级工程,反哺主工具(用户用自己的字体转写语音),可付费化。
+2. **手写分析互动簇**:handwriting analysis(33)/ handwriting personality(27)/ study of handwriting(14)/ graphology,合计约 97;做"看特征自助分析"向导 + 2–3 篇 graphology 科普,与 quiz 打通。
+3. **handwriting repeater**(+30%):文字笔画动画循环演示工具(SVG stroke animation)。
+4. **多语种手写簇**(japanese/chinese/russian/korean/arabic/greek 合计约 40):暂缓;若做,先试日语假名描红(复用 name-tracing)。
+5. **季节页**:national handwriting day(+30%,1 月 23 日)活动页,12 月底排期。
+6. **字体风格补齐**:bubbly / italic / palmer method 三个小风格页或 preset。

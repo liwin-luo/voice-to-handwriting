@@ -68,6 +68,10 @@
       "title": "Word Work Worksheet Generator (Printable PDF)",
       "description": "Turn any spelling list into two printable activities: write each word three times and fill in the missing letter. Deterministic, free, no watermark, no signup."
     },
+    "doctor": {
+      "title": "Doctor Handwriting Generator — Fake Prescription Maker (For Fun)",
+      "description": "Type or speak anything and this doctor handwriting generator writes it as an illegible prescription scrawl on an ℞ pad. Free gag gift maker — download as PNG or PDF."
+    },
     "quiz": {
       "title": "Free Handwriting Personality Test — What Does Your Handwriting Say About You?",
       "description": "Take this free handwriting personality test: 12 quick questions about your handwriting reveal a fun personality profile plus practice tips. No upload, no signup — about 2 minutes."
@@ -92,6 +96,7 @@
     "coloring": "Name Coloring",
     "wordWork": "Word Work",
     "quiz": "Handwriting Quiz",
+    "doctor": "Doctor Handwriting",
     "allTools": "All tools",
     "groupWrite": "Write & generate",
     "groupPractice": "Practice sheets & printing",
@@ -164,6 +169,7 @@
       "ruled": "Ruled",
       "grid": "Grid",
       "letter": "Letter",
+      "rx": "Prescription",
       "custom": "Custom"
     },
     "inks": {
@@ -314,6 +320,14 @@
     "seoTitle": "Free name tracing worksheets for homeschool and classroom",
     "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark.",
     "faqTitle": "Frequently asked questions"
+  },
+    "doctor": {
+    "title": "Doctor Handwriting Generator",
+    "intro": "Type or dictate anything and watch it become an unreadable doctor's prescription — scrawl included. Purely for fun: gag gifts, party jokes and get-well cards.",
+    "seoTitle": "The famous doctor handwriting, generated",
+    "seoText": "Doctors don't write badly because they can't write — they write too much, too fast. A hospital doctor produces thousands of notes a year, so letters collapse into shorthand scrawl. This ℞ pad recreates that \"unreadable to outsiders\" charm, but you decide exactly what it says.\n\nHow to use: type or dictate what you want to \"prescribe\" — for example, \"Doctor's orders: two vacations a day, milk tea with every meal\" — push the realism slider past 90% for maximum illegibility, then export a PNG or a print-ready PDF.\n\nPlease note: the output is a novelty for laughs, not a medical document. Don't use it to deceive a pharmacy, an employer or anyone else.",
+    "faqTitle": "Frequently asked questions",
+    "disclaimer": "For fun only — the output is a gag, not a medical document. Never use it to deceive anyone."
   },
   "cursive": {
     "title": "Cursive Writing Generator",

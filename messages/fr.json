@@ -68,6 +68,10 @@
       "title": "Générateur de fiches de mots (PDF imprimable)",
       "description": "Transformez n'importe quelle liste d'orthographe en deux activités imprimables : écrire chaque mot trois fois et compléter la lettre manquante. Déterministe, gratuit, sans filigrane."
     },
+    "doctor": {
+      "title": "Générateur d'écriture de médecin — Fausse ordonnance en un clic (pour rire)",
+      "description": "Écrivez ou dictez n'importe quoi : ce générateur d'écriture de médecin le transforme en gribouillis illisibles d'ordonnance sur une feuille avec ℞. Gratuit, export PNG ou PDF."
+    },
     "quiz": {
       "title": "Quiz de personnalité par l'écriture — Que dit votre écriture sur vous ?",
       "description": "12 questions visuelles en 2 minutes environ : un profil amusant et des conseils d'entraînement personnalisés. Gratuit, sans photo, sans inscription."
@@ -92,6 +96,7 @@
     "coloring": "Générateur de pages à colorier avec prénoms",
     "wordWork": "Fiches de mots",
     "quiz": "Quiz d'écriture",
+    "doctor": "Écriture de médecin",
     "allTools": "Tous les outils",
     "groupWrite": "Écrire & générer",
     "groupPractice": "Feuilles d'exercices & impression",
@@ -164,6 +169,7 @@
       "ruled": "Ligné",
       "grid": "Quadrillé",
       "letter": "Lettre",
+      "rx": "Ordonnance",
       "custom": "Personnalisé"
     },
     "inks": {
@@ -314,6 +320,14 @@
     "seoTitle": "Fiches de prénoms à repasser gratuites",
     "seoText": "Les fiches de lettres à repasser personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture : l'enfant suit la ligne d'exemple, puis répète. Générez-en autant que nécessaire — chaque PDF s'imprime aux dimensions exactes des lettres, sans filigrane.",
     "faqTitle": "Questions fréquentes"
+  },
+    "doctor": {
+    "title": "Générateur d'écriture de médecin",
+    "intro": "Tapez ou dictez n'importe quel texte et voyez-le devenir une « ordonnance » illisible en un instant — gribouillis compris. Pour les blagues, les cadeaux et les cartes.",
+    "seoTitle": "La célèbre écriture de médecin, générée",
+    "seoText": "Les médecins n'écrivent pas mal parce qu'ils ne savent pas écrire, mais parce qu'ils écrivent énormément et très vite : un médecin hospitalier rédige des milliers de notes par an, et les lettres s'effondrent en sténographie. Cette feuille avec ℞ reproduit ce charme « illisible pour les profanes » — mais c'est vous qui choisissez le contenu.\n\nMode d'emploi :tapez ou dictez ce que vous voulez « prescrire » — par exemple « Prescription : deux journées de vacances par jour, thé au lait à chaque repas » — poussez le curseur de réalisme au-delà de 90 % et exportez en PNG ou PDF imprimable.\n\nAttention :c'est pour rire, pas un document médical. Ne l'utilisez pas pour tromper une pharmacie, un employeur ou quiconque.",
+    "faqTitle": "Questions fréquentes",
+    "disclaimer": "Pour rire uniquement — le résultat est une blague, pas un document médical. Ne l'utilisez pas pour tromper qui que ce soit."
   },
   "cursive": {
     "title": "Générateur d'écriture cursive",
