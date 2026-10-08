@@ -30,7 +30,7 @@ const PAGE_SIZE = 12;
 /** 无题图时的封面:横线纸 + 装订线,标题写在纸面中央 */
 function TitleCover({ title, featured }: { title: string; featured: boolean }) {
   return (
-    <span className="absolute inset-0 flex items-center overflow-hidden bg-[#f6f3ec] pr-5 pl-4">
+    <span aria-hidden className="absolute inset-0 flex items-center overflow-hidden bg-[#f6f3ec] pr-5 pl-4">
       <span
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(to_bottom,transparent_0_27px,rgba(21,49,126,0.08)_27px_28px)]"
@@ -277,15 +277,13 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
                   <span
                     className={`flex flex-1 flex-col ${featured ? "justify-center gap-3 p-6 md:p-8" : "gap-2 p-5"}`}
                   >
-                    {p.image && (
-                      <span
-                        className={`font-semibold text-zinc-900 transition-colors group-hover:text-accent ${
-                          featured ? "text-xl md:text-2xl" : "text-[17px]"
-                        }`}
-                      >
-                        {p.title}
-                      </span>
-                    )}
+                    <span
+                      className={`font-semibold text-zinc-900 transition-colors group-hover:text-accent ${
+                        featured ? "text-xl md:text-2xl" : "text-[17px]"
+                      }`}
+                    >
+                      {p.title}
+                    </span>
                     <span
                       className={`text-sm leading-relaxed text-zinc-500 ${featured ? "" : "line-clamp-3"}`}
                     >
