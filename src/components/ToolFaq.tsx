@@ -1,4 +1,3 @@
-import { SITE } from "@/lib/site";
 import type { FaqEntry } from "@/content/faqs";
 
 /** 工具页 FAQ 段落:details 折叠 + FAQPage JSON-LD;当前语言无条目时不渲染 */
@@ -39,7 +38,7 @@ export default function ToolFaq({ title, items }: { title: string; items: FaqEnt
         ))}
       </div>
       <p className="mt-6 text-xs text-zinc-400">
-        {SITE.name} · voicetohandwriting.online
+        Voice to Handwriting · voicetohandwriting.online
       </p>
     </section>
   );
