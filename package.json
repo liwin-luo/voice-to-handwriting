@@ -9,7 +9,8 @@
     "lint": "eslint",
     "test": "vitest run",
     "fonts": "node scripts/fonts.mjs",
-    "models": "bash scripts/models.sh"
+    "models": "bash scripts/models.sh",
+    "indexnow": "node scripts/indexnow-submit.mjs"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.0",
