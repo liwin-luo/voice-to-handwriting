@@ -42,8 +42,24 @@
 | 2026-10-08 | latest news | 2000+ | 3 | Christa Pike’s attorneys believed she was brain-dead before she woke up ‘to the shock of e |
 | 2026-10-08 | prime day october 2026 | 100+ | 3 | October Prime Day ends tonight: The best Amazon deals on Hanes, Carhartt, Apple and more |
 | 2026-10-08 | barack obama | 200+ | 2 | Trump says he could have done ‘very bad things’ to Biden, Obama and Clinton |
+| 2026-10-08 | sophie cunningham | 2000+ | 1 | Fever should part with Sophie Cunningham. She’s too turbulent to be paired with Caitlin Cl |
+| 2026-10-08 | sam elliott | 200+ | 1 | Taylor Sheridan’s Landman Confirms Big Season 3 Upgrade After Major Delay |
+| 2026-10-08 | meghan markle | 200+ | 1 | Prince Harry and Meghan Markle Are Not Planning an Apology to Prince William and Kate Midd |
+| 2026-10-08 | wral | 100+ | 1 | Several crews responding to large structure fire in Durham |
+| 2026-10-08 | weather orlando | 100+ | 1 | Northern Florida beach towns facing a coastal flood threat as relentless rain soaks region |
+| 2026-10-08 | boston celtics | 100+ | 1 | Five things to watch in Celtics’ preseason opener vs. Cavaliers |
+| 2026-10-08 | congressional report us aircraft damage | 200+ | 1 | US has lost or sustained damage to 81 military aircraft worth up to $3.3 billion in Iran w |
+| 2026-10-08 | tom holland | 200+ | 1 | Spider-Man: Brand New Day (2026) |
+| 2026-10-08 | strands hint today | 200+ | 1 | NYT Strands Hints, Clues And Answer For Thursday, October 8 (A Star Is Born) |
+| 2026-10-08 | martin landaluce | 100+ | 1 | Sports News, Transfers, Scores / Watch Live Sport |
 <!-- AUTO:GENERAL END -->
 
 ## 人工评估
 
 <!-- 每周扫描后追加:日期 | 关键词 | 增长 | 建议角色 | 体验资产点子 | 结论(排期/放弃/继续观察) -->
+
+2026-10-08 | handwriting workbook | +50%(全球近 30 天相关查询,热度 1) | wes-morales | 十五行词表 + 14 天日程 | 排期,稿 `handwriting-workbook`
+
+2026-10-08 | （种子词 Rising 全空） | 近 7 天六个种子均为 0 条;12 个月补查 429 | — | — | 继续观察。大众日榜无站内交集,不接。
+
+2026-10-08 | sight word tracing worksheets | 非 Rising 数字;规划表 §2 未覆盖长尾 + 自动补全成簇 | clara-hartley | 分龄行高表 + 八词清单与生成器参数 | 排期,已写 `sight-word-tracing-worksheets`
