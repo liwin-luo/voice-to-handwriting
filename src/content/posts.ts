@@ -634,6 +634,20 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "best-cursive-fonts",
+    author: "theo-lindgren",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    image: "/blog/best-cursive-fonts.png",
+    i18n: {
+      en: {
+        title: "Best free cursive fonts: 7 open-source picks, previewed with your own words",
+        description:
+          "Seven free cursive fonts, compared by job: teaching script, formal invitations, everyday handwriting and print references — preview them with your text and export PNG or PDF, no install.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

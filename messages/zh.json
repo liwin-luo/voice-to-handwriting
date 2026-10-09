@@ -94,6 +94,10 @@
     },
     "cursiveAlphabet": {
       "description": "26 个连笔字母大小写全图,带落笔点与方向笔顺指引,可切换教学字体并免费打印。"
+    },
+    "cursiveFont": {
+      "title": "花体字体生成器 – 在线预览并导出手写字体",
+      "description": "一段文字同时在七款手写字体下实时预览,可调字号、墨色与底色,免安装导出高分辨率 PNG 或 PDF——免费、无水印、无需注册。全部开源字体(OFL),授权清晰。"
     }
   },
   "nav": {
@@ -105,6 +109,7 @@
     "nameTracing": "描红字帖",
     "cursive": "英文连笔字",
     "cursiveAlphabet": "连笔字母表",
+    "cursiveFont": "花体字体预览",
     "cursiveWorks": "英文连笔字工作表",
     "dailyCursive": "每日草书练习",
     "writingPractice": "练字帖",
@@ -626,5 +631,24 @@
     "seoText": "花体文字生成器把你输入的每个字母替换成最接近的 Unicode 字符——看起来像流畅手写的数学花体符号。因为输出是真正的文字而不是图片,可以直接粘贴进 Instagram 简介、TikTok 文案、Discord 昵称或聊天消息,凡能打字的地方都保持花体样式。\n\n它不是字体,也不是你的笔迹。读屏软件可能会逐字朗读这些符号,缺少字形的设备会显示方框。如果你要的是能打印的花体——练习纸、贺卡、信封——本站的手写生成器可以导出真正的花体字体 PNG 或 PDF。",
     "alsoImage": "想要能打印的版本?打开花体书写生成器,导出真正的手写体 PNG 或 PDF。",
     "faqTitle": "花体文字常见问题"
+  },
+  "cursiveFont": {
+    "title": "花体字体生成器",
+    "intro": "输入任意文字,一次性在本站全部手写字体下实时预览。调节字号、墨色与底色,再把任意一款导出为高分辨率 PNG 或可直接打印的 PDF——无需安装字体,没有水印。",
+    "inputLabel": "你的文字",
+    "placeholder": "输入或粘贴任何文字——名字、卡片祝词、请柬句子……",
+    "sample": "Merry & bright",
+    "sizeLabel": "字号",
+    "inkLabel": "墨色",
+    "bgLabel": "底色",
+    "bgWhite": "白色",
+    "bgPaper": "纸色",
+    "bgTransparent": "透明",
+    "empty": "在上方输入文字即可预览字体。",
+    "alsoUnicode": "想要能复制粘贴的花体文本?试试花体文字生成器",
+    "alsoHandwriting": "或把整句文字变成仿真手写图",
+    "seoTitle": "七款开源连笔字体,用你自己的文字预览",
+    "seoText": "花体字体生成器把你自己的文字排进每款手写字体里,让你在动手之前选对字体。大多数字体网站只给预览,然后让你下载安装;这一页更进一步——所有行都实时渲染,每款字体都能在浏览器里导出高分辨率透明 PNG 或可直接打印的 PDF。\n\n七款字体全部是 SIL Open Font License 开源授权,每一行都标注作者:正式花体选 Sacramento 和 Dancing Script,日常手写选 Cedarville Cursive 和 Caveat,工整印刷风选 Indie Flower、Kalam 和 Patrick Hand。因此导出结果可以放心用于贺卡、婚礼布置、贴纸、纹身草稿和课堂材料。\n\n把「看起来像花体」的字母粘贴进社交简介是另一回事——那是花体文字生成器的活儿。要练字而不是做设计,连笔字工作表生成器能把任何词表变成描红页。",
+    "faqTitle": "花体字体常见问题"
   }
 }

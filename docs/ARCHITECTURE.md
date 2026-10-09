@@ -96,6 +96,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
 | `/cursive-text-generator` | 可复制花体文本(Unicode 六风格,复制/导出 PNG) | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only Phase 0**,非英文 404/sitemap 仅 en) | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`(en 文案+单测),`alphabetChart.ts`(网格布局),`isEnOnlyTool` 过滤导航/RelatedLinks |
+| `/cursive-font-generator` | 手写字体预览 + 导出(7 款 OFL 字体,PNG 透明底/PDF) | `CursiveFontBrowser`,`fontCatalog.ts`(license 目录),`fontFace.ts`(字体等待),FAQ 经 `CURSIVE_FONT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表 | `TracingGenerator`(cedarvillecursive) |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页 | `DailyCursivePracticeGenerator`,`DAILY_CURSIVE_FAQS` |
 | `/name-tracing` | 姓名描红字帖 | `TracingGenerator`(patrickhand),`TRACING_FAQS` |

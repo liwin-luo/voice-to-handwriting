@@ -94,6 +94,10 @@
     },
     "cursiveAlphabet": {
       "description": "Toutes les lettres cursives de A à Z avec guides de tracé : touchez une lettre, changez de police et imprimez le tableau gratuitement."
+    },
+    "cursiveFont": {
+      "title": "Générateur de polices cursives – Prévisualisez et exportez des polices manuscrites",
+      "description": "Prévisualisez votre texte dans sept polices manuscrites à la fois, ajustez taille, encre et fond, puis exportez en PNG haute résolution ou PDF — gratuit, sans installation, sans inscription. Polices open source (OFL) aux licences claires."
     }
   },
   "nav": {
@@ -105,6 +109,7 @@
     "nameTracing": "Fiches de prénoms",
     "cursive": "Écriture cursive",
     "cursiveAlphabet": "Alphabet cursive",
+    "cursiveFont": "Générateur de polices cursives",
     "cursiveWorks": "Fiches d'écriture cursive",
     "dailyCursive": "Pratique cursive quotidienne",
     "writingPractice": "Écriture CJK",
@@ -626,5 +631,24 @@
     "seoText": "Un générateur de texte cursif remplace chaque lettre tapée par son équivalent Unicode le plus proche — des symboles script mathématiques qui ressemblent à une écriture fluide. Comme le résultat est du vrai texte et non une image, vous pouvez le coller dans une bio Instagram, une légende TikTok, un pseudo Discord ou un message, et il garde son allure cursive partout où va du texte.\n\nCe n'est ni une police ni votre écriture. Les lecteurs d'écran peuvent lire les symboles lettre par lettre, et un appareil sans les bons glyphes affiche des carrés. Si vous cherchez de la cursive à imprimer — fiches d'exercices, cartes, enveloppes — les générateurs manuscrits de ce site exportent une vraie police cursive en PNG ou PDF.",
     "alsoImage": "Besoin d'une version imprimable ? Ouvrez le générateur d'écriture cursive — il exporte une vraie écriture en PNG ou PDF.",
     "faqTitle": "Questions sur le texte cursif"
+  },
+  "cursiveFont": {
+    "title": "Générateur de polices cursives",
+    "intro": "Tapez un texte et voyez-le d'un coup dans toutes les polices manuscrites du site. Ajustez taille, encre et fond, puis téléchargez n'importe quelle police en PNG haute résolution ou PDF prêt à imprimer — sans installer de police, sans filigrane.",
+    "inputLabel": "Votre texte",
+    "placeholder": "Tapez ou collez ce que vous voulez — des prénoms, un message de carte, une ligne d'invitation…",
+    "sample": "Merry & bright",
+    "sizeLabel": "Taille",
+    "inkLabel": "Encre",
+    "bgLabel": "Fond",
+    "bgWhite": "Blanc",
+    "bgPaper": "Papier",
+    "bgTransparent": "Transparent",
+    "empty": "Tapez un texte ci-dessus pour prévisualiser les polices.",
+    "alsoUnicode": "Vous voulez de la cursive à copier-coller ? Essayez le générateur de texte cursif",
+    "alsoHandwriting": "Ou transformez des phrases entières en écriture manuscrite réaliste",
+    "seoTitle": "Sept polices cursives open source, prévisualisées avec vos propres mots",
+    "seoText": "Un générateur de polices cursives compose votre propre texte dans chaque police manuscrite, pour choisir la bonne avant de vous lancer. La plupart des sites de polices s'arrêtent à l'aperçu et vous demandent de télécharger puis installer la police ; cette page va plus loin — chaque ligne est rendue en direct et chaque police s'exporte en PNG transparent haute résolution ou en PDF prêt à imprimer, directement dans votre navigateur.\n\nLes sept polices sont open source sous licence SIL Open Font License, avec l'auteur crédité sur chaque ligne : Sacramento et Dancing Script pour les scripts formels, Cedarville Cursive et Caveat pour l'écriture de tous les jours, Indie Flower, Kalam et Patrick Hand pour les styles imprimés soignés. Les exports conviennent donc aux cartes, à la signalétique de mariage, aux stickers, aux croquis de tatouage et au matériel de classe.\n\nColler des lettres qui ressemblent à de la cursive dans une bio est un autre métier — c'est le rôle du générateur de texte cursif. Pour s'entraîner plutôt que pour créer, le générateur de feuilles de cursive transforme toute liste de mots en fiches à calquer.",
+    "faqTitle": "FAQ polices cursives"
   }
 }

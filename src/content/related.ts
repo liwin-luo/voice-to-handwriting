@@ -179,8 +179,14 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // 可复制花体文本:文章教六种风格怎么用,导流工具页;/cursive 承接"要图片/打印"的读者
   "cursive-text-generator": {
-    tools: ["/cursive-text-generator", "/cursive", "/cursive-worksheets"],
-    posts: ["how-to-write-in-cursive", "cursive-name-signature", "cursive-vs-print"],
+    tools: ["/cursive-text-generator", "/cursive-font-generator", "/cursive"],
+    posts: ["best-cursive-fonts", "how-to-write-in-cursive", "cursive-name-signature"],
+  },
+
+  // 字体选型指南:支柱文承接 "cursive fonts" 浏览意图,导流字体预览工具
+  "best-cursive-fonts": {
+    tools: ["/cursive-font-generator", "/cursive-text-generator", "/cursive", "/cursive-alphabet"],
+    posts: ["cursive-text-generator", "diy-wedding-calligraphy", "how-to-write-in-cursive"],
   },
 
   // cursive 句子簇:句子级与 cursive-practice-worksheets(字母/单词级)拆开;描红引擎吃整句

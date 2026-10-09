@@ -2369,3 +2369,118 @@ export const CURSIVE_TEXT_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /cursive-font-generator 工具页 FAQ(8 语言) */
+export const CURSIVE_FONT_FAQS: FaqItem[] = [
+  {
+    id: "cf-install",
+    i18n: {
+      en: {
+        q: "Do I need to install the fonts to use them?",
+        a: "No. All seven fonts are bundled with the site and render right in your browser — type your text, and each preview line is real typography, not an approximation. Downloads give you a PNG or PDF of your text; if you want the font files themselves for design software, each row links to the font's Google Fonts page.",
+      },
+      zh: {
+        q: "使用这些字体需要安装吗?",
+        a: "不需要。七款字体全部内嵌在网站里,在浏览器中直接渲染——输入文字,每一行预览都是真实的字体排版,不是近似效果。下载得到的是文字的 PNG 或 PDF;如果你想要字体文件本身用于设计软件,每一行都附了该字体在 Google Fonts 的页面链接。",
+      },
+      ja: {
+        q: "フォントをインストールする必要はありますか?",
+        a: "不要です。7書体すべてサイトに同梱されており、ブラウザ上で直接レンダリングされます。文字を入力すると、各行のプレビューは近似ではなく本物のタイポグラフィです。ダウンロードできるのはテキストのPNG/PDFで、デザインソフト用のフォントファイル本体が欲しい場合は、各行からGoogle Fontsのページへリンクしています。",
+      },
+      ko: {
+        q: "글꼴을 설치해야 하나요?",
+        a: "아니요. 7개 글꼴 모두 사이트에 포함되어 브라우저에서 바로 렌더링됩니다. 텍스트를 입력하면 각 미리보기 줄이 근사치가 아니라 실제 타이포그래피예요. 다운로드는 텍스트의 PNG 또는 PDF로 제공되고, 디자인 소프트웨어용 글꼴 파일 자체가 필요하면 각 행에서 Google Fonts 페이지로 연결됩니다.",
+      },
+      es: {
+        q: "¿Necesito instalar las fuentes para usarlas?",
+        a: "No. Las siete fuentes están incluidas en el sitio y se renderizan directamente en tu navegador: escribe tu texto y cada línea de vista previa es tipografía real, no una aproximación. Las descargas son un PNG o PDF de tu texto; si quieres los archivos de fuente para software de diseño, cada fila enlaza a la página de la fuente en Google Fonts.",
+      },
+      fr: {
+        q: "Faut-il installer les polices pour les utiliser ?",
+        a: "Non. Les sept polices sont intégrées au site et s'affichent directement dans votre navigateur : tapez votre texte, chaque ligne d'aperçu est une vraie typographie, pas une approximation. Les téléchargements donnent un PNG ou un PDF de votre texte ; si vous voulez les fichiers de polices pour un logiciel de design, chaque ligne renvoie vers la page Google Fonts de la police.",
+      },
+      de: {
+        q: "Muss ich die Schriftarten installieren?",
+        a: "Nein. Alle sieben Schriftarten sind in die Website eingebettet und werden direkt im Browser gerendert — tippe deinen Text, jede Vorschauzeile ist echte Typografie, keine Annäherung. Die Downloads liefern deinen Text als PNG oder PDF; wer die Schriftdateien selbst für Designsoftware möchte, findet in jeder Zeile den Link zur Google-Fonts-Seite.",
+      },
+      pt: {
+        q: "Preciso instalar as fontes para usá-las?",
+        a: "Não. As sete fontes vêm embutidas no site e são renderizadas direto no navegador — digite seu texto e cada linha de pré-visualização é tipografia real, não uma aproximação. Os downloads geram um PNG ou PDF do seu texto; se quiser os arquivos das fontes para software de design, cada linha tem o link para a página da fonte no Google Fonts.",
+      },
+    },
+  },
+  {
+    id: "cf-commercial",
+    i18n: {
+      en: {
+        q: "Can I use the exports commercially?",
+        a: "Yes. Every font here is licensed under the SIL Open Font License 1.1, which permits personal and commercial use — printed cards, invitations, products, logos. The license covers the font software; the images you export are yours. Each row labels the font's author and license so you can verify anytime.",
+      },
+      zh: {
+        q: "导出的图可以商用吗?",
+        a: "可以。这里的七款字体都采用 SIL Open Font License 1.1 授权,允许个人和商业使用——印刷卡片、请柬、产品、标志都可以。该授权针对字体软件本身;你导出的图片归你所有。每一行都标注了字体的作者与授权,方便随时核对。",
+      },
+      ja: {
+        q: "書き出した画像を商用利用できますか?",
+        a: "できます。ここにある7書体はすべてSIL Open Font License 1.1で、個人・商用を問わず利用可能です。印刷カードや招待状、商品、ロゴなどに使えます。ライセンスはフォントソフトウェアに適用され、書き出した画像はあなたのものです。各行に作者とライセンスを明記しているので、いつでも確認できます。",
+      },
+      ko: {
+        q: "내보낸 이미지를 상업적으로 쓸 수 있나요?",
+        a: "네. 여기의 7개 글꼴은 모두 SIL Open Font License 1.1이라 개인 및 상업적 사용이 허용됩니다. 인쇄 카드, 청첩장, 제품, 로고 모두 가능해요. 라이선스는 글꼴 소프트웨어에 적용되고, 내보낸 이미지는 여러분의 소유입니다. 각 행에 글꼴 저자와 라이선스를 표시해 두었으니 언제든 확인할 수 있어요.",
+      },
+      es: {
+        q: "¿Puedo usar las exportaciones con fines comerciales?",
+        a: "Sí. Todas las fuentes de esta página tienen la licencia SIL Open Font License 1.1, que permite el uso personal y comercial: tarjetas impresas, invitaciones, productos, logotipos. La licencia cubre el software de la fuente; las imágenes que exportas son tuyas. Cada fila indica el autor y la licencia para que puedas verificarlo en cualquier momento.",
+      },
+      fr: {
+        q: "Puis-je utiliser les exports commercialement ?",
+        a: "Oui. Toutes les polices de cette page sont sous licence SIL Open Font License 1.1, qui autorise l'usage personnel et commercial — cartes imprimées, faire-part, produits, logos. La licence porte sur le logiciel de police ; les images que vous exportez vous appartiennent. Chaque ligne indique l'auteur et la licence de la police pour vérification à tout moment.",
+      },
+      de: {
+        q: "Darf ich die Exporte kommerziell nutzen?",
+        a: "Ja. Alle Schriftarten hier stehen unter der SIL Open Font License 1.1, die private und kommerzielle Nutzung erlaubt — gedruckte Karten, Einladungen, Produkte, Logos. Die Lizenz betrifft die Font-Software; die exportierten Bilder gehören dir. In jeder Zeile stehen Autor und Lizenz, damit du es jederzeit nachprüfen kannst.",
+      },
+      pt: {
+        q: "Posso usar as exportações comercialmente?",
+        a: "Sim. Todas as fontes desta página usam a licença SIL Open Font License 1.1, que permite uso pessoal e comercial — cartões impressos, convites, produtos, logotipos. A licença cobre o software da fonte; as imagens que você exporta são suas. Cada linha indica o autor e a licença para você verificar a qualquer momento.",
+      },
+    },
+  },
+  {
+    id: "cf-vs-unicode",
+    i18n: {
+      en: {
+        q: "How is this different from a cursive text generator?",
+        a: "Unicode cursive generators swap your letters for look-alike symbols you can paste as plain text into bios and chats — but they are not fonts, they can't be printed at high quality, and screen readers read them letter by letter. This page uses real typefaces and outputs images and PDFs: the right tool for cards, envelopes and anything on paper. If you want pasteable text, use the cursive text generator instead.",
+      },
+      zh: {
+        q: "这和「花体文字生成器」有什么区别?",
+        a: "Unicode 花体生成器把你的字母替换成外形相似的符号,可以以纯文本粘贴进简介和聊天——但那不是字体,无法高质量印刷,读屏软件也会逐字朗读。本页用的是真正的字体,输出图片和 PDF:适合卡片、信封和一切纸面用途。如果你要的是可粘贴文本,请用花体文字生成器。",
+      },
+      ja: {
+        q: "筆記体テキスト生成器との違いは?",
+        a: "Unicodeの筆記体ジェネレーターは、文字を見た目の似た記号に置き換えて、バイオやチャットに貼り付けられるテキストにします。ただしフォントではなく、高品質印刷には向かず、スクリーンリーダーは一文字ずつ読み上げます。このページは本物の書体を使い、画像とPDFを出力します。カードや封筒など紙面向けの用途に最適です。貼り付け可能なテキストが欲しい場合は、筆記体テキスト生成器をご利用ください。",
+      },
+      ko: {
+        q: "필기체 텍스트 생성기와 뭐가 다른가요?",
+        a: "유니코드 필기체 생성기는 글자를 생김새가 비슷한 기호로 바꿔 소개글과 채팅에 붙여넣을 수 있는 텍스트로 만들어요. 하지만 그건 글꼴이 아니라 고품질 인쇄에 부적합하고, 스크린 리더는 글자를 하나씩 읽습니다. 이 페이지는 실제 서체를 사용해 이미지와 PDF를 출력합니다. 카드, 봉투 등 종이에 쓰이는 용도에 적합해요. 붙여넣기용 텍스트가 필요하면 필기체 텍스트 생성기를 이용하세요.",
+      },
+      es: {
+        q: "¿En qué se diferencia de un generador de texto cursivo?",
+        a: "Los generadores Unicode de texto cursivo cambian tus letras por símbolos parecidos que puedes pegar como texto plano en biografías y chats — pero no son fuentes, no se pueden imprimir con calidad y los lectores de pantalla las leen letra por letra. Esta página usa tipografías reales y genera imágenes y PDF: la herramienta correcta para tarjetas, sobres y cualquier cosa en papel. Si quieres texto pegable, usa el generador de texto cursivo.",
+      },
+      fr: {
+        q: "Quelle différence avec un générateur de texte cursif ?",
+        a: "Les générateurs Unicode remplacent vos lettres par des symboles ressemblants que vous pouvez coller comme texte brut dans des bios ou des chats — mais ce ne sont pas des polices, ils ne s'impriment pas en haute qualité et les lecteurs d'écran les lisent lettre par lettre. Cette page utilise de vraies polices et produit des images et des PDF : l'outil adapté aux cartes, aux enveloppes et à tout ce qui s'imprime. Pour du texte à coller, utilisez le générateur de texte cursif.",
+      },
+      de: {
+        q: "Was ist der Unterschied zu einem Schreibschrift-Textgenerator?",
+        a: "Unicode-Generatoren ersetzen deine Buchstaben durch ähnlich aussehende Symbole, die du als Klartext in Bios und Chats einfügen kannst — aber das sind keine Schriftarten, sie lassen sich nicht hochwertig drucken und Screenreader lesen sie Buchstabe für Buchstabe vor. Diese Seite nutzt echte Schriften und erzeugt Bilder und PDFs: das richtige Werkzeug für Karten, Umschläge und alles auf Papier. Für einfügbaren Text nimm den Schreibschrift-Textgenerator.",
+      },
+      pt: {
+        q: "Qual é a diferença para um gerador de texto cursivo?",
+        a: "Geradores Unicode trocam suas letras por símbolos parecidos que você pode colar como texto simples em bios e chats — mas não são fontes, não imprimem em alta qualidade e leitores de tela leem letra por letra. Esta página usa fontes de verdade e gera imagens e PDFs: a ferramenta certa para cartões, envelopes e tudo o que vai para o papel. Para texto colável, use o gerador de texto cursivo.",
+      },
+    },
+  },
+];

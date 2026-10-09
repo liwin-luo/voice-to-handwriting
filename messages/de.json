@@ -94,6 +94,10 @@
     },
     "cursiveAlphabet": {
       "description": "Alle Schreibschrift-Buchstaben von A bis Z mit Strichführungen — Buchstabe antippen, Schrift wechseln und die Tafel kostenlos drucken."
+    },
+    "cursiveFont": {
+      "title": "Schreibschrift-Font-Generator – Handschrift-Fonts ansehen & exportieren",
+      "description": "Sieh deinen Text in sieben Handschrift-Fonts gleichzeitig, stelle Größe, Tinte und Hintergrund ein und exportiere hochauflösendes PNG oder PDF — gratis, ohne Installation, ohne Anmeldung. Open-Source-Fonts (OFL) mit klaren Lizenzen."
     }
   },
   "nav": {
@@ -105,6 +109,7 @@
     "nameTracing": "Schreibübungsblätter",
     "cursive": "Schreibschrift-Generator",
     "cursiveAlphabet": "Schreibschrift-Alphabet",
+    "cursiveFont": "Schreibschrift-Font-Generator",
     "cursiveWorks": "Schreibschrift-Arbeitsblätter",
     "dailyCursive": "Tägliche Schreibschriftübung",
     "writingPractice": "Schreibübungen CJK",
@@ -626,5 +631,24 @@
     "seoText": "Ein Schreibschrift-Generator ersetzt jeden getippten Buchstaben durch das nächstliegende Unicode-Zeichen – mathematische Script-Symbole, die wie fließende Handschrift aussehen. Weil das Ergebnis echter Text und kein Bild ist, kannst du es in eine Instagram-Bio, einen TikTok-Untertitel, einen Discord-Namen oder eine Chatnachricht einfügen, und der Schreibschrift-Look bleibt überall, wo Text geht.\n\nEs ist keine Schriftart und nicht deine Handschrift. Screenreader lesen die Symbole womöglich Buchstabe für Buchstabe, und Geräte ohne passende Glyphen zeichnen Kästchen. Wenn du Schreibschrift zum Drucken willst – Übungsblätter, Karten, Umschläge – exportieren die Handschrift-Generatoren dieser Seite eine echte Schreibschrift als PNG oder PDF.",
     "alsoImage": "Brauchst du sie zum Drucken? Öffne den Cursive-Writing-Generator – er exportiert echte Handschrift als PNG oder PDF.",
     "faqTitle": "Fragen zu Schreibschrift-Text"
+  },
+  "cursiveFont": {
+    "title": "Schreibschrift-Font-Generator",
+    "intro": "Tippe etwas und sehe es gleichzeitig in jedem Handschrift-Font der Seite. Passe Größe, Tinte und Hintergrund an und lade jeden Font als hochauflösendes PNG oder druckfertiges PDF herunter — ohne Font-Installation, ohne Wasserzeichen.",
+    "inputLabel": "Dein Text",
+    "placeholder": "Tippe oder füge beliebigen Text ein — Namen, eine Kartenbotschaft, eine Einladungszeile…",
+    "sample": "Merry & bright",
+    "sizeLabel": "Größe",
+    "inkLabel": "Tinte",
+    "bgLabel": "Hintergrund",
+    "bgWhite": "Weiß",
+    "bgPaper": "Papier",
+    "bgTransparent": "Transparent",
+    "empty": "Tippe oben etwas, um die Fonts zu sehen.",
+    "alsoUnicode": "Du möchtest kopierbaren Schreibschrift-Text? Nimm den Schreibschrift-Textgenerator",
+    "alsoHandwriting": "Oder verwandle ganze Sätze in realistische Handschrift",
+    "seoTitle": "Sieben Open-Source-Schreibschrift-Fonts, vorgeschaut mit deinen eigenen Worten",
+    "seoText": "Ein Schreibschrift-Font-Generator setzt deinen eigenen Text in jedem Handschrift-Font, damit du den richtigen wählst, bevor es losgeht. Die meisten Font-Seiten enden bei der Vorschau und erwarten Download und Installation; diese Seite geht weiter — jede Zeile wird live gerendert, und jeder Font lässt sich direkt im Browser als hochauflösendes transparentes PNG oder druckfertiges PDF exportieren.\n\nAlle sieben Fonts sind unter der SIL Open Font License open source, mit namentlich genanntem Autor in jeder Zeile: Sacramento und Dancing Script für formale Schriften, Cedarville Cursive und Caveat für Alltags-Handschrift, Indie Flower, Kalam und Patrick Hand für ordentliche Druckschriften. Die Exporte eignen sich damit für Grußkarten, Hochzeitsschilder, Sticker, Tattoo-Entwürfe und Unterrichtsmaterial.\n\nKursiv aussehende Buchstaben für eine Bio einzufügen ist eine andere Aufgabe — dafür ist der Schreibschrift-Textgenerator da. Zum Üben statt Gestalten macht der Schreibschrift-Arbeitsblatt-Generator aus jeder Wortliste Vorlageblätter.",
+    "faqTitle": "Schreibschrift-Font-FAQ"
   }
 }

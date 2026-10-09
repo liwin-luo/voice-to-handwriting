@@ -42,6 +42,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
       { href: "/cursive", navKey: "cursive", metaKey: "cursive" },
       { href: "/cursive-text-generator", navKey: "cursiveText", metaKey: "cursiveText" },
       { href: "/cursive-alphabet", navKey: "cursiveAlphabet", metaKey: "cursiveAlphabet", enOnly: true },
+      { href: "/cursive-font-generator", navKey: "cursiveFont", metaKey: "cursiveFont" },
       { href: "/templates", navKey: "templates", metaKey: "templates" },
     ],
   },

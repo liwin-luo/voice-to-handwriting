@@ -94,6 +94,10 @@
     },
     "cursiveAlphabet": {
       "description": "Todas as letras cursivas de A a Z com guias de traço — toque numa letra, troque a fonte e imprima a tabela grátis."
+    },
+    "cursiveFont": {
+      "title": "Gerador de fontes cursivas – Pré-visualize e exporte fontes manuscritas",
+      "description": "Pré-visualize seu texto em sete fontes manuscritas de uma vez, ajuste tamanho, tinta e fundo e exporte PNG em alta resolução ou PDF — grátis, sem instalar, sem cadastro. Fontes de código aberto (OFL) com licenças claras."
     }
   },
   "nav": {
@@ -105,6 +109,7 @@
     "nameTracing": "Fichas de nomes",
     "cursive": "Letra cursiva",
     "cursiveAlphabet": "Alfabeto cursivo",
+    "cursiveFont": "Gerador de fontes cursivas",
     "cursiveWorks": "Fichas de cursiva",
     "dailyCursive": "Prática diária de cursiva",
     "writingPractice": "Caligrafia CJK",
@@ -626,5 +631,24 @@
     "seoText": "Um gerador de texto cursivo troca cada letra digitada pelo equivalente Unicode mais próximo — símbolos script matemáticos que parecem caligrafia fluida. Como o resultado é texto de verdade, e não uma imagem, você pode colar na bio do Instagram, na legenda do TikTok, no apelido do Discord ou numa mensagem, e ele mantém o visual cursivo em qualquer lugar que aceite texto.\n\nNão é uma fonte e não é a sua letra. Leitores de tela podem ler os símbolos letra por letra, e um aparelho sem os glifos certos desenha quadrados. Se você quer cursiva para imprimir — folhas de prática, cartões, envelopes —, os geradores de caligrafia deste site exportam uma fonte cursiva de verdade em PNG ou PDF.",
     "alsoImage": "Precisa de uma versão para imprimir? Abra o gerador de escrita cursiva — ele exporta letra manuscrita de verdade em PNG ou PDF.",
     "faqTitle": "Perguntas sobre texto cursivo"
+  },
+  "cursiveFont": {
+    "title": "Gerador de fontes cursivas",
+    "intro": "Digite algo e veja de uma vez em todas as fontes manuscritas do site. Ajuste tamanho, tinta e fundo e baixe qualquer fonte como PNG em alta resolução ou PDF pronto para imprimir — sem instalar fontes, sem marca d'água.",
+    "inputLabel": "Seu texto",
+    "placeholder": "Digite ou cole o que quiser — nomes, uma mensagem de cartão, uma linha de convite…",
+    "sample": "Merry & bright",
+    "sizeLabel": "Tamanho",
+    "inkLabel": "Tinta",
+    "bgLabel": "Fundo",
+    "bgWhite": "Branco",
+    "bgPaper": "Papel",
+    "bgTransparent": "Transparente",
+    "empty": "Digite algo acima para pré-visualizar as fontes.",
+    "alsoUnicode": "Quer uma cursiva para copiar e colar como texto? Experimente o gerador de texto cursivo",
+    "alsoHandwriting": "Ou transforme frases inteiras em escrita à mão realista",
+    "seoTitle": "Sete fontes cursivas de código aberto, pré-visualizadas com suas próprias palavras",
+    "seoText": "Um gerador de fontes cursivas mostra o seu texto composto em cada fonte manuscrita, para você escolher a certa antes de decidir. A maioria dos sites de fontes para na pré-visualização e espera que você baixe e instale a fonte; esta página vai além — cada linha é renderizada ao vivo e qualquer fonte pode ser exportada como PNG transparente em alta resolução ou PDF pronto para imprimir, direto no navegador.\n\nAs sete fontes são de código aberto sob a SIL Open Font License, com o autor creditado em cada linha: Sacramento e Dancing Script para scripts formais, Cedarville Cursive e Caveat para escrita do dia a dia, e Indie Flower, Kalam e Patrick Hand para estilos de impressão caprichados. Assim as exportações servem para cartões, sinalização de casamento, adesivos, rascunhos de tatuagem e material de aula.\n\nColar letras com cara de cursiva numa bio é outra tarefa — para isso existe o gerador de texto cursivo. Para praticar em vez de criar, o gerador de folhas de caligrafia transforma qualquer lista de palavras em fichas para calcar.",
+    "faqTitle": "Perguntas frequentes sobre fontes cursivas"
   }
 }

@@ -94,6 +94,10 @@
     },
     "cursiveAlphabet": {
       "description": "Every cursive letter A to Z with start-dot stroke guides — tap a letter, switch teaching fonts, and print the chart free."
+    },
+    "cursiveFont": {
+      "title": "Cursive Font Generator – Preview & Export Handwriting Fonts",
+      "description": "Preview your text in seven handwriting fonts, tune size, ink and background, then export high-resolution PNG or PDF — free, no install, no signup. Open-source (OFL) fonts with clear licenses."
     }
   },
   "nav": {
@@ -105,6 +109,7 @@
     "nameTracing": "Name Tracing",
     "cursive": "Cursive Writing",
     "cursiveAlphabet": "Cursive Alphabet",
+    "cursiveFont": "Cursive Font Generator",
     "cursiveWorks": "Cursive Worksheets",
     "dailyCursive": "Daily Cursive Practice",
     "writingPractice": "Writing Practice",
@@ -626,5 +631,24 @@
     "seoText": "A cursive text generator swaps each letter you type for the closest Unicode equivalent — mathematical script and bold script symbols that look like flowing penmanship. Because the result is real text rather than an image, you can paste it into an Instagram bio, a TikTok caption, a Discord nickname or a chat message, and it keeps the cursive look anywhere text can go.\n\nIt is not a font and not your handwriting. Screen readers may read the symbols letter by letter, and a device without the right glyphs draws boxes instead. If you want cursive you can print — practice sheets, cards, envelopes — the handwriting generators on this site export a real cursive font as PNG or PDF.",
     "alsoImage": "Need it printable instead? Open the cursive writing generator — it exports real handwriting as PNG or PDF.",
     "faqTitle": "Cursive text questions"
+  },
+  "cursiveFont": {
+    "title": "Cursive Font Generator",
+    "intro": "Type anything and see it in every handwriting font on this site at once. Tune the size, ink and background, then download any font's rendering as a high-resolution PNG or a print-ready PDF — no font installation, no watermark.",
+    "inputLabel": "Your text",
+    "placeholder": "Type or paste anything — names, a card message, an invitation line…",
+    "sample": "Merry & bright",
+    "sizeLabel": "Size",
+    "inkLabel": "Ink",
+    "bgLabel": "Background",
+    "bgWhite": "White",
+    "bgPaper": "Paper",
+    "bgTransparent": "Transparent",
+    "empty": "Type something above to preview the fonts.",
+    "alsoUnicode": "Want cursive you can copy and paste as text? Try the cursive text generator",
+    "alsoHandwriting": "Or turn full sentences into realistic handwriting",
+    "seoTitle": "Seven open-source cursive fonts, previewed with your own words",
+    "seoText": "A cursive font generator shows your own text set in each handwriting font, so you can pick the right one before you commit. Most font sites stop at a preview and expect you to download and install the font; this page goes further — every line is rendered live, and each font can be exported as a high-resolution transparent PNG or a print-ready PDF, right in your browser.\n\nAll seven fonts are open source under the SIL Open Font License, with the author credited on every row: Sacramento and Dancing Script for formal scripts, Cedarville Cursive and Caveat for everyday handwriting, and Indie Flower, Kalam and Patrick Hand for neat print styles. That makes the exports safe for greeting cards, wedding signage, stickers, tattoo drafts and classroom material.\n\nPasting cursive-looking letters into a bio is a different job — that is what the cursive text generator is for. For practice rather than design, the cursive worksheets generator turns any word list into traceable sheets.",
+    "faqTitle": "Cursive font FAQ"
   }
 }

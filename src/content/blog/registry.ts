@@ -88,6 +88,7 @@ import cmcJa from "./calligraphy-motto-cards.ja.mdx";
 import cmcKo from "./calligraphy-motto-cards.ko.mdx";
 import cmcEs from "./calligraphy-motto-cards.es.mdx";
 import clbEn from "./cursive-laws-by-state.en.mdx";
+import bcfEn from "./best-cursive-fonts.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -252,6 +253,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "name-tracing-with-lines": { en: ntlEn, zh: ntlZh, ja: ntlJa, ko: ntlKo, es: ntlEs },
   "calligraphy-motto-cards": { en: cmcEn, zh: cmcZh, ja: cmcJa, ko: cmcKo, es: cmcEs },
   "cursive-laws-by-state": { en: clbEn },
+  "best-cursive-fonts": { en: bcfEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */
