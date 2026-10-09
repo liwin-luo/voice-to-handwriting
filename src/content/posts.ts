@@ -593,6 +593,34 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "name-tracing-with-lines",
+    author: "clara-hartley",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    image: "/blog/name-tracing-lines.png",
+    i18n: {
+      en: {
+        title: "Name tracing with lines: free three-line worksheets to print",
+        description:
+          "Why the three lines are the lesson, which row height fits which age, and how to print a personalized name tracing worksheet with lines — free PDF.",
+      },
+    },
+  },
+  {
+    slug: "calligraphy-motto-cards",
+    author: "theo-lindgren",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    image: "/blog/calligraphy-motto.png",
+    i18n: {
+      en: {
+        title: "Calligraphy motto cards: from trending phrase to handwritten card",
+        description:
+          "Turn 'motto of a calligraphy enthusiast' into a real card: Dancing Script, blue-black ink, blank paper — tested settings, motto copy and export sizes.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

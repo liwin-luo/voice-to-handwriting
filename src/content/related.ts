@@ -3,6 +3,7 @@ import { postLocales } from "@/content/blog/registry";
 
 /** 工具页 href → messages nav 里的名称 key(8 语言均有) */
 export const TOOL_LABEL_KEY: Record<string, string> = {
+  "/": "tool",
   "/templates": "templates",
   "/printable-paper": "printablePaper",
   "/name-tracing": "nameTracing",
@@ -92,6 +93,16 @@ export const RELATED: Record<string, RelatedConfig> = {
   "name-tracing-generator": {
     tools: ["/name-tracing", "/printable-paper"],
     posts: ["kindergarten-handwriting-paper", "cursive-name-signature", "cursive-practice-worksheets"],
+  },
+
+  // 选题池 2026-10-09(rising:createprintables name tracing / calligraphy motto)
+  "name-tracing-with-lines": {
+    tools: ["/name-tracing", "/printable-paper"],
+    posts: ["name-tracing-generator", "kindergarten-handwriting-paper", "handwriting-practice-struggling-writers"],
+  },
+  "calligraphy-motto-cards": {
+    tools: ["/", "/templates"],
+    posts: ["handwritten-card-with-voice", "xiaohongshu-handwritten-images", "handwriting-templates-guide"],
   },
   "letter-to-santa-template": {
     tools: ["/name-tracing", "/printable-paper"],

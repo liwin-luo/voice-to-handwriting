@@ -71,6 +71,8 @@ import hshEn from "./how-many-sheets-handwriting.en.mdx";
 import ctgEn from "./cursive-text-generator.en.mdx";
 import cstEn from "./cursive-sentences-to-practice.en.mdx";
 import cwgEn from "./copywork-generator.en.mdx";
+import ntlEn from "./name-tracing-with-lines.en.mdx";
+import cmcEn from "./calligraphy-motto-cards.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -232,6 +234,8 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "cursive-text-generator": { en: ctgEn },
   "cursive-sentences-to-practice": { en: cstEn },
   "copywork-generator": { en: cwgEn },
+  "name-tracing-with-lines": { en: ntlEn },
+  "calligraphy-motto-cards": { en: cmcEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

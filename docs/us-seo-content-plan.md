@@ -186,3 +186,30 @@
 - **落地一**:`cursive-sentences-to-practice`(en)。主词 cursive sentences to practice / cursive sentences worksheets;次词 generator / to copy / pdf / for kids / grade 2、3。与 cursive-practice-worksheets(字母/单词级)拆开:本篇做句子级——o/b/v/w 高位收笔连接、分龄表(句子从 grade 2–3 起)、十句起步句库、描红版与抄写版两条生成器配方(Cedarville Cursive + Grade 2 行高)。角色 Clara。内链 /name-tracing、/cursive、/daily-cursive-handwriting-practice、/cursive-worksheets。
 - **落地二**:`copywork-generator`(en)。主词 copywork generator(EASY)+ copywork homeschool(MEDIUM,小博客把守);次词 copywork printables free / charlotte mason / 分龄。整句/段落抄写方法 + 页面解剖(5–6 描红起步到 12+ 段落)+ 一周起步素材表(Stevenson/谚语/1492/KJV)+ 生成器配方。与 sight-word-tracing-worksheets(拼写词表)拆开。角色 Clara(两篇 H2 骨架不同,不触发反同质化)。内链 /name-tracing、/cursive、/printable-paper、/word-work、/handwriting-workbook-generator。
 - **不接**:left handed handwriting practice sheets(Twinkl/TPT 把守、工具承接弱)、how to read cursive(translator/app 意图、无产品承接)、spelling test paper(TPT 三席位+模板农场,且留作 roadmap §2.3 潜在纸张子页)。
+
+### 6.6 选题池首批落地(2026-10-09,rising 驱动)
+
+`docs/trends-backlog.md` 定时扫描的首批产出,两篇 EN 文章(真实工具实测+成品截图为题图):
+
+- `name-tracing-with-lines`(Clara Hartley)——吃 "createprintables name tracing(+600%)" 品牌词背后的功能需求「带行线描红」;红线执行:给替代方案,不做商标对比;
+- `calligraphy-motto-cards`(Theo Lindgren)——吃 "motto of a calligraphy enthusiast(Breakout)" 的金句卡场景;含实测参数表与 motto 文案库。
+
+同轮放弃 3 条名人新闻波(angelina jolie / meghan markle handwriting,排名窗口追不上),einstein handwriting 留观(如做走 Mara 辟谣向)。
+
+### 6.7 补全排期(2026-10-09 盘点,基于正文覆盖矩阵 + trends 动量)
+
+覆盖现状:33 篇文章,en 33 / zh ja ko pt 24 / es de fr 22。趋势指向的 5 篇(clusters:Schreibschrift、Kalligraphie、calligraphie moderne)**de/fr 正文已存在**,真实缺口是 **title/description 元数据回退英文**(§6.3 的扩大版)。
+
+**P0(本周,窗口与动量):**
+1. ✅(2026-10-09 已执行) **de/fr/es 标题元数据核对与趋势词对齐**:18 对标题逐一核对后仅 6 处需微调(fr écriture cursive 词簇 ×3、de Linienblatt/Schreibschrift lernen ×2、fr feuille d'écriture ×1),已改并构建验证 <title> 生效:diy-wedding-calligraphy(Kalligraphie Hochzeit / calligraphie mariage)、cursive-practice-worksheets(Schreibschrift Arbeitsblätter)、cursive-alphabet-chart(alphabet calligraphie)、how-to-teach-cursive-kids(schreibschrift lernen)、handwritten-thank-you-notes(Danksagung / carte de remerciement)、kindergarten-handwriting-paper(linienblatt);顺带修 §6.3。改动只在 posts.ts/extra-locales,每篇 2 行;
+2. **FR graphisme 新文章**(Clara)——+350%/+150% 动量、法国独有缺口、同时回填 /writing-practice 配套文章缺口(§6.4);FR 先行,含 halloween 季节章节(10 月底前发布吃窗口),EN 版视数据后补。
+
+**P1(下周):**
+3. is-cursive-still-taught、xiaohongshu-handwritten-images 补 es/de/fr 正文(矩阵最显眼两洞;前者每年 1 月还要复核州名单);
+4. 新发布两篇 name-tracing-with-lines、calligraphy-motto-cards 补 zh/ja/ko/es(§3.2 应当级,趁发布动量)。
+
+**P2(本月内):**
+5. 其余 EN-only 工具教程(sight-word、copywork-generator、cursive-text-generator、cursive-sentences、handwriting-repeater、handwriting-workbook、how-many-sheets)按工具流量逐步补 zh/ja/ko/es;
+6. Sütterlin、einstein handwriting 维持留观;每项翻译走 §3.4 接线四步 + 验收清单。
+
+**流程改进建议**:新 EN 文章发布时 de/fr/es 的 title/description 应在下一内容周期内补齐(与 §3.1 同周期口径),避免再积累"正文已译、元数据回退"的洞。

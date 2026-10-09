@@ -46,13 +46,27 @@
 
 ## 选题池(Trends 管道)
 
-`scripts/trends-backlog.mjs`(定时任务每周一运行,geo=US)维护 `docs/trends-backlog.md`,两路数据源:
+`scripts/trends-backlog.mjs`(定时任务每周一运行,**geo=US,DE,FR**)维护 `docs/trends-backlog.md`,两路数据源:
 
-- **主源:种子词相关查询上升榜**——以 6 个选题簇圆心词(handwriting / cursive / handwriting practice / handwriting worksheets / name tracing / calligraphy)为种子,抓 Google Trends「相关查询 Rising」近 7 天涨幅,去重计数。新词中**涨幅 Breakout 或 ≥100%** 的由定时任务写进「人工评估」,能挂上体验资产才进排期(定角色 → 走「新增一篇文章的操作流程」);
-- **参考源:大众每日热搜 RSS**——全类别日榜,仅供观察,与站内主题无交集是常态;
-- **news 性质的日级热点默认不接**(博客排名窗口追不上新闻生命周期);季节性选题(圣诞、返校季)提前 6–8 周发布。
+- **主源:种子词相关查询上升榜**——按"站点能力簇 × 当地搜索语言"选种子词(见下表),抓 Google Trends「相关查询 Rising」近 7 天涨幅,去重计数。新词中**涨幅 Breakout 或 ≥100%** 的由定时任务写进「人工评估」,能挂上体验资产才进排期(定角色 → 走「新增一篇文章的操作流程」);
+- **参考源:大众每日热搜 RSS**(各 geo)——全类别日榜,仅供观察,与站内主题无交集是常态;
+- **news 性质的日级热点默认不接**(博客排名窗口追不上新闻生命周期);季节性选题(圣诞、返校季)提前 6–8 周发布;
+- **DE/FR 候选的路由规则**:优先翻译补齐现有 EN 文章的 de/fr 正文(§3.2),确属当地独有需求才新开文章。
 
-注:Trends 相关查询是非官方接口且限流较狠(429 惩罚窗口可达小时级),脚本已带退避重试与 10 秒种子间隔;个别种子失败会告警跳过,不影响其余种子与 general 池。
+能力簇 → 种子词映射(种子词改动需同步改 `GEO_SEEDS` 与本表):
+
+| 站点能力簇 | US | DE | FR |
+|---|---|---|---|
+| 手写渲染主工具 / 提升字迹 | handwriting · handwriting practice · handwriting worksheets | handschrift · handschrift verbessern | améliorer son écriture |
+| 连笔簇(/cursive*) | cursive | schreibschrift(德国学校连笔体系) | écriture cursive(法国低年级即教) |
+| 儿童名字/描红(/name-tracing 等) | name tracing | name schreiben lernen | écrire son nom |
+| 打印纸(/printable-paper) | —(并入 worksheets) | linienblatt(德国学校制式纸) | feuille d'écriture |
+| 书法/贺卡(/templates、婚礼) | calligraphy | kalligraphie | calligraphie |
+| 幼儿运笔(法国特色) | — | — | graphisme(maternelle 运笔训练) |
+
+关键词宇宙(脚本 `FIT_RE`)已同步覆盖三语:德校书写体系(schreibschrift/ausgangsschrift/druckschrift)、制式纸(lineatur/linienblatt)、贺卡谢卡(grußkarte/danksagung/weihnachtsmann)、法国学校体系(graphisme/lignage/seyès/maternelle)、手写(police manuscrite/carte manuscrite)等。
+
+注:Trends 相关查询是非官方接口且限流较狠(429 惩罚窗口可达小时级),脚本已带退避重试与 10 秒种子间隔;36 个种子整轮需数分钟,个别种子失败会告警跳过,不影响其余种子与其余 geo。
 
 ## 诚信红线(重要)
 
