@@ -56,7 +56,7 @@ export default async function HandwritingQuizPage({
     <main className="mx-auto max-w-6xl px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="rise mb-7">
-        <h1 className="font-hand text-4xl leading-none md:text-5xl">{c.title}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{c.title}</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">{c.intro}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>

@@ -40,7 +40,7 @@ export default async function DoctorHandwritingPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <header className="rise mb-7">
-        <h1 className="font-hand text-4xl leading-none md:text-5xl">{t("title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>

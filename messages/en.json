@@ -174,6 +174,10 @@
     "realism": "Realism",
     "reseed": "Shuffle strokes",
     "moreLikeHandwriting": "More like handwriting",
+    "sampleLatin": "Hello",
+    "sampleHan": "你好",
+    "sampleKana": "あい",
+    "sampleHangul": "안녕",
     "doctorMore": "Font, paper, and ink",
     "sectionPaper": "Paper",
     "paper": "Paper",
@@ -570,7 +574,8 @@
   },
   "tools": {
     "title": "All free handwriting tools",
-    "intro": "Everything on this site in one place — speak-to-handwriting, cursive, printable practice sheets, and a just-for-fun handwriting quiz. All free, no signup, and nothing you write leaves your browser."
+    "intro": "Everything on this site in one place — speak-to-handwriting, cursive, printable practice sheets, and a just-for-fun handwriting quiz. All free, no signup, and nothing you write leaves your browser.",
+    "sampleWord": "Hello"
   },
   "sheet": {
     "pageSize": "Page size",

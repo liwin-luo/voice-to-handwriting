@@ -92,29 +92,53 @@ export default function ToolWorkspace({
     return useEditorStore.persist.onFinishHydration(apply);
   }, [locale, preset]);
 
+  const bar = (
+    <div className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-4">
+      <div className="flex flex-wrap items-start gap-6">
+        <AudioImportPanel />
+        <button type="button" onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
+          <ClockCounterClockwise className="size-4 text-zinc-500" />
+          {tHistory("open")}
+        </button>
+      </div>
+      <ExportBar />
+    </div>
+  );
+
+  const drawer = historyOpen ? <HistoryDrawer onClose={() => setHistoryOpen(false)} /> : null;
+
+  if (layout === "doctor") {
+    return (
+      <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
+          <aside className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
+            <TranscriptEditor />
+            <RecorderPanel />
+            <StylePanel layout="doctor" />
+          </aside>
+          <PaperView />
+        </div>
+        {bar}
+        {drawer}
+      </div>
+    );
+  }
+
   return (
-    <div className="flex flex-col gap-5">
-      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[320px_auto]">
-        <aside className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
+    <div className="flex flex-col gap-5 lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start lg:gap-x-6">
+      {/* 窄屏 contents:字体和纸样跟在录音后,字号墨色排到纸和导出条后面。宽屏收成左栏 */}
+      <div className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-6rem)] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
+        <div className="order-1 flex flex-col gap-5 lg:order-none">
           <TranscriptEditor />
           <RecorderPanel />
-          <StylePanel layout={layout} />
-        </aside>
+        </div>
+        <StylePanel layout="write" />
+      </div>
+      <div className="order-2 min-w-0 lg:col-start-2 lg:row-start-1">
         <PaperView />
       </div>
-      {/* 宽屏粘住导出条;窄屏留在文档流里,避免盖住滑杆 */}
-      <div className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-4">
-        <div className="flex flex-wrap items-start gap-6">
-          <AudioImportPanel />
-          <button onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
-            <ClockCounterClockwise className="size-4 text-zinc-500" />
-            {tHistory("open")}
-          </button>
-        </div>
-        <ExportBar />
-      </div>
-      {/* 打开时才挂载:抽屉内部状态(persist 水合/两段确认)随挂载自然重置 */}
-      {historyOpen && <HistoryDrawer onClose={() => setHistoryOpen(false)} />}
+      <div className="order-3 lg:col-span-2 lg:row-start-2">{bar}</div>
+      {drawer}
     </div>
   );
 }

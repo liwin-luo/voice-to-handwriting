@@ -40,7 +40,7 @@ export default async function FaqPage({
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
       <header className="rise">
-        <h1 className="font-hand text-4xl leading-none">{tm("title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{tm("title")}</h1>
         <p className="mt-3 text-sm text-zinc-500">{tm("description")}</p>
       </header>
       <ToolFaq items={items} />

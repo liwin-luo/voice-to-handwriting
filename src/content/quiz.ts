@@ -46,7 +46,6 @@ export interface DimensionContent {
 
 export interface ProfileContent {
   name: string;
-  emoji: string;
   tagline: string;
   points: [string, string, string];
   growth: string;
@@ -145,7 +144,6 @@ const en: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "The Balanced Writer",
-      emoji: "⚖️",
       tagline: "No single trait runs the show — your hand adapts to the moment.",
       points: [
         "A flexible style suggests you match your writing to the situation — quick notes and careful cards alike.",
@@ -157,7 +155,6 @@ const en: QuizLocaleContent = {
     },
     bold: {
       name: "The Bold Expressive",
-      emoji: "🌟",
       tagline: "Big letters, open forms — your writing arrives before you do.",
       points: [
         "Large, rounded letters are read as warmth and confidence — for fun, at least.",
@@ -169,7 +166,6 @@ const en: QuizLocaleContent = {
     },
     planner: {
       name: "The Precision Planner",
-      emoji: "📐",
       tagline: "Upright, tidy, exact — your hand likes order.",
       points: [
         "Consistent size and straight baselines suggest a patient, detail-first approach.",
@@ -181,7 +177,6 @@ const en: QuizLocaleContent = {
     },
     spirit: {
       name: "The Free Spirit",
-      emoji: "🦋",
       tagline: "Your letters wander — and that's their charm.",
       points: [
         "A drifting baseline and open forms suggest you think while you write.",
@@ -193,7 +188,6 @@ const en: QuizLocaleContent = {
     },
     steady: {
       name: "The Quiet Steady",
-      emoji: "🌊",
       tagline: "Upright, even, unhurried — your writing keeps its cool.",
       points: [
         "Upright slant and moderate pressure are read as calm and dependable.",
@@ -205,7 +199,6 @@ const en: QuizLocaleContent = {
     },
     spark: {
       name: "The Quick Spark",
-      emoji: "⚡",
       tagline: "Fast, firm, forward-leaning — your hand is in a hurry.",
       points: [
         "Right slant and a brisk pace suggest momentum — you write to keep up with your thoughts.",
@@ -418,7 +411,6 @@ const zh: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "均衡书写者",
-      emoji: "⚖️",
       tagline: "没有单一特质主导——你的手会随场合调整。",
       points: [
         "灵活的风格说明你能匹配场景:速记和用心写的卡片都不在话下。",
@@ -429,7 +421,6 @@ const zh: QuizLocaleContent = {
     },
     bold: {
       name: "张扬表达者",
-      emoji: "🌟",
       tagline: "字大形开——字还没看清,气场先到。",
       points: [
         "大而圆润的字形常被解读为热情与自信——至少在趣味层面上。",
@@ -440,7 +431,6 @@ const zh: QuizLocaleContent = {
     },
     planner: {
       name: "精准规划者",
-      emoji: "📐",
       tagline: "直立、整洁、精确——你的手喜欢秩序。",
       points: [
         "稳定的字号和平直的基线,体现出耐心、细节优先的做事方式。",
@@ -451,7 +441,6 @@ const zh: QuizLocaleContent = {
     },
     spirit: {
       name: "自由灵魂",
-      emoji: "🦋",
       tagline: "你的字母会散步——这正是它们的魅力。",
       points: [
         "漂移的基线和开放的字形,说明你习惯边写边想。",
@@ -462,7 +451,6 @@ const zh: QuizLocaleContent = {
     },
     steady: {
       name: "沉稳可靠型",
-      emoji: "🌊",
       tagline: "直立、均匀、不慌不忙——你的字沉得住气。",
       points: [
         "直立的笔顺和适中的笔压,常被解读为冷静可靠。",
@@ -473,7 +461,6 @@ const zh: QuizLocaleContent = {
     },
     spark: {
       name: "急行火花",
-      emoji: "⚡",
       tagline: "快、实、向前倾——你的手总在赶路。",
       points: [
         "右倾的笔顺和轻快的节奏说明你有冲劲——写字是为了跟上思路。",
@@ -685,7 +672,6 @@ const ja: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "バランスライター",
-      emoji: "⚖️",
       tagline: "特定の特徴に偏らず、その場に合わせて手が動くタイプ。",
       points: [
         "柔軟なスタイルは、メモもカードも場面に合わせて書き分けられることを示します。",
@@ -696,7 +682,6 @@ const ja: QuizLocaleContent = {
     },
     bold: {
       name: "ボールド表現者",
-      emoji: "🌟",
       tagline: "大きな字、開いた形——文字より先に存在感が届く。",
       points: [
         "大きく丸みのある文字は、温かさと自信として読まれます——あくまで楽しみとして。",
@@ -707,7 +692,6 @@ const ja: QuizLocaleContent = {
     },
     planner: {
       name: "プレシジョンプランナー",
-      emoji: "📐",
       tagline: "まっすぐ、整えて、正確に——手が秩序を好むタイプ。",
       points: [
         "一貫したサイズとまっすぐなベースラインは、辛抱強く細部を重視する姿勢の表れ。",
@@ -718,7 +702,6 @@ const ja: QuizLocaleContent = {
     },
     spirit: {
       name: "フリースピリット",
-      emoji: "🦋",
       tagline: "文字はふらふら散歩気味——それが魅力。",
       points: [
         "ゆれるベースラインと開いた形は、書きながら考えているタイプの証拠。",
@@ -729,7 +712,6 @@ const ja: QuizLocaleContent = {
     },
     steady: {
       name: "クワイエットステディ",
-      emoji: "🌊",
       tagline: "まっすぐ、むらなく、慌てない——字も冷静さを保つタイプ。",
       points: [
         "直立した傾きと中程度の筆圧は、落ち着きと頼りやすさとして読まれます。",
@@ -740,7 +722,6 @@ const ja: QuizLocaleContent = {
     },
     spark: {
       name: "クイックスパーク",
-      emoji: "⚡",
       tagline: "速く、力強く、前のめり——手がいつも急いでいる。",
       points: [
         "右傾きと軽快なテンポは勢いの表れ。思考に追いつくために書いています。",
@@ -952,7 +933,6 @@ const ko: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "밸런스 라이터",
-      emoji: "⚖️",
       tagline: "한쪽으로 치우치지 않고, 상황에 맞춰 손이 움직이는 타입.",
       points: [
         "유연한 스타일은 메모든 카드든 상황에 맞게 써 내려간다는 뜻.",
@@ -963,7 +943,6 @@ const ko: QuizLocaleContent = {
     },
     bold: {
       name: "볼드 익스프레시브",
-      emoji: "🌟",
       tagline: "큰 글씨, 열린 꼴 — 글씨가 나보다 먼저 도착한다.",
       points: [
         "크고 둥근 글자는 따뜻함과 자신감으로 읽힙니다 — 어디까지나 재미로.",
@@ -974,7 +953,6 @@ const ko: QuizLocaleContent = {
     },
     planner: {
       name: "프레시전 플래너",
-      emoji: "📐",
       tagline: "똑바로, 가지런히, 정확하게 — 손이 질서를 좋아한다.",
       points: [
         "일관된 크기와 곧은 베이스라인은 인내심 있고 디테일 먼저 보는 성향을 암시합니다.",
@@ -985,7 +963,6 @@ const ko: QuizLocaleContent = {
     },
     spirit: {
       name: "프리 스피릿",
-      emoji: "🦋",
       tagline: "글자들이 여기저기 산책 — 그게 매력입니다.",
       points: [
         "흐트러진 베이스라인과 열린 꼴은 쓰면서 생각하는 타입의 증거.",
@@ -996,7 +973,6 @@ const ko: QuizLocaleContent = {
     },
     steady: {
       name: "콰이어트 스테디",
-      emoji: "🌊",
       tagline: "똑바로, 고르게, 서두르지 않게 — 글씨도 침착함을 유지한다.",
       points: [
         "곧은 기울기와 적당한 필압은 침착하고 믿음직스럽다고 읽힙니다.",
@@ -1007,7 +983,6 @@ const ko: QuizLocaleContent = {
     },
     spark: {
       name: "퀵 스파크",
-      emoji: "⚡",
       tagline: "빠르고, 굵고, 앞으로 기울어 — 손이 늘 급하다.",
       points: [
         "오른쪽 기울기와 경쾌한 속도는 추진력의 표시 — 생각을 따라잡으려 쓰는 중.",
@@ -1219,7 +1194,6 @@ const es: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "El Equilibrado",
-      emoji: "⚖️",
       tagline: "Ningún rasgo manda — tu mano se adapta al momento.",
       points: [
         "Un estilo flexible sugiere que adaptas la letra a la situación: notas rápidas y tarjetas cuidadas.",
@@ -1230,7 +1204,6 @@ const es: QuizLocaleContent = {
     },
     bold: {
       name: "El Expresivo Atrevido",
-      emoji: "🌟",
       tagline: "Letras grandes, formas abiertas — tu letra llega antes que tú.",
       points: [
         "Las letras grandes y redondeadas se leen como calidez y confianza — por diversión, al menos.",
@@ -1241,7 +1214,6 @@ const es: QuizLocaleContent = {
     },
     planner: {
       name: "El Planificador Preciso",
-      emoji: "📐",
       tagline: "Vertical, ordenado, exacto — tu mano gusta del orden.",
       points: [
         "Tamaño constante y líneas rectas sugieren paciencia y ojo para el detalle.",
@@ -1252,7 +1224,6 @@ const es: QuizLocaleContent = {
     },
     spirit: {
       name: "El Espíritu Libre",
-      emoji: "🦋",
       tagline: "Tus letras deambulan — y ahí está su encanto.",
       points: [
         "Una línea que sube y baja y formas abiertas sugieren que piensas mientras escribes.",
@@ -1263,7 +1234,6 @@ const es: QuizLocaleContent = {
     },
     steady: {
       name: "El Sereno Constante",
-      emoji: "🌊",
       tagline: "Vertical, parejo, sin prisa — tu letra mantiene la calma.",
       points: [
         "Trazo vertical y presión moderada se leen como calma y fiabilidad.",
@@ -1274,7 +1244,6 @@ const es: QuizLocaleContent = {
     },
     spark: {
       name: "La Chispa Veloz",
-      emoji: "⚡",
       tagline: "Rápida, firme, inclinada hacia adelante — tu mano tiene prisa.",
       points: [
         "Inclinación a la derecha y buen ritmo sugieren impulso — escribes para alcanzar tus ideas.",
@@ -1486,7 +1455,6 @@ const de: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "Der Ausbalancierte Schreiber",
-      emoji: "⚖️",
       tagline: "Kein Zug führt das Regiment — deine Hand passt sich dem Moment an.",
       points: [
         "Ein flexibler Stil deutet darauf hin, dass du die Schrift der Lage anpasst — flotte Notizen wie sorgfältige Karten.",
@@ -1497,7 +1465,6 @@ const de: QuizLocaleContent = {
     },
     bold: {
       name: "Der Kühne Ausdrucksstarke",
-      emoji: "🌟",
       tagline: "Große Buchstaben, offene Formen — deine Schrift kommt vor dir an.",
       points: [
         "Große, runde Buchstaben werden als Wärme und Selbstbewusstsein gelesen — zumindest zum Spaß.",
@@ -1508,7 +1475,6 @@ const de: QuizLocaleContent = {
     },
     planner: {
       name: "Der Präzise Planer",
-      emoji: "📐",
       tagline: "Aufrecht, ordentlich, exakt — deine Hand mag Ordnung.",
       points: [
         "Konstante Größe und gerade Grundlinien deuten auf Geduld und Blicks fürs Detail.",
@@ -1519,7 +1485,6 @@ const de: QuizLocaleContent = {
     },
     spirit: {
       name: "Der Freie Geist",
-      emoji: "🦋",
       tagline: "Deine Buchstaben wandern — das ist ihr Charme.",
       points: [
         "Eine wandernde Grundlinie und offene Formen deuten darauf hin, dass du beim Schreiben denkst.",
@@ -1530,7 +1495,6 @@ const de: QuizLocaleContent = {
     },
     steady: {
       name: "Der Ruhige Stetige",
-      emoji: "🌊",
       tagline: "Aufrecht, gleichmäßig, ohne Eile — deine Schrift bewahrt Ruhe.",
       points: [
         "Aufrechte Neigung und mäßiger Druck werden als ruhig und verlässlich gelesen.",
@@ -1541,7 +1505,6 @@ const de: QuizLocaleContent = {
     },
     spark: {
       name: "Der Flinke Funke",
-      emoji: "⚡",
       tagline: "Schnell, kräftig, nach vorn geneigt — deine Hand hat es eilig.",
       points: [
         "Rechtsneigung und flottes Tempo deuten auf Schwung — du schreibst, um mit deinen Gedanken Schritt zu halten.",
@@ -1753,7 +1716,6 @@ const fr: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "L'Équilibré",
-      emoji: "⚖️",
       tagline: "Aucun trait ne domine — votre main s'adapte au moment.",
       points: [
         "Un style flexible suggère que vous ajustez l'écriture à la situation — notes rapides comme cartes soignées.",
@@ -1764,7 +1726,6 @@ const fr: QuizLocaleContent = {
     },
     bold: {
       name: "L'Expressif Assumé",
-      emoji: "🌟",
       tagline: "Grandes lettres, formes ouvertes — votre écriture arrive avant vous.",
       points: [
         "Les lettres grandes et rondes sont lues comme chaleur et confiance — pour le fun, tout du moins.",
@@ -1775,7 +1736,6 @@ const fr: QuizLocaleContent = {
     },
     planner: {
       name: "Le Planificateur de Précision",
-      emoji: "📐",
       tagline: "Droit, net, exact — votre main aime l'ordre.",
       points: [
         "Taille constante et lignes de base droites suggèrent patience et souci du détail.",
@@ -1786,7 +1746,6 @@ const fr: QuizLocaleContent = {
     },
     spirit: {
       name: "L'Esprit Libre",
-      emoji: "🦋",
       tagline: "Vos lettres vagabondent — et c'est tout leur charme.",
       points: [
         "Une ligne de base qui ondule et des formes ouvertes suggèrent que vous pensez en écrivant.",
@@ -1797,7 +1756,6 @@ const fr: QuizLocaleContent = {
     },
     steady: {
       name: "Le Serein Constant",
-      emoji: "🌊",
       tagline: "Droit, régulier, sans hâte — votre écriture garde son calme.",
       points: [
         "Une inclinaison verticale et une pression modérée se lisent comme calme et fiabilité.",
@@ -1808,7 +1766,6 @@ const fr: QuizLocaleContent = {
     },
     spark: {
       name: "L'Étincelle Vive",
-      emoji: "⚡",
       tagline: "Rapide, appuyée, penchée en avant — votre main est pressée.",
       points: [
         "Inclinaison à droite et rythme soutenu suggèrent l'élan — vous écrivez pour suivre vos pensées.",
@@ -2020,7 +1977,6 @@ const pt: QuizLocaleContent = {
   profiles: {
     balanced: {
       name: "O Equilibrado",
-      emoji: "⚖️",
       tagline: "Nenhum traço manda sozinho — sua mão se adapta ao momento.",
       points: [
         "Um estilo flexível sugere que você ajusta a letra à situação — recados rápidos e cartões caprichados.",
@@ -2031,7 +1987,6 @@ const pt: QuizLocaleContent = {
     },
     bold: {
       name: "O Expressivo Ousado",
-      emoji: "🌟",
       tagline: "Letras grandes, formas abertas — sua letra chega antes de você.",
       points: [
         "Letras grandes e redondas são lidas como calor e confiança — por diversão, ao menos.",
@@ -2042,7 +1997,6 @@ const pt: QuizLocaleContent = {
     },
     planner: {
       name: "O Planejador Preciso",
-      emoji: "📐",
       tagline: "Vertical, arrumada, exata — sua mão gosta de ordem.",
       points: [
         "Tamanho constante e linhas retas sugerem paciência e olho no detalhe.",
@@ -2053,7 +2007,6 @@ const pt: QuizLocaleContent = {
     },
     spirit: {
       name: "O Espírito Livre",
-      emoji: "🦋",
       tagline: "Suas letras passeiam — e esse é o charme delas.",
       points: [
         "Uma linha de base que sobe e desce e formas abertas sugerem que você pensa enquanto escreve.",
@@ -2064,7 +2017,6 @@ const pt: QuizLocaleContent = {
     },
     steady: {
       name: "O Sereno Constante",
-      emoji: "🌊",
       tagline: "Vertical, uniforme, sem pressa — sua letra mantém a calma.",
       points: [
         "Inclinação neutra e pressão moderada são lidas como calma e confiabilidade.",
@@ -2075,7 +2027,6 @@ const pt: QuizLocaleContent = {
     },
     spark: {
       name: "A Faísca Acelerada",
-      emoji: "⚡",
       tagline: "Rápida, firme, inclinada para frente — sua mão tem pressa.",
       points: [
         "Inclinação à direita e ritmo cadenciado sugerem ímpeto — você escreve para acompanhar o pensamento.",

@@ -13,7 +13,7 @@ test.describe("英文版", () => {
     await expect(page.getByRole("heading", { name: "Is handwriting analysis real?" })).toBeVisible();
     await expect(page.getByText(/For fun only/i).first()).toBeVisible();
 
-    await page.getByRole("button", { name: "Start the quiz" }).click();
+    await expect(page.getByText("Question 1 of 12").first()).toBeVisible();
 
     // 视觉题:样张按钮 + 文字标签;自述题:纯文字按钮。一律点第一个选项走完全程
     for (let i = 0; i < 12; i++) {
@@ -29,14 +29,13 @@ test.describe("英文版", () => {
       page.getByRole("main").getByRole("link").filter({ hasText: /practice|generator|paper|Word Work/i }).first(),
     ).toBeVisible();
 
-    // 重测:回到封面
+    // 重测:回到第一题
     await page.getByRole("button", { name: "Retake the quiz" }).click();
-    await expect(page.getByRole("button", { name: "Start the quiz" })).toBeVisible();
+    await expect(page.getByText("Question 1 of 12").first()).toBeVisible();
   });
 
   test("quiz 回退按钮可回到上一题", async ({ page }) => {
     await page.goto("/handwriting-personality-quiz");
-    await page.getByRole("button", { name: "Start the quiz" }).click();
     await expect(page.getByText("Question 1 of 12").first()).toBeVisible();
     await page.getByTestId("quiz-option").first().click();
     await expect(page.getByText("Question 2 of 12").first()).toBeVisible();
@@ -52,7 +51,6 @@ test.describe("中文版", () => {
     await page.goto("/zh/handwriting-personality-quiz");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("手写性格测试");
     await expect(page.getByText("笔迹分析是科学的吗?")).toBeVisible();
-    await page.getByRole("button", { name: "开始测试" }).click();
     await expect(page.getByTestId("quiz-option").first()).toBeVisible();
   });
 });

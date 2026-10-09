@@ -42,7 +42,7 @@ export default async function CursiveAlphabetPage({
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <header className="rise mb-7 max-w-3xl">
-        <h1 className="font-hand text-4xl leading-none md:text-5xl">{ALPHABET_PAGE.h1}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{ALPHABET_PAGE.h1}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{ALPHABET_PAGE.intro}</p>
       </header>
       <figure className="rise mb-8 max-w-md">

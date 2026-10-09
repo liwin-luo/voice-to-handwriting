@@ -8,13 +8,32 @@ import { fileToPaperImage } from "@/lib/paperImage";
 import { fontOrder } from "@/lib/localeDefaults";
 import PageFormatToggle from "./PageFormatToggle";
 
+const LATIN_FONT = new Set([
+  "caveat",
+  "patrickhand",
+  "kalam",
+  "indieflower",
+  "dancingscript",
+  "cedarvillecursive",
+  "sacramento",
+]);
+
 export default function StylePanel({ layout = "write" }: { layout?: "write" | "doctor" }) {
   const t = useTranslations("tool");
+  const tSheet = useTranslations("sheet");
   const locale = useLocale();
   const s = useEditorStore();
   const fonts = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
   const isCustomPaper = s.paperId === "custom";
   const [uploading, setUploading] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+
+  const specimen = (id: string) => {
+    if (LATIN_FONT.has(id)) return t("sampleLatin");
+    if (id === "kleeone") return t("sampleKana");
+    if (id === "nanumpenscript") return t("sampleHangul");
+    return t("sampleHan");
+  };
 
   const onImageChange = async (file: File | undefined) => {
     if (!file) return;
@@ -26,58 +45,82 @@ export default function StylePanel({ layout = "write" }: { layout?: "write" | "d
     }
   };
 
-  const fontFields = (
-    <>
-        <h2 className="field-label">{t("sectionHandwriting")}</h2>
-        <label className="flex flex-col gap-1.5">
-          <span className="text-zinc-700">{t("font")}</span>
-          <select
-            value={s.fontId}
-            onChange={(e) => s.setFontId(e.target.value as typeof s.fontId)}
-            className="select-field"
+  const fontSpecimens = (
+    <div className="flex flex-col gap-1.5">
+      <h2 className="field-label">{t("sectionHandwriting")}</h2>
+      <span className="text-zinc-700">{t("font")}</span>
+      <div className="grid grid-cols-3 gap-1.5">
+        {fonts.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            aria-pressed={s.fontId === f.id}
+            aria-label={t(`fonts.${f.id}`)}
+            onClick={() => s.setFontId(f.id)}
+            className={`cursor-pointer truncate rounded-lg border px-1 py-2.5 text-lg leading-none ${
+              s.fontId === f.id
+                ? "border-accent bg-accent/5 text-accent"
+                : "border-zinc-200 bg-white text-zinc-800 hover:border-zinc-300"
+            }`}
+            style={{ fontFamily: f.css }}
           >
-            {fonts.map((f) => (
-              <option key={f.id} value={f.id}>
-                {t(`fonts.${f.id}`)}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="flex flex-col gap-1.5">
-          <span className="flex justify-between text-zinc-700">
-            {t("fontSize")} <span className="font-mono text-xs text-zinc-400">{s.fontSize}px</span>
-          </span>
-          <input
-            type="range"
-            min={20}
-            max={56}
-            value={s.fontSize}
-            onChange={(e) => s.setFontSize(Number(e.target.value))}
-            className="accent-accent"
-          />
-        </label>
-    </>
+            {specimen(f.id)}
+          </button>
+        ))}
+      </div>
+    </div>
   );
 
-  const paperFields = (
+  const fontSize = (
+    <label className="flex flex-col gap-1.5">
+      <span className="flex justify-between text-zinc-700">
+        {t("fontSize")} <span className="font-mono text-xs text-zinc-400">{s.fontSize}px</span>
+      </span>
+      <input
+        type="range"
+        min={20}
+        max={56}
+        value={s.fontSize}
+        onChange={(e) => s.setFontSize(Number(e.target.value))}
+        className="accent-accent"
+      />
+    </label>
+  );
+
+  const paperChoice = (
     <>
         <h2 className="field-label">{t("sectionPaper")}</h2>
         <PageFormatToggle value={s.pageFormat} onChange={s.setPageFormat} />
-        <label className="flex flex-col gap-1.5">
+        <div className="flex flex-col gap-1.5">
           <span className="text-zinc-700">{t("paper")}</span>
-          <select
-            value={s.paperId}
-            onChange={(e) => s.setPaperId(e.target.value)}
-            className="select-field"
-          >
+          <div className="grid grid-cols-3 gap-1.5">
             {PAPERS.map((p) => (
-              <option key={p.id} value={p.id}>
-                {t(`papers.${p.id}`)}
-              </option>
+              <button
+                key={p.id}
+                type="button"
+                aria-pressed={s.paperId === p.id}
+                aria-label={t(`papers.${p.id}`)}
+                onClick={() => s.setPaperId(p.id)}
+                className={`h-14 cursor-pointer overflow-hidden rounded-lg border ${
+                  s.paperId === p.id ? "border-accent ring-2 ring-accent" : "border-zinc-200 hover:border-zinc-300"
+                }`}
+                style={{ background: p.background }}
+              />
             ))}
-            <option value="custom">{t("papers.custom")}</option>
-          </select>
-        </label>
+          </div>
+          <button
+            type="button"
+            aria-pressed={isCustomPaper}
+            onClick={() => s.setPaperId("custom")}
+            className={`cursor-pointer rounded-lg border px-2 py-1.5 text-xs ${
+              isCustomPaper
+                ? "border-accent bg-accent/5 text-accent"
+                : "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300"
+            }`}
+          >
+            {t("papers.custom")}
+          </button>
+        </div>
           {isCustomPaper && (
           <div className="mt-1 flex flex-col gap-3 rounded-lg border border-zinc-200 bg-zinc-50 p-3">
             <span className="field-label">{t("paperCustom.style")}</span>
@@ -166,6 +209,10 @@ export default function StylePanel({ layout = "write" }: { layout?: "write" | "d
             </div>
           </div>
         )}
+    </>
+  );
+
+  const inkPicker = (
       <div className="flex flex-col gap-1.5">
           <span className="text-zinc-700">{t("ink")}</span>
           <div className="flex gap-2.5 pt-0.5">
@@ -211,7 +258,6 @@ export default function StylePanel({ layout = "write" }: { layout?: "write" | "d
             </label>
           </div>
         </div>
-    </>
   );
 
   const realism = (
@@ -232,49 +278,91 @@ export default function StylePanel({ layout = "write" }: { layout?: "write" | "d
         </label>
   );
 
+  const reseed = (
+    <button type="button" onClick={s.reseed} className="btn btn-ghost self-start px-3.5 py-2 text-[13px]">
+      <ArrowsClockwise className="size-3.5 text-zinc-500" />
+      {t("reseed")}
+    </button>
+  );
+
+  const watermark = (
+    <div className="flex items-center justify-between pt-1">
+      <span className="text-zinc-700">{t("watermark")}</span>
+      <button
+        type="button"
+        role="switch"
+        aria-checked={s.watermark}
+        aria-label={t("watermark")}
+        onClick={() => s.setWatermark(!s.watermark)}
+        className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+          s.watermark ? "bg-accent" : "bg-zinc-300"
+        }`}
+      >
+        <span
+          className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+            s.watermark ? "translate-x-5" : ""
+          }`}
+        />
+      </button>
+    </div>
+  );
+
+  if (layout === "doctor") {
+    return (
+      <section className="flex flex-col gap-4 text-sm">
+        {realism}
+        <details className="border-t border-zinc-200">
+          <summary className="cursor-pointer py-3 text-sm font-medium text-zinc-700">
+            {t("doctorMore")}
+          </summary>
+          {/* 直接子元素不能带 display 类,否则会盖过浏览器对收起 details 的隐藏 */}
+          <div>
+          <div className="flex flex-col gap-4 py-4">
+            {fontSpecimens}
+            {fontSize}
+            {reseed}
+            {paperChoice}
+            {inkPicker}
+            {watermark}
+          </div>
+          </div>
+        </details>
+      </section>
+    );
+  }
+
   return (
-    <section className="flex flex-col text-sm">
-      {layout === "write" && (
-        <div className="flex flex-col gap-4 pb-5">{fontFields}</div>
-      )}
-      {layout === "doctor" && (
-        <div className="flex flex-col gap-4 pb-4">{realism}</div>
-      )}
-      <details className="border-t border-zinc-200">
-        <summary className="cursor-pointer py-3 text-sm font-medium text-zinc-700">
-          {layout === "doctor" ? t("doctorMore") : t("moreLikeHandwriting")}
-        </summary>
-        <div className="flex flex-col gap-4 py-4">
-          {layout === "doctor" && fontFields}
-          {layout === "write" && realism}
-        <button onClick={s.reseed} className="btn btn-ghost self-start px-3.5 py-2 text-[13px]">
-          <ArrowsClockwise className="size-3.5 text-zinc-500" />
-          {t("reseed")}
+    <>
+      <div className="order-1 flex flex-col gap-4 lg:order-none">
+        {fontSpecimens}
+        {paperChoice}
+      </div>
+      <div className="order-4 flex flex-col gap-4 border-t border-zinc-200 pt-4 lg:order-none">
+        <button
+          type="button"
+          className="btn btn-ghost w-full px-4 py-2.5 text-sm lg:hidden"
+          aria-expanded={moreOpen}
+          onClick={() => setMoreOpen((open) => !open)}
+        >
+          {tSheet("moreSettings")}
         </button>
-          {layout === "doctor" && paperFields}
-        <div className="flex items-center justify-between pt-1">
-          <span className="text-zinc-700">{t("watermark")}</span>
-          <button
-            role="switch"
-            aria-checked={s.watermark}
-            aria-label={t("watermark")}
-            onClick={() => s.setWatermark(!s.watermark)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              s.watermark ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                s.watermark ? "translate-x-5" : ""
-              }`}
-            />
-          </button>
+        <div className={`${moreOpen ? "flex" : "hidden lg:flex"} flex-col gap-4`}>
+          {fontSize}
+          {inkPicker}
+          <details className="border-t border-zinc-200">
+            <summary className="cursor-pointer py-3 text-sm font-medium text-zinc-700">
+              {t("moreLikeHandwriting")}
+            </summary>
+            <div>
+            <div className="flex flex-col gap-4 py-4">
+              {realism}
+              {reseed}
+              {watermark}
+            </div>
+            </div>
+          </details>
         </div>
-        </div>
-      </details>
-      {layout === "write" && (
-        <div className="flex flex-col gap-4 border-t border-zinc-200 py-5">{paperFields}</div>
-      )}
-    </section>
+      </div>
+    </>
   );
 }

@@ -48,7 +48,7 @@ export default async function HomePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <header className="rise mb-7 flex flex-col gap-3">
-        <h1 className="font-hand text-4xl leading-none md:text-5xl">{t("h1")}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("h1")}</h1>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <p className="text-[15px] text-zinc-600">{t("tagline")}</p>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2.5 py-1 text-xs text-zinc-500">

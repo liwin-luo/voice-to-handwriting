@@ -174,6 +174,10 @@
     "realism": "仿真度",
     "reseed": "换一种笔迹",
     "moreLikeHandwriting": "更像手写",
+    "sampleLatin": "Hello",
+    "sampleHan": "你好",
+    "sampleKana": "あい",
+    "sampleHangul": "안녕",
     "doctorMore": "字体、纸张和墨水",
     "sectionPaper": "纸面",
     "paper": "纸张",
@@ -570,7 +574,8 @@
   },
   "tools": {
     "title": "全部免费手写工具",
-    "intro": "本站所有工具一站直达:语音转手写、花体字、各类可打印练习纸,以及趣味笔迹测验。全部免费、无需注册,你写的内容不会离开浏览器。"
+    "intro": "本站所有工具一站直达:语音转手写、花体字、各类可打印练习纸,以及趣味笔迹测验。全部免费、无需注册,你写的内容不会离开浏览器。",
+    "sampleWord": "你好"
   },
   "sheet": {
     "pageSize": "纸张尺寸",

@@ -46,7 +46,7 @@ export default async function CursiveFontGeneratorPage({
         entry.stylesheet ? <link key={entry.stylesheet} rel="stylesheet" href={entry.stylesheet} /> : [],
       )}
       <header className="rise mb-7 max-w-3xl">
-        <h1 className="font-hand text-4xl leading-none md:text-5xl">{t("title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise max-w-3xl" style={{ animationDelay: "80ms" }}>

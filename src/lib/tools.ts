@@ -43,6 +43,13 @@ export function isEnOnlyTool(href: string): boolean {
   return TOOL_GROUPS.some((g) => g.tools.some((t) => t.enOnly && t.href === href));
 }
 
+/** /tools 每组的大卡。必须是该组 tools 里的 href。页头下拉不使用。 */
+export const FEATURED_HREF: Record<string, string> = {
+  groupWrite: "/",
+  groupPractice: "/name-tracing",
+  groupFun: "/handwriting-personality-quiz",
+};
+
 export const TOOL_GROUPS: ToolGroup[] = [
   {
     labelKey: "groupWrite",

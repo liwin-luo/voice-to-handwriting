@@ -17,6 +17,15 @@ const PROFILE_FONT: Record<ProfileId, FontId> = {
   spark: "dancingscript",
 };
 
+const PROFILE_STACK: Record<ProfileId, SampleStyle["font"]> = {
+  balanced: "print",
+  bold: "messy",
+  planner: "neat",
+  spirit: "caveat",
+  steady: "everyday",
+  spark: "fancy",
+};
+
 /** 样张字体栈:全部为站内自托管 OFL 字体(layout 全局注入),系统字体兜底保证可读 */
 const FONT_STACKS: Record<SampleStyle["font"], string> = {
   print: `"Patrick Hand", "Comic Sans MS", cursive`,
@@ -44,11 +53,11 @@ function sampleCss(s: SampleStyle): CSSProperties {
 
 const LEVEL_WIDTH: Record<string, string> = { low: "33%", mid: "66%", high: "100%" };
 
-/** 分步向导:-1 为封面,0..n-1 为题目,n 为结果页。纯本地状态,无上传无存储。 */
+/** 分步向导:0..n-1 为题目,n 为结果页。打开即第一题。纯本地状态,无上传无存储。 */
 export default function HandwritingQuiz({ locale }: { locale: Locale }) {
   const c = QUIZ_CONTENT[locale];
   const total = c.questions.length;
-  const [step, setStep] = useState(-1);
+  const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<number[]>([]);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -61,8 +70,13 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
   );
   const profile = result ? c.profiles[result.profile] : null;
 
-  // 步进时把焦点移到题干,键盘与读屏用户不掉线;aria-live 同时播报进度
+  const stepped = useRef(false);
+  // 换题时把焦点移到题干。首屏不要抢焦点,否则一打开就把标题滚出视口。
   useEffect(() => {
+    if (!stepped.current) {
+      stepped.current = true;
+      return;
+    }
     if (step >= 0 && step < total) headingRef.current?.focus();
   }, [step, total]);
 
@@ -91,7 +105,7 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
 
   function retake() {
     setAnswers([]);
-    setStep(-1);
+    setStep(0);
   }
 
   return (
@@ -103,15 +117,6 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
             ? formatProgress(c.progress, step + 1, total)
             : ""}
       </p>
-
-      {step === -1 && (
-        <div className="rise rounded-3xl border border-zinc-200 bg-white p-6 text-center md:p-10">
-          <button onClick={() => setStep(0)} className="btn btn-primary px-6 py-3 text-base">
-            {c.start}
-          </button>
-          <p className="mt-4 text-xs text-zinc-400">{c.disclaimer}</p>
-        </div>
-      )}
 
       {step >= 0 && !done && (
         <div className="rounded-3xl border border-zinc-200 bg-white p-5 md:p-8">
@@ -173,15 +178,13 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
             className="rounded-3xl border border-zinc-200 bg-white p-6 md:p-8"
           >
             <h3 className="text-sm font-medium text-zinc-400">{c.resultHeading}</h3>
-            <div className="mt-3 flex items-center gap-4">
-              <span aria-hidden className="text-5xl leading-none">
-                {profile.emoji}
-              </span>
-              <div>
-                <p className="font-hand text-3xl text-zinc-900">{profile.name}</p>
-                <p className="mt-1 text-sm text-zinc-500">{profile.tagline}</p>
-              </div>
-            </div>
+            <p
+              className="mt-3 text-4xl leading-tight text-zinc-900 md:text-5xl"
+              style={{ fontFamily: FONT_STACKS[PROFILE_STACK[result.profile]] }}
+            >
+              {profile.name}
+            </p>
+            <p className="mt-2 text-sm text-zinc-500">{profile.tagline}</p>
             <ul className="mt-6 space-y-3">
               {result.dimensions.map((d) => {
                 const dim = c.dimensions[d.id];

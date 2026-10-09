@@ -54,7 +54,7 @@ export default async function PaperKindPage({
             {t("title")}
           </Link>
         </p>
-        <h1 className="font-hand text-4xl leading-none md:text-5xl">{copy.h1}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{copy.h1}</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>

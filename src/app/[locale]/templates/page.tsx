@@ -39,7 +39,7 @@ export default async function TemplatesIndex({
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
       <header className="rise">
-        <h1 className="font-hand text-4xl leading-none">{t("libraryTitle")}</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("libraryTitle")}</h1>
         <p className="mt-3 text-sm text-zinc-500">{t("tagline")}</p>
       </header>
       <div className="rise mt-9" style={{ animationDelay: "60ms" }}>

@@ -174,6 +174,10 @@
     "realism": "리얼리즘",
     "reseed": "필적 바꾸기",
     "moreLikeHandwriting": "더 손글씨처럼",
+    "sampleLatin": "Hello",
+    "sampleHan": "你好",
+    "sampleKana": "あい",
+    "sampleHangul": "안녕",
     "doctorMore": "글꼴, 종이, 잉크",
     "sectionPaper": "용지",
     "paper": "용지",
@@ -570,7 +574,8 @@
   },
   "tools": {
     "title": "모든 무료 손글씨 도구",
-    "intro": "이 사이트의 모든 도구를 한곳에: 음성→손글씨, 필기체, 인쇄용 연습지, 그리고 재미로 보는 글씨 퀴즈. 모두 무료, 가입 없이, 쓴 내용은 브라우저 밖으로 나가지 않아요."
+    "intro": "이 사이트의 모든 도구를 한곳에: 음성→손글씨, 필기체, 인쇄용 연습지, 그리고 재미로 보는 글씨 퀴즈. 모두 무료, 가입 없이, 쓴 내용은 브라우저 밖으로 나가지 않아요.",
+    "sampleWord": "안녕하세요"
   },
   "sheet": {
     "pageSize": "용지 크기",

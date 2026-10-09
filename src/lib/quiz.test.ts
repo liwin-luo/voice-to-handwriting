@@ -118,7 +118,6 @@ describe("内容完整性(8 语言)", () => {
       for (const id of ids) {
         const p = QUIZ_CONTENT[locale].profiles[id];
         expect(p.name.length, `${locale}:${id}`).toBeGreaterThan(0);
-        expect(p.emoji.length).toBeGreaterThan(0);
         expect(p.points).toHaveLength(3);
         expect(p.growth.length).toBeGreaterThan(0);
       }

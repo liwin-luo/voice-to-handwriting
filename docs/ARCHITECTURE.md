@@ -93,7 +93,8 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 | 路由 | 内容 | 核心组件 / 数据 |
 |---|---|---|
-| `/` | 主工作台。`?font=` 套用字体(测验结果回跳);仿真度、重排笔迹、水印收在「更像手写」 | `ToolWorkspace`(无 preset)+ `StylePanel` + `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
+| `/` | 主工作台。字体和纸是样本按钮,不是下拉。窄屏顺序:文字、录音、字体纸样、纸、导出,字号和墨色在「更多」。宽屏左栏全开、右栏纸、底条占满下一行。`?font=` 套用字体(测验结果回跳);仿真度、重排笔迹、水印收在「更像手写」 | `ToolWorkspace`(无 preset)+ `StylePanel` + `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
+| `/tools` | 工具柜。Logo 落点。每组一张带纸样的主卡(写一张→`/`,练习纸→`/name-tracing`,趣味→测验),其余是名单。页头下拉仍用 `navGroupsFor`,不跟这三张主卡走 | `ToolLane`,`FEATURED_HREF`,`toolGroupsFor` |
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
 | `/cursive-text-generator` | 可复制花体文本(Unicode 十三风格,含现成字母表和短语)。复制是主按钮,麦克风是次按钮;预览和 PNG 可改墨色与纸底 | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
@@ -108,7 +109,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
 | `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画。墨色改示例和封面标题,描红同色变浅,纸底可改 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
-| `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。结果页主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
+| `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。打开即第一题的三张笔迹。结果卡用该档案的手写字体写档案名,无 emoji。主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
 | `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
 | `/word-work` | 拼写练习。主按钮是 Dolch 与 Fry 前 25,Fry 前 100 在「更多词表」;选中的列表保持按下。墨色改单词,描红同色变浅,纸底可改 | `WordWorkGenerator`,`spellingLists.ts`,`WORDWORK_FAQS` |
 | `/writing-practice` | CJK 练字表(田字格/原稿纸)。墨色改范字,描红用同色变浅,纸底可改 | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { navGroupsFor, toolGroupsFor } from "./tools";
+import { FEATURED_HREF, navGroupsFor, toolGroupsFor } from "./tools";
 
 const NAV_HREFS = [
   "/",
@@ -26,5 +26,14 @@ describe("navGroupsFor", () => {
     expect(hrefs("zh", false)).toContain("/handwriting-page-calculator");
     expect(hrefs("zh", false)).not.toContain("/letter-tracing");
     expect(hrefs("en", false)).toContain("/letter-tracing");
+  });
+
+  it("每组的主入口都在该组、且中英都在", () => {
+    for (const locale of ["en", "zh"]) {
+      for (const group of toolGroupsFor(locale)) {
+        const featured = FEATURED_HREF[group.labelKey];
+        expect(group.tools.some((t) => t.href === featured)).toBe(true);
+      }
+    }
   });
 });
