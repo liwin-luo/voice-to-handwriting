@@ -5,6 +5,7 @@ import {
   getLetterPage,
   getLetterUi,
   letterPracticeWords,
+  letterQueryTitle,
   lettersForLocale,
 } from "@/content/cursiveLetters";
 
@@ -95,6 +96,14 @@ describe("cursiveLetters:解析与 EN-only 边界", () => {
     for (const locale of routing.locales.filter((x) => x !== "en")) {
       expect(lettersForLocale(locale as Locale)).toHaveLength(0);
       expect(getLetterUi(locale as Locale)).toBeUndefined();
+    }
+  });
+
+  it("标题用搜索句式:小写 Z in Cursive,大写加 Capital", () => {
+    for (const l of CURSIVE_LETTERS) {
+      const title = letterQueryTitle(l);
+      if (l.form === "lowercase") expect(title).toBe(`${l.letter.toUpperCase()} in Cursive: How to Write It`);
+      else expect(title).toBe(`Capital ${l.letter} in Cursive: How to Write It`);
     }
   });
 

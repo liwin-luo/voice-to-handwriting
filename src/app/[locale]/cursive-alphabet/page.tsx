@@ -7,7 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import CursiveAlphabetPanel from "@/components/CursiveAlphabetPanel";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
-import { ALPHABET_PAGE } from "@/content/cursiveAlphabet";
+import { ALPHABET_PAGE, ALPHABET_UI } from "@/content/cursiveAlphabet";
 import { buildAlternates } from "@/lib/seo";
 
 /** 交互式连笔字母表(Phase 0 仅 en:其他语言 404,sitemap 只输出 en 变体;
@@ -45,6 +45,22 @@ export default async function CursiveAlphabetPage({
         <h1 className="font-hand text-4xl leading-none md:text-5xl">{ALPHABET_PAGE.h1}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{ALPHABET_PAGE.intro}</p>
       </header>
+      <figure className="rise mb-8 max-w-md">
+        {/* 静态文件不走 i18n Link,避免被加上语言前缀 */}
+        <img
+          src="/printables/cursive-alphabet.png"
+          alt={ALPHABET_UI.staticAlt}
+          width={816}
+          height={1056}
+          className="h-auto w-full rounded-2xl border border-zinc-200 bg-white"
+        />
+        <figcaption className="mt-3 text-sm leading-relaxed text-zinc-600">
+          <a href="/printables/cursive-alphabet.pdf" className="text-accent underline-offset-2 hover:underline">
+            {ALPHABET_UI.staticPdf}
+          </a>
+          . {ALPHABET_UI.staticNote}
+        </figcaption>
+      </figure>
       <div className="rise max-w-3xl" style={{ animationDelay: "80ms" }}>
         <CursiveAlphabetPanel />
       </div>

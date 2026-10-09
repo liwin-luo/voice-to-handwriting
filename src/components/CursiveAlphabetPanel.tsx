@@ -3,22 +3,16 @@ import { useEffect, useRef, useState } from "react";
 import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
-import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
+import { glyphGuideData } from "@/lib/glyphGuides";
 import { waitForFontFace } from "@/lib/fontFace";
 import { PAGE_FORMATS } from "@/lib/localeDefaults";
-import { chartGrid } from "@/lib/alphabetChart";
-import { ALPHABET, ALPHABET_FONTS, ALPHABET_UI } from "@/content/cursiveAlphabet";
+import { LETTER_STRIP, paintChart, paintLetterStrip, paintTrace } from "@/lib/alphabetSheet.mjs";
+import { ALPHABET, ALPHABET_FONTS, ALPHABET_UI, alphabetIndex } from "@/content/cursiveAlphabet";
 import { Link } from "@/i18n/navigation";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
 }
-
-// 字母练习条:两条三线格(上实字示例、下虚线描红),与描红生成器同一套视觉参数
-const SHEET_W = 680;
-const BAND_H = 175;
-const SHEET_H = 14 + BAND_H * 2 + 12;
-const INK = "#1a1a1a";
 
 /** 交互式连笔字母表(en-only 页面,文案来自 cursiveAlphabet 内容模块) */
 export default function CursiveAlphabetPanel() {
@@ -31,6 +25,11 @@ export default function CursiveAlphabetPanel() {
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
   const fontMeta = ALPHABET_FONTS.find((f) => f.id === fontId) ?? ALPHABET_FONTS[0];
+
+  useEffect(() => {
+    const letter = new URLSearchParams(window.location.search).get("letter");
+    if (letter) setSelected(alphabetIndex(letter));
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -47,104 +46,32 @@ export default function CursiveAlphabetPanel() {
   }, [family, guides, selected]);
 
   const pair = entry.capital + entry.lower;
+  const guide = glyphGuideData(fontId);
 
-  /** 单字母练习条:上带实字示例,下带虚线描红;两条都画笔顺指引 */
   function drawSheet(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, SHEET_W, SHEET_H);
-    const fontSize = Math.round(BAND_H * 0.62);
-    ctx.font = `${fontSize}px "${family}"`;
-    ctx.textBaseline = "alphabetic";
-    for (const [i, trace] of [false, true].entries()) {
-      const y0 = 14 + i * (BAND_H + 12);
-      threeLineBand(ctx, y0);
-      const baseline = y0 + BAND_H - 6;
-      ctx.save();
-      if (trace) {
-        ctx.strokeStyle = INK;
-        ctx.lineWidth = 1.15;
-        ctx.setLineDash([2.5, 2.5]);
-        ctx.strokeText(pair, 40, baseline);
-      } else {
-        ctx.fillStyle = INK;
-        ctx.fillText(pair, 40, baseline);
-      }
-      ctx.restore();
-      if (guides && hasGlyphGuides(fontId)) drawGlyphGuides(ctx, pair, 40, baseline, fontSize, fontId);
-    }
+    paintLetterStrip(ctx, { family, guide, guides, pair });
   }
 
-  /** 全字母表 A–Z 一页图:标题带 + 26 个 "Aa" 三线格,导出 PDF 用 */
-  function drawFullChart(): HTMLCanvasElement {
-    const { w, h } = PAGE_FORMATS.letter;
-    const margin = 40;
-    const off = document.createElement("canvas");
-    off.width = w;
-    off.height = h;
-    const ctx = off.getContext("2d");
-    if (!ctx) return off;
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, w, h);
-    const grid = chartGrid(ALPHABET.length, w, h, margin);
-    const titleSize = 44;
-    ctx.font = `${titleSize}px "${family}"`;
-    ctx.fillStyle = INK;
-    ctx.textBaseline = "alphabetic";
-    ctx.fillText("Cursive Alphabet", margin, margin + titleSize);
-    ctx.font = "13px system-ui";
-    ctx.fillStyle = "#6b7280";
-    ctx.fillText(fontMeta.label, margin + 320, margin + titleSize - 6);
-    ALPHABET.forEach((e, i) => {
-      const col = i % grid.cols;
-      const row = Math.floor(i / grid.cols);
-      const x = margin + col * grid.cellW;
-      const y0 = margin + 64 + row * grid.cellH;
-      const scaled = Math.min(grid.cellH * 0.55, BAND_H);
-      threeLineBand(ctx, y0, grid.cellW - 16, scaled);
-      const baseline = y0 + scaled - 4;
-      const cellFont = Math.round(scaled * 0.62);
-      ctx.font = `${cellFont}px "${family}"`;
-      ctx.fillStyle = INK;
-      ctx.fillText(e.capital + e.lower, x + 8, baseline);
-      if (guides && hasGlyphGuides(fontId)) drawGlyphGuides(ctx, e.capital + e.lower, x + 8, baseline, cellFont, fontId);
-    });
-    return off;
-  }
-
-  /** 三线格:顶线(浅)、中虚线、基线(实);宽度与带高可缩放(图表单元格复用) */
-  function threeLineBand(ctx: CanvasRenderingContext2D, y0: number, width = SHEET_W - 80, bandH = BAND_H) {
-    ctx.save();
-    ctx.strokeStyle = "#b8c8dc";
-    ctx.lineWidth = 1;
-    ctx.globalAlpha = 0.7;
-    ctx.beginPath();
-    ctx.moveTo(40, y0);
-    ctx.lineTo(40 + width, y0);
-    ctx.stroke();
-    ctx.restore();
-    ctx.save();
-    ctx.strokeStyle = "#9db3cc";
-    ctx.setLineDash([8, 6]);
-    ctx.beginPath();
-    ctx.moveTo(40, y0 + bandH * 0.52);
-    ctx.lineTo(40 + width, y0 + bandH * 0.52);
-    ctx.stroke();
-    ctx.restore();
-    ctx.save();
-    ctx.strokeStyle = "#9db3cc";
-    ctx.beginPath();
-    ctx.moveTo(40, y0 + bandH);
-    ctx.lineTo(40 + width, y0 + bandH);
-    ctx.stroke();
-    ctx.restore();
+  function sheetOpts(w: number, h: number) {
+    return {
+      w,
+      h,
+      family,
+      guide,
+      guides,
+      letters: ALPHABET,
+      title: ALPHABET_UI.chartTitle,
+      subtitle: fontMeta.label,
+      note: ALPHABET_UI.traceNote,
+    };
   }
 
   /** 离屏 2x 重绘导出清晰 PNG(与描红生成器同一手法) */
   function downloadPng() {
     const scale = 2;
     const off = document.createElement("canvas");
-    off.width = SHEET_W * scale;
-    off.height = SHEET_H * scale;
+    off.width = LETTER_STRIP.w * scale;
+    off.height = LETTER_STRIP.h * scale;
     const ctx = off.getContext("2d");
     if (!ctx) return;
     ctx.scale(scale, scale);
@@ -161,11 +88,24 @@ export default function CursiveAlphabetPanel() {
   }
 
   function downloadChartPdf() {
-    const off = drawFullChart();
     const { w, h } = PAGE_FORMATS.letter;
+    const chart = document.createElement("canvas");
+    const trace = document.createElement("canvas");
+    chart.width = w;
+    chart.height = h;
+    trace.width = w;
+    trace.height = h;
+    const chartCtx = chart.getContext("2d");
+    const traceCtx = trace.getContext("2d");
+    if (!chartCtx || !traceCtx) return;
+    const opts = sheetOpts(w, h);
+    paintChart(chartCtx, opts);
+    paintTrace(traceCtx, { ...opts, title: ALPHABET_UI.traceTitle });
     const pdf = new jsPDF({ unit: "px", format: [w, h], orientation: "portrait" });
-    pdf.addImage(off.toDataURL("image/png"), "PNG", 0, 0, w, h);
-    pdf.save("cursive-alphabet-chart.pdf");
+    pdf.addImage(chart.toDataURL("image/png"), "PNG", 0, 0, w, h);
+    pdf.addPage([w, h], "portrait");
+    pdf.addImage(trace.toDataURL("image/png"), "PNG", 0, 0, w, h);
+    pdf.save("cursive-alphabet.pdf");
   }
 
   const lessonSlug = entry.lowerSlug ?? entry.capitalSlug;
@@ -200,8 +140,8 @@ export default function CursiveAlphabetPanel() {
       <div className="mt-5 rounded-2xl border border-zinc-200 bg-white p-4">
         <canvas
           ref={canvasRef}
-          width={SHEET_W}
-          height={SHEET_H}
+          width={LETTER_STRIP.w}
+          height={LETTER_STRIP.h}
           className="h-auto w-full"
           aria-label={`Cursive ${entry.capital} and ${entry.lower} on a three-line guide`}
         />

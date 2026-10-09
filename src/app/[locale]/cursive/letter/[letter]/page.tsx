@@ -12,6 +12,7 @@ import {
   getLetterPage,
   getLetterUi,
   letterPracticeWords,
+  letterQueryTitle,
   lettersForLocale,
 } from "@/content/cursiveLetters";
 import { buildAlternates } from "@/lib/seo";
@@ -32,7 +33,7 @@ export async function generateMetadata({
   const entry = getLetterPage(letter, locale as Locale);
   if (!entry) return {};
   return {
-    title: entry.meta.title,
+    title: letterQueryTitle(entry.page),
     description: entry.meta.description,
     alternates: buildAlternates(`/cursive/letter/${letter}`, locale as Locale, ["en"]),
   };
@@ -71,7 +72,7 @@ export default async function CursiveLetterPage({
       </Link>
 
       <header className="rise mt-6">
-        <h1 className="text-2xl font-bold leading-snug md:text-3xl">{copy.h1}</h1>
+        <h1 className="text-2xl font-bold leading-snug md:text-3xl">{letterQueryTitle(page)}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
       </header>
 
@@ -172,7 +173,10 @@ export default async function CursiveLetterPage({
           </Link>
           <p className="text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
           <p className="text-sm">
-            <Link href="/cursive-alphabet" className="text-accent underline-offset-2 hover:underline">
+            <Link
+              href={`/cursive-alphabet?letter=${page.letter}`}
+              className="text-accent underline-offset-2 hover:underline"
+            >
               {ui.hubCta} →
             </Link>
           </p>

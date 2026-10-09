@@ -636,9 +636,16 @@ const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
       "A step-by-step lesson for every cursive letter, lowercase and capital — stroke order, the mistakes that show up on the page, practice words, and a sheet you can print.",
     hubLowercase: "Lowercase",
     hubCapital: "Capital",
-    hubCta: "Browse the full interactive cursive alphabet — every letter with stroke guides",
+    hubCta: "See this letter on the alphabet chart and download the sheet",
   },
 };
+
+/** 搜索句式标题。小写 “Z in Cursive”,大写加 Capital,避免两页抢同一句。 */
+export function letterQueryTitle(page: { letter: string; form: "lowercase" | "capital" }): string {
+  return page.form === "capital"
+    ? `Capital ${page.letter} in Cursive: How to Write It`
+    : `${page.letter.toUpperCase()} in Cursive: How to Write It`;
+}
 
 export function getLetterUi(locale: Locale): LetterUi | undefined {
   return LETTER_UI[locale];

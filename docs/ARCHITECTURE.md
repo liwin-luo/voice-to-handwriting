@@ -95,11 +95,11 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/` | 主工作台。`?font=` 套用字体(测验结果回跳);仿真度、重排笔迹、水印收在「更像手写」 | `ToolWorkspace`(无 preset)+ `StylePanel` + `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
 | `/cursive-text-generator` | 可复制花体文本(Unicode 六风格)。复制是主按钮,麦克风是次按钮;仍可导出 PNG | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
-| `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。导航放在「练习」,与连笔练习纸、每日连笔相邻 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetChart.ts`,`isEnOnlyTool` |
+| `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。导航放在「练习」 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
 | `/cursive-font-generator` | 手写字体预览 + 导出(7 款 OFL 字体,PNG 透明底/PDF) | `CursiveFontBrowser`,`fontCatalog.ts`(license 目录),`fontFace.ts`(字体等待),FAQ 经 `CURSIVE_FONT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个) | `TracingGenerator`(sacramento,`rowLabels="lines"`) |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页 | `DailyCursivePracticeGenerator`,`DAILY_CURSIVE_FAQS` |
-| `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
+| `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
 | `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。子页锁定当前纸型,其他纸型只在页底链接;红边距问答只出现在有该开关的纸上 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`PAPER_FAQS` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览) | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
