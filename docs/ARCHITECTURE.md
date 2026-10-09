@@ -1,6 +1,6 @@
 # 项目结构与能力总览
 
-> 供后续开发使用。最后更新:2026-10-08。
+> 供后续开发使用。最后更新:2026-10-09。
 > 快速上手先读 [README.md](../README.md)(运行指南),本文侧重架构、接线方式与开发约定。
 
 ## 1. 项目概览
@@ -40,7 +40,8 @@
 │   ├── lib/                   # site(SITE 常量)、seo(localizedUrl/buildAlternates)、
 │   │                          # fonts(CSS 加载清单)、transcribe(Whisper)、
 │   │                          # paperImage(上传图片压缩)、staticPage(静态页工厂)、
-│   │                          # fancyText(花体 Unicode 映射+折行,有单测)
+│   │                          # fancyText(花体 Unicode 映射+折行,有单测)、
+│   │                          # tools(工具分组:nav 标记进页头下拉,全量给 /tools)
 │   ├── engine/                # 手写渲染引擎:tokens / layout / jitter / paper(纯函数+单测)
 │   ├── hooks/                 # useSpeechRecognition(Web Speech API 封装)
 │   ├── stores/                # useEditorStore(编辑器+样式)、useHistoryStore(本地历史)
@@ -94,23 +95,24 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 |---|---|---|
 | `/` | 主工作台。`?font=` 套用字体(测验结果回跳);仿真度、重排笔迹、水印收在「更像手写」 | `ToolWorkspace`(无 preset)+ `StylePanel` + `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
-| `/cursive-text-generator` | 可复制花体文本(Unicode 六风格)。复制是主按钮,麦克风是次按钮;仍可导出 PNG | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
-| `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。导航放在「练习」 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
-| `/cursive-font-generator` | 手写字体预览 + 导出(7 款 OFL 字体,PNG 透明底/PDF) | `CursiveFontBrowser`,`fontCatalog.ts`(license 目录),`fontFace.ts`(字体等待),FAQ 经 `CURSIVE_FONT_FAQS` |
-| `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个) | `TracingGenerator`(sacramento,`rowLabels="lines"`) |
-| `/daily-cursive-handwriting-practice` | 每日连笔练习页 | `DailyCursivePracticeGenerator`,`DAILY_CURSIVE_FAQS` |
+| `/cursive-text-generator` | 可复制花体文本(Unicode 十三风格,含现成字母表和短语)。复制是主按钮,麦克风是次按钮;预览和 PNG 可改墨色与纸底 | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
+| `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
+| `/cursive-font-generator` | 手写字体预览 + 导出(13 款 OFL:4 签名体 + 4 正式花体 + 2 日常手写 + 3 印刷体。签名体只在本页,不进主工作台。PNG 透明底 / 内嵌字体 SVG / PDF) | `CursiveFontBrowser`,`fontCatalog.ts`,`cursiveSvg.ts`,`fontFace.ts`,FAQ 经 `CURSIVE_FONT_FAQS` |
+| `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`) |
+| `/daily-cursive-handwriting-practice` | 每日连笔练习页。页脚站点水印默认开,下载按钮上方可关。墨色改练习字,描红同色变浅,纸底可改 | `DailyCursivePracticeGenerator`,`WatermarkSwitch`,`DAILY_CURSIVE_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
-| `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
-| `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。打印按钮在范字下面,打开 `/name-tracing?letter=`。导航在「练习」,非英文不显示 | `letterTracing.ts`,`ToolFaq` |
-| `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。子页锁定当前纸型,其他纸型只在页底链接;红边距问答只出现在有该开关的纸上 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`PAPER_FAQS` |
+| `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
+| `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列 | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
+| `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接;红边距问答只出现在有该开关的纸上 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`PAPER_FAQS` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
-| `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF) | `HandwritingRepeater`,`REPEATER_FAQS` |
-| `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
+| `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文 + CSV / Excel 名单(最多 30 人,页面提供 xlsx 模板),下载信件 PDF 与信封 PDF。英语区 US Letter + #10,其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
+| `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
+| `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画。墨色改示例和封面标题,描红同色变浅,纸底可改 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
 | `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。结果页主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
 | `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
-| `/word-work` | 拼写练习。主按钮是 Dolch 与 Fry 前 25,Fry 前 100 在「更多词表」;选中的列表保持按下 | `WordWorkGenerator`,`spellingLists.ts`,`WORDWORK_FAQS` |
-| `/writing-practice` | CJK 练字表(田字格/原稿纸) | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
-| `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字。装饰可选星星、动物或机器。宽屏左栏控件不随预览页数下移 | `NameColoringGenerator`,`COLORING_FAQS` |
+| `/word-work` | 拼写练习。主按钮是 Dolch 与 Fry 前 25,Fry 前 100 在「更多词表」;选中的列表保持按下。墨色改单词,描红同色变浅,纸底可改 | `WordWorkGenerator`,`spellingLists.ts`,`WORDWORK_FAQS` |
+| `/writing-practice` | CJK 练字表(田字格/原稿纸)。墨色改范字,描红用同色变浅,纸底可改 | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
+| `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字。装饰可选星星、动物或机器。宽屏左栏控件不随预览页数下移。页脚站点水印默认开,下载按钮上方可关 | `NameColoringGenerator`,`WatermarkSwitch`,`COLORING_FAQS` |
 | `/templates` · `/templates/[slug]` | 模板库/详情 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>` |
 | `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
 | `/faq` | FAQ 聚合页 + FAQPage JSON-LD | `FAQ_ITEMS` + `getFaq` |
@@ -126,6 +128,8 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `jitter.ts` | `mulberry32`/`hash2` 伪随机;`styleFingerprint(seed)` 全局笔迹指纹;`charJitter(charIndex, seed, intensity)` → rotate/translateY/scale/letterSpacing/opacity |
 | `paper.ts` | 纸张预设 blank/ruled/grid/letter(CSS background 画格线)+ `makeCustomPaper`(用户自定义,spacing 钳制 24–64px,支持背景图 cover/tile) |
 | `pageEstimate.ts` | 手写页数估算:纸型行距、字号/字距、单双面张数、原稿纸按格分页、预览截断、带到首页的 sessionStorage 载荷。横线纸贴正文后的真实分页仍走 `layout.ts` |
+| `bulkLetters.ts` | 可打印手写信:CSV 收件人、`{name}`/`{from}` 套用、信封行、按字宽单位分页(约一页,超长硬切) |
+| `xlsxTable.ts` | 手写信名单的最小 xlsx 读写:模板下载与导入。邮编列标成文本;数字格读回时没有前导 0 |
 
 引擎与 UI 解耦,改渲染算法只需动这里并跑 `npm run test`。
 
@@ -217,7 +221,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 1. 建组件 `src/components/XxxGenerator.tsx`(Canvas 类生成器参考 `useDebouncedImeSafe` + jsPDF 模式);
 2. 建 `src/app/[locale]/xxx/page.tsx`,复制现有模式(`generateStaticParams` + `buildAlternates` + ShareBar + ToolFaq);
 3. 8 个 `messages/*.json` 加 nav/meta/footer 文案;
-4. `SiteHeader`/`NavDropdown` 加入口,`sitemap.ts` 的 PATHS 加路径;
+4. `src/lib/tools.ts` 的 `TOOL_GROUPS` 加卡片(进 /tools);要出现在页头下拉再标 `nav: true`。`sitemap.ts` 的 PATHS 加路径;
 5. `faqs.ts` 加该工具 FAQ(没翻译的语言不会渲染,无需 8 语全翻)。
 
 **新增博客文章**:① `src/content/blog/<slug>.<locale>.mdx`;② `blog/registry.ts` 注册;③ `posts.ts` 登记元数据;④ 需要内链则 `related.ts` 登记。只有写了正文的语言会出现对应 URL(其余语言自动不生成)。

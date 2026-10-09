@@ -5,10 +5,11 @@ import { DownloadSimple, Microphone, Stop } from "@phosphor-icons/react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSpeechRecognition } from "@/hooks/useSpeechRecognition";
 import { speechLang } from "@/lib/localeDefaults";
-import { FANCY_STYLES, toFancyText, wrapLines, type FancyStyleId } from "@/lib/fancyText";
+import { FANCY_PHRASES, FANCY_STYLES, toFancyText, wrapLines, type FancyStyleId } from "@/lib/fancyText";
+import ColorSwatch from "./ColorSwatch";
 
-/** 花体文本工具的交互层:输入/语音 → 六种 Unicode 风格实时转换 → 一键复制 / 导出 PNG。
- *  映射逻辑在 lib/fancyText.ts(纯函数,有单测);本组件只做状态、剪贴板与画布导出。 */
+/** 花体文本工具的交互层:输入/语音 → Unicode 风格实时转换 → 一键复制 / 导出 PNG,
+ *  以及不用输入就能复制的字母表和短语。映射逻辑在 lib/fancyText.ts。 */
 
 // PNG 导出参数:2x 缩放保证清晰;行数封顶 100,防止超长粘贴撑爆浏览器画布高度上限
 const PNG_SCALE = 2;
@@ -21,8 +22,8 @@ const PNG_MAX_LINES = 100;
 // 花体字形不在常规字体里,靠浏览器回退链命中系统符号字体(与页面 DOM 渲染同一条链)
 const PNG_FONT = `${PNG_FONT_SIZE}px system-ui, "Apple Symbols", "Segoe UI Symbol", "Noto Sans Math", serif`;
 
-/** 把一种风格的转换结果画成白底黑字 PNG 并触发下载 */
-async function downloadRowPng(styleId: FancyStyleId, value: string) {
+/** 把一种风格的转换结果画成 PNG 并触发下载 */
+async function downloadRowPng(styleId: FancyStyleId, value: string, ink: string, bg: string) {
   const canvas = document.createElement("canvas");
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -36,9 +37,9 @@ async function downloadRowPng(styleId: FancyStyleId, value: string) {
   canvas.height = logicalHeight * PNG_SCALE;
   ctx.scale(PNG_SCALE, PNG_SCALE);
   ctx.font = PNG_FONT;
-  ctx.fillStyle = "#ffffff";
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, PNG_WIDTH, logicalHeight);
-  ctx.fillStyle = "#1a1a1a";
+  ctx.fillStyle = ink;
   ctx.textBaseline = "top";
   lines.forEach((ln, i) => ctx.fillText(ln, PNG_PAD, PNG_PAD + i * PNG_LINE_HEIGHT));
 
@@ -53,7 +54,7 @@ async function downloadRowPng(styleId: FancyStyleId, value: string) {
 }
 
 // 剪贴板写入失败(旧 Safari / 非安全上下文)时的兜底:选中输出文本让用户手动 Ctrl+C
-function selectOutput(id: FancyStyleId) {
+function selectOutput(id: string) {
   const el = document.getElementById(`fancy-out-${id}`);
   if (!el) return;
   const range = document.createRange();
@@ -65,9 +66,12 @@ function selectOutput(id: FancyStyleId) {
 
 export default function CursiveTextGenerator() {
   const t = useTranslations("cursiveText");
+  const tool = useTranslations("tool");
+  const [ink, setInk] = useState("#1a1a1a");
+  const [bg, setBg] = useState("#ffffff");
   const locale = useLocale();
   const [text, setText] = useState(() => t("sample"));
-  const [copiedId, setCopiedId] = useState<FancyStyleId | null>(null);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const copiedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => () => {
     if (copiedTimer.current) clearTimeout(copiedTimer.current);
@@ -87,7 +91,7 @@ export default function CursiveTextGenerator() {
           ? t("errorStopped")
           : null;
 
-  const handleCopy = async (id: FancyStyleId, value: string) => {
+  const handleCopy = async (id: string, value: string) => {
     try {
       await navigator.clipboard.writeText(value);
     } catch {
@@ -128,6 +132,10 @@ export default function CursiveTextGenerator() {
         {listening && <p className="mt-2 text-sm text-zinc-400">{interim}…</p>}
         {!supported && <p className="mt-2 max-w-md text-xs leading-relaxed text-amber-700">{t("speakUnsupported")}</p>}
         {errorText && <p className="mt-2 max-w-md text-xs leading-relaxed text-rose-700">{errorText}</p>}
+        <div className="mt-3 flex flex-col gap-2">
+          <ColorSwatch label={tool("ink")} value={ink} onChange={setInk} />
+          <ColorSwatch label={tool("paperCustom.bg")} value={bg} onChange={setBg} />
+        </div>
       </div>
 
       <div className="mt-4 grid gap-3">
@@ -154,7 +162,7 @@ export default function CursiveTextGenerator() {
                   </button>
                   <button
                     type="button"
-                    onClick={() => downloadRowPng(style.id, value)}
+                    onClick={() => downloadRowPng(style.id, value, ink, bg)}
                     disabled={!value}
                     aria-label={`${t("download")} — ${t(`styles.${style.id}`)}`}
                     className="flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-40"
@@ -166,7 +174,8 @@ export default function CursiveTextGenerator() {
               </div>
               <p
                 id={`fancy-out-${style.id}`}
-                className="mt-1.5 break-words text-lg leading-relaxed text-zinc-900"
+                className="mt-1.5 break-words rounded-lg px-2 py-1 text-lg leading-relaxed"
+                style={value ? { color: ink, backgroundColor: bg } : undefined}
               >
                 {value || <span className="text-sm text-zinc-400">{t("empty")}</span>}
               </p>
@@ -174,6 +183,52 @@ export default function CursiveTextGenerator() {
           );
         })}
       </div>
+      <section className="mt-8">
+        <h2 className="text-base font-semibold text-zinc-900">{t("alphabetTitle")}</h2>
+        <p className="mt-1 text-xs leading-relaxed text-zinc-500">{t("alphabetHint")}</p>
+        <h3 className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("phrasesTitle")}</h3>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {FANCY_PHRASES.map((phrase) => {
+            const value = toFancyText(phrase, "script");
+            const key = `phrase:${phrase}`;
+            return (
+              <button
+                key={phrase}
+                type="button"
+                onClick={() => handleCopy(key, value)}
+                className="rounded-full border border-zinc-200 px-3 py-1 text-lg leading-none text-zinc-800 transition-colors hover:border-accent hover:text-accent"
+              >
+                {copiedId === key ? t("copied") : value}
+              </button>
+            );
+          })}
+        </div>
+        <div className="mt-4 grid gap-3">
+          {FANCY_STYLES.map((style) => {
+            const upper = toFancyText("ABCDEFGHIJKLMNOPQRSTUVWXYZ", style.id);
+            const lower = toFancyText("abcdefghijklmnopqrstuvwxyz", style.id);
+            const key = `alpha:${style.id}`;
+            return (
+              <div key={style.id} className="rounded-2xl border border-zinc-200 bg-white p-4">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                    {t(`styles.${style.id}`)}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => handleCopy(key, `${upper}\n${lower}`)}
+                    className="btn btn-primary rounded-full px-3 py-1 text-xs"
+                  >
+                    {copiedId === key ? t("copied") : t("copy")}
+                  </button>
+                </div>
+                <p className="mt-1.5 break-words text-lg leading-relaxed">{upper}</p>
+                <p className="break-words text-lg leading-relaxed">{lower}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
       <p className="mt-3 text-xs leading-relaxed text-zinc-500">{t("unicodeNote")}</p>
     </div>
   );

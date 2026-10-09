@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { PRINT_LETTERS, getPrintLetter, letterFaqs, tracingPrefill } from "./letterTracing";
+import {
+  PRINT_LETTERS,
+  getPrintLetter,
+  letterFaqs,
+  letterSlotOffsets,
+  repeatedLetterLine,
+  tracingPrefill,
+} from "./letterTracing";
 
 describe("print letter tracing pages", () => {
   it("covers a–z once, and no two letters share the same mix-up", () => {
@@ -17,6 +24,18 @@ describe("print letter tracing pages", () => {
     expect(faqs[0].a).toBe(a!.start);
     expect(faqs[1].a).toBe(a!.watch);
     expect(faqs).toHaveLength(3);
+  });
+});
+
+describe("letter tracing rows", () => {
+  it("repeats one letter eight times", () => {
+    expect(repeatedLetterLine("b")).toBe("b b b b b b b b");
+  });
+
+  it("drops the layout when the glyphs no longer fit", () => {
+    expect(letterSlotOffsets(8, 40, 700)).toHaveLength(8);
+    expect(letterSlotOffsets(8, 80, 400)).toBeNull();
+    expect(letterSlotOffsets(1, 40, 100)).toEqual([0]);
   });
 });
 

@@ -5,6 +5,8 @@ import { FilePdf } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
+import { fadeInk } from "@/lib/ink";
+import ColorSwatch from "./ColorSwatch";
 import PracticeLayout from "./PracticeLayout";
 
 const A4: [number, number] = [794, 1123];
@@ -28,6 +30,8 @@ export default function WritingPracticeGenerator({
   const [script, setScript] = useState<ScriptKind>(defaultScript);
   const [text, setText] = useState("");
   const [cell, setCell] = useState(84);
+  const [ink, setInk] = useState("#2f2f2f");
+  const [bg, setBg] = useState("#ffffff");
   const [guide, setGuide] = useState<GuideStyle>("cross");
   const [fillMode, setFillMode] = useState<FillMode>("trace");
   const [fontId, setFontId] = useState("lxgwwenkai");
@@ -61,7 +65,7 @@ export default function WritingPracticeGenerator({
     canvas.width = w;
     canvas.height = h;
     const ctx = canvas.getContext("2d")!;
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
 
     const margin = 40;
@@ -119,9 +123,9 @@ export default function WritingPracticeGenerator({
           const ch = chars[charIdx % chars.length];
           const isExampleRow = fillMode === "trace" && r === 0;
           if (fillMode === "dark" || isExampleRow) {
-            ctx.fillStyle = "#2f2f2f";
+            ctx.fillStyle = ink;
           } else {
-            ctx.fillStyle = "#cccccc"; // 描红灰
+            ctx.fillStyle = fadeInk(ink, 0.72);
           }
           ctx.fillText(ch, x + cell / 2, y + cell / 2 + fontSize * 0.06);
           charIdx++;
@@ -142,7 +146,7 @@ export default function WritingPracticeGenerator({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drawText, cell, guide, fillMode, fontId, script]);
+  }, [drawText, cell, guide, fillMode, fontId, script, ink, bg]);
 
   const downloadPdf = () => {
     const canvas = canvasRef.current;
@@ -257,6 +261,8 @@ export default function WritingPracticeGenerator({
               ))}
             </select>
           </div>
+          <ColorSwatch label={fontNames("ink")} value={ink} onChange={setInk} />
+          <ColorSwatch label={fontNames("paperCustom.bg")} value={bg} onChange={setBg} />
           <label className="flex items-center justify-between gap-2 text-sm">
             <span className="text-zinc-700">{t("cellSize")}</span>
             <span className="flex flex-1 items-center gap-2">

@@ -13,9 +13,11 @@ import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { dailyPick, toDateStr, weekDates, type DailyLevel, type DailySheet } from "@/content/dailyCursive";
 import { PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import { fadeInk } from "@/lib/ink";
+import ColorSwatch from "./ColorSwatch";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
-const INK = "#1f2937";
+import WatermarkSwitch from "./WatermarkSwitch";
 const FONT_OPTIONS = ["cedarvillecursive", "dancingscript"] as const;
 /** 级别 → 行高与空白练习行数:儿童行高大、句子抄写行少;成人行高小、抄写行多 */
 const LEVELS: { id: DailyLevel; bandH: number; blankRows: number }[] = [
@@ -42,6 +44,10 @@ interface SheetOptions {
   labels: { title: string; warmup: string; letters: string; words: string; sentence: string; name: string };
   pageW: number;
   pageH: number;
+  watermark: boolean;
+  watermarkLabel: string;
+  ink: string;
+  bg: string;
 }
 
 /** 标题/姓名用练习字体但保留 CJK 系统回退(标题按 UI locale 翻译,拉丁草书字体没有汉字字形) */
@@ -76,7 +82,7 @@ function drawGuides(ctx: CanvasRenderingContext2D, y0: number, bandH: number, pa
 }
 
 /** 钻串行:首遍深色示例,其余 28% 描灰,重复铺满整行 */
-function drawRepeatRow(ctx: CanvasRenderingContext2D, text: string, y0: number, bandH: number, family: string, pageW: number) {
+function drawRepeatRow(ctx: CanvasRenderingContext2D, text: string, y0: number, bandH: number, family: string, pageW: number, ink: string) {
   const fontSize = Math.round(bandH * 0.6);
   ctx.font = `${fontSize}px "${family}"`;
   ctx.textBaseline = "alphabetic";
@@ -88,10 +94,10 @@ function drawRepeatRow(ctx: CanvasRenderingContext2D, text: string, y0: number, 
     if (x + tw > pageW - 60) break;
     ctx.save();
     if (i === 0) {
-      ctx.fillStyle = INK;
+      ctx.fillStyle = ink;
       ctx.fillText(text, x, baseline);
     } else {
-      ctx.strokeStyle = INK;
+      ctx.strokeStyle = fadeInk(ink);
       ctx.lineWidth = 1.15;
       ctx.setLineDash([2.5, 2.5]);
       ctx.strokeText(text, x, baseline);
@@ -103,7 +109,7 @@ function drawRepeatRow(ctx: CanvasRenderingContext2D, text: string, y0: number, 
 }
 
 /** 句子行:单条描灰(0.35),超宽时按行宽缩放字号 */
-function drawSentenceRow(ctx: CanvasRenderingContext2D, text: string, y0: number, bandH: number, family: string, pageW: number) {
+function drawSentenceRow(ctx: CanvasRenderingContext2D, text: string, y0: number, bandH: number, family: string, pageW: number, ink: string) {
   let size = Math.round(bandH * 0.58);
   ctx.font = `${size}px "${family}"`;
   const maxW = pageW - 120;
@@ -113,7 +119,7 @@ function drawSentenceRow(ctx: CanvasRenderingContext2D, text: string, y0: number
     ctx.font = `${size}px "${family}"`;
   }
   ctx.save();
-  ctx.strokeStyle = INK;
+  ctx.strokeStyle = fadeInk(ink);
   ctx.lineWidth = 1.15;
   ctx.setLineDash([2.5, 2.5]);
   ctx.textBaseline = "alphabetic";
@@ -125,7 +131,7 @@ function drawSentenceRow(ctx: CanvasRenderingContext2D, text: string, y0: number
 function drawSheet(ctx: CanvasRenderingContext2D, opts: SheetOptions) {
   const { sheet, displayDate, name, family, bandH, blankRows, labels, pageW, pageH } = opts;
   const [W, H] = [pageW, pageH];
-  ctx.fillStyle = "#ffffff";
+  ctx.fillStyle = opts.bg;
   ctx.fillRect(0, 0, W, H);
   ctx.textBaseline = "alphabetic";
 
@@ -143,7 +149,7 @@ function drawSheet(ctx: CanvasRenderingContext2D, opts: SheetOptions) {
   ctx.fillText(labels.name, 60, 96);
   const nameX = 60 + ctx.measureText(labels.name).width + 14;
   if (name) {
-    ctx.fillStyle = INK;
+    ctx.fillStyle = opts.ink;
     ctx.font = titleFont(24, family);
     ctx.fillText(name, nameX, 96);
   }
@@ -166,30 +172,36 @@ function drawSheet(ctx: CanvasRenderingContext2D, opts: SheetOptions) {
     }
   };
 
-  section(labels.warmup, 1, (y0) => drawRepeatRow(ctx, sheet.warmup, y0, bandH, family, W));
-  section(labels.letters, 2, (y0, row) => drawRepeatRow(ctx, sheet.groups[row].letters, y0, bandH, family, W));
-  section(labels.words, 3, (y0, row) => drawRepeatRow(ctx, sheet.words[row], y0, bandH, family, W));
+  section(labels.warmup, 1, (y0) => drawRepeatRow(ctx, sheet.warmup, y0, bandH, family, W, opts.ink));
+  section(labels.letters, 2, (y0, row) => drawRepeatRow(ctx, sheet.groups[row].letters, y0, bandH, family, W, opts.ink));
+  section(labels.words, 3, (y0, row) => drawRepeatRow(ctx, sheet.words[row], y0, bandH, family, W, opts.ink));
   section(labels.sentence, 1 + blankRows, (y0, row) => {
-    if (row === 0) drawSentenceRow(ctx, sheet.sentence, y0, bandH, family, W);
+    if (row === 0) drawSentenceRow(ctx, sheet.sentence, y0, bandH, family, W, opts.ink);
   });
 
-  ctx.fillStyle = "#c9c9ce";
-  ctx.font = "11px sans-serif";
-  ctx.textAlign = "center";
-  ctx.fillText("voicetohandwriting.online", W / 2, H - 16);
-  ctx.textAlign = "left";
+  if (opts.watermark) {
+    ctx.fillStyle = "#c9c9ce";
+    ctx.font = "11px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(opts.watermarkLabel, W / 2, H - 16);
+    ctx.textAlign = "left";
+  }
 }
 
 /** 每日草书练习生成器:daily seed(同一天全球同一份)+ 打开即下载,零输入门槛 */
 export default function DailyCursivePracticeGenerator({ defaultFormat }: { defaultFormat: PageFormat }) {
   const t = useTranslations("dailyCursive");
   const fontNames = useTranslations("tool");
+  const watermarkLabel = useTranslations("home")("watermarkLabel");
   const locale = useLocale();
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const { w: pageW, h: pageH } = PAGE_FORMATS[format];
   const [level, setLevel] = useState<DailyLevel>("kids");
   const [fontId, setFontId] = useState<string>(FONT_OPTIONS[0]);
   const [name, setName] = useState("");
+  const [watermark, setWatermark] = useState(true);
+  const [ink, setInk] = useState("#1f2937");
+  const [bg, setBg] = useState("#ffffff");
   const today = useSyncExternalStore(subscribeNoop, clientDate, emptySnapshot);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const w = pageW;
@@ -239,6 +251,10 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
         labels: labelSet(),
         pageW,
         pageH,
+        watermark,
+        watermarkLabel,
+        ink,
+        bg,
       });
     };
     void run();
@@ -246,7 +262,7 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sheet, fontId, drawName, locale, format]);
+  }, [sheet, fontId, drawName, locale, format, watermark, watermarkLabel, ink, bg]);
 
   const renderSheetCanvas = (dateStr: string): string | null => {
     const off = document.createElement("canvas");
@@ -264,6 +280,10 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
       labels: labelSet(),
       pageW,
       pageH,
+      watermark,
+      watermarkLabel,
+      ink,
+      bg,
     });
     return off.toDataURL("image/png");
   };
@@ -317,6 +337,10 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
       labels: labelSet(),
       pageW,
       pageH,
+      watermark,
+      watermarkLabel,
+      ink,
+      bg,
     });
     off.toBlob((blob) => {
       if (!blob) return;
@@ -375,6 +399,7 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
       }
       download={
         <>
+          <WatermarkSwitch on={watermark} onChange={setWatermark} />
           <div className="flex flex-col gap-2">
             <button onClick={downloadPdf} disabled={!sheet} className="btn btn-primary w-full px-4 py-2.5 text-sm disabled:opacity-40">
               <FilePdf className="size-4" />
@@ -407,6 +432,8 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
               ))}
             </select>
           </div>
+          <ColorSwatch label={fontNames("ink")} value={ink} onChange={setInk} />
+          <ColorSwatch label={fontNames("paperCustom.bg")} value={bg} onChange={setBg} />
           <PageFormatToggle value={format} onChange={setFormat} />
         </>
       }

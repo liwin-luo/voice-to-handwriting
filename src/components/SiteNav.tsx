@@ -12,6 +12,8 @@ export default function SiteNav({
   brand,
   groups,
   allToolsLabel,
+  viewAll,
+  activeHrefs,
   blogLabel,
   aboutLabel,
   menuLabel,
@@ -19,6 +21,8 @@ export default function SiteNav({
   brand: string;
   groups: NavGroup[];
   allToolsLabel: string;
+  viewAll: { href: string; label: string };
+  activeHrefs: string[];
   blogLabel: string;
   aboutLabel: string;
   menuLabel: string;
@@ -39,7 +43,12 @@ export default function SiteNav({
         </Link>
 
         <nav className="hidden items-center gap-x-5 text-zinc-600 md:flex">
-          <NavDropdown label={allToolsLabel} groups={groups} />
+          <NavDropdown
+            label={allToolsLabel}
+            groups={groups}
+            viewAll={viewAll}
+            activeHrefs={activeHrefs}
+          />
           <Link href="/blog" className="transition-colors hover:text-zinc-950">
             {blogLabel}
           </Link>
@@ -81,6 +90,9 @@ export default function SiteNav({
               ))}
             </div>
           ))}
+          <Link href={viewAll.href} className="block rounded-lg px-1 py-2 text-sm font-medium text-zinc-950">
+            {viewAll.label}
+          </Link>
           <div className="mt-1 flex gap-4 border-t border-zinc-100 pt-2">
             <Link href="/blog" className="py-2 text-sm text-zinc-700">
               {blogLabel}

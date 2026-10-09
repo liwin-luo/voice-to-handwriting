@@ -50,7 +50,7 @@
     },
     "dailyCursive": {
       "title": "Free Daily Cursive Handwriting Practice PDF (Printable)",
-      "description": "A fresh cursive handwriting practice sheet every day — warm-up strokes, letters, words and a sentence on one printable page. Free PDF for kids and adults, no signup, no watermark."
+      "description": "A fresh cursive handwriting practice sheet every day — warm-up strokes, letters, words and a sentence on one printable page. Free PDF for kids and adults, no signup. A small watermark is on by default and can be turned off."
     },
     "writing": {
       "title": "Writing Practice Sheet Generator",
@@ -90,7 +90,7 @@
     },
     "cursiveText": {
       "title": "Cursive Text Generator – Copy and Paste Fancy Cursive",
-      "description": "Turn any words into cursive text you can copy and paste — six styles, free, no signup. Speak instead of typing. Works in Instagram, TikTok and Discord."
+      "description": "Turn any words into cursive text you can copy and paste — thirteen styles, free, no signup. Speak instead of typing. Works in Instagram, TikTok and Discord."
     },
     "cursiveAlphabet": {
       "description": "Every cursive letter A to Z with start-dot stroke guides — tap a letter, switch teaching fonts, and print the chart free."
@@ -100,7 +100,11 @@
     },
     "cursiveFont": {
       "title": "Cursive Font Generator – Preview & Export Handwriting Fonts",
-      "description": "Preview your text in seven handwriting fonts, tune size, ink and background, then export high-resolution PNG or PDF — free, no install, no signup. Open-source (OFL) fonts with clear licenses."
+      "description": "Preview your text in thirteen handwriting fonts, including signature scripts, then export PNG, SVG or PDF — free, no install, no signup. Open-source (OFL) fonts with clear licenses."
+    },
+    "bulkLetters": {
+      "title": "Printable Handwritten Letters and Envelopes",
+      "description": "Paste a recipient list and download two PDFs: a handwritten-style letter for each person and a matching envelope. You print and mail them. Free, in your browser."
     }
   },
   "nav": {
@@ -125,11 +129,13 @@
     "repeater": "Handwriting Repeater",
     "menu": "Menu",
     "allTools": "All tools",
+    "viewAll": "View all tools",
     "groupWrite": "Write & generate",
     "groupPractice": "Practice sheets & printing",
     "groupFun": "Just for fun",
     "pageCalc": "Page Calculator",
-    "cursiveText": "Cursive Text"
+    "cursiveText": "Cursive Text",
+    "bulkLetters": "Printable Letters"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -534,7 +540,7 @@
     "emptyTitle": "No names yet",
     "emptyHint": "Type a name and the coloring page draws itself.",
     "seoTitle": "Free name coloring page generator for kids",
-    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines with stars, animals, or machines to color — print at exact Letter size, no watermark.",
+    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines with stars, animals, or machines to color — print at exact Letter size. A small site watermark is on by default and can be turned off.",
     "faqTitle": "Frequently asked questions"
   },
   "wordwork": {
@@ -640,7 +646,7 @@
   },
   "cursiveText": {
     "title": "Cursive Text Generator",
-    "intro": "Type or speak a few words and copy them back as cursive text. Six styles, free, no signup — everything stays in your browser.",
+    "intro": "Type or speak a few words and copy them back as cursive text. Thirteen styles, free, no signup — everything stays in your browser.",
     "inputLabel": "Your text",
     "placeholder": "Type here, or tap the mic and speak",
     "sample": "Hello there",
@@ -657,12 +663,22 @@
     "styles": {
       "script": "Cursive",
       "boldScript": "Bold cursive",
+      "italic": "Italic",
+      "bold": "Bold",
       "boldItalic": "Bold italic",
       "fraktur": "Old English",
+      "boldFraktur": "Bold Old English",
       "outline": "Outline",
+      "sans": "Sans",
+      "sansBold": "Bold sans",
+      "sansItalic": "Italic sans",
+      "sansBoldItalic": "Bold italic sans",
       "mono": "Typewriter"
     },
     "unicodeNote": "This is Unicode text, not a font — the cursive look travels with the characters when you paste them. A few older phones are missing some glyphs, so if a style shows boxes, try another one.",
+    "alphabetTitle": "Copy the alphabet",
+    "alphabetHint": "The same styles as above, A to Z, ready to copy without typing.",
+    "phrasesTitle": "Copy a phrase",
     "seoTitle": "What cursive text is (and where it works)",
     "seoText": "A cursive text generator swaps each letter you type for the closest Unicode equivalent — mathematical script and bold script symbols that look like flowing penmanship. Because the result is real text rather than an image, you can paste it into an Instagram bio, a TikTok caption, a Discord nickname or a chat message, and it keeps the cursive look anywhere text can go.\n\nIt is not a font and not your handwriting. Screen readers may read the symbols letter by letter, and a device without the right glyphs draws boxes instead. If you want cursive you can print — practice sheets, cards, envelopes — the handwriting generators on this site export a real cursive font as PNG or PDF.",
     "alsoImage": "Need it printable instead? Open the cursive writing generator — it exports real handwriting as PNG or PDF.",
@@ -670,7 +686,7 @@
   },
   "cursiveFont": {
     "title": "Cursive Font Generator",
-    "intro": "Type anything and see it in every handwriting font on this site at once. Tune the size, ink and background, then download any font's rendering as a high-resolution PNG or a print-ready PDF — no font installation, no watermark.",
+    "intro": "Type anything and see it in every handwriting font on this site at once — signature scripts, formal calligraphy and everyday hands. Tune the size, ink and background, then download any font as a high-resolution PNG, an SVG with the font embedded, or a print-ready PDF. No installation, no watermark.",
     "inputLabel": "Your text",
     "placeholder": "Type or paste anything — names, a card message, an invitation line…",
     "sample": "Merry & bright",
@@ -681,10 +697,60 @@
     "bgPaper": "Paper",
     "bgTransparent": "Transparent",
     "empty": "Type something above to preview the fonts.",
+    "exportFailed": "The SVG did not finish. Try the PNG.",
     "alsoUnicode": "Want cursive you can copy and paste as text? Try the cursive text generator",
     "alsoHandwriting": "Or turn full sentences into realistic handwriting",
-    "seoTitle": "Seven open-source cursive fonts, previewed with your own words",
-    "seoText": "A cursive font generator shows your own text set in each handwriting font, so you can pick the right one before you commit. Most font sites stop at a preview and expect you to download and install the font; this page goes further — every line is rendered live, and each font can be exported as a high-resolution transparent PNG or a print-ready PDF, right in your browser.\n\nAll seven fonts are open source under the SIL Open Font License, with the author credited on every row: Sacramento and Dancing Script for formal scripts, Cedarville Cursive and Caveat for everyday handwriting, and Indie Flower, Kalam and Patrick Hand for neat print styles. That makes the exports safe for greeting cards, wedding signage, stickers, tattoo drafts and classroom material.\n\nPasting cursive-looking letters into a bio is a different job — that is what the cursive text generator is for. For practice rather than design, the cursive worksheets generator turns any word list into traceable sheets.",
+    "seoTitle": "Thirteen open-source cursive fonts, previewed with your own words",
+    "seoText": "A cursive font generator shows your own text set in each handwriting font, so you can pick the right one before you commit. Most font sites stop at a preview and expect you to download and install the font; this page goes further — every line is rendered live, and each font can be exported as a high-resolution transparent PNG, an SVG with the font embedded, or a print-ready PDF, right in your browser.\n\nAll thirteen fonts are open source under the SIL Open Font License, with the author credited on every row. Great Vibes, Alex Brush, Allura and Mr Dafoe are signature scripts. Pinyon Script, Tangerine, Sacramento and Dancing Script are formal scripts. Cedarville Cursive and Caveat are everyday handwriting. Indie Flower, Kalam and Patrick Hand are neat print styles. The SVG keeps the letterforms for a tattoo stencil or a design file.\n\nPasting cursive-looking letters into a bio is a different job — that is what the cursive text generator is for. For practice rather than design, the cursive worksheets generator turns any word list into traceable sheets.",
     "faqTitle": "Cursive font FAQ"
+  },
+  "bulkLetters": {
+    "title": "Printable Handwritten Letters",
+    "intro": "Pick a short note, paste a list of people, and download two PDFs: one letter each, and an envelope with the address. The writing is a handwriting font, not a pen. You print, stamp, and mail them. This site does not send mail.",
+    "kindLabel": "Note",
+    "bodyLabel": "Letter",
+    "bodyHint": "Edit the note. '{'name'}' becomes their name. '{'from'}' is the first line of the return address. A message cell replaces this note for that one person.",
+    "importExcel": "Import Excel",
+    "downloadTemplate": "Excel template",
+    "importFailed": "Could not read that file. Use the Excel template, or a .xlsx or .csv file with the header row.",
+    "kind": {
+      "thanks": "Thank you",
+      "referral": "Referral",
+      "prospect": "New contact",
+      "winback": "Win back",
+      "announce": "Announcement"
+    },
+    "body": {
+      "thanks": "Dear '{'name'}',\n\nThank you for the time yesterday. I left with a clearer sense of what you need, and I am glad we talked it through in person.\n\nI will follow up on the next step we agreed on. If anything else would help before then, tell me.\n\nGrateful for the conversation,\n'{'from'}'",
+      "referral": "Dear '{'name'}',\n\nYou have been good to work with, so I would rather ask you than guess. If someone you know needs the same kind of help, I would be grateful for an introduction.\n\nA name, or a short note from you, is enough.\n\nWith thanks,\n'{'from'}'",
+      "prospect": "Dear '{'name'}',\n\nI am writing on paper because a note is easier to keep and actually read than another email. I think we can help with something that has been sitting unresolved.\n\nIf a short conversation would be useful, I am easy to reach. If the timing is wrong, no reply is needed.\n\nRespectfully,\n'{'from'}'",
+      "winback": "Dear '{'name'}',\n\nIt has been a while, and I did not want silence to be the last word between us. If we fell out of step, I would like to know what would make it worth picking back up.\n\nThere is no pitch in this note. The door is open.\n\nWarmly,\n'{'from'}'",
+      "announce": "Dear '{'name'}',\n\nA short note so this does not disappear into an inbox. There is something new that fits what you already use, and I wanted you to see it on paper first.\n\nThe details are on the slip that came with this letter. I hope they are useful.\n\nAll the best,\n'{'from'}'"
+    },
+    "listLabel": "Recipients",
+    "listHint": "The first row must be name, street, city, region, postal. One person per row, up to 30. An optional message column replaces the note for that row. '{'name'}' becomes their name. Paste the rows, or import the Excel template (.xlsx or .csv).",
+    "listPlaceholder": "name,street,city,region,postal",
+    "sampleCsv": "name,street,city,region,postal\nAvery Chen,18 Oak Street,Glen Rock,NJ,07452\nSam Ortiz,402 Pine Ave,Austin,TX,78701",
+    "useSample": "Use a sample",
+    "returnLabel": "Return address",
+    "returnHint": "Printed at the top left of every envelope. The first line is the signature on the letter.",
+    "returnPlaceholder": "Jordan Lee\n18 Oak Street\nGlen Rock, NJ 07452",
+    "previewEmpty": "Add a recipient list to preview a letter and an envelope.",
+    "recipientN": "{n} / {total}",
+    "prev": "Previous",
+    "next": "Next",
+    "downloadLetters": "Download letters PDF",
+    "downloadEnvelopes": "Download envelopes PDF",
+    "exporting": "Preparing PDF…",
+    "exportFailed": "The PDF did not finish. Try again.",
+    "badHeader": "The first row needs these columns: name, street, city, region, postal.",
+    "noRows": "No recipients yet. Put one person on each row under the header.",
+    "truncated": "Only the first {count} people are included.",
+    "skipped": "{count, plural, one {# row had no name and was left out.} other {# rows had no name and were left out.}}",
+    "printHintLetter": "Letters are US Letter. Envelopes are #10 (9.5 × 4.125 in). Print them and mail them yourself.",
+    "printHintA4": "Letters are A4. Envelopes are DL (220 × 110 mm). Print them and mail them yourself.",
+    "seoTitle": "Letters and envelopes you print yourself",
+    "seoText": "A printable handwritten letter is a page you print, fold, and put in an envelope. This page fills one short note for each person on your list, using their name, and lays out a matching envelope. English pages use US Letter and a #10 envelope. Other languages use A4 and a DL envelope. The note itself can be edited. The list can be pasted or imported from the Excel template on the page.\n\nThe letters are set in a handwriting font. They are not written with a pen, and this site does not print, stamp, or mail them. If a row includes a message column, that text is used instead of the note in the box.",
+    "faqTitle": "Questions"
   }
 }

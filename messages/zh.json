@@ -50,7 +50,7 @@
     },
     "dailyCursive": {
       "title": "每日草书字帖 PDF 免费打印 — 每天一页新练习",
-      "description": "每天一份新的英文草书练习页:笔画热身、当日字母、单词与句子描红,一键下载可打印 PDF。儿童与成人两种难度,免费无水印,无需注册。"
+      "description": "每天一份新的英文草书练习页:笔画热身、当日字母、单词与句子描红,一键下载可打印 PDF。儿童与成人两种难度,免费,无需注册。页脚默认带站点水印,可以关掉。"
     },
     "writing": {
       "title": "汉字练字帖生成器",
@@ -90,7 +90,7 @@
     },
     "cursiveText": {
       "title": "花体文字生成器 - 可复制粘贴的手写体英文",
-      "description": "把任意句子变成可复制粘贴的花体英文,六种风格,免费无注册,还能语音输入。适用于 Instagram、TikTok、Discord 等几乎所有能打字的地方。"
+      "description": "把任意句子变成可复制粘贴的花体英文,十三种风格,免费无注册,还能语音输入。适用于 Instagram、TikTok、Discord 等几乎所有能打字的地方。"
     },
     "cursiveAlphabet": {
       "description": "26 个连笔字母大小写全图,带落笔点与方向笔顺指引,可切换教学字体并免费打印。"
@@ -100,7 +100,11 @@
     },
     "cursiveFont": {
       "title": "花体字体生成器 – 在线预览并导出手写字体",
-      "description": "一段文字同时在七款手写字体下实时预览,可调字号、墨色与底色,免安装导出高分辨率 PNG 或 PDF——免费、无水印、无需注册。全部开源字体(OFL),授权清晰。"
+      "description": "一段文字同时在十三款手写字体下实时预览,含签名体,可调字号、墨色与底色,免安装导出 PNG、SVG 或 PDF——免费、无水印、无需注册。全部开源字体(OFL),授权清晰。"
+    },
+    "bulkLetters": {
+      "title": "可打印手写信与信封",
+      "description": "粘贴收件人名单,下载两份 PDF:每人一封手写风格的信,以及写好地址的信封。你自己打印寄出。免费,在浏览器里完成。"
     }
   },
   "nav": {
@@ -125,11 +129,13 @@
     "repeater": "手写循环",
     "menu": "菜单",
     "allTools": "全部工具",
+    "viewAll": "查看全部工具",
     "groupWrite": "写字与生成",
     "groupPractice": "练习纸与打印",
     "groupFun": "趣味",
     "pageCalc": "用纸计算器",
-    "cursiveText": "花体文字"
+    "cursiveText": "花体文字",
+    "bulkLetters": "可打印信件"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -534,7 +540,7 @@
     "emptyTitle": "还没有名字",
     "emptyHint": "输入名字,涂色页自动画好。",
     "seoTitle": "免费名字涂色页生成器 — 认字+涂色一举两得",
-    "seoText": "把孩子的名字变成大气泡轮廓字,涂色的同时认识自己的名字怎么写。可选站酷快乐体等可爱字体,装饰可选星星、动物或机器,Letter 尺寸精确打印,无水印。",
+    "seoText": "把孩子的名字变成大气泡轮廓字,涂色的同时认识自己的名字怎么写。可选站酷快乐体等可爱字体,装饰可选星星、动物或机器,Letter 尺寸精确打印。页脚默认带站点水印,可以关掉。",
     "faqTitle": "常见问题"
   },
   "wordwork": {
@@ -640,7 +646,7 @@
   },
   "cursiveText": {
     "title": "花体文字生成器",
-    "intro": "输入或说出几句话,复制成花体文字。六种风格,免费无注册,全程只在你浏览器里完成。",
+    "intro": "输入或说出几句话,复制成花体文字。十三种风格,免费无注册,全程只在你浏览器里完成。",
     "inputLabel": "你的文字",
     "placeholder": "在这里输入,或点麦克风说话",
     "sample": "Hello",
@@ -657,12 +663,22 @@
     "styles": {
       "script": "花体",
       "boldScript": "粗花体",
+      "italic": "斜体",
+      "bold": "粗体",
       "boldItalic": "粗斜体",
       "fraktur": "哥特体",
+      "boldFraktur": "粗哥特体",
       "outline": "空心体",
+      "sans": "无衬线",
+      "sansBold": "粗无衬线",
+      "sansItalic": "斜无衬线",
+      "sansBoldItalic": "粗斜无衬线",
       "mono": "打字机体"
     },
     "unicodeNote": "这是 Unicode 字符,不是字体——粘贴后样式跟着文字走,无需安装。少数旧手机缺个别字形,某个风格显示为方框时,换一种风格即可。",
+    "alphabetTitle": "直接复制字母表",
+    "alphabetHint": "和上面相同的风格,A 到 Z,不用输入就能复制。",
+    "phrasesTitle": "直接复制短语",
     "seoTitle": "花体文字是什么,能用在哪里",
     "seoText": "花体文字生成器把你输入的每个字母替换成最接近的 Unicode 字符——看起来像流畅手写的数学花体符号。因为输出是真正的文字而不是图片,可以直接粘贴进 Instagram 简介、TikTok 文案、Discord 昵称或聊天消息,凡能打字的地方都保持花体样式。\n\n它不是字体,也不是你的笔迹。读屏软件可能会逐字朗读这些符号,缺少字形的设备会显示方框。如果你要的是能打印的花体——练习纸、贺卡、信封——本站的手写生成器可以导出真正的花体字体 PNG 或 PDF。",
     "alsoImage": "想要能打印的版本?打开花体书写生成器,导出真正的手写体 PNG 或 PDF。",
@@ -670,7 +686,7 @@
   },
   "cursiveFont": {
     "title": "花体字体生成器",
-    "intro": "输入任意文字,一次性在本站全部手写字体下实时预览。调节字号、墨色与底色,再把任意一款导出为高分辨率 PNG 或可直接打印的 PDF——无需安装字体,没有水印。",
+    "intro": "输入任意文字,在本站全部手写字体里同时预览——签名体、正式花体和日常手写。调节字号、墨色与底色,再把任意一款导出为高分辨率 PNG、内嵌字体的 SVG,或可直接打印的 PDF。无需安装字体,没有水印。",
     "inputLabel": "你的文字",
     "placeholder": "输入或粘贴任何文字——名字、卡片祝词、请柬句子……",
     "sample": "Merry & bright",
@@ -681,10 +697,60 @@
     "bgPaper": "纸色",
     "bgTransparent": "透明",
     "empty": "在上方输入文字即可预览字体。",
+    "exportFailed": "SVG 没有生成。可以改下 PNG。",
     "alsoUnicode": "想要能复制粘贴的花体文本?试试花体文字生成器",
     "alsoHandwriting": "或把整句文字变成仿真手写图",
-    "seoTitle": "七款开源连笔字体,用你自己的文字预览",
-    "seoText": "花体字体生成器把你自己的文字排进每款手写字体里,让你在动手之前选对字体。大多数字体网站只给预览,然后让你下载安装;这一页更进一步——所有行都实时渲染,每款字体都能在浏览器里导出高分辨率透明 PNG 或可直接打印的 PDF。\n\n七款字体全部是 SIL Open Font License 开源授权,每一行都标注作者:正式花体选 Sacramento 和 Dancing Script,日常手写选 Cedarville Cursive 和 Caveat,工整印刷风选 Indie Flower、Kalam 和 Patrick Hand。因此导出结果可以放心用于贺卡、婚礼布置、贴纸、纹身草稿和课堂材料。\n\n把「看起来像花体」的字母粘贴进社交简介是另一回事——那是花体文字生成器的活儿。要练字而不是做设计,连笔字工作表生成器能把任何词表变成描红页。",
+    "seoTitle": "十三款开源连笔字体,用你自己的文字预览",
+    "seoText": "花体字体生成器把你自己的文字排进每款手写字体里,让你在动手之前选对字体。大多数字体网站只给预览,然后让你下载安装;这一页更进一步——所有行都实时渲染,每款字体都能在浏览器里导出高分辨率透明 PNG、内嵌字体的 SVG,或可直接打印的 PDF。\n\n十三款字体全部是 SIL Open Font License 开源授权,每一行都标注作者。Great Vibes、Alex Brush、Allura、Mr Dafoe 是签名体。Pinyon Script、Tangerine、Sacramento、Dancing Script 是正式花体。Cedarville Cursive 和 Caveat 是日常手写。Indie Flower、Kalam、Patrick Hand 是工整印刷风。SVG 把字体嵌在文件里,纹身稿和设计稿都能带走字形。\n\n把「看起来像花体」的字母粘贴进社交简介是另一回事——那是花体文字生成器的活儿。要练字而不是做设计,连笔字工作表生成器能把任何词表变成描红页。",
     "faqTitle": "花体字体常见问题"
+  },
+  "bulkLetters": {
+    "title": "可打印手写信",
+    "intro": "选一封短笺,贴上一份名单,下载两份 PDF:每人一封信,以及写好地址的信封。字是手写字体,不是钢笔。打印、贴邮票、寄出由你自己完成。本站不寄信。",
+    "kindLabel": "短笺",
+    "bodyLabel": "信件正文",
+    "bodyHint": "可以直接改。'{'name'}' 换成对方的名字，'{'from'}' 换成回信地址的第一行。某一行如果填了 message，这一封就用那一格，不用这段正文。",
+    "importExcel": "导入 Excel",
+    "downloadTemplate": "Excel 模板",
+    "importFailed": "这个文件读不了。请用页面上的 Excel 模板，或带表头的 .xlsx、.csv。",
+    "kind": {
+      "thanks": "会后感谢",
+      "referral": "请转介绍",
+      "prospect": "开发新客",
+      "winback": "重新联系",
+      "announce": "一则通知"
+    },
+    "body": {
+      "thanks": "'{'name'}':\n\n谢谢你昨天抽出时间。谈完之后,我更清楚你需要什么,当面把事情说开是值得的。\n\n我们约定的下一步,我会跟进。在那之前如果还需要什么,直接告诉我就好。\n\n感谢这次谈话\n'{'from'}'",
+      "referral": "'{'name'}':\n\n跟你合作很顺,所以我想先问你,而不是自己去猜。如果你身边有人正好需要同类的帮助,愿意介绍的话,我会很感激。\n\n留一个名字,或你写一句短话,就够了。\n\n谢谢\n'{'from'}'",
+      "prospect": "'{'name'}':\n\n我写在纸上,是因为一张便笺比又一封邮件更容易被留下、被读完。有件事拖了很久,我想我们帮得上。\n\n如果短短一谈有用,我很好联系。时机不对的话,不必回复。\n\n此致\n'{'from'}'",
+      "winback": "'{'name'}':\n\n有一阵子没联系了。我不希望我们之间最后只剩下沉默。如果中间断了,我想知道怎样才值得再续上。\n\n这张便笺里没有推销。门是开着的。\n\n祝好\n'{'from'}'",
+      "announce": "'{'name'}':\n\n写一张短笺,免得这件事掉进收件箱里。有一样新的东西,和你已经在用的很配,我想让你先在纸上看到。\n\n细节写在随信的小条上。希望用得上。\n\n祝好\n'{'from'}'"
+    },
+    "listLabel": "收件人",
+    "listHint": "第一行必须是 name, street, city, region, postal,表头用这些英文单词。每人一行,最多 30 人。可选的 message 列会换掉这一行的短笺。'{'name'}' 会换成这个人的名字。也可以粘贴表格,或导入 Excel 模板(.xlsx 或 .csv)。",
+    "listPlaceholder": "name,street,city,region,postal",
+    "sampleCsv": "name,street,city,region,postal\nAvery Chen,18 Oak Street,Glen Rock,NJ,07452\nSam Ortiz,402 Pine Ave,Austin,TX,78701",
+    "useSample": "填入示例",
+    "returnLabel": "回信地址",
+    "returnHint": "印在每只信封的左上角。第一行会作为信末的署名。",
+    "returnPlaceholder": "林晓\n橡树街 18 号\n格伦罗克, NJ 07452",
+    "previewEmpty": "贴上收件人名单后,这里会显示信件和信封。",
+    "recipientN": "{n} / {total}",
+    "prev": "上一位",
+    "next": "下一位",
+    "downloadLetters": "下载信件 PDF",
+    "downloadEnvelopes": "下载信封 PDF",
+    "exporting": "正在生成 PDF…",
+    "exportFailed": "PDF 没有完成。请再试一次。",
+    "badHeader": "第一行需要这些列:name, street, city, region, postal。",
+    "noRows": "还没有收件人。在表头下面,每人写一行。",
+    "truncated": "只保留前 {count} 人。",
+    "skipped": "{count} 行没有名字,已跳过。",
+    "printHintLetter": "信件是 US Letter。信封是 #10(9.5 × 4.125 英寸)。打印后自己寄出。",
+    "printHintA4": "信件是 A4。信封是 DL(220 × 110 毫米)。打印后自己寄出。",
+    "seoTitle": "自己打印、自己寄出的信和信封",
+    "seoText": "可打印手写信就是你打印、折好、放进信封的那一页。这一页按名单给每个人填一封短笺,写上对方的名字,并排出对应的信封。英文页面用 US Letter 和 #10 信封,其他语言用 A4 和 DL 信封。信件正文可以直接改。名单可以粘贴,也可以导入页面上的 Excel 模板。\n\n信是手写字体排出来的,不是钢笔写的。本站不打印、不贴邮票、也不寄出。某一行如果带了 message 列,这一封就用那一列的文字,而不用正文框里的这段。",
+    "faqTitle": "常见问题"
   }
 }

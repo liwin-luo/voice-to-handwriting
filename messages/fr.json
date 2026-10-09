@@ -50,7 +50,7 @@
     },
     "dailyCursive": {
       "title": "PDF quotidien de pratique de l'écriture cursive (imprimable gratuit)",
-      "description": "Une nouvelle fiche de pratique cursive chaque jour : échauffement de traits, lettres du jour, mots et une phrase à reproduire. PDF gratuit pour enfants et adultes, sans inscription ni filigrane."
+      "description": "Une nouvelle fiche de pratique cursive chaque jour : échauffement de traits, lettres du jour, mots et une phrase à reproduire. PDF gratuit pour enfants et adultes, sans inscription. Un petit filigrane est présent par défaut et peut être retiré."
     },
     "writing": {
       "title": "Générateur de feuilles d'écriture CJK",
@@ -90,7 +90,7 @@
     },
     "cursiveText": {
       "title": "Générateur de texte cursif – copier-coller",
-      "description": "Transformez n'importe quelle phrase en texte cursif à copier-coller — six styles, gratuit, sans inscription, même en vocal. Pour Instagram, TikTok et Discord."
+      "description": "Transformez n'importe quelle phrase en texte cursif à copier-coller — treize styles, gratuit, sans inscription, même en vocal. Pour Instagram, TikTok et Discord."
     },
     "cursiveAlphabet": {
       "description": "Toutes les lettres cursives de A à Z avec guides de tracé : touchez une lettre, changez de police et imprimez le tableau gratuitement."
@@ -100,7 +100,11 @@
     },
     "cursiveFont": {
       "title": "Générateur de polices cursives – Prévisualisez et exportez des polices manuscrites",
-      "description": "Prévisualisez votre texte dans sept polices manuscrites à la fois, ajustez taille, encre et fond, puis exportez en PNG haute résolution ou PDF — gratuit, sans installation, sans inscription. Polices open source (OFL) aux licences claires."
+      "description": "Prévisualisez votre texte dans treize polices manuscrites, dont des scripts de signature, ajustez taille, encre et fond, puis exportez en PNG, SVG ou PDF — gratuit, sans installation, sans inscription. Polices open source (OFL) aux licences claires."
+    },
+    "bulkLetters": {
+      "title": "Lettres manuscrites imprimables et enveloppes",
+      "description": "Collez une liste de destinataires et téléchargez deux PDF : une lettre au style manuscrit pour chaque personne et une enveloppe adressée. Vous imprimez et vous postez. Gratuit, dans le navigateur."
     }
   },
   "nav": {
@@ -125,11 +129,13 @@
     "repeater": "Répéteur d'écriture",
     "menu": "Menu",
     "allTools": "Tous les outils",
+    "viewAll": "Voir tous les outils",
     "groupWrite": "Écrire & générer",
     "groupPractice": "Feuilles d'exercices & impression",
     "groupFun": "Pour le fun",
     "pageCalc": "Calculateur de feuilles",
-    "cursiveText": "Texte cursif"
+    "cursiveText": "Texte cursif",
+    "bulkLetters": "Lettres imprimables"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -534,7 +540,7 @@
     "emptyTitle": "Pas encore de prénoms",
     "emptyHint": "Tapez un prénom — la page se dessine toute seule.",
     "seoTitle": "Générateur gratuit de pages à colorier avec prénoms",
-    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, avec étoiles, animaux ou machines à colorier — format Letter exact, sans filigrane.",
+    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, avec étoiles, animaux ou machines à colorier — format Letter exact. Un petit filigrane du site est présent par défaut et peut être retiré.",
     "faqTitle": "Questions fréquentes"
   },
   "wordwork": {
@@ -640,7 +646,7 @@
   },
   "cursiveText": {
     "title": "Générateur de texte cursif",
-    "intro": "Écrivez ou dictez quelques mots, puis copiez-les en texte cursif. Six styles, gratuit, sans inscription — tout reste dans votre navigateur.",
+    "intro": "Écrivez ou dictez quelques mots, puis copiez-les en texte cursif. Treize styles, gratuit, sans inscription — tout reste dans votre navigateur.",
     "inputLabel": "Votre texte",
     "placeholder": "Écrivez ici, ou touchez le micro et parlez",
     "sample": "Bonjour",
@@ -657,12 +663,22 @@
     "styles": {
       "script": "Cursif",
       "boldScript": "Cursif gras",
+      "italic": "Italique",
+      "bold": "Gras",
       "boldItalic": "Italique gras",
       "fraktur": "Fraktur",
+      "boldFraktur": "Fraktur gras",
       "outline": "Contour",
+      "sans": "Sans",
+      "sansBold": "Sans gras",
+      "sansItalic": "Sans italique",
+      "sansBoldItalic": "Sans gras italique",
       "mono": "Machine à écrire"
     },
     "unicodeNote": "C'est du texte Unicode, pas une police — le style suit les caractères quand vous les collez. Quelques téléphones anciens manquent de certains glyphes ; si un style affiche des carrés, essayez-en un autre.",
+    "alphabetTitle": "Copier l'alphabet",
+    "alphabetHint": "Les mêmes styles, de A à Z, prêts à copier sans rien taper.",
+    "phrasesTitle": "Copier une formule",
     "seoTitle": "Ce qu'est le texte cursif (et où il marche)",
     "seoText": "Un générateur de texte cursif remplace chaque lettre tapée par son équivalent Unicode le plus proche — des symboles script mathématiques qui ressemblent à une écriture fluide. Comme le résultat est du vrai texte et non une image, vous pouvez le coller dans une bio Instagram, une légende TikTok, un pseudo Discord ou un message, et il garde son allure cursive partout où va du texte.\n\nCe n'est ni une police ni votre écriture. Les lecteurs d'écran peuvent lire les symboles lettre par lettre, et un appareil sans les bons glyphes affiche des carrés. Si vous cherchez de la cursive à imprimer — fiches d'exercices, cartes, enveloppes — les générateurs manuscrits de ce site exportent une vraie police cursive en PNG ou PDF.",
     "alsoImage": "Besoin d'une version imprimable ? Ouvrez le générateur d'écriture cursive — il exporte une vraie écriture en PNG ou PDF.",
@@ -670,7 +686,7 @@
   },
   "cursiveFont": {
     "title": "Générateur de polices cursives",
-    "intro": "Tapez un texte et voyez-le d'un coup dans toutes les polices manuscrites du site. Ajustez taille, encre et fond, puis téléchargez n'importe quelle police en PNG haute résolution ou PDF prêt à imprimer — sans installer de police, sans filigrane.",
+    "intro": "Tapez un texte et voyez-le d'un coup dans toutes les polices manuscrites du site : scripts de signature, calligraphie formelle et écriture du quotidien. Ajustez taille, encre et fond, puis téléchargez n'importe quelle police en PNG haute résolution, en SVG avec la police intégrée, ou en PDF prêt à imprimer. Sans installation, sans filigrane.",
     "inputLabel": "Votre texte",
     "placeholder": "Tapez ou collez ce que vous voulez — des prénoms, un message de carte, une ligne d'invitation…",
     "sample": "Merry & bright",
@@ -681,10 +697,60 @@
     "bgPaper": "Papier",
     "bgTransparent": "Transparent",
     "empty": "Tapez un texte ci-dessus pour prévisualiser les polices.",
+    "exportFailed": "Le SVG n'a pas abouti. Essayez le PNG.",
     "alsoUnicode": "Vous voulez de la cursive à copier-coller ? Essayez le générateur de texte cursif",
     "alsoHandwriting": "Ou transformez des phrases entières en écriture manuscrite réaliste",
-    "seoTitle": "Sept polices cursives open source, prévisualisées avec vos propres mots",
-    "seoText": "Un générateur de polices cursives compose votre propre texte dans chaque police manuscrite, pour choisir la bonne avant de vous lancer. La plupart des sites de polices s'arrêtent à l'aperçu et vous demandent de télécharger puis installer la police ; cette page va plus loin — chaque ligne est rendue en direct et chaque police s'exporte en PNG transparent haute résolution ou en PDF prêt à imprimer, directement dans votre navigateur.\n\nLes sept polices sont open source sous licence SIL Open Font License, avec l'auteur crédité sur chaque ligne : Sacramento et Dancing Script pour les scripts formels, Cedarville Cursive et Caveat pour l'écriture de tous les jours, Indie Flower, Kalam et Patrick Hand pour les styles imprimés soignés. Les exports conviennent donc aux cartes, à la signalétique de mariage, aux stickers, aux croquis de tatouage et au matériel de classe.\n\nColler des lettres qui ressemblent à de la cursive dans une bio est un autre métier — c'est le rôle du générateur de texte cursif. Pour s'entraîner plutôt que pour créer, le générateur de feuilles de cursive transforme toute liste de mots en fiches à calquer.",
+    "seoTitle": "Treize polices cursives open source, prévisualisées avec vos propres mots",
+    "seoText": "Un générateur de polices cursives compose votre propre texte dans chaque police manuscrite, pour choisir la bonne avant de vous lancer. La plupart des sites de polices s'arrêtent à l'aperçu et vous demandent de télécharger puis installer la police ; cette page va plus loin — chaque ligne est rendue en direct et chaque police s'exporte en PNG transparent haute résolution, en SVG avec la police intégrée, ou en PDF prêt à imprimer, directement dans votre navigateur.\n\nLes treize polices sont open source sous licence SIL Open Font License, avec l'auteur crédité sur chaque ligne. Great Vibes, Alex Brush, Allura et Mr Dafoe sont des scripts de signature. Pinyon Script, Tangerine, Sacramento et Dancing Script sont des scripts formels. Cedarville Cursive et Caveat sont l'écriture de tous les jours. Indie Flower, Kalam et Patrick Hand sont des écritures d'imprimerie nettes. Le SVG emporte les formes de lettres pour un pochoir de tatouage ou un fichier de design.\n\nColler des lettres qui ressemblent à de la cursive dans une bio est un autre métier — c'est le rôle du générateur de texte cursif. Pour s'entraîner plutôt que pour créer, le générateur de feuilles de cursive transforme toute liste de mots en fiches à calquer.",
     "faqTitle": "FAQ polices cursives"
+  },
+  "bulkLetters": {
+    "title": "Lettres manuscrites imprimables",
+    "intro": "Choisissez un court mot, collez une liste et téléchargez deux PDF : une lettre par personne et une enveloppe avec l'adresse. L'écriture est une police manuscrite, pas une plume. Vous imprimez, vous affranchissez et vous postez. Ce site n'envoie rien.",
+    "kindLabel": "Mot",
+    "bodyLabel": "Texte de la lettre",
+    "bodyHint": "Tu peux modifier le texte. '{'name'}' devient le nom de la personne, '{'from'}' la première ligne de l'adresse d'expéditeur. Une cellule message remplace ce texte pour cette ligne seulement.",
+    "importExcel": "Importer un Excel",
+    "downloadTemplate": "Modèle Excel",
+    "importFailed": "Impossible de lire ce fichier. Utilise le modèle Excel, ou un fichier .xlsx ou .csv avec la ligne d'en-tête.",
+    "kind": {
+      "thanks": "Remerciement",
+      "referral": "Recommandation",
+      "prospect": "Nouveau contact",
+      "winback": "Reprise",
+      "announce": "Annonce"
+    },
+    "body": {
+      "thanks": "Bonjour '{'name'}',\n\nmerci pour le temps d'hier. J'en retiens une idée plus claire de ce dont vous avez besoin, et cela valait la peine d'en parler de vive voix.\n\nJe m'occupe de l'étape suivante dont nous avons convenu. S'il manque quelque chose avant, dites-le-moi.\n\nMerci pour cet échange,\n'{'from'}'",
+      "referral": "Bonjour '{'name'}',\n\ntravailler avec vous est simple, alors je préfère vous le demander plutôt que de deviner. Si quelqu'un que vous connaissez a besoin du même genre d'aide, une mise en relation me serait précieuse.\n\nUn nom, ou un court mot de votre part, suffit.\n\nAvec mes remerciements,\n'{'from'}'",
+      "prospect": "Bonjour '{'name'}',\n\nj'écris sur papier parce qu'un mot se garde et se lit mieux qu'un énième e-mail. Je pense que nous pouvons aider sur un sujet qui traîne.\n\nSi une courte conversation est utile, je suis facile à joindre. Si le moment ne convient pas, inutile de répondre.\n\nCordialement,\n'{'from'}'",
+      "winback": "Bonjour '{'name'}',\n\ncela fait un moment, et je ne voulais pas que le silence soit le dernier mot entre nous. Si nous nous sommes perdus de vue, j'aimerais savoir ce qui rendrait utile de reprendre.\n\nCe mot n'est pas une offre. La porte est ouverte.\n\nBien à vous,\n'{'from'}'",
+      "announce": "Bonjour '{'name'}',\n\nun court mot pour que ceci ne disparaisse pas dans une boîte de réception. Il y a du nouveau qui correspond à ce que vous utilisez déjà, et je voulais que vous le voyiez d'abord sur papier.\n\nLes détails sont sur le feuillet joint à cette lettre. J'espère qu'ils seront utiles.\n\nBien à vous,\n'{'from'}'"
+    },
+    "listLabel": "Destinataires",
+    "listHint": "La première ligne doit être name, street, city, region, postal, en anglais. Une personne par ligne, jusqu'à 30. Une colonne facultative message remplace le mot pour cette ligne. '{'name'}' devient son nom. Colle les lignes, ou importe le modèle Excel (.xlsx ou .csv).",
+    "listPlaceholder": "name,street,city,region,postal",
+    "sampleCsv": "name,street,city,region,postal\nAvery Chen,18 Oak Street,Glen Rock,NJ,07452\nSam Ortiz,402 Pine Ave,Austin,TX,78701",
+    "useSample": "Insérer un exemple",
+    "returnLabel": "Adresse de retour",
+    "returnHint": "Imprimée en haut à gauche de chaque enveloppe. La première ligne est la signature de la lettre.",
+    "returnPlaceholder": "Jordan Lee\n18 Oak Street\nGlen Rock, NJ 07452",
+    "previewEmpty": "Ajoutez une liste pour voir la lettre et l'enveloppe.",
+    "recipientN": "{n} / {total}",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "downloadLetters": "Télécharger le PDF des lettres",
+    "downloadEnvelopes": "Télécharger le PDF des enveloppes",
+    "exporting": "Préparation du PDF…",
+    "exportFailed": "Le PDF ne s'est pas terminé. Réessayez.",
+    "badHeader": "La première ligne doit contenir ces colonnes : name, street, city, region, postal.",
+    "noRows": "Pas encore de destinataires. Écrivez une personne par ligne sous l'en-tête.",
+    "truncated": "Seules les {count} premières personnes sont incluses.",
+    "skipped": "{count, plural, one {# ligne n'avait pas de nom et a été laissée de côté.} other {# lignes n'avaient pas de nom et ont été laissées de côté.}}",
+    "printHintLetter": "Les lettres sont en US Letter. Les enveloppes sont des #10 (9,5 × 4,125 in). Imprimez-les et postez-les vous-même.",
+    "printHintA4": "Les lettres sont en A4. Les enveloppes sont des DL (220 × 110 mm). Imprimez-les et postez-les vous-même.",
+    "seoTitle": "Des lettres et des enveloppes que vous imprimez",
+    "seoText": "Une lettre manuscrite imprimable est une feuille que vous imprimez, pliez et glissez dans une enveloppe. Cette page remplit un court mot pour chaque personne de la liste, avec son nom, et compose l'enveloppe correspondante. En anglais, le papier est US Letter et l'enveloppe est une #10. Dans les autres langues, A4 et une enveloppe DL. Le texte se modifie sur place. La liste se colle ou s'importe depuis le modèle Excel de la page.\n\nLes lettres sont composées dans une police manuscrite. Elles ne sont pas écrites à la plume, et ce site ne les imprime pas, ne les affranchit pas et ne les envoie pas. Si une ligne contient une colonne message, ce texte remplace le mot du cadre.",
+    "faqTitle": "Questions"
   }
 }

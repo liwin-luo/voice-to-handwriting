@@ -1,15 +1,25 @@
 "use client";
 import { useState } from "react";
-import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
+import { FilePdf, FileSvg, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { useTranslations } from "next-intl";
-import { FONTS, INKS } from "@/stores/useEditorStore";
+import { INKS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { waitForFontFace } from "@/lib/fontFace";
 import { FONT_CATALOG } from "@/content/fontCatalog";
+import { buildCursiveSvg, latinSubsetUrl } from "@/lib/cursiveSvg";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
+}
+
+function bytesToBase64(buffer: ArrayBuffer): string {
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  }
+  return btoa(binary);
 }
 
 // 导出参数:2x 保证清晰;宽度按最长行自适应,行数封顶防超长粘贴撑爆画布
@@ -40,18 +50,18 @@ export default function CursiveFontBrowser() {
   const [size, setSize] = useState(44);
   const [inkId, setInkId] = useState<string>("black");
   const [bgId, setBgId] = useState<BgId>("white");
+  const [svgError, setSvgError] = useState(false);
   const [drawText, compositionProps] = useDebouncedImeSafe(text);
 
   const ink = INKS.find((c) => c.id === inkId) ?? INKS[1];
   const bg = BGS.find((b) => b.id === bgId) ?? BGS[0];
   const lines = drawText.split("\n").filter((l) => l.trim().length > 0).slice(0, PNG_MAX_LINES);
 
-  /** 单款字体导出:canvas 逐行绘制,行宽自适应;PNG 可透明底,PDF 白底 */
-  async function downloadFont(entryId: string, kind: "png" | "pdf") {
+  /** 单款字体导出:canvas 逐行绘制,行宽自适应。PNG 可透明底,PDF 白底,SVG 内嵌拉丁子集。 */
+  async function downloadFont(entryId: string, kind: "png" | "pdf" | "svg") {
     const entry = FONT_CATALOG.find((f) => f.id === entryId);
-    const font = FONTS.find((f) => f.id === entryId);
-    if (!entry || !font || lines.length === 0) return;
-    const family = primaryFamily(font.css);
+    if (!entry || lines.length === 0) return;
+    const family = primaryFamily(entry.css);
     await waitForFontFace(family);
 
     const probe = document.createElement("canvas").getContext("2d");
@@ -79,6 +89,46 @@ export default function CursiveFontBrowser() {
     lines.forEach((line, i) => {
       ctx.fillText(line, PNG_PAD, PNG_PAD + size + i * lineH);
     });
+
+    if (kind === "svg") {
+      try {
+        const cssUrl = `/fonts/${entry.id}/result.css`;
+        const css = await fetch(cssUrl).then((res) => {
+          if (!res.ok) throw new Error("css");
+          return res.text();
+        });
+        const rel = latinSubsetUrl(css);
+        if (!rel) throw new Error("subset");
+        const fontUrl = new URL(rel, new URL(cssUrl, window.location.origin)).href;
+        const buf = await fetch(fontUrl).then((res) => {
+          if (!res.ok) throw new Error("woff");
+          return res.arrayBuffer();
+        });
+        const svg = buildCursiveSvg({
+          lines,
+          family,
+          size,
+          ink: ink.value,
+          bg: bgId === "transparent" ? null : bg.value,
+          width: logicalW,
+          height: logicalH,
+          pad: PNG_PAD,
+          lineH,
+          fontBase64: bytesToBase64(buf),
+        });
+        const blob = new Blob([svg], { type: "image/svg+xml" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${entryId}-font.svg`;
+        a.click();
+        URL.revokeObjectURL(url);
+        setSvgError(false);
+      } catch {
+        setSvgError(true);
+      }
+      return;
+    }
 
     if (kind === "png") {
       off.toBlob((blob) => {
@@ -157,12 +207,11 @@ export default function CursiveFontBrowser() {
             </select>
           </label>
         </div>
+        {svgError && <p className="mt-2 text-xs leading-relaxed text-rose-700">{t("exportFailed")}</p>}
       </div>
 
       <div className="mt-4 flex flex-col gap-3">
         {FONT_CATALOG.map((entry) => {
-          const font = FONTS.find((f) => f.id === entry.id);
-          if (!font) return null;
           return (
             <div key={entry.id} className="rounded-2xl border border-zinc-200 bg-white p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
@@ -190,6 +239,14 @@ export default function CursiveFontBrowser() {
                     PNG
                   </button>
                   <button
+                    onClick={() => void downloadFont(entry.id, "svg")}
+                    disabled={lines.length === 0}
+                    className="btn btn-ghost px-3 py-1.5 text-xs"
+                  >
+                    <FileSvg className="size-3.5" aria-hidden />
+                    SVG
+                  </button>
+                  <button
                     onClick={() => void downloadFont(entry.id, "pdf")}
                     disabled={lines.length === 0}
                     className="btn btn-ghost px-3 py-1.5 text-xs"
@@ -202,7 +259,7 @@ export default function CursiveFontBrowser() {
               <div
                 className="mt-3 overflow-hidden rounded-xl border border-zinc-100 px-4 py-3"
                 style={{
-                  fontFamily: font.css,
+                  fontFamily: entry.css,
                   fontSize: size,
                   lineHeight: 1 + PNG_LINE_GAP,
                   color: ink.value,

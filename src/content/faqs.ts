@@ -28,35 +28,35 @@ export const CURSIVE_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Is the cursive writing generator free?",
-        a: "Yes — no signup, no watermark. Both cursive fonts are open source, and PNG/PDF exports are unlimited.",
+        a: "Yes — no signup. A small site watermark is on by default; turn it off under More like handwriting. Both cursive fonts are open source, and PNG/PDF exports are unlimited.",
       },
       zh: {
         q: "这个花体生成器免费吗?",
-        a: "免费——无需注册、没有水印。两种花体字均为开源字体,PNG/PDF 导出不限次数。",
+        a: "免费——无需注册。导出默认带一行站点水印,可在「更像手写」里关掉。两种花体字均为开源字体,PNG/PDF 导出不限次数。",
       },
       ja: {
         q: "筆記体ジェネレーターは無料ですか?",
-        a: "はい——登録不要、透かしなし。どちらの筆記体フォントもオープンソースで、PNG/PDF 書き出しは無制限です。",
+        a: "はい——登録不要です。書き出しにはサイト名の透かしが初期状態で入り、「もっと手書きらしく」から消せます。どちらの筆記体フォントもオープンソースで、PNG/PDF 書き出しは無制限です。",
       },
       ko: {
         q: "필기체 생성기는 무료인가요?",
-        a: "네 — 가입도 워터마크도 없습니다. 두 필기체 글꼴 모두 오픈소스이며 PNG/PDF 내보내기는 무제한이에요.",
+        a: "네 — 가입은 필요 없습니다. 내보내기에는 사이트 워터마크가 기본으로 들어가며, 「더 손글씨처럼」에서 끌 수 있어요. 두 필기체 글꼴 모두 오픈소스이며 PNG/PDF 내보내기는 무제한이에요.",
       },
       es: {
         q: "¿El generador de letra cursiva es gratis?",
-        a: "Sí — sin registro ni marca de agua. Ambas fuentes cursivas son open source y las exportaciones en PNG/PDF son ilimitadas.",
+        a: "Sí — sin registro. La marca de agua del sitio está activada por defecto; se quita en Más parecido a la letra. Ambas fuentes cursivas son open source y las exportaciones en PNG/PDF son ilimitadas.",
       },
       de: {
         q: "Ist der Schreibschrift-Generator kostenlos?",
-        a: "Ja — keine Anmeldung, kein Wasserzeichen. Beide Schreibschriften sind Open Source, und PNG-/PDF-Exporte sind unbegrenzt.",
+        a: "Ja — keine Anmeldung. Ein kleines Seiten-Wasserzeichen ist standardmäßig an und lässt sich unter Eher wie Handschrift ausschalten. Beide Schreibschriften sind Open Source, und PNG-/PDF-Exporte sind unbegrenzt.",
       },
       fr: {
         q: "Le générateur d'écriture cursive est-il gratuit ?",
-        a: "Oui — sans inscription ni filigrane. Les deux polices cursives sont open source et les exports PNG/PDF sont illimités.",
+        a: "Oui — sans inscription. Un petit filigrane du site est présent par défaut et se retire dans Plus proche de l'écriture. Les deux polices cursives sont open source et les exports PNG/PDF sont illimités.",
       },
       pt: {
         q: "O gerador de escrita cursiva é grátis?",
-        a: "Sim — sem cadastro e sem marca d'água. As duas fontes cursivas são open source e as exportações em PNG/PDF são ilimitadas.",
+        a: "Sim — sem cadastro. Uma marca d'água do site fica ligada por padrão e pode ser desligada em Mais parecido com letra. As duas fontes cursivas são open source e as exportações em PNG/PDF são ilimitadas.",
       },
     },
   },
@@ -1162,35 +1162,35 @@ export const COLORING_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Is the name coloring page generator free?",
-        a: "Yes — unlimited pages, no signup, no watermark. PDF and PNG downloads are free for home and classroom use.",
+        a: "Yes — unlimited pages, no signup. A small site watermark is on by default and can be turned off with the switch above the download buttons. PDF and PNG downloads are free for home and classroom use.",
       },
       zh: {
         q: "名字涂色页生成器免费吗?",
-        a: "免费——页数不限、无需注册、无水印。PDF 和 PNG 下载免费,家庭和课堂都能用。",
+        a: "免费——页数不限、无需注册。页脚默认有一行站点水印,下载按钮上方的开关可以关掉。PDF 和 PNG 下载免费,家庭和课堂都能用。",
       },
       ja: {
         q: "名前ぬりえメーカーは無料ですか?",
-        a: "はい——ページは無制限、登録不要、透かしなし。PDF と PNG のダウンロードは無料で、家庭でも学校でも使えます。",
+        a: "はい——ページは無制限、登録不要です。ページ下部にサイト名の透かしが初期状態で入り、ダウンロードボタン上のスイッチで消せます。PDF と PNG のダウンロードは無料で、家庭でも学校でも使えます。",
       },
       ko: {
         q: "이름 색칠 페이지 생성기는 무료인가요?",
-        a: "네 — 페이지 무제한, 가입 불필요, 워터마크 없음. PDF와 PNG 다운로드는 무료로 집에서도 교실에서도 쓸 수 있어요.",
+        a: "네 — 페이지 무제한, 가입 불필요. 페이지 아래에 사이트 워터마크가 기본으로 들어가며, 다운로드 버튼 위의 스위치로 끌 수 있어요. PDF와 PNG 다운로드는 무료로 집에서도 교실에서도 쓸 수 있어요.",
       },
       es: {
         q: "¿El generador de páginas para colorear con nombres es gratis?",
-        a: "Sí — páginas ilimitadas, sin registro ni marca de agua. Las descargas en PDF y PNG son gratis para casa y aula.",
+        a: "Sí — páginas ilimitadas, sin registro. La marca de agua del sitio está activada por defecto y se quita con el interruptor encima de los botones de descarga. Las descargas en PDF y PNG son gratis para casa y aula.",
       },
       de: {
         q: "Ist der Ausmalbilder-Generator für Namen kostenlos?",
-        a: "Ja — unbegrenzt viele Seiten, keine Anmeldung, kein Wasserzeichen. PDF- und PNG-Downloads sind kostenlos für Zuhause und Klassenzimmer.",
+        a: "Ja — unbegrenzt viele Seiten, keine Anmeldung. Ein kleines Seiten-Wasserzeichen ist standardmäßig an und lässt sich mit dem Schalter über den Download-Buttons ausschalten. PDF- und PNG-Downloads sind kostenlos für Zuhause und Klassenzimmer.",
       },
       fr: {
         q: "Le générateur de coloriages de prénoms est-il gratuit ?",
-        a: "Oui — pages illimitées, sans inscription ni filigrane. Les téléchargements PDF et PNG sont gratuits pour la maison et la classe.",
+        a: "Oui — pages illimitées, sans inscription. Un petit filigrane du site est présent par défaut et se retire avec l'interrupteur au-dessus des boutons de téléchargement. Les téléchargements PDF et PNG sont gratuits pour la maison et la classe.",
       },
       pt: {
         q: "O gerador de páginas para colorir com nomes é grátis?",
-        a: "Sim — páginas ilimitadas, sem cadastro e sem marca d'água. Os downloads em PDF e PNG são grátis para casa e sala de aula.",
+        a: "Sim — páginas ilimitadas, sem cadastro. Uma marca d'água do site fica ligada por padrão e pode ser desligada no interruptor acima dos botões de download. Os downloads em PDF e PNG são grátis para casa e sala de aula.",
       },
     },
   },
@@ -1313,35 +1313,35 @@ export const DAILY_CURSIVE_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Is the daily cursive practice really free?",
-        a: "Yes — every daily sheet is free to download and print, with no signup and no watermark. Print as many copies as you need for your family or classroom.",
+        a: "Yes — every daily sheet is free to download and print, with no signup. A small site watermark is on by default and can be turned off with the switch above the download buttons. Print as many copies as you need for your family or classroom.",
       },
       zh: {
         q: "每日草书练习真的免费吗?",
-        a: "免费——每天的练习页都可以随意下载打印,无需注册、没有水印,家庭和课堂用都可以不限份数。",
+        a: "免费——每天的练习页都可以随意下载打印,无需注册。页脚默认有一行站点水印,下载按钮上方的开关可以关掉。家庭和课堂用都可以不限份数。",
       },
       ja: {
         q: "毎日の筆記体練習は本当に無料ですか?",
-        a: "はい。その日の練習シートはダウンロードも印刷も無料、登録も透かしも不要です。ご家庭や教室で必要な部数だけ印刷できます。",
+        a: "はい。その日の練習シートはダウンロードも印刷も無料、登録も不要です。ページ下部にサイト名の透かしが初期状態で入り、ダウンロードボタン上のスイッチで消せます。ご家庭や教室で必要な部数だけ印刷できます。",
       },
       ko: {
         q: "매일의 필기체 연습은 정말 무료인가요?",
-        a: "네 — 매일의 연습장은 다운로드와 인쇄가 모두 무료이고, 가입도 워터마크도 없어요. 가족이나 교실에서 필요한 만큼 인쇄하세요.",
+        a: "네 — 매일의 연습장은 다운로드와 인쇄가 모두 무료이고, 가입도 필요 없어요. 페이지 아래에 사이트 워터마크가 기본으로 들어가며, 다운로드 버튼 위의 스위치로 끌 수 있어요. 가족이나 교실에서 필요한 만큼 인쇄하세요.",
       },
       es: {
         q: "¿La práctica diaria de cursiva es realmente gratis?",
-        a: "Sí — cada hoja diaria se puede descargar e imprimir gratis, sin registro ni marca de agua. Imprime tantas copias como necesites para tu familia o tu aula.",
+        a: "Sí — cada hoja diaria se puede descargar e imprimir gratis, sin registro. La marca de agua del sitio está activada por defecto y se quita con el interruptor encima de los botones de descarga. Imprime tantas copias como necesites para tu familia o tu aula.",
       },
       de: {
         q: "Ist die tägliche Schreibschrift-Übung wirklich kostenlos?",
-        a: "Ja — jedes Tagesblatt kann kostenlos heruntergeladen und gedruckt werden, ohne Anmeldung und ohne Wasserzeichen. Drucke so viele Kopien, wie du für Familie oder Klasse brauchst.",
+        a: "Ja — jedes Tagesblatt kann kostenlos heruntergeladen und gedruckt werden, ohne Anmeldung. Ein kleines Seiten-Wasserzeichen ist standardmäßig an und lässt sich mit dem Schalter über den Download-Buttons ausschalten. Drucke so viele Kopien, wie du für Familie oder Klasse brauchst.",
       },
       fr: {
         q: "La pratique quotidienne de la cursive est-elle vraiment gratuite ?",
-        a: "Oui — chaque fiche du jour se télécharge et s'imprime gratuitement, sans inscription ni filigrane. Imprimez autant de copies que nécessaire pour votre famille ou votre classe.",
+        a: "Oui — chaque fiche du jour se télécharge et s'imprime gratuitement, sans inscription. Un petit filigrane du site est présent par défaut et se retire avec l'interrupteur au-dessus des boutons de téléchargement. Imprimez autant de copies que nécessaire pour votre famille ou votre classe.",
       },
       pt: {
         q: "A prática diária de cursiva é realmente grátis?",
-        a: "Sim — cada ficha diária pode ser baixada e impressa de graça, sem cadastro e sem marca d'água. Imprima quantas cópias precisar para a família ou a sala de aula.",
+        a: "Sim — cada ficha diária pode ser baixada e impressa de graça, sem cadastro. Uma marca d'água do site fica ligada por padrão e pode ser desligada no interruptor acima dos botões de download. Imprima quantas cópias precisar para a família ou a sala de aula.",
       },
     },
   },
@@ -2377,35 +2377,35 @@ export const CURSIVE_FONT_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Do I need to install the fonts to use them?",
-        a: "No. All seven fonts are bundled with the site and render right in your browser — type your text, and each preview line is real typography, not an approximation. Downloads give you a PNG or PDF of your text; if you want the font files themselves for design software, each row links to the font's Google Fonts page.",
+        a: "No. All thirteen fonts are bundled with the site and render right in your browser — type your text, and each preview line is real typography, not an approximation. Downloads give you a PNG, an SVG with the font embedded, or a PDF of your text; if you want the font files themselves for design software, each row links to the font's Google Fonts page.",
       },
       zh: {
         q: "使用这些字体需要安装吗?",
-        a: "不需要。七款字体全部内嵌在网站里,在浏览器中直接渲染——输入文字,每一行预览都是真实的字体排版,不是近似效果。下载得到的是文字的 PNG 或 PDF;如果你想要字体文件本身用于设计软件,每一行都附了该字体在 Google Fonts 的页面链接。",
+        a: "不需要。十三款字体全部内嵌在网站里,在浏览器中直接渲染——输入文字,每一行预览都是真实的字体排版,不是近似效果。下载得到的是文字的 PNG、内嵌字体的 SVG 或 PDF;如果你想要字体文件本身用于设计软件,每一行都附了该字体在 Google Fonts 的页面链接。",
       },
       ja: {
         q: "フォントをインストールする必要はありますか?",
-        a: "不要です。7書体すべてサイトに同梱されており、ブラウザ上で直接レンダリングされます。文字を入力すると、各行のプレビューは近似ではなく本物のタイポグラフィです。ダウンロードできるのはテキストのPNG/PDFで、デザインソフト用のフォントファイル本体が欲しい場合は、各行からGoogle Fontsのページへリンクしています。",
+        a: "不要です。13書体すべてサイトに同梱されており、ブラウザ上で直接レンダリングされます。文字を入力すると、各行のプレビューは近似ではなく本物のタイポグラフィです。ダウンロードできるのはテキストのPNG、フォントを埋め込んだSVG、またはPDFです。デザインソフト用のフォントファイル本体が欲しい場合は、各行からGoogle Fontsのページへリンクしています。",
       },
       ko: {
         q: "글꼴을 설치해야 하나요?",
-        a: "아니요. 7개 글꼴 모두 사이트에 포함되어 브라우저에서 바로 렌더링됩니다. 텍스트를 입력하면 각 미리보기 줄이 근사치가 아니라 실제 타이포그래피예요. 다운로드는 텍스트의 PNG 또는 PDF로 제공되고, 디자인 소프트웨어용 글꼴 파일 자체가 필요하면 각 행에서 Google Fonts 페이지로 연결됩니다.",
+        a: "아니요. 13개 글꼴 모두 사이트에 포함되어 브라우저에서 바로 렌더링됩니다. 텍스트를 입력하면 각 미리보기 줄이 근사치가 아니라 실제 타이포그래피예요. 다운로드는 텍스트의 PNG, 글꼴이 포함된 SVG, 또는 PDF로 제공되고, 디자인 소프트웨어용 글꼴 파일 자체가 필요하면 각 행에서 Google Fonts 페이지로 연결됩니다.",
       },
       es: {
         q: "¿Necesito instalar las fuentes para usarlas?",
-        a: "No. Las siete fuentes están incluidas en el sitio y se renderizan directamente en tu navegador: escribe tu texto y cada línea de vista previa es tipografía real, no una aproximación. Las descargas son un PNG o PDF de tu texto; si quieres los archivos de fuente para software de diseño, cada fila enlaza a la página de la fuente en Google Fonts.",
+        a: "No. Las trece fuentes están incluidas en el sitio y se renderizan directamente en tu navegador: escribe tu texto y cada línea de vista previa es tipografía real, no una aproximación. Las descargas son un PNG, un SVG con la fuente incrustada o un PDF de tu texto; si quieres los archivos de fuente para software de diseño, cada fila enlaza a la página de la fuente en Google Fonts.",
       },
       fr: {
         q: "Faut-il installer les polices pour les utiliser ?",
-        a: "Non. Les sept polices sont intégrées au site et s'affichent directement dans votre navigateur : tapez votre texte, chaque ligne d'aperçu est une vraie typographie, pas une approximation. Les téléchargements donnent un PNG ou un PDF de votre texte ; si vous voulez les fichiers de polices pour un logiciel de design, chaque ligne renvoie vers la page Google Fonts de la police.",
+        a: "Non. Les treize polices sont intégrées au site et s'affichent directement dans votre navigateur : tapez votre texte, chaque ligne d'aperçu est une vraie typographie, pas une approximation. Les téléchargements donnent un PNG, un SVG avec la police intégrée ou un PDF de votre texte ; si vous voulez les fichiers de polices pour un logiciel de design, chaque ligne renvoie vers la page Google Fonts de la police.",
       },
       de: {
         q: "Muss ich die Schriftarten installieren?",
-        a: "Nein. Alle sieben Schriftarten sind in die Website eingebettet und werden direkt im Browser gerendert — tippe deinen Text, jede Vorschauzeile ist echte Typografie, keine Annäherung. Die Downloads liefern deinen Text als PNG oder PDF; wer die Schriftdateien selbst für Designsoftware möchte, findet in jeder Zeile den Link zur Google-Fonts-Seite.",
+        a: "Nein. Alle dreizehn Schriftarten sind in die Website eingebettet und werden direkt im Browser gerendert — tippe deinen Text, jede Vorschauzeile ist echte Typografie, keine Annäherung. Die Downloads liefern deinen Text als PNG, als SVG mit eingebetteter Schrift oder als PDF; wer die Schriftdateien selbst für Designsoftware möchte, findet in jeder Zeile den Link zur Google-Fonts-Seite.",
       },
       pt: {
         q: "Preciso instalar as fontes para usá-las?",
-        a: "Não. As sete fontes vêm embutidas no site e são renderizadas direto no navegador — digite seu texto e cada linha de pré-visualização é tipografia real, não uma aproximação. Os downloads geram um PNG ou PDF do seu texto; se quiser os arquivos das fontes para software de design, cada linha tem o link para a página da fonte no Google Fonts.",
+        a: "Não. As treze fontes vêm embutidas no site e são renderizadas direto no navegador — digite seu texto e cada linha de pré-visualização é tipografia real, não uma aproximação. Os downloads geram um PNG, um SVG com a fonte embutida ou um PDF do seu texto; se quiser os arquivos das fontes para software de design, cada linha tem o link para a página da fonte no Google Fonts.",
       },
     },
   },
@@ -2418,15 +2418,15 @@ export const CURSIVE_FONT_FAQS: FaqItem[] = [
       },
       zh: {
         q: "导出的图可以商用吗?",
-        a: "可以。这里的七款字体都采用 SIL Open Font License 1.1 授权,允许个人和商业使用——印刷卡片、请柬、产品、标志都可以。该授权针对字体软件本身;你导出的图片归你所有。每一行都标注了字体的作者与授权,方便随时核对。",
+        a: "可以。这里的十三款字体都采用 SIL Open Font License 1.1 授权,允许个人和商业使用——印刷卡片、请柬、产品、标志都可以。该授权针对字体软件本身;你导出的图片归你所有。每一行都标注了字体的作者与授权,方便随时核对。",
       },
       ja: {
         q: "書き出した画像を商用利用できますか?",
-        a: "できます。ここにある7書体はすべてSIL Open Font License 1.1で、個人・商用を問わず利用可能です。印刷カードや招待状、商品、ロゴなどに使えます。ライセンスはフォントソフトウェアに適用され、書き出した画像はあなたのものです。各行に作者とライセンスを明記しているので、いつでも確認できます。",
+        a: "できます。ここにある13書体はすべてSIL Open Font License 1.1で、個人・商用を問わず利用可能です。印刷カードや招待状、商品、ロゴなどに使えます。ライセンスはフォントソフトウェアに適用され、書き出した画像はあなたのものです。各行に作者とライセンスを明記しているので、いつでも確認できます。",
       },
       ko: {
         q: "내보낸 이미지를 상업적으로 쓸 수 있나요?",
-        a: "네. 여기의 7개 글꼴은 모두 SIL Open Font License 1.1이라 개인 및 상업적 사용이 허용됩니다. 인쇄 카드, 청첩장, 제품, 로고 모두 가능해요. 라이선스는 글꼴 소프트웨어에 적용되고, 내보낸 이미지는 여러분의 소유입니다. 각 행에 글꼴 저자와 라이선스를 표시해 두었으니 언제든 확인할 수 있어요.",
+        a: "네. 여기의 13개 글꼴은 모두 SIL Open Font License 1.1이라 개인 및 상업적 사용이 허용됩니다. 인쇄 카드, 청첩장, 제품, 로고 모두 가능해요. 라이선스는 글꼴 소프트웨어에 적용되고, 내보낸 이미지는 여러분의 소유입니다. 각 행에 글꼴 저자와 라이선스를 표시해 두었으니 언제든 확인할 수 있어요.",
       },
       es: {
         q: "¿Puedo usar las exportaciones con fines comerciales?",
@@ -2480,6 +2480,121 @@ export const CURSIVE_FONT_FAQS: FaqItem[] = [
       pt: {
         q: "Qual é a diferença para um gerador de texto cursivo?",
         a: "Geradores Unicode trocam suas letras por símbolos parecidos que você pode colar como texto simples em bios e chats — mas não são fontes, não imprimem em alta qualidade e leitores de tela leem letra por letra. Esta página usa fontes de verdade e gera imagens e PDFs: a ferramenta certa para cartões, envelopes e tudo o que vai para o papel. Para texto colável, use o gerador de texto cursivo.",
+      },
+    },
+  },
+];
+
+/** /printable-handwritten-letters */
+export const BULK_LETTER_FAQS: FaqItem[] = [
+  {
+    id: "bulk-mail",
+    i18n: {
+      en: {
+        q: "Will you mail these letters?",
+        a: "No. The page makes two PDFs, one of letters and one of envelopes. You print them, add postage, and mail them yourself. Nothing is sent from this site.",
+      },
+      zh: {
+        q: "你们会帮我寄出这些信吗?",
+        a: "不会。这个页面只生成两份 PDF:信件和信封。打印、贴邮票、寄出都由你自己完成。本站不寄任何东西。",
+      },
+      ja: {
+        q: "手紙を発送してもらえますか?",
+        a: "いいえ。このページが作るのは手紙と封筒、2 つの PDF だけです。印刷し、切手を貼り、ご自身で投函してください。このサイトから何かが送られることはありません。",
+      },
+      ko: {
+        q: "이 편지를 대신 보내 주나요?",
+        a: "아니요. 이 페이지는 편지 PDF와 봉투 PDF 두 개만 만듭니다. 인쇄하고 우표를 붙여 직접 보내세요. 이 사이트에서 아무것도 발송하지 않습니다.",
+      },
+      es: {
+        q: "¿Envían estas cartas?",
+        a: "No. La página genera dos PDF: las cartas y los sobres. Tú los imprimes, pones el sello y los envías. Desde este sitio no sale ningún envío.",
+      },
+      de: {
+        q: "Verschickt ihr diese Briefe?",
+        a: "Nein. Die Seite erzeugt zwei PDFs: Briefe und Umschläge. Du druckst sie, frankierst sie und wirfst sie selbst ein. Von dieser Website wird nichts verschickt.",
+      },
+      fr: {
+        q: "Est-ce que vous expédiez ces lettres ?",
+        a: "Non. La page produit deux PDF : les lettres et les enveloppes. Vous les imprimez, vous affranchissez et vous les postez. Rien n'est envoyé depuis ce site.",
+      },
+      pt: {
+        q: "Vocês enviam essas cartas?",
+        a: "Não. A página gera dois PDFs: as cartas e os envelopes. Você imprime, cola o selo e envia. Nada é despachado por este site.",
+      },
+    },
+  },
+  {
+    id: "bulk-real",
+    i18n: {
+      en: {
+        q: "Is the writing done with a pen?",
+        a: "No. Each note is set in a handwriting font, with small shifts so the lines are not perfectly even. It is not ink from a pen, and it should not be passed off as a handwritten original.",
+      },
+      zh: {
+        q: "这些字是笔写的吗?",
+        a: "不是。每封信用的是手写字体,并加了一点轻微错落,所以不会像印刷体那样齐。这不是钢笔字,也不应当当成手写原件给人。",
+      },
+      ja: {
+        q: "ペンで書かれた文字ですか?",
+        a: "いいえ。手書きフォントで組み、わずかに揺らして直線的に見えないようにしています。ペンのインクではなく、手書きの原本として渡さないでください。",
+      },
+      ko: {
+        q: "펜으로 쓴 글씨인가요?",
+        a: "아니요. 손글씨 글꼴로 조판하고, 줄이 너무 반듯하지 않도록 조금씩 흔듭니다. 펜으로 쓴 글씨가 아니며, 손글씨 원본인 것처럼 건네지 마세요.",
+      },
+      es: {
+        q: "¿Está escrito con pluma?",
+        a: "No. Cada nota usa una fuente de letra manuscrita, con pequeños desplazamientos para que las líneas no queden perfectamente rectas. No es tinta de pluma y no debe presentarse como un original escrito a mano.",
+      },
+      de: {
+        q: "Ist das mit einem Stift geschrieben?",
+        a: "Nein. Jede Notiz steht in einer Handschrift, leicht versetzt, damit die Zeilen nicht wie gedruckt aussehen. Es ist keine Tinte vom Stift und sollte nicht als handgeschriebenes Original ausgegeben werden.",
+      },
+      fr: {
+        q: "Est-ce écrit à la plume ?",
+        a: "Non. Chaque mot est composé dans une police manuscrite, avec de légers décalages pour que les lignes ne soient pas parfaitement droites. Ce n'est pas de l'encre, et il ne faut pas le présenter comme un original écrit à la main.",
+      },
+      pt: {
+        q: "A escrita é feita à caneta?",
+        a: "Não. Cada bilhete usa uma fonte de letra manuscrita, com pequenos deslocamentos para as linhas não ficarem perfeitamente retas. Não é tinta de caneta e não deve ser apresentado como um original escrito à mão.",
+      },
+    },
+  },
+  {
+    id: "bulk-csv",
+    i18n: {
+      en: {
+        q: "How should the recipient list be formatted?",
+        a: "The first row is a header: name, street, city, region, postal. One person per row after that, up to 30. An optional message column replaces the note in the box for that row. {name} in the note becomes that person's name. You can paste the table or import the Excel template (.xlsx or .csv) from the page.",
+      },
+      zh: {
+        q: "收件人名单要怎么写?",
+        a: "第一行是表头:name, street, city, region, postal。表头用这几个英文单词。下面每人一行,最多 30 人。可选的 message 列会替换这一行的正文。正文里的 {name} 会换成这个人的名字。可以粘贴表格,也可以导入页面上的 Excel 模板(.xlsx 或 .csv)。",
+      },
+      ja: {
+        q: "宛先リストの形式は?",
+        a: "1 行目は見出しです: name, street, city, region, postal。見出しはこの英単語のままにしてください。続く行が 1 人ずつ、最大 30 人です。任意の message 列があるとその行だけ本文の代わりになります。本文の {name} はその人の名前に置き換わります。貼り付けるか、ページの Excel テンプレート（.xlsx または .csv）を読み込めます。",
+      },
+      ko: {
+        q: "받는 사람 목록은 어떤 형식인가요?",
+        a: "첫 줄은 머리글입니다: name, street, city, region, postal. 머리글은 이 영어 단어를 그대로 두세요. 그 아래는 한 줄에 한 명, 최대 30명입니다. 선택 항목인 message 열이 있으면 그 줄은 본문 대신 그 내용을 씁니다. 본문의 {name}은 그 사람의 이름으로 바뀝니다. 붙여 넣거나 페이지의 Excel 서식(.xlsx 또는 .csv)을 가져올 수 있습니다.",
+      },
+      es: {
+        q: "¿Cómo tiene que ir la lista de destinatarios?",
+        a: "La primera fila es el encabezado: name, street, city, region, postal. Esas palabras van en inglés. Después, una persona por fila, hasta 30. Una columna opcional message sustituye la nota del recuadro en esa fila. {name} en el texto se cambia por el nombre de esa persona. Puedes pegar la tabla o importar la plantilla Excel (.xlsx o .csv) de la página.",
+      },
+      de: {
+        q: "Wie muss die Empfängerliste aussehen?",
+        a: "Die erste Zeile ist die Kopfzeile: name, street, city, region, postal. Diese Wörter bleiben englisch. Danach eine Person pro Zeile, höchstens 30. Eine optionale Spalte message ersetzt für diese Zeile den Text im Feld. {name} im Text wird zum Namen dieser Person. Die Tabelle lässt sich einfügen oder aus der Excel-Vorlage der Seite importieren (.xlsx oder .csv).",
+      },
+      fr: {
+        q: "Comment formater la liste des destinataires ?",
+        a: "La première ligne est l'en-tête : name, street, city, region, postal. Ces mots restent en anglais. Ensuite, une personne par ligne, jusqu'à 30. Une colonne facultative message remplace le texte du cadre pour cette ligne. {name} dans le texte devient le nom de la personne. Tu peux coller le tableau ou importer le modèle Excel de la page (.xlsx ou .csv).",
+      },
+      pt: {
+        q: "Como formatar a lista de destinatários?",
+        a: "A primeira linha é o cabeçalho: name, street, city, region, postal. Essas palavras ficam em inglês. Depois, uma pessoa por linha, até 30. Uma coluna opcional message substitui o texto da caixa naquela linha. {name} no texto vira o nome da pessoa. Dá para colar a tabela ou importar o modelo Excel da página (.xlsx ou .csv).",
       },
     },
   },

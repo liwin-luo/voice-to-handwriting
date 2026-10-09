@@ -50,7 +50,7 @@
     },
     "dailyCursive": {
       "title": "Tägliche Schreibschrift-Übung als PDF (kostenlos druckbar)",
-      "description": "Jeden Tag ein neues Schreibschrift-Arbeitsblatt: Aufwärmstriche, Buchstaben des Tages, Wörter und ein Satz zum Nachspuren. Kostenloses PDF für Kinder und Erwachsene, ohne Anmeldung, ohne Wasserzeichen."
+      "description": "Jeden Tag ein neues Schreibschrift-Arbeitsblatt: Aufwärmstriche, Buchstaben des Tages, Wörter und ein Satz zum Nachspuren. Kostenloses PDF für Kinder und Erwachsene, ohne Anmeldung. Ein kleines Wasserzeichen ist standardmäßig an und lässt sich ausschalten."
     },
     "writing": {
       "title": "CJK-Schreibübungs-Generator",
@@ -90,7 +90,7 @@
     },
     "cursiveText": {
       "title": "Schreibschrift-Generator – Text kopieren und einfügen",
-      "description": "Verwandle beliebige Sätze in kopierbaren Schreibschrift-Text – sechs Stile, kostenlos, ohne Anmeldung, auch per Spracheingabe. Für Instagram, TikTok und Discord."
+      "description": "Verwandle beliebige Sätze in kopierbaren Schreibschrift-Text – dreizehn Stile, kostenlos, ohne Anmeldung, auch per Spracheingabe. Für Instagram, TikTok und Discord."
     },
     "cursiveAlphabet": {
       "description": "Alle Schreibschrift-Buchstaben von A bis Z mit Strichführungen — Buchstabe antippen, Schrift wechseln und die Tafel kostenlos drucken."
@@ -100,7 +100,11 @@
     },
     "cursiveFont": {
       "title": "Schreibschrift-Font-Generator – Handschrift-Fonts ansehen & exportieren",
-      "description": "Sieh deinen Text in sieben Handschrift-Fonts gleichzeitig, stelle Größe, Tinte und Hintergrund ein und exportiere hochauflösendes PNG oder PDF — gratis, ohne Installation, ohne Anmeldung. Open-Source-Fonts (OFL) mit klaren Lizenzen."
+      "description": "Sieh deinen Text in dreizehn Handschrift-Fonts, darunter Signaturschriften, stelle Größe, Tinte und Hintergrund ein und exportiere PNG, SVG oder PDF — gratis, ohne Installation, ohne Anmeldung. Open-Source-Fonts (OFL) mit klaren Lizenzen."
+    },
+    "bulkLetters": {
+      "title": "Druckbare handschriftliche Briefe und Umschläge",
+      "description": "Füge eine Empfängerliste ein und lade zwei PDFs: einen Brief in Handschrift für jede Person und einen Umschlag mit Adresse. Du druckst und verschickst sie. Kostenlos, im Browser."
     }
   },
   "nav": {
@@ -125,11 +129,13 @@
     "repeater": "Schreib-Wiederholung",
     "menu": "Menü",
     "allTools": "Alle Werkzeuge",
+    "viewAll": "Alle Werkzeuge ansehen",
     "groupWrite": "Schreiben & Generieren",
     "groupPractice": "Übungsblätter & Drucken",
     "groupFun": "Nur zum Spaß",
     "pageCalc": "Blätterrechner",
-    "cursiveText": "Schreibschrift-Text"
+    "cursiveText": "Schreibschrift-Text",
+    "bulkLetters": "Druckbare Briefe"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -534,7 +540,7 @@
     "emptyTitle": "Noch keine Namen",
     "emptyHint": "Namen eingeben — die Malvorlage zeichnet sich von selbst.",
     "seoTitle": "Kostenloser Namens-Malvorlagen-Generator für Kinder",
-    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, dazu Sterne, Tiere oder Maschinen zum Ausmalen — exaktes Letter-Format, ohne Wasserzeichen.",
+    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, dazu Sterne, Tiere oder Maschinen zum Ausmalen — exaktes Letter-Format. Ein kleines Seiten-Wasserzeichen ist standardmäßig an und lässt sich ausschalten.",
     "faqTitle": "Häufige Fragen"
   },
   "wordwork": {
@@ -640,7 +646,7 @@
   },
   "cursiveText": {
     "title": "Schreibschrift-Text-Generator",
-    "intro": "Tippe oder sprich ein paar Worte und kopiere sie als Schreibschrift-Text. Sechs Stile, kostenlos, ohne Anmeldung – alles bleibt im Browser.",
+    "intro": "Tippe oder sprich ein paar Worte und kopiere sie als Schreibschrift-Text. Dreizehn Stile, kostenlos, ohne Anmeldung – alles bleibt im Browser.",
     "inputLabel": "Dein Text",
     "placeholder": "Hier tippen oder aufs Mikro tippen und sprechen",
     "sample": "Hallo",
@@ -657,12 +663,22 @@
     "styles": {
       "script": "Schreibschrift",
       "boldScript": "Fette Schreibschrift",
+      "italic": "Kursiv",
+      "bold": "Fett",
       "boldItalic": "Fette Kursiv",
       "fraktur": "Fraktur",
+      "boldFraktur": "Fette Fraktur",
       "outline": "Kontur",
+      "sans": "Serifenlos",
+      "sansBold": "Fett serifenlos",
+      "sansItalic": "Kursiv serifenlos",
+      "sansBoldItalic": "Fett kursiv serifenlos",
       "mono": "Schreibmaschine"
     },
     "unicodeNote": "Das ist Unicode-Text, keine Schriftart – der Stil reist beim Einfügen mit den Zeichen mit. Ein paar ältere Handys kennen manche Zeichen nicht; zeigt ein Stil Kästchen, probiere einen anderen.",
+    "alphabetTitle": "Alphabet kopieren",
+    "alphabetHint": "Dieselben Stile, A bis Z, ohne Tippen zum Kopieren.",
+    "phrasesTitle": "Eine Wendung kopieren",
     "seoTitle": "Was Schreibschrift-Text ist (und wo er funktioniert)",
     "seoText": "Ein Schreibschrift-Generator ersetzt jeden getippten Buchstaben durch das nächstliegende Unicode-Zeichen – mathematische Script-Symbole, die wie fließende Handschrift aussehen. Weil das Ergebnis echter Text und kein Bild ist, kannst du es in eine Instagram-Bio, einen TikTok-Untertitel, einen Discord-Namen oder eine Chatnachricht einfügen, und der Schreibschrift-Look bleibt überall, wo Text geht.\n\nEs ist keine Schriftart und nicht deine Handschrift. Screenreader lesen die Symbole womöglich Buchstabe für Buchstabe, und Geräte ohne passende Glyphen zeichnen Kästchen. Wenn du Schreibschrift zum Drucken willst – Übungsblätter, Karten, Umschläge – exportieren die Handschrift-Generatoren dieser Seite eine echte Schreibschrift als PNG oder PDF.",
     "alsoImage": "Brauchst du sie zum Drucken? Öffne den Cursive-Writing-Generator – er exportiert echte Handschrift als PNG oder PDF.",
@@ -670,7 +686,7 @@
   },
   "cursiveFont": {
     "title": "Schreibschrift-Font-Generator",
-    "intro": "Tippe etwas und sehe es gleichzeitig in jedem Handschrift-Font der Seite. Passe Größe, Tinte und Hintergrund an und lade jeden Font als hochauflösendes PNG oder druckfertiges PDF herunter — ohne Font-Installation, ohne Wasserzeichen.",
+    "intro": "Tippe etwas und sehe es gleichzeitig in jedem Handschrift-Font der Seite: Signaturschriften, formale Kalligrafie und Alltagshandschrift. Passe Größe, Tinte und Hintergrund an und lade jeden Font als hochauflösendes PNG, als SVG mit eingebetteter Schrift oder als druckfertiges PDF herunter. Ohne Installation, ohne Wasserzeichen.",
     "inputLabel": "Dein Text",
     "placeholder": "Tippe oder füge beliebigen Text ein — Namen, eine Kartenbotschaft, eine Einladungszeile…",
     "sample": "Merry & bright",
@@ -681,10 +697,60 @@
     "bgPaper": "Papier",
     "bgTransparent": "Transparent",
     "empty": "Tippe oben etwas, um die Fonts zu sehen.",
+    "exportFailed": "Die SVG-Datei ist nicht fertig geworden. Nimm das PNG.",
     "alsoUnicode": "Du möchtest kopierbaren Schreibschrift-Text? Nimm den Schreibschrift-Textgenerator",
     "alsoHandwriting": "Oder verwandle ganze Sätze in realistische Handschrift",
-    "seoTitle": "Sieben Open-Source-Schreibschrift-Fonts, vorgeschaut mit deinen eigenen Worten",
-    "seoText": "Ein Schreibschrift-Font-Generator setzt deinen eigenen Text in jedem Handschrift-Font, damit du den richtigen wählst, bevor es losgeht. Die meisten Font-Seiten enden bei der Vorschau und erwarten Download und Installation; diese Seite geht weiter — jede Zeile wird live gerendert, und jeder Font lässt sich direkt im Browser als hochauflösendes transparentes PNG oder druckfertiges PDF exportieren.\n\nAlle sieben Fonts sind unter der SIL Open Font License open source, mit namentlich genanntem Autor in jeder Zeile: Sacramento und Dancing Script für formale Schriften, Cedarville Cursive und Caveat für Alltags-Handschrift, Indie Flower, Kalam und Patrick Hand für ordentliche Druckschriften. Die Exporte eignen sich damit für Grußkarten, Hochzeitsschilder, Sticker, Tattoo-Entwürfe und Unterrichtsmaterial.\n\nKursiv aussehende Buchstaben für eine Bio einzufügen ist eine andere Aufgabe — dafür ist der Schreibschrift-Textgenerator da. Zum Üben statt Gestalten macht der Schreibschrift-Arbeitsblatt-Generator aus jeder Wortliste Vorlageblätter.",
+    "seoTitle": "Dreizehn Open-Source-Schreibschrift-Fonts, vorgeschaut mit deinen eigenen Worten",
+    "seoText": "Ein Schreibschrift-Font-Generator setzt deinen eigenen Text in jedem Handschrift-Font, damit du den richtigen wählst, bevor es losgeht. Die meisten Font-Seiten enden bei der Vorschau und erwarten Download und Installation; diese Seite geht weiter — jede Zeile wird live gerendert, und jeder Font lässt sich direkt im Browser als hochauflösendes transparentes PNG, als SVG mit eingebetteter Schrift oder als druckfertiges PDF exportieren.\n\nAlle dreizehn Fonts sind unter der SIL Open Font License open source, mit namentlich genanntem Autor in jeder Zeile. Great Vibes, Alex Brush, Allura und Mr Dafoe sind Signaturschriften. Pinyon Script, Tangerine, Sacramento und Dancing Script sind formale Schriften. Cedarville Cursive und Caveat sind Alltagshandschrift. Indie Flower, Kalam und Patrick Hand sind ordentliche Druckschriften. Das SVG nimmt die Buchstabenformen für eine Tattoo-Schablone oder eine Designdatei mit.\n\nKursiv aussehende Buchstaben für eine Bio einzufügen ist eine andere Aufgabe — dafür ist der Schreibschrift-Textgenerator da. Zum Üben statt Gestalten macht der Schreibschrift-Arbeitsblatt-Generator aus jeder Wortliste Vorlageblätter.",
     "faqTitle": "Schreibschrift-Font-FAQ"
+  },
+  "bulkLetters": {
+    "title": "Druckbare handschriftliche Briefe",
+    "intro": "Wähle eine kurze Notiz, füge eine Liste ein und lade zwei PDFs: einen Brief pro Person und einen Umschlag mit Adresse. Die Schrift ist eine Handschrift, kein Stift. Du druckst, frankierst und wirfst ein. Diese Website verschickt nichts.",
+    "kindLabel": "Notiz",
+    "bodyLabel": "Brieftext",
+    "bodyHint": "Den Text kannst du ändern. '{'name'}' wird zum Namen der Person, '{'from'}' zur ersten Zeile der Absenderadresse. Eine message-Zelle ersetzt diesen Text nur in dieser Zeile.",
+    "importExcel": "Excel importieren",
+    "downloadTemplate": "Excel-Vorlage",
+    "importFailed": "Die Datei ließ sich nicht lesen. Nimm die Excel-Vorlage oder eine .xlsx- oder .csv-Datei mit Kopfzeile.",
+    "kind": {
+      "thanks": "Danke",
+      "referral": "Empfehlung",
+      "prospect": "Neuer Kontakt",
+      "winback": "Wiederaufnahme",
+      "announce": "Ankündigung"
+    },
+    "body": {
+      "thanks": "Hallo '{'name'}',\n\ndanke für die Zeit gestern. Danach war klarer, was du brauchst, und ich bin froh, dass wir es persönlich besprochen haben.\n\nDen vereinbarten nächsten Schritt übernehme ich. Wenn vorher noch etwas fehlt, sag einfach Bescheid.\n\nDanke für das Gespräch\n'{'from'}'",
+      "referral": "Hallo '{'name'}',\n\nmit dir lässt sich gut arbeiten, deshalb frage ich lieber dich, statt zu raten. Wenn jemand, den du kennst, dieselbe Art von Hilfe braucht, wäre ich für eine Vorstellung dankbar.\n\nEin Name oder eine kurze Notiz von dir reicht.\n\nDanke\n'{'from'}'",
+      "prospect": "Hallo '{'name'}',\n\nich schreibe auf Papier, weil eine Notiz leichter liegen bleibt und wirklich gelesen wird als noch eine E-Mail. Ich glaube, wir können bei etwas helfen, das schon eine Weile offen ist.\n\nWenn ein kurzes Gespräch nützlich wäre, bin ich gut zu erreichen. Wenn der Zeitpunkt nicht passt, brauchst du nicht zu antworten.\n\nMit freundlichen Grüßen\n'{'from'}'",
+      "winback": "Hallo '{'name'}',\n\nes ist eine Weile her, und ich wollte nicht, dass Schweigen das letzte Wort zwischen uns ist. Wenn wir auseinandergeraten sind, würde ich gern wissen, was ein Weitermachen lohnen würde.\n\nIn dieser Notiz steckt kein Angebot. Die Tür ist offen.\n\nHerzlich\n'{'from'}'",
+      "announce": "Hallo '{'name'}',\n\neine kurze Notiz, damit das nicht im Posteingang verschwindet. Es gibt etwas Neues, das zu dem passt, was du schon nutzt, und ich wollte, dass du es zuerst auf Papier siehst.\n\nDie Einzelheiten stehen auf dem Zettel zu diesem Brief. Ich hoffe, sie sind nützlich.\n\nAlles Gute\n'{'from'}'"
+    },
+    "listLabel": "Empfänger",
+    "listHint": "Die erste Zeile muss name, street, city, region, postal sein, auf Englisch. Eine Person pro Zeile, höchstens 30. Eine optionale Spalte message ersetzt die Notiz in dieser Zeile. '{'name'}' wird zu ihrem Namen. Zeilen einfügen oder die Excel-Vorlage importieren (.xlsx oder .csv).",
+    "listPlaceholder": "name,street,city,region,postal",
+    "sampleCsv": "name,street,city,region,postal\nAvery Chen,18 Oak Street,Glen Rock,NJ,07452\nSam Ortiz,402 Pine Ave,Austin,TX,78701",
+    "useSample": "Beispiel einsetzen",
+    "returnLabel": "Absender",
+    "returnHint": "Steht oben links auf jedem Umschlag. Die erste Zeile ist die Unterschrift im Brief.",
+    "returnPlaceholder": "Jordan Lee\n18 Oak Street\nGlen Rock, NJ 07452",
+    "previewEmpty": "Füge eine Liste ein, dann erscheinen Brief und Umschlag.",
+    "recipientN": "{n} / {total}",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "downloadLetters": "Briefe als PDF",
+    "downloadEnvelopes": "Umschläge als PDF",
+    "exporting": "PDF wird vorbereitet…",
+    "exportFailed": "Das PDF wurde nicht fertig. Versuch es noch einmal.",
+    "badHeader": "Die erste Zeile braucht diese Spalten: name, street, city, region, postal.",
+    "noRows": "Noch keine Empfänger. Schreib unter die Kopfzeile eine Person pro Zeile.",
+    "truncated": "Nur die ersten {count} Personen sind dabei.",
+    "skipped": "{count, plural, one {# Zeile hatte keinen Namen und wurde ausgelassen.} other {# Zeilen hatten keinen Namen und wurden ausgelassen.}}",
+    "printHintLetter": "Briefe sind US Letter. Umschläge sind #10 (9,5 × 4,125 in). Druck sie und wirf sie selbst ein.",
+    "printHintA4": "Briefe sind A4. Umschläge sind DL (220 × 110 mm). Druck sie und wirf sie selbst ein.",
+    "seoTitle": "Briefe und Umschläge, die du selbst druckst",
+    "seoText": "Ein druckbarer handschriftlicher Brief ist ein Blatt, das du druckst, faltest und in einen Umschlag steckst. Diese Seite füllt für jede Person auf der Liste eine kurze Notiz, setzt den Namen ein und setzt den passenden Umschlag. Auf Englisch sind es US Letter und ein #10-Umschlag. In den anderen Sprachen A4 und ein DL-Umschlag. Den Text kannst du ändern. Die Liste lässt sich einfügen oder aus der Excel-Vorlage auf der Seite importieren.\n\nDie Briefe stehen in einer Handschrift. Sie sind nicht mit einem Stift geschrieben, und diese Website druckt, frankiert oder verschickt sie nicht. Wenn eine Zeile eine Spalte message hat, wird dieser Text statt der Notiz im Feld verwendet.",
+    "faqTitle": "Fragen"
   }
 }

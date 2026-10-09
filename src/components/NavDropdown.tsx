@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CaretDown } from "@phosphor-icons/react";
 import { usePathname } from "@/i18n/navigation";
 import { Link } from "@/i18n/navigation";
@@ -19,13 +19,22 @@ export interface NavGroup {
 export default function NavDropdown({
   label,
   groups,
+  viewAll,
+  activeHrefs,
 }: {
   label: string;
   groups: NavGroup[];
+  viewAll: NavItem;
+  /** 全部工具路径,含未进下拉的。当前页命中时按钮仍高亮 */
+  activeHrefs: string[];
 }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isActive = groups.some((g) => g.items.some((i) => pathname === i.href));
+  const isActive = pathname === viewAll.href || activeHrefs.includes(pathname);
+  // 点链接时先别卸掉菜单，否则 Next 的导航会被掐断。等路径变了再收。
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <div
@@ -46,10 +55,7 @@ export default function NavDropdown({
       </button>
       {open && (
         /* pt-2 是悬停桥:卡片与按钮间的空隙必须是本元素的一部分,否则移过空隙就触发 onMouseLeave 关菜单 */
-        <div
-          className="absolute left-0 top-full z-40 pt-2"
-          onClick={() => setOpen(false)}
-        >
+        <div className="absolute left-0 top-full z-40 pt-2">
           <div
             role="menu"
             className="w-64 rounded-xl border border-zinc-200 bg-white p-2 shadow-[0_16px_40px_-16px_rgba(23,23,23,0.25)]"
@@ -74,6 +80,15 @@ export default function NavDropdown({
                 ))}
               </div>
             ))}
+            <div className="mt-1 border-t border-zinc-100 pt-1">
+              <Link
+                href={viewAll.href}
+                role="menuitem"
+                className="block rounded-lg px-3 py-2 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-50"
+              >
+                {viewAll.label}
+              </Link>
+            </div>
           </div>
         </div>
       )}

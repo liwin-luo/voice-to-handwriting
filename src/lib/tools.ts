@@ -1,4 +1,4 @@
-/** 全站工具分类(导航分组下拉与 /tools 聚合页共用)。
+/** 全站工具分类。页头下拉用 navGroupsFor(只含 nav: true),/tools 用 toolGroupsFor(全量)。
  *  只做导航与聚合层面的分类,工具 URL 保持不变——这些 slug 本身就是关键词落地页(docs/DEVELOPMENT-STANDARDS.md §2.5)。
  *  文案不在此处:标题取 messages nav.*(RelatedLinks 同源),卡片描述取 messages meta.<key>.description。 */
 import { routing } from "@/i18n/routing";
@@ -11,6 +11,8 @@ export interface ToolCard {
   metaKey?: string;
   /** 主工具卡片标题用品牌名 */
   brand?: boolean;
+  /** 出现在页头「全部工具」下拉。未标的只进 /tools,避免下拉变成整站目录 */
+  nav?: boolean;
   /** en-only 工具(如 /cursive-alphabet Phase 0):非默认语言的导航/聚合页要过滤掉,否则 8 语言用户点进 404 */
   enOnly?: boolean;
 }
@@ -29,6 +31,13 @@ export function toolGroupsFor(locale: string): ToolGroup[] {
   })).filter((g) => g.tools.length > 0);
 }
 
+/** 页头下拉:每组只留标了 nav 的常用入口。全量仍走 toolGroupsFor → /tools */
+export function navGroupsFor(locale: string): ToolGroup[] {
+  return toolGroupsFor(locale)
+    .map((g) => ({ ...g, tools: g.tools.filter((t) => t.nav) }))
+    .filter((g) => g.tools.length > 0);
+}
+
 /** en-only 工具路径判断(RelatedLinks 等内容侧链接需要按语言过滤,否则指向 404) */
 export function isEnOnlyTool(href: string): boolean {
   return TOOL_GROUPS.some((g) => g.tools.some((t) => t.enOnly && t.href === href));
@@ -38,35 +47,36 @@ export const TOOL_GROUPS: ToolGroup[] = [
   {
     labelKey: "groupWrite",
     tools: [
-      { href: "/", navKey: "tool", brand: true },
-      { href: "/cursive", navKey: "cursive", metaKey: "cursive" },
-      { href: "/cursive-text-generator", navKey: "cursiveText", metaKey: "cursiveText" },
+      { href: "/", navKey: "tool", brand: true, nav: true },
+      { href: "/cursive", navKey: "cursive", metaKey: "cursive", nav: true },
+      { href: "/cursive-text-generator", navKey: "cursiveText", metaKey: "cursiveText", nav: true },
       { href: "/cursive-font-generator", navKey: "cursiveFont", metaKey: "cursiveFont" },
       { href: "/templates", navKey: "templates", metaKey: "templates" },
+      { href: "/printable-handwritten-letters", navKey: "bulkLetters", metaKey: "bulkLetters", nav: true },
     ],
   },
   {
     labelKey: "groupPractice",
     tools: [
-      { href: "/name-tracing", navKey: "nameTracing", metaKey: "tracing" },
+      { href: "/name-tracing", navKey: "nameTracing", metaKey: "tracing", nav: true },
       { href: "/letter-tracing", navKey: "letterTracing", metaKey: "letterTracing", enOnly: true },
       { href: "/handwriting-repeater", navKey: "repeater", metaKey: "repeater" },
-      { href: "/printable-paper", navKey: "printablePaper", metaKey: "printable" },
+      { href: "/printable-paper", navKey: "printablePaper", metaKey: "printable", nav: true },
       { href: "/handwriting-page-calculator", navKey: "pageCalc", metaKey: "pageCalc" },
       { href: "/cursive-alphabet", navKey: "cursiveAlphabet", metaKey: "cursiveAlphabet", enOnly: true },
       { href: "/cursive-worksheets", navKey: "cursiveWorks", metaKey: "cursiveWorks" },
       { href: "/daily-cursive-handwriting-practice", navKey: "dailyCursive", metaKey: "dailyCursive" },
-      { href: "/writing-practice", navKey: "writingPractice", metaKey: "writing" },
+      { href: "/writing-practice", navKey: "writingPractice", metaKey: "writing", nav: true },
       { href: "/word-work", navKey: "wordWork", metaKey: "wordwork" },
       { href: "/name-coloring", navKey: "coloring", metaKey: "coloring" },
-      { href: "/handwriting-workbook-generator", navKey: "workbook", metaKey: "workbook" },
+      { href: "/handwriting-workbook-generator", navKey: "workbook", metaKey: "workbook", nav: true },
     ],
   },
   {
     labelKey: "groupFun",
     tools: [
-      { href: "/handwriting-personality-quiz", navKey: "quiz", metaKey: "quiz" },
-      { href: "/doctor-handwriting-generator", navKey: "doctor", metaKey: "doctor" },
+      { href: "/handwriting-personality-quiz", navKey: "quiz", metaKey: "quiz", nav: true },
+      { href: "/doctor-handwriting-generator", navKey: "doctor", metaKey: "doctor", nav: true },
     ],
   },
 ];

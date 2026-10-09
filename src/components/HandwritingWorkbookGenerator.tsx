@@ -8,6 +8,8 @@ import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import { SPELLING_LISTS, spellingListMatches, type SpellingListId } from "@/lib/spellingLists";
+import { fadeInk } from "@/lib/ink";
+import ColorSwatch from "./ColorSwatch";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
 const TOP = 56;
@@ -44,6 +46,8 @@ export default function HandwritingWorkbookGenerator({
   const [showCover, setShowCover] = useState(true);
   const [showExample, setShowExample] = useState(true);
   const [guides, setGuides] = useState(true);
+  const [ink, setInk] = useState("#3a3a3a");
+  const [bg, setBg] = useState("#ffffff");
   const [drawTitle, titleComposition] = useDebouncedImeSafe(title);
   const [drawWords, wordsComposition] = useDebouncedImeSafe(words);
 
@@ -118,7 +122,7 @@ export default function HandwritingWorkbookGenerator({
   }
 
   function drawWordsPage(ctx: CanvasRenderingContext2D, pageWords: string[], pageIndex: number) {
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
     // 不足一页的空位补空白练习行;完全无词时整页仍是可用格线
     const slots: (string | undefined)[] = Array.from({ length: WORDS_PER_PAGE }, (_, i) => pageWords[i]);
@@ -132,10 +136,10 @@ export default function HandwritingWorkbookGenerator({
           ctx.textBaseline = "alphabetic";
           ctx.save();
           if (showExample && r === 0) {
-            ctx.fillStyle = "#3a3a3a";
+            ctx.fillStyle = ink;
             ctx.fillText(word, 68, y0 + bandH - 6);
           } else {
-            ctx.strokeStyle = "#3a3a3a";
+            ctx.strokeStyle = fadeInk(ink);
             ctx.lineWidth = 1.15;
             ctx.setLineDash([2.5, 2.5]);
             ctx.strokeText(word, 68, y0 + bandH - 6);
@@ -154,7 +158,7 @@ export default function HandwritingWorkbookGenerator({
   }
 
   function drawCover(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, W, H);
     // 双线边框
     ctx.strokeStyle = "#9db3cc";
@@ -163,7 +167,7 @@ export default function HandwritingWorkbookGenerator({
     ctx.lineWidth = 1;
     ctx.strokeRect(40, 40, W - 80, H - 80);
 
-    ctx.fillStyle = "#3a3a3a";
+    ctx.fillStyle = ink;
     ctx.textAlign = "center";
     // 书名自动折行
     const maxWidth = W - 200;
@@ -236,7 +240,7 @@ export default function HandwritingWorkbookGenerator({
       document.fonts.removeEventListener?.("loadingdone", drawAll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookTitle, pages, fontId, showCover, showExample, guides, format]);
+  }, [bookTitle, pages, fontId, showCover, showExample, guides, format, ink, bg]);
 
   const downloadPdf = () => {
     const canvases = wrapRef.current?.querySelectorAll<HTMLCanvasElement>("canvas");
@@ -386,6 +390,8 @@ export default function HandwritingWorkbookGenerator({
               />
             </button>
           </label>
+          <ColorSwatch label={fontNames("ink")} value={ink} onChange={setInk} />
+          <ColorSwatch label={fontNames("paperCustom.bg")} value={bg} onChange={setBg} />
           <PageFormatToggle value={format} onChange={setFormat} />
         </>
       }

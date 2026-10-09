@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import ColorSwatch from "./ColorSwatch";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
 
@@ -34,10 +35,12 @@ export default function PaperGenerator({
   lockType?: boolean;
 }) {
   const t = useTranslations("printable");
+  const tool = useTranslations("tool");
   const locale = useLocale();
   const [size, setSize] = useState<PageFormat>(defaultFormat);
   const [type, setType] = useState<PaperType>(defaultType);
   const [lineColor, setLineColor] = useState("#a8c0d8");
+  const [bg, setBg] = useState("#ffffff");
   const [spacing, setSpacing] = useState(spacingFor(defaultType));
   const [showMargin, setShowMargin] = useState(true);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -46,7 +49,7 @@ export default function PaperGenerator({
   useEffect(() => {
     draw();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [size, type, lineColor, spacing, showMargin]);
+  }, [size, type, lineColor, bg, spacing, showMargin]);
 
   function line(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number, dashed = false, alpha = 1) {
     ctx.save();
@@ -72,7 +75,7 @@ export default function PaperGenerator({
       ctx = canvas.getContext("2d");
     }
     if (!ctx) return;
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
 
     const top = 36;
@@ -250,10 +253,8 @@ export default function PaperGenerator({
               </span>
             </label>
           )}
-          <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("lineColor")}</span>
-            <input type="color" value={lineColor} onChange={(e) => setLineColor(e.target.value)} className="color-swatch" />
-          </label>
+          <ColorSwatch label={t("lineColor")} value={lineColor} onChange={setLineColor} />
+          <ColorSwatch label={tool("paperCustom.bg")} value={bg} onChange={setBg} />
           {wantsMargin(type) && (
             <label className="flex items-center justify-between gap-2 text-sm">
               <span className="text-zinc-700">{t("redMargin")}</span>

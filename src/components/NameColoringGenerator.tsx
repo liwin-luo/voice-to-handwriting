@@ -8,6 +8,7 @@ import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { coloringFontId, fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
+import WatermarkSwitch from "./WatermarkSwitch";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
@@ -304,6 +305,7 @@ export default function NameColoringGenerator({
 }) {
   const t = useTranslations("coloring");
   const fontNames = useTranslations("tool");
+  const watermarkLabel = useTranslations("home")("watermarkLabel");
   const locale = useLocale();
   const [namesText, setNamesText] = useState("");
   const [fontId, setFontId] = useState(defaultFontId ?? coloringFontId(locale));
@@ -311,6 +313,7 @@ export default function NameColoringGenerator({
   const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
   const [outline, setOutline] = useState(10); // 描边宽度
   const [motif, setMotif] = useState<Motif>("stars");
+  const [watermark, setWatermark] = useState(true);
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
@@ -383,10 +386,11 @@ export default function NameColoringGenerator({
     ctx.fillText(name, cx, cy);
     ctx.restore();
 
-    // 页脚小字
-    ctx.fillStyle = "#a1a1aa";
-    ctx.font = '20px sans-serif';
-    ctx.fillText("voicetohandwriting.online", w / 2, h - 50);
+    if (watermark) {
+      ctx.fillStyle = "#a1a1aa";
+      ctx.font = "20px sans-serif";
+      ctx.fillText(watermarkLabel, w / 2, h - 50);
+    }
     return canvas.toDataURL("image/png");
   }
 
@@ -414,7 +418,7 @@ export default function NameColoringGenerator({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [names, fontId, outline, motif, format]);
+  }, [names, fontId, outline, motif, format, watermark, watermarkLabel]);
 
   const downloadPng = () => {
     pageUrls.forEach((u, i) => {
@@ -452,6 +456,7 @@ export default function NameColoringGenerator({
       }
       download={
         <div className="flex flex-col gap-1.5">
+          <WatermarkSwitch on={watermark} onChange={setWatermark} />
           <button onClick={downloadPng} disabled={!pageUrls.length} className="btn btn-primary px-4 py-2.5 text-sm disabled:opacity-40">
             <DownloadSimple className="size-4" />
             {t("downloadPng")}

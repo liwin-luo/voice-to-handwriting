@@ -8,6 +8,7 @@ import { defaultFontId, fontOrder } from "@/lib/localeDefaults";
 import { encodeGif, indexRgb332, palette332 } from "@/lib/gifEncode";
 import { layoutRepeaterText, repeaterFrame, type RepeaterFrame, type RepeaterGlyph } from "@/engine/repeater";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
+import ColorSwatch from "./ColorSwatch";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
@@ -68,10 +69,11 @@ function paint(
   frame: RepeaterFrame,
   family: string,
   ink: string,
+  bg: string,
   trace: boolean,
   height: number,
 ) {
-  ctx.fillStyle = "#fffdf8";
+  ctx.fillStyle = bg;
   ctx.fillRect(0, 0, STAGE_W, height);
 
   const last = glyphs.length ? glyphs[glyphs.length - 1].baseline : FIRST_BASELINE;
@@ -160,10 +162,12 @@ function Switch({
 /** 手写循环演示:横线纸上逐字揭开,写完可循环,并导出这一遍的 GIF */
 export default function HandwritingRepeater() {
   const t = useTranslations("repeater");
+  const tool = useTranslations("tool");
   const locale = useLocale();
   const [text, setText] = useState(() => t("sampleSentence"));
   const [fontId, setFontId] = useState<string>(() => defaultFontId(locale));
   const [ink, setInk] = useState("#1a1a1a");
+  const [bg, setBg] = useState("#fffdf8");
   /** 0 最慢,100 最快 */
   const [speed, setSpeed] = useState(42);
   const [loop, setLoop] = useState(true);
@@ -176,6 +180,7 @@ export default function HandwritingRepeater() {
   const playingRef = useRef(true);
   const reduceRef = useRef(false);
   const inkRef = useRef(ink);
+  const bgRef = useRef(bg);
   const traceRef = useRef(trace);
   const loopRef = useRef(loop);
   const msRef = useRef(160);
@@ -190,11 +195,12 @@ export default function HandwritingRepeater() {
   // 动画循环读这些值。放在重排版 effect 之前,这样「减少动态」里把 playingRef 关掉的写入不会被这里盖回去。
   useEffect(() => {
     inkRef.current = ink;
+    bgRef.current = bg;
     traceRef.current = trace;
     loopRef.current = loop;
     msRef.current = msPerGlyph;
     playingRef.current = playing;
-  }, [ink, trace, loop, msPerGlyph, playing]);
+  }, [ink, bg, trace, loop, msPerGlyph, playing]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -246,7 +252,7 @@ export default function HandwritingRepeater() {
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        paint(ctx, glyphs, frame, family, inkRef.current, traceRef.current, height);
+        paint(ctx, glyphs, frame, family, inkRef.current, bgRef.current, traceRef.current, height);
         raf = requestAnimationFrame(tick);
       };
       raf = requestAnimationFrame(tick);
@@ -286,7 +292,7 @@ export default function HandwritingRepeater() {
       const frames: Uint8Array[] = [];
       for (let i = 0; i < frameCount; i++) {
         const frame = repeaterFrame(i * step, glyphs.length, ms, HOLD_MS, false);
-        paint(fullCtx, glyphs, frame, fam, inkRef.current, traceRef.current, height);
+        paint(fullCtx, glyphs, frame, fam, inkRef.current, bgRef.current, traceRef.current, height);
         smallCtx.drawImage(full, 0, 0, exportW, exportH);
         const img = smallCtx.getImageData(0, 0, exportW, exportH);
         const indices = new Uint8Array(exportW * exportH);
@@ -386,16 +392,8 @@ export default function HandwritingRepeater() {
           </div>
         </div>
 
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("ink")}</span>
-          <input
-            type="color"
-            value={ink}
-            onChange={(e) => setInk(e.target.value)}
-            className="color-swatch"
-            aria-label={t("ink")}
-          />
-        </label>
+        <ColorSwatch label={t("ink")} value={ink} onChange={setInk} />
+        <ColorSwatch label={tool("paperCustom.bg")} value={bg} onChange={setBg} />
 
         <Switch checked={loop} label={t("loop")} onChange={setLoop} />
         <Switch checked={trace} label={t("trace")} onChange={setTrace} />

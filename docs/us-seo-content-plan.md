@@ -227,12 +227,13 @@
 - **落地一**:`/cursive-alphabet` 交互式连笔字母表(**en-only Phase 0**,复用字母矩阵机制:文案进 TS 模块、sitemap 仅 en、buildAlternates available=["en"])。主词 cursive alphabet(201K,KD 43);次词 cursive letters(90.5K)/ cursive alphabet chart / cursive capital letters。**竞品实证**:SERP 前排全是静态 printable,笔顺指引(落笔点/箭头)仅 TPT 付费 PDF 有;差异化为「点选字母 + 笔顺指引 + 在线定制字体/字号 + 免邮箱墙打印与 PNG/PDF 导出」,复用 glyphStarts 数据与 glyphGuides 画法。同时作为字母矩阵(现有 12/52 页)的 hub,矩阵后续扩批自动挂链。配套:改造现有 cursive-alphabet-chart 文(教学参考角度保留,加工具入口,标题错位防互搏)。
 - **落地二**:`/cursive-font-generator` 手写字体预览 + 导出(8 语言,轻 UI 文案)。主词 cursive font generator;次词 cursive fonts(浏览)/ cursive font preview / handwriting font tester。**竞品实证**:下载站(fontspace/1001fonts)预览完必须下载安装;Unicode 站是假字体不能出图;最接近的 cursivegenerator.com 偏 tattoo/CNC、无 PDF、无整段排版。差异化为「字体浏览式体验 + 卡片/请柬整段预览 + 免安装高分辨率 PNG/PDF 双导出 + OFL license 逐款标注」。与 /cursive(书写生成导图)、/cursive-text-generator(Unicode 复制粘贴)页内互链分工,不互搏。配套支柱文 `best-cursive-fonts`(en,Theo Lindgren,选型指南向)。
 - **落地结果(2026-10-09)**:两工具均已上线并实测。`/cursive-alphabet` en-only(26 字母网格 + 笔顺指引 + 单字母 PNG/整表 A–Z PDF 导出,字母矩阵 hub 回链已接);`/cursive-font-generator` 8 语言(7 款 OFL 字体实时预览 + 逐款 license 标注 + 透明 PNG/PDF 导出)。支柱文 `best-cursive-fonts`(Theo)已发布,题图为工具实测截图;`cursive-text-generator` 文 RELATED 已改挂新工具互链。待观察:28 天后看 GSC 两页曝光/点击,`cursive words` 留观不接。
+- **补强(2026-10-09,对照 cursive-generator.app)**:不新开签名/纹身/姓名路由。`/cursive-font-generator` 加 6 款 OFL(Great Vibes、Alex Brush、Allura、Mr Dafoe、Pinyon Script、Tangerine),共 13 款,签名体不进主工作台;导出加内嵌拉丁子集的 SVG。`/cursive-text-generator` 花体从 6 种补到数学字母区 13 种,并加现成 A–Z 与四条拉丁短语。
 - **Trends 句式对齐(2026-10-09)**:主词改为 alphabet in cursive(标题/H1),次词 free printable cursive alphabet pdf、uppercase and lowercase。可抓取文件 `/printables/cursive-alphabet.pdf`(第 1 页对照表 + 第 2 页虚线描红)与同图 PNG,默认 Sacramento、笔顺开;换字体仍走页内按钮。单字母 52 页标题改为 “Z in Cursive” / “Capital Z in Cursive”,并深链 `?letter=`。文章 `cursive-alphabet-chart` 保持教学参考标题,不跟工具抢同一句。左边同义簇不另开页。
 - **不接**:cursive words(词级意图大半被 /cursive 承接,留观)、笔顺全程动画(现有数据仅落笔点+初始方向,做不到不承诺)、字体文件打包分发(外链 Google Fonts,规避 license 风险)。
 
 ## 十五、练习纸补齐(2026-10-09,竞品差距四项里能落地的部分)
 
-- **字母矩阵 52/52**:`/cursive/letter/[letter]` 补齐小写 a–z 与大写 A–Z(en-only,沿用笔顺/错点/练习词/3 条 FAQ 的质量红线)。hub 与 prev/next 改为字母表顺序。课页先给步骤,下一课紧跟步骤,练习纸按钮打开 `/cursive-worksheets` 并只带这一课的单词。字母表在导航「练习」里,与连笔练习纸、每日连笔放一起。不另开文章:已有 `cursive-alphabet-chart` 与字母表工具承接。
+- **字母矩阵 52/52**:`/cursive/letter/[letter]` 补齐小写 a–z 与大写 A–Z(en-only,沿用笔顺/错点/练习词/3 条 FAQ 的质量红线)。hub 与 prev/next 改为字母表顺序。课页先给步骤,下一课紧跟步骤,练习纸按钮打开 `/cursive-worksheets` 并只带这一课的单词。字母表收在 /tools 的练习纸分组,页头下拉不单列。不另开文章:已有 `cursive-alphabet-chart` 与字母表工具承接。
 - **描红三档**:`/name-tracing` 与 `/cursive-worksheets` 的描红行可选虚线、空心、只留横线。空白行不画落笔点。姓名页行高仍是 Pre-K / Kindergarten / Grade 2;连笔页改成大行 / 普通行 / 小行。逐笔编号仍不做——字形数据只有落笔点,没有分笔路径。教学字体继续用已接入的 Sacramento,不再加 Playwrite。
 - **拼写词表**:`/word-work` 增加 Dolch pre-primer(40,sight words 起点)、Fry 1–25、Fry 前 100。主按钮只留 Dolch 和 Fry 前 25,前 100 收在「更多词表」。点选后按钮保持按下,仍可手改。
 - **纸型**:`/printable-paper` 增加点阵、图画框故事纸、康奈尔笔记,并各开子页 `/printable-paper/dot-grid`、`story-paper`、`cornell-notes`(8 语言文案)。子页只画当前这一种纸,其他纸型用页底链接。红边距问答只出现在有该开关的纸上。不加点阵以外的乐谱或六边形。
@@ -241,6 +242,13 @@
 
 ## 十六、印刷体字母描红(2026-10-09)
 
-- **落地**:`/letter-tracing` 与 `/letter-tracing/[letter]`,a–z,仅英文。主词 letter tracing worksheets / letter a tracing。每页写清落笔、走笔、和 b/d、g/q 这类邻字母的差别。打印链到 `/name-tracing?letter=`。
-- **不另开 26 篇文章**。入口是导航「练习」、姓名描红页,以及 `name-tracing-generator`(en)正文。独立 hub 文下一个内容周期再写。
+- **落地**:`/letter-tracing` 与 `/letter-tracing/[letter]`,a–z,仅英文。主词 letter tracing worksheets / letter a tracing。每页写清落笔、走笔、和 b/d、g/q 这类邻字母的差别。首屏直接画实心示例行和虚线行,PDF 在本页下载;改行高或写整词才去 `/name-tracing?letter=`。
+- **不另开 26 篇文章**。入口是 /tools 练习纸分组、姓名描红页,以及 `name-tracing-generator`(en)正文。独立 hub 文下一个内容周期再写。
 - **红线**:不画编号笔顺箭头(没有分笔路径);字体写明是 Patrick Hand,不是教材体。
+
+## 十七、可打印手写信(2026-10-09)
+
+- **落地**:`/printable-handwritten-letters`,8 语言。主词 printable handwritten letters。次词 handwritten envelope template、mail merge handwritten note。和 `/templates/thank-you-letter`(what to write in a thank you note,文案角度)分开:这一页是名单套名后自己打印的信件和信封。
+- **形态**:五类短笺(会后感谢、转介绍、新客、重新联系、通知),正文可改,`{name}` / `{from}` 套用。名单可粘贴 CSV,或下载 Excel 模板再导入(.xlsx / .csv),最多 30 人,可选 message 列换全文。下载两份 PDF。英文 US Letter + #10 信封,其余语言 A4 + DL。页头下拉「写字与生成」里有入口。
+- **红线**:写明是手写字体,不是钢笔;本站不打印、不贴邮票、不寄出。不接真人代写、USPS 校验、CRM 或 API。
+- **配套文章**:`print-handwritten-letters-and-envelopes`(en,Theo Lindgren,2026-10-09)。场景:一周打完几通介绍电话,给每人印一封短笺和一只写好地址的信封,自己贴邮票寄出。用例是三人名单加回信地址,四张实拍。不抢工具主词 printable handwritten letters,也不抢 thank-you 文案文。

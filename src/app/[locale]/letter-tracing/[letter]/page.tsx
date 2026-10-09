@@ -6,6 +6,8 @@ import { Link } from "@/i18n/navigation";
 import { ArrowLeft, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { routing, type Locale } from "@/i18n/routing";
 import { FONTS } from "@/stores/useEditorStore";
+import LetterTraceRows from "@/components/LetterTraceRows";
+import LetterTracingDownload from "@/components/LetterTracingDownload";
 import ToolFaq from "@/components/ToolFaq";
 import {
   LETTER_TRACING_UI,
@@ -71,23 +73,24 @@ export default async function LetterTracingPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{page.seat}</p>
       </header>
 
-      <div className="rise mt-8 flex items-end justify-center rounded-2xl border border-zinc-200 bg-white px-6 pt-8 pb-4">
-        <p className="select-none text-8xl leading-none text-zinc-900 sm:text-9xl" style={{ fontFamily: font.css }}>
-          {page.slug}
-        </p>
-      </div>
-      <p className="mt-2 text-xs leading-relaxed text-zinc-400">{ui.fontNote}</p>
-
-      <section className="rise mt-8 rounded-2xl border border-accent/20 bg-accent/5 p-6">
-        <h2 className="text-base font-semibold text-zinc-900">{ui.ctaTitle}</h2>
+      <div className="rise mt-8">
+        <LetterTraceRows
+          letter={page.slug}
+          fontCss={font.css}
+          exampleLabel={`${ui.exampleRow}: ${page.slug}`}
+          dottedLabel={`${ui.dottedRow}: ${page.slug}`}
+        />
+        <p className="mt-2 text-xs leading-relaxed text-zinc-400">{ui.fontNote}</p>
         <div className="mt-4 flex flex-col items-start gap-3">
-          <Link href={`/name-tracing?letter=${page.slug}`} className="btn btn-primary px-6 py-3">
-            {ui.ctaButton}
-            <ArrowRight className="size-4" />
-          </Link>
-          <p className="text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
+          <LetterTracingDownload letter={page.slug} />
+          <p className="text-xs leading-relaxed text-zinc-500">
+            {ui.sizeLead}{" "}
+            <Link href={`/name-tracing?letter=${page.slug}`} className="text-accent underline-offset-2 hover:underline">
+              {ui.nameTracingLink}
+            </Link>
+          </p>
         </div>
-      </section>
+      </div>
 
       <section className="rise mt-10">
         <h2 className="text-base font-semibold text-zinc-900">{ui.stepsTitle}</h2>

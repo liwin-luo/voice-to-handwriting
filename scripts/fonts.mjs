@@ -14,6 +14,12 @@ const jobs = [
   { input: "fonts-src/DancingScript[wght].ttf", outDir: "public/fonts/dancingscript", family: "Dancing Script" },
   { input: "fonts-src/Cedarville-Cursive.ttf", outDir: "public/fonts/cedarvillecursive", family: "Cedarville Cursive" },
   { input: "fonts-src/Sacramento-Regular.ttf", outDir: "public/fonts/sacramento", family: "Sacramento" },
+  { input: "fonts-src/GreatVibes-Regular.ttf", outDir: "public/fonts/greatvibes", family: "Great Vibes" },
+  { input: "fonts-src/AlexBrush-Regular.ttf", outDir: "public/fonts/alexbrush", family: "Alex Brush" },
+  { input: "fonts-src/Allura-Regular.ttf", outDir: "public/fonts/allura", family: "Allura" },
+  { input: "fonts-src/MrDafoe-Regular.ttf", outDir: "public/fonts/mrdafoe", family: "Mr Dafoe" },
+  { input: "fonts-src/PinyonScript-Regular.ttf", outDir: "public/fonts/pinyonscript", family: "Pinyon Script" },
+  { input: "fonts-src/Tangerine-Regular.ttf", outDir: "public/fonts/tangerine", family: "Tangerine" },
   { input: "fonts-src/KleeOne-Regular.ttf", outDir: "public/fonts/kleeone", family: "Klee One" },
   { input: "fonts-src/NanumPenScript-Regular.ttf", outDir: "public/fonts/nanumpenscript", family: "Nanum Pen Script" },
 ];

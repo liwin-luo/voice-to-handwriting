@@ -19,6 +19,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/handwriting-workbook-generator": "workbook",
   "/handwriting-repeater": "repeater",
   "/handwriting-page-calculator": "pageCalc",
+  "/printable-handwritten-letters": "bulkLetters",
 };
 
 export interface RelatedConfig {
@@ -200,6 +201,12 @@ export const RELATED: Record<string, RelatedConfig> = {
   "copywork-generator": {
     tools: ["/name-tracing", "/cursive", "/printable-paper", "/handwriting-workbook-generator"],
     posts: ["sight-word-tracing-worksheets", "kindergarten-handwriting-paper", "cursive-sentences-to-practice"],
+  },
+
+  // 短名单自己打印信件和信封:用例文,导流工具页;文案与单张卡片交给既有文章
+  "print-handwritten-letters-and-envelopes": {
+    tools: ["/printable-handwritten-letters", "/templates"],
+    posts: ["handwritten-thank-you-notes", "handwriting-templates-guide", "handwritten-card-with-voice"],
   },
 };
 

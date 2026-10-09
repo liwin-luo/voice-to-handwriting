@@ -7,6 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import CursiveFontBrowser from "@/components/CursiveFontBrowser";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
+import { FONT_CATALOG } from "@/content/fontCatalog";
 import { CURSIVE_FONT_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 
@@ -41,6 +42,9 @@ export default async function CursiveFontGeneratorPage({
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
+      {FONT_CATALOG.flatMap((entry) =>
+        entry.stylesheet ? <link key={entry.stylesheet} rel="stylesheet" href={entry.stylesheet} /> : [],
+      )}
       <header className="rise mb-7 max-w-3xl">
         <h1 className="font-hand text-4xl leading-none md:text-5xl">{t("title")}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>

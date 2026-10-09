@@ -9,16 +9,19 @@ test.describe("英文版", () => {
     await expect(page.getByRole("heading", { name: "Write & generate" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Practice sheets & printing" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Just for fun" })).toBeVisible();
-    // 14 个工具卡都在(3 写字 + 9 练习 + 2 趣味)
-    await expect(page.getByRole("main").getByRole("link")).toHaveCount(14);
+    // 英文全量:6 写字 + 12 练习(含 2 个 en-only)+ 2 趣味
+    await expect(page.getByRole("main").getByRole("link")).toHaveCount(20);
+    await expect(page.getByRole("main").getByRole("link", { name: "Printable Letters" })).toBeVisible();
     await expect(page.getByRole("main").getByRole("link", { name: "Handwriting Quiz" })).toBeVisible();
   });
 
-  test("导航分组下拉:三组标签 + 可跳转", async ({ page }) => {
+  test("导航分组下拉:常用入口 + 查看全部", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "All tools" }).click();
     await expect(page.getByText("Write & generate")).toBeVisible();
     await expect(page.getByText("Just for fun")).toBeVisible();
+    await expect(page.getByRole("menuitem", { name: "Page Calculator" })).toHaveCount(0);
+    await expect(page.getByRole("menuitem", { name: "View all tools" })).toHaveAttribute("href", "/tools");
     await page.getByRole("menuitem", { name: "Handwriting Quiz" }).click();
     await expect(page.getByRole("heading", { level: 1 })).toContainText("Handwriting Personality Test");
   });

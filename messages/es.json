@@ -50,7 +50,7 @@
     },
     "dailyCursive": {
       "title": "PDF diario de práctica de caligrafía cursiva (imprimible gratis)",
-      "description": "Una nueva hoja de práctica de cursiva cada día: trazos de calentamiento, letras del día, palabras y una frase para calcar. PDF gratis para niños y adultos, sin registro ni marca de agua."
+      "description": "Una nueva hoja de práctica de cursiva cada día: trazos de calentamiento, letras del día, palabras y una frase para calcar. PDF gratis para niños y adultos, sin registro. La marca de agua está activada por defecto y se puede quitar."
     },
     "writing": {
       "title": "Generador de hojas de caligrafía CJK",
@@ -90,7 +90,7 @@
     },
     "cursiveText": {
       "title": "Generador de texto cursivo – copiar y pegar",
-      "description": "Convierte cualquier frase en texto cursivo para copiar y pegar: seis estilos, gratis y sin registro. También por voz. Funciona en Instagram, TikTok y Discord."
+      "description": "Convierte cualquier frase en texto cursivo para copiar y pegar: trece estilos, gratis y sin registro. También por voz. Funciona en Instagram, TikTok y Discord."
     },
     "cursiveAlphabet": {
       "description": "Todas las letras cursivas de la A a la Z con guías de trazado: toca una letra, cambia la fuente e imprime la tabla gratis."
@@ -100,7 +100,11 @@
     },
     "cursiveFont": {
       "title": "Generador de fuentes cursivas – Previsualiza y exporta fuentes manuscritas",
-      "description": "Previsualiza tu texto en siete fuentes manuscritas a la vez, ajusta tamaño, tinta y fondo, y exporta PNG de alta resolución o PDF — gratis, sin instalación, sin registro. Fuentes de código abierto (OFL) con licencias claras."
+      "description": "Previsualiza tu texto en trece fuentes manuscritas, incluidas las de firma, ajusta tamaño, tinta y fondo, y exporta PNG, SVG o PDF — gratis, sin instalación, sin registro. Fuentes de código abierto (OFL) con licencias claras."
+    },
+    "bulkLetters": {
+      "title": "Cartas manuscritas imprimibles y sobres",
+      "description": "Pega una lista de destinatarios y descarga dos PDF: una carta con estilo manuscrito para cada persona y un sobre con la dirección. Tú imprimes y envías. Gratis, en el navegador."
     }
   },
   "nav": {
@@ -125,11 +129,13 @@
     "repeater": "Repetidor de escritura",
     "menu": "Menú",
     "allTools": "Todas las herramientas",
+    "viewAll": "Ver todas las herramientas",
     "groupWrite": "Escribir y generar",
     "groupPractice": "Hojas de práctica e impresión",
     "groupFun": "Solo por diversión",
     "pageCalc": "Calculadora de hojas",
-    "cursiveText": "Texto cursivo"
+    "cursiveText": "Texto cursivo",
+    "bulkLetters": "Cartas imprimibles"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -534,7 +540,7 @@
     "emptyTitle": "Aún no hay nombres",
     "emptyHint": "Escribe un nombre y la página se dibuja sola.",
     "seoTitle": "Generador gratis de páginas para colorear con nombres",
-    "seoText": "Las páginas para colorear con el propio nombre son un clásico: los niños colorean las letras mientras aprenden su forma. Contorno tipo burbuja, con estrellas, animales o máquinas para colorear — tamaño Letter exacto, sin marca de agua.",
+    "seoText": "Las páginas para colorear con el propio nombre son un clásico: los niños colorean las letras mientras aprenden su forma. Contorno tipo burbuja, con estrellas, animales o máquinas para colorear — tamaño Letter exacto. La marca de agua del sitio está activada por defecto y se puede quitar.",
     "faqTitle": "Preguntas frecuentes"
   },
   "wordwork": {
@@ -640,7 +646,7 @@
   },
   "cursiveText": {
     "title": "Generador de texto cursivo",
-    "intro": "Escribe o di unas palabras y cópialas como texto cursivo. Seis estilos, gratis, sin registro; todo ocurre en tu navegador.",
+    "intro": "Escribe o di unas palabras y cópialas como texto cursivo. Trece estilos, gratis, sin registro; todo ocurre en tu navegador.",
     "inputLabel": "Tu texto",
     "placeholder": "Escribe aquí, o pulsa el micrófono y habla",
     "sample": "Hola",
@@ -657,12 +663,22 @@
     "styles": {
       "script": "Cursiva",
       "boldScript": "Cursiva negrita",
+      "italic": "Itálica",
+      "bold": "Negrita",
       "boldItalic": "Negrita cursiva",
       "fraktur": "Old English",
+      "boldFraktur": "Old English negrita",
       "outline": "Contorno",
+      "sans": "Sans",
+      "sansBold": "Sans negrita",
+      "sansItalic": "Sans itálica",
+      "sansBoldItalic": "Sans negrita itálica",
       "mono": "Máquina de escribir"
     },
     "unicodeNote": "Esto es texto Unicode, no una fuente: el estilo viaja con los caracteres al pegarlos. Algunos móviles antiguos no tienen todos los glifos; si un estilo muestra cuadros, prueba otro.",
+    "alphabetTitle": "Copiar el alfabeto",
+    "alphabetHint": "Los mismos estilos de arriba, de la A a la Z, listos para copiar sin escribir.",
+    "phrasesTitle": "Copiar una frase",
     "seoTitle": "Qué es el texto cursivo y dónde funciona",
     "seoText": "Un generador de texto cursivo cambia cada letra que escribes por su equivalente Unicode más parecido: símbolos script matemáticos que parecen caligrafía fluida. Como el resultado es texto de verdad y no una imagen, puedes pegarlo en la bio de Instagram, en un pie de TikTok, en el nick de Discord o en un chat, y mantiene el aspecto cursivo dondequiera que vaya texto.\n\nNo es una fuente ni tu letra. Los lectores de pantalla pueden leer los símbolos letra a letra, y un dispositivo sin los glifos adecuados dibuja cuadros. Si buscas cursiva para imprimir —hojas de práctica, tarjetas, sobres—, los generadores manuscritos de este sitio exportan una fuente cursiva real en PNG o PDF.",
     "alsoImage": "¿La necesitas para imprimir? Abre el generador de escritura cursiva: exporta letra manuscrita real en PNG o PDF.",
@@ -670,7 +686,7 @@
   },
   "cursiveFont": {
     "title": "Generador de fuentes cursivas",
-    "intro": "Escribe algo y velo en todas las fuentes manuscritas del sitio a la vez. Ajusta tamaño, tinta y fondo, y descarga cualquier fuente como PNG de alta resolución o PDF listo para imprimir — sin instalar fuentes ni marcas de agua.",
+    "intro": "Escribe algo y velo en todas las fuentes manuscritas del sitio a la vez: scripts de firma, caligrafía formal y letra cotidiana. Ajusta tamaño, tinta y fondo, y descarga cualquier fuente como PNG de alta resolución, un SVG con la fuente incrustada o un PDF listo para imprimir. Sin instalar fuentes ni marcas de agua.",
     "inputLabel": "Tu texto",
     "placeholder": "Escribe o pega lo que quieras — nombres, un mensaje de tarjeta, una línea de invitación…",
     "sample": "Merry & bright",
@@ -681,10 +697,60 @@
     "bgPaper": "Papel",
     "bgTransparent": "Transparente",
     "empty": "Escribe algo arriba para previsualizar las fuentes.",
+    "exportFailed": "El SVG no se generó. Prueba el PNG.",
     "alsoUnicode": "¿Quieres texto cursivo para copiar y pegar? Prueba el generador de texto cursivo",
     "alsoHandwriting": "O convierte frases completas en escritura a mano realista",
-    "seoTitle": "Siete fuentes cursivas de código abierto, previsualizadas con tus propias palabras",
-    "seoText": "Un generador de fuentes cursivas muestra tu propio texto compuesto en cada fuente manuscrita, para que elijas la correcta antes de decidirte. La mayoría de los sitios de fuentes se quedan en la vista previa y esperan que descargues e instales la fuente; esta página va más lejos: cada línea se renderiza en vivo y cualquier fuente se exporta como PNG transparente de alta resolución o PDF listo para imprimir, todo en tu navegador.\n\nLas siete fuentes son de código abierto bajo la SIL Open Font License, con el autor indicado en cada fila: Sacramento y Dancing Script para scripts formales, Cedarville Cursive y Caveat para escritura diaria, e Indie Flower, Kalam y Patrick Hand para estilos de imprenta prolijos. Así las exportaciones sirven para tarjetas, señalética de boda, calcomanías, borradores de tatuajes y material de clase.\n\nPegar letras que parecen cursivas en una bio es otro trabajo — para eso está el generador de texto cursivo. Para practicar en vez de diseñar, el generador de hojas de caligrafía convierte cualquier lista de palabras en fichas para calcar.",
+    "seoTitle": "Trece fuentes cursivas de código abierto, previsualizadas con tus propias palabras",
+    "seoText": "Un generador de fuentes cursivas muestra tu propio texto compuesto en cada fuente manuscrita, para que elijas la correcta antes de decidirte. La mayoría de los sitios de fuentes se quedan en la vista previa y esperan que descargues e instales la fuente; esta página va más lejos: cada línea se renderiza en vivo y cualquier fuente se exporta como PNG transparente de alta resolución, un SVG con la fuente incrustada o un PDF listo para imprimir, todo en tu navegador.\n\nLas trece fuentes son de código abierto bajo la SIL Open Font License, con el autor indicado en cada fila. Great Vibes, Alex Brush, Allura y Mr Dafoe son scripts de firma. Pinyon Script, Tangerine, Sacramento y Dancing Script son scripts formales. Cedarville Cursive y Caveat son escritura diaria. Indie Flower, Kalam y Patrick Hand son letra de imprenta clara. El SVG lleva las formas de las letras para un boceto de tatuaje o un archivo de diseño.\n\nPegar letras que parecen cursivas en una bio es otro trabajo — para eso está el generador de texto cursivo. Para practicar en vez de diseñar, el generador de hojas de caligrafía convierte cualquier lista de palabras en fichas para calcar.",
     "faqTitle": "Preguntas frecuentes sobre fuentes cursivas"
+  },
+  "bulkLetters": {
+    "title": "Cartas manuscritas imprimibles",
+    "intro": "Elige una nota breve, pega una lista y descarga dos PDF: una carta por persona y un sobre con la dirección. La letra es una fuente manuscrita, no una pluma. Tú imprimes, pones el sello y envías. Este sitio no manda correo.",
+    "kindLabel": "Nota",
+    "bodyLabel": "Carta",
+    "bodyHint": "Puedes editar la nota. '{'name'}' pasa a ser el nombre de la persona y '{'from'}' la primera línea de la dirección de remite. Una celda message sustituye esta nota solo en esa fila.",
+    "importExcel": "Importar Excel",
+    "downloadTemplate": "Plantilla Excel",
+    "importFailed": "No se pudo leer el archivo. Usa la plantilla Excel, o un .xlsx o .csv con la fila de encabezados.",
+    "kind": {
+      "thanks": "Agradecimiento",
+      "referral": "Recomendación",
+      "prospect": "Nuevo contacto",
+      "winback": "Retomar",
+      "announce": "Aviso"
+    },
+    "body": {
+      "thanks": "Hola, '{'name'}':\n\nGracias por el tiempo de ayer. Salí con una idea más clara de lo que necesitas, y me alegra haberlo hablado en persona.\n\nSeguiré con el paso que acordamos. Si antes hace falta algo más, dímelo.\n\nGracias por la conversación,\n'{'from'}'",
+      "referral": "Hola, '{'name'}':\n\nHa sido fácil trabajar contigo, así que prefiero pedírtelo a ti antes que adivinar. Si alguien que conoces necesita el mismo tipo de ayuda, te agradecería una presentación.\n\nBasta un nombre, o una nota corta tuya.\n\nCon gracias,\n'{'from'}'",
+      "prospect": "Hola, '{'name'}':\n\nEscribo en papel porque una nota se guarda y se lee mejor que otro correo. Creo que podemos ayudar con algo que lleva tiempo sin resolverse.\n\nSi una conversación breve sirve, es fácil localizarme. Si no es el momento, no hace falta responder.\n\nUn saludo,\n'{'from'}'",
+      "winback": "Hola, '{'name'}':\n\nHa pasado un tiempo y no quería que el silencio fuera la última palabra entre nosotros. Si nos desencontramos, me gustaría saber qué haría que valiera la pena retomar.\n\nEsta nota no es una oferta. La puerta está abierta.\n\nCon afecto,\n'{'from'}'",
+      "announce": "Hola, '{'name'}':\n\nUna nota breve para que esto no se pierda en la bandeja. Hay algo nuevo que encaja con lo que ya usas, y quería que lo vieras primero en papel.\n\nLos detalles van en la hoja que acompaña esta carta. Espero que sirvan.\n\nUn saludo,\n'{'from'}'"
+    },
+    "listLabel": "Destinatarios",
+    "listHint": "La primera fila debe ser name, street, city, region, postal, en inglés. Una persona por fila, hasta 30. Una columna opcional message sustituye la nota en esa fila. '{'name'}' pasa a ser su nombre. Pega las filas o importa la plantilla Excel (.xlsx o .csv).",
+    "listPlaceholder": "name,street,city,region,postal",
+    "sampleCsv": "name,street,city,region,postal\nAvery Chen,18 Oak Street,Glen Rock,NJ,07452\nSam Ortiz,402 Pine Ave,Austin,TX,78701",
+    "useSample": "Usar un ejemplo",
+    "returnLabel": "Remitente",
+    "returnHint": "Se imprime en la esquina superior izquierda de cada sobre. La primera línea es la firma de la carta.",
+    "returnPlaceholder": "Jordan Lee\n18 Oak Street\nGlen Rock, NJ 07452",
+    "previewEmpty": "Añade una lista para ver la carta y el sobre.",
+    "recipientN": "{n} / {total}",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "downloadLetters": "Descargar PDF de cartas",
+    "downloadEnvelopes": "Descargar PDF de sobres",
+    "exporting": "Preparando el PDF…",
+    "exportFailed": "El PDF no terminó. Inténtalo de nuevo.",
+    "badHeader": "La primera fila necesita estas columnas: name, street, city, region, postal.",
+    "noRows": "Aún no hay destinatarios. Escribe una persona por fila, debajo del encabezado.",
+    "truncated": "Solo se incluyen las primeras {count} personas.",
+    "skipped": "{count, plural, one {# fila no tenía nombre y se dejó fuera.} other {# filas no tenían nombre y se dejaron fuera.}}",
+    "printHintLetter": "Las cartas son US Letter. Los sobres son #10 (9,5 × 4,125 in). Imprímelos y envíalos tú.",
+    "printHintA4": "Las cartas son A4. Los sobres son DL (220 × 110 mm). Imprímelos y envíalos tú.",
+    "seoTitle": "Cartas y sobres que imprimes tú",
+    "seoText": "Una carta manuscrita imprimible es una hoja que imprimes, doblas y metes en un sobre. Esta página rellena una nota breve para cada persona de la lista, con su nombre, y compone el sobre correspondiente. En inglés, el papel es US Letter y el sobre es #10. En los demás idiomas, A4 y un sobre DL. La nota se puede editar. La lista se pega o se importa desde la plantilla Excel de la página.\n\nLas cartas usan una fuente manuscrita. No están escritas con pluma, y este sitio no las imprime, ni las franquea, ni las envía. Si una fila trae una columna message, se usa ese texto en lugar de la nota del recuadro.",
+    "faqTitle": "Preguntas"
   }
 }

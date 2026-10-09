@@ -9,6 +9,8 @@ import { fontOrder, formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/lo
 import { TRACE_GRADES, gradeForBand, tracingLines, tracingSheets } from "@/lib/traceGrades";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import { tracingPrefill } from "@/content/letterTracing";
+import { fadeInk } from "@/lib/ink";
+import ColorSwatch from "./ColorSwatch";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
 
@@ -66,6 +68,7 @@ export default function TracingGenerator({
   const [guides, setGuides] = useState(true);
   const [bandH, setBandH] = useState(defaultBandH);
   const [textColor, setTextColor] = useState("#3a3a3a");
+  const [bg, setBg] = useState("#ffffff");
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const [oneEach, setOneEach] = useState(false);
   const [pageIndex, setPageIndex] = useState(0);
@@ -93,7 +96,7 @@ export default function TracingGenerator({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drawNames, fontId, showExample, traceInk, guides, bandH, textColor, format, oneEach, pageIndex]);
+  }, [drawNames, fontId, showExample, traceInk, guides, bandH, textColor, bg, format, oneEach, pageIndex]);
 
   const sheets = tracingSheets(tracingLines(drawNames, t("namesPlaceholder")), perName && oneEach);
   const sheetIndex = Math.min(pageIndex, Math.max(0, sheets.length - 1));
@@ -109,7 +112,7 @@ export default function TracingGenerator({
       ctx = canvas.getContext("2d");
     }
     if (!ctx) return;
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
 
     ctx.fillStyle = "#52525b";
@@ -161,13 +164,12 @@ export default function TracingGenerator({
         ctx.fillStyle = textColor;
         ctx.fillText(text, 60, y0 + H - 6);
       } else if (traceInk === "dotted") {
-        ctx.strokeStyle = textColor;
+        ctx.strokeStyle = fadeInk(textColor);
         ctx.lineWidth = 1.15;
         ctx.setLineDash([2.5, 2.5]);
         ctx.strokeText(text, 60, y0 + H - 6);
       } else if (traceInk === "outline") {
-        ctx.strokeStyle = textColor;
-        ctx.globalAlpha = 0.55;
+        ctx.strokeStyle = fadeInk(textColor, 0.4);
         ctx.lineWidth = 1.35;
         ctx.strokeText(text, 60, y0 + H - 6);
       }
@@ -383,10 +385,8 @@ export default function TracingGenerator({
               <span className="font-mono text-xs text-zinc-400">{formatLength(bandH, locale)}</span>
             </label>
           </div>
-          <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("textColor")}</span>
-            <input type="color" value={textColor} onChange={(e) => setTextColor(e.target.value)} className="color-swatch" />
-          </label>
+          <ColorSwatch label={t("textColor")} value={textColor} onChange={setTextColor} />
+          <ColorSwatch label={fontNames("paperCustom.bg")} value={bg} onChange={setBg} />
           <PageFormatToggle value={format} onChange={setFormat} />
         </>
       }

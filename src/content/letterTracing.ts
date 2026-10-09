@@ -251,28 +251,48 @@ export function tracingPrefill(search: string): string | null {
   return null;
 }
 
+/** 一行里重复几次。再密就挤；宽字母在 PDF 里缩小字号，不减少个数。 */
+export const LETTERS_PER_ROW = 8;
+
+export function repeatedLetterLine(letter: string, count = LETTERS_PER_ROW): string {
+  return Array.from({ length: count }, () => letter).join(" ");
+}
+
+/** 每个字母的 x 起点。排不下（间距小于 minGap）时返回 null，调用方缩小字号再试。 */
+export function letterSlotOffsets(
+  count: number,
+  glyphWidth: number,
+  innerWidth: number,
+  minGap = 8,
+): number[] | null {
+  if (count < 1 || glyphWidth <= 0 || innerWidth <= 0) return null;
+  if (count === 1) return glyphWidth <= innerWidth ? [0] : null;
+  const gap = (innerWidth - count * glyphWidth) / (count - 1);
+  if (gap < minGap) return null;
+  return Array.from({ length: count }, (_, i) => i * (glyphWidth + gap));
+}
+
 export const LETTER_TRACING_UI = {
   hubTitle: "Letter tracing worksheets",
   hubH1: "Letter tracing worksheets",
   hubIntro:
-    "Pick a letter and print a tracing sheet for that letter alone. Each page shows where the pencil starts, how the letter sits on the lines, and the mix-up with the letter next to it. The sheet opens in the name tracing generator with that letter already filled in.",
+    "Pick a letter and print a tracing sheet for that letter alone. Each page shows where the pencil starts, how the letter sits on the lines, and the mix-up with the letter next to it, then a solid example row and dashed tracing rows. The PDF downloads on that page.",
   hubMetaTitle: "Free Letter Tracing Worksheets (A–Z, Printable PDF)",
   hubMetaDescription:
     "Free letter tracing worksheets for a to z. See where each letter starts, print a dashed tracing sheet, and change the size. No signup.",
   back: "All letters",
-  sampleLabel: "The letter",
   stepsTitle: "How this letter is formed",
   mistakesTitle: "The mix-up to watch",
   wordsTitle: "Words that use it",
-  ctaTitle: "Print this letter",
-  ctaButton: "Open the tracing sheet",
-  ctaHint:
-    "The sheet opens with this letter filled in. Patrick Hand is a print-style font, not a textbook face. The trace rows are dashed outlines of the whole letter, not numbered stroke arrows.",
   faqTitle: "Common questions",
   prev: "Previous letter",
   next: "Next letter",
-  fontNote: "Sample set in Patrick Hand, an open-source print font. It is not Zaner-Bloser or D'Nealian.",
+  fontNote:
+    "Rows use Patrick Hand, an open-source print font. It is not Zaner-Bloser or D'Nealian. Dashed rows are outlines of the whole letter, not numbered stroke arrows.",
+  exampleRow: "Solid example row",
+  dottedRow: "Dashed tracing row",
   cardLabel: "letter",
+  sizeLead: "Need a different row height, or a whole word?",
   nameTracingLink: "Name tracing",
   nameTracingRest: "is the same sheet with any word typed in.",
 };

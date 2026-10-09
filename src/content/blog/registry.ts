@@ -89,6 +89,7 @@ import cmcKo from "./calligraphy-motto-cards.ko.mdx";
 import cmcEs from "./calligraphy-motto-cards.es.mdx";
 import clbEn from "./cursive-laws-by-state.en.mdx";
 import bcfEn from "./best-cursive-fonts.en.mdx";
+import phlEn from "./print-handwritten-letters-and-envelopes.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -254,6 +255,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "calligraphy-motto-cards": { en: cmcEn, zh: cmcZh, ja: cmcJa, ko: cmcKo, es: cmcEs },
   "cursive-laws-by-state": { en: clbEn },
   "best-cursive-fonts": { en: bcfEn },
+  "print-handwritten-letters-and-envelopes": { en: phlEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

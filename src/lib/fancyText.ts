@@ -1,7 +1,20 @@
 /** 花体文本生成(/cursive-text-generator):把拉丁字母映射为 Unicode Mathematical
  *  Alphanumeric Symbols,输出可复制粘贴的纯文本。纯字符串映射,无字体、无 canvas。 */
 
-export type FancyStyleId = "script" | "boldScript" | "boldItalic" | "fraktur" | "outline" | "mono";
+export type FancyStyleId =
+  | "script"
+  | "boldScript"
+  | "italic"
+  | "bold"
+  | "boldItalic"
+  | "fraktur"
+  | "boldFraktur"
+  | "outline"
+  | "sans"
+  | "sansBold"
+  | "sansItalic"
+  | "sansBoldItalic"
+  | "mono";
 
 export interface FancyStyle {
   id: FancyStyleId;
@@ -33,6 +46,13 @@ export const FANCY_STYLES: FancyStyle[] = [
     },
   },
   { id: "boldScript", letterBase: 0x1d4d0, digitBase: null },
+  {
+    id: "italic",
+    letterBase: 0x1d434,
+    digitBase: null,
+    exceptions: { h: "\u210e" },
+  },
+  { id: "bold", letterBase: 0x1d400, digitBase: 0x1d7ce },
   { id: "boldItalic", letterBase: 0x1d468, digitBase: null },
   {
     id: "fraktur",
@@ -40,6 +60,7 @@ export const FANCY_STYLES: FancyStyle[] = [
     digitBase: null,
     exceptions: { C: "\u212d", H: "\u210c", I: "\u2111", R: "\u211c", Z: "\u2128" },
   },
+  { id: "boldFraktur", letterBase: 0x1d56c, digitBase: null },
   {
     id: "outline",
     letterBase: 0x1d538,
@@ -54,8 +75,15 @@ export const FANCY_STYLES: FancyStyle[] = [
       Z: "\u2124",
     },
   },
+  { id: "sans", letterBase: 0x1d5a0, digitBase: 0x1d7e2 },
+  { id: "sansBold", letterBase: 0x1d5d4, digitBase: 0x1d7ec },
+  { id: "sansItalic", letterBase: 0x1d608, digitBase: null },
+  { id: "sansBoldItalic", letterBase: 0x1d63c, digitBase: null },
   { id: "mono", letterBase: 0x1d670, digitBase: 0x1d7f6 },
 ];
+
+/** 现成短语。只放拉丁字母:数学字母区映射不到 CJK,译成中文就不再是花体。 */
+export const FANCY_PHRASES = ["Love", "Forever yours", "Thank you", "Dream big"] as const;
 
 /**
  * 按风格把文本转成花体 Unicode 字符。

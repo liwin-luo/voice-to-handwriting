@@ -1,0 +1,83 @@
+# Print a handwritten letter and a matching envelope for three people
+
+Free, no signup, about ten minutes. Three short calls this week become three US Letter notes and three #10 envelopes. You print them, add postage, and mail them yourself.
+
+The page fills one thank-you for each name and lays the matching address on an envelope. The writing is Patrick Hand, the English page's default handwriting font, with small shifts so the lines are not perfectly even. It is a font. This site does not print, stamp, or mail anything.
+
+## The three people
+
+A freelancer finished intro calls with Avery, Sam, and Priya. Each person gets the same short note, with their own name, and an envelope with both addresses.
+
+| Name | Street | City | Region | Postal |
+| --- | --- | --- | --- | --- |
+| Avery Chen | 18 Oak Street | Glen Rock | NJ | 07452 |
+| Sam Ortiz | 402 Pine Ave | Austin | TX | 78701 |
+| Priya Shah | 90 Harbor Street | Portland | OR | 97201 |
+
+The return address is the same on every envelope. The first line is also the signature on the letter:
+
+```
+Jordan Lee
+14 Maple Ave
+Brooklyn, NY 11201
+```
+
+## The settings that produced these pages
+
+Open [printable handwritten letters](/printable-handwritten-letters). These are the controls I left in place on desktop Chrome (macOS, October 9, 2026):
+
+| Setting | Value |
+| --- | --- |
+| Note | Thank you |
+| Letter | that thank-you, left as written. The box can be edited |
+| List | the three rows above, header `name,street,city,region,postal` |
+| Return address | Jordan Lee, 14 Maple Ave, Brooklyn, NY 11201 |
+| Font | Patrick Hand |
+| Letter | US Letter |
+| Envelope | #10 (9.5 × 4.125 in) |
+
+The counter read 1 / 3, and the preview opened on Avery.
+
+![The letters page with the thank-you in the letter box, Excel template and Import Excel beside the three-person list, and Avery Chen's note](/blog/print-handwritten-letters.png)
+
+## What the first pair looks like
+
+Avery's letter uses the thank-you note. The greeting is Avery Chen. The signature is Jordan Lee. A short note leaves most of the sheet blank. That blank is the rest of the US Letter page.
+
+![Avery Chen's thank-you on cream paper with a red left margin, signed Jordan Lee](/blog/print-letters-avery.png)
+
+The envelope puts the return address at the top left and Avery's address in the center.
+
+![An envelope with Jordan Lee's return address and Avery Chen at 18 Oak Street, Glen Rock, NJ 07452](/blog/print-letters-envelope.png)
+
+Next moves to Sam. Same note, Sam's name in the greeting. The signature stays Jordan Lee.
+
+![The same thank-you, now addressed Dear Sam Ortiz](/blog/print-letters-sam.png)
+
+## The two PDFs
+
+**Download letters PDF** saved `handwritten-letters.pdf`: 3 pages, each 8.5 × 11 inches. **Download envelopes PDF** saved `handwritten-envelopes.pdf`: 3 pages, each 9.5 × 4.125 inches. The envelope page is the envelope itself, so a printer has to accept a #10, or you print at actual size and cut. I checked those page sizes in the files. I did not open Priya's page in a reader, and I did not feed a #10 through a printer.
+
+Print the letters at actual size, one page per sheet of US Letter. Fold, stamp, and mail them.
+
+## When one person needs different words
+
+The letter box starts as the note you picked. I left the thank-you as it was, so these three letters share it. You can replace that text. `name` in braces becomes the person, and `from` in braces becomes the first line of the return address. On this same machine I swapped the box for one line that greeted the name and signed the return-address line. The preview read Hello Avery Chen, from Jordan Lee. I put the thank-you back before the pictures above.
+
+A `message` cell replaces the box for that row only. I left that column off. The list stops at 30 people. If you want help with the wording, that is [handwritten thank-you notes](/blog/handwritten-thank-you-notes). One card, with no list, belongs in the [template library](/templates).
+
+## Checked on this machine
+
+Desktop Chrome, macOS, October 9, 2026. The list and return address above. On screen: Avery's letter and envelope, then Sam's letter after Next. Both downloads finished, three pages each, at the sizes above. I have not printed them on paper.
+
+I also downloaded the Excel template and imported that file back into the page. Avery and Sam returned, and 07452 kept its leading zero. I did not open the file in Excel. If a postal code is saved as a number, the leading zero is gone when it comes back.
+
+English pages use US Letter and a #10. Other languages on this site use A4 and a DL envelope. These letters are a handwriting font. They should not be passed off as ink from a pen.
+
+## Questions that come up
+
+**Will the site mail these?** No. You get two PDFs. Postage and the mailbox are yours.
+
+**Is the list a spreadsheet upload?** Paste it, or use Excel template and Import Excel. The first row is `name,street,city,region,postal`. One person per row. A `.csv` file imports the same way.
+
+**Can the note be longer?** Yes, until it fills the page. This thank-you is short on purpose, which is why the lower half of the sheet is empty.

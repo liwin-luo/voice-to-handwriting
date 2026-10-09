@@ -8,6 +8,8 @@ import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import { SPELLING_LISTS, spellingListMatches, type SpellingListId } from "@/lib/spellingLists";
+import { fadeInk } from "@/lib/ink";
+import ColorSwatch from "./ColorSwatch";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
 const LIST_LABEL = {
@@ -39,6 +41,8 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
   const [fontId, setFontId] = useState("patrickhand");
   const [showTrace, setShowTrace] = useState(true);
   const [guides, setGuides] = useState(true);
+  const [ink, setInk] = useState("#18181b");
+  const [bg, setBg] = useState("#ffffff");
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
@@ -79,7 +83,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
     canvas.width = w;
     canvas.height = h;
     const ctx = canvas.getContext("2d")!;
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
     drawNameDate(ctx);
     drawActivityTitle(ctx, t("a1Title"), 120);
@@ -87,7 +91,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
     let y = 170;
     for (const word of wordsPage) {
       // 词标(手写字体,深色)
-      ctx.fillStyle = "#18181b";
+      ctx.fillStyle = ink;
       ctx.font = `30px "${family}"`;
       ctx.fillText(word, 60, y + 26);
       // 三条书写线;第一行可选拼写提示(浅灰)
@@ -102,7 +106,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
         ctx.stroke();
         ctx.restore();
         if (i === 0 && showTrace) {
-          ctx.fillStyle = "#c9c9c9";
+          ctx.fillStyle = fadeInk(ink, 0.72);
           ctx.font = `26px "${family}"`;
           ctx.fillText(word, 70, ly - 6);
           if (guides) drawGlyphGuides(ctx, word, 70, ly - 6, 26, fontId);
@@ -118,7 +122,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
     canvas.width = w;
     canvas.height = h;
     const ctx = canvas.getContext("2d")!;
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
     drawNameDate(ctx);
     drawActivityTitle(ctx, t("a2Title"), 120);
@@ -139,7 +143,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
         if (i === miss) {
           // 缺失字母:下划线空位
           ctx.save();
-          ctx.strokeStyle = "#18181b";
+          ctx.strokeStyle = ink;
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.moveTo(cx + 2, y + 6);
@@ -147,7 +151,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
           ctx.stroke();
           ctx.restore();
         } else {
-          ctx.fillStyle = "#18181b";
+          ctx.fillStyle = ink;
           ctx.fillText(word[i], cx, y);
         }
         cx += cw;
@@ -186,7 +190,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [words, fontId, showTrace, guides, format]);
+  }, [words, fontId, showTrace, guides, format, ink, bg]);
 
   const downloadPdf = () => {
     if (!pageUrls.length) return;
@@ -302,6 +306,8 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
               />
             </button>
           </label>
+          <ColorSwatch label={fontNames("ink")} value={ink} onChange={setInk} />
+          <ColorSwatch label={fontNames("paperCustom.bg")} value={bg} onChange={setBg} />
           <PageFormatToggle value={format} onChange={setFormat} />
         </>
       }

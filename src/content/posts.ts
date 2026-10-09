@@ -642,9 +642,23 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/best-cursive-fonts.png",
     i18n: {
       en: {
-        title: "Best free cursive fonts: 7 open-source picks, previewed with your own words",
+        title: "Best free cursive fonts: 13 open-source picks, previewed with your own words",
         description:
-          "Seven free cursive fonts, compared by job: teaching script, formal invitations, everyday handwriting and print references — preview them with your text and export PNG or PDF, no install.",
+          "Thirteen free cursive fonts, including signature scripts, compared by job — preview them with your text and export PNG, SVG or PDF, no install.",
+      },
+    },
+  },
+  {
+    slug: "print-handwritten-letters-and-envelopes",
+    author: "theo-lindgren",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    image: "/blog/print-handwritten-letters.png",
+    i18n: {
+      en: {
+        title: "Print a handwritten letter and a matching envelope for three people",
+        description:
+          "A three-person thank-you list, Patrick Hand, US Letter notes and #10 envelopes. Free, no signup — the settings, the pages, and what the two PDFs actually contain.",
       },
     },
   },

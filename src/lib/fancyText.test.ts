@@ -30,8 +30,13 @@ describe("toFancyText", () => {
     ]);
   });
 
-  it("script/boldScript/fraktur 无数学数字,数字原样保留", () => {
-    for (const id of ["script", "boldScript", "boldItalic", "fraktur"] as const) {
+  it("italic 的 h 用普朗克常数码位,bold 数字进独立区块", () => {
+    expect(toFancyText("h", "italic").codePointAt(0)).toBe(0x210e);
+    expect(cp(toFancyText("A0", "bold"))).toEqual([0x1d400, 0x1d7ce]);
+  });
+
+  it("没有数学数字的风格把数字原样留下", () => {
+    for (const id of ["script", "boldScript", "italic", "boldItalic", "fraktur", "boldFraktur", "sansItalic", "sansBoldItalic"] as const) {
       expect(toFancyText("1.2", id)).toBe("1.2");
     }
   });
