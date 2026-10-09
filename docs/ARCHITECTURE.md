@@ -39,7 +39,8 @@
 │   ├── i18n/                  # routing(locales 顺序即切换器顺序)、navigation(Link)、request
 │   ├── lib/                   # site(SITE 常量)、seo(localizedUrl/buildAlternates)、
 │   │                          # fonts(CSS 加载清单)、transcribe(Whisper)、
-│   │                          # paperImage(上传图片压缩)、staticPage(静态页工厂)
+│   │                          # paperImage(上传图片压缩)、staticPage(静态页工厂)、
+│   │                          # fancyText(花体 Unicode 映射+折行,有单测)
 │   ├── engine/                # 手写渲染引擎:tokens / layout / jitter / paper(纯函数+单测)
 │   ├── hooks/                 # useSpeechRecognition(Web Speech API 封装)
 │   ├── stores/                # useEditorStore(编辑器+样式)、useHistoryStore(本地历史)
@@ -93,10 +94,16 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 |---|---|---|
 | `/` | 主工作台 | `ToolWorkspace`(无 preset)+ `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
+| `/cursive-text-generator` | 可复制花体文本(Unicode 六风格,复制/导出 PNG) | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表 | `TracingGenerator`(cedarvillecursive) |
+| `/daily-cursive-handwriting-practice` | 每日连笔练习页 | `DailyCursivePracticeGenerator`,`DAILY_CURSIVE_FAQS` |
 | `/name-tracing` | 姓名描红字帖 | `TracingGenerator`(patrickhand),`TRACING_FAQS` |
 | `/printable-paper` | 横线/方格纸生成 | `PaperGenerator`,`PAPER_FAQS` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览) | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
+| `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF) | `HandwritingRepeater`,`REPEATER_FAQS` |
+| `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF) | `HandwritingWorkbookGenerator`,`WORKBOOK_FAQS` |
+| `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向) | `HandwritingQuiz`,`QUIZ_FAQS` |
+| `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag) | `ToolWorkspace` preset(rx 纸张),`DOCTOR_FAQS` |
 | `/word-work` | 拼写练习(写三遍+缺字母) | `WordWorkGenerator`,`WORDWORK_FAQS` |
 | `/writing-practice` | CJK 练字表(田字格/原稿纸) | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
 | `/name-coloring` | 名字涂色页 | `NameColoringGenerator`,`COLORING_FAQS` |
