@@ -156,6 +156,18 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/handwriting-page-calculator", "/printable-paper"],
     posts: ["free-printable-lined-paper", "kindergarten-handwriting-paper", "how-to-improve-handwriting-adults"],
   },
+
+  // cursive 句子簇:句子级与 cursive-practice-worksheets(字母/单词级)拆开;描红引擎吃整句
+  "cursive-sentences-to-practice": {
+    tools: ["/name-tracing", "/cursive", "/daily-cursive-handwriting-practice", "/cursive-worksheets"],
+    posts: ["cursive-practice-worksheets", "how-to-teach-cursive-kids", "cursive-alphabet-chart"],
+  },
+
+  // copywork(homeschool 抄写)簇:方法讲解 + 免费生成器 + 分学科素材;与 sight-word 词表簇拆开
+  "copywork-generator": {
+    tools: ["/name-tracing", "/cursive", "/printable-paper", "/handwriting-workbook-generator"],
+    posts: ["sight-word-tracing-worksheets", "kindergarten-handwriting-paper", "cursive-sentences-to-practice"],
+  },
 };
 
 /** 文章在当前语言是否有正文(给相关文章链接防 404) */

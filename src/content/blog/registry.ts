@@ -68,6 +68,8 @@ import swtEn from "./sight-word-tracing-worksheets.en.mdx";
 import hrpEn from "./handwriting-repeater.en.mdx";
 import hwbEn from "./handwriting-workbook.en.mdx";
 import hshEn from "./how-many-sheets-handwriting.en.mdx";
+import cstEn from "./cursive-sentences-to-practice.en.mdx";
+import cwgEn from "./copywork-generator.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -226,6 +228,8 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "handwriting-repeater": { en: hrpEn },
   "handwriting-workbook": { en: hwbEn },
   "how-many-sheets-handwriting": { en: hshEn },
+  "cursive-sentences-to-practice": { en: cstEn },
+  "copywork-generator": { en: cwgEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

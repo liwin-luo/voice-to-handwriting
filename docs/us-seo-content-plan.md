@@ -171,3 +171,10 @@
 - **形态**:只填数字时按行距和 4 mm 字母估算(Letter + college ruled + 普通字 = 220 词/面),并给出紧/松两档;贴正文后按手写字体真实宽度分页并预览。纸型含 college、wide、三线格、方格、400/200 字原稿纸、自定义行距。8 种书写语言。
 - **角色**:Theo Lindgren。配套文 `how-many-sheets-handwriting`(en)。
 - **落地**:工具 `/handwriting-page-calculator`。内链 `/printable-paper` 与首页手写工具。空白纸入口在 `/printable-paper`。
+
+## 十二、长尾衍生两篇:句子级 cursive 与 copywork(2026-10-09,Google suggest + SERP 验证)
+
+- **数据源**:Google autocomplete(client=chrome, hl=en, gl=us)五种子词衍生 + Bing/Brave 代理 SERP 核查(Trends Rising 近期空窗)。两簇判定:cursive sentences 簇 SERP 被 Unicode 花体字生成器占位、意图错配严重,唯一成熟竞品 K5;copywork generator 簇全为小独立站、无人做全「方法+生成器+分学科素材」(EASY)。
+- **落地一**:`cursive-sentences-to-practice`(en)。主词 cursive sentences to practice / cursive sentences worksheets;次词 generator / to copy / pdf / for kids / grade 2、3。与 cursive-practice-worksheets(字母/单词级)拆开:本篇做句子级——o/b/v/w 高位收笔连接、分龄表(句子从 grade 2–3 起)、十句起步句库、描红版与抄写版两条生成器配方(Cedarville Cursive + Grade 2 行高)。角色 Clara。内链 /name-tracing、/cursive、/daily-cursive-handwriting-practice、/cursive-worksheets。
+- **落地二**:`copywork-generator`(en)。主词 copywork generator(EASY)+ copywork homeschool(MEDIUM,小博客把守);次词 copywork printables free / charlotte mason / 分龄。整句/段落抄写方法 + 页面解剖(5–6 描红起步到 12+ 段落)+ 一周起步素材表(Stevenson/谚语/1492/KJV)+ 生成器配方。与 sight-word-tracing-worksheets(拼写词表)拆开。角色 Clara(两篇 H2 骨架不同,不触发反同质化)。内链 /name-tracing、/cursive、/printable-paper、/word-work、/handwriting-workbook-generator。
+- **不接**:left handed handwriting practice sheets(Twinkl/TPT 把守、工具承接弱)、how to read cursive(translator/app 意图、无产品承接)、spelling test paper(TPT 三席位+模板农场,且留作 roadmap §2.3 潜在纸张子页)。

@@ -554,6 +554,32 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "cursive-sentences-to-practice",
+    author: "clara-hartley",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    i18n: {
+      en: {
+        title: "Cursive sentences to practice: printable pages for the sentence jump",
+        description:
+          "Free cursive sentence worksheets by grade: ten starter sentences built on the o-b-v-w joins, plus the exact tracing and copy-page generator settings. Trace first, then copy.",
+      },
+    },
+  },
+  {
+    slug: "copywork-generator",
+    author: "clara-hartley",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    i18n: {
+      en: {
+        title: "A free copywork generator for your homeschool",
+        description:
+          "Build free printable copywork pages in five minutes: page anatomy by age (5–6 tracing to 12+ paragraphs), the exact generator settings, and a week of starter passages.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);
