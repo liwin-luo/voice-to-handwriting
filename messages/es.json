@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "Todas las letras cursivas de la A a la Z con guías de trazado: toca una letra, cambia la fuente e imprime la tabla gratis."
     },
+    "letterTracing": {
+      "description": "Fichas para trazar una letra, de la a a la z, con el punto de inicio y una hoja de puntos para imprimir."
+    },
     "cursiveFont": {
       "title": "Generador de fuentes cursivas – Previsualiza y exporta fuentes manuscritas",
       "description": "Previsualiza tu texto en siete fuentes manuscritas a la vez, ajusta tamaño, tinta y fondo, y exporta PNG de alta resolución o PDF — gratis, sin instalación, sin registro. Fuentes de código abierto (OFL) con licencias claras."
@@ -107,6 +110,7 @@
     "templates": "Plantillas",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nombres",
+    "letterTracing": "Trazado de letras",
     "cursive": "Letra cursiva",
     "cursiveAlphabet": "Alfabeto cursivo",
     "cursiveFont": "Generador de fuentes cursivas",
@@ -390,6 +394,8 @@
     "downloadPng": "Descargar PNG",
     "seoTitle": "Fichas de nombres para imprimir gratis",
     "seoText": "Las fichas personalizadas para calcar son una de las formas más efectivas de enseñar escritura: el niño sigue la fila de ejemplo y luego repite. Genera todas las que necesites — cada PDF se imprime con el tamaño exacto de letra y sin marca de agua.",
+    "letterIndexLead": "¿Solo una letra, no un nombre?",
+    "letterIndexLink": "Fichas de trazado",
     "faqTitle": "Preguntas frecuentes"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Fuente",
     "outlineWidth": "Grosor del contorno",
-    "decorations": "Estrellas y corazones",
+    "template": "Decoraciones",
+    "templateStars": "Estrellas",
+    "templateAnimals": "Animales",
+    "templateMachines": "Máquinas",
+    "templateNone": "Ninguno",
     "downloadPng": "Descargar PNG",
     "downloadPdf": "Descargar PDF",
     "emptyTitle": "Aún no hay nombres",
     "emptyHint": "Escribe un nombre y la página se dibuja sola.",
     "seoTitle": "Generador gratis de páginas para colorear con nombres",
-    "seoText": "Las páginas para colorear con el propio nombre son un clásico: los niños colorean las letras mientras aprenden su forma. Contorno tipo burbuja, estrellas y corazones incluidos — tamaño Letter exacto, sin marca de agua.",
+    "seoText": "Las páginas para colorear con el propio nombre son un clásico: los niños colorean las letras mientras aprenden su forma. Contorno tipo burbuja, con estrellas, animales o máquinas para colorear — tamaño Letter exacto, sin marca de agua.",
     "faqTitle": "Preguntas frecuentes"
   },
   "wordwork": {

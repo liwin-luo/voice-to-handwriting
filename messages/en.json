@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "Every cursive letter A to Z with start-dot stroke guides — tap a letter, switch teaching fonts, and print the chart free."
     },
+    "letterTracing": {
+      "description": "Free letter tracing worksheets for a to z. Each letter has its own start point and a dashed practice sheet."
+    },
     "cursiveFont": {
       "title": "Cursive Font Generator – Preview & Export Handwriting Fonts",
       "description": "Preview your text in seven handwriting fonts, tune size, ink and background, then export high-resolution PNG or PDF — free, no install, no signup. Open-source (OFL) fonts with clear licenses."
@@ -107,6 +110,7 @@
     "templates": "Templates",
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
+    "letterTracing": "Letter Tracing",
     "cursive": "Cursive Writing",
     "cursiveAlphabet": "Cursive Alphabet",
     "cursiveFont": "Cursive Font Generator",
@@ -390,6 +394,8 @@
     "downloadPng": "Download PNG",
     "seoTitle": "Free name tracing worksheets for homeschool and classroom",
     "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark.",
+    "letterIndexLead": "Tracing one letter, not a name?",
+    "letterIndexLink": "Letter tracing worksheets",
     "faqTitle": "Frequently asked questions"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Font",
     "outlineWidth": "Outline width",
-    "decorations": "Stars & hearts decorations",
+    "template": "Decorations",
+    "templateStars": "Stars",
+    "templateAnimals": "Animals",
+    "templateMachines": "Machines",
+    "templateNone": "None",
     "downloadPng": "Download PNG",
     "downloadPdf": "Download PDF",
     "emptyTitle": "No names yet",
     "emptyHint": "Type a name and the coloring page draws itself.",
     "seoTitle": "Free name coloring page generator for kids",
-    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines, stars and hearts included — print at exact Letter size, no watermark.",
+    "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines with stars, animals, or machines to color — print at exact Letter size, no watermark.",
     "faqTitle": "Frequently asked questions"
   },
   "wordwork": {

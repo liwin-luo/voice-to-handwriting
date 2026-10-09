@@ -8,6 +8,7 @@ import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import { TRACE_GRADES, gradeForBand, tracingLines, tracingSheets } from "@/lib/traceGrades";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
+import { tracingPrefill } from "@/content/letterTracing";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
 
@@ -54,10 +55,10 @@ export default function TracingGenerator({
   const locale = useLocale();
   const [names, setNames] = useState("");
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("words");
+    const prefill = tracingPrefill(window.location.search);
     // 查询串只在浏览器里有,首屏保持空字符串,避免和水合结果不一致
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (q?.trim()) setNames(q);
+    if (prefill) setNames(prefill);
   }, []);
   const [fontId, setFontId] = useState(defaultFontId);
   const [showExample, setShowExample] = useState(true);

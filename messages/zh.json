@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "26 个连笔字母大小写全图,带落笔点与方向笔顺指引,可切换教学字体并免费打印。"
     },
+    "letterTracing": {
+      "description": "单个英文字母的描红页,从 a 到 z,每页说明落笔位置并打开虚线练习纸。"
+    },
     "cursiveFont": {
       "title": "花体字体生成器 – 在线预览并导出手写字体",
       "description": "一段文字同时在七款手写字体下实时预览,可调字号、墨色与底色,免安装导出高分辨率 PNG 或 PDF——免费、无水印、无需注册。全部开源字体(OFL),授权清晰。"
@@ -107,6 +110,7 @@
     "templates": "模板",
     "printablePaper": "打印纸模板",
     "nameTracing": "描红字帖",
+    "letterTracing": "字母描红",
     "cursive": "英文连笔字",
     "cursiveAlphabet": "连笔字母表",
     "cursiveFont": "花体字体预览",
@@ -390,6 +394,8 @@
     "downloadPng": "下载 PNG",
     "seoTitle": "免费姓名描红字帖 — 家庭教育与课堂适用",
     "seoText": "个性化描红字帖是教手写最有效的方式之一:孩子先描示例行,再反复练习。需要多少份就生成多少份,每份 PDF 按精确尺寸打印、无水印。",
+    "letterIndexLead": "只练一个字母、不是姓名？",
+    "letterIndexLink": "字母描红",
     "faqTitle": "常见问题"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "小雨\n朵朵\n乐乐",
     "font": "字体",
     "outlineWidth": "轮廓粗细",
-    "decorations": "星星爱心装饰",
+    "template": "装饰图案",
+    "templateStars": "星星",
+    "templateAnimals": "动物",
+    "templateMachines": "机器",
+    "templateNone": "无",
     "downloadPng": "下载 PNG",
     "downloadPdf": "下载 PDF",
     "emptyTitle": "还没有名字",
     "emptyHint": "输入名字,涂色页自动画好。",
     "seoTitle": "免费名字涂色页生成器 — 认字+涂色一举两得",
-    "seoText": "把孩子的名字变成大气泡轮廓字,涂色的同时认识自己的名字怎么写。可选站酷快乐体等可爱字体,自带星星爱心装饰,Letter 尺寸精确打印,无水印。",
+    "seoText": "把孩子的名字变成大气泡轮廓字,涂色的同时认识自己的名字怎么写。可选站酷快乐体等可爱字体,装饰可选星星、动物或机器,Letter 尺寸精确打印,无水印。",
     "faqTitle": "常见问题"
   },
   "wordwork": {

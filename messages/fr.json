@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "Toutes les lettres cursives de A à Z avec guides de tracé : touchez une lettre, changez de police et imprimez le tableau gratuitement."
     },
+    "letterTracing": {
+      "description": "Fiches pour tracer une lettre, de a à z, avec le point de départ et une feuille en pointillés à imprimer."
+    },
     "cursiveFont": {
       "title": "Générateur de polices cursives – Prévisualisez et exportez des polices manuscrites",
       "description": "Prévisualisez votre texte dans sept polices manuscrites à la fois, ajustez taille, encre et fond, puis exportez en PNG haute résolution ou PDF — gratuit, sans installation, sans inscription. Polices open source (OFL) aux licences claires."
@@ -107,6 +110,7 @@
     "about": "À propos",
     "printablePaper": "Papier à imprimer",
     "nameTracing": "Fiches de prénoms",
+    "letterTracing": "Tracé de lettres",
     "cursive": "Écriture cursive",
     "cursiveAlphabet": "Alphabet cursive",
     "cursiveFont": "Générateur de polices cursives",
@@ -390,6 +394,8 @@
     "downloadPng": "Télécharger PNG",
     "seoTitle": "Fiches de prénoms à repasser gratuites",
     "seoText": "Les fiches de lettres à repasser personnalisées sont l'un des moyens les plus efficaces d'apprendre l'écriture : l'enfant suit la ligne d'exemple, puis répète. Générez-en autant que nécessaire — chaque PDF s'imprime aux dimensions exactes des lettres, sans filigrane.",
+    "letterIndexLead": "Une seule lettre, pas un prénom ?",
+    "letterIndexLink": "Tracé de lettres",
     "faqTitle": "Questions fréquentes"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Police",
     "outlineWidth": "Épaisseur du contour",
-    "decorations": "Étoiles et cœurs",
+    "template": "Décorations",
+    "templateStars": "Étoiles",
+    "templateAnimals": "Animaux",
+    "templateMachines": "Machines",
+    "templateNone": "Aucun",
     "downloadPng": "Télécharger le PNG",
     "downloadPdf": "Télécharger le PDF",
     "emptyTitle": "Pas encore de prénoms",
     "emptyHint": "Tapez un prénom — la page se dessine toute seule.",
     "seoTitle": "Générateur gratuit de pages à colorier avec prénoms",
-    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, étoiles et cœurs inclus — format Letter exact, sans filigrane.",
+    "seoText": "Les pages à colorier avec son propre prénom sont un classique : les enfants colorent les lettres tout en apprenant leur forme. Contours bulles, avec étoiles, animaux ou machines à colorier — format Letter exact, sans filigrane.",
     "faqTitle": "Questions fréquentes"
   },
   "wordwork": {

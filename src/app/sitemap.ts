@@ -3,6 +3,7 @@ import { POSTS } from "@/content/posts";
 import { postLocales } from "@/content/blog/registry";
 import { TEMPLATES } from "@/content/templates";
 import { CURSIVE_LETTERS } from "@/content/cursiveLetters";
+import { PRINT_LETTERS } from "@/content/letterTracing";
 import { PAPER_KINDS } from "@/content/paperKinds";
 import { routing } from "@/i18n/routing";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
@@ -48,13 +49,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
   }
-  // /cursive-alphabet:en-only 工具页(Phase 0),仅输出 en 变体,避免非英文 URL 404 混入 sitemap
-  {
-    const p = "/cursive-alphabet";
+  // /cursive-alphabet 与 /letter-tracing:en-only,仅输出 en,避免非英文 URL 404 混入 sitemap
+  for (const p of ["/cursive-alphabet", "/letter-tracing"]) {
     entries.push({
       url: localizedUrl(p, routing.defaultLocale),
       changeFrequency: "weekly",
       priority: 0.7,
+      alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
+    });
+  }
+  for (const letter of PRINT_LETTERS) {
+    const p = `/letter-tracing/${letter.slug}`;
+    entries.push({
+      url: localizedUrl(p, routing.defaultLocale),
+      changeFrequency: "monthly",
+      priority: 0.6,
       alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
     });
   }

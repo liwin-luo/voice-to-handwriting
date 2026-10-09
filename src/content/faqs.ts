@@ -1199,35 +1199,35 @@ export const COLORING_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "How do I make a coloring page with my child's name?",
-        a: "Type the name, pick a playful font, and the page draws bubble-letter outlines of each character with stars and hearts to color.",
+        a: "Type the name, pick a playful font and a decoration (stars, animals, or machines), and the page draws bubble-letter outlines of each character.",
       },
       zh: {
         q: "怎么给孩子做名字涂色页?",
-        a: "输入名字、选一个可爱字体,页面会自动画出每个字的大气泡轮廓,并配上星星爱心装饰。",
+        a: "输入名字、选一个可爱字体和装饰(星星、动物或机器),页面会自动画出每个字的大气泡轮廓。",
       },
       ja: {
         q: "子どもの名前のぬりえはどうやって作りますか?",
-        a: "名前を入力してポップなフォントを選ぶだけ。各文字の吹き出し風の輪郭と、塗れる星・ハートの飾りが自動で描かれます。",
+        a: "名前を入力してポップなフォントと飾り(星・動物・機械)を選ぶだけ。各文字の吹き出し風の輪郭が自動で描かれます。",
       },
       ko: {
         q: "아이 이름 색칠 페이지는 어떻게 만드나요?",
-        a: "이름을 입력하고 귀여운 글꼴을 고르면 페이지가 각 글자의 풍선 글자 윤곽과 색칠할 별·하트 장식을 그려 줍니다.",
+        a: "이름을 입력하고 귀여운 글꼴과 장식(별, 동물, 기계)을 고르면 페이지가 각 글자의 풍선 글자 윤곽을 그려 줍니다.",
       },
       es: {
         q: "¿Cómo hago una página para colorear con el nombre de mi hijo?",
-        a: "Escribe el nombre, elige una fuente divertida y la página dibuja los contornos de burbuja de cada letra con estrellas y corazones para colorear.",
+        a: "Escribe el nombre, elige una fuente divertida y una decoración (estrellas, animales o máquinas), y la página dibuja los contornos de burbuja de cada letra.",
       },
       de: {
         q: "Wie erstelle ich ein Ausmalbild mit dem Namen meines Kindes?",
-        a: "Tippe den Namen ein, wähle eine verspielte Schrift, und die Seite zeichnet Blasenbuchstaben-Umrisse jedes Buchstabens mit Sternen und Herzen zum Ausmalen.",
+        a: "Tippe den Namen ein, wähle eine verspielte Schrift und eine Deko (Sterne, Tiere oder Maschinen), und die Seite zeichnet Blasenbuchstaben-Umrisse jedes Buchstabens.",
       },
       fr: {
         q: "Comment créer un coloriage avec le prénom de mon enfant ?",
-        a: "Tapez le prénom, choisissez une police amusante, et la page dessine des lettres-bulles de chaque caractère avec des étoiles et des cœurs à colorier.",
+        a: "Tapez le prénom, choisissez une police amusante et une décoration (étoiles, animaux ou machines), et la page dessine des lettres-bulles de chaque caractère.",
       },
       pt: {
         q: "Como faço uma página para colorir com o nome do meu filho?",
-        a: "Digite o nome, escolha uma fonte divertida e a página desenha contornos de letras-bolha de cada caractere com estrelas e corações para colorir.",
+        a: "Digite o nome, escolha uma fonte divertida e uma decoração (estrelas, animais ou máquinas) e a página desenha contornos de letras-bolha de cada caractere.",
       },
     },
   },
@@ -1236,35 +1236,35 @@ export const COLORING_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Can I adjust the outlines and decorations?",
-        a: "Yes — outline thickness is adjustable (thicker lines are easier for younger kids), the star-and-heart decorations can be switched off, and the font changes the letter shapes.",
+        a: "Yes — outline thickness is adjustable (thicker lines are easier for younger kids). Decorations can be stars and hearts, animals, or machines, or turned off. The font changes the letter shapes.",
       },
       zh: {
         q: "可以调整轮廓和装饰吗?",
-        a: "可以——描边粗细可调(线条越粗越适合小龄孩子),星星爱心装饰可以关闭,换字体还能改变字形。",
+        a: "可以——描边粗细可调(线条越粗越适合小龄孩子)。装饰可以选星星爱心、动物或机器,也可以关掉。换字体还能改变字形。",
       },
       ja: {
         q: "輪郭や飾りは調整できますか?",
-        a: "はい。輪郭の太さは調節可能(小さい子には太い線がおすすめ)、星とハートの飾りはオフにでき、フォントを変えると文字の形も変わります。",
+        a: "はい。輪郭の太さは調節可能です(小さい子には太い線がおすすめ)。飾りは星とハート、動物、機械から選べて、オフにもできます。フォントを変えると文字の形も変わります。",
       },
       ko: {
         q: "윤곽과 장식을 조절할 수 있나요?",
-        a: "네 — 윤곽선 굵기는 조절 가능하고(어린아이일수록 굵은 선이 쉬워요), 별·하트 장식은 끌 수 있고, 글꼴을 바꾸면 글자 모양도 달라집니다.",
+        a: "네 — 윤곽선 굵기는 조절할 수 있어요(어린아이일수록 굵은 선이 쉬워요). 장식은 별과 하트, 동물, 기계 중에서 고르거나 끌 수 있고, 글꼴을 바꾸면 글자 모양도 달라집니다.",
       },
       es: {
         q: "¿Puedo ajustar los contornos y las decoraciones?",
-        a: "Sí — el grosor del contorno es ajustable (las líneas gruesas son más fáciles para los más pequeños), las decoraciones de estrellas y corazones se pueden apagar, y la fuente cambia la forma de las letras.",
+        a: "Sí — el grosor del contorno es ajustable (las líneas gruesas son más fáciles para los más pequeños). Las decoraciones pueden ser estrellas y corazones, animales o máquinas, o apagarse. La fuente cambia la forma de las letras.",
       },
       de: {
         q: "Kann ich Umrisse und Dekorationen anpassen?",
-        a: "Ja — die Umrissstärke ist einstellbar (dickere Linien sind für jüngere Kinder leichter), die Stern-und-Herz-Dekoration lässt sich abschalten, und die Schrift verändert die Buchstabenformen.",
+        a: "Ja — die Umrissstärke ist einstellbar (dickere Linien sind für jüngere Kinder leichter). Die Deko kann Sterne und Herzen, Tiere oder Maschinen sein oder ausgeschaltet werden. Die Schrift verändert die Buchstabenformen.",
       },
       fr: {
         q: "Puis-je régler les contours et les décorations ?",
-        a: "Oui — l'épaisseur du contour est réglable (les lignes épaisses sont plus faciles pour les petits), les décorations étoiles-cœurs se désactivent, et la police modifie la forme des lettres.",
+        a: "Oui — l'épaisseur du contour est réglable (les lignes épaisses sont plus faciles pour les petits). Les décorations peuvent être des étoiles et des cœurs, des animaux ou des machines, ou désactivées. La police modifie la forme des lettres.",
       },
       pt: {
         q: "Posso ajustar os contornos e as decorações?",
-        a: "Sim — a espessura do contorno é ajustável (linhas grossas são mais fáceis para os pequenos), as decorações de estrelas e corações podem ser desligadas, e a fonte muda a forma das letras.",
+        a: "Sim — a espessura do contorno é ajustável (linhas grossas são mais fáceis para os pequenos). As decorações podem ser estrelas e corações, animais ou máquinas, ou desligadas. A fonte muda a forma das letras.",
       },
     },
   },

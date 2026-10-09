@@ -350,6 +350,15 @@ export default function PageCalculator() {
             </p>
           </div>
 
+          <div className="flex flex-wrap gap-2">
+            <Link href={blankPaperPath(paper)} className="btn btn-ghost px-4 py-2 text-sm">
+              {t("printBlank")}
+            </Link>
+            <button type="button" onClick={openTool} className="btn btn-primary px-4 py-2 text-sm">
+              {t("openTool")}
+            </button>
+          </div>
+
           {hasText && est.cell == null && (
             <div
               ref={measureRef}
@@ -441,15 +450,6 @@ export default function PageCalculator() {
               </div>
             </>
           )}
-
-          <div className="flex flex-wrap gap-2">
-            <Link href={blankPaperPath(paper)} className="btn btn-ghost px-4 py-2 text-sm">
-              {t("printBlank")}
-            </Link>
-            <button type="button" onClick={openTool} className="btn btn-primary px-4 py-2 text-sm">
-              {t("openTool")}
-            </button>
-          </div>
         </div>
       </div>
     </div>

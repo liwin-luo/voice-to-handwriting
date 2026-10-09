@@ -6,6 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import TracingGenerator from "@/components/TracingGenerator";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
+import { Link } from "@/i18n/navigation";
 import { TRACING_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 import { defaultFontId, defaultPageFormat } from "@/lib/localeDefaults";
@@ -53,6 +54,14 @@ export default async function NameTracingPage({
       <section className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600" style={{ animationDelay: "160ms" }}>
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
         <p>{t("seoText")}</p>
+        {locale === routing.defaultLocale ? (
+          <p className="mt-3">
+            {t("letterIndexLead")}{" "}
+            <Link href="/letter-tracing" className="text-accent underline-offset-2 hover:underline">
+              {t("letterIndexLink")}
+            </Link>
+          </p>
+        ) : null}
       </section>
       <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(TRACING_FAQS, locale as Locale)} />
     </main>

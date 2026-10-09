@@ -7,6 +7,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/templates": "templates",
   "/printable-paper": "printablePaper",
   "/name-tracing": "nameTracing",
+  "/letter-tracing": "letterTracing",
   "/cursive": "cursive",
   "/cursive-text-generator": "cursiveText",
   "/cursive-alphabet": "cursiveAlphabet",
@@ -93,7 +94,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["free-printable-lined-paper", "name-tracing-generator", "handwriting-practice-struggling-writers"],
   },
   "name-tracing-generator": {
-    tools: ["/name-tracing", "/printable-paper"],
+    tools: ["/name-tracing", "/letter-tracing", "/printable-paper"],
     posts: ["kindergarten-handwriting-paper", "cursive-name-signature", "cursive-practice-worksheets"],
   },
 

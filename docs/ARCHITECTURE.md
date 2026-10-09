@@ -100,16 +100,17 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个) | `TracingGenerator`(sacramento,`rowLabels="lines"`) |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页 | `DailyCursivePracticeGenerator`,`DAILY_CURSIVE_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
-| `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
+| `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
+| `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。打印按钮在范字下面,打开 `/name-tracing?letter=`。导航在「练习」,非英文不显示 | `letterTracing.ts`,`ToolFaq` |
 | `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。子页锁定当前纸型,其他纸型只在页底链接;红边距问答只出现在有该开关的纸上 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`PAPER_FAQS` |
-| `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览) | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
+| `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF) | `HandwritingRepeater`,`REPEATER_FAQS` |
 | `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
 | `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。结果页主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
 | `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
 | `/word-work` | 拼写练习。主按钮是 Dolch 与 Fry 前 25,Fry 前 100 在「更多词表」;选中的列表保持按下 | `WordWorkGenerator`,`spellingLists.ts`,`WORDWORK_FAQS` |
 | `/writing-practice` | CJK 练字表(田字格/原稿纸) | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
-| `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字 | `NameColoringGenerator`,`COLORING_FAQS` |
+| `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字。装饰可选星星、动物或机器。宽屏左栏控件不随预览页数下移 | `NameColoringGenerator`,`COLORING_FAQS` |
 | `/templates` · `/templates/[slug]` | 模板库/详情 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>` |
 | `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
 | `/faq` | FAQ 聚合页 + FAQPage JSON-LD | `FAQ_ITEMS` + `getFaq` |
@@ -173,7 +174,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 ### 4.9 SEO 基建
 
 - `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)。
-- `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 字母矩阵页 + 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
+- `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 连笔字母矩阵 + 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
 - IndexNow(`scripts/indexnow-submit.mjs`,`npm run indexnow`):无参提交 sitemap 全量,带参数提交指定 URL;密钥文件在 `public/fd1dfcff….txt`。**日常只提交有变化的 URL**,反复全量提交会被视为滥用。

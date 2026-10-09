@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "대소문자 전체 필기체 알파벳에 필순 가이드(시작 점과 화살표) 포함, 글꼴을 바꿔 무료로 인쇄하세요."
     },
+    "letterTracing": {
+      "description": "알파벳을 한 글자씩 따라 씁니다. a부터 z까지, 시작 위치와 점선 연습지가 있습니다."
+    },
     "cursiveFont": {
       "title": "필기체 글꼴 생성기 – 손글씨 글꼴 미리보기 및 내보내기",
       "description": "7개 손글씨 글꼴로 텍스트를 동시에 미리 보고, 크기·잉크·배경을 조절한 뒤 고해상도 PNG 또는 PDF로 내보내세요. 설치 없이, 워터마크 없이, 가입 없이. 오픈소스(OFL) 글꼴로 라이선스가 명확합니다."
@@ -107,6 +110,7 @@
     "templates": "템플릿",
     "printablePaper": "인쇄용 종이 템플릿",
     "nameTracing": "이름 쓰기 연습장",
+    "letterTracing": "알파벳 따라쓰기",
     "cursive": "필기체 생성기",
     "cursiveAlphabet": "필기체 알파벳",
     "cursiveFont": "필기체 글꼴 생성기",
@@ -390,6 +394,8 @@
     "downloadPng": "PNG 다운로드",
     "seoTitle": "무료 이름 쓰기 연습장",
     "seoText": "개인화된 쓰기 연습장은 손글씨 학습에 가장 효과적인 방법입니다. 필요한 만큼 무제한 생성하세요.",
+    "letterIndexLead": "이름이 아니라 글자 하나만 따라 쓰나요?",
+    "letterIndexLink": "알파벳 따라쓰기",
     "faqTitle": "자주 묻는 질문"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "하은\n서준\n지우",
     "font": "글꼴",
     "outlineWidth": "테두리 굵기",
-    "decorations": "별·하트 장식",
+    "template": "장식",
+    "templateStars": "별",
+    "templateAnimals": "동물",
+    "templateMachines": "기계",
+    "templateNone": "없음",
     "downloadPng": "PNG 다운로드",
     "downloadPdf": "PDF 다운로드",
     "emptyTitle": "아직 이름이 없어요",
     "emptyHint": "이름을 입력하면 색칠 페이지가 저절로 그려져요.",
     "seoTitle": "무료 이름 색칠 페이지 생성기",
-    "seoText": "아이 이름을 버블 아웃라인 글자로 만들어 색칠하면서 글자 모양을 익힙니다. Letter 정확 크기 인쇄, 워터마크 없음.",
+    "seoText": "아이 이름을 버블 아웃라인 글자로 만들어 색칠하면서 글자 모양을 익힙니다. 장식은 별, 동물, 기계 중에서 고를 수 있어요. Letter 정확 크기 인쇄, 워터마크 없음.",
     "faqTitle": "자주 묻는 질문"
   },
   "wordwork": {

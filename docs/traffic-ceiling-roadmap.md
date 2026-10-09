@@ -29,12 +29,12 @@
 - **内链 hub**:`/cursive` 页改造成 hub,链全部 52 页;`cursive-alphabet-chart` 文章互链。
 - **现状(2026-10-09)**:52 页已齐,仅英文。`/cursive` 底部 hub 分小写/大写链到全部课程。`cursive-alphabet-chart`(chart 角度)与矩阵(单字母深度)仍然分开。
 
-### 2.2 Letter tracing 矩阵(Phase 2,赶返校季)
+### 2.2 Letter tracing 矩阵(2026-10-09 已上线,原 Phase 2)
 
-- **路由**:`/letter-tracing/[letter]` 26 页(先 EN)。
+- **路由**:`/letter-tracing`(hub)+ `/letter-tracing/[letter]` 26 页,仅英文。非英文 404,sitemap 只收 en。
 - **目标词**:`letter a tracing`、`tracing letter s` 等,合计 30–80K US/月,8–9 月洪峰。
-- **配方**:复用 name-tracing 引擎渲染单字母描红 + 直链 `/name-tracing?letter=a` 自定义。
-- **依赖**:name-tracing 需支持单字母 preset(URL 参数已有 `?template=` 先例,工程量小)。
+- **配方**:每页落笔、走笔、和邻字母的差别、四个练习词、三条 FAQ。打印打开 `/name-tracing?letter=a`(已接;`?words=` 仍优先)。
+- **配套文**:`name-tracing-generator`(en)正文已链到 hub。独立 hub 文留到下一个内容周期,不另写 26 篇。
 
 ### 2.3 Paper 类型子页(Phase 2 顺手做)
 

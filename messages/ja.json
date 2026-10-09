@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "大文字・小文字すべての筆記体に筆順ガイド(始筆点と矢印)付き。フォントを切り替えて無料で印刷できます。"
     },
+    "letterTracing": {
+      "description": "アルファベットを一文字ずつなぞります。a から z まで、始筆と点線の練習シートがあります。"
+    },
     "cursiveFont": {
       "title": "筆記体フォント ジェネレーター – 手書きフォントのプレビューと書き出し",
       "description": "7つの手書きフォントでテキストを同時プレビュー。サイズ・インク・背景を調整し、高解像度PNGまたはPDFを書き出せます。インストール不要・透かしなし・登録不要。オープンソース(OFL)フォントでライセンス明確。"
@@ -107,6 +110,7 @@
     "templates": "テンプレート",
     "printablePaper": "印刷用紙テンプレート",
     "nameTracing": "なぞり書きプリント",
+    "letterTracing": "字母なぞり",
     "cursive": "筆記体ジェネレーター",
     "cursiveAlphabet": "筆記体アルファベット",
     "cursiveFont": "筆記体フォント生成",
@@ -390,6 +394,8 @@
     "downloadPng": "PNGをダウンロード",
     "seoTitle": "無料の名前なぞり書きプリント",
     "seoText": "個別化されたなぞり書きプリントは手書き学習に最も効果的。必要な枚数を何度でも生成できます。",
+    "letterIndexLead": "名前ではなく、一文字だけなぞりますか。",
+    "letterIndexLink": "字母なぞり",
     "faqTitle": "よくある質問"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "ひかり\nそら\nゆい",
     "font": "フォント",
     "outlineWidth": "ふちの太さ",
-    "decorations": "星とハートの飾り",
+    "template": "飾り",
+    "templateStars": "星",
+    "templateAnimals": "動物",
+    "templateMachines": "機械",
+    "templateNone": "なし",
     "downloadPng": "PNG をダウンロード",
     "downloadPdf": "PDF をダウンロード",
     "emptyTitle": "まだ名前がありません",
     "emptyHint": "名前を入れると、ぬりえページが自動で描かれます。",
     "seoTitle": "無料の名前ぬりえページ生成器",
-    "seoText": "子どもの名前をふちどり文字にしてぬりえに。文字の形に慣れながら塗って遊べます。Letter サイズ正確、透かしなし。",
+    "seoText": "子どもの名前をふちどり文字にしてぬりえに。文字の形に慣れながら塗って遊べます。飾りは星・動物・機械から選べます。Letter サイズ正確、透かしなし。",
     "faqTitle": "よくある質問"
   },
   "wordwork": {

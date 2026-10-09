@@ -95,6 +95,9 @@
     "cursiveAlphabet": {
       "description": "Alle Schreibschrift-Buchstaben von A bis Z mit Strichführungen — Buchstabe antippen, Schrift wechseln und die Tafel kostenlos drucken."
     },
+    "letterTracing": {
+      "description": "Nachspurblätter für einen Buchstaben, von a bis z, mit Startpunkt und gestricheltem Übungsblatt."
+    },
     "cursiveFont": {
       "title": "Schreibschrift-Font-Generator – Handschrift-Fonts ansehen & exportieren",
       "description": "Sieh deinen Text in sieben Handschrift-Fonts gleichzeitig, stelle Größe, Tinte und Hintergrund ein und exportiere hochauflösendes PNG oder PDF — gratis, ohne Installation, ohne Anmeldung. Open-Source-Fonts (OFL) mit klaren Lizenzen."
@@ -107,6 +110,7 @@
     "about": "Über",
     "printablePaper": "Druckpapier-Vorlagen",
     "nameTracing": "Schreibübungsblätter",
+    "letterTracing": "Buchstaben nachspuren",
     "cursive": "Schreibschrift-Generator",
     "cursiveAlphabet": "Schreibschrift-Alphabet",
     "cursiveFont": "Schreibschrift-Font-Generator",
@@ -390,6 +394,8 @@
     "downloadPng": "PNG herunterladen",
     "seoTitle": "Kostenlose Namens-Schreibübungsblätter",
     "seoText": "Personalisierte Schreibübungsblätter sind eine der effektivsten Methoden, Kindern das Schreiben beizubringen: Das Kind geht die Beispielzeile nach und wiederholt sie dann. Generiere so viele Blätter, wie du brauchst — jedes PDF druckt in exakter Buchstabengröße und ohne Wasserzeichen.",
+    "letterIndexLead": "Nur ein Buchstabe, kein Name?",
+    "letterIndexLink": "Buchstaben nachspuren",
     "faqTitle": "Häufige Fragen"
   },
   "doctor": {
@@ -518,13 +524,17 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Schrift",
     "outlineWidth": "Konturbreite",
-    "decorations": "Sterne & Herzen",
+    "template": "Deko",
+    "templateStars": "Sterne",
+    "templateAnimals": "Tiere",
+    "templateMachines": "Maschinen",
+    "templateNone": "Keine",
     "downloadPng": "PNG herunterladen",
     "downloadPdf": "PDF herunterladen",
     "emptyTitle": "Noch keine Namen",
     "emptyHint": "Namen eingeben — die Malvorlage zeichnet sich von selbst.",
     "seoTitle": "Kostenloser Namens-Malvorlagen-Generator für Kinder",
-    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, Sterne und Herzen inklusive — exaktes Letter-Format, ohne Wasserzeichen.",
+    "seoText": "Personalisierte Malvorlagen mit dem eigenen Namen sind ein Klassiker: Kinder bemalen die Buchstaben und lernen nebenbei ihre Form. Bubble-Outlines, dazu Sterne, Tiere oder Maschinen zum Ausmalen — exaktes Letter-Format, ohne Wasserzeichen.",
     "faqTitle": "Häufige Fragen"
   },
   "wordwork": {
