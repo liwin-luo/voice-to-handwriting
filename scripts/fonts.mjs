@@ -13,11 +13,14 @@ const jobs = [
   { input: "fonts-src/IndieFlower-Regular.ttf", outDir: "public/fonts/indieflower", family: "Indie Flower" },
   { input: "fonts-src/DancingScript[wght].ttf", outDir: "public/fonts/dancingscript", family: "Dancing Script" },
   { input: "fonts-src/Cedarville-Cursive.ttf", outDir: "public/fonts/cedarvillecursive", family: "Cedarville Cursive" },
+  { input: "fonts-src/Sacramento-Regular.ttf", outDir: "public/fonts/sacramento", family: "Sacramento" },
   { input: "fonts-src/KleeOne-Regular.ttf", outDir: "public/fonts/kleeone", family: "Klee One" },
   { input: "fonts-src/NanumPenScript-Regular.ttf", outDir: "public/fonts/nanumpenscript", family: "Nanum Pen Script" },
 ];
 
-for (const j of jobs) {
+// 传子串只切匹配项:node scripts/fonts.mjs sacramento
+const filter = process.argv[2];
+for (const j of jobs.filter((j) => !filter || j.outDir.includes(filter))) {
   console.log("slicing", j.family);
   await fontSplit({ input: j.input, outDir: j.outDir, css: { fontFamily: j.family } });
 }

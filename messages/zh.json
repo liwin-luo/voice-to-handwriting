@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "免费英文连笔字描红工作表生成器",
-      "description": "粘贴任意词表,免费生成可打印的英文连笔字描红工作表。三线格排版、无水印,适合恢复连笔字教学的课堂。"
+      "description": "粘贴任意词表,免费生成可打印的英文连笔字描红工作表。三线格排版、笔画引导、无水印,适合恢复连笔字教学的课堂。"
     },
     "dailyCursive": {
       "title": "每日草书字帖 PDF 免费打印 — 每天一页新练习",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · 日文手写",
       "nanumpenscript": "Nanum Pen · 韩文手写"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "小明\n小红\n小刚",
     "font": "字体",
     "showExample": "深色示例行",
+    "strokeGuides": "笔画引导(起点与箭头)",
+    "strokeGuidesHint": "笔画引导仅支持拉丁字母字体",
     "rowHeight": "行高",
     "gradeYoung": "4–5 岁",
     "gradeMid": "5–6 岁",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "英文连笔字描红工作表生成器",
-    "intro": "免费生成可打印的英文连笔字描红练习页:粘贴任意单词表或句子,得到三线格上的描红行。适合重新恢复连笔字教学的课堂。",
+    "intro": "免费生成可打印的英文连笔字描红练习页:粘贴任意单词表或句子,得到三线格上的描红行,并带笔画引导(落笔点与方向箭头)。适合重新恢复连笔字教学的课堂。",
     "seoTitle": "免费可打印英文连笔字(Cursive)练习工作表",
-    "seoText": "2024 年以来,美国越来越多的州(佛罗里达、宾夕法尼亚等)立法恢复连笔字教学——教师需要能立刻上手的材料。\n\n用法:粘贴你的词表(字母表、拼写词、名字,每行一个),选择 Cedarville(日常手写)或 Dancing Script(华丽花体),调整行高,下载 PDF。无水印、无需注册。\n\n课堂小技巧:每个学生打印一张深色示例页,再配正反面描红页供一周使用。"
+    "seoText": "2024 年以来,美国越来越多的州(佛罗里达、宾夕法尼亚等)立法恢复连笔字教学——教师需要能立刻上手的材料。\n\n用法:粘贴你的词表(字母表、拼写词、名字,每行一个),选择 Sacramento 或 Cedarville 这类连笔教学体(D'Nealian 课堂常用的连续连笔风格),调整行高,下载 PDF。笔画引导会用绿色落笔点和红色方向箭头,标出每一笔从哪里起笔、往哪个方向走。无水印、无需注册。\n\n课堂小技巧:每个学生打印一张深色示例页,再配正反面描红页供一周使用。"
   },
   "dailyCursive": {
     "title": "每日草书手写练习",

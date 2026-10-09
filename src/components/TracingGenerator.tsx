@@ -7,10 +7,26 @@ import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import { TRACE_GRADES, gradeForBand, tracingLines } from "@/lib/traceGrades";
+import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import PageFormatToggle from "./PageFormatToggle";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
+}
+
+/** 字体样式表由 FontStylesheets 水合后异步注入;等 face 注册再 load,否则 fonts.load 空转、画出回退字体 */
+function waitForFontFace(family: string, timeoutMs = 3000): Promise<void> {
+  return new Promise((resolve) => {
+    const started = Date.now();
+    const tick = () => {
+      for (const face of document.fonts) {
+        if (face.family.replace(/["']/g, "") === family) return resolve();
+      }
+      if (Date.now() - started > timeoutMs) return resolve();
+      setTimeout(tick, 50);
+    };
+    tick();
+  });
 }
 
 /** 姓名描红工作表生成器:美国教师/家长市场(姓名描红 + 三线格) */
@@ -29,6 +45,7 @@ export default function TracingGenerator({
   const [names, setNames] = useState("");
   const [fontId, setFontId] = useState(defaultFontId);
   const [showExample, setShowExample] = useState(true);
+  const [guides, setGuides] = useState(true);
   const [bandH, setBandH] = useState(defaultBandH);
   const [textColor, setTextColor] = useState("#3a3a3a");
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
@@ -38,6 +55,7 @@ export default function TracingGenerator({
 
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
+  const guidesAvailable = hasGlyphGuides(fontId);
   // 整页重绘 + 字体加载较重:输入防抖 + 组词期间暂停
   const [drawNames, compositionProps] = useDebouncedImeSafe(names);
 
@@ -46,6 +64,7 @@ export default function TracingGenerator({
     const run = async () => {
       const sample = tracingLines(drawNames, t("namesPlaceholder")).join("");
       // 传入实际文字,确保字体切片按需加载对应字形后再绘制
+      await waitForFontFace(family);
       await document.fonts.load(`80px "${family}"`, sample).catch(() => {});
       if (!cancelled) draw();
     };
@@ -54,7 +73,7 @@ export default function TracingGenerator({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drawNames, fontId, showExample, bandH, textColor, format]);
+  }, [drawNames, fontId, showExample, guides, bandH, textColor, format]);
 
   /** 支持传入离屏 ctx,供导出更高分辨率的 PNG;不传时重置并绘制预览画布 */
   function draw(target?: CanvasRenderingContext2D) {
@@ -126,6 +145,7 @@ export default function TracingGenerator({
         ctx.strokeText(text, 60, y0 + H - 6);
       }
       ctx.restore();
+      if (guides) drawGlyphGuides(ctx, text, 60, y0 + H - 6, fontSize, fontId);
     }
     void showExample;
   }
@@ -198,6 +218,28 @@ export default function TracingGenerator({
             <span
               className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
                 showExample ? "translate-x-5" : ""
+              }`}
+            />
+          </button>
+        </label>
+
+        <label
+          className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
+          title={guidesAvailable ? undefined : t("strokeGuidesHint")}
+        >
+          <span className="text-zinc-700">{t("strokeGuides")}</span>
+          <button
+            role="switch"
+            aria-checked={guides && guidesAvailable}
+            disabled={!guidesAvailable}
+            onClick={() => setGuides(!guides)}
+            className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
+              guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+            } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                guides && guidesAvailable ? "translate-x-5" : ""
               }`}
             />
           </button>

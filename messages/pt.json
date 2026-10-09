@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "Gerador grátis de fichas de cursiva (PDF)",
-      "description": "Crie fichas de prática de cursiva grátis a partir de qualquer lista de palavras. Linhas para treinar em papel de 3 linhas, sem marca d'água."
+      "description": "Crie fichas de prática de cursiva grátis a partir de qualquer lista de palavras. Linhas para treinar em papel de 3 linhas com guias de traço, sem marca d'água."
     },
     "dailyCursive": {
       "title": "PDF diário de prática de caligrafia cursiva (imprimível grátis)",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · Japonês",
       "nanumpenscript": "Nanum Pen · Coreano"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Fonte",
     "showExample": "Linha de exemplo escura",
+    "strokeGuides": "Guias de traço (ponto inicial e seta)",
+    "strokeGuidesHint": "Os guias de traço estão disponíveis apenas para fontes latinas",
     "rowHeight": "Altura da linha",
     "gradeYoung": "4–5 anos",
     "gradeMid": "5–6 anos",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "Gerador de fichas de cursiva",
-    "intro": "Fichas de prática de cursiva para imprimir grátis: cole qualquer lista de palavras e ganhe linhas cursivas para treinar em papel de 3 linhas. Para turmas que estão trazendo a cursiva de volta.",
+    "intro": "Fichas de prática de cursiva para imprimir grátis: cole qualquer lista de palavras e ganhe linhas cursivas para treinar em papel de 3 linhas, com guias de traço (ponto inicial e seta). Para turmas que estão trazendo a cursiva de volta.",
     "seoTitle": "Fichas de cursiva para imprimir grátis",
-    "seoText": "Cada vez mais estados dos EUA estão trazendo a cursiva de volta ao currículo (Flórida, Pensilvânia e outros desde 2024) — e professores precisam de materiais imediatos.\n\nComo usar: cole sua lista de palavras (alfabeto, ortografia, nomes — um por linha), escolha Cedarville Cursive ou Dancing Script, ajuste a altura e baixe o PDF. Sem marca d'água nem cadastro."
+    "seoText": "Cada vez mais estados dos EUA estão trazendo a cursiva de volta ao currículo (Flórida, Pensilvânia e outros desde 2024) — e professores precisam de materiais imediatos.\n\nComo usar: cole sua lista de palavras (alfabeto, ortografia, nomes — um por linha), escolha Sacramento ou Cedarville Cursive —escrita ligada contínua, o estilo das turmas D'Nealian—, ajuste a altura e baixe o PDF. Os guias de traço (ponto verde de início e seta vermelha de direção) mostram onde apoiar o lápis e para onde ir. Sem marca d'água nem cadastro."
   },
   "dailyCursive": {
     "title": "Prática diária de escrita cursiva",

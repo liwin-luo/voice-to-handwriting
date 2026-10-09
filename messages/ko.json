@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "무료 필기체 워크시트 생성기",
-      "description": "단어 목록으로 무료 인쇄용 필기체 연습 워크시트를 만드세요. 3줄 그리드, 워터마크 없음."
+      "description": "단어 목록으로 무료 인쇄용 필기체 연습 워크시트를 만드세요. 3줄 그리드, 획 가이드, 워터마크 없음."
     },
     "dailyCursive": {
       "title": "매일 새로운 필기체 연습 프린트 PDF(무료 인쇄)",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · 일본어 손글씨",
       "nanumpenscript": "나눔펜 · 한글 손글씨"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "글꼴",
     "showExample": "진한 예시 줄",
+    "strokeGuides": "획 가이드(시작점·화살표)",
+    "strokeGuidesHint": "획 가이드는 라틴 문자 글꼴에서만 사용할 수 있습니다",
     "rowHeight": "행 높이",
     "gradeYoung": "4–5세",
     "gradeMid": "5–6세",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "필기체 워크시트 생성기",
-    "intro": "단어장이나 문장을 붙여넣으면 3줄 그리드의 따라 쓰기 행으로 변환됩니다. 필기체를 다시 가르치는 교실을 위한 무료 PDF.",
+    "intro": "단어장이나 문장을 붙여넣으면 3줄 그리드의 따라 쓰기 행으로 변환됩니다. 시작점·화살표 획 가이드 포함. 필기체를 다시 가르치는 교실을 위한 무료 PDF.",
     "seoTitle": "무료 인쇄용 필기체 워크시트",
-    "seoText": "미국 여러 주(2024년 이후 플로리다·펜실베이니아 등)에서 필기체 교육을 부활시키고 있고, 교사들은 당장 쓸 수 있는 자료가 필요합니다.\n\n사용법: 단어 목록(알파벳·영단어·이름)을 붙여넣고, Cedarville 또는 Dancing Script 글꼴을 선택, 행 높이를 조절해 PDF 다운로드. 워터마크 없음, 가입 불필요."
+    "seoText": "미국 여러 주(2024년 이후 플로리다·펜실베이니아 등)에서 필기체 교육을 부활시키고 있고, 교사들은 당장 쓸 수 있는 자료가 필요합니다.\n\n사용법: 단어 목록(알파벳·영단어·이름)을 붙여넣고, D'Nealian 교실에서 쓰는 연속 획 스타일의 Sacramento 또는 Cedarville 글꼴을 선택, 행 높이를 조절해 PDF 다운로드. 초록 시작점과 빨간 방향 화살표가 어디에 펜을 놓고 어느 방향으로 움직일지 알려줍니다. 워터마크 없음, 가입 불필요."
   },
   "dailyCursive": {
     "title": "매일 필기체 연습",

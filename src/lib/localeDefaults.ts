@@ -13,6 +13,7 @@ const ALL_FONT_IDS: FontId[] = [
   "indieflower",
   "dancingscript",
   "cedarvillecursive",
+  "sacramento",
   "kleeone",
   "nanumpenscript",
 ];
@@ -68,6 +69,7 @@ const LATIN_FONT_IDS = new Set<string>([
   "indieflower",
   "dancingscript",
   "cedarvillecursive",
+  "sacramento",
 ]);
 
 const CJK_CALLIGRAPHY = new Set<string>([

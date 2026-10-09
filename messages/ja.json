@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "無料の筆記体ワークシート生成器",
-      "description": "単語リストから筆記体のなぞり書きワークシートを無料で生成。3 線グリッド、透かしなし。"
+      "description": "単語リストから筆記体のなぞり書きワークシートを無料で生成。3 線グリッド、筆画ガイド付き、透かしなし。"
     },
     "dailyCursive": {
       "title": "毎日の筆記体練習プリント PDF(無料・印刷できる)",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · 手書き",
       "nanumpenscript": "Nanum Pen · 韓国語手書き"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "フォント",
     "showExample": "お手本行(濃色)",
+    "strokeGuides": "筆画ガイド(始点と矢印)",
+    "strokeGuidesHint": "筆画ガイドはラテン文字フォントのみ対応しています",
     "rowHeight": "行の高さ",
     "gradeYoung": "4–5歳",
     "gradeMid": "5–6歳",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "筆記体ワークシート生成器",
-    "intro": "単語リストや文を貼り付けると、3 線グリッドのなぞり書き行に変換。筆記体復活の授業向け、無料 PDF。",
+    "intro": "単語リストや文を貼り付けると、3 線グリッドのなぞり書き行に変換。書き始めと矢印の筆画ガイド付き。筆記体復活の授業向け、無料 PDF。",
     "seoTitle": "無料で印刷できる筆記体ワークシート",
-    "seoText": "米国では複数の州が筆記体教育を復活させています(2024 年以降フロリダ州・ペンシルベニア州など)。教師がすぐ使える教材が必要な今、このジェネレーターが活躍します。\n\n使い方:単語リスト(アルファベット・スペリング・名前)を貼り付け、Cedarville か Dancing Script を選び、行の高さを調整して PDF ダウンロード。透かしなし、登録不要。"
+    "seoText": "米国では複数の州が筆記体教育を復活させています(2024 年以降フロリダ州・ペンシルベニア州など)。教師がすぐ使える教材が必要な今、このジェネレーターが活躍します。\n\n使い方:単語リスト(アルファベット・スペリング・名前)を貼り付け、D'Nealian の授業で使われる続け書きスタイルの Sacramento や Cedarville を選び、行の高さを調整して PDF ダウンロード。緑の始点ドットと赤い方向矢印が、ペンを置く位置と進む方向を示します。透かしなし、登録不要。"
   },
   "dailyCursive": {
     "title": "毎日の筆記体練習",

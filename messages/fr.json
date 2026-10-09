@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "Générateur gratuit de fiches d'écriture cursive",
-      "description": "Créez des fiches de cursive à imprimer à partir de n'importe quelle liste de mots. Lignes à repasser sur papier 3 lignes, sans filigrane."
+      "description": "Créez des fiches de cursive à imprimer à partir de n'importe quelle liste de mots. Lignes à repasser sur papier 3 lignes avec guides de tracé, sans filigrane."
     },
     "dailyCursive": {
       "title": "PDF quotidien de pratique de l'écriture cursive (imprimable gratuit)",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · Japonais",
       "nanumpenscript": "Nanum Pen · Coréen"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Police",
     "showExample": "Ligne exemple en foncé",
+    "strokeGuides": "Guides de tracé (point de départ et flèche)",
+    "strokeGuidesHint": "Les guides de tracé ne sont disponibles qu'avec les polices latines",
     "rowHeight": "Hauteur de ligne",
     "gradeYoung": "4–5 ans",
     "gradeMid": "5–6 ans",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "Générateur de fiches d'écriture cursive",
-    "intro": "Des fiches de cursive à imprimer gratuitement : collez une liste de mots et obtenez des lignes à repasser sur papier 3 lignes. Pour les classes qui réintègrent la cursive.",
+    "intro": "Des fiches de cursive à imprimer gratuitement : collez une liste de mots et obtenez des lignes à repasser sur papier 3 lignes, avec guides de tracé (point de départ et flèche). Pour les classes qui réintègrent la cursive.",
     "seoTitle": "Fiches de cursive à imprimer gratuitement",
-    "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Cedarville Cursive ou Dancing Script, ajustez la hauteur et téléchargez le PDF. Sans filigrane ni inscription."
+    "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Sacramento ou Cedarville Cursive —écriture liée continue, le style des classes D'Nealian—, ajustez la hauteur et téléchargez le PDF. Les guides de tracé (point vert de départ, flèche rouge de direction) indiquent où poser le crayon et dans quel sens avancer. Sans filigrane ni inscription."
   },
   "dailyCursive": {
     "title": "Pratique quotidienne de l'écriture cursive",

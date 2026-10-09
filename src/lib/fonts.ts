@@ -26,6 +26,7 @@ export const ASYNC_FONT_CSS = [
   "/fonts/indieflower/result.css",
   "/fonts/dancingscript/result.css",
   "/fonts/cedarvillecursive/result.css",
+  "/fonts/sacramento/result.css",
   "/fonts/kleeone/result.css",
   "/fonts/nanumpenscript/result.css",
 ];

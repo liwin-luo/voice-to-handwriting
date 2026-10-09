@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "Free Cursive Worksheets Generator (Printable PDF)",
-      "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper, no watermark — built for classrooms bringing back cursive."
+      "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper with start-dot stroke guides, no watermark — built for classrooms bringing back cursive."
     },
     "dailyCursive": {
       "title": "Free Daily Cursive Handwriting Practice PDF (Printable)",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · Japanese Handwriting",
       "nanumpenscript": "Nanum Pen · Korean Handwriting"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Font",
     "showExample": "Dark example row",
+    "strokeGuides": "Stroke guides (start dot & arrow)",
+    "strokeGuidesHint": "Stroke guides are available for Latin-alphabet fonts only",
     "rowHeight": "Row height",
     "gradeYoung": "Pre-K",
     "gradeMid": "Kindergarten",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "Cursive Worksheets Generator",
-    "intro": "Free printable cursive practice sheets: paste any word list or sentence and get traceable cursive rows on 3-line paper. Built for classrooms bringing cursive back.",
+    "intro": "Free printable cursive practice sheets: paste any word list or sentence and get traceable cursive rows on 3-line paper, with start-dot and arrow stroke guides. Built for classrooms bringing cursive back.",
     "seoTitle": "Free printable cursive worksheets for the classroom",
-    "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Cedarville Cursive for everyday handwriting or Dancing Script for elegant flourishes, set the row height, and download the PDF. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice."
+    "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Sacramento or Cedarville Cursive for continuous-stroke practice — the connected style used by D'Nealian classrooms — set the row height, and download the PDF. Stroke guides (green start dot, red direction arrow) show exactly where the pencil lands and which way to move. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice."
   },
   "dailyCursive": {
     "title": "Daily Cursive Handwriting Practice",

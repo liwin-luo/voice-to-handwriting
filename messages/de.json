@@ -46,7 +46,7 @@
     },
     "cursiveWorks": {
       "title": "Kostenloser Schreibschrift-Arbeitsblatt-Generator",
-      "description": "Kostenlose Schreibschrift-Übungsblätter aus jeder Wortliste erstellen. Nachspürbare Zeilen auf 3-Linien-Papier, ohne Wasserzeichen."
+      "description": "Kostenlose Schreibschrift-Übungsblätter aus jeder Wortliste erstellen. Zeilen zum Nachfahren auf 3-Linien-Papier mit Strichführung, ohne Wasserzeichen."
     },
     "dailyCursive": {
       "title": "Tägliche Schreibschrift-Übung als PDF (kostenlos druckbar)",
@@ -178,6 +178,7 @@
       "indieflower": "Indie Flower · Playful",
       "dancingscript": "Dancing Script · Cursive",
       "cedarvillecursive": "Cedarville · Cursive",
+      "sacramento": "Sacramento · Cursive",
       "kleeone": "Klee One · Japanisch",
       "nanumpenscript": "Nanum Pen · Koreanisch"
     },
@@ -349,6 +350,8 @@
     "namesPlaceholder": "Emma\nLiam\nOlivia",
     "font": "Schrift",
     "showExample": "Dunkle Beispielzeile",
+    "strokeGuides": "Strichführung (Startpunkt & Pfeil)",
+    "strokeGuidesHint": "Strichführungen sind nur für lateinische Schriften verfügbar",
     "rowHeight": "Zeilenhöhe",
     "gradeYoung": "4–5 Jahre",
     "gradeMid": "5–6 Jahre",
@@ -424,9 +427,9 @@
   },
   "cursiveWorks": {
     "title": "Schreibschrift-Arbeitsblatt-Generator",
-    "intro": "Kostenlose Übungsbätter in Schreibschrift: Wortliste oder Satz einfügen und nachspürbare Zeilen auf 3-Linien-Papier erhalten. Für Klassen, die Schreibschrift zurückbringen.",
+    "intro": "Kostenlose Schreibschrift-Arbeitsblätter zum Ausdrucken: Wortliste oder Satz einfügen und Zeilen zum Nachfahren auf 3-Linien-Papier erhalten — mit Strichführung (Startpunkt und Richtungspfeil). Für Klassen, die die Schreibschrift zurückbringen.",
     "seoTitle": "Kostenlose Schreibschrift-Arbeitsblätter zum Drucken",
-    "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Cedarville Cursive oder Dancing Script wählen, Zeilenhöhe anpassen, PDF herunterladen. Ohne Wasserzeichen, ohne Anmeldung."
+    "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Sacramento oder Cedarville Cursive wählen — die verbundene continuous cursive, wie in D'Nealian-Klassen —, Zeilenhöhe anpassen, PDF herunterladen. Die Strichführung (grüner Startpunkt, roter Richtungspfeil) zeigt, wo der Stift ansetzt und in welche Richtung er führt. Ohne Wasserzeichen, ohne Anmeldung."
   },
   "dailyCursive": {
     "title": "Tägliche Schreibschrift-Übung",
