@@ -309,7 +309,8 @@
     "noResult": "No matching template",
     "noResultHint": "Try another keyword, or create freely on the tool page",
     "seoTitle": "How to use the handwriting template library",
-    "seoText": "Each template pairs ready-made copy with a handwriting style, so you can send a card without staring at a blank page. Pick a message, open it in the editor, and adjust font, paper and ink before exporting as PNG or PDF. All fonts are open source (SIL OFL), exports carry no watermark, and everything is generated in your browser — the text you choose stays on your device."
+    "seoText": "Each template pairs ready-made copy with a handwriting style, so you can send a card without staring at a blank page. Pick a message, open it in the editor, and adjust font, paper and ink before exporting as PNG or PDF. All fonts are open source (SIL OFL), exports carry no watermark, and everything is generated in your browser — the text you choose stays on your device.",
+    "faqTitle": "Handwriting template questions"
   },
   "author": {
     "name": "Voice to Handwriting Team",
@@ -472,7 +473,8 @@
     "title": "Cursive Worksheets Generator",
     "intro": "Free printable cursive practice sheets: paste any word list or sentence and get traceable cursive rows on 3-line paper, with start-dot and arrow stroke guides. Built for classrooms bringing cursive back.",
     "seoTitle": "Free printable cursive worksheets for the classroom",
-    "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Sacramento or Cedarville Cursive for continuous-stroke practice — the connected style used by D'Nealian classrooms — set the row height, and download the PDF. Stroke guides (green start dot, red direction arrow) show exactly where the pencil lands and which way to move. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice."
+    "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Sacramento or Cedarville Cursive for continuous-stroke practice — the connected style used by D'Nealian classrooms — set the row height, and download the PDF. Stroke guides (green start dot, red direction arrow) show exactly where the pencil lands and which way to move. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice.",
+    "faqTitle": "Cursive worksheet questions"
   },
   "dailyCursive": {
     "title": "Daily Cursive Handwriting Practice",

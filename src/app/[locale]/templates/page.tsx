@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import TemplatesBrowser, { type TemplateCard } from "@/components/TemplatesBrowser";
+import ToolFaq from "@/components/ToolFaq";
 import { TEMPLATES, getTemplateMeta } from "@/content/templates";
+import { TEMPLATE_FAQS } from "@/content/pageFaqs";
+import { getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
@@ -49,6 +52,7 @@ export default async function TemplatesIndex({
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
+      <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(TEMPLATE_FAQS, locale as Locale)} />
     </main>
   );
 }

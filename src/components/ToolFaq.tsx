@@ -28,8 +28,8 @@ export default function ToolFaq({ title, items }: { title?: string; items: FaqEn
             className="group rounded-2xl border border-zinc-200 bg-white p-5 [&_summary::-webkit-details-marker]:hidden"
             open={i === 0}
           >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[15px] font-semibold text-zinc-900">
-              {it.q}
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+              <h3 className="m-0 text-[15px] font-semibold leading-snug text-zinc-900">{it.q}</h3>
               <span
                 aria-hidden
                 className="text-xl leading-none text-accent transition-transform duration-200 group-open:rotate-45"

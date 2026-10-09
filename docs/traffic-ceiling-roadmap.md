@@ -50,7 +50,7 @@
 
 - sitemap 拆分(letters / tracing / paper / templates 分片),矩阵页只在有正文的语种进 sitemap(沿用 registry `Partial` 机制);
 - hreflang 全量;矩阵页程序化 OG 图(现有 opengraph-image 管线复用);
-- **质量阈值**:每页必须有真实增量信息(笔顺/错误点/FAQ),纯字形+空壳页会被判 thin——52 页宁可分 3 批上,不做一次性灌水。
+- **质量阈值**:每页必须有真实增量信息(笔顺/错误点/FAQ),纯字形+空壳页会被判 thin——52 页宁可分 3 批上,不做一次性灌水。首页工具站的对照(页数不等于访问、空壳矩阵为什么不抄)见 `seo-article-playbook.md` §1 与 §4。
 
 ---
 

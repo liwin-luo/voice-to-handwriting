@@ -98,11 +98,11 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-text-generator` | 可复制花体文本(Unicode 十三风格,含现成字母表和短语)。复制是主按钮,麦克风是次按钮;预览和 PNG 可改墨色与纸底 | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
 | `/cursive-font-generator` | 手写字体预览 + 导出(13 款 OFL:4 签名体 + 4 正式花体 + 2 日常手写 + 3 印刷体。签名体只在本页,不进主工作台。PNG 透明底 / 内嵌字体 SVG / PDF) | `CursiveFontBrowser`,`fontCatalog.ts`,`cursiveSvg.ts`,`fontFace.ts`,FAQ 经 `CURSIVE_FONT_FAQS` |
-| `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`) |
+| `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`),`CURSIVE_WORKSHEET_FAQS` |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页。页脚站点水印默认开,下载按钮上方可关。墨色改练习字,描红同色变浅,纸底可改 | `DailyCursivePracticeGenerator`,`WatermarkSwitch`,`DAILY_CURSIVE_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
-| `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列 | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
+| `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列。Hub 用 `LETTER_HUB_FAQS`,单字母页用 `letterFaqs` | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
 | `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接。Hub 用 `PAPER_FAQS`(窄行/宽行对比含三线格链接);子页用 `paperKindFaqs`,不把横线问答贴到点阵和康奈尔 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`paperKindFaqs.ts` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
@@ -113,7 +113,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/word-work` | 拼写练习。主按钮是 Dolch 与 Fry 前 25,Fry 前 100 在「更多词表」;选中的列表保持按下。墨色改单词,描红同色变浅,纸底可改 | `WordWorkGenerator`,`spellingLists.ts`,`WORDWORK_FAQS` |
 | `/writing-practice` | CJK 练字表(田字格/原稿纸)。墨色改范字,描红用同色变浅,纸底可改 | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
 | `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字。装饰可选星星、动物或机器。宽屏左栏控件不随预览页数下移。页脚站点水印默认开,下载按钮上方可关 | `NameColoringGenerator`,`WatermarkSwitch`,`COLORING_FAQS` |
-| `/templates` · `/templates/[slug]` | 模板库/详情 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>` |
+| `/templates` · `/templates/[slug]` | 模板库/详情。索引 FAQ 是库的用法;详情 FAQ 带上该模板标题和范文首行,13 页不共用同一组问答 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>`。`TEMPLATE_FAQS`,`templateDetailFaqs` |
 | `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
 | `/faq` | 工具目录。每条一句,链到拥有完整答案的页面。FAQPage 由 `ToolFaq` 输出,问法与首页 `FAQ_ITEMS` 不重复。语音排错仍在首页 | `FAQ_HUB`(`faqHub.ts`)+ `ToolFaq` |
 | `/about` `/privacy` `/terms` `/contact` | 静态页 | `makeStaticPage(key)` 工厂(`src/lib/staticPage.tsx`)从 `PAGE_CONTENT` 取 MDX |
@@ -169,7 +169,8 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `posts.ts` | `POSTS` 元数据(slug/date/题图/i18n 标题描述) | blog 页、sitemap(lastmod 用文章真实日期) |
 | `pages/registry.ts` | `PAGE_CONTENT`:about/privacy/terms/contact × 8 语言 MDX | `makeStaticPage` 工厂 |
 | `templates.ts` | `TEMPLATES`:slug + TemplateStyle(font/paper/ink/size/intensity/align/indent)+ i18n 范文 text | 模板列表/详情、`ToolWorkspace` 的 `?template=` 接线、sitemap |
-| `faqs.ts` | `FAQ_ITEMS`(首页支持问答)及各工具专属 FAQ。`getLocalizedFaqs` 只返回当前语言有翻译的条目;第一条 `id` 以 `-free` 结尾时挪到末尾。`FaqEntry.link` 是答案后的一条站内链接 | 各工具页 `ToolFaq`;首页用 `FAQ_ITEMS` |
+| `faqs.ts` | `FAQ_ITEMS`(首页支持问答)及各工具专属 FAQ。`getLocalizedFaqs` 只返回当前语言有翻译的条目;第一条 `id` 以 `-free` 结尾时挪到末尾。`FaqEntry.link` 是答案后的一条站内链接。题目在 `ToolFaq` 里是 H3 | 各工具页 `ToolFaq`;首页用 `FAQ_ITEMS` |
+| `pageFaqs.ts` | 连笔描红 `CURSIVE_WORKSHEET_FAQS`、模板库 `TEMPLATE_FAQS`、详情页 `templateDetailFaqs`(按模板标题和范文首行生成) | `/cursive-worksheets`、`/templates`、`/templates/[slug]` |
 | `faqHub.ts` | `/faq` 目录 `FAQ_HUB`,问法不复制首页 | `/faq` |
 | `paperKindFaqs.ts` | 六种纸各自的 FAQ,按 `paperKinds` 里的行距写 | `/printable-paper/[kind]` |
 | `related.ts` | 文章尾部内链规划(tools[]/posts[]) | `RelatedLinks`(SEO 集群) |
@@ -247,4 +248,4 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 - [README.md](../README.md):运行/字体/模型/部署操作指南
 - [DEVELOPMENT-STANDARDS.md](./DEVELOPMENT-STANDARDS.md):开发规范(多语言 / SEO / 文章闭环 / 编码约定 + 自动化校验)
-- `调研报告.md`、`docs/us-seo-content-plan.md`、`docs/plans/`:产品与 SEO 策划背景
+- `调研报告.md`、`docs/us-seo-content-plan.md`、`docs/seo-article-playbook.md`、`docs/plans/`:产品与 SEO 策划背景。写文章前读 playbook(要不要写、更新频率)

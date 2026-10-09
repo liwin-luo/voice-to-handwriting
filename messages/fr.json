@@ -304,7 +304,8 @@
     "use": "Utiliser ce modèle",
     "editHint": "Le texte reste modifiable après application ; police et papier s'ajustent dans le panneau de gauche.",
     "seoTitle": "Comment utiliser la bibliothèque de modèles d'écriture",
-    "seoText": "Chaque modèle associe un texte prêt à l'emploi à un style d'écriture, pour envoyer une carte sans rester devant une page blanche. Choisissez un message, ouvrez-le dans l'éditeur, ajustez police, papier et encre, puis exportez en PNG ou PDF. Toutes les polices sont open source (SIL OFL), les exports ne portent aucun filigrane, et tout est généré dans votre navigateur — votre texte reste sur votre appareil."
+    "seoText": "Chaque modèle associe un texte prêt à l'emploi à un style d'écriture, pour envoyer une carte sans rester devant une page blanche. Choisissez un message, ouvrez-le dans l'éditeur, ajustez police, papier et encre, puis exportez en PNG ou PDF. Toutes les polices sont open source (SIL OFL), les exports ne portent aucun filigrane, et tout est généré dans votre navigateur — votre texte reste sur votre appareil.",
+    "faqTitle": "Questions sur les modèles manuscrits"
   },
   "notFound": {
     "title": "Cette page s'est envolée",
@@ -472,7 +473,8 @@
     "title": "Générateur de fiches d'écriture cursive",
     "intro": "Des fiches de cursive à imprimer gratuitement : collez une liste de mots et obtenez des lignes à repasser sur papier 3 lignes, avec guides de tracé (point de départ et flèche). Pour les classes qui réintègrent la cursive.",
     "seoTitle": "Fiches de cursive à imprimer gratuitement",
-    "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Sacramento ou Cedarville Cursive —écriture liée continue, le style des classes D'Nealian—, ajustez la hauteur et téléchargez le PDF. Les guides de tracé (point vert de départ, flèche rouge de direction) indiquent où poser le crayon et dans quel sens avancer. Sans filigrane ni inscription."
+    "seoText": "De plus en plus d'États américains réintègrent la cursive dans les programmes (Floride, Pennsylvanie et d'autres depuis 2024) — et les enseignants ont besoin de supports immédiats.\n\nMode d'emploi : collez votre liste de mots (alphabet, orthographe, prénoms — un par ligne), choisissez Sacramento ou Cedarville Cursive —écriture liée continue, le style des classes D'Nealian—, ajustez la hauteur et téléchargez le PDF. Les guides de tracé (point vert de départ, flèche rouge de direction) indiquent où poser le crayon et dans quel sens avancer. Sans filigrane ni inscription.",
+    "faqTitle": "Questions sur les fiches d'écriture cursive"
   },
   "dailyCursive": {
     "title": "Pratique quotidienne de l'écriture cursive",

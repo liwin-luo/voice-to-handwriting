@@ -4,7 +4,10 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import TracingGenerator from "@/components/TracingGenerator";
+import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
+import { CURSIVE_WORKSHEET_FAQS } from "@/content/pageFaqs";
+import { getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
@@ -60,6 +63,7 @@ export default async function CursiveWorksheetsPage({
         <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
+      <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(CURSIVE_WORKSHEET_FAQS, locale as Locale)} />
     </main>
   );
 }

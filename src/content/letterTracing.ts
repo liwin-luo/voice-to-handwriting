@@ -297,6 +297,23 @@ export const LETTER_TRACING_UI = {
   nameTracingRest: "is the same sheet with any word typed in.",
 };
 
+/** /letter-tracing hub。仅 en，与单字母页的三题不重复。 */
+export const LETTER_HUB_FAQS: { q: string; a: string; link?: { href: string; label: string } }[] = [
+  {
+    q: "What is on each letter tracing worksheet?",
+    a: "One lowercase letter. The page says where the pencil starts, how the letter sits on the lines, and which neighboring letter it gets mixed up with. Under that is a solid example row and dashed tracing rows. The PDF downloads on that page.",
+  },
+  {
+    q: "Are these Zaner-Bloser or D'Nealian worksheets?",
+    a: "No. The rows use Patrick Hand, an open-source print font. Dashed rows are outlines of the whole letter, not numbered stroke arrows. The sentences on each letter page are the stroke instructions.",
+  },
+  {
+    q: "Can I trace a name instead of one letter?",
+    a: "Yes. Name tracing uses the same kind of sheet for any word you type, and you can change the row height there.",
+    link: { href: "/name-tracing", label: "Name tracing" },
+  },
+];
+
 export function letterTracingTitle(letter: PrintLetter): string {
   return `Letter ${letter.slug} tracing worksheet`;
 }

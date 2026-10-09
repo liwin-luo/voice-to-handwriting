@@ -5,6 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { routing, type Locale } from "@/i18n/routing";
+import ToolFaq from "@/components/ToolFaq";
+import { templateDetailFaqs } from "@/content/pageFaqs";
 import { getTemplate, getTemplateMeta, TEMPLATES } from "@/content/templates";
 import { FONTS } from "@/stores/useEditorStore";
 import { getPaper } from "@/engine/paper";
@@ -88,6 +90,7 @@ export default async function TemplateDetail({
         </Link>
         <p className="text-xs text-zinc-400">{t("editHint")}</p>
       </div>
+      <ToolFaq title={t("faqTitle")} items={templateDetailFaqs(meta, locale as Locale, t("use"))} />
     </main>
   );
 }

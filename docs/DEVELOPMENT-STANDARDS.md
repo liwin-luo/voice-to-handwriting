@@ -120,7 +120,7 @@
 
 ### 3.4 新文章接线四步(缺一不可)
 
-1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);动笔前先按选题簇选定写作角色,通读 `docs/personas/` 对应角色卡,按其文风规则写作;
+1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);动笔前先按选题簇选定写作角色,通读 `docs/personas/` 对应角色卡,按其文风规则写作;并读 `docs/seo-article-playbook.md`(这篇是否该存在、第一屏、`updated` 何时前进);
 2. `registry.ts` 注册组件;
 3. `posts.ts` 登记元数据:`slug / author / date / updated / image` + i18n title/description;`author` **必填**(TS 类型限定只能取 `src/content/authors.ts` 已注册的角色,角色体系见 `docs/personas/README.md`);题图可选,有则放 `public/blog/`(约 1440×900 横图,**必须**提交),没有时列表卡片用标题占位;
 4. `related.ts` 登记 `RELATED[slug]`(§3.3)。

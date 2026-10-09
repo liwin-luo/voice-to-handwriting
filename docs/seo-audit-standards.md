@@ -2,7 +2,7 @@
 
 > 适用对象:`src/content/blog/` 每篇文章的**每个语言版本**。本文是**内容级审核**;技术接线验收(元数据、hreflang、JSON-LD、内链接线)见 `DEVELOPMENT-STANDARDS.md` §2–§3.5,两者都过才算合格。
 > 定位:把 `personas/README.md`「质量门控与反同质化」条款操作化为可打分的审核流程。
-> 配套:`docs/personas/<id>.md`(角色卡与发布门槛)· `docs/us-seo-content-plan.md`(关键词登记)· `docs/trends-backlog.md`(选题来源)
+> 配套:`docs/personas/<id>.md`(角色卡与发布门槛)· `docs/us-seo-content-plan.md`(关键词登记)· `docs/trends-backlog.md`(选题来源)· `docs/seo-article-playbook.md`(要不要写、更新频率)
 > 最后更新:2026-10-09。
 > **2026-10-09 并入 Google 官方口径更新**(10-01 同日改版两份文档《创建实用、可靠、以用户为中心的内容》《Google 搜索关于在网站上使用生成式 AI 内容的指南》+ 9 月网络垃圾更新收官 + Search Central Live 巴塞罗那站数据):四因子质量评估(Effort / Originality / Talent or skill / Accuracy)、"主要内容(MC)"判定、伪造作者=欺骗、AI 内容发布前人工核实(元数据一并审核)、Discover 题图规格与 robots meta 推荐值、抓取/索引官方耗时。
 
@@ -98,7 +98,7 @@
 | 所有时效性事实标注口径(如 "as of late 2026"、州名单注明年份) | 2 |
 | 不做超纲声明(明确"X 不是补脑神药"式的诚实边界) | 2 |
 | 该选题要求的免责声明齐全(dysgraphia 引导专业评估、graphology 娱乐定位、doctor handwriting 玩具定位) | 2 |
-| datePublished/updated 真实且与内容新鲜度匹配(季节文、州名单文每年复核) | 2 |
+| datePublished/updated 真实且与内容新鲜度匹配(季节文、州名单文每年复核;常青文不为刷新日期改写,标准见 `seo-article-playbook.md` §3) | 2 |
 
 **Google people-first 抽问**(发布前自问,来自 Google 官方 helpful content 自评,命中即回炉):这篇有原创信息/分析/一手记录吗?删掉它读者会缺一块吗?标题有没有夸大正文没有的内容?读完会想收藏或转给同场景的人吗?
 
@@ -124,7 +124,7 @@
 ### B3. 意图匹配(4)
 
 - 发布前用引号搜主词看 SERP 前三名:意图类型(工具 / 教程 / 资讯 / 打印)与本文一致;**2 分**
-- 正文类型与意图匹配:工具意图 → 首屏直达工具 CTA(§4 执行要点);教程意图 → 分步可跟做;资讯意图 → 有可引用的事实密度。**2 分**
+- 正文类型与意图匹配:工具意图 → 首屏直达工具 CTA;教程意图 → 分步可跟做,步骤在背景前面;资讯意图 → 有可引用的事实密度。版式见 `seo-article-playbook.md` §2。**2 分**
 
 ### B4. 防堆砌与防互搏(3)
 

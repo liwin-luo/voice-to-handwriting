@@ -304,7 +304,8 @@
     "use": "Usar este modelo",
     "editHint": "O texto continua editável após aplicar; fonte e papel se ajustam no painel à esquerda.",
     "seoTitle": "Como usar a biblioteca de modelos de escrita à mão",
-    "seoText": "Cada modelo combina um texto pronto com um estilo de letra, para você enviar um cartão sem ficar olhando uma página em branco. Escolha uma mensagem, abra no editor, ajuste fonte, papel e tinta e exporte em PNG ou PDF. Todas as fontes são open source (SIL OFL), as exportações não têm marca d'água e tudo é gerado no seu navegador — o texto que você escolher fica no seu dispositivo."
+    "seoText": "Cada modelo combina um texto pronto com um estilo de letra, para você enviar um cartão sem ficar olhando uma página em branco. Escolha uma mensagem, abra no editor, ajuste fonte, papel e tinta e exporte em PNG ou PDF. Todas as fontes são open source (SIL OFL), as exportações não têm marca d'água e tudo é gerado no seu navegador — o texto que você escolher fica no seu dispositivo.",
+    "faqTitle": "Perguntas sobre os modelos manuscritos"
   },
   "notFound": {
     "title": "Esta página voou com o vento",
@@ -472,7 +473,8 @@
     "title": "Gerador de fichas de cursiva",
     "intro": "Fichas de prática de cursiva para imprimir grátis: cole qualquer lista de palavras e ganhe linhas cursivas para treinar em papel de 3 linhas, com guias de traço (ponto inicial e seta). Para turmas que estão trazendo a cursiva de volta.",
     "seoTitle": "Fichas de cursiva para imprimir grátis",
-    "seoText": "Cada vez mais estados dos EUA estão trazendo a cursiva de volta ao currículo (Flórida, Pensilvânia e outros desde 2024) — e professores precisam de materiais imediatos.\n\nComo usar: cole sua lista de palavras (alfabeto, ortografia, nomes — um por linha), escolha Sacramento ou Cedarville Cursive —escrita ligada contínua, o estilo das turmas D'Nealian—, ajuste a altura e baixe o PDF. Os guias de traço (ponto verde de início e seta vermelha de direção) mostram onde apoiar o lápis e para onde ir. Sem marca d'água nem cadastro."
+    "seoText": "Cada vez mais estados dos EUA estão trazendo a cursiva de volta ao currículo (Flórida, Pensilvânia e outros desde 2024) — e professores precisam de materiais imediatos.\n\nComo usar: cole sua lista de palavras (alfabeto, ortografia, nomes — um por linha), escolha Sacramento ou Cedarville Cursive —escrita ligada contínua, o estilo das turmas D'Nealian—, ajuste a altura e baixe o PDF. Os guias de traço (ponto verde de início e seta vermelha de direção) mostram onde apoiar o lápis e para onde ir. Sem marca d'água nem cadastro.",
+    "faqTitle": "Perguntas sobre as fichas de cursiva"
   },
   "dailyCursive": {
     "title": "Prática diária de escrita cursiva",

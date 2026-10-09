@@ -309,7 +309,8 @@
     "noResult": "No hay plantillas que coincidan",
     "noResultHint": "Prueba otra palabra o crea libremente en la herramienta",
     "seoTitle": "Cómo usar la biblioteca de plantillas de escritura a mano",
-    "seoText": "Cada plantilla combina un texto listo con un estilo de letra, para que puedas enviar una tarjeta sin quedarte mirando una página en blanco. Elige un mensaje, ábrelo en el editor y ajusta fuente, papel y tinta antes de exportar en PNG o PDF. Todas las fuentes son open source (SIL OFL), las exportaciones no llevan marca de agua y todo se genera en tu navegador: el texto que elijas se queda en tu dispositivo."
+    "seoText": "Cada plantilla combina un texto listo con un estilo de letra, para que puedas enviar una tarjeta sin quedarte mirando una página en blanco. Elige un mensaje, ábrelo en el editor y ajusta fuente, papel y tinta antes de exportar en PNG o PDF. Todas las fuentes son open source (SIL OFL), las exportaciones no llevan marca de agua y todo se genera en tu navegador: el texto que elijas se queda en tu dispositivo.",
+    "faqTitle": "Preguntas sobre las plantillas de escritura"
   },
   "author": {
     "name": "Equipo de Voice to Handwriting",
@@ -472,7 +473,8 @@
     "title": "Generador de fichas de cursiva",
     "intro": "Hojas de práctica de cursiva para imprimir gratis: pega cualquier lista de palabras y obtén filas caligráficas para repasar sobre papel de 3 líneas, con guías de trazado (punto de inicio y flecha). Para aulas que recuperan la cursiva.",
     "seoTitle": "Fichas de cursiva para imprimir gratis",
-    "seoText": "Cada vez más estados de EE. UU. están devolviendo la cursiva al currículo (Florida, Pensilvania y otros desde 2024) — y los maestros necesitan materiales de inmediato.\n\nCómo usar: pega tu lista de palabras (alfabeto, ortografía, nombres — uno por línea), elige Sacramento o Cedarville Cursive —escritura ligada continua, el estilo de los salones D'Nealian—, ajusta la altura de fila y descarga el PDF. Las guías de trazado (punto verde de inicio y flecha roja de dirección) marcan dónde apoyar el lápiz y hacia dónde ir. Sin marca de agua ni registro."
+    "seoText": "Cada vez más estados de EE. UU. están devolviendo la cursiva al currículo (Florida, Pensilvania y otros desde 2024) — y los maestros necesitan materiales de inmediato.\n\nCómo usar: pega tu lista de palabras (alfabeto, ortografía, nombres — uno por línea), elige Sacramento o Cedarville Cursive —escritura ligada continua, el estilo de los salones D'Nealian—, ajusta la altura de fila y descarga el PDF. Las guías de trazado (punto verde de inicio y flecha roja de dirección) marcan dónde apoyar el lápiz y hacia dónde ir. Sin marca de agua ni registro.",
+    "faqTitle": "Preguntas sobre las fichas de cursiva"
   },
   "dailyCursive": {
     "title": "Práctica diaria de escritura cursiva",

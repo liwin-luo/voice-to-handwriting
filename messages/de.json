@@ -304,7 +304,8 @@
     "use": "Diese Vorlage verwenden",
     "editHint": "Der Text bleibt nach dem Anwenden frei bearbeitbar; Schrift und Papier kannst du im linken Panel anpassen.",
     "seoTitle": "So nutzt du die Handschrift-Vorlagen",
-    "seoText": "Jede Vorlage kombiniert fertigen Text mit einem Handschrift-Stil, damit du ohne leeres Blatt direkt losschicken kannst. Wähle eine Botschaft, öffne sie im Editor und passe Schrift, Papier und Tinte an, bevor du als PNG oder PDF exportierst. Alle Schriften sind open source (SIL OFL), Exporte kommen ohne Wasserzeichen, und alles entsteht in deinem Browser — dein Text bleibt auf deinem Gerät."
+    "seoText": "Jede Vorlage kombiniert fertigen Text mit einem Handschrift-Stil, damit du ohne leeres Blatt direkt losschicken kannst. Wähle eine Botschaft, öffne sie im Editor und passe Schrift, Papier und Tinte an, bevor du als PNG oder PDF exportierst. Alle Schriften sind open source (SIL OFL), Exporte kommen ohne Wasserzeichen, und alles entsteht in deinem Browser — dein Text bleibt auf deinem Gerät.",
+    "faqTitle": "Fragen zu Handschrift-Vorlagen"
   },
   "notFound": {
     "title": "Diese Seite ist weggeweht",
@@ -472,7 +473,8 @@
     "title": "Schreibschrift-Arbeitsblatt-Generator",
     "intro": "Kostenlose Schreibschrift-Arbeitsblätter zum Ausdrucken: Wortliste oder Satz einfügen und Zeilen zum Nachfahren auf 3-Linien-Papier erhalten — mit Strichführung (Startpunkt und Richtungspfeil). Für Klassen, die die Schreibschrift zurückbringen.",
     "seoTitle": "Kostenlose Schreibschrift-Arbeitsblätter zum Drucken",
-    "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Sacramento oder Cedarville Cursive wählen — die verbundene continuous cursive, wie in D'Nealian-Klassen —, Zeilenhöhe anpassen, PDF herunterladen. Die Strichführung (grüner Startpunkt, roter Richtungspfeil) zeigt, wo der Stift ansetzt und in welche Richtung er führt. Ohne Wasserzeichen, ohne Anmeldung."
+    "seoText": "Immer mehr US-Bundesstaaten holen die Schreibschrift zurück in den Lehrplan (Florida, Pennsylvania und andere seit 2024) — und Lehrkräfte brauchen Materialien über Nacht.\n\nSo geht's: Wortliste einfügen (Alphabet, Rechtschreibung, Namen — eine pro Zeile), Sacramento oder Cedarville Cursive wählen — die verbundene continuous cursive, wie in D'Nealian-Klassen —, Zeilenhöhe anpassen, PDF herunterladen. Die Strichführung (grüner Startpunkt, roter Richtungspfeil) zeigt, wo der Stift ansetzt und in welche Richtung er führt. Ohne Wasserzeichen, ohne Anmeldung.",
+    "faqTitle": "Fragen zu Schreibschrift-Arbeitsblättern"
   },
   "dailyCursive": {
     "title": "Tägliche Schreibschrift-Übung",

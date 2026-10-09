@@ -5,7 +5,8 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import { FONTS } from "@/stores/useEditorStore";
-import { LETTER_TRACING_UI, PRINT_LETTERS } from "@/content/letterTracing";
+import { LETTER_HUB_FAQS, LETTER_TRACING_UI, PRINT_LETTERS } from "@/content/letterTracing";
+import ToolFaq from "@/components/ToolFaq";
 import { buildAlternates } from "@/lib/seo";
 
 /** 印刷体字母描红 hub。仅 en，理由同 cursive-alphabet。 */
@@ -69,6 +70,7 @@ export default async function LetterTracingHubPage({
         </Link>{" "}
         {LETTER_TRACING_UI.nameTracingRest}
       </p>
+      <ToolFaq title={LETTER_TRACING_UI.faqTitle} items={LETTER_HUB_FAQS} />
     </main>
   );
 }
