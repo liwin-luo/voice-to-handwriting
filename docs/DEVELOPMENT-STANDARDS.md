@@ -132,6 +132,7 @@
 - [ ] `npm test` 通过(RELATED 覆盖、注册表一致性、H1 校验)
 - [ ] 任一有正文的语言打开文章:尾部有工具 + 相关文章区块,工具链接带正确语言前缀且可达
 - [ ] 该语言 URL 出现在 `/sitemap.xml`;未翻译语言确实 404 且不在 sitemap
+- [ ] 内容级审核通过:按 [seo-audit-standards.md](./seo-audit-standards.md) 五维打分 ≥85 且红线清零(E-E-A-T、长尾词命中、Bing、AI 痕迹、多语言质量)
 
 ## 4. 编码规范
 
