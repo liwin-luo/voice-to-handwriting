@@ -11,6 +11,31 @@
 <!-- AUTO:RISING START 由 scripts/trends-backlog.mjs 维护,勿手工编辑此区间 -->
 | 首见 | 最近见 | 关键词 | 近7天增长 | 种子词 | 次数 |
 |---|---|---|---|---|---|
+| 2026-10-09 | 2026-10-09 | angelina jolie handwriting viral note | Breakout | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | create printables name tracing with lines | Breakout | name tracing | 1 |
+| 2026-10-09 | 2026-10-09 | motto of a calligraphy enthusiast | Breakout | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | like samosas and wontons crossword | Breakout | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | devoted followers of painter o keeffe crossword | Breakout | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | resort near snowbird | +950% | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | angelina jolie handwriting | +4,750% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | createprintables name tracing | +600% | name tracing | 1 |
+| 2026-10-09 | 2026-10-09 | series of setbacks in slang crossword clue | +1,600% | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | meghan markle handwriting | +450% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | einstein handwriting | +140% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | pandora handwriting necklace | +90% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | albert einstein handwriting | +90% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | create printables name tracing | +90% | name tracing | 1 |
+| 2026-10-09 | 2026-10-09 | architect handwriting | +80% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | calligraphy pronunciation | +70% | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | free printable cursive handwriting worksheets | +50% | handwriting | 2 |
+| 2026-10-09 | 2026-10-09 | neat handwriting practice | +50% | handwriting practice | 1 |
+| 2026-10-09 | 2026-10-09 | create handwriting worksheets | +50% | handwriting worksheets | 1 |
+| 2026-10-09 | 2026-10-09 | create name tracing worksheets | +50% | name tracing | 1 |
+| 2026-10-09 | 2026-10-09 | name tracing with lines | +50% | name tracing | 1 |
+| 2026-10-09 | 2026-10-09 | classmate of beavis crossword clue | +1,050% | calligraphy | 1 |
+| 2026-10-09 | 2026-10-09 | print script handwriting | +40% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | free handwriting practice sheets for kids | +40% | handwriting | 1 |
+| 2026-10-09 | 2026-10-09 | blackletter calligraphy | +40% | calligraphy | 1 |
 <!-- AUTO:RISING END -->
 
 ## 参考源:大众每日热搜 RSS(全类别,仅供观察)
@@ -20,6 +45,16 @@
 <!-- AUTO:GENERAL START 由 scripts/trends-backlog.mjs 维护,勿手工编辑此区间 -->
 | 首见 | 关键词 | 热度 | 次数 | 当日新闻语境 |
 |---|---|---|---|---|
+| 2026-10-09 | michael douglas age | 200+ | 1 | How Michael Douglas Began a Secret Affair on the Set of Basic Instinct — But Not with Shar |
+| 2026-10-09 | arthur gea | 500+ | 1 | Arthur Gea claims first Masters 1000 win in Shanghai |
+| 2026-10-09 | how old is michael douglas | 1000+ | 1 | Michael Douglas Shares the Secret of His Marriage to Catherine Zeta-Jones (Exclusive) |
+| 2026-10-09 | daniel altmaier | 1000+ | 1 | ATP Shanghai Day 1 Predictions Including Holger Rune vs Daniel Altmaier |
+| 2026-10-09 | gavin williams | 1000+ | 1 | Gavin Williams used out of bullpen in Game 4 |
+| 2026-10-09 | ben shelton | 500+ | 1 | Shelton on Turin qualification: ‘It’s a massive motivation’ |
+| 2026-10-09 | andrew benintendi | 500+ | 1 | Andrew Benintendi Hit Prop Strategy: High-Value Fade for the Postseason |
+| 2026-10-09 | steffi graf | 200+ | 1 | Steffi Graf sends fans into overdrive with ultra rare appearance alongside Andre Agassi an |
+| 2026-10-09 | luka doncic | 200+ | 1 | Luka Dončić says he &apos;definitely&apos; regrets playing through hamstring injury that e |
+| 2026-10-09 | adou thiero | 200+ | 1 | Adou Thiero aims for bigger Lakers role after injury-marred rookie season |
 | 2026-10-08 | simon cowell | 200+ | 3 | Simon Cowell’s Fiancée Marks His 67th Birthday With a Message That Hits Differently This Y |
 | 2026-10-08 | flow | 200+ | 5 | Generac (GNRC) Stock May Be 20% Undervalued On Cash Flow |
 | 2026-10-08 | pekan antariksa dunia 2026 | 100+ | 4 | Pekan Antariksa Dunia 2026 Indonesia Digelar di TIM, Ini Jadwal dan Cara Masuk Pameran |
@@ -63,3 +98,10 @@
 2026-10-08 | （种子词 Rising 全空） | 近 7 天六个种子均为 0 条;12 个月补查 429 | — | — | 继续观察。大众日榜无站内交集,不接。
 
 2026-10-08 | sight word tracing worksheets | 非 Rising 数字;规划表 §2 未覆盖长尾 + 自动补全成簇 | clara-hartley | 分龄行高表 + 八词清单与生成器参数 | 排期,已写 `sight-word-tracing-worksheets`
+| 2026-10-09 | angelina jolie handwriting viral note | Breakout | —(建议放弃:名人新闻热点,博客排名窗口追不上) | — | 待人工确认 |
+| 2026-10-09 | angelina jolie handwriting | +4,750% | —(建议放弃:同一名人新闻波) | — | 待人工确认 |
+| 2026-10-09 | meghan markle handwriting | +450% | —(建议放弃:名人新闻波,流量留存差) | — | 待人工确认 |
+| 2026-10-09 | einstein handwriting | +140% | —(低优先:名人衍生流量) | 如做:Mara Voss 视角「名人笔迹分析靠谱吗」辟谣向,挂一手文献 | 待人工确认 |
+| 2026-10-09 | create printables name tracing with lines | Breakout | Clara Hartley | 实测本站名字描红生成器的三线/行线设置,产出「带行线描红」分步教程+参数对照;注意红线:给替代方案,不做注册商标对比 | 待人工确认 |
+| 2026-10-09 | createprintables name tracing | +600% | Clara Hartley | 与上一条合并为一篇「name tracing with lines」;这是竞品品牌词,证明带线描红是真实功能需求 | 待人工确认 |
+| 2026-10-09 | motto of a calligraphy enthusiast | Breakout | Theo Lindgren | 实测语音输入生成书法风座右铭金句卡的字体/纸张参数组合,附成品截图 | 待人工确认 |

@@ -100,10 +100,10 @@ async function fetchRelatedRising(seed, cookies) {
   const rs = parseJson(rsText);
 
   // rankedList 含 top 与 rising 两张表,按 formattedValue 形态识别 rising(含 % 或 Breakout);
-  // kw.query 兼容字符串与 {query: "..."} 对象两种载荷
+  // 实测载荷键名为 rankedKeyword(单数);query 为纯字符串,兼容旧版对象形态
   const out = [];
   for (const list of rs.default?.rankedList ?? []) {
-    for (const kw of list.rankedKeywords ?? []) {
+    for (const kw of list.rankedKeyword ?? list.rankedKeywords ?? []) {
       if (/%|breakout/i.test(kw.formattedValue ?? "")) {
         const q = typeof kw.query === "object" && kw.query !== null ? kw.query.query : kw.query;
         if (q) out.push({ query: String(q), growth: kw.formattedValue, num: growthNum(kw.formattedValue) });
