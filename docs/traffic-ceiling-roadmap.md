@@ -27,7 +27,7 @@
 - **目标词**:`cursive a`–`cursive z`、`cursive capital G`、`how to write a cursive g` 等,单词 300–2.5K/月,难字母(f/j/g/q/G/S)最高,合计 60–150K US/月。
 - **页面配方**(程序化生成,每页):大字字形渲染(现有字体管线)→ 笔顺分步(2–4 步 SVG)→ 常见错误点 → 该字母练习纸直链(`/handwriting-workbook-generator?letter=f` 预填,转化闭环)→ 3 条 FAQ(PAA 对齐)→ 上下字母导航(内链网)。
 - **内链 hub**:`/cursive` 页改造成 hub,链全部 52 页;`cursive-alphabet-chart` 文章互链。
-- **现状**:`/cursive` 目前是单页,矩阵为纯增量;`cursive-alphabet-chart`(chart 角度)与矩阵(单字母深度)零冲突。
+- **现状(2026-10-09)**:52 页已齐,仅英文。`/cursive` 底部 hub 分小写/大写链到全部课程。`cursive-alphabet-chart`(chart 角度)与矩阵(单字母深度)仍然分开。
 
 ### 2.2 Letter tracing 矩阵(Phase 2,赶返校季)
 
@@ -38,7 +38,7 @@
 
 ### 2.3 Paper 类型子页(Phase 2 顺手做)
 
-- `/printable-paper` 下扩 8–10 个子页:kindergarten(三线格)、picture box、college ruled、wide ruled、graph、cursive paper 等,各配"打印即用 PDF + 参数化生成器"。
+- `/printable-paper` 下已有 kindergarten、college ruled、wide ruled,以及 2026-10-09 补上的 picture box(`story-paper`)、dot grid、Cornell。方格仍在生成器里,没有单独子页。乐谱、六边形不做。
 - 目标词:`kindergarten writing paper`(2–6K)、`printable lined paper` 长尾变体(cluster A 合计 76–166K US/月)。
 
 ### 2.4 templates/[slug] 扩容(滚动做,贴季节)
@@ -78,13 +78,13 @@
 ### Phase 0 — 圣诞窗口(现在 → 2026-12)
 
 - letter-from-santa 模板已上线,补 santa 配套文章内链(§四 老计划要求 10 月上线,已达成);
-- **cursive 字母矩阵动工**:12 月底前上第一批 12 页(难字母优先:f/j/g/q/G/S/T/F/J/Q/Z);
+- **cursive 字母矩阵**:52 页已在 2026-10-09 齐(难字母先行的 12 页并入字母表顺序);
 - GSC 埋点核对:确认现有 164 篇的收录与 query 分布,用真实数据替换本文件所有估算(校准点①)。
 
 ### Phase 1 — 1 月小峰(2027-01 → 03)
 
 - National Handwriting Day(1/23)活动页(已在 P2 backlog,提前到此);
-- 字母矩阵第二批 20 页;`how to improve handwriting` 簇(10–25K US/月)1 月是全年峰,how-to-improve-your-handwriting 支柱文趁势推社媒;
+- 字母矩阵已满 52 页,不再分批;`how to improve handwriting` 簇(10–25K US/月)1 月是全年峰,how-to-improve-your-handwriting 支柱文趁势推社媒;
 - de/ja 工具页全量翻译上线。
 
 ### Phase 2 — 返校季备战(2027-06 → 08,全年最大窗口)

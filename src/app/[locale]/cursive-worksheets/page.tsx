@@ -43,7 +43,12 @@ export default async function CursiveWorksheetsPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <TracingGenerator defaultFontId="sacramento" defaultBandH={100} defaultFormat={defaultPageFormat(locale)} />
+        <TracingGenerator
+          defaultFontId="sacramento"
+          defaultBandH={120}
+          defaultFormat={defaultPageFormat(locale)}
+          rowLabels="lines"
+        />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

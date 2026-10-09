@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 
-export type PaperKindType = "college" | "wide" | "handwriting";
+export type PaperKindType = "college" | "wide" | "handwriting" | "dots" | "story" | "cornell";
 
 export interface PaperKindCopy {
   /** 短标签，用于索引页链接 */
@@ -205,8 +205,199 @@ export const PAPER_KINDS: PaperKind[] = [
       },
     },
   },
+  {
+    slug: "dot-grid",
+    type: "dots",
+    copy: {
+      en: {
+        label: "Dot grid",
+        title: "Dot Grid Paper — Free Printable PDF (Letter & A4)",
+        description: "Evenly spaced dots for bullet journals, sketches, and handwriting drills. Free PDF, no watermark.",
+        h1: "Dot grid paper",
+        intro: "Dot grid paper replaces lines with a light lattice of dots, so you can write, sketch, or keep a bullet journal without a heavy rule. The default pitch is about 7 mm. Print it in US Letter or A4 at actual size.",
+      },
+      es: {
+        label: "Cuadrícula de puntos",
+        title: "Papel de puntos — PDF gratis (Letter y A4)",
+        description: "Puntos uniformes para bullet journal, bocetos y caligrafía. PDF gratis, sin marca de agua.",
+        h1: "Papel de puntos",
+        intro: "El papel de puntos cambia las rayas por una retícula ligera. Sirve para bullet journal, bocetos o caligrafía sin una pauta pesada. El paso por defecto ronda los 7 mm. Imprime en Letter o A4 a tamaño real.",
+      },
+      fr: {
+        label: "Grille de points",
+        title: "Papier pointillé — PDF gratuit (Letter et A4)",
+        description: "Points réguliers pour bullet journal, croquis et écriture. PDF gratuit, sans filigrane.",
+        h1: "Papier à points",
+        intro: "Le papier à points remplace les lignes par un léger quadrillage de points : journal, croquis ou exercices d'écriture, sans réglure lourde. Le pas par défaut est d'environ 7 mm. Imprimez en Letter ou A4 à taille réelle.",
+      },
+      de: {
+        label: "Punktraster",
+        title: "Punktraster-Papier — kostenloses PDF (Letter und A4)",
+        description: "Gleichmäßige Punkte für Bullet Journal, Skizzen und Schreibübungen. Kostenloses PDF, ohne Wasserzeichen.",
+        h1: "Punktraster",
+        intro: "Punktraster ersetzt Linien durch ein leichtes Punktgitter. Geeignet für Bullet Journal, Skizzen oder Schreibübungen, ohne schwere Lineatur. Der Abstand liegt bei etwa 7 mm. Letter oder A4 in Originalgröße drucken.",
+      },
+      pt: {
+        label: "Grade de pontos",
+        title: "Papel pontilhado — PDF grátis (Letter e A4)",
+        description: "Pontos uniformes para bullet journal, rascunhos e caligrafia. PDF grátis, sem marca d'água.",
+        h1: "Papel de pontos",
+        intro: "O papel de pontos troca as linhas por uma grade leve. Serve para bullet journal, rascunhos ou caligrafia, sem pauta pesada. O espaçamento padrão fica em cerca de 7 mm. Imprima em Letter ou A4 no tamanho real.",
+      },
+      zh: {
+        label: "点阵",
+        title: "点阵纸 — 免费可打印 PDF（Letter 与 A4）",
+        description: "均匀点阵，适合手帐、草图和练字。免费 PDF，无水印。",
+        h1: "点阵纸",
+        intro: "点阵纸用浅点代替横线，写字、画草图或做手帐都不会被粗线挡住。默认点距大约 7 毫米。按 Letter 或 A4 实际尺寸打印。",
+      },
+      ja: {
+        label: "ドット方眼",
+        title: "ドット方眼用紙 — 無料PDF（レター判とA4）",
+        description: "等間隔の点。バレットジャーナル、下絵、筆記練習に。透かしなしの無料PDF。",
+        h1: "ドット方眼用紙",
+        intro: "ドット方眼は罫線の代わりに薄い点を置きます。バレットジャーナル、下絵、筆記の練習に向き、線が主張しません。初期の間隔は約7mm。レター判かA4を等倍で印刷してください。",
+      },
+      ko: {
+        label: "점 격자",
+        title: "점 격자 노트 — 무료 PDF (Letter와 A4)",
+        description: "고른 간격의 점. 불릿 저널, 스케치, 글씨 연습용. 워터마크 없는 무료 PDF.",
+        h1: "점 격자 노트",
+        intro: "점 격자는 줄 대신 옅은 점을 찍습니다. 불릿 저널, 스케치, 글씨 연습에 맞고, 줄이 글을 누르지 않습니다. 기본 간격은 약 7mm. Letter 또는 A4를 실제 크기로 인쇄하세요.",
+      },
+    },
+  },
+  {
+    slug: "story-paper",
+    type: "story",
+    copy: {
+      en: {
+        label: "Story paper",
+        title: "Story Paper with Picture Box — Free Printable PDF",
+        description: "A blank picture box on top and wide lines below, for kindergarten draw-and-write pages. Free PDF.",
+        h1: "Story paper with a picture box",
+        intro: "Story paper leaves the top of the page empty for a drawing and puts wide writing lines underneath. Kindergarten and first grade use it for a picture plus one or two sentences. The box is about two-fifths of the page. Print in US Letter or A4.",
+      },
+      es: {
+        label: "Papel de cuento",
+        title: "Papel con recuadro para dibujar — PDF gratis",
+        description: "Recuadro en blanco arriba y líneas anchas abajo, para dibujar y escribir. PDF gratis.",
+        h1: "Papel de cuento con recuadro",
+        intro: "El papel de cuento deja arriba un recuadro vacío para el dibujo y debajo líneas anchas. En infantil y primero se usa para un dibujo y una o dos frases. El recuadro ocupa unas dos quintas partes de la hoja. Imprime en Letter o A4.",
+      },
+      fr: {
+        label: "Feuille récit",
+        title: "Papier avec cadre à dessin — PDF gratuit",
+        description: "Un cadre vide en haut et de grandes lignes en dessous, pour dessiner puis écrire. PDF gratuit.",
+        h1: "Papier récit avec cadre",
+        intro: "La feuille récit réserve le haut de la page à un dessin et place de grandes lignes en dessous. En maternelle et au CP, elle sert à un dessin plus une ou deux phrases. Le cadre occupe environ deux cinquièmes de la page. Imprimez en Letter ou A4.",
+      },
+      de: {
+        label: "Bildergeschichte",
+        title: "Schreibpapier mit Bildkasten — kostenloses PDF",
+        description: "Leeres Bildfeld oben, weite Linien unten, zum Zeichnen und Schreiben. Kostenloses PDF.",
+        h1: "Papier mit Bildkasten",
+        intro: "Dieses Blatt lässt oben ein leeres Feld für eine Zeichnung und setzt darunter weite Schreiblinien. In der Kita und der 1. Klasse reicht das für ein Bild und ein oder zwei Sätze. Der Kasten nimmt etwa zwei Fünftel der Seite ein. Letter oder A4 drucken.",
+      },
+      pt: {
+        label: "Papel de história",
+        title: "Papel com caixa para desenho — PDF grátis",
+        description: "Caixa em branco em cima e linhas largas embaixo, para desenhar e escrever. PDF grátis.",
+        h1: "Papel de história com caixa de desenho",
+        intro: "O papel de história deixa o topo vazio para um desenho e põe linhas largas embaixo. Na educação infantil e no 1.º ano serve para um desenho e uma ou duas frases. A caixa ocupa cerca de dois quintos da página. Imprima em Letter ou A4.",
+      },
+      zh: {
+        label: "图画框",
+        title: "带图画框的故事纸 — 免费 PDF",
+        description: "上方空白画框，下方宽行横线，适合先画再写。免费 PDF。",
+        h1: "带图画框的故事纸",
+        intro: "故事纸把页面上方留成空白画框，下面是宽行横线。幼儿园和一年级用来画一幅图，再写一两句话。画框大约占页面的五分之二。可按 Letter 或 A4 打印。",
+      },
+      ja: {
+        label: "絵日記用紙",
+        title: "絵を描く枠つき用紙 — 無料PDF",
+        description: "上は空白の絵枠、下は広い罫線。描いてから書く用紙。無料PDF。",
+        h1: "絵枠つきの作文用紙",
+        intro: "上を絵の枠として空け、下に広い罫線を引きます。幼稚園や小1が、絵を1枚描いてから文を1、2文書くときに使います。枠はページのおよそ5分の2。レター判かA4で印刷できます。",
+      },
+      ko: {
+        label: "그림 칸",
+        title: "그림 칸이 있는 이야기 종이 — 무료 PDF",
+        description: "위는 빈 그림 칸, 아래는 넓은 줄. 그리고 나서 쓰기. 무료 PDF.",
+        h1: "그림 칸이 있는 이야기 종이",
+        intro: "이야기 종이는 위쪽을 빈 그림 칸으로 두고, 아래에 넓은 줄을 긋습니다. 유치원과 1학년에서 그림 한 장과 문장 한두 개를 쓸 때 씁니다. 칸은 페이지의 약 5분의 2입니다. Letter 또는 A4로 인쇄하세요.",
+      },
+    },
+  },
+  {
+    slug: "cornell-notes",
+    type: "cornell",
+    copy: {
+      en: {
+        label: "Cornell notes",
+        title: "Cornell Notes Paper — Free Printable PDF (Letter & A4)",
+        description: "A cue column, lined notes, and a summary band at the bottom. Free Cornell notes PDF, no watermark.",
+        h1: "Cornell notes paper",
+        intro: "Cornell notes paper splits the page into three parts: a narrow cue column on the left for questions and keywords, lined notes on the right, and a blank summary band along the bottom. Print it in US Letter or A4 and fill the notes during class, the cues after.",
+      },
+      es: {
+        label: "Notas Cornell",
+        title: "Papel de notas Cornell — PDF gratis (Letter y A4)",
+        description: "Columna de pistas, líneas para apuntes y una banda de resumen abajo. PDF gratis, sin marca de agua.",
+        h1: "Papel de notas Cornell",
+        intro: "El método Cornell parte la hoja en tres: una columna estrecha a la izquierda para preguntas y palabras clave, líneas de apuntes a la derecha y una banda en blanco abajo para el resumen. Imprime en Letter o A4: los apuntes en clase, las pistas después.",
+      },
+      fr: {
+        label: "Notes Cornell",
+        title: "Papier de notes Cornell — PDF gratuit (Letter et A4)",
+        description: "Colonne d'indices, lignes de notes et bande de résumé en bas. PDF gratuit, sans filigrane.",
+        h1: "Papier pour la méthode Cornell",
+        intro: "La feuille Cornell coupe la page en trois : une colonne étroite à gauche pour les questions et les mots-clés, des lignes de notes à droite, et une bande vide en bas pour le résumé. Imprimez en Letter ou A4. Les notes pendant le cours, les indices après.",
+      },
+      de: {
+        label: "Cornell-Notizen",
+        title: "Cornell-Notizpapier — kostenloses PDF (Letter und A4)",
+        description: "Stichwortspalte, linierte Notizen und ein Zusammenfassungsfeld unten. Kostenloses PDF, ohne Wasserzeichen.",
+        h1: "Papier für Cornell-Notizen",
+        intro: "Cornell teilt die Seite in drei: links eine schmale Spalte für Fragen und Stichworte, rechts linierte Notizen, unten ein leeres Feld für die Zusammenfassung. Letter oder A4 drucken. Notizen in der Stunde, Stichworte danach.",
+      },
+      pt: {
+        label: "Notas Cornell",
+        title: "Papel de notas Cornell — PDF grátis (Letter e A4)",
+        description: "Coluna de pistas, linhas para anotações e uma faixa de resumo embaixo. PDF grátis, sem marca d'água.",
+        h1: "Papel de notas Cornell",
+        intro: "O método Cornell divide a folha em três: uma coluna estreita à esquerda para perguntas e palavras-chave, linhas de anotação à direita e uma faixa em branco embaixo para o resumo. Imprima em Letter ou A4. As anotações na aula, as pistas depois.",
+      },
+      zh: {
+        label: "康奈尔",
+        title: "康奈尔笔记纸 — 免费可打印 PDF（Letter 与 A4）",
+        description: "左侧线索栏、右侧横线笔记、底部总结区。免费 PDF，无水印。",
+        h1: "康奈尔笔记纸",
+        intro: "康奈尔笔记把一页分成三块：左边窄栏写问题和关键词，右边横线记笔记，底部留一条总结。按 Letter 或 A4 打印。课上填右边，课后补左边和总结。",
+      },
+      ja: {
+        label: "コーネル式",
+        title: "コーネル式ノート — 無料PDF（レター判とA4）",
+        description: "左に手がかり欄、右に罫線、下にまとめ欄。透かしなしの無料PDF。",
+        h1: "コーネル式ノート用紙",
+        intro: "コーネル式はページを三つに分けます。左の細い欄に質問やキーワード、右の罫線にノート、下の空白に要約。レター判かA4で印刷し、授業中は右、あとで左と要約を埋めます。",
+      },
+      ko: {
+        label: "코넬 노트",
+        title: "코넬 노트 용지 — 무료 PDF (Letter와 A4)",
+        description: "왼쪽 단서 칸, 오른쪽 줄 노트, 아래 요약 칸. 워터마크 없는 무료 PDF.",
+        h1: "코넬 노트 용지",
+        intro: "코넬 노트는 한 페이지를 셋으로 나눕니다. 왼쪽 좁은 칸에 질문과 핵심어, 오른쪽 줄에 필기, 아래 빈칸에 요약. Letter 또는 A4로 인쇄하고, 수업 중에는 오른쪽, 나중에 왼쪽과 요약을 채우세요.",
+      },
+    },
+  },
 ];
 
 export function getPaperKind(slug: string): PaperKind | undefined {
   return PAPER_KINDS.find((k) => k.slug === slug);
+}
+
+/** 红边距开关只出现在横线和三线格上。 */
+export function paperKindHasMargin(type: PaperKindType): boolean {
+  return type === "college" || type === "wide" || type === "handwriting";
 }

@@ -45,7 +45,7 @@ export default async function NameTracingPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <TracingGenerator defaultFontId={defaultFontId(locale)} defaultFormat={defaultPageFormat(locale)} />
+        <TracingGenerator defaultFontId={defaultFontId(locale)} defaultFormat={defaultPageFormat(locale)} perName />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

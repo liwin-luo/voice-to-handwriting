@@ -29,7 +29,13 @@ export interface ToolPreset {
  * 移动端单列:编辑器、录音、样式,然后纸张。
  * 底部条在宽屏粘住;窄屏留在文档流里,避免盖住滑杆。录音贴着文字框。
  */
-export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
+export default function ToolWorkspace({
+  preset,
+  layout = "write",
+}: {
+  preset?: ToolPreset;
+  layout?: "write" | "doctor";
+}) {
   const locale = useLocale();
   const tHistory = useTranslations("history");
   const booted = useRef(false);
@@ -54,7 +60,9 @@ export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
         s.setCustomPaper({ spacing: hand.spacing, mode: hand.mode });
         return;
       }
-      const slug = new URLSearchParams(window.location.search).get("template");
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("template");
+      const fontQ = params.get("font");
       const tpl = slug ? getTemplate(slug) : undefined;
       if (tpl) {
         s.setText(getTemplateMeta(tpl, locale as Locale).text);
@@ -65,6 +73,9 @@ export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
         s.setIntensity(tpl.style.intensity);
         s.setAlign(tpl.style.align);
         s.setIndent(tpl.style.indent);
+        window.history.replaceState(null, "", window.location.pathname);
+      } else if (fontQ && FONTS.some((f) => f.id === fontQ)) {
+        s.applyFontId(fontQ as FontId);
         window.history.replaceState(null, "", window.location.pathname);
       } else if (preset) {
         if (preset.fontId) s.applyFontId(preset.fontId as FontId);
@@ -87,7 +98,7 @@ export default function ToolWorkspace({ preset }: { preset?: ToolPreset }) {
         <aside className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
           <TranscriptEditor />
           <RecorderPanel />
-          <StylePanel />
+          <StylePanel layout={layout} />
         </aside>
         <PaperView />
       </div>

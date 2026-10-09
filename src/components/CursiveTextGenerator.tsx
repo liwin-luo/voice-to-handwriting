@@ -118,7 +118,7 @@ export default function CursiveTextGenerator() {
             <button
               type="button"
               onClick={listening ? stop : start}
-              className={`${listening ? "btn btn-recording" : "btn btn-primary"} shrink-0 px-5 py-2.5`}
+              className={`${listening ? "btn btn-recording" : "btn btn-ghost"} shrink-0 px-5 py-2.5`}
             >
               {listening ? <Stop weight="fill" className="size-4" /> : <Microphone weight="fill" className="size-4" />}
               {listening ? t("listening") : t("speak")}
@@ -148,7 +148,7 @@ export default function CursiveTextGenerator() {
                     type="button"
                     onClick={() => handleCopy(style.id, value)}
                     disabled={!value}
-                    className="rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-40"
+                    className="btn btn-primary rounded-full px-3 py-1 text-xs disabled:opacity-40"
                   >
                     {copiedId === style.id ? t("copied") : t("copy")}
                   </button>

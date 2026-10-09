@@ -4,8 +4,18 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
 import { toPng } from "html-to-image";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { QUIZ_CONTENT, type SampleStyle } from "@/content/quiz";
+import { QUIZ_CONTENT, type ProfileId, type SampleStyle } from "@/content/quiz";
+import type { FontId } from "@/stores/useEditorStore";
 import { formatProgress, scoreQuiz } from "@/lib/quiz";
+
+const PROFILE_FONT: Record<ProfileId, FontId> = {
+  balanced: "patrickhand",
+  bold: "indieflower",
+  planner: "kalam",
+  spirit: "caveat",
+  steady: "cedarvillecursive",
+  spark: "dancingscript",
+};
 
 /** 样张字体栈:全部为站内自托管 OFL 字体(layout 全局注入),系统字体兜底保证可读 */
 const FONT_STACKS: Record<SampleStyle["font"], string> = {
@@ -198,7 +208,13 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
           </div>
 
           <div className="mt-4 flex flex-wrap gap-3">
-            <button onClick={download} disabled={busy} className="btn btn-primary px-5 py-2.5 text-sm">
+            <Link
+              href={`/?font=${PROFILE_FONT[result.profile]}`}
+              className="btn btn-primary px-5 py-2.5 text-sm"
+            >
+              {c.writeCta}
+            </Link>
+            <button onClick={download} disabled={busy} className="btn btn-ghost px-5 py-2.5 text-sm">
               {c.download}
             </button>
             <button onClick={retake} className="btn btn-ghost px-5 py-2.5 text-sm">

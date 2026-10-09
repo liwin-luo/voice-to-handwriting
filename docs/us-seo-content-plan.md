@@ -228,3 +228,12 @@
 - **落地二**:`/cursive-font-generator` 手写字体预览 + 导出(8 语言,轻 UI 文案)。主词 cursive font generator;次词 cursive fonts(浏览)/ cursive font preview / handwriting font tester。**竞品实证**:下载站(fontspace/1001fonts)预览完必须下载安装;Unicode 站是假字体不能出图;最接近的 cursivegenerator.com 偏 tattoo/CNC、无 PDF、无整段排版。差异化为「字体浏览式体验 + 卡片/请柬整段预览 + 免安装高分辨率 PNG/PDF 双导出 + OFL license 逐款标注」。与 /cursive(书写生成导图)、/cursive-text-generator(Unicode 复制粘贴)页内互链分工,不互搏。配套支柱文 `best-cursive-fonts`(en,Theo Lindgren,选型指南向)。
 - **落地结果(2026-10-09)**:两工具均已上线并实测。`/cursive-alphabet` en-only(26 字母网格 + 笔顺指引 + 单字母 PNG/整表 A–Z PDF 导出,字母矩阵 hub 回链已接);`/cursive-font-generator` 8 语言(7 款 OFL 字体实时预览 + 逐款 license 标注 + 透明 PNG/PDF 导出)。支柱文 `best-cursive-fonts`(Theo)已发布,题图为工具实测截图;`cursive-text-generator` 文 RELATED 已改挂新工具互链。待观察:28 天后看 GSC 两页曝光/点击,`cursive words` 留观不接。
 - **不接**:cursive words(词级意图大半被 /cursive 承接,留观)、笔顺全程动画(现有数据仅落笔点+初始方向,做不到不承诺)、字体文件打包分发(外链 Google Fonts,规避 license 风险)。
+
+## 十五、练习纸补齐(2026-10-09,竞品差距四项里能落地的部分)
+
+- **字母矩阵 52/52**:`/cursive/letter/[letter]` 补齐小写 a–z 与大写 A–Z(en-only,沿用笔顺/错点/练习词/3 条 FAQ 的质量红线)。hub 与 prev/next 改为字母表顺序。课页先给步骤,下一课紧跟步骤,练习纸按钮打开 `/cursive-worksheets` 并只带这一课的单词。字母表在导航「练习」里,与连笔练习纸、每日连笔放一起。不另开文章:已有 `cursive-alphabet-chart` 与字母表工具承接。
+- **描红三档**:`/name-tracing` 与 `/cursive-worksheets` 的描红行可选虚线、空心、只留横线。空白行不画落笔点。姓名页行高仍是 Pre-K / Kindergarten / Grade 2;连笔页改成大行 / 普通行 / 小行。逐笔编号仍不做——字形数据只有落笔点,没有分笔路径。教学字体继续用已接入的 Sacramento,不再加 Playwrite。
+- **拼写词表**:`/word-work` 增加 Dolch pre-primer(40,sight words 起点)、Fry 1–25、Fry 前 100。主按钮只留 Dolch 和 Fry 前 25,前 100 收在「更多词表」。点选后按钮保持按下,仍可手改。
+- **纸型**:`/printable-paper` 增加点阵、图画框故事纸、康奈尔笔记,并各开子页 `/printable-paper/dot-grid`、`story-paper`、`cornell-notes`(8 语言文案)。子页只画当前这一种纸,其他纸型用页底链接。红边距问答只出现在有该开关的纸上。不加点阵以外的乐谱或六边形。
+- **窄屏**:描红、拼写、纸张、练习册、每日连笔、涂色、汉字练习把预览接在输入下面,字体和行高收到「更多」。练习类字体下拉与主工作台共用用途名。涂色页空输入先画出示例名。
+- **操作习惯第二批**:姓名描红可每人一页(PDF 全页,PNG 当前页);练习册与拼写页共用 Dolch / Fry,练习册最多 100 词,Fry 前 100 整表可画;图画框和康奈尔在纸面上标分区;写信页把仿真度、重排、水印收进「更像手写」,医生字体页把仿真度放在最上面;花体复制是主按钮;测验结果按档案打开 `/?font=`。

@@ -253,36 +253,36 @@ export const TRACING_FAQS: FaqItem[] = [
     id: "tracing-dotted",
     i18n: {
       en: {
-        q: "Are the tracing letters dotted outlines?",
-        a: "The practice rows are dashed outlines of the whole letter, so a child can trace the shape. They are not numbered stroke arrows. If your child needs arrow cards, pair the sheet with a letter-formation chart.",
+        q: "What do the tracing rows look like?",
+        a: "Three styles. Dotted rows are dashed outlines. Outline rows are a faint copy of the letter. Blank lines have no letters and no start dots. None of them use numbered stroke arrows.",
       },
       zh: {
-        q: "描红字母是虚线轮廓吗?",
-        a: "描红行是整字的虚线轮廓,可以顺着字形描。没有编号笔顺箭头。如果需要箭头提示,请配合字母笔顺卡使用。",
+        q: "描红行长什么样?",
+        a: "三种。虚线是整字的虚线轮廓。空心是浅色的字,可以照着描。只留横线没有字母,也没有落笔点。三种都没有编号笔顺箭头。",
       },
       ja: {
-        q: "なぞる文字は点線の輪郭ですか?",
-        a: "練習行は文字全体の破線アウトラインです。番号付きの筆順矢印はありません。矢印が必要なら筆順カードと併用してください。",
+        q: "なぞり行はどんな見た目ですか?",
+        a: "3種類です。点線は文字全体の破線、輪郭は薄い文字、罫線のみは文字も始点もありません。番号付きの筆順矢印はありません。",
       },
       ko: {
-        q: "따라 쓰는 글자가 점선 윤곽인가요?",
-        a: "연습 행은 글자 전체의 파선 윤곽입니다. 번호가 있는 획순 화살표는 없습니다. 화살표가 필요하면 글자 모양 카드와 함께 쓰세요.",
+        q: "따라쓰기 행은 어떻게 보이나요?",
+        a: "세 가지입니다. 점선은 글자 전체의 파선이고, 윤곽은 옅은 글자이며, 줄만에는 글자도 시작점도 없습니다. 번호가 있는 획순 화살표는 없습니다.",
       },
       es: {
-        q: "¿Las letras para calcar son contornos punteados?",
-        a: "Las filas de práctica son el contorno punteado de la letra completa. No llevan flechas de trazo numeradas. Si las necesitas, combina la ficha con una tarjeta de formación.",
+        q: "¿Cómo se ven las filas para calcar?",
+        a: "Hay tres estilos. Punteado es el contorno discontinuo. Contorno es una copia tenue de la letra. Solo líneas no lleva letras ni punto de inicio. Ninguno usa flechas de trazo numeradas.",
       },
       de: {
-        q: "Sind die Nachspur-Buchstaben gepunktete Umrisse?",
-        a: "Die Übungszeilen sind gestrichelte Umrisse des ganzen Buchstabens. Nummerierte Strichpfeile gibt es nicht. Wenn dein Kind Pfeile braucht, kombiniere das Blatt mit einer Buchstabenkarte.",
+        q: "Wie sehen die Nachspurzeilen aus?",
+        a: "Drei Varianten. Gepunktet ist der gestrichelte Umriss. Umriss ist eine blasse Kopie des Buchstabens. Nur Linien haben weder Buchstaben noch Startpunkt. Nummerierte Strichpfeile gibt es in keiner Variante.",
       },
       fr: {
-        q: "Les lettres à repasser sont-elles en pointillés ?",
-        a: "Les lignes d'exercice sont le contour en pointillés de la lettre entière. Il n'y a pas de flèches de tracé numérotées. S'il en faut, associez la fiche à une carte de formation.",
+        q: "À quoi ressemblent les lignes à repasser ?",
+        a: "Trois styles. Pointillé : le contour en tirets. Contour : une copie pâle de la lettre. Lignes vides : ni lettre ni point de départ. Aucun style n'utilise de flèches de tracé numérotées.",
       },
       pt: {
-        q: "As letras para calcar são contornos pontilhados?",
-        a: "As linhas de prática são o contorno tracejado da letra inteira. Não há setas de traço numeradas. Se precisar delas, junte a ficha a um cartão de formação.",
+        q: "Como são as linhas para calcar?",
+        a: "Três estilos. Pontilhado é o contorno tracejado. Contorno é uma cópia clara da letra. Só as linhas não têm letras nem ponto de partida. Nenhum usa setas de traço numeradas.",
       },
     },
   },
@@ -291,35 +291,35 @@ export const TRACING_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "Can I make worksheets for the whole class?",
-        a: "Type one name per line; the page loops through every name with a dark example row followed by dashed tracing rows. Print one copy per student.",
+        a: "Type one name per line. Each name gets a dark example row, then tracing rows in the style you chose: dotted, outline, or blank. Print one copy per student.",
       },
       zh: {
         q: "能给全班同学生成练习纸吗?",
-        a: "每行输入一个姓名,页面会循环填充:每个名字先深色示范,后虚线描红。每位学生打印一页即可。",
+        a: "每行输入一个姓名。每个名字先是深色示范行,再是你选的描红行:虚线、空心或只留横线。每位学生打印一份。",
       },
       ja: {
         q: "クラス全員分のプリントを作れますか?",
-        a: "1 行に 1 つの名前を入力すると、各名前について濃い色のお手本行と破線のなぞり行が順に生成されます。児童の数だけ印刷してください。",
+        a: "1行に1つの名前を入力します。各名前について濃いお手本行のあと、選んだスタイル(点線・輪郭・罫線のみ)のなぞり行が続きます。児童の数だけ印刷してください。",
       },
       ko: {
         q: "반 전체 학생 연습장을 만들 수 있나요?",
-        a: "한 줄에 이름을 하나씩 입력하면 페이지가 각 이름마다 진한 예시 행과 파선 연습 행을 차례로 만들어 줍니다. 학생 수만큼 인쇄하세요.",
+        a: "한 줄에 이름을 하나씩 입력하세요. 각 이름마다 진한 예시 행 다음에, 고른 스타일(점선, 윤곽, 줄만)의 연습 행이 이어집니다. 학생 수만큼 인쇄하세요.",
       },
       es: {
         q: "¿Puedo hacer fichas para toda la clase?",
-        a: "Escribe un nombre por línea; la página recorre cada nombre con una fila de ejemplo oscura seguida de filas de contorno punteado. Imprime una copia por alumno.",
+        a: "Escribe un nombre por línea. Cada nombre lleva una fila de ejemplo oscura y luego filas del estilo elegido: punteado, contorno o solo líneas. Imprime una copia por alumno.",
       },
       de: {
         q: "Kann ich Arbeitsblätter für die ganze Klasse erstellen?",
-        a: "Tippe pro Zeile einen Namen; die Seite durchläuft jeden Namen mit einer dunklen Beispielzeile gefolgt von gestrichelten Nachspurzeilen. Ein Ausdruck pro Kind genügt.",
+        a: "Tippe pro Zeile einen Namen. Jeder Name bekommt eine dunkle Beispielzeile und danach Übungszeilen im gewählten Stil: gepunktet, Umriss oder nur Linien. Ein Ausdruck pro Kind.",
       },
       fr: {
         q: "Puis-je créer des fiches pour toute la classe ?",
-        a: "Tapez un prénom par ligne ; la page enchaîne chaque prénom avec une ligne d'exemple foncée suivie de lignes en pointillés. Imprimez une copie par élève.",
+        a: "Tapez un prénom par ligne. Chaque prénom a une ligne d'exemple foncée, puis des lignes dans le style choisi : pointillé, contour ou lignes vides. Imprimez une copie par élève.",
       },
       pt: {
         q: "Posso criar fichas para a turma inteira?",
-        a: "Digite um nome por linha; a página percorre cada nome com uma linha de exemplo escura seguida de linhas de contorno tracejado. Imprima uma cópia por aluno.",
+        a: "Digite um nome por linha. Cada nome ganha uma linha de exemplo escura e depois linhas no estilo escolhido: pontilhado, contorno ou só as linhas. Imprima uma cópia por aluno.",
       },
     },
   },
@@ -1917,35 +1917,35 @@ export const WORKBOOK_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "What should I put in my handwriting workbook?",
-        a: "One word per line, up to 60 words. Popular lists: the alphabet for preschoolers, your child's name, Dolch or Fry sight words for kindergarten, this week's spelling list, or themed words (animals, colors, holidays). Each word gets an example row plus traceable rows on three-line guides.",
+        a: "One word per line, up to 100 words. Popular lists: the alphabet for preschoolers, your child's name, Dolch or Fry sight words for kindergarten, this week's spelling list, or themed words (animals, colors, holidays). Each word gets an example row plus traceable rows on three-line guides.",
       },
       zh: {
         q: "练习册里放什么内容好?",
-        a: "每行一个词,最多 60 个。常见用法:学龄前放字母表、放孩子的名字,幼儿园放 Sight Words 高频词,小学生放本周拼写词表,或按主题来一组(动物、颜色、节日)。每个词都会生成一行示例和多行描红,配三线格。",
+        a: "每行一个词,最多 100 个。常见用法:学龄前放字母表、放孩子的名字,幼儿园放 Sight Words 高频词,小学生放本周拼写词表,或按主题来一组(动物、颜色、节日)。每个词都会生成一行示例和多行描红,配三线格。",
       },
       ja: {
         q: "ワークブックには何を入れればいい?",
-        a: "1 行に 1 語、最大 60 語。定番は:未就学児のアルファベット、お子さまの名前、小学低学年のスペリングリスト、テーマごとの単語(動物・色・行事)など。各単語にお手本行となぞり行が 3 線ガイド付きで生成されます。",
+        a: "1 行に 1 語、最大 100 語。定番は:未就学児のアルファベット、お子さまの名前、小学低学年のスペリングリスト、テーマごとの単語(動物・色・行事)など。各単語にお手本行となぞり行が 3 線ガイド付きで生成されます。",
       },
       ko: {
         q: "워크북에 무엇을 넣으면 좋을까요?",
-        a: "한 줄에 한 단어, 최대 60개. 인기 목록: 유아 알파벳, 아이 이름, 저학년 이번 주 단어 목록, 테마 단어(동물·색·명절) 등. 각 단어마다 3선 가이드 위에 예시 줄과 따라 쓰기 줄이 만들어집니다.",
+        a: "한 줄에 한 단어, 최대 100개. 인기 목록: 유아 알파벳, 아이 이름, 저학년 이번 주 단어 목록, 테마 단어(동물·색·명절) 등. 각 단어마다 3선 가이드 위에 예시 줄과 따라 쓰기 줄이 만들어집니다.",
       },
       es: {
         q: "¿Qué pongo en mi cuaderno de caligrafía?",
-        a: "Una palabra por línea, hasta 60. Listas populares: el alfabeto para preescolar, el nombre de tu hijo, sight words de kinder, la lista de ortografía semanal o palabras por tema (animales, colores, fiestas). Cada palabra recibe una fila de ejemplo y filas para repasar sobre guía de tres líneas.",
+        a: "Una palabra por línea, hasta 100. Listas populares: el alfabeto para preescolar, el nombre de tu hijo, sight words de kinder, la lista de ortografía semanal o palabras por tema (animales, colores, fiestas). Cada palabra recibe una fila de ejemplo y filas para repasar sobre guía de tres líneas.",
       },
       de: {
         q: "Was gehört in mein Übungsheft?",
-        a: "Ein Wort pro Zeile, bis zu 60 Wörter. Beliebte Listen: das Alphabet für Vorschulkinder, der Name deines Kindes, die Wochenliste für die Schule oder Themenwörter (Tiere, Farben, Feste). Jedes Wort bekommt eine Beispielzeile plus Spurzeilen auf Drei-Linien-Guides.",
+        a: "Ein Wort pro Zeile, bis zu 100 Wörter. Beliebte Listen: das Alphabet für Vorschulkinder, der Name deines Kindes, die Wochenliste für die Schule oder Themenwörter (Tiere, Farben, Feste). Jedes Wort bekommt eine Beispielzeile plus Spurzeilen auf Drei-Linien-Guides.",
       },
       fr: {
         q: "Que mettre dans mon cahier d'écriture ?",
-        a: "Un mot par ligne, jusqu'à 60. Listes populaires : l'alphabet pour les maternelles, le prénom de votre enfant, la liste d'orthographe de la semaine ou des mots par thème (animaux, couleurs, fêtes). Chaque mot reçoit une ligne modèle et des lignes à repasser sur guides trois lignes.",
+        a: "Un mot par ligne, jusqu'à 100. Listes populaires : l'alphabet pour les maternelles, le prénom de votre enfant, la liste d'orthographe de la semaine ou des mots par thème (animaux, couleurs, fêtes). Chaque mot reçoit une ligne modèle et des lignes à repasser sur guides trois lignes.",
       },
       pt: {
         q: "O que coloco no meu caderno de caligrafia?",
-        a: "Uma palavra por linha, até 60. Listas populares: o alfabeto para a pré-escola, o nome do seu filho, a lista de ortografia da semana ou palavras por tema (animais, cores, datas). Cada palavra ganha uma linha de exemplo e linhas para treinar sobre guia de três linhas.",
+        a: "Uma palavra por linha, até 100. Listas populares: o alfabeto para a pré-escola, o nome do seu filho, a lista de ortografia da semana ou palavras por tema (animais, cores, datas). Cada palavra ganha uma linha de exemplo e linhas para treinar sobre guia de três linhas.",
       },
     },
   },

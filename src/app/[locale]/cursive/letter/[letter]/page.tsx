@@ -11,7 +11,7 @@ import {
   CURSIVE_LETTERS,
   getLetterPage,
   getLetterUi,
-  letterWorkbookWords,
+  letterPracticeWords,
   lettersForLocale,
 } from "@/content/cursiveLetters";
 import { buildAlternates } from "@/lib/seo";
@@ -58,9 +58,7 @@ export default async function CursiveLetterPage({
   const prev = idx > 0 ? available[idx - 1] : undefined;
   const next = idx >= 0 && idx < available.length - 1 ? available[idx + 1] : undefined;
   const font = FONTS.find((f) => f.id === "cedarvillecursive") ?? FONTS[0];
-  const workbookHref = `/handwriting-workbook-generator?words=${encodeURIComponent(
-    letterWorkbookWords(page, copy),
-  )}`;
+  const sheetHref = `/cursive-worksheets?words=${encodeURIComponent(letterPracticeWords(copy))}`;
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
@@ -77,28 +75,16 @@ export default async function CursiveLetterPage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
       </header>
 
-      {/* 字形展示 + 练习词条 */}
-      <div className="rise mt-8 grid grid-cols-[auto_1fr] items-center gap-6 rounded-2xl border border-zinc-200 bg-white p-6 shadow-paper sm:gap-8" style={{ animationDelay: "80ms" }}>
-        <div
-          className="select-none text-7xl leading-none text-zinc-900 sm:text-8xl"
+      <div
+        className="rise mt-8 flex items-end justify-center rounded-2xl border border-zinc-200 bg-white px-6 pt-8 pb-4 shadow-paper"
+        style={{ animationDelay: "80ms" }}
+      >
+        <p
+          className="select-none text-8xl leading-none text-zinc-900 sm:text-9xl"
           style={{ fontFamily: font.css }}
-          aria-hidden
         >
           {page.letter}
-        </div>
-        <div>
-          <h2 className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">{ui.wordsTitle}</h2>
-          <p
-            className="mt-3 leading-[44px] text-zinc-800"
-            style={{
-              fontFamily: font.css,
-              fontSize: 30,
-              backgroundImage: `repeating-linear-gradient(to bottom, transparent 0 ${CELLS - 1}px, #e2e8f0 ${CELLS - 1}px ${CELLS}px)`,
-            }}
-          >
-            {[page.letter, ...copy.words].join("  ·  ")}
-          </p>
-        </div>
+        </p>
       </div>
       <p className="mt-2 text-xs leading-relaxed text-zinc-400">{ui.fontNote}</p>
 
@@ -130,28 +116,7 @@ export default async function CursiveLetterPage({
         </ul>
       </section>
 
-      {/* 练习纸 CTA */}
-      <section className="rise mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-6" style={{ animationDelay: "160ms" }}>
-        <h2 className="text-base font-semibold text-zinc-900">{ui.ctaTitle}</h2>
-        <div className="mt-4 flex flex-col items-start gap-3">
-          <Link href={workbookHref} className="btn btn-primary px-6 py-3">
-            {ui.ctaButton}
-            <ArrowRight className="size-4" />
-          </Link>
-          <p className="text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
-          {/* 字母表工具页是全部单字母页的 hub(反向内链) */}
-          <p className="text-sm">
-            <Link href="/cursive-alphabet" className="text-accent underline-offset-2 hover:underline">
-              {ui.hubCta} →
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      <ToolFaq title={ui.faqTitle} items={copy.faqs} />
-
-      {/* 同族字母导航 */}
-      <nav className="rise mt-10 flex items-center justify-between gap-4 border-t border-zinc-100 pt-6" style={{ animationDelay: "180ms" }}>
+      <nav className="rise mt-10 flex items-center justify-between gap-4 border-t border-zinc-100 pt-6" style={{ animationDelay: "160ms" }}>
         {prev ? (
           <Link
             href={`/cursive/letter/${prev.slug}`}
@@ -183,6 +148,38 @@ export default async function CursiveLetterPage({
           <span />
         )}
       </nav>
+
+      <section className="rise mt-10" style={{ animationDelay: "180ms" }}>
+        <h2 className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">{ui.wordsTitle}</h2>
+        <p
+          className="mt-3 leading-[44px] text-zinc-800"
+          style={{
+            fontFamily: font.css,
+            fontSize: 30,
+            backgroundImage: `repeating-linear-gradient(to bottom, transparent 0 ${CELLS - 1}px, #e2e8f0 ${CELLS - 1}px ${CELLS}px)`,
+          }}
+        >
+          {copy.words.join("  ·  ")}
+        </p>
+      </section>
+
+      <section className="rise mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-6" style={{ animationDelay: "200ms" }}>
+        <h2 className="text-base font-semibold text-zinc-900">{ui.ctaTitle}</h2>
+        <div className="mt-4 flex flex-col items-start gap-3">
+          <Link href={sheetHref} className="btn btn-primary px-6 py-3">
+            {ui.ctaButton}
+            <ArrowRight className="size-4" />
+          </Link>
+          <p className="text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
+          <p className="text-sm">
+            <Link href="/cursive-alphabet" className="text-accent underline-offset-2 hover:underline">
+              {ui.hubCta} →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      <ToolFaq title={ui.faqTitle} items={copy.faqs} />
     </main>
   );
 }

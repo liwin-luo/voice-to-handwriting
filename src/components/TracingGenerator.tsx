@@ -6,9 +6,12 @@ import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
-import { TRACE_GRADES, gradeForBand, tracingLines } from "@/lib/traceGrades";
+import { TRACE_GRADES, gradeForBand, tracingLines, tracingSheets } from "@/lib/traceGrades";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import PageFormatToggle from "./PageFormatToggle";
+import PracticeLayout from "./PracticeLayout";
+
+type TraceInk = "dotted" | "outline" | "blank";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
@@ -34,21 +37,37 @@ export default function TracingGenerator({
   defaultFontId = "patrickhand",
   defaultBandH = 90,
   defaultFormat,
+  rowLabels = "grades",
+  perName = false,
 }: {
   defaultFontId?: string;
   defaultBandH?: number;
   defaultFormat: PageFormat;
+  /** 姓名页用年级;连笔页用行高,避免学前标签出现在连笔练习上 */
+  rowLabels?: "grades" | "lines";
+  /** 姓名描红可按名字拆页;连笔词表保持一页循环 */
+  perName?: boolean;
 }) {
   const t = useTranslations("tracing");
+  const fontNames = useTranslations("tool");
   const sheet = useTranslations("sheet");
   const locale = useLocale();
   const [names, setNames] = useState("");
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("words");
+    // 查询串只在浏览器里有,首屏保持空字符串,避免和水合结果不一致
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (q?.trim()) setNames(q);
+  }, []);
   const [fontId, setFontId] = useState(defaultFontId);
   const [showExample, setShowExample] = useState(true);
+  const [traceInk, setTraceInk] = useState<TraceInk>("dotted");
   const [guides, setGuides] = useState(true);
   const [bandH, setBandH] = useState(defaultBandH);
   const [textColor, setTextColor] = useState("#3a3a3a");
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
+  const [oneEach, setOneEach] = useState(false);
+  const [pageIndex, setPageIndex] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { w, h } = PAGE_FORMATS[format];
   const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
@@ -73,10 +92,13 @@ export default function TracingGenerator({
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drawNames, fontId, showExample, guides, bandH, textColor, format]);
+  }, [drawNames, fontId, showExample, traceInk, guides, bandH, textColor, format, oneEach, pageIndex]);
+
+  const sheets = tracingSheets(tracingLines(drawNames, t("namesPlaceholder")), perName && oneEach);
+  const sheetIndex = Math.min(pageIndex, Math.max(0, sheets.length - 1));
 
   /** 支持传入离屏 ctx,供导出更高分辨率的 PNG;不传时重置并绘制预览画布 */
-  function draw(target?: CanvasRenderingContext2D) {
+  function draw(target?: CanvasRenderingContext2D, rows: string[] = sheets[sheetIndex] ?? []) {
     let ctx: CanvasRenderingContext2D | null = target ?? null;
     if (!ctx) {
       const canvas = canvasRef.current;
@@ -96,7 +118,6 @@ export default function TracingGenerator({
 
     const top = 52;
     const H = bandH;
-    const rows = tracingLines(drawNames, t("namesPlaceholder"));
 
     // 循环填充整页:每行输入重复占多行格子
     let row = 0;
@@ -132,29 +153,41 @@ export default function TracingGenerator({
       const fontSize = Math.round(H * 0.62);
       ctx.font = `${fontSize}px "${family}"`;
       ctx.textBaseline = "alphabetic";
-      // 示例行用所选颜色,描红行用同色 28% 不透明度浅化,保持可描性
+      // 示例行实心;描红行按 traceInk:虚线、空心,或只留三线格
       const isExampleRow = showExample && row < rows.length;
       ctx.save();
       if (isExampleRow) {
         ctx.fillStyle = textColor;
         ctx.fillText(text, 60, y0 + H - 6);
-      } else {
+      } else if (traceInk === "dotted") {
         ctx.strokeStyle = textColor;
         ctx.lineWidth = 1.15;
         ctx.setLineDash([2.5, 2.5]);
         ctx.strokeText(text, 60, y0 + H - 6);
+      } else if (traceInk === "outline") {
+        ctx.strokeStyle = textColor;
+        ctx.globalAlpha = 0.55;
+        ctx.lineWidth = 1.35;
+        ctx.strokeText(text, 60, y0 + H - 6);
       }
       ctx.restore();
-      if (guides) drawGlyphGuides(ctx, text, 60, y0 + H - 6, fontSize, fontId);
+      if (guides && traceInk !== "blank") drawGlyphGuides(ctx, text, 60, y0 + H - 6, fontSize, fontId);
     }
     void showExample;
   }
 
   const downloadPdf = () => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
     const pdf = new jsPDF({ unit: "px", format: [w, h], orientation: "portrait" });
-    pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, w, h);
+    sheets.forEach((rows, i) => {
+      const off = document.createElement("canvas");
+      off.width = w;
+      off.height = h;
+      const ctx = off.getContext("2d");
+      if (!ctx) return;
+      draw(ctx, rows);
+      if (i > 0) pdf.addPage([w, h], "portrait");
+      pdf.addImage(off.toDataURL("image/png"), "PNG", 0, 0, w, h);
+    });
     pdf.save("name-tracing-worksheet.pdf");
   };
 
@@ -179,116 +212,80 @@ export default function TracingGenerator({
     }, "image/png");
   };
 
+    const rowLabel = {
+    young: rowLabels === "lines" ? t("lineLarge") : t("gradeYoung"),
+    mid: rowLabels === "lines" ? t("lineRegular") : t("gradeMid"),
+    older: rowLabels === "lines" ? t("lineCompact") : t("gradeOlder"),
+  };
+  const guidesOn = guides && guidesAvailable && traceInk !== "blank";
+
   return (
-    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[300px_auto]">
-      <aside className="flex flex-col gap-4 lg:sticky lg:top-20">
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("namesLabel")}</span>
-          <textarea
-            value={names}
-            onChange={(e) => setNames(e.target.value)}
-            {...compositionProps}
-            rows={4}
-            placeholder={t("namesPlaceholder")}
-            className="surface-input resize-y p-3 text-sm leading-relaxed"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("font")}</span>
-          <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {fontOptions.map((f) => (
-              <option key={f.id} value={f.id}>
-                {primaryFamily(f.css)}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("showExample")}</span>
-          <button
-            role="switch"
-            aria-checked={showExample}
-            onClick={() => setShowExample(!showExample)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              showExample ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                showExample ? "translate-x-5" : ""
-              }`}
+    <PracticeLayout
+      input={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("namesLabel")}</span>
+            <textarea
+              value={names}
+              onChange={(e) => setNames(e.target.value)}
+              {...compositionProps}
+              rows={4}
+              placeholder={t("namesPlaceholder")}
+              className="surface-input resize-y p-3 text-sm leading-relaxed"
             />
-          </button>
-        </label>
-
-        <label
-          className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
-          title={guidesAvailable ? undefined : t("strokeGuidesHint")}
-        >
-          <span className="text-zinc-700">{t("strokeGuides")}</span>
-          <button
-            role="switch"
-            aria-checked={guides && guidesAvailable}
-            disabled={!guidesAvailable}
-            onClick={() => setGuides(!guides)}
-            className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-              guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
-            } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                guides && guidesAvailable ? "translate-x-5" : ""
-              }`}
-            />
-          </button>
-        </label>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("rowHeight")}</span>
-          <div className="flex flex-wrap gap-1.5">
-            {TRACE_GRADES.map((g) => {
-              const selected = gradeForBand(bandH) === g.id;
-              const label = { young: t("gradeYoung"), mid: t("gradeMid"), older: t("gradeOlder") }[g.id];
-              return (
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("traceStyle")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {(
+                [
+                  ["dotted", t("traceDotted")],
+                  ["outline", t("traceOutline")],
+                  ["blank", t("traceBlank")],
+                ] as const
+              ).map(([id, label]) => (
                 <button
-                  key={g.id}
+                  key={id}
                   type="button"
-                  aria-pressed={selected}
-                  onClick={() => setBandH(g.bandH)}
+                  aria-pressed={traceInk === id}
+                  onClick={() => setTraceInk(id)}
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
-                    selected
+                    traceInk === id
                       ? "border-accent bg-accent/5 text-accent"
                       : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
                   }`}
                 >
                   {label}
                 </button>
-              );
-            })}
+              ))}
+            </div>
           </div>
-          <label className="flex items-center gap-2 text-sm">
-            <input
-              type="range"
-              min={60}
-              max={120}
-              value={bandH}
-              onChange={(e) => setBandH(Number(e.target.value))}
-              className="accent-accent flex-1"
-              aria-label={t("rowHeight")}
-            />
-            <span className="font-mono text-xs text-zinc-400">{formatLength(bandH, locale)}</span>
-          </label>
-        </div>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("textColor")}</span>
-          <input type="color" value={textColor} onChange={(e) => setTextColor(e.target.value)} className="color-swatch" />
-        </label>
-
-        <PageFormatToggle value={format} onChange={setFormat} />
-
+          {perName && (
+            <label className="flex items-center justify-between gap-2 text-sm">
+              <span className="text-zinc-700">{t("oneEach")}</span>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={oneEach}
+                onClick={() => {
+                  setOneEach(!oneEach);
+                  setPageIndex(0);
+                }}
+                className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+                  oneEach ? "bg-accent" : "bg-zinc-300"
+                }`}
+              >
+                <span
+                  className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                    oneEach ? "translate-x-5" : ""
+                  }`}
+                />
+              </button>
+            </label>
+          )}
+        </>
+      }
+      download={
         <div className="flex gap-2">
           <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">
             <FilePdf className="size-4" />
@@ -299,11 +296,122 @@ export default function TracingGenerator({
             {t("downloadPng")}
           </button>
         </div>
-      </aside>
-
-      <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
-        <canvas ref={canvasRef} className="block h-auto w-full" />
-      </div>
-    </div>
+      }
+      more={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("font")}</span>
+            <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
+              {fontOptions.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {fontNames(`fonts.${f.id}`)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("showExample")}</span>
+            <button
+              role="switch"
+              aria-checked={showExample}
+              onClick={() => setShowExample(!showExample)}
+              className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+                showExample ? "bg-accent" : "bg-zinc-300"
+              }`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  showExample ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <label
+            className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable && traceInk !== "blank" ? "" : "opacity-50"}`}
+            title={guidesAvailable ? undefined : t("strokeGuidesHint")}
+          >
+            <span className="text-zinc-700">{t("strokeGuides")}</span>
+            <button
+              role="switch"
+              aria-checked={guidesOn}
+              disabled={!guidesAvailable || traceInk === "blank"}
+              onClick={() => setGuides(!guides)}
+              className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
+                guidesOn ? "bg-accent" : "bg-zinc-300"
+              } ${guidesAvailable && traceInk !== "blank" ? "cursor-pointer" : "cursor-not-allowed"}`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  guidesOn ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("rowHeight")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {TRACE_GRADES.map((g) => {
+                const selected = gradeForBand(bandH) === g.id;
+                return (
+                  <button
+                    key={g.id}
+                    type="button"
+                    aria-pressed={selected}
+                    onClick={() => setBandH(g.bandH)}
+                    className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                      selected
+                        ? "border-accent bg-accent/5 text-accent"
+                        : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                    }`}
+                  >
+                    {rowLabel[g.id]}
+                  </button>
+                );
+              })}
+            </div>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="range"
+                min={60}
+                max={120}
+                value={bandH}
+                onChange={(e) => setBandH(Number(e.target.value))}
+                className="accent-accent flex-1"
+                aria-label={t("rowHeight")}
+              />
+              <span className="font-mono text-xs text-zinc-400">{formatLength(bandH, locale)}</span>
+            </label>
+          </div>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("textColor")}</span>
+            <input type="color" value={textColor} onChange={(e) => setTextColor(e.target.value)} className="color-swatch" />
+          </label>
+          <PageFormatToggle value={format} onChange={setFormat} />
+        </>
+      }
+      preview={
+        <div className="flex flex-col gap-2">
+          <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+            <canvas ref={canvasRef} className="block h-auto w-full" />
+          </div>
+          {sheets.length > 1 && (
+            <div className="flex items-center justify-between text-sm text-zinc-500">
+              <button type="button" className="btn btn-ghost px-3 py-1.5 text-xs" disabled={sheetIndex === 0} onClick={() => setPageIndex(sheetIndex - 1)}>
+                {t("prevSheet")}
+              </button>
+              <span>{t("sheetPage", { current: sheetIndex + 1, total: sheets.length })}</span>
+              <button
+                type="button"
+                className="btn btn-ghost px-3 py-1.5 text-xs"
+                disabled={sheetIndex >= sheets.length - 1}
+                onClick={() => setPageIndex(sheetIndex + 1)}
+              >
+                {t("nextSheet")}
+              </button>
+            </div>
+          )}
+        </div>
+      }
+    />
   );
 }

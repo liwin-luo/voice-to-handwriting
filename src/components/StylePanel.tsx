@@ -8,7 +8,7 @@ import { fileToPaperImage } from "@/lib/paperImage";
 import { fontOrder } from "@/lib/localeDefaults";
 import PageFormatToggle from "./PageFormatToggle";
 
-export default function StylePanel() {
+export default function StylePanel({ layout = "write" }: { layout?: "write" | "doctor" }) {
   const t = useTranslations("tool");
   const locale = useLocale();
   const s = useEditorStore();
@@ -26,10 +26,8 @@ export default function StylePanel() {
     }
   };
 
-  return (
-    <section className="flex flex-col divide-y divide-zinc-200 text-sm">
-      {/* 笔迹 */}
-      <div className="flex flex-col gap-4 pb-5">
+  const fontFields = (
+    <>
         <h2 className="field-label">{t("sectionHandwriting")}</h2>
         <label className="flex flex-col gap-1.5">
           <span className="text-zinc-700">{t("font")}</span>
@@ -58,29 +56,11 @@ export default function StylePanel() {
             className="accent-accent"
           />
         </label>
-        <label className="flex flex-col gap-1.5">
-          <span className="flex justify-between text-zinc-700">
-            {t("realism")}{" "}
-            <span className="font-mono text-xs text-zinc-400">{Math.round(s.intensity * 100)}%</span>
-          </span>
-          <input
-            type="range"
-            min={0}
-            max={1}
-            step={0.1}
-            value={s.intensity}
-            onChange={(e) => s.setIntensity(Number(e.target.value))}
-            className="accent-accent"
-          />
-        </label>
-        <button onClick={s.reseed} className="btn btn-ghost self-start px-3.5 py-2 text-[13px]">
-          <ArrowsClockwise className="size-3.5 text-zinc-500" />
-          {t("reseed")}
-        </button>
-      </div>
+    </>
+  );
 
-      {/* 纸面 */}
-      <div className="flex flex-col gap-4 py-5">
+  const paperFields = (
+    <>
         <h2 className="field-label">{t("sectionPaper")}</h2>
         <PageFormatToggle value={s.pageFormat} onChange={s.setPageFormat} />
         <label className="flex flex-col gap-1.5">
@@ -231,8 +211,47 @@ export default function StylePanel() {
             </label>
           </div>
         </div>
+    </>
+  );
 
-        {/* 导出水印:放区块最底部 */}
+  const realism = (
+        <label className="flex flex-col gap-1.5">
+          <span className="flex justify-between text-zinc-700">
+            {t("realism")}{" "}
+            <span className="font-mono text-xs text-zinc-400">{Math.round(s.intensity * 100)}%</span>
+          </span>
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.1}
+            value={s.intensity}
+            onChange={(e) => s.setIntensity(Number(e.target.value))}
+            className="accent-accent"
+          />
+        </label>
+  );
+
+  return (
+    <section className="flex flex-col text-sm">
+      {layout === "write" && (
+        <div className="flex flex-col gap-4 pb-5">{fontFields}</div>
+      )}
+      {layout === "doctor" && (
+        <div className="flex flex-col gap-4 pb-4">{realism}</div>
+      )}
+      <details className="border-t border-zinc-200">
+        <summary className="cursor-pointer py-3 text-sm font-medium text-zinc-700">
+          {layout === "doctor" ? t("doctorMore") : t("moreLikeHandwriting")}
+        </summary>
+        <div className="flex flex-col gap-4 py-4">
+          {layout === "doctor" && fontFields}
+          {layout === "write" && realism}
+        <button onClick={s.reseed} className="btn btn-ghost self-start px-3.5 py-2 text-[13px]">
+          <ArrowsClockwise className="size-3.5 text-zinc-500" />
+          {t("reseed")}
+        </button>
+          {layout === "doctor" && paperFields}
         <div className="flex items-center justify-between pt-1">
           <span className="text-zinc-700">{t("watermark")}</span>
           <button
@@ -251,7 +270,11 @@ export default function StylePanel() {
             />
           </button>
         </div>
-      </div>
+        </div>
+      </details>
+      {layout === "write" && (
+        <div className="flex flex-col gap-4 border-t border-zinc-200 py-5">{paperFields}</div>
+      )}
     </section>
   );
 }

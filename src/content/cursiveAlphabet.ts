@@ -28,7 +28,7 @@ export interface AlphabetEntry {
   lower: string;
   /** 大写字符,如 "A" */
   capital: string;
-  /** 字母矩阵页 slug(小写/大写),Phase 0 只有 12 个字母有 */
+  /** 字母矩阵页 slug(小写/大写);52 页齐了之后两格都有 */
   lowerSlug?: string;
   capitalSlug?: string;
   /** 矩阵页里的练习词(没有矩阵页则无) */
@@ -67,7 +67,7 @@ export const ALPHABET_PAGE = {
     "Tap any letter to see it full size on a three-line guide, with a green dot marking where the pen lands and an arrow showing the first stroke direction. Switch between a D'Nealian-style teaching cursive and everyday handwriting fonts, then download the practice sheet or the whole chart as a printable PDF — free, no email wall.",
   seoTitle: "A free interactive cursive alphabet chart",
   seoText:
-    "A cursive alphabet chart shows all 26 letters in both capital and lowercase forms so you can see each shape, its starting point, and how it connects to the next letter. Most charts online are static pictures: this one is interactive, so you can pick a letter, watch where the pen lands, and compare a D'Nealian-style teaching cursive (Sacramento) with everyday handwriting fonts before you commit anything to paper.\n\nCapitals and lowercase letters follow different logic. Capitals share shapes with print writing but gain entry flourishes; lowercase letters are rebuilt around continuous strokes and exit connectors — which is why letters like b, f, g, and z trip up almost everyone. Twelve of the hardest letters have their own step-by-step lessons on this site, linked right from the chart.\n\nWhen you are ready to practice, download the letter sheet or the full A–Z chart as a PDF: solid example on top, dashed traceable copy below, start dots and direction arrows included. It prints on standard letter or A4 paper and pairs with the site's cursive worksheet generator if you want custom words.",
+    "A cursive alphabet chart shows all 26 letters in both capital and lowercase forms so you can see each shape, its starting point, and how it connects to the next letter. Most charts online are static pictures: this one is interactive, so you can pick a letter, watch where the pen lands, and compare a D'Nealian-style teaching cursive (Sacramento) with everyday handwriting fonts before you commit anything to paper.\n\nCapitals and lowercase letters follow different logic. Capitals share shapes with print writing but gain entry flourishes; lowercase letters are rebuilt around continuous strokes and exit connectors — which is why letters like b, f, g, and z trip up almost everyone. Every letter, lowercase and capital, has its own step-by-step lesson on this site, linked right from the chart.\n\nWhen you are ready to practice, download the letter sheet or the full A–Z chart as a PDF: solid example on top, dashed traceable copy below, start dots and direction arrows included. It prints on standard letter or A4 paper and pairs with the site's cursive worksheet generator if you want custom words.",
   faqs: [
     {
       q: "What is the cursive alphabet?",
@@ -83,7 +83,7 @@ export const ALPHABET_PAGE = {
     },
     {
       q: "What order should I learn the cursive alphabet in?",
-      a: "By stroke family rather than A to Z: start with letters built from simple up-and-over strokes (i, t, u, w), then cursive climbs like e and l, then bumps (n, m, h), then the harder loops and descenders (b, f, g, j, q, z). The step-by-step lessons linked from this chart follow that order for the trickiest letters.",
+      a: "By stroke family rather than A to Z: start with letters built from simple up-and-over strokes (i, t, u, w), then cursive climbs like e and l, then bumps (n, m, h), then the harder loops and descenders (b, f, g, j, q, z). The chart lists lessons from a to z so you can find a letter; the order you practice them can still follow the stroke families.",
     },
     {
       q: "Why do these letters look different from my old school chart?",

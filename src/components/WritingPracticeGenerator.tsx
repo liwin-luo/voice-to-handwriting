@@ -5,6 +5,7 @@ import { FilePdf } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
+import PracticeLayout from "./PracticeLayout";
 
 const A4: [number, number] = [794, 1123];
 
@@ -23,6 +24,7 @@ export default function WritingPracticeGenerator({
   defaultScript?: ScriptKind;
 }) {
   const t = useTranslations("writing");
+  const fontNames = useTranslations("tool");
   const [script, setScript] = useState<ScriptKind>(defaultScript);
   const [text, setText] = useState("");
   const [cell, setCell] = useState(84);
@@ -167,105 +169,108 @@ export default function WritingPracticeGenerator({
   ];
 
   return (
-    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[300px_auto]">
-      <aside className="flex flex-col gap-4 lg:sticky lg:top-20">
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("scriptLabel")}</span>
-          <div className="flex flex-wrap gap-1.5">
-            {scripts.map((sc) => (
-              <button
-                key={sc.id}
-                onClick={() => setScript(sc.id)}
-                className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
-                  script === sc.id
-                    ? "border-accent bg-accent/5 text-accent"
-                    : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
-                }`}
-              >
-                {sc.label}
-              </button>
-            ))}
+    <PracticeLayout
+      input={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("scriptLabel")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {scripts.map((sc) => (
+                <button
+                  key={sc.id}
+                  onClick={() => setScript(sc.id)}
+                  className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                    script === sc.id
+                      ? "border-accent bg-accent/5 text-accent"
+                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                  }`}
+                >
+                  {sc.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("textLabel")}</span>
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            {...compositionProps}
-            rows={3}
-            placeholder={t("textPlaceholder")}
-            className="surface-input resize-y p-3 text-sm leading-relaxed"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("font")}</span>
-          <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {FONTS.map((f) => (
-              <option key={f.id} value={f.id}>
-                {primaryFamily(f.css)}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("guideStyle")}</span>
-          <div className="flex flex-wrap gap-1.5">
-            {guides.map((g) => (
-              <button
-                key={g.id}
-                onClick={() => setGuide(g.id)}
-                className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
-                  guide === g.id
-                    ? "border-accent bg-accent/5 text-accent"
-                    : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
-                }`}
-              >
-                {g.label}
-              </button>
-            ))}
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("textLabel")}</span>
+            <textarea
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              {...compositionProps}
+              rows={3}
+              placeholder={t("textPlaceholder")}
+              className="surface-input resize-y p-3 text-sm leading-relaxed"
+            />
           </div>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("fillMode")}</span>
-          <div className="flex flex-wrap gap-1.5">
-            {fills.map((f) => (
-              <button
-                key={f.id}
-                onClick={() => setFillMode(f.id)}
-                className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
-                  fillMode === f.id
-                    ? "border-accent bg-accent/5 text-accent"
-                    : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
-                }`}
-              >
-                {f.label}
-              </button>
-            ))}
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("guideStyle")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {guides.map((g) => (
+                <button
+                  key={g.id}
+                  onClick={() => setGuide(g.id)}
+                  className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                    guide === g.id
+                      ? "border-accent bg-accent/5 text-accent"
+                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                  }`}
+                >
+                  {g.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("cellSize")}</span>
-          <span className="flex flex-1 items-center gap-2">
-            <input type="range" min={64} max={110} value={cell} onChange={(e) => setCell(Number(e.target.value))} className="accent-accent" />
-            <span className="font-mono text-xs text-zinc-400">{cell}px</span>
-          </span>
-        </label>
-
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("fillMode")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {fills.map((f) => (
+                <button
+                  key={f.id}
+                  onClick={() => setFillMode(f.id)}
+                  className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                    fillMode === f.id
+                      ? "border-accent bg-accent/5 text-accent"
+                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                  }`}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
+      }
+      download={
         <button onClick={downloadPdf} className="btn btn-primary px-4 py-2.5 text-sm">
           <FilePdf className="size-4" />
           {t("downloadPdf")}
         </button>
-      </aside>
-
-      <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
-        <canvas ref={canvasRef} className="block h-auto w-full" />
-      </div>
-    </div>
+      }
+      more={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("font")}</span>
+            <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
+              {FONTS.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {fontNames(`fonts.${f.id}`)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("cellSize")}</span>
+            <span className="flex flex-1 items-center gap-2">
+              <input type="range" min={64} max={110} value={cell} onChange={(e) => setCell(Number(e.target.value))} className="accent-accent" />
+              <span className="font-mono text-xs text-zinc-400">{cell}px</span>
+            </span>
+          </label>
+        </>
+      }
+      preview={
+        <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+          <canvas ref={canvasRef} className="block h-auto w-full" />
+        </div>
+      }
+    />
   );
 }

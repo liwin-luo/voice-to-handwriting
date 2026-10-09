@@ -7,6 +7,7 @@ import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { coloringFontId, fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import PageFormatToggle from "./PageFormatToggle";
+import PracticeLayout from "./PracticeLayout";
 
 function primaryFamily(css: string): string {
   return css.match(/'([^']+)'/)?.[1] ?? "cursive";
@@ -49,6 +50,7 @@ export default function NameColoringGenerator({
   defaultFontId?: string;
 }) {
   const t = useTranslations("coloring");
+  const fontNames = useTranslations("tool");
   const locale = useLocale();
   const [namesText, setNamesText] = useState("");
   const [fontId, setFontId] = useState(defaultFontId ?? coloringFontId(locale));
@@ -64,10 +66,11 @@ export default function NameColoringGenerator({
   const [debouncedText, compositionProps] = useDebouncedImeSafe(namesText);
 
   // useMemo 稳定引用,避免每次按键都触发重绘 effect
-  const names = useMemo(
-    () => debouncedText.split("\n").map((l) => l.trim()).filter(Boolean),
-    [debouncedText],
-  );
+  const sampleName = t("namesPlaceholder").split("\n").map((l) => l.trim()).filter(Boolean)[0] ?? "";
+  const names = useMemo(() => {
+    const lines = debouncedText.split("\n").map((l) => l.trim()).filter(Boolean);
+    return lines.length ? lines : sampleName ? [sampleName] : [];
+  }, [debouncedText, sampleName]);
 
   function drawDecorations(ctx: CanvasRenderingContext2D) {
     if (!decor) return;
@@ -173,8 +176,8 @@ export default function NameColoringGenerator({
   };
 
   return (
-    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[300px_auto]">
-      <aside className="flex flex-col gap-4 lg:sticky lg:top-20">
+    <PracticeLayout
+      input={
         <div className="flex flex-col gap-1.5">
           <span className="field-label">{t("namesLabel")}</span>
           <textarea
@@ -186,46 +189,8 @@ export default function NameColoringGenerator({
             className="surface-input resize-y p-3 text-sm leading-relaxed"
           />
         </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("font")}</span>
-          <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {fontOptions.map((f) => (
-              <option key={f.id} value={f.id}>
-                {primaryFamily(f.css)}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("outlineWidth")}</span>
-          <span className="flex flex-1 items-center gap-2">
-            <input type="range" min={4} max={22} value={outline} onChange={(e) => setOutline(Number(e.target.value))} className="accent-accent" />
-            <span className="font-mono text-xs text-zinc-400">{outline}px</span>
-          </span>
-        </label>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("decorations")}</span>
-          <button
-            role="switch"
-            aria-checked={decor}
-            onClick={() => setDecor(!decor)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              decor ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                decor ? "translate-x-5" : ""
-              }`}
-            />
-          </button>
-        </label>
-
-        <PageFormatToggle value={format} onChange={setFormat} />
-
+      }
+      download={
         <div className="flex flex-col gap-1.5">
           <button onClick={downloadPng} disabled={!pageUrls.length} className="btn btn-primary px-4 py-2.5 text-sm disabled:opacity-40">
             <DownloadSimple className="size-4" />
@@ -236,22 +201,62 @@ export default function NameColoringGenerator({
             {t("downloadPdf")}
           </button>
         </div>
-      </aside>
-
-      <div className="flex flex-col gap-6">
-        {pageUrls.map((u, i) => (
-          <div key={i} className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={u} alt={`coloring page ${i + 1}`} className="block h-auto w-full" />
+      }
+      more={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("font")}</span>
+            <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
+              {fontOptions.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {fontNames(`fonts.${f.id}`)}
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
-        {pageUrls.length === 0 && (
-          <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-24">
-            <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
-            <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
-          </div>
-        )}
-      </div>
-    </div>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("outlineWidth")}</span>
+            <span className="flex flex-1 items-center gap-2">
+              <input type="range" min={4} max={22} value={outline} onChange={(e) => setOutline(Number(e.target.value))} className="accent-accent" />
+              <span className="font-mono text-xs text-zinc-400">{outline}px</span>
+            </span>
+          </label>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("decorations")}</span>
+            <button
+              role="switch"
+              aria-checked={decor}
+              onClick={() => setDecor(!decor)}
+              className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+                decor ? "bg-accent" : "bg-zinc-300"
+              }`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  decor ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <PageFormatToggle value={format} onChange={setFormat} />
+        </>
+      }
+      preview={
+        <div className="flex flex-col gap-6">
+          {pageUrls.map((u, i) => (
+            <div key={i} className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={u} alt={`coloring page ${i + 1}`} className="block h-auto w-full" />
+            </div>
+          ))}
+          {pageUrls.length === 0 && (
+            <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-24">
+              <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
+              <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+            </div>
+          )}
+        </div>
+      }
+    />
   );
 }

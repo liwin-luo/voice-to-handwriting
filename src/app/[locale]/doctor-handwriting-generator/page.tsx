@@ -45,6 +45,7 @@ export default async function DoctorHandwritingPage({
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <ToolWorkspace
+          layout="doctor"
           preset={{ fontId: "caveat", paperId: "rx", ink: "#1a1a1a", fontSize: 34, intensity: 0.9 }}
         />
       </div>

@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/routing";
+import { CURSIVE_LETTER_REST } from "./cursiveLettersRest";
 
 /** /cursive/letter/[letter] 长尾矩阵:单字母教学内容页。
  *  Phase 0 仅英文(其他语言访问 404,sitemap 只输出 en 变体)。
@@ -37,9 +38,8 @@ export interface CursiveLetterPage {
   copy: Partial<Record<Locale, LetterCopy>>;
 }
 
-/** Phase 0 批次:12 个最难字母(小写 f/g/j/q/z + 大写 F/G/J/Q/S/T/Z)。
- *  后续批次按字母表补齐,数组顺序即 prev/next 导航与 hub 展示顺序。 */
-export const CURSIVE_LETTERS: CursiveLetterPage[] = [
+/** 难字母先行的第一批。完整表在文件末尾按 a–z、A–Z 排好，那个顺序才是 prev/next 和 hub。 */
+const CURSIVE_LETTER_PHASE0: CursiveLetterPage[] = [
   {
     slug: "f",
     letter: "f",
@@ -587,6 +587,16 @@ export const CURSIVE_LETTERS: CursiveLetterPage[] = [
   },
 ];
 
+function letterRank(l: CursiveLetterPage): number {
+  const i = l.letter.toLowerCase().charCodeAt(0) - 97;
+  return (l.form === "capital" ? 26 : 0) + i;
+}
+
+/** 小写 a–z，然后大写 A–Z。prev/next 与 hub 都按这个顺序。 */
+export const CURSIVE_LETTERS: CursiveLetterPage[] = [...CURSIVE_LETTER_PHASE0, ...CURSIVE_LETTER_REST].sort(
+  (a, b) => letterRank(a) - letterRank(b),
+);
+
 /** 页面 UI 文案(与字母内容同语言,Phase 0 仅 en) */
 export interface LetterUi {
   backToCursive: string;
@@ -615,7 +625,7 @@ const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
     wordsTitle: "Practice words",
     ctaTitle: "Turn this letter into a practice sheet",
     ctaButton: "Make a practice sheet",
-    ctaHint: "Opens the workbook generator with these words pre-filled — add a name, pick a font, print the PDF.",
+    ctaHint: "Opens a cursive tracing sheet with this lesson's words filled in. Download the PDF and print it.",
     faqTitle: "Frequently asked questions",
     fontNote:
       "The letterforms on this page are rendered in Cedarville Cursive, an open-source font — school styles like Zaner-Bloser or D'Nealian differ in details. Treat the steps as the source of truth for stroke order; let the sample show you one possible shape.",
@@ -623,7 +633,7 @@ const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
     nextLetter: "Next letter guide",
     hubTitle: "Cursive letters, step by step",
     hubIntro:
-      "Step-by-step guides for the trickiest letters in the alphabet — stroke order, common mistakes, practice words, and a printable sheet for each one.",
+      "A step-by-step lesson for every cursive letter, lowercase and capital — stroke order, the mistakes that show up on the page, practice words, and a sheet you can print.",
     hubLowercase: "Lowercase",
     hubCapital: "Capital",
     hubCta: "Browse the full interactive cursive alphabet — every letter with stroke guides",
@@ -650,7 +660,7 @@ export function lettersForLocale(locale: Locale): CursiveLetterPage[] {
   return CURSIVE_LETTERS.filter((l) => Boolean(l.copy[locale]));
 }
 
-/** workbook 预填词表:字形 + 练习词 */
-export function letterWorkbookWords(page: CursiveLetterPage, copy: LetterCopy): string {
-  return [page.letter, ...copy.words].join(",");
+/** 描红预填:这一课的练习词,一行一个,不含单独的字母 */
+export function letterPracticeWords(copy: LetterCopy): string {
+  return copy.words.join("\n");
 }

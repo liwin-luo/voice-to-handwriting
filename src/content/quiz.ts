@@ -61,6 +61,7 @@ export interface QuizLocaleContent {
   /** 进度文案,{n}/{total} 为占位符 */
   progress: string;
   download: string;
+  writeCta: string;
   resultHeading: string;
   dimsHeading: string;
   practiceHeading: string;
@@ -85,6 +86,7 @@ const en: QuizLocaleContent = {
   retake: "Retake the quiz",
   progress: "Question {n} of {total}",
   download: "Download my result",
+  writeCta: "Write a line in this style",
   resultHeading: "Your handwriting profile",
   dimsHeading: "What your answers suggest",
   practiceHeading: "Want to practice?",
@@ -357,6 +359,7 @@ const zh: QuizLocaleContent = {
   retake: "再测一次",
   progress: "第 {n} 题 / 共 {total} 题",
   download: "保存结果卡片",
+  writeCta: "用这个风格写一句",
   resultHeading: "你的笔迹画像",
   dimsHeading: "你的答案提示了什么",
   practiceHeading: "想练一练?",
@@ -623,6 +626,7 @@ const ja: QuizLocaleContent = {
   retake: "もう一回やる",
   progress: "質問 {n} / {total}",
   download: "結果カードを保存",
+  writeCta: "このスタイルで一文書く",
   resultHeading: "あなたの筆跡プロフィール",
   dimsHeading: "回答から読みとれること",
   practiceHeading: "練習してみる?",
@@ -889,6 +893,7 @@ const ko: QuizLocaleContent = {
   retake: "다시 하기",
   progress: "질문 {n} / {total}",
   download: "결과 카드 저장",
+  writeCta: "이 스타일로 한 줄 쓰기",
   resultHeading: "나의 글씨 프로필",
   dimsHeading: "대답이 말해주는 것",
   practiceHeading: "연습해볼까요?",
@@ -1155,6 +1160,7 @@ const es: QuizLocaleContent = {
   retake: "Repetir el test",
   progress: "Pregunta {n} de {total}",
   download: "Descargar mi resultado",
+  writeCta: "Escribir una línea con este estilo",
   resultHeading: "Tu perfil de escritura",
   dimsHeading: "Lo que sugieren tus respuestas",
   practiceHeading: "¿Quieres practicar?",
@@ -1421,6 +1427,7 @@ const de: QuizLocaleContent = {
   retake: "Quiz wiederholen",
   progress: "Frage {n} von {total}",
   download: "Mein Ergebnis speichern",
+  writeCta: "Eine Zeile in diesem Stil schreiben",
   resultHeading: "Dein Handschrift-Profil",
   dimsHeading: "Was deine Antworten nahelegen",
   practiceHeading: "Lust zu üben?",
@@ -1687,6 +1694,7 @@ const fr: QuizLocaleContent = {
   retake: "Refaire le quiz",
   progress: "Question {n} sur {total}",
   download: "Télécharger mon résultat",
+  writeCta: "Écrire une ligne dans ce style",
   resultHeading: "Votre profil d'écriture",
   dimsHeading: "Ce que vos réponses suggèrent",
   practiceHeading: "Envie de vous entraîner ?",
@@ -1953,6 +1961,7 @@ const pt: QuizLocaleContent = {
   retake: "Refazer o quiz",
   progress: "Pergunta {n} de {total}",
   download: "Baixar meu resultado",
+  writeCta: "Escrever uma linha neste estilo",
   resultHeading: "Seu perfil de escrita",
   dimsHeading: "O que suas respostas sugerem",
   practiceHeading: "Quer praticar?",

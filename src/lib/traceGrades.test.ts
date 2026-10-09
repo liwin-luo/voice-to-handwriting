@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { TRACE_GRADES, gradeForBand, tracingLines } from "./traceGrades";
+import { TRACE_GRADES, gradeForBand, tracingLines, tracingSheets } from "./traceGrades";
 
 describe("tracingLines", () => {
   it("空输入用示例名", () => {
@@ -9,6 +9,14 @@ describe("tracingLines", () => {
 
   it("有输入就丢掉示例", () => {
     expect(tracingLines("Noah\n\nOlivia", "Emma")).toEqual(["Noah", "Olivia"]);
+  });
+});
+
+describe("tracingSheets", () => {
+  it("两个以上的名字才拆成每人一页", () => {
+    expect(tracingSheets(["Emma", "Liam"], true)).toEqual([["Emma"], ["Liam"]]);
+    expect(tracingSheets(["Emma"], true)).toEqual([["Emma"]]);
+    expect(tracingSheets(["Emma", "Liam"], false)).toEqual([["Emma", "Liam"]]);
   });
 });
 

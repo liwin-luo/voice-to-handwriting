@@ -92,23 +92,24 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 | 路由 | 内容 | 核心组件 / 数据 |
 |---|---|---|
-| `/` | 主工作台 | `ToolWorkspace`(无 preset)+ `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
+| `/` | 主工作台。`?font=` 套用字体(测验结果回跳);仿真度、重排笔迹、水印收在「更像手写」 | `ToolWorkspace`(无 preset)+ `StylePanel` + `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
-| `/cursive-text-generator` | 可复制花体文本(Unicode 六风格,复制/导出 PNG) | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
-| `/cursive-alphabet` | 交互式连笔字母表(**en-only Phase 0**,非英文 404/sitemap 仅 en) | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`(en 文案+单测),`alphabetChart.ts`(网格布局),`isEnOnlyTool` 过滤导航/RelatedLinks |
+| `/cursive-text-generator` | 可复制花体文本(Unicode 六风格)。复制是主按钮,麦克风是次按钮;仍可导出 PNG | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
+| `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。导航放在「练习」,与连笔练习纸、每日连笔相邻 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetChart.ts`,`isEnOnlyTool` |
 | `/cursive-font-generator` | 手写字体预览 + 导出(7 款 OFL 字体,PNG 透明底/PDF) | `CursiveFontBrowser`,`fontCatalog.ts`(license 目录),`fontFace.ts`(字体等待),FAQ 经 `CURSIVE_FONT_FAQS` |
-| `/cursive-worksheets` | 连笔字描红工作表 | `TracingGenerator`(cedarvillecursive) |
+| `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个) | `TracingGenerator`(sacramento,`rowLabels="lines"`) |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页 | `DailyCursivePracticeGenerator`,`DAILY_CURSIVE_FAQS` |
-| `/name-tracing` | 姓名描红字帖 | `TracingGenerator`(patrickhand),`TRACING_FAQS` |
-| `/printable-paper` | 横线/方格纸生成 | `PaperGenerator`,`PAPER_FAQS` |
+| `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
+| `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
+| `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。子页锁定当前纸型,其他纸型只在页底链接;红边距问答只出现在有该开关的纸上 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`PAPER_FAQS` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览) | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF) | `HandwritingRepeater`,`REPEATER_FAQS` |
-| `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF) | `HandwritingWorkbookGenerator`,`WORKBOOK_FAQS` |
-| `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向) | `HandwritingQuiz`,`QUIZ_FAQS` |
-| `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag) | `ToolWorkspace` preset(rx 纸张),`DOCTOR_FAQS` |
-| `/word-work` | 拼写练习(写三遍+缺字母) | `WordWorkGenerator`,`WORDWORK_FAQS` |
+| `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
+| `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。结果页主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
+| `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
+| `/word-work` | 拼写练习。主按钮是 Dolch 与 Fry 前 25,Fry 前 100 在「更多词表」;选中的列表保持按下 | `WordWorkGenerator`,`spellingLists.ts`,`WORDWORK_FAQS` |
 | `/writing-practice` | CJK 练字表(田字格/原稿纸) | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
-| `/name-coloring` | 名字涂色页 | `NameColoringGenerator`,`COLORING_FAQS` |
+| `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字 | `NameColoringGenerator`,`COLORING_FAQS` |
 | `/templates` · `/templates/[slug]` | 模板库/详情 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>` |
 | `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
 | `/faq` | FAQ 聚合页 + FAQPage JSON-LD | `FAQ_ITEMS` + `getFaq` |

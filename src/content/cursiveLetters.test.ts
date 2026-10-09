@@ -4,7 +4,7 @@ import {
   CURSIVE_LETTERS,
   getLetterPage,
   getLetterUi,
-  letterWorkbookWords,
+  letterPracticeWords,
   lettersForLocale,
 } from "@/content/cursiveLetters";
 
@@ -14,6 +14,16 @@ import {
 const SLUG_RE = /^[a-z]+(-[a-z]+)*$/;
 
 describe("cursiveLetters:数据形状", () => {
+  it("52 页齐：小写 a–z 然后大写 A–Z，且每课开头不互相复制", () => {
+    expect(CURSIVE_LETTERS).toHaveLength(52);
+    const lower = CURSIVE_LETTERS.filter((l) => l.form === "lowercase").map((l) => l.letter).join("");
+    const upper = CURSIVE_LETTERS.filter((l) => l.form === "capital").map((l) => l.letter).join("");
+    expect(lower).toBe("abcdefghijklmnopqrstuvwxyz");
+    expect(upper).toBe("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    const firstSteps = CURSIVE_LETTERS.map((l) => l.copy.en!.steps[0]);
+    expect(new Set(firstSteps).size).toBe(52);
+  });
+
   it("slug 唯一且为小写 kebab-case", () => {
     const slugs = CURSIVE_LETTERS.map((l) => l.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
@@ -88,10 +98,9 @@ describe("cursiveLetters:解析与 EN-only 边界", () => {
     }
   });
 
-  it("workbook 预填词表以字形开头且含全部练习词", () => {
+  it("描红预填只有练习词,不含单独的字母", () => {
     const l = CURSIVE_LETTERS[0];
-    const words = letterWorkbookWords(l, l.copy.en!).split(",");
-    expect(words[0]).toBe(l.letter);
-    expect(words.slice(1)).toEqual(l.copy.en!.words);
+    expect(letterPracticeWords(l.copy.en!).split("\n")).toEqual(l.copy.en!.words);
+    expect(letterPracticeWords(l.copy.en!).split("\n")).not.toContain(l.letter);
   });
 });

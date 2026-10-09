@@ -14,6 +14,7 @@ import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { dailyPick, toDateStr, weekDates, type DailyLevel, type DailySheet } from "@/content/dailyCursive";
 import { PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import PageFormatToggle from "./PageFormatToggle";
+import PracticeLayout from "./PracticeLayout";
 const INK = "#1f2937";
 const FONT_OPTIONS = ["cedarvillecursive", "dancingscript"] as const;
 /** 级别 → 行高与空白练习行数:儿童行高大、句子抄写行少;成人行高小、抄写行多 */
@@ -182,6 +183,7 @@ function drawSheet(ctx: CanvasRenderingContext2D, opts: SheetOptions) {
 /** 每日草书练习生成器:daily seed(同一天全球同一份)+ 打开即下载,零输入门槛 */
 export default function DailyCursivePracticeGenerator({ defaultFormat }: { defaultFormat: PageFormat }) {
   const t = useTranslations("dailyCursive");
+  const fontNames = useTranslations("tool");
   const locale = useLocale();
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const { w: pageW, h: pageH } = PAGE_FORMATS[format];
@@ -328,89 +330,91 @@ export default function DailyCursivePracticeGenerator({ defaultFormat }: { defau
   };
 
   return (
-    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[300px_auto]">
-      <aside className="flex flex-col gap-4 lg:sticky lg:top-20">
-        <div className="rounded-xl border border-zinc-200 bg-white p-3">
-          <div className="flex items-center justify-between gap-2">
-            <span className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-zinc-400">
-              <CalendarBlank className="size-4" />
-              {t("todayLabel")}
-            </span>
-            <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent">{t("todayBadge")}</span>
+    <PracticeLayout
+      input={
+        <>
+          <div className="rounded-xl border border-zinc-200 bg-white p-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wide text-zinc-400">
+                <CalendarBlank className="size-4" />
+                {t("todayLabel")}
+              </span>
+              <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent">{t("todayBadge")}</span>
+            </div>
+            <p className="mt-1.5 font-hand text-lg leading-snug text-zinc-900">{today ? longDate(today) : "—"}</p>
           </div>
-          <p className="mt-1.5 font-hand text-lg leading-snug text-zinc-900">{today ? longDate(today) : "—"}</p>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("levelLabel")}</span>
-          <div className="flex gap-1.5">
-            {LEVELS.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => setLevel(l.id)}
-                className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
-                  level === l.id
-                    ? "border-accent bg-accent/5 text-accent"
-                    : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
-                }`}
-              >
-                {t(l.id === "kids" ? "levelKids" : "levelAdults")}
-              </button>
-            ))}
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("levelLabel")}</span>
+            <div className="flex gap-1.5">
+              {LEVELS.map((l) => (
+                <button
+                  key={l.id}
+                  onClick={() => setLevel(l.id)}
+                  className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                    level === l.id
+                      ? "border-accent bg-accent/5 text-accent"
+                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                  }`}
+                >
+                  {t(l.id === "kids" ? "levelKids" : "levelAdults")}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("font")}</span>
-          <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {FONT_OPTIONS.map((id) => {
-              const f = FONTS.find((x) => x.id === id);
-              return f ? (
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("nameLabel")}</span>
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              {...compositionProps}
+              placeholder={t("namePlaceholder")}
+              className="surface-input p-2.5 text-sm"
+            />
+          </div>
+        </>
+      }
+      download={
+        <>
+          <div className="flex flex-col gap-2">
+            <button onClick={downloadPdf} disabled={!sheet} className="btn btn-primary w-full px-4 py-2.5 text-sm disabled:opacity-40">
+              <FilePdf className="size-4" />
+              {t("downloadPdf")}
+            </button>
+            <button onClick={downloadWeek} disabled={!today} className="btn btn-ghost w-full px-4 py-2.5 text-sm disabled:opacity-40">
+              <Stack className="size-4 text-zinc-500" />
+              {t("downloadWeek")}
+            </button>
+            <button onClick={downloadPng} disabled={!sheet} className="btn btn-ghost w-full px-4 py-2.5 text-sm disabled:opacity-40">
+              <ImageIcon className="size-4 text-zinc-500" />
+              {t("downloadPng")}
+            </button>
+          </div>
+          <p className="flex items-start gap-1.5 text-xs leading-relaxed text-zinc-400">
+            <ArrowClockwise className="mt-0.5 size-3.5 shrink-0" />
+            {t("backTomorrow")}
+          </p>
+        </>
+      }
+      more={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("font")}</span>
+            <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
+              {FONT_OPTIONS.map((id) => (
                 <option key={id} value={id}>
-                  {primaryFamily(f.css)}
+                  {fontNames(`fonts.${id}`)}
                 </option>
-              ) : null;
-            })}
-          </select>
+              ))}
+            </select>
+          </div>
+          <PageFormatToggle value={format} onChange={setFormat} />
+        </>
+      }
+      preview={
+        <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+          <canvas ref={canvasRef} className="block h-auto w-full" />
         </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("nameLabel")}</span>
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            {...compositionProps}
-            placeholder={t("namePlaceholder")}
-            className="surface-input p-2.5 text-sm"
-          />
-        </div>
-
-        <PageFormatToggle value={format} onChange={setFormat} />
-
-        <div className="flex flex-col gap-2">
-          <button onClick={downloadPdf} disabled={!sheet} className="btn btn-primary w-full px-4 py-2.5 text-sm disabled:opacity-40">
-            <FilePdf className="size-4" />
-            {t("downloadPdf")}
-          </button>
-          <button onClick={downloadWeek} disabled={!today} className="btn btn-ghost w-full px-4 py-2.5 text-sm disabled:opacity-40">
-            <Stack className="size-4 text-zinc-500" />
-            {t("downloadWeek")}
-          </button>
-          <button onClick={downloadPng} disabled={!sheet} className="btn btn-ghost w-full px-4 py-2.5 text-sm disabled:opacity-40">
-            <ImageIcon className="size-4 text-zinc-500" />
-            {t("downloadPng")}
-          </button>
-        </div>
-
-        <p className="flex items-start gap-1.5 text-xs leading-relaxed text-zinc-400">
-          <ArrowClockwise className="mt-0.5 size-3.5 shrink-0" />
-          {t("backTomorrow")}
-        </p>
-      </aside>
-
-      <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
-        <canvas ref={canvasRef} className="block h-auto w-full" />
-      </div>
-    </div>
+      }
+    />
   );
 }

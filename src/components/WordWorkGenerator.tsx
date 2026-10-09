@@ -7,7 +7,15 @@ import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
+import { SPELLING_LISTS, spellingListMatches, type SpellingListId } from "@/lib/spellingLists";
 import PageFormatToggle from "./PageFormatToggle";
+import PracticeLayout from "./PracticeLayout";
+const LIST_LABEL = {
+  dolch: "list_dolch",
+  fry25: "list_fry25",
+  fry100: "list_fry100",
+} as const satisfies Record<SpellingListId, string>;
+
 const WORDS_PER_PAGE_A1 = 8; // 写三遍:每页 8 词
 const WORDS_PER_PAGE_A2 = 16; // 缺字母:每页 16 词
 
@@ -24,6 +32,7 @@ function missingIndex(word: string): number {
 /** 拼写清单 Word Work 生成器:词表 → 写三遍 + 缺字母填空,确定性、可打印 */
 export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: PageFormat }) {
   const t = useTranslations("wordwork");
+  const fontNames = useTranslations("tool");
   const sheet = useTranslations("sheet");
   const locale = useLocale();
   const [wordsText, setWordsText] = useState("");
@@ -189,94 +198,129 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
     pdf.save("word-work-worksheet.pdf");
   };
 
+    const chip = (list: (typeof SPELLING_LISTS)[number]) => {
+    const pressed = spellingListMatches(wordsText, list.words);
+    return (
+      <button
+        key={list.id}
+        type="button"
+        aria-pressed={pressed}
+        onClick={() => setWordsText(list.words.join("\n"))}
+        className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+          pressed
+            ? "border-accent bg-accent/5 text-accent"
+            : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+        }`}
+      >
+        {t(LIST_LABEL[list.id])}
+      </button>
+    );
+  };
+
   return (
-    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[300px_auto]">
-      <aside className="flex flex-col gap-4 lg:sticky lg:top-20">
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("wordsLabel")}</span>
-          <textarea
-            value={wordsText}
-            onChange={(e) => setWordsText(e.target.value)}
-            {...compositionProps}
-            rows={6}
-            placeholder={t("wordsPlaceholder")}
-            className="surface-input resize-y p-3 text-sm leading-relaxed"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("font")}</span>
-          <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {fontOptions.map((f) => (
-              <option key={f.id} value={f.id}>
-                {primaryFamily(f.css)}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("showTrace")}</span>
-          <button
-            role="switch"
-            aria-checked={showTrace}
-            onClick={() => setShowTrace(!showTrace)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              showTrace ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                showTrace ? "translate-x-5" : ""
-              }`}
+    <PracticeLayout
+      input={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("wordsLabel")}</span>
+            <textarea
+              value={wordsText}
+              onChange={(e) => setWordsText(e.target.value)}
+              {...compositionProps}
+              rows={6}
+              placeholder={t("wordsPlaceholder")}
+              className="surface-input resize-y p-3 text-sm leading-relaxed"
             />
-          </button>
-        </label>
-
-        <label
-          className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
-          title={guidesAvailable ? undefined : t("strokeGuidesHint")}
-        >
-          <span className="text-zinc-700">{t("strokeGuides")}</span>
-          <button
-            role="switch"
-            aria-checked={guides && guidesAvailable}
-            disabled={!guidesAvailable}
-            onClick={() => setGuides(!guides)}
-            className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-              guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
-            } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                guides && guidesAvailable ? "translate-x-5" : ""
-              }`}
-            />
-          </button>
-        </label>
-
-        <PageFormatToggle value={format} onChange={setFormat} />
-
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("listsLabel")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {SPELLING_LISTS.filter((list) => list.id !== "fry100").map(chip)}
+            </div>
+            <details className="text-xs text-zinc-500">
+              <summary className="cursor-pointer">{t("listMore")}</summary>
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {SPELLING_LISTS.filter((list) => list.id === "fry100").map(chip)}
+              </div>
+            </details>
+          </div>
+        </>
+      }
+      download={
         <button onClick={downloadPdf} disabled={!pageUrls.length} className="btn btn-primary px-4 py-2.5 text-sm disabled:opacity-40">
           <FilePdf className="size-4" />
           {t("downloadPdf")}
         </button>
-      </aside>
-
-      <div className="flex flex-col gap-6">
-        {pageUrls.map((u, i) => (
-          <div key={i} className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={u} alt={`page ${i + 1}`} className="block h-auto w-full" />
+      }
+      more={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("font")}</span>
+            <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
+              {fontOptions.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {fontNames(`fonts.${f.id}`)}
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
-        {pageUrls.length === 0 && (
-          <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-24">
-            <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
-            <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
-          </div>
-        )}
-      </div>
-    </div>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("showTrace")}</span>
+            <button
+              role="switch"
+              aria-checked={showTrace}
+              onClick={() => setShowTrace(!showTrace)}
+              className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+                showTrace ? "bg-accent" : "bg-zinc-300"
+              }`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  showTrace ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <label
+            className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
+            title={guidesAvailable ? undefined : t("strokeGuidesHint")}
+          >
+            <span className="text-zinc-700">{t("strokeGuides")}</span>
+            <button
+              role="switch"
+              aria-checked={guides && guidesAvailable}
+              disabled={!guidesAvailable}
+              onClick={() => setGuides(!guides)}
+              className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
+                guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+              } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  guides && guidesAvailable ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <PageFormatToggle value={format} onChange={setFormat} />
+        </>
+      }
+      preview={
+        <div className="flex flex-col gap-6">
+          {pageUrls.map((u, i) => (
+            <div key={i} className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={u} alt={`page ${i + 1}`} className="block h-auto w-full" />
+            </div>
+          ))}
+          {pageUrls.length === 0 && (
+            <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-24">
+              <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
+              <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+            </div>
+          )}
+        </div>
+      }
+    />
   );
 }

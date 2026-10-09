@@ -7,12 +7,14 @@ import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
 import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
+import { SPELLING_LISTS, spellingListMatches, type SpellingListId } from "@/lib/spellingLists";
 import PageFormatToggle from "./PageFormatToggle";
+import PracticeLayout from "./PracticeLayout";
 const TOP = 56;
 const BOTTOM = 56;
 const WORDS_PER_PAGE = 5;
 const ROWS_PER_WORD = 3; // 1 示例行 + 2 描红行
-const MAX_WORDS = 60;
+const MAX_WORDS = 100;
 const DEFAULT_WORDS = Array.from({ length: 26 }, (_, i) =>
   String.fromCharCode(65 + i),
 ).join("\n");
@@ -30,6 +32,8 @@ export default function HandwritingWorkbookGenerator({
   defaultFormat: PageFormat;
 }) {
   const t = useTranslations("workbook");
+  const lists = useTranslations("wordwork");
+  const fontNames = useTranslations("tool");
   const locale = useLocale();
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const { w: W, h: H } = PAGE_FORMATS[format];
@@ -246,120 +250,155 @@ export default function HandwritingWorkbookGenerator({
   };
 
   const pageCount = pages.length + (showCover ? 1 : 0);
+  const listLabel = {
+    dolch: "list_dolch",
+    fry25: "list_fry25",
+    fry100: "list_fry100",
+  } as const satisfies Record<SpellingListId, string>;
+  const listChip = (list: (typeof SPELLING_LISTS)[number]) => {
+    const pressed = spellingListMatches(words, list.words);
+    return (
+      <button
+        key={list.id}
+        type="button"
+        aria-pressed={pressed}
+        onClick={() => setWords(list.words.join("\n"))}
+        className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+          pressed
+            ? "border-accent bg-accent/5 text-accent"
+            : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+        }`}
+      >
+        {lists(listLabel[list.id])}
+      </button>
+    );
+  };
 
   return (
-    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[300px_auto]">
-      <aside className="flex flex-col gap-4 lg:sticky lg:top-20">
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("titleLabel")}</span>
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            {...titleComposition}
-            placeholder={t("defaultTitle")}
-            className="surface-input p-3 text-sm"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("wordsLabel")}</span>
-          <textarea
-            value={words}
-            onChange={(e) => setWords(e.target.value)}
-            {...wordsComposition}
-            rows={8}
-            placeholder={t("wordsPlaceholder")}
-            className="surface-input resize-y p-3 font-mono text-sm leading-relaxed"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <span className="field-label">{t("font")}</span>
-          <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
-            {fontOptions.map((f) => (
-              <option key={f.id} value={f.id}>
-                {primaryFamily(f.css)}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("showCover")}</span>
-          <button
-            role="switch"
-            aria-checked={showCover}
-            onClick={() => setShowCover(!showCover)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              showCover ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                showCover ? "translate-x-5" : ""
-              }`}
+    <PracticeLayout
+      input={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("titleLabel")}</span>
+            <input
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              {...titleComposition}
+              placeholder={t("defaultTitle")}
+              className="surface-input p-3 text-sm"
             />
-          </button>
-        </label>
-
-        <label className="flex items-center justify-between gap-2 text-sm">
-          <span className="text-zinc-700">{t("showExample")}</span>
-          <button
-            role="switch"
-            aria-checked={showExample}
-            onClick={() => setShowExample(!showExample)}
-            className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-              showExample ? "bg-accent" : "bg-zinc-300"
-            }`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                showExample ? "translate-x-5" : ""
-              }`}
+          </div>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("wordsLabel")}</span>
+            <div className="flex flex-wrap gap-1.5">
+              {SPELLING_LISTS.filter((list) => list.id !== "fry100").map(listChip)}
+            </div>
+            <details className="text-xs text-zinc-500">
+              <summary className="cursor-pointer">{lists("listMore")}</summary>
+              <div className="mt-1.5 flex flex-wrap gap-1.5">
+                {SPELLING_LISTS.filter((list) => list.id === "fry100").map(listChip)}
+              </div>
+            </details>
+            <textarea
+              value={words}
+              onChange={(e) => setWords(e.target.value)}
+              {...wordsComposition}
+              rows={8}
+              placeholder={t("wordsPlaceholder")}
+              className="surface-input resize-y p-3 font-mono text-sm leading-relaxed"
             />
+          </div>
+        </>
+      }
+      download={
+        <>
+          <p className="text-xs text-zinc-400">{t("stats", { pages: pageCount, words: wordList.length })}</p>
+          <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">
+            <FilePdf className="size-4" />
+            {t("downloadPdf")}
           </button>
-        </label>
-
-        <label
-          className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
-          title={guidesAvailable ? undefined : t("strokeGuidesHint")}
-        >
-          <span className="text-zinc-700">{t("strokeGuides")}</span>
-          <button
-            role="switch"
-            aria-checked={guides && guidesAvailable}
-            disabled={!guidesAvailable}
-            onClick={() => setGuides(!guides)}
-            className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-              guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
-            } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
-          >
-            <span
-              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
-                guides && guidesAvailable ? "translate-x-5" : ""
+        </>
+      }
+      more={
+        <>
+          <div className="flex flex-col gap-1.5">
+            <span className="field-label">{t("font")}</span>
+            <select value={fontId} onChange={(e) => setFontId(e.target.value)} className="select-field">
+              {fontOptions.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {fontNames(`fonts.${f.id}`)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("showCover")}</span>
+            <button
+              role="switch"
+              aria-checked={showCover}
+              onClick={() => setShowCover(!showCover)}
+              className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+                showCover ? "bg-accent" : "bg-zinc-300"
               }`}
-            />
-          </button>
-        </label>
-
-        <PageFormatToggle value={format} onChange={setFormat} />
-
-        <p className="text-xs text-zinc-400">{t("stats", { pages: pageCount, words: wordList.length })}</p>
-
-        <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">
-          <FilePdf className="size-4" />
-          {t("downloadPdf")}
-        </button>
-      </aside>
-
-      <div ref={wrapRef} className="flex flex-col gap-6 overflow-hidden rounded-xl">
-        {showCover && (
-          <canvas className="block h-auto w-full rounded-xl border border-zinc-200 shadow-paper" />
-        )}
-        {(pages.length > 0 ? pages : [[]]).map((_, i) => (
-          <canvas key={i} className="block h-auto w-full rounded-xl border border-zinc-200 shadow-paper" />
-        ))}
-      </div>
-    </div>
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  showCover ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <label className="flex items-center justify-between gap-2 text-sm">
+            <span className="text-zinc-700">{t("showExample")}</span>
+            <button
+              role="switch"
+              aria-checked={showExample}
+              onClick={() => setShowExample(!showExample)}
+              className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
+                showExample ? "bg-accent" : "bg-zinc-300"
+              }`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  showExample ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <label
+            className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
+            title={guidesAvailable ? undefined : t("strokeGuidesHint")}
+          >
+            <span className="text-zinc-700">{t("strokeGuides")}</span>
+            <button
+              role="switch"
+              aria-checked={guides && guidesAvailable}
+              disabled={!guidesAvailable}
+              onClick={() => setGuides(!guides)}
+              className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
+                guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+              } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
+            >
+              <span
+                className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                  guides && guidesAvailable ? "translate-x-5" : ""
+                }`}
+              />
+            </button>
+          </label>
+          <PageFormatToggle value={format} onChange={setFormat} />
+        </>
+      }
+      preview={
+        <div ref={wrapRef} className="flex flex-col gap-6 overflow-hidden rounded-xl">
+          {showCover && (
+            <canvas className="block h-auto w-full rounded-xl border border-zinc-200 shadow-paper" />
+          )}
+          {(pages.length > 0 ? pages : [[]]).map((_, i) => (
+            <canvas key={i} className="block h-auto w-full rounded-xl border border-zinc-200 shadow-paper" />
+          ))}
+        </div>
+      }
+    />
   );
 }

@@ -7,7 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import PaperGenerator from "@/components/PaperGenerator";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
-import { getPaperKind, PAPER_KINDS } from "@/content/paperKinds";
+import { getPaperKind, PAPER_KINDS, paperKindHasMargin } from "@/content/paperKinds";
 import { PAPER_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { buildAlternates } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
@@ -57,7 +57,7 @@ export default async function PaperKindPage({
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <PaperGenerator defaultType={page.type} defaultFormat={defaultPageFormat(locale)} />
+        <PaperGenerator defaultType={page.type} lockType defaultFormat={defaultPageFormat(locale)} />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />
@@ -73,7 +73,13 @@ export default async function PaperKindPage({
           </Link>
         ))}
       </nav>
-      <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(PAPER_FAQS, locale)} />
+      <ToolFaq
+        title={t("faqTitle")}
+        items={getLocalizedFaqs(
+          PAPER_FAQS.filter((item) => item.id !== "paper-margin" || paperKindHasMargin(page.type)),
+          locale,
+        )}
+      />
     </main>
   );
 }

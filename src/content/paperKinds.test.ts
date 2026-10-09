@@ -4,7 +4,14 @@ import { PAPER_KINDS } from "./paperKinds";
 
 describe("paperKinds", () => {
   it("每种纸都有全部语言的标题和导语", () => {
-    expect(PAPER_KINDS.map((k) => k.slug)).toEqual(["college-ruled", "wide-ruled", "kindergarten"]);
+    expect(PAPER_KINDS.map((k) => k.slug)).toEqual([
+      "college-ruled",
+      "wide-ruled",
+      "kindergarten",
+      "dot-grid",
+      "story-paper",
+      "cornell-notes",
+    ]);
     for (const kind of PAPER_KINDS) {
       for (const locale of routing.locales) {
         const copy = kind.copy[locale];
