@@ -105,7 +105,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列 | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
 | `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接。Hub 用 `PAPER_FAQS`(窄行/宽行对比含三线格链接);子页用 `paperKindFaqs`,不把横线问答贴到点阵和康奈尔 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`paperKindFaqs.ts` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
-| `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文 + CSV / Excel 名单(最多 30 人,页面提供 xlsx 模板),下载信件 PDF 与信封 PDF。英语区 US Letter + #10,其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
+| `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
 | `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画。墨色改示例和封面标题,描红同色变浅,纸底可改 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
 | `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。结果页主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
@@ -128,7 +128,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `jitter.ts` | `mulberry32`/`hash2` 伪随机;`styleFingerprint(seed)` 全局笔迹指纹;`charJitter(charIndex, seed, intensity)` → rotate/translateY/scale/letterSpacing/opacity |
 | `paper.ts` | 纸张预设 blank/ruled/grid/letter(CSS background 画格线)+ `makeCustomPaper`(用户自定义,spacing 钳制 24–64px,支持背景图 cover/tile) |
 | `pageEstimate.ts` | 手写页数估算:纸型行距、字号/字距、单双面张数、原稿纸按格分页、预览截断、带到首页的 sessionStorage 载荷。横线纸贴正文后的真实分页仍走 `layout.ts` |
-| `bulkLetters.ts` | 可打印手写信:CSV 收件人、`{name}`/`{from}` 套用、信封行、按字宽单位分页(约一页,超长硬切) |
+| `bulkLetters.ts` | 可打印手写信:CSV 收件人、固定表头的行(`recipientsFromRows`)、`{name}`/`{from}` 套用、信封行、按字宽单位分页(约一页,超长硬切) |
 | `xlsxTable.ts` | 手写信名单的最小 xlsx 读写:模板下载与导入。邮编列标成文本;数字格读回时没有前导 0 |
 
 引擎与 UI 解耦,改渲染算法只需动这里并跑 `npm run test`。

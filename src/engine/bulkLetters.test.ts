@@ -1,12 +1,14 @@
 import { describe, expect, it } from "vitest";
 import {
   BULK_LETTER_CAP,
+  blankRecipient,
   fillLetter,
   fromLine,
   letterBody,
   paginateLetter,
   parseRecipientCsv,
   recipientLines,
+  recipientsFromRows,
   recipientSeed,
 } from "./bulkLetters";
 
@@ -62,6 +64,26 @@ describe("fillLetter", () => {
       "Sam",
       "1 Main",
       "Austin, TX 78701",
+    ]);
+  });
+});
+
+describe("recipientsFromRows", () => {
+  it("ignores blank rows, skips a street with no name, and caps the list", () => {
+    const extra = Array.from({ length: BULK_LETTER_CAP + 1 }, (_, i) => ({
+      ...blankRecipient(),
+      name: `Person ${i}`,
+    }));
+    const parsed = recipientsFromRows([
+      blankRecipient(),
+      { ...blankRecipient(), street: "1 Main" },
+      ...extra,
+    ]);
+    expect(parsed.recipients).toHaveLength(BULK_LETTER_CAP);
+    expect(parsed.recipients[0].name).toBe("Person 0");
+    expect(parsed.issues).toEqual([
+      { code: "skipped", count: 1 },
+      { code: "truncated", count: BULK_LETTER_CAP },
     ]);
   });
 });

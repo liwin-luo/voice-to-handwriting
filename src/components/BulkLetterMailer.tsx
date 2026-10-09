@@ -7,10 +7,13 @@ import { jsPDF } from "jspdf";
 import { charJitter } from "@/engine/jitter";
 import { tokenize } from "@/engine/tokens";
 import {
+  BULK_LETTER_CAP,
   LETTER_KINDS,
+  blankRecipient,
   letterBody,
   paginateLetter,
   parseRecipientCsv,
+  recipientsFromRows,
   tableToCsv,
   recipientLines,
   recipientSeed,
@@ -20,13 +23,18 @@ import {
   type ParseIssue,
   type Recipient,
 } from "@/engine/bulkLetters";
+import { getPaper } from "@/engine/paper";
 import { waitForFontFace } from "@/lib/fontFace";
-import { defaultFontId, defaultPageFormat, PAGE_FORMATS } from "@/lib/localeDefaults";
-import { FONTS } from "@/stores/useEditorStore";
+import { fileToPaperImage } from "@/lib/paperImage";
+import { defaultFontId, defaultPageFormat, fontOrder, PAGE_FORMATS } from "@/lib/localeDefaults";
+import { FONTS, type FontId } from "@/stores/useEditorStore";
 import { buildLetterTemplate, readXlsxRows } from "@/engine/xlsxTable";
+import ColorSwatch from "./ColorSwatch";
 
-const INK = "#1a1a1a";
 const RULE = 40;
+const COLS = ["name", "street", "city", "region", "postal", "message"] as const;
+const LETTER_PAPERS = ["cream", "blank", "ruled", "festive"] as const;
+type LetterPaper = (typeof LETTER_PAPERS)[number];
 const LETTER_BG = "linear-gradient(to right, transparent 0 46px, #e3b3b8 46px 48px, transparent 48px), #fffdf8";
 const ENVELOPE_BG = "#fffdf8";
 /** #10 信封 9.5×4.125 in；DL 信封 220×110 mm。均按 96dpi。 */
@@ -48,22 +56,30 @@ function withRafFallback<T>(fn: () => Promise<T>): Promise<T> {
   });
 }
 
+function letterPaperBackground(id: LetterPaper): string {
+  if (id === "cream") return LETTER_BG;
+  if (id === "blank") return "#ffffff";
+  return getPaper(id).background;
+}
+
 function JitterText({
   text,
   seed,
   fontCss,
   fontSize,
   intensity,
+  color,
 }: {
   text: string;
   seed: number;
   fontCss: string;
   fontSize: number;
   intensity: number;
+  color: string;
 }) {
   const tokens = useMemo(() => tokenize(text), [text]);
   return (
-    <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", fontFamily: fontCss, fontSize, color: INK, lineHeight: `${RULE}px` }}>
+    <div style={{ whiteSpace: "pre-wrap", wordBreak: "break-word", fontFamily: fontCss, fontSize, color, lineHeight: `${RULE}px` }}>
       {tokens.map((tok, i) => {
         if (tok.kind === "newline") return <br key={i} />;
         const j = charJitter(i, seed, intensity);
@@ -109,6 +125,9 @@ function LetterFace({
   text,
   seed,
   fontCss,
+  ink,
+  background,
+  image,
   w,
   h,
   capture,
@@ -116,6 +135,9 @@ function LetterFace({
   text: string;
   seed: number;
   fontCss: string;
+  ink: string;
+  background: string;
+  image: string | null;
   w: number;
   h: number;
   capture?: boolean;
@@ -124,10 +146,14 @@ function LetterFace({
     <div
       data-sheet={capture ? "letter" : undefined}
       className={capture ? undefined : "shadow-paper relative overflow-hidden rounded-xl"}
-      style={{ width: w, height: h, background: LETTER_BG, position: "relative", overflow: "hidden" }}
+      style={{ width: w, height: h, background, position: "relative", overflow: "hidden" }}
     >
-      <div style={{ padding: "56px 64px" }}>
-        <JitterText text={text} seed={seed} fontCss={fontCss} fontSize={22} intensity={0.5} />
+      {image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={image} alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      ) : null}
+      <div style={{ position: "relative", zIndex: 1, padding: "56px 64px" }}>
+        <JitterText text={text} seed={seed} fontCss={fontCss} fontSize={22} intensity={0.5} color={ink} />
       </div>
     </div>
   );
@@ -138,6 +164,7 @@ function EnvelopeFace({
   to,
   seed,
   fontCss,
+  ink,
   w,
   h,
   capture,
@@ -146,6 +173,7 @@ function EnvelopeFace({
   to: string[];
   seed: number;
   fontCss: string;
+  ink: string;
   w: number;
   h: number;
   capture?: boolean;
@@ -156,11 +184,12 @@ function EnvelopeFace({
       className={capture ? undefined : "shadow-paper relative overflow-hidden rounded-xl"}
       style={{ width: w, height: h, background: ENVELOPE_BG, position: "relative", overflow: "hidden" }}
     >
-      <div style={{ position: "absolute", top: 28, left: 36, maxWidth: "46%" }}>
-        <JitterText text={back.join("\n")} seed={seed} fontCss={fontCss} fontSize={16} intensity={0.28} />
+      {/* 96dpi 下 48px = 0.5in。家用打印机靠边约 0.25–0.5in 印不出来。 */}
+      <div style={{ position: "absolute", top: 48, left: 48, maxWidth: "46%" }}>
+        <JitterText text={back.join("\n")} seed={seed} fontCss={fontCss} fontSize={16} intensity={0.28} color={ink} />
       </div>
-      <div style={{ position: "absolute", top: "42%", left: "42%", maxWidth: "52%" }}>
-        <JitterText text={to.join("\n")} seed={seed + 1} fontCss={fontCss} fontSize={24} intensity={0.28} />
+      <div style={{ position: "absolute", top: "42%", left: "42%", maxWidth: "50%" }}>
+        <JitterText text={to.join("\n")} seed={seed + 1} fontCss={fontCss} fontSize={24} intensity={0.28} color={ink} />
       </div>
     </div>
   );
@@ -168,29 +197,49 @@ function EnvelopeFace({
 
 export default function BulkLetterMailer() {
   const t = useTranslations("bulkLetters");
+  const tool = useTranslations("tool");
   const locale = useLocale();
   const format = defaultPageFormat(locale);
   const letterSize = PAGE_FORMATS[format];
   const envelopeSize = ENVELOPE[format];
-  const font = FONTS.find((item) => item.id === defaultFontId(locale)) ?? FONTS[0];
+  const [fontId, setFontId] = useState<FontId>(defaultFontId(locale));
+  const font = FONTS.find((item) => item.id === fontId) ?? FONTS[0];
+  const [ink, setInk] = useState("#1a1a1a");
+  const [paperId, setPaperId] = useState<LetterPaper>("cream");
+  const [paperImage, setPaperImage] = useState<string | null>(null);
+  const [paperError, setPaperError] = useState(false);
   const [kind, setKind] = useState<LetterKind>("thanks");
   const [draft, setDraft] = useState<string | null>(null);
-  const [csv, setCsv] = useState("");
+  const [rows, setRows] = useState<Recipient[]>([blankRecipient()]);
+  const [fileIssues, setFileIssues] = useState<ParseIssue[]>([]);
   const [returnAddress, setReturnAddress] = useState("");
   const [cursor, setCursor] = useState(0);
   const [job, setJob] = useState<"letters" | "envelopes" | null>(null);
   const [exportError, setExportError] = useState(false);
   const [importError, setImportError] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const imageRef = useRef<HTMLInputElement>(null);
   const exportRef = useRef<HTMLDivElement>(null);
 
-  const parsed = useMemo(() => parseRecipientCsv(csv), [csv]);
-  const recipients = parsed.recipients;
+  const live = useMemo(() => recipientsFromRows(rows), [rows]);
+  const recipients = live.recipients;
+  const issues = fileIssues.length ? fileIssues : live.issues;
   const index = recipients.length === 0 ? 0 : Math.min(cursor, recipients.length - 1);
   const current = recipients[index];
   const sender = fromLine(returnAddress);
   const body = draft ?? t(`body.${kind}`);
+  const background = letterPaperBackground(paperId);
   const pagesFor = (person: Recipient) => paginateLetter(letterBody(person, body, sender));
+  const fontChoices = fontOrder(locale).flatMap((id) => {
+    const item = FONTS.find((fontItem) => fontItem.id === id);
+    return item ? [item] : [];
+  });
+
+  const setCell = (rowIndex: number, key: (typeof COLS)[number], value: string) => {
+    setRows((currentRows) => currentRows.map((row, i) => (i === rowIndex ? { ...row, [key]: value } : row)));
+    setFileIssues([]);
+    setCursor(0);
+  };
 
   const onImport = async (file: File) => {
     try {
@@ -205,7 +254,14 @@ export default function BulkLetterMailer() {
         setImportError(true);
         return;
       }
-      setCsv(text.replace(/^\uFEFF/, ""));
+      const parsed = parseRecipientCsv(text.replace(/^\uFEFF/, ""));
+      if (parsed.issues.some((issue) => issue.code === "badHeader")) {
+        setFileIssues(parsed.issues);
+        setImportError(false);
+        return;
+      }
+      setRows(parsed.recipients.length ? parsed.recipients : [blankRecipient()]);
+      setFileIssues(parsed.issues);
       setCursor(0);
       setImportError(false);
     } catch {
@@ -238,6 +294,18 @@ export default function BulkLetterMailer() {
         await document.fonts.load(`22px "${family}"`).catch(() => undefined);
         await new Promise((resolve) => setTimeout(resolve, 32));
         if (cancelled) return;
+        await Promise.all(
+          [...root.querySelectorAll("img")].map(
+            (img) =>
+              img.complete
+                ? Promise.resolve()
+                : new Promise<void>((resolve) => {
+                    img.onload = () => resolve();
+                    img.onerror = () => resolve();
+                  }),
+          ),
+        );
+        if (cancelled) return;
         const nodes = [...root.querySelectorAll<HTMLElement>("[data-sheet]")];
         if (nodes.length === 0) return;
         const orient = size.w > size.h ? "landscape" : "portrait";
@@ -269,7 +337,7 @@ export default function BulkLetterMailer() {
   };
 
   return (
-    <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,22rem)_minmax(0,1fr)]">
+    <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,40rem)_minmax(0,1fr)]">
       <div className="flex flex-col gap-4 lg:sticky lg:top-4">
         <div className="flex flex-col gap-1.5">
           <span className="field-label">{t("kindLabel")}</span>
@@ -314,23 +382,87 @@ export default function BulkLetterMailer() {
               <button type="button" onClick={() => fileRef.current?.click()} className="cursor-pointer text-xs text-accent">
                 {t("importExcel")}
               </button>
-              <button type="button" onClick={() => setCsv(t("sampleCsv"))} className="cursor-pointer text-xs text-accent">
+              <button
+                type="button"
+                onClick={() => {
+                  const parsed = parseRecipientCsv(t("sampleCsv"));
+                  setRows(parsed.recipients.length ? parsed.recipients : [blankRecipient()]);
+                  setFileIssues([]);
+                  setCursor(0);
+                  setImportError(false);
+                }}
+                className="cursor-pointer text-xs text-accent"
+              >
                 {t("useSample")}
               </button>
             </span>
           </span>
-          <textarea
-            value={csv}
-            onChange={(e) => {
-              setCsv(e.target.value);
-              setCursor(0);
-            }}
-            rows={8}
-            aria-label={t("listLabel")}
-            placeholder={t("listPlaceholder")}
-            spellCheck={false}
-            className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 font-mono text-xs leading-relaxed"
-          />
+          <div className="max-h-64 overflow-auto rounded-xl border border-zinc-200">
+            <table className="w-full table-fixed border-collapse text-left text-xs">
+              <colgroup>
+                <col style={{ width: "18%" }} />
+                <col style={{ width: "24%" }} />
+                <col style={{ width: "16%" }} />
+                <col style={{ width: "10%" }} />
+                <col style={{ width: "14%" }} />
+                <col style={{ width: "14%" }} />
+                <col style={{ width: "4%" }} />
+              </colgroup>
+              <thead className="sticky top-0 z-10 bg-zinc-50 text-zinc-600">
+                <tr>
+                  {COLS.map((col) => (
+                    <th key={col} scope="col" className="px-2 py-1.5 font-medium">
+                      {t(`col.${col}`)}
+                    </th>
+                  ))}
+                  <th scope="col" className="w-8">
+                    <span className="sr-only">{t("removeRow")}</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row, rowIndex) => (
+                  <tr key={rowIndex} className="border-t border-zinc-100">
+                    {COLS.map((col) => (
+                      <td key={col} className="p-1">
+                        <input
+                          value={row[col]}
+                          aria-label={`${t(`col.${col}`)} ${rowIndex + 1}`}
+                          onChange={(e) => setCell(rowIndex, col, e.target.value)}
+                          spellCheck={false}
+                          className="w-full min-w-0 rounded-md border border-zinc-200 bg-white px-1.5 py-1"
+                        />
+                      </td>
+                    ))}
+                    <td className="p-1">
+                      <button
+                        type="button"
+                        aria-label={`${t("removeRow")} ${rowIndex + 1}`}
+                        onClick={() => {
+                          setRows((currentRows) =>
+                            currentRows.length === 1 ? [blankRecipient()] : currentRows.filter((_, i) => i !== rowIndex),
+                          );
+                          setFileIssues([]);
+                          setCursor(0);
+                        }}
+                        className="cursor-pointer px-1 text-zinc-400 hover:text-zinc-700"
+                      >
+                        ×
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <button
+            type="button"
+            disabled={rows.length >= BULK_LETTER_CAP}
+            onClick={() => setRows((currentRows) => [...currentRows, blankRecipient()])}
+            className="cursor-pointer self-start text-xs text-accent disabled:opacity-40"
+          >
+            {t("addRow")}
+          </button>
           <span className="text-xs leading-relaxed text-zinc-500">{t("listHint")}</span>
           <input
             ref={fileRef}
@@ -358,12 +490,79 @@ export default function BulkLetterMailer() {
           <span className="text-xs leading-relaxed text-zinc-500">{t("returnHint")}</span>
         </label>
 
-        {parsed.issues.map((issue, i) => (
+        <div className="flex flex-col gap-1.5">
+          <span className="field-label">{tool("font")}</span>
+          <select value={fontId} onChange={(e) => setFontId(e.target.value as FontId)} className="select-field" aria-label={tool("font")}>
+            {fontChoices.map((item) => (
+              <option key={item.id} value={item.id}>
+                {tool(`fonts.${item.id}`)}
+              </option>
+            ))}
+          </select>
+        </div>
+        <ColorSwatch label={tool("ink")} value={ink} onChange={setInk} />
+        <div className="flex flex-col gap-1.5">
+          <span className="field-label">{tool("paper")}</span>
+          <div className="flex flex-wrap gap-1.5">
+            {LETTER_PAPERS.map((id) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setPaperId(id)}
+                className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs ${
+                  paperId === id ? "border-accent bg-accent/5 text-accent" : "border-zinc-200 bg-white text-zinc-600"
+                }`}
+              >
+                {id === "cream" ? t("paperCream") : tool(`papers.${id}`)}
+              </button>
+            ))}
+          </div>
+          <span className="flex flex-wrap items-center gap-2">
+            <button type="button" onClick={() => imageRef.current?.click()} className="cursor-pointer text-xs text-accent">
+              {tool("paperCustom.upload")}
+            </button>
+            {paperImage ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setPaperImage(null);
+                  setPaperError(false);
+                }}
+                className="cursor-pointer text-xs text-zinc-500"
+              >
+                {tool("paperCustom.removeImage")}
+              </button>
+            ) : null}
+          </span>
+          <input
+            ref={imageRef}
+            type="file"
+            accept="image/*"
+            aria-label={tool("paperCustom.upload")}
+            className="sr-only"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              e.target.value = "";
+              if (!file) return;
+              void fileToPaperImage(file).then(
+                (url) => {
+                  setPaperImage(url);
+                  setPaperError(false);
+                },
+                () => setPaperError(true),
+              );
+            }}
+          />
+          <span className="text-xs leading-relaxed text-zinc-500">{t("paperHint")}</span>
+        </div>
+
+        {issues.map((issue, i) => (
           <p key={i} className="text-xs leading-relaxed text-zinc-600">
             {issueText(issue)}
           </p>
         ))}
         {importError && <p className="text-xs leading-relaxed text-zinc-600">{t("importFailed")}</p>}
+        {paperError && <p className="text-xs leading-relaxed text-zinc-600">{t("paperFailed")}</p>}
         {exportError && <p className="text-xs text-zinc-600">{t("exportFailed")}</p>}
 
         <div className="flex flex-col gap-2">
@@ -406,7 +605,16 @@ export default function BulkLetterMailer() {
             </div>
             {pagesFor(current).map((page, i) => (
               <Scaled key={i} w={letterSize.w} h={letterSize.h}>
-                <LetterFace text={page} seed={recipientSeed(current.name)} fontCss={font.css} w={letterSize.w} h={letterSize.h} />
+                <LetterFace
+                  text={page}
+                  seed={recipientSeed(current.name)}
+                  fontCss={font.css}
+                  ink={ink}
+                  background={background}
+                  image={paperImage}
+                  w={letterSize.w}
+                  h={letterSize.h}
+                />
               </Scaled>
             ))}
             <Scaled w={envelopeSize.w} h={envelopeSize.h}>
@@ -415,6 +623,7 @@ export default function BulkLetterMailer() {
                 to={recipientLines(current)}
                 seed={recipientSeed(current.name)}
                 fontCss={font.css}
+                ink={ink}
                 w={envelopeSize.w}
                 h={envelopeSize.h}
               />
@@ -436,6 +645,9 @@ export default function BulkLetterMailer() {
                     text={page}
                     seed={recipientSeed(person.name)}
                     fontCss={font.css}
+                    ink={ink}
+                    background={background}
+                    image={paperImage}
                     w={letterSize.w}
                     h={letterSize.h}
                   />
@@ -449,6 +661,7 @@ export default function BulkLetterMailer() {
                   to={recipientLines(person)}
                   seed={recipientSeed(person.name)}
                   fontCss={font.css}
+                  ink={ink}
                   w={envelopeSize.w}
                   h={envelopeSize.h}
                 />

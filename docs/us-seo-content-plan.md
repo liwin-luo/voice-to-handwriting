@@ -249,6 +249,6 @@
 ## 十七、可打印手写信(2026-10-09)
 
 - **落地**:`/printable-handwritten-letters`,8 语言。主词 printable handwritten letters。次词 handwritten envelope template、mail merge handwritten note。和 `/templates/thank-you-letter`(what to write in a thank you note,文案角度)分开:这一页是名单套名后自己打印的信件和信封。
-- **形态**:五类短笺(会后感谢、转介绍、新客、重新联系、通知),正文可改,`{name}` / `{from}` 套用。名单可粘贴 CSV,或下载 Excel 模板再导入(.xlsx / .csv),最多 30 人,可选 message 列换全文。下载两份 PDF。英文 US Letter + #10 信封,其余语言 A4 + DL。页头下拉「写字与生成」里有入口。
+- **形态**:五类短笺(会后感谢、转介绍、新客、重新联系、通知),正文可改,`{name}` / `{from}` 套用。名单表头固定,在格子里填,或下载 Excel 模板再导入(.xlsx / .csv),最多 30 人,可选附言列换全文。字体、墨色、纸样可选,信纸可导入图片。下载两份 PDF。英文 US Letter + #10 信封(按实际尺寸打印),其余语言 A4 + DL。页头下拉「写字与生成」里有入口。
 - **红线**:写明是手写字体,不是钢笔;本站不打印、不贴邮票、不寄出。不接真人代写、USPS 校验、CRM 或 API。
 - **配套文章**:`print-handwritten-letters-and-envelopes`(en,Theo Lindgren,2026-10-09)。场景:一周打完几通介绍电话,给每人印一封短笺和一只写好地址的信封,自己贴邮票寄出。用例是三人名单加回信地址,四张实拍。不抢工具主词 printable handwritten letters,也不抢 thank-you 文案文。

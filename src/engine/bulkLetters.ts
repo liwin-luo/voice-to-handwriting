@@ -199,6 +199,31 @@ export function parseCsv(text: string): string[][] {
   return rows;
 }
 
+/** 页面上的固定表头。空行忽略；有别的格子但没有名字的行跳过；超过上限只留前面的人。 */
+export function recipientsFromRows(rows: Recipient[]): { recipients: Recipient[]; issues: ParseIssue[] } {
+  const touched = rows.filter((row) => REQUIRED.some((key) => row[key].trim()) || row.message.trim());
+  const named = touched.filter((row) => row.name.trim());
+  const issues: ParseIssue[] = [];
+  const skipped = touched.length - named.length;
+  if (skipped) issues.push({ code: "skipped", count: skipped });
+  if (named.length > BULK_LETTER_CAP) issues.push({ code: "truncated", count: BULK_LETTER_CAP });
+  return {
+    recipients: named.slice(0, BULK_LETTER_CAP).map((row) => ({
+      name: row.name.trim(),
+      street: row.street.trim(),
+      city: row.city.trim(),
+      region: row.region.trim(),
+      postal: row.postal.trim(),
+      message: row.message.trim(),
+    })),
+    issues,
+  };
+}
+
+export function blankRecipient(): Recipient {
+  return { name: "", street: "", city: "", region: "", postal: "", message: "" };
+}
+
 function isCjk(code: number): boolean {
   return (
     (code >= 0x3400 && code <= 0x9fff) ||
