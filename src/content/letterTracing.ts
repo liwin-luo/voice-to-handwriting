@@ -314,8 +314,8 @@ export function letterFaqs(letter: PrintLetter): { q: string; a: string }[] {
     { q: `Where do I start a lowercase ${letter.slug}?`, a: letter.start },
     { q: `How is ${letter.slug} different from the letter it gets mixed up with?`, a: letter.watch },
     {
-      q: "Are these numbered stroke arrows?",
-      a: "No. The trace rows are dashed outlines of the finished letter, and the steps above say where the pencil starts. This font does not include a separate path for each stroke, so the page does not draw arrows it cannot stand behind.",
+      q: `Which words use a lowercase ${letter.slug}?`,
+      a: `Start with ${letter.words.join(", ")}. Each word uses ${letter.slug} in a different spot, so the letter is not only practiced at the start of the word.`,
     },
   ];
 }

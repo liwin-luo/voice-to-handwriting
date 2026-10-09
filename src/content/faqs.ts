@@ -3,6 +3,8 @@ import type { Locale } from "@/i18n/routing";
 export interface FaqEntry {
   q: string;
   a: string;
+  /** 答案后的一条站内链接。href 不带语言前缀。 */
+  link?: { href: string; label: string };
 }
 
 export interface FaqItem {
@@ -16,9 +18,11 @@ export function getFaq(faq: FaqItem, locale: Locale): FaqEntry {
 }
 
 /** 工具页 FAQ:仅返回当前语言有翻译的条目(避免英文 FAQ 出现在其他语言页面),
- *  新语言翻译补齐后自动出现 */
+ *  新语言翻译补齐后自动出现。第一条若是「免费吗」(`id` 以 `-free` 结尾),挪到末尾,
+ *  这样默认展开的是搜索问法。 */
 export function getLocalizedFaqs(faqs: FaqItem[], locale: Locale): FaqEntry[] {
-  return faqs.filter((f) => f.i18n[locale]).map((f) => f.i18n[locale]!);
+  const ordered = faqs[0]?.id.endsWith("-free") ? [...faqs.slice(1), faqs[0]!] : faqs;
+  return ordered.filter((f) => f.i18n[locale]).map((f) => f.i18n[locale]!);
 }
 
 /** /cursive 工具页 FAQ(8 语言) */
@@ -138,36 +142,44 @@ export const CURSIVE_FAQS: FaqItem[] = [
     id: "cursive-name",
     i18n: {
       en: {
-        q: "Can I see my own name in cursive?",
-        a: "Type your name in the text box and it renders instantly — handy for signature ideas or for comparing both fonts before you practice.",
+        q: "How do I write my name in cursive?",
+        a: "Type the name here to compare Cedarville Cursive and Dancing Script. To print a dotted practice sheet of that name, use the name tracing worksheets.",
+        link: { href: "/name-tracing", label: "Name tracing worksheets" },
       },
       zh: {
-        q: "能看到自己名字的花体效果吗?",
-        a: "在文本框输入名字即可实时预览——想设计签名或对比两种字体时很方便。",
+        q: "自己的名字怎么写成花体?",
+        a: "在这里输入名字,对比 Cedarville Cursive 和 Dancing Script。要打印这个名字的虚线描红纸,用姓名描红。",
+        link: { href: "/name-tracing", label: "姓名描红" },
       },
       ja: {
-        q: "自分の名前を筆記体で見ることはできますか?",
-        a: "テキストボックスに名前を入力するとすぐに表示されます。サインのアイデアや、練習前のフォント比較に便利です。",
+        q: "自分の名前を筆記体で書くには?",
+        a: "ここに名前を入れると、Cedarville Cursive と Dancing Script を比べられます。その名前の点線なぞり紙を印刷するなら、名前のなぞり書きへ。",
+        link: { href: "/name-tracing", label: "名前のなぞり書き" },
       },
       ko: {
-        q: "제 이름을 필기체로 볼 수 있나요?",
-        a: "텍스트 상자에 이름을 입력하면 바로 표시됩니다 — 서명 아이디어를 얻거나 연습 전 두 글꼴을 비교할 때 유용해요.",
+        q: "내 이름을 필기체로 쓰려면?",
+        a: "여기에 이름을 넣으면 Cedarville Cursive와 Dancing Script를 비교할 수 있어요. 그 이름의 점선 연습지를 인쇄하려면 이름 따라쓰기를 쓰세요.",
+        link: { href: "/name-tracing", label: "이름 따라쓰기" },
       },
       es: {
-        q: "¿Puedo ver mi nombre en cursiva?",
-        a: "Escribe tu nombre en el cuadro de texto y aparece al instante — útil para ideas de firma o para comparar las dos fuentes antes de practicar.",
+        q: "¿Cómo escribo mi nombre en cursiva?",
+        a: "Escribe el nombre aquí para comparar Cedarville Cursive y Dancing Script. Para imprimir una ficha punteada de ese nombre, usa las fichas para calcar el nombre.",
+        link: { href: "/name-tracing", label: "Fichas para calcar el nombre" },
       },
       de: {
-        q: "Kann ich meinen eigenen Namen in Schreibschrift sehen?",
-        a: "Tippe deinen Namen ins Textfeld — er erscheint sofort. Praktisch für Unterschrift-Ideen oder um beide Schriften vor dem Üben zu vergleichen.",
+        q: "Wie schreibe ich meinen Namen in Schreibschrift?",
+        a: "Tippe den Namen hier ein, um Cedarville Cursive und Dancing Script zu vergleichen. Ein gepunktetes Übungsblatt dieses Namens gibt es bei den Namens-Nachspurblättern.",
+        link: { href: "/name-tracing", label: "Namens-Nachspurblätter" },
       },
       fr: {
-        q: "Puis-je voir mon prénom en cursive ?",
-        a: "Tapez votre prénom dans le champ de texte : il s'affiche instantanément — pratique pour des idées de signature ou pour comparer les deux polices avant de vous entraîner.",
+        q: "Comment écrire mon prénom en cursive ?",
+        a: "Tapez le prénom ici pour comparer Cedarville Cursive et Dancing Script. Pour imprimer une fiche pointillée de ce prénom, ouvrez les fiches pour tracer le prénom.",
+        link: { href: "/name-tracing", label: "Fiches pour tracer le prénom" },
       },
       pt: {
-        q: "Posso ver o meu nome em cursiva?",
-        a: "Digite o nome na caixa de texto e ele aparece na hora — útil para ideias de assinatura ou para comparar as duas fontes antes de praticar.",
+        q: "Como escrevo o meu nome em cursiva?",
+        a: "Digite o nome aqui para comparar Cedarville Cursive e Dancing Script. Para imprimir uma ficha pontilhada desse nome, use as fichas para calcar o nome.",
+        link: { href: "/name-tracing", label: "Fichas para calcar o nome" },
       },
     },
   },
@@ -253,36 +265,36 @@ export const TRACING_FAQS: FaqItem[] = [
     id: "tracing-dotted",
     i18n: {
       en: {
-        q: "What do the tracing rows look like?",
-        a: "Three styles. Dotted rows are dashed outlines. Outline rows are a faint copy of the letter. Blank lines have no letters and no start dots. None of them use numbered stroke arrows.",
+        q: "Does this make dotted name tracing lines?",
+        a: "Yes. Dotted rows are dashed outlines of the whole letter, not numbered stroke arrows. Outline rows are a faint copy of the letter. Blank lines have no letters and no start dots.",
       },
       zh: {
-        q: "描红行长什么样?",
-        a: "三种。虚线是整字的虚线轮廓。空心是浅色的字,可以照着描。只留横线没有字母,也没有落笔点。三种都没有编号笔顺箭头。",
+        q: "能生成虚线姓名描红吗?",
+        a: "可以。虚线行是整字的虚线轮廓,不是编号笔顺箭头。空心行是浅色的字。只留横线则没有字母,也没有落笔点。",
       },
       ja: {
-        q: "なぞり行はどんな見た目ですか?",
-        a: "3種類です。点線は文字全体の破線、輪郭は薄い文字、罫線のみは文字も始点もありません。番号付きの筆順矢印はありません。",
+        q: "点線の名前なぞりは作れますか?",
+        a: "はい。点線は文字全体の破線で、番号付きの筆順矢印ではありません。輪郭は薄い文字です。罫線のみは文字も始点もありません。",
       },
       ko: {
-        q: "따라쓰기 행은 어떻게 보이나요?",
-        a: "세 가지입니다. 점선은 글자 전체의 파선이고, 윤곽은 옅은 글자이며, 줄만에는 글자도 시작점도 없습니다. 번호가 있는 획순 화살표는 없습니다.",
+        q: "점선 이름 따라쓰기가 되나요?",
+        a: "네. 점선은 글자 전체의 파선이고, 번호가 있는 획순 화살표는 아닙니다. 윤곽은 옅은 글자입니다. 줄만 있으면 글자도 시작점도 없습니다.",
       },
       es: {
-        q: "¿Cómo se ven las filas para calcar?",
-        a: "Hay tres estilos. Punteado es el contorno discontinuo. Contorno es una copia tenue de la letra. Solo líneas no lleva letras ni punto de inicio. Ninguno usa flechas de trazo numeradas.",
+        q: "¿Hace líneas punteadas para calcar el nombre?",
+        a: "Sí. El punteado es el contorno discontinuo de la letra entera, no flechas de trazo numeradas. El contorno es una copia tenue. Solo líneas no lleva letras ni punto de inicio.",
       },
       de: {
-        q: "Wie sehen die Nachspurzeilen aus?",
-        a: "Drei Varianten. Gepunktet ist der gestrichelte Umriss. Umriss ist eine blasse Kopie des Buchstabens. Nur Linien haben weder Buchstaben noch Startpunkt. Nummerierte Strichpfeile gibt es in keiner Variante.",
+        q: "Gibt es gepunktete Linien zum Namen nachspuren?",
+        a: "Ja. Gepunktet ist der gestrichelte Umriss des ganzen Buchstabens, keine nummerierten Strichpfeile. Umriss ist eine blasse Kopie. Nur Linien haben weder Buchstaben noch Startpunkt.",
       },
       fr: {
-        q: "À quoi ressemblent les lignes à repasser ?",
-        a: "Trois styles. Pointillé : le contour en tirets. Contour : une copie pâle de la lettre. Lignes vides : ni lettre ni point de départ. Aucun style n'utilise de flèches de tracé numérotées.",
+        q: "Est-ce que ça fait des lignes pointillées pour tracer le prénom ?",
+        a: "Oui. Le pointillé est le contour en tirets de la lettre entière, pas des flèches de tracé numérotées. Le contour est une copie pâle. Les lignes vides n'ont ni lettre ni point de départ.",
       },
       pt: {
-        q: "Como são as linhas para calcar?",
-        a: "Três estilos. Pontilhado é o contorno tracejado. Contorno é uma cópia clara da letra. Só as linhas não têm letras nem ponto de partida. Nenhum usa setas de traço numeradas.",
+        q: "Isto faz linhas pontilhadas para calcar o nome?",
+        a: "Sim. O pontilhado é o contorno tracejado da letra inteira, não setas de traço numeradas. O contorno é uma cópia clara. Só as linhas não têm letras nem ponto de partida.",
       },
     },
   },
@@ -443,35 +455,43 @@ export const PAPER_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "What's the difference between college ruled and wide ruled?",
-        a: "College ruled lines are narrower (about 7mm), wide ruled wider (about 8.7mm). Younger writers usually get wide ruled; the spacing slider covers both and everything in between.",
+        a: "College ruled lines are 9/32 inch apart (7.1 mm). Wide ruled lines are 11/32 inch apart (8.7 mm), the usual choice through second grade. Kindergarten handwriting paper is a different sheet: a top line, a dashed midline, and a baseline, not a wider gap. The spacing slider on this page covers college ruled, wide ruled, and the sizes in between.",
+        link: { href: "/printable-paper/kindergarten", label: "Kindergarten handwriting paper" },
       },
       zh: {
-        q: "College ruled 和 wide ruled 有什么区别?",
-        a: "College ruled 行距较窄(约 7mm),wide ruled 较宽(约 8.7mm)。低年级一般用宽行距;行距滑杆可以覆盖两种及之间的任意规格。",
+        q: "窄行和宽行横线有什么区别?",
+        a: "窄行(college ruled)行距 7.1 毫米(9/32 英寸)。宽行(wide ruled)行距 8.7 毫米(11/32 英寸),大约用到二年级。幼儿园三线格是另一张纸:顶线、虚中线和基线,不是把行距再加宽。本页的行距滑杆覆盖窄行、宽行以及两者之间。",
+        link: { href: "/printable-paper/kindergarten", label: "幼儿园三线格" },
       },
       ja: {
-        q: "college ruled と wide ruled の違いは?",
-        a: "college ruled は行間が狭め(約 7mm)、wide ruled は広め(約 8.7mm)です。低学年には wide ruled が一般的。行間スライダーで両方や中間の値も調整できます。",
+        q: "細罫と広罫の違いは?",
+        a: "細罫(college ruled)の行間は 7.1mm(9/32 インチ)。広罫(wide ruled)は 8.7mm(11/32 インチ)で、小2くらいまでよく使います。幼稚園の3本線は別の用紙です。上線、破線の中線、基線があり、行間を広げたものではありません。このページのスライダーは細罫、広罫、その中間をカバーします。",
+        link: { href: "/printable-paper/kindergarten", label: "幼稚園の3本線" },
       },
       ko: {
-        q: "college ruled와 wide ruled의 차이는 무엇인가요?",
-        a: "college ruled는 줄 간격이 좁고(약 7mm) wide ruled는 넓습니다(약 8.7mm). 어린아이에게는 보통 wide ruled를 써요. 간격 슬라이더로 두 스타일과 그 사이 모두 조절할 수 있습니다.",
+        q: "좁은 줄과 넓은 줄의 차이는?",
+        a: "좁은 줄(college ruled) 간격은 7.1mm(9/32인치)입니다. 넓은 줄(wide ruled)은 8.7mm(11/32인치)이고, 2학년 무렵까지 많이 씁니다. 유치원 3선 노트는 다른 종이입니다. 윗줄, 파선 가운데줄, 기준선이지, 간격을 더 넓힌 줄이 아닙니다. 이 페이지의 간격 슬라이더는 좁은 줄, 넓은 줄, 그 사이를 덮습니다.",
+        link: { href: "/printable-paper/kindergarten", label: "유치원 3선 노트" },
       },
       es: {
-        q: "¿Qué diferencia hay entre college ruled y wide ruled?",
-        a: "Las líneas college ruled son más estrechas (unos 7 mm) y las wide ruled más anchas (unos 8,7 mm). Los más pequeños suelen usar wide ruled; el control de espaciado cubre ambas y todo lo intermedio.",
+        q: "¿Qué diferencia hay entre la pauta estrecha y la ancha?",
+        a: "La pauta estrecha (college ruled) separa las líneas 7,1 mm (9/32 pulgada). La ancha (wide ruled) las separa 8,7 mm (11/32 pulgada) y se usa hasta segundo. El papel de infantil es otra hoja: línea superior, línea media discontinua y base, no un hueco más ancho. El control de esta página cubre la estrecha, la ancha y lo que hay en medio.",
+        link: { href: "/printable-paper/kindergarten", label: "Papel de caligrafía infantil" },
       },
       de: {
-        q: "Was ist der Unterschied zwischen College Ruled und Wide Ruled?",
-        a: "College-Ruled-Linien sind enger (ca. 7 mm), Wide Ruled weiter (ca. 8,7 mm). Jüngere Schreiber nehmen meist Wide Ruled; der Zeilenabstands-Regler deckt beides und alles dazwischen ab.",
+        q: "Was ist der Unterschied zwischen enger und weiter Lineatur?",
+        a: "Eng liniert (College Ruled) hat 7,1 mm Abstand (9/32 Zoll). Weit liniert (Wide Ruled) hat 8,7 mm (11/32 Zoll) und ist etwa bis zur 2. Klasse üblich. Das Kindergartenpapier ist ein anderes Blatt: Oberlinie, gestrichelte Mitte und Grundlinie, nicht einfach ein größerer Abstand. Der Regler auf dieser Seite deckt eng, weit und alles dazwischen ab.",
+        link: { href: "/printable-paper/kindergarten", label: "Schreibpapier mit drei Linien" },
       },
       fr: {
-        q: "Quelle différence entre college ruled et wide ruled ?",
-        a: "Les lignes college ruled sont plus serrées (environ 7 mm), les wide ruled plus larges (environ 8,7 mm). Les plus jeunes utilisent plutôt du wide ruled ; le curseur d'espacement couvre les deux et tous les intermédiaires.",
+        q: "Quelle différence entre l'interligne étroit et le large ?",
+        a: "L'interligne étroit (college ruled) espace les lignes de 7,1 mm (9/32 pouce). Le large (wide ruled) les espace de 8,7 mm (11/32 pouce) et sert à peu près jusqu'au CE1. Le papier de maternelle est une autre feuille : ligne haute, médiane pointillée et ligne de base, pas un écart plus grand. Le curseur de cette page couvre l'étroit, le large et les valeurs entre les deux.",
+        link: { href: "/printable-paper/kindergarten", label: "Papier d'écriture maternelle" },
       },
       pt: {
-        q: "Qual a diferença entre college ruled e wide ruled?",
-        a: "As linhas college ruled são mais estreitas (cerca de 7 mm) e as wide ruled mais largas (cerca de 8,7 mm). As crianças menores geralmente usam wide ruled; o controle de espaçamento cobre os dois e tudo entre eles.",
+        q: "Qual a diferença entre pauta estreita e pauta larga?",
+        a: "A pauta estreita (college ruled) separa as linhas em 7,1 mm (9/32 polegada). A larga (wide ruled) separa em 8,7 mm (11/32 polegada) e é a escolha comum até o 2.º ano. O papel infantil é outra folha: linha de cima, linha média tracejada e linha de base, não um vão mais largo. O controle desta página cobre a estreita, a larga e os tamanhos no meio.",
+        link: { href: "/printable-paper/kindergarten", label: "Papel de caligrafia infantil" },
       },
     },
   },
@@ -2028,6 +2048,80 @@ export const REPEATER_FAQS: FaqItem[] = [
     },
   },
   {
+    id: "repeater-animation",
+    i18n: {
+      en: {
+        q: "Is this a handwriting animation?",
+        a: "Yes. It plays in your browser: each letter is uncovered from left to right, then the line loops. You can save a GIF. It is an animation of the font, not a video of someone writing with a pen.",
+      },
+      zh: {
+        q: "这是手写动画吗?",
+        a: "是。它在浏览器里播放:每个字从左到右揭开,然后整行循环。可以保存 GIF。这是字体的动画,不是有人用钢笔写字的录像。",
+      },
+      ja: {
+        q: "これは手書きアニメーションですか?",
+        a: "はい。ブラウザの中で再生します。文字を左から右へ開き、その行をループします。GIF として保存できます。フォントのアニメーションであり、ペンで書いている映像ではありません。",
+      },
+      ko: {
+        q: "이것은 손글씨 애니메이션인가요?",
+        a: "네. 브라우저에서 재생됩니다. 글자를 왼쪽에서 오른쪽으로 연 다음 그 줄을 반복합니다. GIF로 저장할 수 있어요. 글꼴의 애니메이션이지, 펜으로 쓰는 영상은 아닙니다.",
+      },
+      es: {
+        q: "¿Esto es una animación de letra manuscrita?",
+        a: "Sí. Se reproduce en tu navegador: cada letra se descubre de izquierda a derecha y luego la línea se repite. Puedes guardar un GIF. Es una animación de la fuente, no un vídeo de alguien escribiendo con boli.",
+      },
+      de: {
+        q: "Ist das eine Handschrift-Animation?",
+        a: "Ja. Sie läuft im Browser: jeder Buchstabe wird von links nach rechts aufgedeckt, dann wiederholt sich die Zeile. Du kannst ein GIF speichern. Es ist eine Animation der Schrift, kein Video von jemandem mit einem Stift.",
+      },
+      fr: {
+        q: "Est-ce une animation d'écriture manuscrite ?",
+        a: "Oui. Elle se joue dans le navigateur : chaque lettre se découvre de gauche à droite, puis la ligne boucle. Vous pouvez enregistrer un GIF. C'est une animation de la police, pas une vidéo de quelqu'un qui écrit au stylo.",
+      },
+      pt: {
+        q: "Isto é uma animação de letra manuscrita?",
+        a: "Sim. Roda no navegador: cada letra é revelada da esquerda para a direita e a linha repete. Dá para salvar um GIF. É uma animação da fonte, não um vídeo de alguém escrevendo à caneta.",
+      },
+    },
+  },
+  {
+    id: "repeater-watch",
+    i18n: {
+      en: {
+        q: "Can I watch letters being written?",
+        a: "Yes. Type a word and the repeater draws it one letter at a time on a loop, so you can see where each letter sits on the line. It does not draw textbook stroke order, and cursive entry strokes are not marked.",
+      },
+      zh: {
+        q: "能看着字母被写出来吗?",
+        a: "可以。输入一个词,演示会逐字揭开并循环,能看出每个字落在哪条线上。它不画教材笔顺,连笔的起笔也不会标出来。",
+      },
+      ja: {
+        q: "文字が書かれるところを見られますか?",
+        a: "はい。単語を入れると、一文字ずつ開いてループするので、文字がどの線に乗るかが見えます。教科書の筆順は描かず、筆記体の入りの筆も印は付きません。",
+      },
+      ko: {
+        q: "글자가 써지는 모습을 볼 수 있나요?",
+        a: "네. 단어를 넣으면 한 글자씩 열고 반복해서, 글자가 어느 줄에 앉는지 볼 수 있어요. 교과서 획순은 그리지 않고, 필기체의 시작 획도 표시하지 않습니다.",
+      },
+      es: {
+        q: "¿Puedo ver cómo se escriben las letras?",
+        a: "Sí. Escribe una palabra y el repetidor la dibuja letra por letra en bucle, para ver dónde se sienta cada una en la línea. No dibuja el orden de trazos de un libro, y no marca la entrada de la cursiva.",
+      },
+      de: {
+        q: "Kann ich zusehen, wie Buchstaben geschrieben werden?",
+        a: "Ja. Tippe ein Wort, und die Wiederholung zeichnet es Buchstabe für Buchstabe in einer Schleife, sodass du siehst, wo jeder Buchstabe auf der Linie sitzt. Sie zeichnet keine Lehrbuch-Strichfolge und markiert keine Schreibschrift-Ansätze.",
+      },
+      fr: {
+        q: "Puis-je regarder les lettres s'écrire ?",
+        a: "Oui. Tapez un mot : le répéteur le dessine lettre par lettre en boucle, pour voir où chaque lettre se pose sur la ligne. Il ne trace pas l'ordre des traits d'un manuel, et ne marque pas l'entrée de la cursive.",
+      },
+      pt: {
+        q: "Posso ver as letras sendo escritas?",
+        a: "Sim. Digite uma palavra e o repetidor a desenha uma letra de cada vez, em ciclo, para ver onde cada letra senta na linha. Não desenha a ordem dos traços de um livro e não marca a entrada da cursiva.",
+      },
+    },
+  },
+  {
     id: "repeater-stroke-order",
     i18n: {
       en: {
@@ -2300,34 +2394,42 @@ export const CURSIVE_TEXT_FAQS: FaqItem[] = [
       en: {
         q: "Is this a cursive font?",
         a: "No. Each letter is swapped for a Unicode character that looks handwritten (from the mathematical script symbols), so the style travels with the text and needs no install. A real cursive font only changes how text looks inside one app.",
+        link: { href: "/cursive-font-generator", label: "Cursive font generator" },
       },
       zh: {
         q: "这是花体字体吗?",
         a: "不是。它把每个字母替换成看起来像手写的 Unicode 字符(数学花体符号区),样式跟着文字走,无需安装任何东西。真正的花体字体只在安装了它的应用里生效。",
+        link: { href: "/cursive-font-generator", label: "花体字体生成器" },
       },
       ja: {
         q: "これは筆記体フォントですか?",
         a: "いいえ。一文字ずつ、手書き風に見える Unicode の文字(数学用スクリプト記号)に置き換えています。装飾がテキストについて回るので、インストールは不要です。本物の筆記体フォントは、インストール済みのアプリ内でしか効きません。",
+        link: { href: "/cursive-font-generator", label: "筆記体フォント生成器" },
       },
       ko: {
         q: "이것은 필기체 글꼴인가요?",
         a: "아니요. 각 글자를 손글씨처럼 보이는 Unicode 문자(수학용 스크립트 기호)로 바꾸는 방식이라, 스타일이 텍스트를 따라다니고 설치가 필요 없어요. 진짜 필기체 글꼴은 설치된 앱 안에서만 적용됩니다.",
+        link: { href: "/cursive-font-generator", label: "필기체 글꼴 생성기" },
       },
       es: {
         q: "¿Esto es una fuente cursiva?",
         a: "No. Cada letra se cambia por un carácter Unicode con aspecto manuscrito (de los símbolos script matemáticos), así el estilo viaja con el texto sin instalar nada. Una fuente cursiva de verdad solo cambia el aspecto del texto dentro de una app.",
+        link: { href: "/cursive-font-generator", label: "Generador de fuentes cursivas" },
       },
       de: {
         q: "Ist das eine Schreibschrift-Schriftart?",
         a: "Nein. Jeder Buchstabe wird durch ein handgeschrieben aussehendes Unicode-Zeichen ersetzt (aus den mathematischen Script-Symbolen), deshalb wandert der Stil mit dem Text mit – ohne Installation. Eine echte Schreibschrift ändert nur innerhalb einer App das Aussehen.",
+        link: { href: "/cursive-font-generator", label: "Schreibschrift-Schriften" },
       },
       fr: {
         q: "Est-ce une police cursive ?",
         a: "Non. Chaque lettre est remplacée par un caractère Unicode à l'aspect manuscrit (les symboles script mathématiques), donc le style suit le texte sans aucune installation. Une vraie police cursive ne change l'apparence qu'au sein d'une seule application.",
+        link: { href: "/cursive-font-generator", label: "Générateur de polices cursives" },
       },
       pt: {
         q: "Isto é uma fonte cursiva?",
         a: "Não. Cada letra é trocada por um caractere Unicode com aparência manuscrita (dos símbolos script matemáticos), então o estilo viaja com o texto sem instalar nada. Uma fonte cursiva de verdade só muda o visual do texto dentro de um app.",
+        link: { href: "/cursive-font-generator", label: "Gerador de fontes cursivas" },
       },
     },
   },
@@ -2452,34 +2554,42 @@ export const CURSIVE_FONT_FAQS: FaqItem[] = [
       en: {
         q: "How is this different from a cursive text generator?",
         a: "Unicode cursive generators swap your letters for look-alike symbols you can paste as plain text into bios and chats — but they are not fonts, they can't be printed at high quality, and screen readers read them letter by letter. This page uses real typefaces and outputs images and PDFs: the right tool for cards, envelopes and anything on paper. If you want pasteable text, use the cursive text generator instead.",
+        link: { href: "/cursive-text-generator", label: "Cursive text generator" },
       },
       zh: {
         q: "这和「花体文字生成器」有什么区别?",
         a: "Unicode 花体生成器把你的字母替换成外形相似的符号,可以以纯文本粘贴进简介和聊天——但那不是字体,无法高质量印刷,读屏软件也会逐字朗读。本页用的是真正的字体,输出图片和 PDF:适合卡片、信封和一切纸面用途。如果你要的是可粘贴文本,请用花体文字生成器。",
+        link: { href: "/cursive-text-generator", label: "花体文字生成器" },
       },
       ja: {
         q: "筆記体テキスト生成器との違いは?",
         a: "Unicodeの筆記体ジェネレーターは、文字を見た目の似た記号に置き換えて、バイオやチャットに貼り付けられるテキストにします。ただしフォントではなく、高品質印刷には向かず、スクリーンリーダーは一文字ずつ読み上げます。このページは本物の書体を使い、画像とPDFを出力します。カードや封筒など紙面向けの用途に最適です。貼り付け可能なテキストが欲しい場合は、筆記体テキスト生成器をご利用ください。",
+        link: { href: "/cursive-text-generator", label: "筆記体テキスト生成器" },
       },
       ko: {
         q: "필기체 텍스트 생성기와 뭐가 다른가요?",
         a: "유니코드 필기체 생성기는 글자를 생김새가 비슷한 기호로 바꿔 소개글과 채팅에 붙여넣을 수 있는 텍스트로 만들어요. 하지만 그건 글꼴이 아니라 고품질 인쇄에 부적합하고, 스크린 리더는 글자를 하나씩 읽습니다. 이 페이지는 실제 서체를 사용해 이미지와 PDF를 출력합니다. 카드, 봉투 등 종이에 쓰이는 용도에 적합해요. 붙여넣기용 텍스트가 필요하면 필기체 텍스트 생성기를 이용하세요.",
+        link: { href: "/cursive-text-generator", label: "필기체 텍스트 생성기" },
       },
       es: {
         q: "¿En qué se diferencia de un generador de texto cursivo?",
         a: "Los generadores Unicode de texto cursivo cambian tus letras por símbolos parecidos que puedes pegar como texto plano en biografías y chats — pero no son fuentes, no se pueden imprimir con calidad y los lectores de pantalla las leen letra por letra. Esta página usa tipografías reales y genera imágenes y PDF: la herramienta correcta para tarjetas, sobres y cualquier cosa en papel. Si quieres texto pegable, usa el generador de texto cursivo.",
+        link: { href: "/cursive-text-generator", label: "Generador de texto cursivo" },
       },
       fr: {
         q: "Quelle différence avec un générateur de texte cursif ?",
         a: "Les générateurs Unicode remplacent vos lettres par des symboles ressemblants que vous pouvez coller comme texte brut dans des bios ou des chats — mais ce ne sont pas des polices, ils ne s'impriment pas en haute qualité et les lecteurs d'écran les lisent lettre par lettre. Cette page utilise de vraies polices et produit des images et des PDF : l'outil adapté aux cartes, aux enveloppes et à tout ce qui s'imprime. Pour du texte à coller, utilisez le générateur de texte cursif.",
+        link: { href: "/cursive-text-generator", label: "Générateur de texte cursif" },
       },
       de: {
         q: "Was ist der Unterschied zu einem Schreibschrift-Textgenerator?",
         a: "Unicode-Generatoren ersetzen deine Buchstaben durch ähnlich aussehende Symbole, die du als Klartext in Bios und Chats einfügen kannst — aber das sind keine Schriftarten, sie lassen sich nicht hochwertig drucken und Screenreader lesen sie Buchstabe für Buchstabe vor. Diese Seite nutzt echte Schriften und erzeugt Bilder und PDFs: das richtige Werkzeug für Karten, Umschläge und alles auf Papier. Für einfügbaren Text nimm den Schreibschrift-Textgenerator.",
+        link: { href: "/cursive-text-generator", label: "Schreibschrift-Textgenerator" },
       },
       pt: {
         q: "Qual é a diferença para um gerador de texto cursivo?",
         a: "Geradores Unicode trocam suas letras por símbolos parecidos que você pode colar como texto simples em bios e chats — mas não são fontes, não imprimem em alta qualidade e leitores de tela leem letra por letra. Esta página usa fontes de verdade e gera imagens e PDFs: a ferramenta certa para cartões, envelopes e tudo o que vai para o papel. Para texto colável, use o gerador de texto cursivo.",
+        link: { href: "/cursive-text-generator", label: "Gerador de texto cursivo" },
       },
     },
   },
@@ -2566,35 +2676,35 @@ export const BULK_LETTER_FAQS: FaqItem[] = [
     i18n: {
       en: {
         q: "How should the recipient list be formatted?",
-        a: "The first row is a header: name, street, city, region, postal. One person per row after that, up to 30. An optional message column replaces the note in the box for that row. {name} in the note becomes that person's name. You can paste the table or import the Excel template (.xlsx or .csv) from the page.",
+        a: "On the page the columns are already there: name, street, city, region, postal, and an optional note. Type one person per row, up to 30. The note replaces the letter for that person. {name} in the letter becomes that person's name. The Excel template and a .csv import still need an English header row: name, street, city, region, postal. An optional message column works the same as the note.",
       },
       zh: {
         q: "收件人名单要怎么写?",
-        a: "第一行是表头:name, street, city, region, postal。表头用这几个英文单词。下面每人一行,最多 30 人。可选的 message 列会替换这一行的正文。正文里的 {name} 会换成这个人的名字。可以粘贴表格,也可以导入页面上的 Excel 模板(.xlsx 或 .csv)。",
+        a: "页面上的列是固定的:姓名、街道、城市、州或省、邮编,以及可选的附言。每人一行,最多 30 人。附言会换掉这一封的正文。正文里的 {name} 会换成这个人的名字。Excel 模板和 .csv 仍然要有英文表头:name, street, city, region, postal。可选的 message 列和页面上的附言是同一件事。",
       },
       ja: {
         q: "宛先リストの形式は?",
-        a: "1 行目は見出しです: name, street, city, region, postal。見出しはこの英単語のままにしてください。続く行が 1 人ずつ、最大 30 人です。任意の message 列があるとその行だけ本文の代わりになります。本文の {name} はその人の名前に置き換わります。貼り付けるか、ページの Excel テンプレート（.xlsx または .csv）を読み込めます。",
+        a: "ページの列は固定です。名前、番地、市区町村、州または県、郵便番号、任意の伝言です。1 行に 1 人、最大 30 人。伝言を書くとその人の手紙だけ本文の代わりになります。本文の {name} はその人の名前になります。Excel テンプレートと .csv は、英語の見出し行が必要です: name, street, city, region, postal。任意の message 列は、ページの伝言と同じです。",
       },
       ko: {
         q: "받는 사람 목록은 어떤 형식인가요?",
-        a: "첫 줄은 머리글입니다: name, street, city, region, postal. 머리글은 이 영어 단어를 그대로 두세요. 그 아래는 한 줄에 한 명, 최대 30명입니다. 선택 항목인 message 열이 있으면 그 줄은 본문 대신 그 내용을 씁니다. 본문의 {name}은 그 사람의 이름으로 바뀝니다. 붙여 넣거나 페이지의 Excel 서식(.xlsx 또는 .csv)을 가져올 수 있습니다.",
+        a: "페이지의 열은 고정되어 있습니다. 이름, 거리, 도시, 주, 우편번호, 그리고 선택인 메모입니다. 한 줄에 한 명, 최대 30명입니다. 메모를 적으면 그 사람만 본문 대신 그 내용을 씁니다. 본문의 {name}은 그 사람의 이름이 됩니다. Excel 서식과 .csv는 영어 머리글이 필요합니다: name, street, city, region, postal. 선택인 message 열은 페이지의 메모와 같습니다.",
       },
       es: {
         q: "¿Cómo tiene que ir la lista de destinatarios?",
-        a: "La primera fila es el encabezado: name, street, city, region, postal. Esas palabras van en inglés. Después, una persona por fila, hasta 30. Una columna opcional message sustituye la nota del recuadro en esa fila. {name} en el texto se cambia por el nombre de esa persona. Puedes pegar la tabla o importar la plantilla Excel (.xlsx o .csv) de la página.",
+        a: "En la página las columnas ya están fijas: nombre, calle, ciudad, región, código postal y una nota opcional. Una persona por fila, hasta 30. La nota sustituye la carta de esa persona. {name} en el texto se cambia por su nombre. La plantilla Excel y un .csv siguen necesitando una fila de encabezado en inglés: name, street, city, region, postal. La columna opcional message equivale a la nota.",
       },
       de: {
         q: "Wie muss die Empfängerliste aussehen?",
-        a: "Die erste Zeile ist die Kopfzeile: name, street, city, region, postal. Diese Wörter bleiben englisch. Danach eine Person pro Zeile, höchstens 30. Eine optionale Spalte message ersetzt für diese Zeile den Text im Feld. {name} im Text wird zum Namen dieser Person. Die Tabelle lässt sich einfügen oder aus der Excel-Vorlage der Seite importieren (.xlsx oder .csv).",
+        a: "Auf der Seite stehen die Spalten fest: Name, Straße, Ort, Region, PLZ und eine optionale Notiz. Eine Person pro Zeile, höchstens 30. Die Notiz ersetzt den Brief dieser Person. {name} im Text wird zu ihrem Namen. Die Excel-Vorlage und eine .csv brauchen weiter eine englische Kopfzeile: name, street, city, region, postal. Die optionale Spalte message ist dieselbe Notiz.",
       },
       fr: {
         q: "Comment formater la liste des destinataires ?",
-        a: "La première ligne est l'en-tête : name, street, city, region, postal. Ces mots restent en anglais. Ensuite, une personne par ligne, jusqu'à 30. Une colonne facultative message remplace le texte du cadre pour cette ligne. {name} dans le texte devient le nom de la personne. Tu peux coller le tableau ou importer le modèle Excel de la page (.xlsx ou .csv).",
+        a: "Sur la page, les colonnes sont déjà là : nom, rue, ville, région, code postal, et un mot facultatif. Une personne par ligne, jusqu'à 30. Le mot remplace la lettre de cette personne. {name} dans le texte devient son nom. Le modèle Excel et un .csv ont toujours besoin d'une ligne d'en-tête en anglais : name, street, city, region, postal. La colonne facultative message correspond à ce mot.",
       },
       pt: {
         q: "Como formatar a lista de destinatários?",
-        a: "A primeira linha é o cabeçalho: name, street, city, region, postal. Essas palavras ficam em inglês. Depois, uma pessoa por linha, até 30. Uma coluna opcional message substitui o texto da caixa naquela linha. {name} no texto vira o nome da pessoa. Dá para colar a tabela ou importar o modelo Excel da página (.xlsx ou .csv).",
+        a: "Na página as colunas já estão fixas: nome, rua, cidade, região, CEP e um recado opcional. Uma pessoa por linha, até 30. O recado substitui a carta dessa pessoa. {name} no texto vira o nome dela. O modelo Excel e um .csv ainda precisam de um cabeçalho em inglês: name, street, city, region, postal. A coluna opcional message é o mesmo recado.",
       },
     },
   },

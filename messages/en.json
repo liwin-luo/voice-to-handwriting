@@ -30,7 +30,7 @@
     "keywords": "handwriting generator, voice to text, handwriting font, greeting card maker, audio transcription, handwriting online",
     "faq": {
       "title": "FAQ",
-      "description": "Frequently asked questions about voice input, audio transcription, exports and commercial use of Voice to Handwriting."
+      "description": "Where to print handwriting paper, trace a name, preview cursive fonts, or turn speech into handwriting."
     },
     "printable": {
       "title": "Free Printable Lined Paper Generator (Letter & A4)",
@@ -706,7 +706,7 @@
   },
   "bulkLetters": {
     "title": "Printable Handwritten Letters",
-    "intro": "Pick a short note, paste a list of people, and download two PDFs: one letter each, and an envelope with the address. The writing is a handwriting font, not a pen. You print, stamp, and mail them. This site does not send mail.",
+    "intro": "Pick a short note, fill in each person, and download two PDFs: one letter each, and an envelope with the address. The writing is a handwriting font, not a pen. You print, stamp, and mail them. This site does not send mail.",
     "kindLabel": "Note",
     "bodyLabel": "Letter",
     "bodyHint": "Edit the note. '{'name'}' becomes their name. '{'from'}' is the first line of the return address. A message cell replaces this note for that one person.",

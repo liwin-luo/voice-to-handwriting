@@ -7,8 +7,9 @@ import { routing, type Locale } from "@/i18n/routing";
 import PaperGenerator from "@/components/PaperGenerator";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
-import { getPaperKind, PAPER_KINDS, paperKindHasMargin } from "@/content/paperKinds";
-import { PAPER_FAQS, getLocalizedFaqs } from "@/content/faqs";
+import { getPaperKind, PAPER_KINDS } from "@/content/paperKinds";
+import { getLocalizedFaqs } from "@/content/faqs";
+import { paperKindFaqs } from "@/content/paperKindFaqs";
 import { buildAlternates } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
@@ -75,10 +76,7 @@ export default async function PaperKindPage({
       </nav>
       <ToolFaq
         title={t("faqTitle")}
-        items={getLocalizedFaqs(
-          PAPER_FAQS.filter((item) => item.id !== "paper-margin" || paperKindHasMargin(page.type)),
-          locale,
-        )}
+        items={getLocalizedFaqs(paperKindFaqs(page.slug), locale)}
       />
     </main>
   );

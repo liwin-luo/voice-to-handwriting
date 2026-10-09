@@ -1,7 +1,8 @@
 import type { FaqEntry } from "@/content/faqs";
+import { Link } from "@/i18n/navigation";
 
 /** 工具页 FAQ 段落:details 折叠 + FAQPage JSON-LD;当前语言无条目时不渲染 */
-export default function ToolFaq({ title, items }: { title: string; items: FaqEntry[] }) {
+export default function ToolFaq({ title, items }: { title?: string; items: FaqEntry[] }) {
   if (items.length === 0) return null;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -9,14 +10,17 @@ export default function ToolFaq({ title, items }: { title: string; items: FaqEnt
     mainEntity: items.map((it) => ({
       "@type": "Question",
       name: it.q,
-      acceptedAnswer: { "@type": "Answer", text: it.a },
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: it.link ? `${it.a} ${it.link.label}` : it.a,
+      },
     })),
   };
 
   return (
     <section className="rise mt-12 max-w-3xl" style={{ animationDelay: "200ms" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <h2 className="mb-4 text-lg font-semibold text-zinc-900">{title}</h2>
+      {title ? <h2 className="mb-4 text-lg font-semibold text-zinc-900">{title}</h2> : null}
       <div className="flex flex-col gap-3">
         {items.map((it, i) => (
           <details
@@ -34,6 +38,11 @@ export default function ToolFaq({ title, items }: { title: string; items: FaqEnt
               </span>
             </summary>
             <p className="mt-3 text-sm leading-relaxed text-zinc-600">{it.a}</p>
+            {it.link ? (
+              <Link href={it.link.href} className="mt-2 inline-block text-sm text-accent underline">
+                {it.link.label}
+              </Link>
+            ) : null}
           </details>
         ))}
       </div>

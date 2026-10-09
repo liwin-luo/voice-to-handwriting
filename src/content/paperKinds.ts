@@ -396,8 +396,3 @@ export const PAPER_KINDS: PaperKind[] = [
 export function getPaperKind(slug: string): PaperKind | undefined {
   return PAPER_KINDS.find((k) => k.slug === slug);
 }
-
-/** 红边距开关只出现在横线和三线格上。 */
-export function paperKindHasMargin(type: PaperKindType): boolean {
-  return type === "college" || type === "wide" || type === "handwriting";
-}

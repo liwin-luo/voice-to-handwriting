@@ -23,7 +23,10 @@ describe("print letter tracing pages", () => {
     const faqs = letterFaqs(a!);
     expect(faqs[0].a).toBe(a!.start);
     expect(faqs[1].a).toBe(a!.watch);
+    expect(faqs[2].a).toContain(a!.words[0]);
     expect(faqs).toHaveLength(3);
+    const thirds = PRINT_LETTERS.map((letter) => letterFaqs(letter)[2].q);
+    expect(new Set(thirds).size).toBe(26);
   });
 });
 
