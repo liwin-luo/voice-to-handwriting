@@ -6,7 +6,7 @@ export interface ToolLaneItem {
   description: string;
 }
 
-/** /tools 的一组：一张带纸样的主卡，其余是名单。 */
+/** /tools 的一组：一张带纸样的主卡，其余是名单。宽屏名单在名字右侧放一句说明；悬停只铺淡底。 */
 export default function ToolLane({
   title,
   sample,
@@ -54,14 +54,17 @@ export default function ToolLane({
         </span>
       </Link>
       {rest.length > 0 && (
-        <ul className="mt-1 divide-y divide-zinc-200 border-t border-zinc-200">
+        <ul className="mt-1 border-t border-zinc-200 sm:grid sm:grid-cols-[max-content_minmax(0,1fr)] sm:gap-x-8">
           {rest.map((tool) => (
-            <li key={tool.href}>
+            <li key={tool.href} className="sm:col-span-2 sm:grid sm:grid-cols-subgrid">
               <Link
                 href={tool.href}
-                className="block py-2.5 text-sm text-zinc-800 transition-colors hover:text-accent"
+                className="group block rounded-lg px-2 py-4 text-sm transition-colors hover:bg-accent/5 focus-visible:bg-accent/5 focus-visible:outline-2 focus-visible:outline-accent sm:col-span-2 sm:grid sm:grid-cols-subgrid sm:items-center"
               >
-                {tool.name}
+                <span className="font-semibold whitespace-nowrap text-zinc-900 group-hover:text-accent group-focus-visible:text-accent">
+                  {tool.name}
+                </span>
+                <span className="hidden min-w-0 truncate text-zinc-500 sm:block">{tool.description}</span>
               </Link>
             </li>
           ))}

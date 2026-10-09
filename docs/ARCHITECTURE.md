@@ -94,7 +94,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | 路由 | 内容 | 核心组件 / 数据 |
 |---|---|---|
 | `/` | 主工作台。字体和纸是样本按钮,不是下拉。窄屏顺序:文字、录音、字体纸样、纸、导出,字号和墨色在「更多」。宽屏左栏全开、右栏纸、底条占满下一行。`?font=` 套用字体(测验结果回跳);仿真度、重排笔迹、水印收在「更像手写」 | `ToolWorkspace`(无 preset)+ `StylePanel` + `ShareBar` + `ToolFaq(FAQ_ITEMS)` |
-| `/tools` | 工具柜。Logo 落点。每组一张带纸样的主卡(写一张→`/`,练习纸→`/name-tracing`,趣味→测验),其余是名单。页头下拉仍用 `navGroupsFor`,不跟这三张主卡走 | `ToolLane`,`FEATURED_HREF`,`toolGroupsFor` |
+| `/tools` | 工具柜。Logo 落点。每组一张带纸样的主卡(写一张→`/`,练习纸→`/name-tracing`,趣味→测验),其余是名单：宽屏在名字右侧放一句说明，悬停整行淡底。页头下拉仍用 `navGroupsFor`,不跟这三张主卡走 | `ToolLane`,`FEATURED_HREF`,`toolGroupsFor` |
 | `/cursive` | 连笔字工具(英文市场) | `ToolWorkspace` preset=cedarvillecursive,`CURSIVE_FAQS` |
 | `/cursive-text-generator` | 可复制花体文本(Unicode 十三风格,含现成字母表和短语)。复制是主按钮,麦克风是次按钮;预览和 PNG 可改墨色与纸底 | `CursiveTextGenerator`,`fancyText.ts`(纯映射,有单测),`CURSIVE_TEXT_FAQS` |
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
