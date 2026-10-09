@@ -180,6 +180,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 - Sentry:5 个配置文件(instrumentation* + sentry.{server,edge}.config),**未配置 DSN 时零开销跳过**;client 采样 0.1。
 - AdSense 双保险:layout 只在 `NEXT_PUBLIC_ADSENSE_CLIENT` 存在时注入 script;`ConsentBanner`(`localStorage["vth-consent"]`)用户点"接受"后才真正生效注入。
 - Vercel Analytics 挂在 locale layout。
+- Microsoft Clarity(`ClarityAnalytics.tsx`,挂在 locale layout):无 Cookie 会话回放/热图,官方代码原样内联(ID 硬编码于组件);与 Vercel Analytics 同为无 Cookie 统计,不经 ConsentBanner 直接加载;隐私政策 §4(8 语言)已披露。
 
 ## 5. 环境变量(均有缺省/降级,本地可不配)
 

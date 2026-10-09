@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import ClarityAnalytics from "@/components/ClarityAnalytics";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -70,6 +71,7 @@ export default async function LocaleLayout({
           <FontStylesheets />
         </NextIntlClientProvider>
         <Analytics />
+        <ClarityAnalytics />
       </body>
     </html>
   );
