@@ -6,6 +6,7 @@ import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import PageFormatToggle from "./PageFormatToggle";
 const WORDS_PER_PAGE_A1 = 8; // 写三遍:每页 8 词
 const WORDS_PER_PAGE_A2 = 16; // 缺字母:每页 16 词
@@ -28,10 +29,12 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
   const [wordsText, setWordsText] = useState("");
   const [fontId, setFontId] = useState("patrickhand");
   const [showTrace, setShowTrace] = useState(true);
+  const [guides, setGuides] = useState(true);
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
   const [pageUrls, setPageUrls] = useState<string[]>([]);
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
+  const guidesAvailable = hasGlyphGuides(fontId);
   const { w, h } = PAGE_FORMATS[format];
   const fontOptions = fontOrder(locale).map((id) => FONTS.find((f) => f.id === id)!);
 
@@ -93,6 +96,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
           ctx.fillStyle = "#c9c9c9";
           ctx.font = `26px "${family}"`;
           ctx.fillText(word, 70, ly - 6);
+          if (guides) drawGlyphGuides(ctx, word, 70, ly - 6, 26, fontId);
         }
       }
       y += 78 + 3 * 36 + 18;
@@ -173,7 +177,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
       cancelled = true;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [words, fontId, showTrace, format]);
+  }, [words, fontId, showTrace, guides, format]);
 
   const downloadPdf = () => {
     if (!pageUrls.length) return;
@@ -224,6 +228,28 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
             <span
               className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
                 showTrace ? "translate-x-5" : ""
+              }`}
+            />
+          </button>
+        </label>
+
+        <label
+          className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
+          title={guidesAvailable ? undefined : t("strokeGuidesHint")}
+        >
+          <span className="text-zinc-700">{t("strokeGuides")}</span>
+          <button
+            role="switch"
+            aria-checked={guides && guidesAvailable}
+            disabled={!guidesAvailable}
+            onClick={() => setGuides(!guides)}
+            className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
+              guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+            } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                guides && guidesAvailable ? "translate-x-5" : ""
               }`}
             />
           </button>

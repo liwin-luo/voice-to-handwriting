@@ -6,6 +6,7 @@ import { jsPDF } from "jspdf";
 import { FONTS } from "@/stores/useEditorStore";
 import { useDebouncedImeSafe } from "./useDebouncedImeSafe";
 import { fontOrder, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import { drawGlyphGuides, hasGlyphGuides } from "@/lib/glyphGuides";
 import PageFormatToggle from "./PageFormatToggle";
 const TOP = 56;
 const BOTTOM = 56;
@@ -38,6 +39,7 @@ export default function HandwritingWorkbookGenerator({
   const [fontId, setFontId] = useState(defaultFontId);
   const [showCover, setShowCover] = useState(true);
   const [showExample, setShowExample] = useState(true);
+  const [guides, setGuides] = useState(true);
   const [drawTitle, titleComposition] = useDebouncedImeSafe(title);
   const [drawWords, wordsComposition] = useDebouncedImeSafe(words);
 
@@ -60,6 +62,7 @@ export default function HandwritingWorkbookGenerator({
 
   const font = FONTS.find((f) => f.id === fontId) ?? FONTS[0];
   const family = primaryFamily(font.css);
+  const guidesAvailable = hasGlyphGuides(fontId);
 
   const wordList = useMemo(
     () =>
@@ -134,6 +137,7 @@ export default function HandwritingWorkbookGenerator({
             ctx.strokeText(word, 68, y0 + bandH - 6);
           }
           ctx.restore();
+          if (guides) drawGlyphGuides(ctx, word, 68, y0 + bandH - 6, fontSize, fontId);
         }
         y0 += bandH;
       }
@@ -228,7 +232,7 @@ export default function HandwritingWorkbookGenerator({
       document.fonts.removeEventListener?.("loadingdone", drawAll);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookTitle, pages, fontId, showCover, showExample, format]);
+  }, [bookTitle, pages, fontId, showCover, showExample, guides, format]);
 
   const downloadPdf = () => {
     const canvases = wrapRef.current?.querySelectorAll<HTMLCanvasElement>("canvas");
@@ -311,6 +315,28 @@ export default function HandwritingWorkbookGenerator({
             <span
               className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
                 showExample ? "translate-x-5" : ""
+              }`}
+            />
+          </button>
+        </label>
+
+        <label
+          className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
+          title={guidesAvailable ? undefined : t("strokeGuidesHint")}
+        >
+          <span className="text-zinc-700">{t("strokeGuides")}</span>
+          <button
+            role="switch"
+            aria-checked={guides && guidesAvailable}
+            disabled={!guidesAvailable}
+            onClick={() => setGuides(!guides)}
+            className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
+              guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+            } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
+          >
+            <span
+              className={`absolute top-0.5 left-0.5 size-5 rounded-full bg-white shadow transition-transform duration-200 ${
+                guides && guidesAvailable ? "translate-x-5" : ""
               }`}
             />
           </button>
