@@ -73,6 +73,21 @@ import cstEn from "./cursive-sentences-to-practice.en.mdx";
 import cwgEn from "./copywork-generator.en.mdx";
 import ntlEn from "./name-tracing-with-lines.en.mdx";
 import cmcEn from "./calligraphy-motto-cards.en.mdx";
+import icsEs from "./is-cursive-still-taught.es.mdx";
+import icsDe from "./is-cursive-still-taught.de.mdx";
+import icsFr from "./is-cursive-still-taught.fr.mdx";
+import xhsEs from "./xiaohongshu-handwritten-images.es.mdx";
+import xhsDe from "./xiaohongshu-handwritten-images.de.mdx";
+import xhsFr from "./xiaohongshu-handwritten-images.fr.mdx";
+import ntlZh from "./name-tracing-with-lines.zh.mdx";
+import ntlJa from "./name-tracing-with-lines.ja.mdx";
+import ntlKo from "./name-tracing-with-lines.ko.mdx";
+import ntlEs from "./name-tracing-with-lines.es.mdx";
+import cmcZh from "./calligraphy-motto-cards.zh.mdx";
+import cmcJa from "./calligraphy-motto-cards.ja.mdx";
+import cmcKo from "./calligraphy-motto-cards.ko.mdx";
+import cmcEs from "./calligraphy-motto-cards.es.mdx";
+import clbEn from "./cursive-laws-by-state.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -206,7 +221,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "what-does-your-handwriting-say-about-you": { zh: wdzh, en: wden, ja: wdja, ko: wdko, es: wdes, de: wdde, fr: wdfr, pt: wdpt },
   "handwritten-card-with-voice": { zh: cardZh, en: cardEn, ja: cardJa, ko: cardKo, es: cardEs, de: cardDe, fr: cardFr, pt: cardPt },
   "handwriting-image-generator": { zh: genZh, en: genEn, ja: genJa, ko: genKo, es: genEs, de: genDe, fr: genFr, pt: genPt },
-  "xiaohongshu-handwritten-images": { zh: xhsZh, en: xhsEn, ja: xhsJa, ko: xhsKo, pt: xhsPt },
+  "xiaohongshu-handwritten-images": { zh: xhsZh, en: xhsEn, ja: xhsJa, ko: xhsKo, es: xhsEs, de: xhsDe, fr: xhsFr, pt: xhsPt },
   "audio-to-handwriting": { zh: audioZh, en: audioEn, ja: audioJa, ko: audioKo, es: audioEs, de: audioDe, fr: audioFr, pt: audioPt },
   "handwriting-templates-guide": { zh: tplZh, en: tplEn, ja: tplJa, ko: tplKo, es: tplEs, de: tplGDe, fr: tplGFr, pt: tplGPt },
   "name-tracing-generator": { en: ntgEn, zh: ntgZh, ja: ntgJa, ko: ntgKo, de: ntgDe, fr: ntgFr, es: ntgEs, pt: ntgPt },
@@ -222,7 +237,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "how-to-write-in-cursive": { en: hwcEn, zh: hwcZh, ja: hwcJa, ko: hwcKo, de: hwcDe, fr: hwcFr, es: hwcEs, pt: hwcPt },
   "cursive-alphabet-chart": { en: cacEn, zh: cacZh, ja: cacJa, ko: cacKo, de: cacDe, fr: cacFr, es: cacEs, pt: cacPt },
   "cursive-name-signature": { en: cnsEn, zh: cnsZh, ja: cnsJa, ko: cnsKo, de: cnsDe, fr: cnsFr, es: cnsEs, pt: cnsPt },
-  "is-cursive-still-taught": { en: icsEn, zh: icsZh, ja: icsJa, ko: icsKo, pt: icsPt },
+  "is-cursive-still-taught": { en: icsEn, zh: icsZh, ja: icsJa, ko: icsKo, es: icsEs, de: icsDe, fr: icsFr, pt: icsPt },
   "cursive-vs-print": { en: cvpEn, zh: cvpZh, ja: cvpJa, ko: cvpKo, de: cvpDe, fr: cvpFr, es: cvpEs, pt: cvpPt },
   "how-to-teach-cursive-kids": { en: htcEn, zh: htcZh, ja: htcJa, ko: htcKo, de: htcDe, fr: htcFr, es: htcEs, pt: htcPt },
   "handwriting-vs-typing-brain": { en: bvtEn, zh: bvtZh, ja: bvtJa, ko: bvtKo, de: bvtDe, fr: bvtFr, es: bvtEs, pt: bvtPt },
@@ -234,8 +249,9 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "cursive-text-generator": { en: ctgEn },
   "cursive-sentences-to-practice": { en: cstEn },
   "copywork-generator": { en: cwgEn },
-  "name-tracing-with-lines": { en: ntlEn },
-  "calligraphy-motto-cards": { en: cmcEn },
+  "name-tracing-with-lines": { en: ntlEn, zh: ntlZh, ja: ntlJa, ko: ntlKo, es: ntlEs },
+  "calligraphy-motto-cards": { en: cmcEn, zh: cmcZh, ja: cmcJa, ko: cmcKo, es: cmcEs },
+  "cursive-laws-by-state": { en: clbEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

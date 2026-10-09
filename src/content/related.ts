@@ -10,6 +10,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/cursive": "cursive",
   "/cursive-text-generator": "cursiveText",
   "/cursive-alphabet": "cursiveAlphabet",
+  "/cursive-font-generator": "cursiveFont",
   "/cursive-worksheets": "cursiveWorks",
   "/daily-cursive-handwriting-practice": "dailyCursive",
   "/handwriting-personality-quiz": "quiz",

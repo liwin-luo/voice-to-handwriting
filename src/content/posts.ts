@@ -621,6 +621,19 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "cursive-laws-by-state",
+    author: "clara-hartley",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    i18n: {
+      en: {
+        title: "Cursive laws by state (2026): where US schools must teach it",
+        description:
+          "An updated state-by-state table of cursive handwriting laws — bill numbers, grade levels, effective dates, and what to do if your state just added it.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

@@ -50,6 +50,11 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
     },
   },
   "xiaohongshu-handwritten-images": {
+    es: {
+      title: "Tarjetas con citas manuscritas para redes sociales, en tu navegador",
+      description:
+        "Las citas manuscritas logran gran interacción. Prodúcelas en lote con entrada por voz: fuente, tinta y realismo fijos, con consejos de portada y formato 3:4.",
+    },
     de: {
       title: "Handgeschriebene Zitatkarten für Social Media",
       description:
@@ -178,7 +183,7 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
       description: "Erstelle Schreibschrift-Arbeitsblätter aus jedem Namen oder Satz: echte Schreibschrift-Schriften, Drei-Linien-Hilfslinien und kostenlose PDF-Downloads.",
     },
     fr: {
-      title: "Feuilles d'exercices de cursive personnalisées, gratuites",
+      title: "Exercices d'écriture cursive à imprimer (gratuit)",
       description: "Créez des feuilles d'exercices de cursive à partir d'un prénom ou d'une phrase : vraies polices cursives, guides de trois lignes et PDF gratuits.",
     },
     es: {
@@ -204,11 +209,11 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
       description: "유치원 책상마다 있는 그 종이, 삼선 공부지의 윗줄과 가운데 점선, 아랫줄이 각각 가르쳐 주는 것, 키 큰 글자·작은 글자·꼬리 글자의 세 부류, 그리고 집에서 무료로 인쇄할 수 있는 유치원 삼선 공부지와 나이별 줄 높이 선택법을 소개합니다.",
     },
     de: {
-      title: "Kindergarten-Schreibpapier: Was die drei Linien lehren",
+      title: "Linienblatt (Vorschule): was die drei Linien lehren",
       description: "Was obere, gestrichelte und untere Linien beibringen, hohe/kleine/Schwanz-Buchstaben und kostenloses, druckbares Dreilinien-Schreibpapier für den Kindergarten.",
     },
     fr: {
-      title: "Papier d'écriture maternelle : les trois lignes expliquées",
+      title: "Feuille d'écriture maternelle : les trois lignes expliquées",
       description: "Ce qu'enseignent les trois lignes, les familles de lettres hautes, petites et descendantes, et un papier d'écriture maternelle gratuit à imprimer.",
     },
     es: {
@@ -448,7 +453,7 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
       description: "Alle Schreibschrift-Buchstaben nach Strichfamilien: Klein- und Großbuchstaben, die fünf häufigsten Fehlerquellen und eine kostenlose Tabelle zum Ausdrucken.",
     },
     fr: {
-      title: "L'alphabet cursive, organisé comme vous l'apprendrez",
+      title: "Alphabet écriture cursive, organisé pour bien apprendre",
       description: "Toutes les lettres cursives par familles de gestes — minuscules et majuscules, les cinq lettres les plus piégeuses, plus une fiche imprimable gratuite.",
     },
     es: {
@@ -564,11 +569,11 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
       description: "준비 완료 신호, 글자 가족별 가르치기 순서, 주 3회 10분 수업 구성까지. 매 단계에 맞는 무료 인쇄용 필기체 연습지를 함께 제공합니다.",
     },
     de: {
-      title: "Schreibschrift beibringen: 10-Minuten-Lektionen für Kinder",
+      title: "Schreibschrift lernen mit Kindern: 10-Minuten-Lektionen",
       description: "Bereitschaftszeichen, sinnvolle Buchstaben-Reihenfolge und 10-Minuten-Lektionen — mit gratis druckbaren Schreibschrift-Übungsblättern für jeden Schritt.",
     },
     fr: {
-      title: "Enseigner la cursive à la maison : leçons de 10 minutes",
+      title: "Apprendre l'écriture cursive à la maison : leçons de 10 min",
       description: "Signes de prêt, ordre d'apprentissage par familles de lettres et leçons de 10 minutes, avec des fiches de cursive imprimables gratuites pour chaque étape.",
     },
     es: {
@@ -638,6 +643,51 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
     pt: {
       title: "Como melhorar sua letra: o guia completo",
       description: "Diagnostique tamanho, espaçamento, linha de base e inclinação, siga a rotina de 15 minutos por dia e escolha um estilo-modelo — com ferramentas gratuitas.",
+    },
+  },
+
+  "name-tracing-with-lines": {
+    zh: {
+      title: "名字描红带线条：免费三线格工作表打印",
+      description:
+        "三条线各自教什么、几岁用多高的行距，以及怎么用名字描红生成器打印带线条的个性化工作表——免费 PDF。",
+    },
+    ja: {
+      title: "名前のなぞり書きは線付きで：3 線ワークシートを無料印刷",
+      description:
+        "3 本の線がそれぞれ教えていること、年齢別の行の高さ、名前なぞりジェネレーターで線付きワークシートを印刷する手順。無料 PDF。",
+    },
+    ko: {
+      title: "줄 있는 이름 쓰기 연습지: 세 줄 워크시트 무료 인쇄",
+      description:
+        "세 줄이 각각 가르치는 것, 나이별 줄 높이, 이름 쓰기 생성기로 줄 있는 맞춤 워크시트를 인쇄하는 방법. 무료 PDF.",
+    },
+    es: {
+      title: "Caligrafía de nombres con líneas: fichas de tres líneas para imprimir",
+      description:
+        "Qué enseña cada una de las tres líneas, qué altura de fila va según la edad y cómo imprimir fichas de nombres con líneas — PDF gratis.",
+    },
+  },
+  "calligraphy-motto-cards": {
+    zh: {
+      title: "书法风金句卡片：把座右铭做成手写卡片",
+      description:
+        "用语音或打字输入座右铭，Dancing Script 配蓝黑墨水与空白纸——实测参数、6 条现成文案与 Pinterest 竖版导出。",
+    },
+    ja: {
+      title: "書道風モットーカード：座右の銘を手書きカードに",
+      description:
+        "座右の銘を話すか入力するだけ。Dancing Script×藍がかったインク×無地紙の実測設定と、そのまま使える 6 つの文例、Pinterest 縦型書き出し付き。",
+    },
+    ko: {
+      title: "캘리그라피 모토 카드: 좌우명을 손글씨 카드로",
+      description:
+        "좌우명을 말하거나 입력하면 끝. Dancing Script에 청흑 잉크, 무지 용지의 실측 설정과 바로 쓸 수 있는 문구 6종, Pinterest 세로 내보내기까지.",
+    },
+    es: {
+      title: "Tarjetas de lema en caligrafía: tu mantra escrito a mano",
+      description:
+        "Di o escribe tu lema, Dancing Script con tinta azul negro sobre papel liso: ajustes probados, 6 lemas listos y exportación vertical para Pinterest.",
     },
   },
 };
