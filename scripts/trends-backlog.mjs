@@ -2,16 +2,19 @@
 /**
  * Google Trends 选题池扫描器(docs/personas/README.md「选题池」一节)。
  *
- * 两路数据源:
- * 1. 主源:6 个站内种子词的「相关查询上升榜」(Related queries → Rising,近 7 天,US)。
- *    走 Trends explore + widgetdata/relatedsearches 非官方接口,这是"和 handwriting 相关的词在涨什么";
- * 2. 参考源:大众每日热搜 RSS(全类别),只做观察,新闻热点默认不接。
+ * 两路数据源,按 geo 扫描(默认 US,DE,FR —— 站点 8 语言,德法是博客正文已覆盖的优先补齐语言):
+ * 1. 主源:每个 geo 一组「种子词」的相关查询上升榜(Related queries → Rising,近 7 天)。
+ *    种子词 = 站点能力簇的圆心词,按当地搜索语言选词(见 GEO_SEEDS 上方的映射注释);
+ * 2. 参考源:大众每日热搜 RSS(全类别),仅供观察,新闻热点默认不接。
  *
- * 状态:scripts/.trends-seen.json(rising/general 两个池:首见/最近见/次数/增长等),90 天未见过期。
- * 输出:docs/trends-backlog.md —— 只重渲染 AUTO 注释对之间的表格,人工评估区原样保留。
- * stdout 会列出"新入选且值得评估"的 rising 词,供定时任务写进人工评估区;本脚本只收集不写文。
+ * 状态:scripts/.trends-seen.json({rising:{geo:{词:...}},general:{geo:{...}}},v2 平铺结构自动迁移到 US),
+ * 90 天未见过期。输出:docs/trends-backlog.md —— 只重渲染 AUTO 注释对之间的表格,人工评估区原样保留。
+ * stdout 列出"新入选且值得评估"的 rising 词(涨幅 Breakout 或 ≥100% 且命中关键词宇宙),供定时任务写进人工评估区。
  *
- * 用法:node scripts/trends-backlog.mjs [--geo=US]
+ * 限速现实:非官方接口 429 惩罚窗口可达小时级,脚本带退避重试 + 种子间间隔;
+ * 个别种子失败会告警跳过,不影响其余种子。整轮 36 个种子 × 2 请求,正常需数分钟。
+ *
+ * 用法:node scripts/trends-backlog.mjs [--geo=US,DE,FR]
  */
 
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -21,18 +24,35 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const STATE_FILE = path.join(ROOT, "scripts/.trends-seen.json");
 const BACKLOG_FILE = path.join(ROOT, "docs/trends-backlog.md");
 const PRUNE_DAYS = 90;
-const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 trends-backlog/1.1";
+const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 trends-backlog/1.2";
 
-/** 种子词 = 站内选题簇的圆心(docs/personas/README.md);换词请连同 README 一起改 */
-const SEEDS = ["handwriting", "cursive", "handwriting practice", "handwriting worksheets", "name tracing", "calligraphy"];
+/**
+ * 站点能力簇 → 各语言种子词(用当地人的搜索语言,不是直译):
+ * - 手写渲染主工具(转手写/提升字迹):US handwriting · DE handschrift / handschrift verbessern · FR améliorer son écriture
+ * - 连笔簇(/cursive*):US cursive · DE schreibschrift(德国学校连笔) · FR écriture cursive(法国小学低年级就教)
+ * - 儿童名字/描红(/name-tracing /name-coloring /word-work):US name tracing · DE name schreiben lernen · FR écrire son nom
+ * - 打印纸(/printable-paper):US handwriting worksheets · DE linienblatt(德国学校制式纸) · FR feuille d'écriture
+ * - 书法/贺卡(/templates /diy-wedding):US calligraphy · DE kalligraphie · FR calligraphie
+ * - 练习日常(/daily-* /writing-practice):US handwriting practice · FR graphisme(法国幼儿园运笔训练)
+ */
+const GEO_SEEDS = {
+  US: ["handwriting", "cursive", "handwriting practice", "handwriting worksheets", "name tracing", "calligraphy"],
+  DE: ["handschrift", "schreibschrift", "handschrift verbessern", "name schreiben lernen", "linienblatt", "kalligraphie"],
+  FR: ["écriture cursive", "calligraphie", "améliorer son écriture", "graphisme", "écrire son nom", "feuille d'écriture"],
+};
 
-const geo = (process.argv.find((a) => a.startsWith("--geo=")) ?? "--geo=US").split("=")[1].toUpperCase();
+const geoArg = process.argv.find((a) => a.startsWith("--geo="));
+const GEOS = (geoArg ? geoArg.split("=")[1] : "US,DE,FR").toUpperCase().split(",").map((g) => g.trim());
 const TIMEFRAME = "now 7-d"; // Trends 合法值:近 7 天(today 7-d 是无效格式,会 400)
 const TODAY = new Date().toISOString().slice(0, 10);
 
-/** 站内关键词宇宙;\b 防子串误判(ink 不中 LinkedIn)。rising 词已天然相关,此正则用作二道门,挡杂音 */
+/**
+ * 站内关键词宇宙(三语);\b 防子串误判(ink 不中 LinkedIn)。
+ * DE:德校书写体系(schreibschrift/ausgangsschrift/druckschrift)、制式纸(lineatur/linienblatt)、贺卡丧谢(grußkarte/danksagung);
+ * FR:法国学校体系(écriture cursive/graphisme/lignage/seyès 制/maternelle)、手写/manuscrit、圣诞信(père noël)。
+ */
 const FIT_RE =
-  /\b(handwrit\w*|cursive|worksheet\w*|printable|pen ?pal\w*|fountain pen\w*|gel pen\w*|calligraph\w*|lettering|signature\w*|name trac\w*|tracing|note ?taking|notebook\w*|journall?ing|journal\w*|diary|stationery|inks?\b|abc\b|alphabet\w*|kindergarten|preschool|homeschool\w*|teacher\w*|classroom\w*|essay\w*|exam\w*|stud(y|ies|ying)|studygram|studytok|thank ?you\w*|santa|wedding\w*|invitation\w*|greeting card\w*|fonts?\b|scribbl\w*|doodl\w*|poem\w*|envelope\w*|grapholog\w*|penmanship|dysgraphia|letter formation|fine motor)/i;
+  /\b(handwrit\w*|cursive|worksheet\w*|printable|pen ?pal\w*|fountain pen\w*|gel pen\w*|calligraph\w*|kalligraphie\w*|lettering|signature\w*|name trac\w*|tracing|note ?taking|notebook\w*|journall?ing|journal\w*|diary|stationery|inks?\b|abc\b|alphabet\w*|kindergarten|preschool|homeschool\w*|teacher\w*|classroom\w*|essay\w*|exam\w*|stud(y|ies|ying)|studygram|studytok|thank ?you\w*|santa|wedding\w*|invitation\w*|greeting card\w*|fonts?\b|scribbl\w*|doodl\w*|poem\w*|envelope\w*|grapholog\w*|penmanship|dysgraphia|letter formation|fine motor|handschrift\w*|schreibschrift|ausgangsschrift|druckschrift|linienblatt\w*|lineatur\w*|schreiblinien|schreibpapier|arbeitsblatt\w*|grusskarte\w*|grußkarte\w*|danksagung\w*|weihnachtsmann|écriture|ecriture|graphisme|seyès|seyes|lignage|maternelle|manuscrit\w*|manuscrite|père noel|remerciement\w*|amélior\w*|amelior\w*|livre d'or|vœux|voeux)/i;
 
 /** 评估门槛:涨幅 Breakout 或 ≥100% 才值得进人工评估 */
 function growthNum(formatted) {
@@ -64,8 +84,8 @@ function parseJson(text) {
   return JSON.parse(text.slice(start));
 }
 
-/** Trends explore:拿 RELATED_QUERIES widget 的 token;对 427/401/429 带退避重试,首响应的 NID cookie 要带上 */
-async function fetchRelatedRising(seed, cookies) {
+/** Trends explore → relatedsearches:对 427/401/429 带退避重试,首响应的 NID cookie 要带上 */
+async function fetchRelatedRising(seed, geo, cookies) {
   const req = encodeURIComponent(
     JSON.stringify({ comparisonItem: [{ keyword: seed, geo, time: TIMEFRAME }], category: 0, property: "" }),
   );
@@ -96,8 +116,7 @@ async function fetchRelatedRising(seed, cookies) {
     if (attempt < 2) await new Promise((r) => setTimeout(r, [20_000, 40_000][attempt]));
   }
   if (!rsRes?.ok) throw new Error(`relatedsearches ${seed} HTTP ${rsRes?.status}`);
-  const rsText = await rsRes.text();
-  const rs = parseJson(rsText);
+  const rs = parseJson(await rsRes.text());
 
   // rankedList 含 top 与 rising 两张表,按 formattedValue 形态识别 rising(含 % 或 Breakout);
   // 实测载荷键名为 rankedKeyword(单数);query 为纯字符串,兼容旧版对象形态
@@ -113,10 +132,10 @@ async function fetchRelatedRising(seed, cookies) {
   return out;
 }
 
-const RSS_URL = `https://trends.google.com/trending/rss?geo=${geo}`;
+const RSS_URL = (geo) => `https://trends.google.com/trending/rss?geo=${geo}`;
 
-async function fetchRssGeneral() {
-  const res = await get(RSS_URL);
+async function fetchRssGeneral(geo) {
+  const res = await get(RSS_URL(geo));
   if (!res.ok) throw new Error(`RSS HTTP ${res.status}`);
   const xml = await res.text();
   const items = [];
@@ -137,9 +156,18 @@ async function fetchRssGeneral() {
 function loadState() {
   if (!existsSync(STATE_FILE)) return { rising: {}, general: {} };
   const raw = JSON.parse(readFileSync(STATE_FILE, "utf8"));
-  // 兼容 v1(只有 terms 字段):整体迁移到 general 池
-  if (!raw.rising && raw.terms) return { rising: {}, general: raw.terms };
-  return { rising: raw.rising ?? {}, general: raw.general ?? {} };
+  /** 迁移:v1 terms 平铺 / v2 rising、general 平铺(当时只有 US)→ v3 按 geo 分池 */
+  const toGeoPools = (pool, flatSource) => {
+    const src = pool ?? flatSource ?? {};
+    const keys = Object.keys(src);
+    if (keys.length === 0) return {};
+    const isNested = keys.every((k) => ["US", "DE", "FR"].includes(k));
+    return isNested ? src : { US: src };
+  };
+  return {
+    rising: toGeoPools(raw.rising),
+    general: toGeoPools(raw.general, raw.terms),
+  };
 }
 
 function daysBetween(a, b) {
@@ -148,96 +176,113 @@ function daysBetween(a, b) {
 
 async function main() {
   const state = loadState();
+  for (const g of GEOS) {
+    state.rising[g] = state.rising[g] ?? {};
+    state.general[g] = state.general[g] ?? {};
+  }
 
-  // ---- 主源:种子词相关上升榜 ----
+  // ---- 主源:各 geo 种子词相关上升榜 ----
   const cookies = [];
   const perSeedCounts = {};
   let freshRising = 0;
   const suggestions = [];
-  for (const seed of SEEDS) {
-    let rising = [];
-    try {
-      rising = await fetchRelatedRising(seed, cookies);
-    } catch (err) {
-      console.error(`  [warn] ${seed}: ${err.message}`);
-      continue;
-    }
-    perSeedCounts[seed] = rising.length;
-    for (const { query, growth, num } of rising) {
-      const prev = state.rising[query];
-      if (!prev) {
-        freshRising++;
-        state.rising[query] = { firstSeen: TODAY, lastSeen: TODAY, count: 1, growth, maxGrowth: num, seed, source: "rising" };
-      } else {
-        prev.lastSeen = TODAY;
-        prev.count += 1;
-        if (num > prev.maxGrowth) {
-          prev.maxGrowth = num;
-          prev.growth = growth;
-        }
+  for (const geo of GEOS) {
+    for (const seed of GEO_SEEDS[geo] ?? []) {
+      let rising = [];
+      try {
+        rising = await fetchRelatedRising(seed, geo, cookies);
+      } catch (err) {
+        console.error(`  [warn] ${geo}/${seed}: ${err.message}`);
+        continue;
       }
-      if (!prev && worthEvaluating(growth, query)) suggestions.push({ query, growth, num, seed });
+      perSeedCounts[`${geo}/${seed}`] = rising.length;
+      for (const { query, growth, num } of rising) {
+        const prev = state.rising[geo][query];
+        if (!prev) {
+          freshRising++;
+          state.rising[geo][query] = { firstSeen: TODAY, lastSeen: TODAY, count: 1, growth, maxGrowth: num, seed, source: "rising" };
+        } else {
+          prev.lastSeen = TODAY;
+          prev.count += 1;
+          if (num > prev.maxGrowth) {
+            prev.maxGrowth = num;
+            prev.growth = growth;
+          }
+        }
+        if (!prev && worthEvaluating(growth, query)) suggestions.push({ geo, query, growth, num, seed });
+      }
+      await new Promise((r) => setTimeout(r, 10_000)); // 对接口限速保持礼貌(429 惩罚窗口可达小时级)
     }
-    await new Promise((r) => setTimeout(r, 10_000)); // 对接口限速保持礼貌(429 惩罚窗口可达小时级)
   }
 
   // ---- 参考源:大众日榜 RSS ----
   let freshGeneral = 0;
-  try {
-    for (const { title, traffic, note } of await fetchRssGeneral()) {
-      const prev = state.general[title];
-      if (!prev) {
-        freshGeneral++;
-        state.general[title] = { firstSeen: TODAY, lastSeen: TODAY, count: 1, traffic, note };
-      } else {
-        prev.lastSeen = TODAY;
-        prev.count += 1;
+  for (const geo of GEOS) {
+    try {
+      for (const { title, traffic, note } of await fetchRssGeneral(geo)) {
+        const prev = state.general[geo][title];
+        if (!prev) {
+          freshGeneral++;
+          state.general[geo][title] = { firstSeen: TODAY, lastSeen: TODAY, count: 1, traffic, note };
+        } else {
+          prev.lastSeen = TODAY;
+          prev.count += 1;
+        }
       }
+    } catch (err) {
+      console.error(`  [warn] ${geo} 大众日榜 RSS 失败(不影响主源): ${err.message}`);
     }
-  } catch (err) {
-    console.error(`  [warn] 大众日榜 RSS 失败(不影响主源): ${err.message}`);
   }
 
   // ---- 过期清理 ----
   for (const pool of ["rising", "general"]) {
-    for (const [term, t] of Object.entries(state[pool])) {
-      if (daysBetween(t.lastSeen, TODAY) > PRUNE_DAYS) delete state[pool][term];
+    for (const geo of Object.keys(state[pool])) {
+      for (const [term, t] of Object.entries(state[pool][geo])) {
+        if (daysBetween(t.lastSeen, TODAY) > PRUNE_DAYS) delete state[pool][geo][term];
+      }
     }
   }
 
   // ---- 渲染 backlog(只动 AUTO 区间) ----
   const risingRows = Object.entries(state.rising)
-    .sort((a, b) => (b[1].maxGrowth - a[1].maxGrowth) || b[1].lastSeen.localeCompare(a[1].lastSeen))
-    .map(([q, t]) => `| ${t.firstSeen} | ${t.lastSeen} | ${q} | ${t.growth} | ${t.seed} | ${t.count} |`);
+    .flatMap(([geo, terms]) => Object.entries(terms).map(([q, t]) => ({ geo, q, t })))
+    .sort((a, b) => b.t.maxGrowth - a.t.maxGrowth || b.t.lastSeen.localeCompare(a.t.lastSeen))
+    .map(
+      ({ geo, q, t }) =>
+        `| ${t.firstSeen} | ${t.lastSeen} | ${geo} | ${q} | ${t.growth} | ${t.seed} | ${t.count} |`,
+    );
   const generalRows = Object.entries(state.general)
-    .sort((a, b) => b[1].lastSeen.localeCompare(a[1].lastSeen))
-    .map(([q, t]) => `| ${t.firstSeen} | ${q} | ${t.traffic} | ${t.count} | ${t.note.replace(/\|/g, "/")} |`);
+    .flatMap(([geo, terms]) => Object.entries(terms).map(([q, t]) => ({ geo, q, t })))
+    .sort((a, b) => b.t.lastSeen.localeCompare(a.t.lastSeen))
+    .map(({ geo, q, t }) => `| ${t.firstSeen} | ${geo} | ${q} | ${t.traffic} | ${t.count} | ${t.note.replace(/\|/g, "/")} |`);
 
   let backlog = existsSync(BACKLOG_FILE) ? readFileSync(BACKLOG_FILE, "utf8") : null;
-  if (!backlog) backlog = scaffold();
-  const risingTable =
-    "| 首见 | 最近见 | 关键词 | 近7天增长 | 种子词 | 次数 |\n|---|---|---|---|---|---|" +
+  if (!backlog?.includes("<!-- AUTO:RISING START")) backlog = scaffold();
+  const risingHeader =
+    "| 首见 | 最近见 | Geo | 关键词 | 近7天增长 | 种子词 | 次数 |\n|---|---|---|---|---|---|---|" +
     (risingRows.length ? "\n" + risingRows.join("\n") : "");
-  const generalTable =
-    "| 首见 | 关键词 | 热度 | 次数 | 当日新闻语境 |\n|---|---|---|---|---|" +
+  const generalHeader =
+    "| 首见 | Geo | 关键词 | 热度 | 次数 | 当日新闻语境 |\n|---|---|---|---|---|---|" +
     (generalRows.length ? "\n" + generalRows.join("\n") : "");
   backlog = backlog
-    .replace(/(<!-- AUTO:RISING START[^>]*-->)[\s\S]*?(<!-- AUTO:RISING END -->)/, `$1\n${risingTable}\n$2`)
-    .replace(/(<!-- AUTO:GENERAL START[^>]*-->)[\s\S]*?(<!-- AUTO:GENERAL END -->)/, `$1\n${generalTable}\n$2`);
-  backlog = backlog.replace(/geo=\w+/, `geo=${geo}`);
+    .replace(/(<!-- AUTO:RISING START[^>]*-->)[\s\S]*?(<!-- AUTO:RISING END -->)/, `$1\n${risingHeader}\n$2`)
+    .replace(/(<!-- AUTO:GENERAL START[^>]*-->)[\s\S]*?(<!-- AUTO:GENERAL END -->)/, `$1\n${generalHeader}\n$2`);
 
-  writeFileSync(STATE_FILE, JSON.stringify({ ...state, lastRun: TODAY, lastGeo: geo }, null, 1) + "\n");
+  writeFileSync(
+    STATE_FILE,
+    JSON.stringify({ ...state, lastRun: TODAY, lastGeos: GEOS }, null, 1) + "\n",
+  );
   writeFileSync(BACKLOG_FILE, backlog);
 
   // ---- 汇报 ----
   const seedSummary = Object.entries(perSeedCounts).map(([s, n]) => `${s}:${n}`).join(", ");
-  console.log(
-    `[${TODAY}] geo=${geo} rising 池 ${Object.keys(state.rising).length} 条(新 ${freshRising}),general 池 ${Object.keys(state.general).length} 条(新 ${freshGeneral})`,
-  );
+  const risingTotal = Object.values(state.rising).reduce((n, g) => n + Object.keys(g).length, 0);
+  const generalTotal = Object.values(state.general).reduce((n, g) => n + Object.keys(g).length, 0);
+  console.log(`[${TODAY}] geos=${GEOS.join(",")} rising 池 ${risingTotal} 条(新 ${freshRising}),general 池 ${generalTotal} 条(新 ${freshGeneral})`);
   console.log(`各种子词上升词数: ${seedSummary || "全部失败"}`);
   if (suggestions.length) {
-    console.log("值得评估的新 rising 词(涨幅 Breakout 或 ≥100% 且命中站内宇宙):");
-    for (const s of suggestions.slice(0, 12)) console.log(`  - ${s.query}  (${s.growth})  ← 种子词 ${s.seed}`);
+    console.log("值得评估的新 rising 词(涨幅 Breakout 或 ≥100% 且命中三语关键词宇宙):");
+    for (const s of suggestions.slice(0, 15)) console.log(`  - [${s.geo}] ${s.query}  (${s.growth})  ← 种子词 ${s.seed}`);
   } else {
     console.log("无值得评估的新 rising 词");
   }
@@ -250,10 +295,12 @@ function scaffold() {
 > 数据源与规则见 docs/personas/README.md「选题池」;本文件由 \`scripts/trends-backlog.mjs\` 每周自动维护,
 > 只有 AUTO 注释对之间的表格是机器区,「人工评估」等其余部分归人工。
 
-## 主源:种子词相关查询上升榜(Rising, 近 7 天, US)
+## 主源:种子词相关查询上升榜(Rising, 近 7 天, US/DE/FR)
 
-以站内选题簇圆心词为种子,看周边词近 7 天涨幅——这就是"和 handwriting 相关的词在涨什么"。
-**涨幅 Breakout 或 ≥100%** 的新词由定时任务写进「人工评估」,能挂上体验资产(角色卡「发布门槛」)才进排期。
+以站点能力簇的圆心词为种子、按当地搜索语言选词(DE 德校书写体系/制式纸,FR écriture cursive/graphisme 体系),
+看周边词近 7 天涨幅——这就是"和 handwriting 相关的词在涨什么"。
+**涨幅 Breakout 或 ≥100%** 的新词由定时任务写进「人工评估」,能挂上体验资产才进排期。
+DE/FR 候选的路由规则:优先翻译补齐现有 EN 文章的 de/fr 正文(规范 §3.2),确属当地独有需求才新开文章。
 
 <!-- AUTO:RISING START 由 scripts/trends-backlog.mjs 维护,勿手工编辑此区间 -->
 <!-- AUTO:RISING END -->
@@ -267,7 +314,7 @@ function scaffold() {
 
 ## 人工评估
 
-<!-- 每周扫描后追加:日期 | 关键词 | 增长 | 建议角色 | 体验资产点子 | 结论(排期/放弃/继续观察) -->
+<!-- 每周扫描后追加:日期 | Geo | 关键词 | 增长 | 建议角色 | 体验资产点子 | 结论(排期/放弃/继续观察) -->
 `;
 }
 

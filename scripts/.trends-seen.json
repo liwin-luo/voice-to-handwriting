@@ -1,527 +1,1182 @@
 {
  "rising": {
-  "angelina jolie handwriting viral note": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "Breakout",
-   "maxGrowth": null,
-   "seed": "handwriting",
-   "source": "rising"
+  "US": {
+   "angelina jolie handwriting viral note": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "angelina jolie handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "meghan markle handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+450%",
+    "maxGrowth": 450,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "einstein handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "pandora handwriting necklace": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "albert einstein handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "architect handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "free printable cursive handwriting worksheets": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 4,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "print script handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "free handwriting practice sheets for kids": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "neat handwriting practice": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "create handwriting worksheets": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "create printables name tracing with lines": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "createprintables name tracing": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+850%",
+    "maxGrowth": 850,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "create printables name tracing": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+120%",
+    "maxGrowth": 120,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "create name tracing worksheets": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "name tracing with lines": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "motto of a calligraphy enthusiast": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "like samosas and wontons crossword": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "devoted followers of painter o keeffe crossword": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+170%",
+    "maxGrowth": 170,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "series of setbacks in slang crossword clue": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "classmate of beavis crossword clue": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "resort near snowbird": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "calligraphy pronunciation": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "blackletter calligraphy": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "jacob elordi handwriting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "make handwriting worksheets": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "name tracing generator with lines": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "editable name tracing worksheets": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "create name tracing": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "modern calligraphy alphabet": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "calligraphy",
+    "source": "rising"
+   }
   },
-  "angelina jolie handwriting": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+4,750%",
-   "maxGrowth": 750,
-   "seed": "handwriting",
-   "source": "rising"
+  "DE": {
+   "gebundene handschrift im mittelalter": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "gebundene handschrift im mittelalter 5 buchstaben": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "gebundene handschrift im ma": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "pandora gravur handschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "sütterlin alphabet schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+350%",
+    "maxGrowth": 350,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibpilot schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+300%",
+    "maxGrowth": 300,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "kyrillisch schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "sütterlin schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "russische schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "russisches alphabet schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibschrift s groß": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibschrift f groß": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibschrift übungsblätter": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "jandorf schreibschrift": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibschrift kopieren": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "linienblatt zum ausdrucken pdf": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "linienblatt",
+    "source": "rising"
+   },
+   "lamy kalligraphie füller": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "kalligraphie feder": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+120%",
+    "maxGrowth": 120,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "kalligraphie füller": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "kalligraphie alphabet": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "kalligraphie",
+    "source": "rising"
+   }
   },
-  "meghan markle handwriting": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+450%",
-   "maxGrowth": 450,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "einstein handwriting": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+140%",
-   "maxGrowth": 140,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "pandora handwriting necklace": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+90%",
-   "maxGrowth": 90,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "albert einstein handwriting": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+90%",
-   "maxGrowth": 90,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "architect handwriting": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+80%",
-   "maxGrowth": 80,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "free printable cursive handwriting worksheets": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 2,
-   "growth": "+50%",
-   "maxGrowth": 50,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "print script handwriting": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+40%",
-   "maxGrowth": 40,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "free handwriting practice sheets for kids": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+40%",
-   "maxGrowth": 40,
-   "seed": "handwriting",
-   "source": "rising"
-  },
-  "neat handwriting practice": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+50%",
-   "maxGrowth": 50,
-   "seed": "handwriting practice",
-   "source": "rising"
-  },
-  "create handwriting worksheets": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+50%",
-   "maxGrowth": 50,
-   "seed": "handwriting worksheets",
-   "source": "rising"
-  },
-  "create printables name tracing with lines": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "Breakout",
-   "maxGrowth": null,
-   "seed": "name tracing",
-   "source": "rising"
-  },
-  "createprintables name tracing": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+600%",
-   "maxGrowth": 600,
-   "seed": "name tracing",
-   "source": "rising"
-  },
-  "create printables name tracing": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+90%",
-   "maxGrowth": 90,
-   "seed": "name tracing",
-   "source": "rising"
-  },
-  "create name tracing worksheets": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+50%",
-   "maxGrowth": 50,
-   "seed": "name tracing",
-   "source": "rising"
-  },
-  "name tracing with lines": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+50%",
-   "maxGrowth": 50,
-   "seed": "name tracing",
-   "source": "rising"
-  },
-  "motto of a calligraphy enthusiast": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "Breakout",
-   "maxGrowth": null,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "like samosas and wontons crossword": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "Breakout",
-   "maxGrowth": null,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "devoted followers of painter o keeffe crossword": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "Breakout",
-   "maxGrowth": null,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "series of setbacks in slang crossword clue": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+1,600%",
-   "maxGrowth": 600,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "classmate of beavis crossword clue": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+1,050%",
-   "maxGrowth": 50,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "resort near snowbird": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+950%",
-   "maxGrowth": 950,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "calligraphy pronunciation": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+70%",
-   "maxGrowth": 70,
-   "seed": "calligraphy",
-   "source": "rising"
-  },
-  "blackletter calligraphy": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "growth": "+40%",
-   "maxGrowth": 40,
-   "seed": "calligraphy",
-   "source": "rising"
+  "FR": {
+   "alphabet calligraphie moderne": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "apprendre la calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "lettre s calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "lettres calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "m majuscule calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "tableau calligraphie arabe": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "feutre calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "définition calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "h majuscule calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "e majuscule calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "t majuscule calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "j majuscule calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "kit calligraphie": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "calligraphie gothique": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "blog graphisme": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+350%",
+    "maxGrowth": 350,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme boucles gs": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme halloween": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "logiciel graphisme": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme ponts": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme en france": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme maternelle à imprimer": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "citrouille graphisme": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "école de graphisme": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme octobre": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "graphisme",
+    "source": "rising"
+   }
   }
  },
  "general": {
-  "simon cowell": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "200+",
-   "note": "Simon Cowell’s Fiancée Marks His 67th Birthday With a Message That Hits Differently This Y"
+  "US": {
+   "simon cowell": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "200+",
+    "note": "Simon Cowell’s Fiancée Marks His 67th Birthday With a Message That Hits Differently This Y"
+   },
+   "flow": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 5,
+    "traffic": "200+",
+    "note": "Generac (GNRC) Stock May Be 20% Undervalued On Cash Flow"
+   },
+   "pekan antariksa dunia 2026": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "100+",
+    "note": "Pekan Antariksa Dunia 2026 Indonesia Digelar di TIM, Ini Jadwal dan Cara Masuk Pameran"
+   },
+   "karolina muchova": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "200+",
+    "note": "&apos;I was shaking!&apos; Muchova edges Osaka on ninth match point in Beijing thriller"
+   },
+   "mariano navone": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "2000+",
+    "note": "Sports News, Transfers, Scores | Watch Live Sport"
+   },
+   "hamad medjedovic": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "2000+",
+    "note": "Highlights: Altmaier earns valiant Rune win in Shanghai 2026"
+   },
+   "loans": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "100+",
+    "note": "Here&apos;s the latest sticker shock: Borrowing for a mortgage — or a car"
+   },
+   "connor hellebuyck": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "100+",
+    "note": "3-Way Trade Ideas for Connor Hellebuyck and Alexander Nikishin Amid NHL Rumors"
+   },
+   "james duckworth": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "100+",
+    "note": "Sports News, Transfers, Scores | Watch Live Sport"
+   },
+   "내일 날씨": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 2,
+    "traffic": "100+",
+    "note": "[내일 날씨] 한글날 전국 구름 많아…낮 최고 26도까지 올라"
+   },
+   "what happened on october 7th": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "5000+",
+    "note": "Israeli-Palestinian conflict live updates: Israel marks 3 years since Oct. 7 attack"
+   },
+   "earthquake": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "500+",
+    "note": "Earthquake Simulator Will Bring Magnitude 7.0 Shaking To LA"
+   },
+   "openai": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "500+",
+    "note": "Sharing AI progress in mathematics"
+   },
+   "demacia cup": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "100+",
+    "note": "Match NAVI vs JD 2026 Demacia Cup Global Invitational 8 October 2026 — 12:00 - League of L"
+   },
+   "nifty 50": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-09",
+    "count": 5,
+    "traffic": "200+",
+    "note": "Indian shares extend losses as RBI rate hike, rising oil weigh"
+   },
+   "汇率": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "100+",
+    "note": "受霍尔木兹海峡中断影响，伊拉克石油收入锐减，伊拉克第纳尔贬值13%。"
+   },
+   "nikola bartunkova": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "200+",
+    "note": "Karolina Muchova v Nikola Bartunkova (08/10/2026)"
+   },
+   "britney spears": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 4,
+    "traffic": "500+",
+    "note": "Britney Spears gushes over Dollywood in surprise Instagram posts"
+   },
+   "antigravity": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Gemini 4 Argon: our next era of frontier intelligence"
+   },
+   "latest news": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "2000+",
+    "note": "Christa Pike’s attorneys believed she was brain-dead before she woke up ‘to the shock of e"
+   },
+   "prime day october 2026": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 3,
+    "traffic": "100+",
+    "note": "October Prime Day ends tonight: The best Amazon deals on Hanes, Carhartt, Apple and more"
+   },
+   "barack obama": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 2,
+    "traffic": "200+",
+    "note": "Trump says he could have done ‘very bad things’ to Biden, Obama and Clinton"
+   },
+   "sophie cunningham": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Fever should part with Sophie Cunningham. She’s too turbulent to be paired with Caitlin Cl"
+   },
+   "sam elliott": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Taylor Sheridan’s Landman Confirms Big Season 3 Upgrade After Major Delay"
+   },
+   "meghan markle": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Prince Harry and Meghan Markle Are Not Planning an Apology to Prince William and Kate Midd"
+   },
+   "wral": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Several crews responding to large structure fire in Durham"
+   },
+   "weather orlando": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Northern Florida beach towns facing a coastal flood threat as relentless rain soaks region"
+   },
+   "boston celtics": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Five things to watch in Celtics’ preseason opener vs. Cavaliers"
+   },
+   "congressional report us aircraft damage": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "200+",
+    "note": "US has lost or sustained damage to 81 military aircraft worth up to $3.3 billion in Iran w"
+   },
+   "tom holland": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Spider-Man: Brand New Day (2026)"
+   },
+   "strands hint today": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "200+",
+    "note": "NYT Strands Hints, Clues And Answer For Thursday, October 8 (A Star Is Born)"
+   },
+   "martin landaluce": {
+    "firstSeen": "2026-10-08",
+    "lastSeen": "2026-10-08",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Sports News, Transfers, Scores | Watch Live Sport"
+   },
+   "michael douglas age": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "traffic": "200+",
+    "note": "How Michael Douglas Began a Secret Affair on the Set of Basic Instinct — But Not with Shar"
+   },
+   "arthur gea": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 2,
+    "traffic": "500+",
+    "note": "Arthur Gea claims first Masters 1000 win in Shanghai"
+   },
+   "how old is michael douglas": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Michael Douglas Shares the Secret of His Marriage to Catherine Zeta-Jones (Exclusive)"
+   },
+   "daniel altmaier": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "ATP Shanghai Day 1 Predictions Including Holger Rune vs Daniel Altmaier"
+   },
+   "gavin williams": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Gavin Williams used out of bullpen in Game 4"
+   },
+   "ben shelton": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Shelton on Turin qualification: ‘It’s a massive motivation’"
+   },
+   "andrew benintendi": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Andrew Benintendi Hit Prop Strategy: High-Value Fade for the Postseason"
+   },
+   "steffi graf": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Steffi Graf sends fans into overdrive with ultra rare appearance alongside Andre Agassi an"
+   },
+   "luka doncic": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Luka Dončić says he &apos;definitely&apos; regrets playing through hamstring injury that e"
+   },
+   "adou thiero": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Adou Thiero aims for bigger Lakers role after injury-marred rookie season"
+   },
+   "sandro mamukelashvili": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Lakers&apos; need for a big man behind Walker Kessler is only growing"
+   },
+   "rei sakamoto": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "ATP Shanghai Day 3 Predictions Including Andrey Rublev vs Rei Sakamoto"
+   },
+   "bam adebayo": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Aces&apos; A&apos;ja Wilson wins 5th WNBA MVP, says no to pregame ceremony"
+   },
+   "flavio cobolli": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "ATP Shanghai Day 1 Predictions Including Holger Rune vs Daniel Altmaier"
+   },
+   "ben affleck jennifer garner co parenting": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Ben Affleck Shares Rare Comments About His Co-Parenting Relationship with Ex Jennifer Garn"
+   },
+   "michael douglas": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "20000+",
+    "note": "Michael Douglas claims Kobe Bryant would ‘stop by’ wife Catherine Zeta-Jones’ house ‘a lot"
+   },
+   "ugo humbert": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Arthur Gea claims first Masters 1000 win in Shanghai"
+   }
   },
-  "flow": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 5,
-   "traffic": "200+",
-   "note": "Generac (GNRC) Stock May Be 20% Undervalued On Cash Flow"
+  "DE": {
+   "gta vi leaks": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "GTA VI leaks continue with a lengthy (and very nude) gameplay video"
+   },
+   "shanghai open": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Hurkacz fires 19 aces to set Djokovic clash, Tsitsipas wins in Shanghai"
+   },
+   "vorname": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Klingt gut, aber passt er auch?: Warum die Namenswahl ihre Tücken hat"
+   },
+   "margrethe ii.": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Queen Margrethe of Denmark Makes First Public Appearance After Latest Hospitalization"
+   },
+   "außenminister der vereinigten staaten": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "„Langer Dämmerschlaf“ – Rubio fordert Europa zum Erwachen auf und warnt vor „Niedergang“"
+   },
+   "rentenreform": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Erste Lesung im Bundestag: Union stell Bedingungen für Steuerreform"
+   },
+   "verfilmung": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Vergesst alles über Sci-Fi: „Cyberpunk 2077“-Verfilmung gestartet – Keanu Reeves muss dabe"
+   },
+   "wer wird millionär gestern": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "&quot;Wer wird Millionär?&quot;: Kandidatin verspielt ihren Gewinn und das Final-Ticket"
+   },
+   "unwetter": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Nass, nasser, Mallorca: An diesen Orten regnete es am Mittwoch am meisten"
+   },
+   "güstrow": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Kaninchen in Gewahrsamszelle bei der Polizei in Güstrow"
+   }
   },
-  "pekan antariksa dunia 2026": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "100+",
-   "note": "Pekan Antariksa Dunia 2026 Indonesia Digelar di TIM, Ini Jadwal dan Cara Masuk Pameran"
-  },
-  "karolina muchova": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "200+",
-   "note": "&apos;I was shaking!&apos; Muchova edges Osaka on ninth match point in Beijing thriller"
-  },
-  "mariano navone": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "2000+",
-   "note": "Sports News, Transfers, Scores | Watch Live Sport"
-  },
-  "hamad medjedovic": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "2000+",
-   "note": "Highlights: Altmaier earns valiant Rune win in Shanghai 2026"
-  },
-  "loans": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "100+",
-   "note": "Here&apos;s the latest sticker shock: Borrowing for a mortgage — or a car"
-  },
-  "connor hellebuyck": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "100+",
-   "note": "3-Way Trade Ideas for Connor Hellebuyck and Alexander Nikishin Amid NHL Rumors"
-  },
-  "james duckworth": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "100+",
-   "note": "Sports News, Transfers, Scores | Watch Live Sport"
-  },
-  "내일 날씨": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 2,
-   "traffic": "100+",
-   "note": "[내일 날씨] 한글날 전국 구름 많아…낮 최고 26도까지 올라"
-  },
-  "what happened on october 7th": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "5000+",
-   "note": "Israeli-Palestinian conflict live updates: Israel marks 3 years since Oct. 7 attack"
-  },
-  "earthquake": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "500+",
-   "note": "Earthquake Simulator Will Bring Magnitude 7.0 Shaking To LA"
-  },
-  "openai": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "500+",
-   "note": "Sharing AI progress in mathematics"
-  },
-  "demacia cup": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "100+",
-   "note": "Match NAVI vs JD 2026 Demacia Cup Global Invitational 8 October 2026 — 12:00 - League of L"
-  },
-  "nifty 50": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "200+",
-   "note": "Indian shares extend losses as RBI rate hike, rising oil weigh"
-  },
-  "汇率": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "100+",
-   "note": "受霍尔木兹海峡中断影响，伊拉克石油收入锐减，伊拉克第纳尔贬值13%。"
-  },
-  "nikola bartunkova": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "200+",
-   "note": "Karolina Muchova v Nikola Bartunkova (08/10/2026)"
-  },
-  "britney spears": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 4,
-   "traffic": "500+",
-   "note": "Britney Spears gushes over Dollywood in surprise Instagram posts"
-  },
-  "antigravity": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "100+",
-   "note": "Gemini 4 Argon: our next era of frontier intelligence"
-  },
-  "latest news": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "2000+",
-   "note": "Christa Pike’s attorneys believed she was brain-dead before she woke up ‘to the shock of e"
-  },
-  "prime day october 2026": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 3,
-   "traffic": "100+",
-   "note": "October Prime Day ends tonight: The best Amazon deals on Hanes, Carhartt, Apple and more"
-  },
-  "barack obama": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 2,
-   "traffic": "200+",
-   "note": "Trump says he could have done ‘very bad things’ to Biden, Obama and Clinton"
-  },
-  "sophie cunningham": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "2000+",
-   "note": "Fever should part with Sophie Cunningham. She’s too turbulent to be paired with Caitlin Cl"
-  },
-  "sam elliott": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "200+",
-   "note": "Taylor Sheridan’s Landman Confirms Big Season 3 Upgrade After Major Delay"
-  },
-  "meghan markle": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "200+",
-   "note": "Prince Harry and Meghan Markle Are Not Planning an Apology to Prince William and Kate Midd"
-  },
-  "wral": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "100+",
-   "note": "Several crews responding to large structure fire in Durham"
-  },
-  "weather orlando": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "100+",
-   "note": "Northern Florida beach towns facing a coastal flood threat as relentless rain soaks region"
-  },
-  "boston celtics": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "100+",
-   "note": "Five things to watch in Celtics’ preseason opener vs. Cavaliers"
-  },
-  "congressional report us aircraft damage": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "200+",
-   "note": "US has lost or sustained damage to 81 military aircraft worth up to $3.3 billion in Iran w"
-  },
-  "tom holland": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "200+",
-   "note": "Spider-Man: Brand New Day (2026)"
-  },
-  "strands hint today": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "200+",
-   "note": "NYT Strands Hints, Clues And Answer For Thursday, October 8 (A Star Is Born)"
-  },
-  "martin landaluce": {
-   "firstSeen": "2026-10-08",
-   "lastSeen": "2026-10-08",
-   "count": 1,
-   "traffic": "100+",
-   "note": "Sports News, Transfers, Scores | Watch Live Sport"
-  },
-  "michael douglas age": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "200+",
-   "note": "How Michael Douglas Began a Secret Affair on the Set of Basic Instinct — But Not with Shar"
-  },
-  "arthur gea": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "500+",
-   "note": "Arthur Gea claims first Masters 1000 win in Shanghai"
-  },
-  "how old is michael douglas": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "1000+",
-   "note": "Michael Douglas Shares the Secret of His Marriage to Catherine Zeta-Jones (Exclusive)"
-  },
-  "daniel altmaier": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "1000+",
-   "note": "ATP Shanghai Day 1 Predictions Including Holger Rune vs Daniel Altmaier"
-  },
-  "gavin williams": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "1000+",
-   "note": "Gavin Williams used out of bullpen in Game 4"
-  },
-  "ben shelton": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "500+",
-   "note": "Shelton on Turin qualification: ‘It’s a massive motivation’"
-  },
-  "andrew benintendi": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "500+",
-   "note": "Andrew Benintendi Hit Prop Strategy: High-Value Fade for the Postseason"
-  },
-  "steffi graf": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "200+",
-   "note": "Steffi Graf sends fans into overdrive with ultra rare appearance alongside Andre Agassi an"
-  },
-  "luka doncic": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "200+",
-   "note": "Luka Dončić says he &apos;definitely&apos; regrets playing through hamstring injury that e"
-  },
-  "adou thiero": {
-   "firstSeen": "2026-10-09",
-   "lastSeen": "2026-10-09",
-   "count": 1,
-   "traffic": "200+",
-   "note": "Adou Thiero aims for bigger Lakers role after injury-marred rookie season"
+  "FR": {
+   "perpignan": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Appel à témoins dans les Pyrénées-Orientales : hospitalisée à Perpignan, une femme de 47 a"
+   },
+   "paris saint-germain football club": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Gestion, fatigue et gros duel à venir contre Manchester City : pourquoi Dembélé et Nuno Me"
+   },
+   "canal+": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Canal+ lance Sport+, une offre gratuite de sport"
+   },
+   "l'amour est dans le pré": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "L&apos;amour est dans le pré : Manon, candidate de Haute-Garonne, découvre après une chute"
+   },
+   "lot-et-garonne": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Une voiture percute un arbre en Lot-et-Garonne : un jeune d&apos;une vingtaine d&apos;anné"
+   },
+   "autobus scolaire": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Isère. Une voiture percute un bus scolaire, aucun blessé n&apos;est à déplorer"
+   },
+   "élections de mi-mandat aux états-unis": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Donald Trump exclut d&apos;attaquer l&apos;Iran avant les élections de mi-mandat aux Etats"
+   },
+   "maine-et-loire": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Météo. La météo du jeudi 8 octobre 2026 à Angers et ses environs"
+   },
+   "transavia": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Marcel s’envole avec Transavia pour Octobre rose"
+   },
+   "movix": {
+    "firstSeen": "2026-10-09",
+    "lastSeen": "2026-10-09",
+    "count": 1,
+    "traffic": "100+",
+    "note": "【松竹マルチプレックスシアターズ】音響透過型シネマ LEDスクリーン「トライコーンプレミアム LED」日本初！12月4日（金）MOVIXさいたまに導入"
+   }
   }
  },
  "lastRun": "2026-10-09",
- "lastGeo": "US"
+ "lastGeos": [
+  "US",
+  "DE",
+  "FR"
+ ]
 }
