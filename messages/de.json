@@ -91,6 +91,9 @@
     "cursiveText": {
       "title": "Schreibschrift-Generator – Text kopieren und einfügen",
       "description": "Verwandle beliebige Sätze in kopierbaren Schreibschrift-Text – sechs Stile, kostenlos, ohne Anmeldung, auch per Spracheingabe. Für Instagram, TikTok und Discord."
+    },
+    "cursiveAlphabet": {
+      "description": "Alle Schreibschrift-Buchstaben von A bis Z mit Strichführungen — Buchstabe antippen, Schrift wechseln und die Tafel kostenlos drucken."
     }
   },
   "nav": {
@@ -101,6 +104,7 @@
     "printablePaper": "Druckpapier-Vorlagen",
     "nameTracing": "Schreibübungsblätter",
     "cursive": "Schreibschrift-Generator",
+    "cursiveAlphabet": "Schreibschrift-Alphabet",
     "cursiveWorks": "Schreibschrift-Arbeitsblätter",
     "dailyCursive": "Tägliche Schreibschriftübung",
     "writingPractice": "Schreibübungen CJK",
@@ -381,6 +385,8 @@
     "font": "Schrift",
     "showCover": "Deckblatt",
     "showExample": "Beispielzeile",
+    "strokeGuides": "Strichführung (Startpunkt & Pfeil)",
+    "strokeGuidesHint": "Strichführungen sind nur für lateinische Schriften verfügbar",
     "downloadPdf": "Übungsheft-PDF herunterladen",
     "pageN": "Seite {n}",
     "stats": "{pages} Seiten · {words} Wörter",
@@ -503,6 +509,8 @@
     "wordsPlaceholder": "cat\ndog\nsun\nball",
     "font": "Schrift",
     "showTrace": "Erste Kopie zum Nachspuren",
+    "strokeGuides": "Strichführung (Startpunkt & Pfeil)",
+    "strokeGuidesHint": "Strichführungen sind nur für lateinische Schriften verfügbar",
     "downloadPdf": "PDF herunterladen",
     "a1Title": "Schreibe jedes Wort dreimal.",
     "a2Title": "Ergänze den fehlenden Buchstaben.",

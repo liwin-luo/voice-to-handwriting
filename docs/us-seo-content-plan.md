@@ -213,3 +213,17 @@
 6. Sütterlin、einstein handwriting 维持留观;每项翻译走 §3.4 接线四步 + 验收清单。
 
 **流程改进建议**:新 EN 文章发布时 de/fr/es 的 title/description 应在下一内容周期内补齐(与 §3.1 同周期口径),避免再积累"正文已译、元数据回退"的洞。
+
+## 十三、cursive 立法数据页:cursive-laws-by-state(2026-10-09,GSC 24h 词触发)
+
+- **数据源**:GSC 24 小时曝光词 "is cursive still taught" / "do schools still teach cursive"(两类问题词,SERP 被 Reddit + 新闻 + MyCursive 的州法律地图占据)。竞品调研结论:纯观点文打不过 Reddit,该话题唯一可防御的形态是**持续更新的数据资产**——而 MyCursive 的州地图自身数据有内部矛盾(称 32 州但列表对不上),有超越空间。
+- **落地**:`cursive-laws-by-state`(en)。主词 cursive laws by state / what states require cursive 2026;次词 is cursive required in schools / cursive mandate。形态:分州数据表(法案号/生效年/年级/要点)+ 2024-2026 立法潮时间线 + 教师周一就能用的应对清单(生成器配方)+ FAQ。与 is-cursive-still-taught(叙事型总览)互链分工:总览引流、本篇承接深度查询并抢 featured snippet。角色 Clara。内链 /cursive-worksheets、/daily-cursive-handwriting-practice、/printable-paper。
+- **维护约定**:每年 1 月复核州名单与法案状态、更新 `updated` 字段(与 P1-3 的复核项同周期);表中每条数据标注来源。
+- **红线**:只陈述法律条文与生效日期,不评价立法好坏;统计口径差异(NEA 27 / MyCursive 32 / USA Today 24+)如实并列,不择单一口径当绝对真相。
+
+## 十四、两个新工具立项:cursive-alphabet 与 cursive-font-generator(2026-10-09,Semrush cursive 词簇驱动)
+
+- **数据源**:Semrush 关键词聚类截图(cursive 簇:关键词变化 125.3K 词/总搜索量 5.4M;问题词 15.4K/431.9K)+ 两条赛道共 16 家竞品实抓(education.com、k5learning、mycursive、kidzone、worksheetworks、commoncoresheets、TPT、fontspace、1001fonts、lingojam、cooltext、flamingtext、cursivegenerator.com 等)。
+- **落地一**:`/cursive-alphabet` 交互式连笔字母表(**en-only Phase 0**,复用字母矩阵机制:文案进 TS 模块、sitemap 仅 en、buildAlternates available=["en"])。主词 cursive alphabet(201K,KD 43);次词 cursive letters(90.5K)/ cursive alphabet chart / cursive capital letters。**竞品实证**:SERP 前排全是静态 printable,笔顺指引(落笔点/箭头)仅 TPT 付费 PDF 有;差异化为「点选字母 + 笔顺指引 + 在线定制字体/字号 + 免邮箱墙打印与 PNG/PDF 导出」,复用 glyphStarts 数据与 glyphGuides 画法。同时作为字母矩阵(现有 12/52 页)的 hub,矩阵后续扩批自动挂链。配套:改造现有 cursive-alphabet-chart 文(教学参考角度保留,加工具入口,标题错位防互搏)。
+- **落地二**:`/cursive-font-generator` 手写字体预览 + 导出(8 语言,轻 UI 文案)。主词 cursive font generator;次词 cursive fonts(浏览)/ cursive font preview / handwriting font tester。**竞品实证**:下载站(fontspace/1001fonts)预览完必须下载安装;Unicode 站是假字体不能出图;最接近的 cursivegenerator.com 偏 tattoo/CNC、无 PDF、无整段排版。差异化为「字体浏览式体验 + 卡片/请柬整段预览 + 免安装高分辨率 PNG/PDF 双导出 + OFL license 逐款标注」。与 /cursive(书写生成导图)、/cursive-text-generator(Unicode 复制粘贴)页内互链分工,不互搏。配套支柱文 `best-cursive-fonts`(en,Theo Lindgren,选型指南向)。
+- **不接**:cursive words(词级意图大半被 /cursive 承接,留观)、笔顺全程动画(现有数据仅落笔点+初始方向,做不到不承诺)、字体文件打包分发(外链 Google Fonts,规避 license 风险)。

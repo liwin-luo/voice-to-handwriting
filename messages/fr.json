@@ -91,6 +91,9 @@
     "cursiveText": {
       "title": "Générateur de texte cursif – copier-coller",
       "description": "Transformez n'importe quelle phrase en texte cursif à copier-coller — six styles, gratuit, sans inscription, même en vocal. Pour Instagram, TikTok et Discord."
+    },
+    "cursiveAlphabet": {
+      "description": "Toutes les lettres cursives de A à Z avec guides de tracé : touchez une lettre, changez de police et imprimez le tableau gratuitement."
     }
   },
   "nav": {
@@ -101,6 +104,7 @@
     "printablePaper": "Papier à imprimer",
     "nameTracing": "Fiches de prénoms",
     "cursive": "Écriture cursive",
+    "cursiveAlphabet": "Alphabet cursive",
     "cursiveWorks": "Fiches d'écriture cursive",
     "dailyCursive": "Pratique cursive quotidienne",
     "writingPractice": "Écriture CJK",
@@ -381,6 +385,8 @@
     "font": "Police",
     "showCover": "Couverture",
     "showExample": "Ligne modèle",
+    "strokeGuides": "Guides de tracé (point de départ et flèche)",
+    "strokeGuidesHint": "Les guides de tracé ne sont disponibles qu'avec les polices latines",
     "downloadPdf": "Télécharger le cahier en PDF",
     "pageN": "Page {n}",
     "stats": "{pages} pages · {words} mots",
@@ -503,6 +509,8 @@
     "wordsPlaceholder": "cat\ndog\nsun\nball",
     "font": "Police",
     "showTrace": "Première copie à repasser",
+    "strokeGuides": "Guides de tracé (point de départ et flèche)",
+    "strokeGuidesHint": "Les guides de tracé ne sont disponibles qu'avec les polices latines",
     "downloadPdf": "Télécharger le PDF",
     "a1Title": "Écris chaque mot trois fois.",
     "a2Title": "Complète la lettre manquante.",

@@ -4,7 +4,7 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
-import { TOOL_GROUPS } from "@/lib/tools";
+import { toolGroupsFor } from "@/lib/tools";
 import { buildAlternates } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -43,7 +43,7 @@ export default async function ToolsHubPage({
         <h1 className="font-hand text-4xl leading-none md:text-5xl">{t("title")}</h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
-      {TOOL_GROUPS.map((group, gi) => (
+      {toolGroupsFor(locale).map((group, gi) => (
         <section
           key={group.labelKey}
           className="rise mt-8"

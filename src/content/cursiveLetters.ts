@@ -604,6 +604,7 @@ export interface LetterUi {
   hubIntro: string;
   hubLowercase: string;
   hubCapital: string;
+  hubCta: string;
 }
 
 const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
@@ -625,6 +626,7 @@ const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
       "Step-by-step guides for the trickiest letters in the alphabet — stroke order, common mistakes, practice words, and a printable sheet for each one.",
     hubLowercase: "Lowercase",
     hubCapital: "Capital",
+    hubCta: "Browse the full interactive cursive alphabet — every letter with stroke guides",
   },
 };
 

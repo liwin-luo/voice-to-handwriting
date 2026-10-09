@@ -1,7 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import type { Locale } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { RELATED, relatedPostAvailable, TOOL_LABEL_KEY } from "@/content/related";
+import { isEnOnlyTool } from "@/lib/tools";
 import { getPostMeta } from "@/content/posts";
 
 /**
@@ -17,6 +18,8 @@ export default async function RelatedLinks({ slug, locale }: { slug: string; loc
 
   const tools = cfg.tools
     .filter((href) => TOOL_LABEL_KEY[href])
+    // en-only 工具只在默认语言的页面出现,其他语言链过去是 404
+    .filter((href) => locale === routing.defaultLocale || !isEnOnlyTool(href))
     .map((href) => ({ href, label: tnav(TOOL_LABEL_KEY[href]) }));
 
   const posts = cfg.posts

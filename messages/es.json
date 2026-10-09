@@ -91,6 +91,9 @@
     "cursiveText": {
       "title": "Generador de texto cursivo – copiar y pegar",
       "description": "Convierte cualquier frase en texto cursivo para copiar y pegar: seis estilos, gratis y sin registro. También por voz. Funciona en Instagram, TikTok y Discord."
+    },
+    "cursiveAlphabet": {
+      "description": "Todas las letras cursivas de la A a la Z con guías de trazado: toca una letra, cambia la fuente e imprime la tabla gratis."
     }
   },
   "nav": {
@@ -101,6 +104,7 @@
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nombres",
     "cursive": "Letra cursiva",
+    "cursiveAlphabet": "Alfabeto cursivo",
     "cursiveWorks": "Fichas de cursiva",
     "dailyCursive": "Práctica diaria de cursiva",
     "writingPractice": "Caligrafía CJK",
@@ -381,6 +385,8 @@
     "font": "Tipografía",
     "showCover": "Portada",
     "showExample": "Fila de ejemplo",
+    "strokeGuides": "Guías de trazado (punto de inicio y flecha)",
+    "strokeGuidesHint": "Las guías de trazado solo están disponibles con fuentes de alfabeto latino",
     "downloadPdf": "Descargar cuaderno en PDF",
     "pageN": "Página {n}",
     "stats": "{pages} páginas · {words} palabras",
@@ -503,6 +509,8 @@
     "wordsPlaceholder": "cat\ndog\nsun\nball",
     "font": "Fuente",
     "showTrace": "Primera copia para repasar",
+    "strokeGuides": "Guías de trazado (punto de inicio y flecha)",
+    "strokeGuidesHint": "Las guías de trazado solo están disponibles con fuentes de alfabeto latino",
     "downloadPdf": "Descargar PDF",
     "a1Title": "Escribe cada palabra tres veces.",
     "a2Title": "Completa la letra que falta.",

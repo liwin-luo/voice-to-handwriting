@@ -91,6 +91,9 @@
     "cursiveText": {
       "title": "花体文字生成器 - 可复制粘贴的手写体英文",
       "description": "把任意句子变成可复制粘贴的花体英文,六种风格,免费无注册,还能语音输入。适用于 Instagram、TikTok、Discord 等几乎所有能打字的地方。"
+    },
+    "cursiveAlphabet": {
+      "description": "26 个连笔字母大小写全图,带落笔点与方向笔顺指引,可切换教学字体并免费打印。"
     }
   },
   "nav": {
@@ -101,6 +104,7 @@
     "printablePaper": "打印纸模板",
     "nameTracing": "描红字帖",
     "cursive": "英文连笔字",
+    "cursiveAlphabet": "连笔字母表",
     "cursiveWorks": "英文连笔字工作表",
     "dailyCursive": "每日草书练习",
     "writingPractice": "练字帖",
@@ -381,6 +385,8 @@
     "font": "字体",
     "showCover": "封面页",
     "showExample": "示例行",
+    "strokeGuides": "笔画引导(起点与箭头)",
+    "strokeGuidesHint": "笔画引导仅支持拉丁字母字体",
     "downloadPdf": "下载练习册 PDF",
     "pageN": "第 {n} 页",
     "stats": "{pages} 页 · {words} 个词",
@@ -503,6 +509,8 @@
     "wordsPlaceholder": "cat\ndog\nsun\nball",
     "font": "字体",
     "showTrace": "第一份可描红",
+    "strokeGuides": "笔画引导(起点与箭头)",
+    "strokeGuidesHint": "笔画引导仅支持拉丁字母字体",
     "downloadPdf": "下载 PDF",
     "a1Title": "每个单词写三遍。",
     "a2Title": "补全缺失的字母。",

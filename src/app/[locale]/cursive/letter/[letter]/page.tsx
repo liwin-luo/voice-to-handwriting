@@ -139,6 +139,12 @@ export default async function CursiveLetterPage({
             <ArrowRight className="size-4" />
           </Link>
           <p className="text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
+          {/* 字母表工具页是全部单字母页的 hub(反向内链) */}
+          <p className="text-sm">
+            <Link href="/cursive-alphabet" className="text-accent underline-offset-2 hover:underline">
+              {ui.hubCta} →
+            </Link>
+          </p>
         </div>
       </section>
 

@@ -9,6 +9,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/name-tracing": "nameTracing",
   "/cursive": "cursive",
   "/cursive-text-generator": "cursiveText",
+  "/cursive-alphabet": "cursiveAlphabet",
   "/cursive-worksheets": "cursiveWorks",
   "/daily-cursive-handwriting-practice": "dailyCursive",
   "/handwriting-personality-quiz": "quiz",
@@ -35,7 +36,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["cursive-alphabet-chart", "how-to-write-in-cursive", "name-tracing-generator"],
   },
   "cursive-alphabet-chart": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-alphabet", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
     posts: ["cursive-practice-worksheets", "how-to-write-in-cursive", "cursive-name-signature"],
   },
   "how-to-teach-cursive-kids": {
@@ -47,7 +48,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["how-to-write-in-cursive", "cursive-name-signature", "is-cursive-still-taught"],
   },
   "how-to-write-in-cursive": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-alphabet", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
     posts: ["cursive-alphabet-chart", "cursive-practice-worksheets", "how-to-improve-handwriting-adults"],
   },
   "is-cursive-still-taught": {
@@ -103,6 +104,12 @@ export const RELATED: Record<string, RelatedConfig> = {
   "calligraphy-motto-cards": {
     tools: ["/", "/templates"],
     posts: ["handwritten-card-with-voice", "xiaohongshu-handwritten-images", "handwriting-templates-guide"],
+  },
+
+  // cursive 立法数据簇:is-cursive-still-taught 的深度数据页,吃 "cursive laws by state" 词簇
+  "cursive-laws-by-state": {
+    tools: ["/cursive-worksheets", "/daily-cursive-handwriting-practice", "/printable-paper"],
+    posts: ["is-cursive-still-taught", "how-to-teach-cursive-kids", "cursive-sentences-to-practice"],
   },
   "letter-to-santa-template": {
     tools: ["/name-tracing", "/printable-paper"],

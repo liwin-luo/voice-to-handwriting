@@ -91,6 +91,9 @@
     "cursiveText": {
       "title": "Cursive Text Generator – Copy and Paste Fancy Cursive",
       "description": "Turn any words into cursive text you can copy and paste — six styles, free, no signup. Speak instead of typing. Works in Instagram, TikTok and Discord."
+    },
+    "cursiveAlphabet": {
+      "description": "Every cursive letter A to Z with start-dot stroke guides — tap a letter, switch teaching fonts, and print the chart free."
     }
   },
   "nav": {
@@ -101,6 +104,7 @@
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
     "cursive": "Cursive Writing",
+    "cursiveAlphabet": "Cursive Alphabet",
     "cursiveWorks": "Cursive Worksheets",
     "dailyCursive": "Daily Cursive Practice",
     "writingPractice": "Writing Practice",
@@ -381,6 +385,8 @@
     "font": "Font",
     "showCover": "Cover page",
     "showExample": "Example row",
+    "strokeGuides": "Stroke guides (start dot & arrow)",
+    "strokeGuidesHint": "Stroke guides are available for Latin-alphabet fonts only",
     "downloadPdf": "Download workbook PDF",
     "pageN": "Page {n}",
     "stats": "{pages} pages · {words} words",
@@ -503,6 +509,8 @@
     "wordsPlaceholder": "cat\ndog\nsun\nball",
     "font": "Font",
     "showTrace": "Traceable first copy",
+    "strokeGuides": "Stroke guides (start dot & arrow)",
+    "strokeGuidesHint": "Stroke guides are available for Latin-alphabet fonts only",
     "downloadPdf": "Download PDF",
     "a1Title": "Write each word three times.",
     "a2Title": "Fill in the missing letter.",

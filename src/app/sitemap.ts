@@ -48,6 +48,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       });
     }
   }
+  // /cursive-alphabet:en-only 工具页(Phase 0),仅输出 en 变体,避免非英文 URL 404 混入 sitemap
+  {
+    const p = "/cursive-alphabet";
+    entries.push({
+      url: localizedUrl(p, routing.defaultLocale),
+      changeFrequency: "weekly",
+      priority: 0.7,
+      alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
+    });
+  }
   for (const post of POSTS) {
     // 仅输出有正文的语言变体,避免英-only 文章的其他语言 URL 404
     const available = postLocales(post.slug);

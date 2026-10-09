@@ -91,6 +91,9 @@
     "cursiveText": {
       "title": "筆記体テキスト ジェネレーター - コピーして貼り付け",
       "description": "好きな言葉をコピーできる筆記体テキストに。6 スタイル、無料・登録不要、音声入力にも対応。Instagram や TikTok、Discord でそのまま使えます。"
+    },
+    "cursiveAlphabet": {
+      "description": "大文字・小文字すべての筆記体に筆順ガイド(始筆点と矢印)付き。フォントを切り替えて無料で印刷できます。"
     }
   },
   "nav": {
@@ -101,6 +104,7 @@
     "printablePaper": "印刷用紙テンプレート",
     "nameTracing": "なぞり書きプリント",
     "cursive": "筆記体ジェネレーター",
+    "cursiveAlphabet": "筆記体アルファベット",
     "cursiveWorks": "筆記体ワークシート",
     "dailyCursive": "毎日の筆記体練習",
     "writingPractice": "文字練習",
@@ -381,6 +385,8 @@
     "font": "フォント",
     "showCover": "表紙ページ",
     "showExample": "お手本行",
+    "strokeGuides": "筆画ガイド(始点と矢印)",
+    "strokeGuidesHint": "筆画ガイドはラテン文字フォントのみ対応しています",
     "downloadPdf": "ワークブック PDF をダウンロード",
     "pageN": "{n} ページ",
     "stats": "{pages} ページ · {words} 語",
@@ -503,6 +509,8 @@
     "wordsPlaceholder": "cat\ndog\nsun\nball",
     "font": "フォント",
     "showTrace": "1 回目はなぞり書き",
+    "strokeGuides": "筆画ガイド(始点と矢印)",
+    "strokeGuidesHint": "筆画ガイドはラテン文字フォントのみ対応しています",
     "downloadPdf": "PDF をダウンロード",
     "a1Title": "それぞれの単語を 3 回書きましょう。",
     "a2Title": "欠けている文字を入れましょう。",

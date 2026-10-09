@@ -1,6 +1,7 @@
 /** 全站工具分类(导航分组下拉与 /tools 聚合页共用)。
  *  只做导航与聚合层面的分类,工具 URL 保持不变——这些 slug 本身就是关键词落地页(docs/DEVELOPMENT-STANDARDS.md §2.5)。
  *  文案不在此处:标题取 messages nav.*(RelatedLinks 同源),卡片描述取 messages meta.<key>.description。 */
+import { routing } from "@/i18n/routing";
 
 export interface ToolCard {
   href: string;
@@ -10,12 +11,27 @@ export interface ToolCard {
   metaKey?: string;
   /** 主工具卡片标题用品牌名 */
   brand?: boolean;
+  /** en-only 工具(如 /cursive-alphabet Phase 0):非默认语言的导航/聚合页要过滤掉,否则 8 语言用户点进 404 */
+  enOnly?: boolean;
 }
 
 export interface ToolGroup {
   /** messages nav 里的分组标签 key */
   labelKey: string;
   tools: ToolCard[];
+}
+
+/** 消费方(SiteHeader/tools 页)一律用本函数取分组,不要直接用 TOOL_GROUPS */
+export function toolGroupsFor(locale: string): ToolGroup[] {
+  return TOOL_GROUPS.map((g) => ({
+    ...g,
+    tools: g.tools.filter((t) => !t.enOnly || locale === routing.defaultLocale),
+  })).filter((g) => g.tools.length > 0);
+}
+
+/** en-only 工具路径判断(RelatedLinks 等内容侧链接需要按语言过滤,否则指向 404) */
+export function isEnOnlyTool(href: string): boolean {
+  return TOOL_GROUPS.some((g) => g.tools.some((t) => t.enOnly && t.href === href));
 }
 
 export const TOOL_GROUPS: ToolGroup[] = [
@@ -25,6 +41,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
       { href: "/", navKey: "tool", brand: true },
       { href: "/cursive", navKey: "cursive", metaKey: "cursive" },
       { href: "/cursive-text-generator", navKey: "cursiveText", metaKey: "cursiveText" },
+      { href: "/cursive-alphabet", navKey: "cursiveAlphabet", metaKey: "cursiveAlphabet", enOnly: true },
       { href: "/templates", navKey: "templates", metaKey: "templates" },
     ],
   },
