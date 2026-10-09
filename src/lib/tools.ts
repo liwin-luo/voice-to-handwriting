@@ -24,6 +24,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
     tools: [
       { href: "/", navKey: "tool", brand: true },
       { href: "/cursive", navKey: "cursive", metaKey: "cursive" },
+      { href: "/cursive-text-generator", navKey: "cursiveText", metaKey: "cursiveText" },
       { href: "/templates", navKey: "templates", metaKey: "templates" },
     ],
   },

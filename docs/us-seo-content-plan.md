@@ -172,6 +172,14 @@
 - **角色**:Theo Lindgren。配套文 `how-many-sheets-handwriting`(en)。
 - **落地**:工具 `/handwriting-page-calculator`。内链 `/printable-paper` 与首页手写工具。空白纸入口在 `/printable-paper`。
 
+## 十一、`/cursive-text-generator` 可复制的花体文本(2026-10-09,GSC 曝光词驱动)
+
+- **主词**:cursive text generator(估 10K–30K/月)。次词:cursive font copy and paste / fancy cursive text / generate cursive text online。
+- **选题依据**:GSC 24 小时曝光词 "generate cursive" / "cursive generator online" 有曝光零点击——这批搜索者要的是可直接复制的 Unicode 花体字符(社媒 Bio/昵称/聊天),不是导出图片;站内工具全是图片/PDF 型,存在意图错配。28 天数据复盘后若点击仍为零即验证。
+- **形态**:轻客户端工具页:输入或语音(复用 useSpeechRecognition + speechLang)→ 6 种 Unicode 风格(Script / Bold Script / Bold Italic / Fraktur / Double-struck / Monospace)逐行展示 + 一键复制。纯映射逻辑进 `src/lib/fancyText.ts`(含 Letterlike Symbols 例外表:ℋ ℯ ℜ ℍ 等)+ Vitest 单测;与 `/cursive`(图片导出)在页面内互链分工,不互搏。
+- **角色**:Theo Lindgren(工具桌,新工具配套文章默认归属)。配套文 `cursive-text-generator`(en,同关键词支柱文)。
+- **红线**:全文不称"字体"而称 Unicode 字符/文本;诚实标注读屏兼容问题与旧设备缺字形;不碰"作业伪装"话术;实测口径只写真实测过的部分(转换与复制按钮),不虚构"已测 Instagram/Discord 粘贴"。
+
 ## 十二、长尾衍生两篇:句子级 cursive 与 copywork(2026-10-09,Google suggest + SERP 验证)
 
 - **数据源**:Google autocomplete(client=chrome, hl=en, gl=us)五种子词衍生 + Bing/Brave 代理 SERP 核查(Trends Rising 近期空窗)。两簇判定:cursive sentences 簇 SERP 被 Unicode 花体字生成器占位、意图错配严重,唯一成熟竞品 K5;copywork generator 簇全为小独立站、无人做全「方法+生成器+分学科素材」(EASY)。

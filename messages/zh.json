@@ -87,6 +87,10 @@
     "pageCalc": {
       "title": "手写用纸计算器 — 一段文字要几张纸",
       "description": "估算手写文字需要几张纸。可选窄行、宽行、方格或原稿纸，并预览每一页。免费，无需注册。"
+    },
+    "cursiveText": {
+      "title": "花体文字生成器 - 可复制粘贴的手写体英文",
+      "description": "把任意句子变成可复制粘贴的花体英文,六种风格,免费无注册,还能语音输入。适用于 Instagram、TikTok、Discord 等几乎所有能打字的地方。"
     }
   },
   "nav": {
@@ -111,7 +115,8 @@
     "groupWrite": "写字与生成",
     "groupPractice": "练习纸与打印",
     "groupFun": "趣味",
-    "pageCalc": "用纸计算器"
+    "pageCalc": "用纸计算器",
+    "cursiveText": "花体文字"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -580,5 +585,35 @@
     "unitWord": "个词",
     "unitChar": "个字",
     "textStatsChars": "{chars} 个字"
+  },
+  "cursiveText": {
+    "title": "花体文字生成器",
+    "intro": "输入或说出几句话,复制成花体文字。六种风格,免费无注册,全程只在你浏览器里完成。",
+    "inputLabel": "你的文字",
+    "placeholder": "在这里输入,或点麦克风说话",
+    "sample": "Hello",
+    "speak": "语音输入",
+    "listening": "在听…",
+    "speakUnsupported": "这个浏览器不支持语音输入,打字在任何设备都可用。",
+    "errorDenied": "麦克风权限被拒绝,可以直接打字。",
+    "errorNetwork": "语音输入需要联网,打字可以离线使用。",
+    "errorStopped": "语音输入意外中断,请重试或直接打字。",
+    "copy": "复制",
+    "copied": "已复制",
+    "download": "下载图片",
+    "empty": "开始输入,花体文字会显示在这里。",
+    "styles": {
+      "script": "花体",
+      "boldScript": "粗花体",
+      "boldItalic": "粗斜体",
+      "fraktur": "哥特体",
+      "outline": "空心体",
+      "mono": "打字机体"
+    },
+    "unicodeNote": "这是 Unicode 字符,不是字体——粘贴后样式跟着文字走,无需安装。少数旧手机缺个别字形,某个风格显示为方框时,换一种风格即可。",
+    "seoTitle": "花体文字是什么,能用在哪里",
+    "seoText": "花体文字生成器把你输入的每个字母替换成最接近的 Unicode 字符——看起来像流畅手写的数学花体符号。因为输出是真正的文字而不是图片,可以直接粘贴进 Instagram 简介、TikTok 文案、Discord 昵称或聊天消息,凡能打字的地方都保持花体样式。\n\n它不是字体,也不是你的笔迹。读屏软件可能会逐字朗读这些符号,缺少字形的设备会显示方框。如果你要的是能打印的花体——练习纸、贺卡、信封——本站的手写生成器可以导出真正的花体字体 PNG 或 PDF。",
+    "alsoImage": "想要能打印的版本?打开花体书写生成器,导出真正的手写体 PNG 或 PDF。",
+    "faqTitle": "花体文字常见问题"
   }
 }

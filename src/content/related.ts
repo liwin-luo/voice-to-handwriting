@@ -7,6 +7,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/printable-paper": "printablePaper",
   "/name-tracing": "nameTracing",
   "/cursive": "cursive",
+  "/cursive-text-generator": "cursiveText",
   "/cursive-worksheets": "cursiveWorks",
   "/daily-cursive-handwriting-practice": "dailyCursive",
   "/handwriting-personality-quiz": "quiz",
@@ -155,6 +156,12 @@ export const RELATED: Record<string, RelatedConfig> = {
   "how-many-sheets-handwriting": {
     tools: ["/handwriting-page-calculator", "/printable-paper"],
     posts: ["free-printable-lined-paper", "kindergarten-handwriting-paper", "how-to-improve-handwriting-adults"],
+  },
+
+  // 可复制花体文本:文章教六种风格怎么用,导流工具页;/cursive 承接"要图片/打印"的读者
+  "cursive-text-generator": {
+    tools: ["/cursive-text-generator", "/cursive", "/cursive-worksheets"],
+    posts: ["how-to-write-in-cursive", "cursive-name-signature", "cursive-vs-print"],
   },
 
   // cursive 句子簇:句子级与 cursive-practice-worksheets(字母/单词级)拆开;描红引擎吃整句

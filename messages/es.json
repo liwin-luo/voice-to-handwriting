@@ -87,6 +87,10 @@
     "pageCalc": {
       "title": "Calculadora de páginas manuscritas — cuántas hojas hace falta",
       "description": "Calcula cuántas hojas ocupa un texto escrito a mano. Elige pauta estrecha, ancha, cuadrícula o genkō y previsualiza cada página. Gratis, sin registro."
+    },
+    "cursiveText": {
+      "title": "Generador de texto cursivo – copiar y pegar",
+      "description": "Convierte cualquier frase en texto cursivo para copiar y pegar: seis estilos, gratis y sin registro. También por voz. Funciona en Instagram, TikTok y Discord."
     }
   },
   "nav": {
@@ -111,7 +115,8 @@
     "groupWrite": "Escribir y generar",
     "groupPractice": "Hojas de práctica e impresión",
     "groupFun": "Solo por diversión",
-    "pageCalc": "Calculadora de hojas"
+    "pageCalc": "Calculadora de hojas",
+    "cursiveText": "Texto cursivo"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -580,5 +585,35 @@
     "unitWord": "palabras",
     "unitChar": "caracteres",
     "textStatsChars": "{chars} caracteres"
+  },
+  "cursiveText": {
+    "title": "Generador de texto cursivo",
+    "intro": "Escribe o di unas palabras y cópialas como texto cursivo. Seis estilos, gratis, sin registro; todo ocurre en tu navegador.",
+    "inputLabel": "Tu texto",
+    "placeholder": "Escribe aquí, o pulsa el micrófono y habla",
+    "sample": "Hola",
+    "speak": "Hablar",
+    "listening": "Escuchando…",
+    "speakUnsupported": "Este navegador no tiene entrada de voz; escribir funciona siempre.",
+    "errorDenied": "Se denegó el acceso al micrófono. Puedes escribir.",
+    "errorNetwork": "La entrada de voz necesita conexión. Escribir funciona sin conexión.",
+    "errorStopped": "La entrada de voz se cortó. Inténtalo de nuevo o escribe.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "download": "Descargar",
+    "empty": "Tu texto cursivo aparecerá aquí mientras escribes.",
+    "styles": {
+      "script": "Cursiva",
+      "boldScript": "Cursiva negrita",
+      "boldItalic": "Negrita cursiva",
+      "fraktur": "Old English",
+      "outline": "Contorno",
+      "mono": "Máquina de escribir"
+    },
+    "unicodeNote": "Esto es texto Unicode, no una fuente: el estilo viaja con los caracteres al pegarlos. Algunos móviles antiguos no tienen todos los glifos; si un estilo muestra cuadros, prueba otro.",
+    "seoTitle": "Qué es el texto cursivo y dónde funciona",
+    "seoText": "Un generador de texto cursivo cambia cada letra que escribes por su equivalente Unicode más parecido: símbolos script matemáticos que parecen caligrafía fluida. Como el resultado es texto de verdad y no una imagen, puedes pegarlo en la bio de Instagram, en un pie de TikTok, en el nick de Discord o en un chat, y mantiene el aspecto cursivo dondequiera que vaya texto.\n\nNo es una fuente ni tu letra. Los lectores de pantalla pueden leer los símbolos letra a letra, y un dispositivo sin los glifos adecuados dibuja cuadros. Si buscas cursiva para imprimir —hojas de práctica, tarjetas, sobres—, los generadores manuscritos de este sitio exportan una fuente cursiva real en PNG o PDF.",
+    "alsoImage": "¿La necesitas para imprimir? Abre el generador de escritura cursiva: exporta letra manuscrita real en PNG o PDF.",
+    "faqTitle": "Preguntas sobre el texto cursivo"
   }
 }

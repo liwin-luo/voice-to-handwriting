@@ -87,6 +87,10 @@
     "pageCalc": {
       "title": "Calculateur de pages manuscrites — combien de feuilles",
       "description": "Estime combien de feuilles prend un texte écrit à la main. Interligne étroit, large, grille ou genkō, avec aperçu de chaque page. Gratuit, sans compte."
+    },
+    "cursiveText": {
+      "title": "Générateur de texte cursif – copier-coller",
+      "description": "Transformez n'importe quelle phrase en texte cursif à copier-coller — six styles, gratuit, sans inscription, même en vocal. Pour Instagram, TikTok et Discord."
     }
   },
   "nav": {
@@ -111,7 +115,8 @@
     "groupWrite": "Écrire & générer",
     "groupPractice": "Feuilles d'exercices & impression",
     "groupFun": "Pour le fun",
-    "pageCalc": "Calculateur de feuilles"
+    "pageCalc": "Calculateur de feuilles",
+    "cursiveText": "Texte cursif"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -580,5 +585,35 @@
     "unitWord": "mots",
     "unitChar": "caractères",
     "textStatsChars": "{chars} caractères"
+  },
+  "cursiveText": {
+    "title": "Générateur de texte cursif",
+    "intro": "Écrivez ou dictez quelques mots, puis copiez-les en texte cursif. Six styles, gratuit, sans inscription — tout reste dans votre navigateur.",
+    "inputLabel": "Votre texte",
+    "placeholder": "Écrivez ici, ou touchez le micro et parlez",
+    "sample": "Bonjour",
+    "speak": "Parler",
+    "listening": "J'écoute…",
+    "speakUnsupported": "Ce navigateur n'a pas d'entrée vocale — la saisie au clavier fonctionne partout.",
+    "errorDenied": "L'accès au micro a été refusé. Vous pouvez écrire.",
+    "errorNetwork": "La voix nécessite une connexion. La saisie marche hors ligne.",
+    "errorStopped": "La saisie vocale s'est interrompue. Réessayez ou écrivez.",
+    "copy": "Copier",
+    "copied": "Copié",
+    "download": "Télécharger",
+    "empty": "Votre texte cursif apparaîtra ici au fil de la saisie.",
+    "styles": {
+      "script": "Cursif",
+      "boldScript": "Cursif gras",
+      "boldItalic": "Italique gras",
+      "fraktur": "Fraktur",
+      "outline": "Contour",
+      "mono": "Machine à écrire"
+    },
+    "unicodeNote": "C'est du texte Unicode, pas une police — le style suit les caractères quand vous les collez. Quelques téléphones anciens manquent de certains glyphes ; si un style affiche des carrés, essayez-en un autre.",
+    "seoTitle": "Ce qu'est le texte cursif (et où il marche)",
+    "seoText": "Un générateur de texte cursif remplace chaque lettre tapée par son équivalent Unicode le plus proche — des symboles script mathématiques qui ressemblent à une écriture fluide. Comme le résultat est du vrai texte et non une image, vous pouvez le coller dans une bio Instagram, une légende TikTok, un pseudo Discord ou un message, et il garde son allure cursive partout où va du texte.\n\nCe n'est ni une police ni votre écriture. Les lecteurs d'écran peuvent lire les symboles lettre par lettre, et un appareil sans les bons glyphes affiche des carrés. Si vous cherchez de la cursive à imprimer — fiches d'exercices, cartes, enveloppes — les générateurs manuscrits de ce site exportent une vraie police cursive en PNG ou PDF.",
+    "alsoImage": "Besoin d'une version imprimable ? Ouvrez le générateur d'écriture cursive — il exporte une vraie écriture en PNG ou PDF.",
+    "faqTitle": "Questions sur le texte cursif"
   }
 }

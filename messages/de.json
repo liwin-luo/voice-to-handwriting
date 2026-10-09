@@ -87,6 +87,10 @@
     "pageCalc": {
       "title": "Seitenzähler für Handschrift — wie viele Blätter ein Text braucht",
       "description": "Schätzt, wie viele Blätter ein handschriftlicher Text braucht. Eng liniert, weit liniert, Kästchen oder Genkō, mit Seitenvorschau. Kostenlos, ohne Konto."
+    },
+    "cursiveText": {
+      "title": "Schreibschrift-Generator – Text kopieren und einfügen",
+      "description": "Verwandle beliebige Sätze in kopierbaren Schreibschrift-Text – sechs Stile, kostenlos, ohne Anmeldung, auch per Spracheingabe. Für Instagram, TikTok und Discord."
     }
   },
   "nav": {
@@ -111,7 +115,8 @@
     "groupWrite": "Schreiben & Generieren",
     "groupPractice": "Übungsblätter & Drucken",
     "groupFun": "Nur zum Spaß",
-    "pageCalc": "Blätterrechner"
+    "pageCalc": "Blätterrechner",
+    "cursiveText": "Schreibschrift-Text"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -580,5 +585,35 @@
     "unitWord": "Wörter",
     "unitChar": "Zeichen",
     "textStatsChars": "{chars} Zeichen"
+  },
+  "cursiveText": {
+    "title": "Schreibschrift-Text-Generator",
+    "intro": "Tippe oder sprich ein paar Worte und kopiere sie als Schreibschrift-Text. Sechs Stile, kostenlos, ohne Anmeldung – alles bleibt im Browser.",
+    "inputLabel": "Dein Text",
+    "placeholder": "Hier tippen oder aufs Mikro tippen und sprechen",
+    "sample": "Hallo",
+    "speak": "Sprechen",
+    "listening": "Höre zu…",
+    "speakUnsupported": "Dieser Browser hat keine Spracheingabe – Tippen funktioniert überall.",
+    "errorDenied": "Mikrofonzugriff wurde abgelehnt. Du kannst einfach tippen.",
+    "errorNetwork": "Spracheingabe braucht eine Verbindung. Tippen geht auch offline.",
+    "errorStopped": "Spracheingabe wurde unterbrochen. Versuch es erneut oder tippe.",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "download": "Herunterladen",
+    "empty": "Dein Schreibschrift-Text erscheint hier, während du tippst.",
+    "styles": {
+      "script": "Schreibschrift",
+      "boldScript": "Fette Schreibschrift",
+      "boldItalic": "Fette Kursiv",
+      "fraktur": "Fraktur",
+      "outline": "Kontur",
+      "mono": "Schreibmaschine"
+    },
+    "unicodeNote": "Das ist Unicode-Text, keine Schriftart – der Stil reist beim Einfügen mit den Zeichen mit. Ein paar ältere Handys kennen manche Zeichen nicht; zeigt ein Stil Kästchen, probiere einen anderen.",
+    "seoTitle": "Was Schreibschrift-Text ist (und wo er funktioniert)",
+    "seoText": "Ein Schreibschrift-Generator ersetzt jeden getippten Buchstaben durch das nächstliegende Unicode-Zeichen – mathematische Script-Symbole, die wie fließende Handschrift aussehen. Weil das Ergebnis echter Text und kein Bild ist, kannst du es in eine Instagram-Bio, einen TikTok-Untertitel, einen Discord-Namen oder eine Chatnachricht einfügen, und der Schreibschrift-Look bleibt überall, wo Text geht.\n\nEs ist keine Schriftart und nicht deine Handschrift. Screenreader lesen die Symbole womöglich Buchstabe für Buchstabe, und Geräte ohne passende Glyphen zeichnen Kästchen. Wenn du Schreibschrift zum Drucken willst – Übungsblätter, Karten, Umschläge – exportieren die Handschrift-Generatoren dieser Seite eine echte Schreibschrift als PNG oder PDF.",
+    "alsoImage": "Brauchst du sie zum Drucken? Öffne den Cursive-Writing-Generator – er exportiert echte Handschrift als PNG oder PDF.",
+    "faqTitle": "Fragen zu Schreibschrift-Text"
   }
 }

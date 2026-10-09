@@ -580,6 +580,19 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "cursive-text-generator",
+    author: "theo-lindgren",
+    date: "2026-10-09",
+    updated: "2026-10-09",
+    i18n: {
+      en: {
+        title: "Cursive text generator: cursive you can copy and paste",
+        description:
+          "Type or speak your words and copy them back as cursive text — the six Unicode styles, which one works where, and why it is not a font.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

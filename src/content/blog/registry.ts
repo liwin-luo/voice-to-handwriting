@@ -68,6 +68,7 @@ import swtEn from "./sight-word-tracing-worksheets.en.mdx";
 import hrpEn from "./handwriting-repeater.en.mdx";
 import hwbEn from "./handwriting-workbook.en.mdx";
 import hshEn from "./how-many-sheets-handwriting.en.mdx";
+import ctgEn from "./cursive-text-generator.en.mdx";
 import cstEn from "./cursive-sentences-to-practice.en.mdx";
 import cwgEn from "./copywork-generator.en.mdx";
 
@@ -228,6 +229,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "handwriting-repeater": { en: hrpEn },
   "handwriting-workbook": { en: hwbEn },
   "how-many-sheets-handwriting": { en: hshEn },
+  "cursive-text-generator": { en: ctgEn },
   "cursive-sentences-to-practice": { en: cstEn },
   "copywork-generator": { en: cwgEn },
 };

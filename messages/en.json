@@ -87,6 +87,10 @@
     "pageCalc": {
       "title": "Handwriting Page Calculator — How Many Sheets for Handwritten Text?",
       "description": "See how many sheets handwritten text needs. Choose college ruled, wide ruled, grid, or genkou paper, then preview each page. Free, no signup."
+    },
+    "cursiveText": {
+      "title": "Cursive Text Generator – Copy and Paste Fancy Cursive",
+      "description": "Turn any words into cursive text you can copy and paste — six styles, free, no signup. Speak instead of typing. Works in Instagram, TikTok and Discord."
     }
   },
   "nav": {
@@ -111,7 +115,8 @@
     "groupWrite": "Write & generate",
     "groupPractice": "Practice sheets & printing",
     "groupFun": "Just for fun",
-    "pageCalc": "Page Calculator"
+    "pageCalc": "Page Calculator",
+    "cursiveText": "Cursive Text"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -580,5 +585,35 @@
     "unitWord": "words",
     "unitChar": "characters",
     "textStatsChars": "{chars} characters"
+  },
+  "cursiveText": {
+    "title": "Cursive Text Generator",
+    "intro": "Type or speak a few words and copy them back as cursive text. Six styles, free, no signup — everything stays in your browser.",
+    "inputLabel": "Your text",
+    "placeholder": "Type here, or tap the mic and speak",
+    "sample": "Hello there",
+    "speak": "Speak",
+    "listening": "Listening…",
+    "speakUnsupported": "This browser has no voice input — typing works everywhere.",
+    "errorDenied": "Microphone access was declined. You can type instead.",
+    "errorNetwork": "Voice input needs a network connection. Typing works offline.",
+    "errorStopped": "Voice input stopped unexpectedly. Try again, or type.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "download": "Download",
+    "empty": "Your cursive text shows up here as you type.",
+    "styles": {
+      "script": "Cursive",
+      "boldScript": "Bold cursive",
+      "boldItalic": "Bold italic",
+      "fraktur": "Old English",
+      "outline": "Outline",
+      "mono": "Typewriter"
+    },
+    "unicodeNote": "This is Unicode text, not a font — the cursive look travels with the characters when you paste them. A few older phones are missing some glyphs, so if a style shows boxes, try another one.",
+    "seoTitle": "What cursive text is (and where it works)",
+    "seoText": "A cursive text generator swaps each letter you type for the closest Unicode equivalent — mathematical script and bold script symbols that look like flowing penmanship. Because the result is real text rather than an image, you can paste it into an Instagram bio, a TikTok caption, a Discord nickname or a chat message, and it keeps the cursive look anywhere text can go.\n\nIt is not a font and not your handwriting. Screen readers may read the symbols letter by letter, and a device without the right glyphs draws boxes instead. If you want cursive you can print — practice sheets, cards, envelopes — the handwriting generators on this site export a real cursive font as PNG or PDF.",
+    "alsoImage": "Need it printable instead? Open the cursive writing generator — it exports real handwriting as PNG or PDF.",
+    "faqTitle": "Cursive text questions"
   }
 }

@@ -2217,3 +2217,155 @@ export const PAGE_CALC_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /cursive-text-generator 工具页 FAQ(8 语言) */
+export const CURSIVE_TEXT_FAQS: FaqItem[] = [
+  {
+    id: "ct-free",
+    i18n: {
+      en: {
+        q: "Is the cursive text generator free?",
+        a: "Yes — no signup, no watermark. The conversion runs in your browser, and nothing you type or say is uploaded.",
+      },
+      zh: {
+        q: "花体文字生成器免费吗?",
+        a: "免费——无需注册、没有水印。转换在你浏览器里完成,输入的文字和语音都不会上传。",
+      },
+      ja: {
+        q: "筆記体テキスト ジェネレーターは無料ですか?",
+        a: "はい——登録不要、透かしなし。変換はブラウザ内で行われ、入力した文字・音声がアップロードされることはありません。",
+      },
+      ko: {
+        q: "필기체 텍스트 생성기는 무료인가요?",
+        a: "네 — 가입도 워터마크도 없어요. 변환은 브라우저에서 처리되며, 입력한 글자나 음성이 업로드되지 않습니다.",
+      },
+      es: {
+        q: "¿El generador de texto cursivo es gratis?",
+        a: "Sí: sin registro ni marca de agua. La conversión ocurre en tu navegador y nada de lo que escribes o dices se sube a ningún servidor.",
+      },
+      de: {
+        q: "Ist der Schreibschrift-Text-Generator kostenlos?",
+        a: "Ja — keine Anmeldung, kein Wasserzeichen. Die Umwandlung läuft im Browser, und nichts von dem, was du tippst oder sagst, wird hochgeladen.",
+      },
+      fr: {
+        q: "Le générateur de texte cursif est-il gratuit ?",
+        a: "Oui — sans inscription ni filigrane. La conversion se fait dans votre navigateur, et rien de ce que vous tapez ou dictez n'est envoyé sur un serveur.",
+      },
+      pt: {
+        q: "O gerador de texto cursivo é grátis?",
+        a: "Sim — sem cadastro e sem marca d'água. A conversão acontece no seu navegador, e nada do que você digita ou fala é enviado para servidores.",
+      },
+    },
+  },
+  {
+    id: "ct-where",
+    i18n: {
+      en: {
+        q: "Where can I paste cursive text?",
+        a: "Anywhere that accepts text: Instagram bios and captions, TikTok, Discord nicknames, WhatsApp messages, notes apps. It will not work in a word processor's font menu, and it is not for print — for paper you want a printable font.",
+      },
+      zh: {
+        q: "花体文字可以粘贴到哪里?",
+        a: "所有能输入文字的地方都可以:Instagram 简介和配文、TikTok、Discord 昵称、WhatsApp 消息、备忘录。它不能用于 Word 的字体菜单,也不适合打印——要打印请用可安装的花体字体。",
+      },
+      ja: {
+        q: "筆記体テキストはどこに貼り付けられますか?",
+        a: "テキストを受け付ける場所ならどこでも:Instagram のプロフィールやキャプション、TikTok、Discord のニックネーム、WhatsApp、メモアプリなど。ワープロのフォントメニューには使えず、印刷にも向きません。印刷用はインストール型の筆記体フォントを。",
+      },
+      ko: {
+        q: "필기체 텍스트는 어디에 붙여넣을 수 있나요?",
+        a: "텍스트를 입력할 수 있는 곳이라면 어디든: Instagram 프로필과 자막, TikTok, Discord 닉네임, WhatsApp 메시지, 메모 앱 등요. 워드 프로세서의 글꼴 메뉴에는 쓸 수 없고 인쇄에도 적합하지 않습니다. 인쇄용이라면 설치형 필기체 글꼴을 사용하세요.",
+      },
+      es: {
+        q: "¿Dónde puedo pegar texto cursivo?",
+        a: "En cualquier sitio que acepte texto: la bio y los pies de Instagram, TikTok, el nick de Discord, mensajes de WhatsApp, apps de notas. No sirve en el menú de fuentes de un procesador de textos ni para imprimir; para papel, mejor una fuente instalable.",
+      },
+      de: {
+        q: "Wo kann ich Schreibschrift-Text einfügen?",
+        a: "Überall, wo Text erlaubt ist: Instagram-Bio und -Bildunterschriften, TikTok, Discord-Namen, WhatsApp-Nachrichten, Notiz-Apps. Im Schriftarten-Menü einer Textverarbeitung funktioniert er nicht, und zum Drucken taugt er nicht — dafür nimm eine installierbare Schreibschrift.",
+      },
+      fr: {
+        q: "Où puis-je coller du texte cursif ?",
+        a: "Partout où on saisit du texte : bio et légendes Instagram, TikTok, pseudo Discord, messages WhatsApp, apps de notes. Ça ne marche pas dans le menu des polices d'un traitement de texte ni à l'impression — pour le papier, utilisez une police installable.",
+      },
+      pt: {
+        q: "Onde posso colar texto cursivo?",
+        a: "Em qualquer lugar que aceite texto: bio e legendas do Instagram, TikTok, apelido no Discord, mensagens do WhatsApp, apps de notas. Não funciona no menu de fontes de um editor de texto nem para impressão — para papel, use uma fonte instalável.",
+      },
+    },
+  },
+  {
+    id: "ct-font",
+    i18n: {
+      en: {
+        q: "Is this a cursive font?",
+        a: "No. Each letter is swapped for a Unicode character that looks handwritten (from the mathematical script symbols), so the style travels with the text and needs no install. A real cursive font only changes how text looks inside one app.",
+      },
+      zh: {
+        q: "这是花体字体吗?",
+        a: "不是。它把每个字母替换成看起来像手写的 Unicode 字符(数学花体符号区),样式跟着文字走,无需安装任何东西。真正的花体字体只在安装了它的应用里生效。",
+      },
+      ja: {
+        q: "これは筆記体フォントですか?",
+        a: "いいえ。一文字ずつ、手書き風に見える Unicode の文字(数学用スクリプト記号)に置き換えています。装飾がテキストについて回るので、インストールは不要です。本物の筆記体フォントは、インストール済みのアプリ内でしか効きません。",
+      },
+      ko: {
+        q: "이것은 필기체 글꼴인가요?",
+        a: "아니요. 각 글자를 손글씨처럼 보이는 Unicode 문자(수학용 스크립트 기호)로 바꾸는 방식이라, 스타일이 텍스트를 따라다니고 설치가 필요 없어요. 진짜 필기체 글꼴은 설치된 앱 안에서만 적용됩니다.",
+      },
+      es: {
+        q: "¿Esto es una fuente cursiva?",
+        a: "No. Cada letra se cambia por un carácter Unicode con aspecto manuscrito (de los símbolos script matemáticos), así el estilo viaja con el texto sin instalar nada. Una fuente cursiva de verdad solo cambia el aspecto del texto dentro de una app.",
+      },
+      de: {
+        q: "Ist das eine Schreibschrift-Schriftart?",
+        a: "Nein. Jeder Buchstabe wird durch ein handgeschrieben aussehendes Unicode-Zeichen ersetzt (aus den mathematischen Script-Symbolen), deshalb wandert der Stil mit dem Text mit – ohne Installation. Eine echte Schreibschrift ändert nur innerhalb einer App das Aussehen.",
+      },
+      fr: {
+        q: "Est-ce une police cursive ?",
+        a: "Non. Chaque lettre est remplacée par un caractère Unicode à l'aspect manuscrit (les symboles script mathématiques), donc le style suit le texte sans aucune installation. Une vraie police cursive ne change l'apparence qu'au sein d'une seule application.",
+      },
+      pt: {
+        q: "Isto é uma fonte cursiva?",
+        a: "Não. Cada letra é trocada por um caractere Unicode com aparência manuscrita (dos símbolos script matemáticos), então o estilo viaja com o texto sem instalar nada. Uma fonte cursiva de verdade só muda o visual do texto dentro de um app.",
+      },
+    },
+  },
+  {
+    id: "ct-boxes",
+    i18n: {
+      en: {
+        q: "Why do some characters show up as boxes?",
+        a: "Some older phones and browsers lack glyphs for a few of these symbols. Switch styles — the typewriter style maps every letter and digit to a character that almost every device renders.",
+      },
+      zh: {
+        q: "为什么有些字符显示成方框?",
+        a: "部分旧手机和浏览器缺少这几个符号的字形。换一种风格即可——打字机体把每个字母和数字都映射成几乎所有设备都能显示的字符。",
+      },
+      ja: {
+        q: "一部の文字が四角(□)で表示されるのはなぜ?",
+        a: "古いスマホやブラウザには、これらの記号の一部の字形がありません。スタイルを変えてみてください。タイプライター スタイルは全字母・数字を、ほとんどの端末が表示できる文字に対応づけます。",
+      },
+      ko: {
+        q: "일부 글자가 네모(□)로 보이는 이유는요?",
+        a: "일부 오래된 휴대폰과 브라우저에는 이 기호 몇 개의 글자 모양이 없어요. 스타일을 바꿔 보세요. 타자기체는 모든 글자와 숫자를 대부분의 기기가 표시할 수 있는 문자로 바꿉니다.",
+      },
+      es: {
+        q: "¿Por qué algunos caracteres se ven como cuadros?",
+        a: "Algunos móviles y navegadores antiguos no tienen los glifos de ciertos símbolos. Cambia de estilo: el de máquina de escribir asigna cada letra y dígito a caracteres que casi todos los dispositivos muestran.",
+      },
+      de: {
+        q: "Warum zeigen manche Zeichen nur Kästchen?",
+        a: "Ein paar ältere Handys und Browser haben für manche dieser Symbole keine Glyphen. Wechsle den Stil: Die Schreibmaschine bildet jeden Buchstaben und jede Ziffer auf Zeichen ab, die fast alle Geräte darstellen.",
+      },
+      fr: {
+        q: "Pourquoi certains caractères s'affichent en carrés ?",
+        a: "Quelques téléphones et navigateurs anciens n'ont pas les glyphes de certains de ces symboles. Changez de style : la machine à écrire associe chaque lettre et chaque chiffre à des caractères que presque tous les appareils affichent.",
+      },
+      pt: {
+        q: "Por que alguns caracteres aparecem como quadrados?",
+        a: "Alguns celulares e navegadores antigos não têm os glifos de certos símbolos. Troque de estilo: o de máquina de escrever mapeia cada letra e dígito para caracteres que quase todos os aparelhos exibem.",
+      },
+    },
+  },
+];
