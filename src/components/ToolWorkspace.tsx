@@ -26,8 +26,8 @@ export interface ToolPreset {
 
 /**
  * 布局 v2:左栏(文字编辑 → 样式)吸顶可滚动,右侧纸张预览自适应缩放。
- * 移动端单列:编辑器、录音、样式,然后纸张。
- * 底部条在宽屏粘住;窄屏留在文档流里,避免盖住滑杆。录音贴着文字框。
+ * 移动端单列:编辑器、录音与导入、样式,然后纸张。
+ * 底部条在宽屏粘住;窄屏留在文档流里,避免盖住滑杆。录音和导入音频贴着文字框,底栏只留历史和导出。
  */
 export default function ToolWorkspace({
   preset,
@@ -92,15 +92,19 @@ export default function ToolWorkspace({
     return useEditorStore.persist.onFinishHydration(apply);
   }, [locale, preset]);
 
+  const capture = (
+    <div className="flex flex-wrap items-start gap-x-6 gap-y-3">
+      <RecorderPanel />
+      <AudioImportPanel />
+    </div>
+  );
+
   const bar = (
     <div className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-4">
-      <div className="flex flex-wrap items-start gap-6">
-        <AudioImportPanel />
-        <button type="button" onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
-          <ClockCounterClockwise className="size-4 text-zinc-500" />
-          {tHistory("open")}
-        </button>
-      </div>
+      <button type="button" onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
+        <ClockCounterClockwise className="size-4 text-zinc-500" />
+        {tHistory("open")}
+      </button>
       <ExportBar />
     </div>
   );
@@ -113,7 +117,7 @@ export default function ToolWorkspace({
         <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
           <aside className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
             <TranscriptEditor />
-            <RecorderPanel />
+            {capture}
             <StylePanel layout="doctor" />
           </aside>
           <PaperView />
@@ -130,7 +134,7 @@ export default function ToolWorkspace({
       <div className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-6rem)] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
         <div className="order-1 flex flex-col gap-5 lg:order-none">
           <TranscriptEditor />
-          <RecorderPanel />
+          {capture}
         </div>
         <StylePanel layout="write" />
       </div>
