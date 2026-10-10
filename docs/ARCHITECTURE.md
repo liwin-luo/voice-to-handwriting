@@ -165,7 +165,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 ### 4.7 导出与分享
 
 - `ExportBar`:html-to-image 截所有 `.paper` 节点(带 rAF fallback hack,防后台标签页下截图卡死)→ `SharePreviewModal`(翻页/下载/复制/逐平台分享/水印开关,水印切换用 `flushSync` 重渲染后再截)→ PNG;jspdf 合多页 PDF。
-- 分享族:`useShareActions`(共享 hook,运行时读 location,水合后探测 `navigator.share`)被 `ShareBar`(工具页横条,`id="share-bar"`)与 `FloatingShare`(桌侧浮标,IntersectionObserver 观察 #share-bar,滚出视口才出现)共用。
+- 分享族:`useShareActions`(共享 hook,运行时读 location,水合后探测 `navigator.share`)被 `ShareBar`(工具页横条,`id="share-bar"`;预览弹窗 `anchor={false}` 复用同一条)、`FloatingShare`(桌侧浮标,IntersectionObserver 观察 #share-bar,滚出视口才出现)共用。
 
 ### 4.8 内容管线(src/content/,纯 TS 常量,非 CMS)
 

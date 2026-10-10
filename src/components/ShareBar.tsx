@@ -4,14 +4,15 @@ import { useShareActions } from "./useShareActions";
 
 /**
  * 快捷分享条:把当前工具页链接分享到社交平台。
- * 不接收 props —— 动作逻辑见 useShareActions。
+ * 动作逻辑见 useShareActions。anchor 默认 true,预览弹窗传 false。
  * 根节点 id="share-bar" 供 FloatingShare 观察可见性:横条在视口内时浮标隐藏。
+ * 预览弹窗复用同一条时传 anchor={false},避免抢走这个 id。
  *
  * 版式:白底圆角边框,和上方操作栏同一套描边,但只包住内容。
  * 不拉满工具区宽度,也不用 glass-bar 的投影(那是给粘底操作栏浮起用的)。
  * 平台图标在前,系统分享用分隔线收在末尾。
  */
-export default function ShareBar() {
+export default function ShareBar({ anchor = true }: { anchor?: boolean }) {
   const t = useTranslations("share");
   const { buttons, onShare } = useShareActions();
   const networks = buttons.filter((b) => b.id !== "native");
@@ -31,7 +32,7 @@ export default function ShareBar() {
 
   return (
     <div
-      id="share-bar"
+      id={anchor ? "share-bar" : undefined}
       className="flex w-fit max-w-full flex-wrap items-center rounded-2xl border border-zinc-200/70 bg-white py-1 pr-1.5 pl-4"
     >
       <span aria-hidden className="mr-1 text-sm text-zinc-500">{t("barLabel")}</span>

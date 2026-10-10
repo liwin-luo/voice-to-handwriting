@@ -1,20 +1,9 @@
 "use client";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
-import {
-  X,
-  ArrowLeft,
-  ArrowRight,
-  ShareNetwork,
-  Copy,
-  Check,
-  XLogo,
-  WhatsappLogo,
-  FacebookLogo,
-  EnvelopeSimple,
-} from "@phosphor-icons/react";
-import { SITE } from "@/lib/site";
+import { X, ArrowLeft, ArrowRight, Copy, Check } from "@phosphor-icons/react";
+import ShareBar from "./ShareBar";
 
 interface Props {
   open: boolean;
@@ -26,9 +15,7 @@ interface Props {
   onWatermarkChange: (on: boolean) => Promise<void>;
 }
 
-type ShareIntent = "x" | "whatsapp" | "facebook" | "email";
-
-/** 预览 + 社交分享弹窗:展示与导出一致的页面真图,支持系统分享与逐平台分享 */
+/** 预览弹窗:展示与导出一致的页面真图。社交分享复用页面上的 ShareBar。 */
 export default function SharePreviewModal({ open, onClose, pages, watermark, onWatermarkChange }: Props) {
   const t = useTranslations("share");
   const tTool = useTranslations("tool");
@@ -60,8 +47,6 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
 
   if (!open) return null;
 
-  const shareText = t("shareText", { link: SITE.url });
-  const plainText = t("sharePlain");
   const current = pages[index];
 
   const flipWatermark = async () => {
@@ -113,19 +98,6 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
     a.click();
   };
 
-  const systemShare = async () => {
-    try {
-      const blob = await dataUrlToBlob(current);
-      const file = new File([blob], `handwriting-${index + 1}.png`, { type: "image/png" });
-      const nav = navigator as Navigator & { canShare?: (d: unknown) => boolean };
-      if (nav.canShare?.({ files: [file] })) {
-        await nav.share({ files: [file], text: shareText, title: SITE.name });
-      }
-    } catch {
-      /* 用户取消不视为错误 */
-    }
-  };
-
   const copyImage = async () => {
     try {
       const blob = await dataUrlToBlob(current);
@@ -139,46 +111,13 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
 
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(shareText);
+      await navigator.clipboard.writeText(`${document.title}\n${window.location.href}`);
       setCopied("link");
       setTimeout(() => setCopied(null), 2000);
     } catch {
       setError(t("copyFail"));
     }
   };
-
-  /** 主流平台分享 intent,链接格式对齐各平台官方文档;平台取舍与 ShareBar/useShareActions 一致 */
-  const intentUrls: Record<ShareIntent, string> = {
-    x: `https://twitter.com/intent/tweet?text=${encodeURIComponent(plainText)}&url=${encodeURIComponent(SITE.url)}`,
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(`${plainText} ${SITE.url}`)}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(SITE.url)}`,
-    email: `mailto:?subject=${encodeURIComponent(SITE.name)}&body=${encodeURIComponent(`${plainText}\n${SITE.url}`)}`,
-  };
-
-  const openIntent = (target: ShareIntent) => {
-    if (target === "email") {
-      // mailto 用锚点触发,直接给 window.location.href 赋值会被 lint 视为修改外部变量
-      const a = document.createElement("a");
-      a.href = intentUrls.email;
-      a.click();
-      return;
-    }
-    window.open(intentUrls[target], "_blank", "noopener,noreferrer");
-  };
-
-  const canSystemShare =
-    typeof navigator !== "undefined" &&
-    !!(navigator as Navigator & { canShare?: unknown }).canShare;
-
-  const shareButtons: Array<{ id: ShareIntent | "system"; label: string; icon: ReactNode }> = [
-    ...(canSystemShare
-      ? [{ id: "system" as const, label: t("shareSystem"), icon: <ShareNetwork className="size-3.5 text-zinc-500" /> }]
-      : []),
-    { id: "x", label: "X", icon: <XLogo weight="fill" className="size-3.5 text-zinc-900" /> },
-    { id: "facebook", label: "Facebook", icon: <FacebookLogo weight="fill" className="size-3.5 text-[#1877F2]" /> },
-    { id: "whatsapp", label: "WhatsApp", icon: <WhatsappLogo weight="fill" className="size-3.5 text-[#25D366]" /> },
-    { id: "email", label: t("email"), icon: <EnvelopeSimple className="size-3.5 text-zinc-500" /> },
-  ];
 
   return createPortal(
     <div
@@ -266,21 +205,10 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
             </label>
           </div>
 
+          <div className="mt-3">
+            <ShareBar anchor={false} />
+          </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="mr-1 inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500">
-              <ShareNetwork className="size-4" />
-              {t("share")}
-            </span>
-            {shareButtons.map((b) => (
-              <button
-                key={b.id}
-                onClick={b.id === "system" ? systemShare : () => openIntent(b.id as ShareIntent)}
-                className="btn btn-ghost px-3 py-1.5 text-xs"
-              >
-                {b.icon}
-                {b.label}
-              </button>
-            ))}
             <button onClick={copyLink} className="btn btn-ghost px-3 py-1.5 text-xs">
               {copied === "link" ? <Check className="size-3.5 text-green-600" /> : null}
               {copied === "link" ? t("copied") : t("copyLink")}

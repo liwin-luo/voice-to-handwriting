@@ -18,7 +18,7 @@ export type ShareButton = { id: Intent | "native"; label: string; icon: React.Re
 const subscribeNoop = () => () => {};
 
 /**
- * 分享动作:供 ShareBar(横条)与 FloatingShare(浮标)共用。
+ * 分享动作:供 ShareBar(横条、预览弹窗)与 FloatingShare(浮标)共用。
  * 运行时取 location.href 与 document.title,插入处所在的工具页即得到正确的标题与 URL(含语言前缀)。
  *
  * 平台取舍:只保留教育/打印类受众真正会用的入口;
@@ -36,7 +36,7 @@ export function useShareActions() {
   const url = () => window.location.href;
   const title = () => document.title;
 
-  // 各平台分享 intent,链接格式与 SharePreviewModal 一致(对齐各平台官方文档)
+  // 各平台分享 intent,链接格式对齐各平台官方文档。预览弹窗走同一套,不再另写。
   const intentUrls: Record<Intent, () => string> = {
     x: () => `https://twitter.com/intent/tweet?text=${encodeURIComponent(title())}&url=${encodeURIComponent(url())}`,
     facebook: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url())}`,
