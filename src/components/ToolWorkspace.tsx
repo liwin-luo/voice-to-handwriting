@@ -27,7 +27,8 @@ export interface ToolPreset {
 /**
  * 布局 v2:左栏(文字编辑 → 样式)吸顶可滚动,右侧纸张预览自适应缩放。
  * 移动端单列:编辑器、录音与导入、样式,然后纸张。
- * 底部条留在文档流里,跟页面一起滚,不吸在视口上。录音和导入音频贴着文字框,底栏只留历史和导出。
+ * 宽屏底栏吸在视口最下方,随页面滚动,直到工具区滚出;窄屏留在文档流,避免盖住滑杆。
+ * 左栏高度让出底栏。录音和导入音频贴着文字框,底栏只留历史和导出。
  */
 export default function ToolWorkspace({
   preset,
@@ -39,7 +40,37 @@ export default function ToolWorkspace({
   const locale = useLocale();
   const tHistory = useTranslations("history");
   const booted = useRef(false);
+  const sideRef = useRef<HTMLDivElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
   const [historyOpen, setHistoryOpen] = useState(false);
+
+  // 底栏吸在视口底时,左栏从自己的顶量到栏的顶,避免字被栏盖住。纯 CSS 的 max-height 只能按吸顶后的位置算,首屏会矮一截标题。
+  useEffect(() => {
+    const side = sideRef.current;
+    const barEl = barRef.current;
+    if (!side || !barEl) return;
+    let frame = 0;
+    const fit = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        if (window.innerWidth < 1024) {
+          side.style.removeProperty("max-height");
+          return;
+        }
+        const room = barEl.getBoundingClientRect().top - side.getBoundingClientRect().top - 12;
+        if (room > 160) side.style.maxHeight = `${Math.floor(room)}px`;
+        else side.style.removeProperty("max-height");
+      });
+    };
+    fit();
+    window.addEventListener("scroll", fit, { passive: true });
+    window.addEventListener("resize", fit);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", fit);
+      window.removeEventListener("resize", fit);
+    };
+  }, [layout]);
 
   // 等偏好从 localStorage 恢复后再决定字体和纸张,避免被旧默认值盖掉。
   // 用户没手动选过时,按页面语言给默认字体和 Letter/A4。
@@ -100,7 +131,7 @@ export default function ToolWorkspace({
   );
 
   const bar = (
-    <div className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5">
+    <div ref={barRef} className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-4">
       <button type="button" onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
         <ClockCounterClockwise className="size-4 text-zinc-500" />
         {tHistory("open")}
@@ -115,7 +146,7 @@ export default function ToolWorkspace({
     return (
       <div className="flex flex-col gap-5">
         <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
-          <aside className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:pr-1">
+          <aside ref={sideRef} className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-11.25rem)] lg:overflow-y-auto lg:pr-1">
             <TranscriptEditor />
             {capture}
             <StylePanel layout="doctor" />
@@ -132,7 +163,7 @@ export default function ToolWorkspace({
     <div className="flex flex-col gap-5">
       {/* 窄屏 contents:字体和纸样跟在录音后,字号墨色排到纸和导出条后面。宽屏收成左栏,底栏在栅格外面,避免吸底时盖住左栏 */}
       <div className="contents lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start lg:gap-x-6">
-        <div className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-6rem)] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
+        <div ref={sideRef} className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-11.25rem)] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
           <div className="order-1 flex flex-col gap-5 lg:order-none">
             <TranscriptEditor />
             {capture}
@@ -143,7 +174,7 @@ export default function ToolWorkspace({
           <PaperView />
         </div>
       </div>
-      <div className="order-3">{bar}</div>
+      <div className="order-3 lg:sticky lg:bottom-4 lg:z-30">{bar}</div>
       {drawer}
     </div>
   );
