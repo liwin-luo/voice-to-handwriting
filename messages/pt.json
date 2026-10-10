@@ -10,35 +10,35 @@
     },
     "privacy": {
       "title": "Política de Privacidade",
-      "description": "Como tratamos dados de voz e texto, cookies e anúncios de terceiros."
+      "description": "Como tratamos voz, texto, cookies e anúncios de terceiros. A fala e o texto ficam no seu navegador e não são enviados para o servidor."
     },
     "terms": {
       "title": "Termos de Uso",
-      "description": "Condições de uso, limites e aviso legal da ferramenta."
+      "description": "Condições de uso da Voice to Handwriting: o que a ferramenta permite, onde estão os limites e qual aviso legal vale para o uso."
     },
     "contact": {
       "title": "Contato",
-      "description": "Sugestões, relatórios de erros e contato comercial."
+      "description": "Fale com a Voice to Handwriting sobre sugestões, relatórios de erros e contato comercial. Lemos cada mensagem que chega aqui."
     },
     "blog": {
-      "title": "Blog",
-      "description": "Tutoriais e ideias de cartões e imagens manuscritas."
+      "title": "Tutoriais de caligrafia",
+      "description": "Tutoriais de cartões manuscritos, ideias de imagens e folhas de prática. Cada guia usa as ferramentas grátis deste site. Sem cadastro."
     },
     "templates": {
       "title": "Modelos manuscritos",
-      "description": "Cartas de amor, desculpas, agradecimentos, aniversários e festas — texto e estilo em um toque."
+      "description": "Cartas de amor, desculpas, agradecimentos, aniversários e festas — copie o texto, mude o estilo e exporte como letra manuscrita. Grátis."
     },
     "faq": {
       "title": "Perguntas frequentes",
-      "description": "Onde imprimir papel pautado, calcar um nome, ver fontes cursivas ou passar a fala para letra manuscrita."
+      "description": "Onde imprimir papel pautado, calcar um nome, ver fontes cursivas ou passar a fala para letra. Cada resposta leva à ferramenta."
     },
     "printable": {
       "title": "Gerador de papel pautado e quadriculado para imprimir (Letter e A4)",
-      "description": "Gere papel pautado, quadriculado e de caligrafia grátis em Letter ou A4. Sem marca d'água nem cadastro, download em PDF."
+      "description": "Gere papel pautado, quadriculado e de caligrafia grátis em Letter ou A4. Sem marca d'água nem cadastro: baixe o PDF e imprima em casa."
     },
     "tracing": {
       "title": "Gerador grátis de fichas de nomes para caligrafia",
-      "description": "Crie fichas de caligrafia personalizadas com nomes, linha de exemplo escura e linhas para treinar. Download em PDF."
+      "description": "Crie fichas de caligrafia com o nome, uma linha de exemplo escura e linhas para treinar. Baixe o PDF grátis, sem cadastro."
     },
     "cursive": {
       "title": "Gerador de letra cursiva - Free",
@@ -58,7 +58,7 @@
     },
     "coloring": {
       "title": "Gerador de páginas para colorir com nomes",
-      "description": "Transforme qualquer nome em páginas de bolhas para colorir. PDF grátis — as crianças colorrem o próprio nome."
+      "description": "Transforme qualquer nome em páginas de letras-bolha para colorir. As crianças colorem o nome e baixam um PDF grátis, sem cadastro."
     },
     "wordwork": {
       "title": "Gerador de folhas de trabalho de palavras (PDF imprimível)",
@@ -82,7 +82,7 @@
     },
     "tools": {
       "title": "Todas as ferramentas de letra grátis",
-      "description": "Tudo num lugar: voz para letra, cursiva, caligrafia para calcar, folhas de prática e o quiz de personalidade."
+      "description": "Todas as ferramentas grátis num lugar: voz para letra, cursiva, caligrafia para calcar, folhas de prática e o quiz. Sem cadastro."
     },
     "pageCalc": {
       "title": "Calculadora de páginas manuscritas — quantas folhas um texto ocupa",

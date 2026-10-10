@@ -7,7 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { FONTS } from "@/stores/useEditorStore";
 import { LETTER_HUB_FAQS, LETTER_TRACING_UI, PRINT_LETTERS } from "@/content/letterTracing";
 import ToolFaq from "@/components/ToolFaq";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 /** 印刷体字母描红 hub。仅 en，理由同 cursive-alphabet。 */
 export function generateStaticParams() {
@@ -21,11 +21,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (locale !== routing.defaultLocale) return {};
-  return {
-    title: LETTER_TRACING_UI.hubMetaTitle,
-    description: LETTER_TRACING_UI.hubMetaDescription,
-    alternates: buildAlternates("/letter-tracing", locale as Locale, ["en"]),
-  };
+  return pageMetadata(
+    "/letter-tracing",
+    locale as Locale,
+    { title: LETTER_TRACING_UI.hubMetaTitle, description: LETTER_TRACING_UI.hubMetaDescription },
+    { available: ["en"] },
+  );
 }
 
 export default async function LetterTracingHubPage({

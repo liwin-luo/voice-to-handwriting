@@ -7,7 +7,7 @@ import PageCalculator from "@/components/PageCalculator";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { PAGE_CALC_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,11 +20,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.pageCalc" });
-  return {
+  return pageMetadata("/handwriting-page-calculator", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/handwriting-page-calculator", locale as Locale),
-  };
+  });
 }
 
 export default async function HandwritingPageCalculatorPage({

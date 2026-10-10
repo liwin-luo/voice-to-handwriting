@@ -7,7 +7,7 @@ import ToolWorkspace from "@/components/ToolWorkspace";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { DOCTOR_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -20,11 +20,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.doctor" });
-  return {
+  return pageMetadata("/doctor-handwriting-generator", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/doctor-handwriting-generator", locale as Locale),
-  };
+  });
 }
 
 export default async function DoctorHandwritingPage({

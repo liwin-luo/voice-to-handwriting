@@ -10,7 +10,7 @@ import ShareBar from "@/components/ShareBar";
 import { getPaperKind, PAPER_KINDS } from "@/content/paperKinds";
 import { getLocalizedFaqs } from "@/content/faqs";
 import { paperKindFaqs } from "@/content/paperKindFaqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -26,11 +26,10 @@ export async function generateMetadata({
   const page = getPaperKind(kind);
   const copy = page?.copy[locale as Locale];
   if (!page || !copy) return {};
-  return {
+  return pageMetadata(`/printable-paper/${page.slug}`, locale as Locale, {
     title: copy.title,
     description: copy.description,
-    alternates: buildAlternates(`/printable-paper/${page.slug}`, locale as Locale),
-  };
+  });
 }
 
 export default async function PaperKindPage({

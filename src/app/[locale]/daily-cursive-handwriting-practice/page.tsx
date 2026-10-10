@@ -7,7 +7,7 @@ import DailyCursivePracticeGenerator from "@/components/DailyCursivePracticeGene
 import ShareBar from "@/components/ShareBar";
 import ToolFaq from "@/components/ToolFaq";
 import { DAILY_CURSIVE_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -21,11 +21,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.dailyCursive" });
-  return {
+  return pageMetadata("/daily-cursive-handwriting-practice", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/daily-cursive-handwriting-practice", locale as Locale),
-  };
+  });
 }
 
 export default async function DailyCursivePracticePage({

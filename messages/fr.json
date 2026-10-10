@@ -10,27 +10,27 @@
     },
     "privacy": {
       "title": "Politique de confidentialité",
-      "description": "Traitement des données vocales et textuelles, cookies et publicités tierces."
+      "description": "Comment sont traités la voix, le texte, les cookies et les publicités tierces. La parole et le texte restent dans le navigateur, sans envoi."
     },
     "terms": {
       "title": "Conditions d'utilisation",
-      "description": "Conditions d'utilisation, limites et avertissement de l'outil."
+      "description": "Conditions d'utilisation de Voice to Handwriting : ce que l'outil permet, où sont ses limites, et l'avertissement qui s'applique."
     },
     "contact": {
       "title": "Contact",
-      "description": "Suggestions, rapports de bugs et demandes commerciales."
+      "description": "Contactez Voice to Handwriting pour des suggestions, des rapports de bugs et des demandes commerciales. Nous lisons chaque message."
     },
     "blog": {
-      "title": "Blog",
-      "description": "Tutoriels et idées pour des cartes et images manuscrites."
+      "title": "Tutoriels manuscrits",
+      "description": "Tutoriels de cartes manuscrites, idées d'images et feuilles d'exercice. Chaque guide utilise les outils gratuits de ce site. Sans inscription."
     },
     "templates": {
       "title": "Modèles manuscrits",
-      "description": "Lettres d'amour, excuses, remerciements, anniversaires et fêtes — texte et style en un geste."
+      "description": "Lettres d'amour, excuses, remerciements, anniversaires et fêtes — copiez le texte, changez le style et exportez une écriture manuscrite."
     },
     "faq": {
       "title": "Questions fréquentes",
-      "description": "Où imprimer du papier ligné, tracer un prénom, voir des polices cursives ou passer de la voix à l'écriture."
+      "description": "Où imprimer du papier ligné, tracer un prénom, voir des polices cursives ou passer de la voix à l'écriture. Chaque réponse mène à l'outil."
     },
     "printable": {
       "title": "Générateur de papier ligné et quadrillé à imprimer (Letter et A4)",
@@ -58,7 +58,7 @@
     },
     "coloring": {
       "title": "Générateur de pages à colorier avec prénoms",
-      "description": "Transforme n'importe quel prénom en pages à colorier lettres bulles. PDF gratuit — les enfants colorient leur propre prénom."
+      "description": "Transforme n'importe quel prénom en pages à colorier en lettres bulles. PDF gratuit : les enfants colorient leur prénom, sans inscription."
     },
     "wordwork": {
       "title": "Générateur de fiches de mots (PDF imprimable)",
@@ -82,7 +82,7 @@
     },
     "tools": {
       "title": "Tous les outils d'écriture gratuits",
-      "description": "Tout au même endroit : voix vers écriture, cursive, modèles à reproduire, feuilles d'exercices et le quiz de personnalité."
+      "description": "Tous les outils gratuits au même endroit : voix vers écriture, cursive, modèles à reproduire, feuilles d'exercices et quiz. Sans inscription."
     },
     "pageCalc": {
       "title": "Calculateur de pages manuscrites — combien de feuilles",

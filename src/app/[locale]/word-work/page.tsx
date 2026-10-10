@@ -7,7 +7,7 @@ import WordWorkGenerator from "@/components/WordWorkGenerator";
 import ShareBar from "@/components/ShareBar";
 import ToolFaq from "@/components/ToolFaq";
 import { WORDWORK_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -21,11 +21,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.wordwork" });
-  return {
+  return pageMetadata("/word-work", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/word-work", locale as Locale),
-  };
+  });
 }
 
 export default async function WordWorkPage({

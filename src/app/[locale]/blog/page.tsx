@@ -6,7 +6,7 @@ import { BLOG_CONTENT } from "@/content/blog/registry";
 import { RELATED, TOOL_LABEL_KEY } from "@/content/related";
 import BlogExplorer, { type BlogCardData, type ToolOption } from "@/components/BlogExplorer";
 import { postReadingMinutes } from "@/lib/reading";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -16,11 +16,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.blog" });
-  return {
+  return pageMetadata("/blog", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/blog", locale as Locale),
-  };
+  });
 }
 
 export default async function BlogIndex({

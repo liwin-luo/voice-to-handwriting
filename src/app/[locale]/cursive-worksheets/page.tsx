@@ -8,7 +8,7 @@ import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { CURSIVE_WORKSHEET_FAQS } from "@/content/pageFaqs";
 import { getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -22,11 +22,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.cursiveWorks" });
-  return {
+  return pageMetadata("/cursive-worksheets", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/cursive-worksheets", locale as Locale),
-  };
+  });
 }
 
 export default async function CursiveWorksheetsPage({

@@ -8,7 +8,7 @@ import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { getLocalizedFaqs, FAQ_ITEMS } from "@/content/faqs";
 import { SITE } from "@/lib/site";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: buildAlternates("/", locale as Locale) };
+  return pageMetadata("/", locale as Locale);
 }
 
 export default async function HomePage({

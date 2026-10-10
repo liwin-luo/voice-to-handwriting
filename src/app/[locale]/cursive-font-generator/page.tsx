@@ -9,7 +9,7 @@ import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { FONT_CATALOG } from "@/content/fontCatalog";
 import { CURSIVE_FONT_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 /** 手写字体预览 + 导出工具页(主词 cursive font generator,8 语言) */
 export function generateStaticParams() {
@@ -23,11 +23,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.cursiveFont" });
-  return {
+  return pageMetadata("/cursive-font-generator", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/cursive-font-generator", locale as Locale),
-  };
+  });
 }
 
 export default async function CursiveFontGeneratorPage({

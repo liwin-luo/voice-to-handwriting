@@ -15,7 +15,7 @@ import {
   letterQueryTitle,
   lettersForLocale,
 } from "@/content/cursiveLetters";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 /** 单字母矩阵页(Phase 0 仅 en;其他语言 404,sitemap 同步只输出 en 变体) */
 export function generateStaticParams() {
@@ -32,11 +32,12 @@ export async function generateMetadata({
   const { locale, letter } = await params;
   const entry = getLetterPage(letter, locale as Locale);
   if (!entry) return {};
-  return {
-    title: letterQueryTitle(entry.page),
-    description: entry.meta.description,
-    alternates: buildAlternates(`/cursive/letter/${letter}`, locale as Locale, ["en"]),
-  };
+  return pageMetadata(
+    `/cursive/letter/${letter}`,
+    locale as Locale,
+    { title: letterQueryTitle(entry.page), description: entry.meta.description },
+    { available: ["en"] },
+  );
 }
 
 const CELLS = 44; // 练习条基线间距(px),与字号配平

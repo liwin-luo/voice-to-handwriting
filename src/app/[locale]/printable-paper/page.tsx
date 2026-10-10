@@ -8,7 +8,7 @@ import PaperGenerator from "@/components/PaperGenerator";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { PAPER_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 import { PAPER_KINDS } from "@/content/paperKinds";
 
@@ -23,11 +23,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.printable" });
-  return {
+  return pageMetadata("/printable-paper", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/printable-paper", locale as Locale),
-  };
+  });
 }
 
 export default async function PrintablePaperPage({

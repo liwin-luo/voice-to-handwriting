@@ -10,27 +10,27 @@
     },
     "privacy": {
       "title": "Datenschutz",
-      "description": "Wie Sprach- und Textdaten, Cookies und Werbung von Drittanbietern behandelt werden."
+      "description": "Wie Sprach- und Textdaten, Cookies und Werbung Dritter behandelt werden. Sprache und Text bleiben im Browser und werden nicht hochgeladen."
     },
     "terms": {
       "title": "Nutzungsbedingungen",
-      "description": "Nutzungsbedingungen, Grenzen und Haftungsausschluss des Tools."
+      "description": "Nutzungsbedingungen von Voice to Handwriting: was das Tool erlaubt, wo die Grenzen liegen und welcher Haftungsausschluss gilt."
     },
     "contact": {
       "title": "Kontakt",
-      "description": "Feedback, Fehlerberichte und geschäftliche Anfragen."
+      "description": "Kontakt zu Voice to Handwriting: Feedback, Fehlerberichte und geschäftliche Anfragen. Wir lesen jede Nachricht, die ankommt."
     },
     "blog": {
-      "title": "Blog",
-      "description": "Anleitungen und Ideen für handgeschriebene Karten und Bilder."
+      "title": "Handschrift-Anleitungen",
+      "description": "Anleitungen für handgeschriebene Karten, Bildideen und Übungsblätter. Jede Anleitung nutzt die kostenlosen Werkzeuge dieser Seite."
     },
     "templates": {
       "title": "Handschrift-Vorlagen",
-      "description": "Liebesbriefe, Entschuldigungen, Dankesschreiben, Geburtstage und Feiertage — Text und Stil in einem Tipp."
+      "description": "Liebesbriefe, Entschuldigungen, Dank, Geburtstage und Feiertage — Text kopieren, Stil wählen und als Handschrift exportieren. Kostenlos."
     },
     "faq": {
       "title": "Häufige Fragen",
-      "description": "Wo liniertes Papier, Namensblätter, Schreibschriften oder Sprache-zu-Handschrift zu finden sind."
+      "description": "Wo liniertes Papier, Namensblätter, Schreibschriften oder Sprache-zu-Handschrift liegen. Jede Antwort verlinkt das passende Werkzeug."
     },
     "printable": {
       "title": "Kostenloser liniertes-Papier-Generator (Letter & A4)",
@@ -58,7 +58,7 @@
     },
     "coloring": {
       "title": "Namens-Malvorlagen-Generator",
-      "description": "Verwandle jeden Namen in druckbare Bubble-Letters zum Ausmalen. Kostenloser PDF — Kinder bemalen ihren eigenen Namen."
+      "description": "Verwandle jeden Namen in druckbare Bubble-Letters zum Ausmalen. Kinder bemalen ihren Namen und laden ein kostenloses PDF herunter."
     },
     "wordwork": {
       "title": "Wortarbeit-Arbeitsblatt-Generator (druckbares PDF)",
@@ -82,7 +82,7 @@
     },
     "tools": {
       "title": "Alle kostenlosen Handschrift-Werkzeuge",
-      "description": "Alles an einem Ort: Sprache-zu-Handschrift, Schreibschrift, Spurenvorlagen, Übungsblätter und das Persönlichkeitsquiz."
+      "description": "Alle kostenlosen Werkzeuge an einem Ort: Sprache-zu-Handschrift, Schreibschrift, Spuren, Übungsblätter und das Persönlichkeitsquiz."
     },
     "pageCalc": {
       "title": "Seitenzähler für Handschrift — wie viele Blätter ein Text braucht",

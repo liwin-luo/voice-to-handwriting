@@ -9,36 +9,36 @@
     },
     "privacy": {
       "title": "Política de privacidad",
-      "description": "Cómo se tratan los datos de voz y texto, las cookies y la publicidad de terceros."
+      "description": "Cómo se tratan la voz, el texto, las cookies y la publicidad de terceros. El habla y el texto se quedan en tu navegador y no se suben."
     },
     "terms": {
       "title": "Términos de uso",
-      "description": "Condiciones de uso, límites y aviso legal de la herramienta."
+      "description": "Condiciones de uso de Voice to Handwriting: qué permite la herramienta, cuáles son los límites y el aviso legal que las acompaña."
     },
     "contact": {
       "title": "Contacto",
-      "description": "Sugerencias, informe de errores y consultas comerciales."
+      "description": "Contacta con Voice to Handwriting para sugerencias, informes de errores y consultas comerciales. Leemos cada mensaje que llega."
     },
     "blog": {
-      "title": "Blog",
-      "description": "Tutoriales de tarjetas escritas a mano e ideas para imágenes manuscritas."
+      "title": "Tutoriales de caligrafía",
+      "description": "Tutoriales de tarjetas manuscritas, ideas de imágenes y hojas de práctica. Cada guía usa las herramientas gratis de este sitio. Sin registro."
     },
     "templates": {
       "title": "Plantillas de escritura a mano",
-      "description": "Cartas de amor, disculpas, agradecimientos, cumpleaños, Día del Maestro y Año Nuevo — texto y estilo en un toque."
+      "description": "Cartas de amor, disculpas, agradecimientos, cumpleaños y fiestas: copia el texto, cambia el estilo y expórtalo como letra manuscrita. Gratis."
     },
     "keywords": "generador de escritura a mano, voz a texto, fuente manuscrita, tarjetas escritas",
     "faq": {
       "title": "Preguntas frecuentes",
-      "description": "Dónde imprimir papel pautado, calcar un nombre, ver fuentes cursivas o pasar la voz a letra manuscrita."
+      "description": "Dónde imprimir papel pautado, calcar un nombre, ver fuentes cursivas o pasar la voz a letra. Cada respuesta enlaza con la herramienta."
     },
     "printable": {
       "title": "Generador de papel rayado y cuadriculado para imprimir (Letter y A4)",
-      "description": "Genera papel rayado, cuadriculado y de caligrafía gratis en Letter o A4. Sin marca de agua ni registro, descarga en PDF."
+      "description": "Genera papel rayado, cuadriculado y de caligrafía gratis en Letter o A4. Sin marca de agua ni registro: descarga el PDF e imprímelo en casa."
     },
     "tracing": {
       "title": "Generador gratis de fichas de nombres para repasar",
-      "description": "Crea fichas de caligrafía personalizadas con nombres, línea de ejemplo oscura y filas para repasar. Descarga en PDF."
+      "description": "Crea fichas de caligrafía con el nombre, una línea de ejemplo oscura y filas para repasar. Descarga el PDF gratis, sin registro."
     },
     "cursive": {
       "title": "Generador de letra cursiva - Free",
@@ -58,7 +58,7 @@
     },
     "coloring": {
       "title": "Generador de páginas para colorear con nombres",
-      "description": "Convierte cualquier nombre en páginas de burbujas para colorear. PDF gratis — los niños colorean su propio nombre."
+      "description": "Convierte cualquier nombre en páginas de letras burbuja para colorear. Los niños colorean su nombre y descargan un PDF gratis, sin registro."
     },
     "wordwork": {
       "title": "Generador de hojas de trabajo de palabras (PDF imprimible)",
@@ -82,7 +82,7 @@
     },
     "tools": {
       "title": "Todas las herramientas de escritura gratis",
-      "description": "Todo en un sitio: voz a letra, cursiva, calcos, hojas de práctica y el test de personalidad."
+      "description": "Todas las herramientas gratis en un sitio: voz a letra, cursiva, calcos, hojas de práctica y el test de personalidad. Sin registro."
     },
     "pageCalc": {
       "title": "Calculadora de páginas manuscritas — cuántas hojas hace falta",

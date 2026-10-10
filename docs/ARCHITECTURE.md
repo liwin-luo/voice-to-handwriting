@@ -89,7 +89,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 ### 4.2 页面地图(src/app/[locale]/)
 
-所有页面同一模式:`setRequestLocale` + `getTranslations` + `buildAlternates(path, locale)` 生成 canonical/hreflang + `generateStaticParams` 展开 8 语言,全站 SSG。
+所有页面同一模式:`setRequestLocale` + `getTranslations` + `pageMetadata(path, locale, { title, description })` 生成 canonical/hreflang 和 `og:type`/`og:url` + `generateStaticParams` 展开 8 语言,全站 SSG。
 
 | 路由 | 内容 | 核心组件 / 数据 |
 |---|---|---|
@@ -181,7 +181,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 
 ### 4.9 SEO 基建
 
-- `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)。
+- `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)+ `pageMetadata`(在 alternates 上加 `og:type` 与 `og:url`;文章页传 `article` 才写 `publishedTime`/`modifiedTime`)。
 - `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 连笔字母矩阵 + 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
@@ -223,7 +223,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 **新增工具页**(参考最接近的现有页):
 1. 建组件 `src/components/XxxGenerator.tsx`(Canvas 类生成器参考 `useDebouncedImeSafe` + jsPDF 模式);
-2. 建 `src/app/[locale]/xxx/page.tsx`,复制现有模式(`generateStaticParams` + `buildAlternates` + ShareBar + ToolFaq);
+2. 建 `src/app/[locale]/xxx/page.tsx`,复制现有模式(`generateStaticParams` + `pageMetadata` + ShareBar + ToolFaq);
 3. 8 个 `messages/*.json` 加 nav/meta/footer 文案;
 4. `src/lib/tools.ts` 的 `TOOL_GROUPS` 加卡片(进 /tools);要出现在页头下拉再标 `nav: true`。`sitemap.ts` 的 PATHS 加路径;
 5. `faqs.ts` 加该工具 FAQ(没翻译的语言不会渲染,无需 8 语全翻)。

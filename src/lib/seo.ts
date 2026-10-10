@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { routing, type Locale } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 
@@ -28,4 +29,53 @@ export function buildAlternates(
     languages["x-default"] = localizedUrl(pathname, routing.defaultLocale);
   }
   return { canonical: localizedUrl(pathname, locale), languages };
+}
+
+type PageMetaInput = {
+  title?: string;
+  description?: string;
+};
+
+type PageMetaOptions = {
+  available?: readonly Locale[];
+  /** 仅文章页。列表页和工具页不要编一个页面级发布日。 */
+  article?: { publishedTime: string; modifiedTime?: string };
+};
+
+/**
+ * 页面 metadata:title/description + canonical/hreflang + og:type/og:url。
+ * og:url 等于该语言的 canonical,分享时才会落到正确语言。
+ * 不写 openGraph.title,交给 Next 用页面 title(含品牌模板)补上。
+ */
+export function pageMetadata(
+  pathname: string,
+  locale: Locale,
+  meta: PageMetaInput = {},
+  options?: PageMetaOptions,
+): Metadata {
+  const alternates = buildAlternates(pathname, locale, options?.available);
+  const article = options?.article;
+  // 子页面一旦写 openGraph,会整段替换布局上的分享图。
+  // 文章页同目录有自己的 opengraph-image,不填 images 才会用那张。
+  // 其余页面指回 [locale]/opengraph-image。
+  const brandImage = {
+    url: locale === routing.defaultLocale ? "/opengraph-image" : `/${locale}/opengraph-image`,
+    width: 1200,
+    height: 630,
+    alt: "Voice to Handwriting",
+    type: "image/png",
+  };
+  return {
+    ...(meta.title !== undefined ? { title: meta.title } : {}),
+    ...(meta.description !== undefined ? { description: meta.description } : {}),
+    alternates,
+    openGraph: article
+      ? {
+          type: "article",
+          url: alternates.canonical,
+          publishedTime: article.publishedTime,
+          modifiedTime: article.modifiedTime ?? article.publishedTime,
+        }
+      : { type: "website", url: alternates.canonical, images: [brandImage] },
+  };
 }

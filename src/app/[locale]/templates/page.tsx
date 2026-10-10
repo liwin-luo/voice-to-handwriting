@@ -5,7 +5,7 @@ import ToolFaq from "@/components/ToolFaq";
 import { TEMPLATES, getTemplateMeta } from "@/content/templates";
 import { TEMPLATE_FAQS } from "@/content/pageFaqs";
 import { getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import type { Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
@@ -15,11 +15,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.templates" });
-  return {
+  return pageMetadata("/templates", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/templates", locale as Locale),
-  };
+  });
 }
 
 export default async function TemplatesIndex({

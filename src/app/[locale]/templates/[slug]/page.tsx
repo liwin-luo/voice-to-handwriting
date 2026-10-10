@@ -10,7 +10,7 @@ import { templateDetailFaqs } from "@/content/pageFaqs";
 import { getTemplate, getTemplateMeta, TEMPLATES } from "@/content/templates";
 import { FONTS } from "@/stores/useEditorStore";
 import { getPaper } from "@/engine/paper";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => TEMPLATES.map((t) => ({ locale, slug: t.slug })));
@@ -25,11 +25,10 @@ export async function generateMetadata({
   const tplObj = getTemplate(slug);
   const meta = tplObj ? getTemplateMeta(tplObj, locale as Locale)! : undefined;
   return meta
-    ? {
+    ? pageMetadata(`/templates/${slug}`, locale as Locale, {
         title: meta.title,
         description: meta.description,
-        alternates: buildAlternates(`/templates/${slug}`, locale as Locale),
-      }
+      })
     : {};
 }
 

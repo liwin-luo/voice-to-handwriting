@@ -8,7 +8,7 @@ import { getPaper } from "@/engine/paper";
 import { FONTS } from "@/stores/useEditorStore";
 import { defaultFontId } from "@/lib/localeDefaults";
 import ToolLane from "@/components/ToolLane";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -21,11 +21,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.tools" });
-  return {
+  return pageMetadata("/tools", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/tools", locale as Locale),
-  };
+  });
 }
 
 export default async function ToolsHubPage({

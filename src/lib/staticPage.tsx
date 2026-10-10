@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import ProseShell from "@/components/ProseShell";
 import { PAGE_CONTENT, type PageKey } from "@/content/pages/registry";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 /** 生成 about/privacy/terms/contact 的通用页面:内容来自 src/content/pages 的双语 MDX */
 export function makeStaticPage(key: PageKey) {
@@ -23,11 +23,10 @@ export function makeStaticPage(key: PageKey) {
   async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale, namespace: `meta.${key}` });
-    return {
+    return pageMetadata(`/${key}`, locale as Locale, {
       title: t("title"),
       description: t("description"),
-      alternates: buildAlternates(`/${key}`, locale as Locale),
-    };
+    });
   }
 
   return { Page, generateMetadata };

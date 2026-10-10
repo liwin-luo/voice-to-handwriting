@@ -8,7 +8,7 @@ import CursiveTextGenerator from "@/components/CursiveTextGenerator";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { CURSIVE_TEXT_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -21,11 +21,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.cursiveText" });
-  return {
+  return pageMetadata("/cursive-text-generator", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/cursive-text-generator", locale as Locale),
-  };
+  });
 }
 
 export default async function CursiveTextGeneratorPage({

@@ -6,7 +6,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import { getLocalizedFaqs } from "@/content/faqs";
 import { FAQ_HUB } from "@/content/faqHub";
 import ToolFaq from "@/components/ToolFaq";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -19,11 +19,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.faq" });
-  return {
+  return pageMetadata("/faq", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/faq", locale as Locale),
-  };
+  });
 }
 
 export default async function FaqPage({

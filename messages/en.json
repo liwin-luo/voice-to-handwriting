@@ -9,32 +9,32 @@
     },
     "privacy": {
       "title": "Privacy Policy",
-      "description": "How Voice to Handwriting handles voice and text data, cookies and third-party advertising."
+      "description": "How Voice to Handwriting handles voice and text data, cookies, and third-party ads. Speech and text stay in your browser and are not uploaded."
     },
     "terms": {
       "title": "Terms of Use",
-      "description": "Terms of use for Voice to Handwriting: license, boundaries and disclaimer."
+      "description": "Terms of use for Voice to Handwriting: what you may do with the tool, where the limits are, and the disclaimer that applies."
     },
     "contact": {
       "title": "Contact",
-      "description": "Contact Voice to Handwriting: feedback, bug reports and business inquiries."
+      "description": "Contact Voice to Handwriting about product feedback, bug reports, and business inquiries. We read every message that comes in."
     },
     "blog": {
-      "title": "Blog",
-      "description": "Handwritten card tutorials, handwriting image tips and inspiration for social media posts."
+      "title": "Handwriting Tutorials",
+      "description": "Handwritten card tutorials, image tips, and practice-sheet ideas. Follow each guide with the free tools on this site. No signup."
     },
     "templates": {
       "title": "Handwriting Templates",
-      "description": "Love letters, apologies, thank-you notes, birthday and holiday wishes — copy and style in one tap, exported as handwriting."
+      "description": "Love letters, apologies, thank-you notes, birthday and holiday wishes — copy, restyle, and export as handwriting. Free, in your browser."
     },
     "keywords": "handwriting generator, voice to text, handwriting font, greeting card maker, audio transcription, handwriting online",
     "faq": {
       "title": "FAQ",
-      "description": "Where to print handwriting paper, trace a name, preview cursive fonts, or turn speech into handwriting."
+      "description": "Find the page for lined paper, name tracing, cursive fonts, or turning speech into handwriting. Each answer links to that tool."
     },
     "printable": {
       "title": "Free Printable Lined Paper Generator (Letter & A4)",
-      "description": "Generate free printable lined, graph and handwriting paper in Letter or A4. No watermark, no signup — download as PDF and print at home."
+      "description": "Generate free printable lined, graph, and handwriting paper in Letter or A4. No watermark, no signup — download the PDF and print at home."
     },
     "tracing": {
       "title": "Free Name Tracing Worksheet Generator",
@@ -58,7 +58,7 @@
     },
     "coloring": {
       "title": "Name Coloring Page Generator",
-      "description": "Turn any name into printable bubble-letter coloring pages. Free PDF — kids color their own name."
+      "description": "Turn any name into printable bubble-letter coloring pages. Kids color their own name, then download a free PDF. No signup."
     },
     "wordwork": {
       "title": "Word Work Worksheet Generator (Printable PDF)",
@@ -82,7 +82,7 @@
     },
     "tools": {
       "title": "All Free Handwriting Tools",
-      "description": "Every free handwriting tool in one place: voice-to-handwriting, cursive, tracing, practice sheets and the personality quiz."
+      "description": "Every free handwriting tool in one place: voice-to-handwriting, cursive, tracing, practice sheets, and a personality quiz. No signup."
     },
     "pageCalc": {
       "title": "Handwriting Page Calculator — How Many Sheets for Handwritten Text?",

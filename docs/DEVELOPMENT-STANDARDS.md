@@ -50,6 +50,7 @@
 ### 2.1 元数据与 hreflang
 
 - 每个页面**必须**导出 `generateMetadata`,title 与 description **必须逐语言提供**(取 messages `meta` 命名空间或内容数据 i18n),**禁止** 8 个语言共用一份英文 description。
+- 页面 `generateMetadata` **必须**走 `pageMetadata(path, locale, { title, description }, options?)`,不得手写 alternates 或 `og:url`。它内部调用 `buildAlternates`,并写入 `og:type`(`website`;文章页传 `options.article` 时为 `article`,带 `publishedTime`/`modifiedTime`)。`og:url` 等于该语言 canonical。
 - canonical / hreflang **必须**通过 `buildAlternates(path, locale, available?)` 生成,不得手写:
   - 每个语言版本自引用 canonical(多语言站 canonical **禁止**跨语言指向);
   - `x-default` 自动指向 en;

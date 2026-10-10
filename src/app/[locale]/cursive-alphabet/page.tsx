@@ -8,7 +8,7 @@ import CursiveAlphabetPanel from "@/components/CursiveAlphabetPanel";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { ALPHABET_PAGE, ALPHABET_UI } from "@/content/cursiveAlphabet";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 /** 交互式连笔字母表(Phase 0 仅 en:其他语言 404,sitemap 只输出 en 变体;
  *  文案来自 cursiveAlphabet 内容模块,理由同 cursiveLetters.ts) */
@@ -23,11 +23,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (locale !== routing.defaultLocale) return {};
-  return {
-    title: ALPHABET_PAGE.metaTitle,
-    description: ALPHABET_PAGE.metaDescription,
-    alternates: buildAlternates("/cursive-alphabet", locale as Locale, ["en"]),
-  };
+  return pageMetadata(
+    "/cursive-alphabet",
+    locale as Locale,
+    { title: ALPHABET_PAGE.metaTitle, description: ALPHABET_PAGE.metaDescription },
+    { available: ["en"] },
+  );
 }
 
 export default async function CursiveAlphabetPage({

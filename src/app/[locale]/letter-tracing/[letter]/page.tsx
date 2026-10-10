@@ -18,7 +18,7 @@ import {
   letterTracingTitle,
   printLetterNeighbors,
 } from "@/content/letterTracing";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 /** 单字母描红。仅 en。 */
 export function generateStaticParams() {
@@ -38,11 +38,12 @@ export async function generateMetadata({
   const { locale, letter } = await params;
   const page = getPrintLetter(letter);
   if (locale !== routing.defaultLocale || !page) return {};
-  return {
-    title: letterTracingMetaTitle(page),
-    description: letterTracingMetaDescription(page),
-    alternates: buildAlternates(`/letter-tracing/${letter}`, locale as Locale, ["en"]),
-  };
+  return pageMetadata(
+    `/letter-tracing/${letter}`,
+    locale as Locale,
+    { title: letterTracingMetaTitle(page), description: letterTracingMetaDescription(page) },
+    { available: ["en"] },
+  );
 }
 
 export default async function LetterTracingPage({

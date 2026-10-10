@@ -10,7 +10,7 @@ import { postReadingMinutes } from "@/lib/reading";
 import ProseShell from "@/components/ProseShell";
 import RelatedLinks from "@/components/RelatedLinks";
 import { SITE } from "@/lib/site";
-import { buildAlternates, localizedUrl } from "@/lib/seo";
+import { localizedUrl, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -27,12 +27,19 @@ export async function generateMetadata({
   // 没有正文的语言变体是 404,不能再输出文章标题(否则软 404 仍挂着原文 title)
   if (!BLOG_CONTENT[slug]?.[locale as Locale]) return {};
   const meta = getPostMeta(slug, locale as Locale);
+  const post = POSTS.find((p) => p.slug === slug);
   return meta
-    ? {
-        title: meta.title,
-        description: meta.description,
-        alternates: buildAlternates(`/blog/${slug}`, locale as Locale, postLocales(slug)),
-      }
+    ? pageMetadata(
+        `/blog/${slug}`,
+        locale as Locale,
+        { title: meta.title, description: meta.description },
+        {
+          available: postLocales(slug),
+          article: post
+            ? { publishedTime: post.date, modifiedTime: post.updated }
+            : undefined,
+        },
+      )
     : {};
 }
 

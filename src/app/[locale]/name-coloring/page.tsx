@@ -7,7 +7,7 @@ import NameColoringGenerator from "@/components/NameColoringGenerator";
 import ShareBar from "@/components/ShareBar";
 import ToolFaq from "@/components/ToolFaq";
 import { COLORING_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { coloringFontId, defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -21,11 +21,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.coloring" });
-  return {
+  return pageMetadata("/name-coloring", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/name-coloring", locale as Locale),
-  };
+  });
 }
 
 export default async function NameColoringPage({

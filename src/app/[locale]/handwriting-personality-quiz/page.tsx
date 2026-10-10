@@ -10,7 +10,7 @@ import ToolFaq from "@/components/ToolFaq";
 import { QUIZ_FAQS, getLocalizedFaqs } from "@/content/faqs";
 import { QUIZ_CONTENT } from "@/content/quiz";
 import { SITE } from "@/lib/site";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -23,11 +23,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.quiz" });
-  return {
+  return pageMetadata("/handwriting-personality-quiz", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/handwriting-personality-quiz", locale as Locale),
-  };
+  });
 }
 
 export default async function HandwritingQuizPage({

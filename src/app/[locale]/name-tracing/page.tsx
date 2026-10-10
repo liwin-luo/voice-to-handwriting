@@ -8,7 +8,7 @@ import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { Link } from "@/i18n/navigation";
 import { TRACING_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultFontId, defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -22,11 +22,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.tracing" });
-  return {
+  return pageMetadata("/name-tracing", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/name-tracing", locale as Locale),
-  };
+  });
 }
 
 export default async function NameTracingPage({

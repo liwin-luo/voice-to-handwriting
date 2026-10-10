@@ -7,7 +7,7 @@ import HandwritingWorkbookGenerator from "@/components/HandwritingWorkbookGenera
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
 import { WORKBOOK_FAQS, getLocalizedFaqs } from "@/content/faqs";
-import { buildAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { defaultPageFormat } from "@/lib/localeDefaults";
 
 export function generateStaticParams() {
@@ -21,11 +21,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta.workbook" });
-  return {
+  return pageMetadata("/handwriting-workbook-generator", locale as Locale, {
     title: t("title"),
     description: t("description"),
-    alternates: buildAlternates("/handwriting-workbook-generator", locale as Locale),
-  };
+  });
 }
 
 export default async function HandwritingWorkbookPage({
