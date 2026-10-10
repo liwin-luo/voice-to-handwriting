@@ -42,6 +42,11 @@ export default function TracingGenerator({
   defaultFormat,
   rowLabels = "grades",
   perName = false,
+  defaultOneEach = false,
+  initialText = "",
+  sampleText,
+  fileStem = "name-tracing-worksheet",
+  presets,
 }: {
   defaultFontId?: string;
   defaultBandH?: number;
@@ -50,12 +55,20 @@ export default function TracingGenerator({
   rowLabels?: "grades" | "lines";
   /** 姓名描红可按名字拆页;连笔词表保持一页循环 */
   perName?: boolean;
+  defaultOneEach?: boolean;
+  /** 打开页面就写好的练习行。查询串 ?words= 仍优先 */
+  initialText?: string;
+  /** 输入为空时画在纸上的示例。不传则用姓名描红的占位名 */
+  sampleText?: string;
+  fileStem?: string;
+  presets?: { id: string; label: string; text: string }[];
 }) {
   const t = useTranslations("tracing");
   const fontNames = useTranslations("tool");
   const sheet = useTranslations("sheet");
   const locale = useLocale();
-  const [names, setNames] = useState("");
+  const [names, setNames] = useState(initialText);
+  const sample = sampleText ?? t("namesPlaceholder");
   useEffect(() => {
     const prefill = tracingPrefill(window.location.search);
     // 查询串只在浏览器里有,首屏保持空字符串,避免和水合结果不一致
@@ -70,7 +83,7 @@ export default function TracingGenerator({
   const [textColor, setTextColor] = useState("#3a3a3a");
   const [bg, setBg] = useState("#ffffff");
   const [format, setFormat] = useState<PageFormat>(defaultFormat);
-  const [oneEach, setOneEach] = useState(false);
+  const [oneEach, setOneEach] = useState(defaultOneEach);
   const [pageIndex, setPageIndex] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { w, h } = PAGE_FORMATS[format];
@@ -85,10 +98,10 @@ export default function TracingGenerator({
   useEffect(() => {
     let cancelled = false;
     const run = async () => {
-      const sample = tracingLines(drawNames, t("namesPlaceholder")).join("");
+      const glyphSample = tracingLines(drawNames, sample).join("");
       // 传入实际文字,确保字体切片按需加载对应字形后再绘制
       await waitForFontFace(family);
-      await document.fonts.load(`80px "${family}"`, sample).catch(() => {});
+      await document.fonts.load(`80px "${family}"`, glyphSample).catch(() => {});
       if (!cancelled) draw();
     };
     void run();
@@ -98,7 +111,7 @@ export default function TracingGenerator({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [drawNames, fontId, showExample, traceInk, guides, bandH, textColor, bg, format, oneEach, pageIndex]);
 
-  const sheets = tracingSheets(tracingLines(drawNames, t("namesPlaceholder")), perName && oneEach);
+  const sheets = tracingSheets(tracingLines(drawNames, sample), perName && oneEach);
   const sheetIndex = Math.min(pageIndex, Math.max(0, sheets.length - 1));
 
   /** 支持传入离屏 ctx,供导出更高分辨率的 PNG;不传时重置并绘制预览画布 */
@@ -191,7 +204,7 @@ export default function TracingGenerator({
       if (i > 0) pdf.addPage([w, h], "portrait");
       pdf.addImage(off.toDataURL("image/png"), "PNG", 0, 0, w, h);
     });
-    pdf.save("name-tracing-worksheet.pdf");
+    pdf.save(`${fileStem}.pdf`);
   };
 
   /** 离屏 2x 重绘,导出清晰的 PNG 图片 */
@@ -209,7 +222,7 @@ export default function TracingGenerator({
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "name-tracing-worksheet.png";
+      a.download = `${fileStem}.png`;
       a.click();
       URL.revokeObjectURL(url);
     }, "image/png");
@@ -228,12 +241,34 @@ export default function TracingGenerator({
         <>
           <div className="flex flex-col gap-1.5">
             <span className="field-label">{t("namesLabel")}</span>
+            {presets && presets.length > 0 && (
+              <div className="flex flex-wrap gap-1.5">
+                {presets.map((preset) => (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    aria-pressed={names === preset.text}
+                    onClick={() => {
+                      setNames(preset.text);
+                      setPageIndex(0);
+                    }}
+                    className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
+                      names === preset.text
+                        ? "border-accent bg-accent/5 text-accent"
+                        : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                    }`}
+                  >
+                    {preset.label}
+                  </button>
+                ))}
+              </div>
+            )}
             <textarea
               value={names}
               onChange={(e) => setNames(e.target.value)}
               {...compositionProps}
               rows={4}
-              placeholder={t("namesPlaceholder")}
+              placeholder={sample}
               className="surface-input resize-y p-3 text-sm leading-relaxed"
             />
           </div>

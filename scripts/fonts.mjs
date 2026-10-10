@@ -20,6 +20,7 @@ const jobs = [
   { input: "fonts-src/MrDafoe-Regular.ttf", outDir: "public/fonts/mrdafoe", family: "Mr Dafoe" },
   { input: "fonts-src/PinyonScript-Regular.ttf", outDir: "public/fonts/pinyonscript", family: "Pinyon Script" },
   { input: "fonts-src/Tangerine-Regular.ttf", outDir: "public/fonts/tangerine", family: "Tangerine" },
+  { input: "fonts-src/ArchitectsDaughter-Regular.ttf", outDir: "public/fonts/architectsdaughter", family: "Architects Daughter" },
   { input: "fonts-src/KleeOne-Regular.ttf", outDir: "public/fonts/kleeone", family: "Klee One" },
   { input: "fonts-src/NanumPenScript-Regular.ttf", outDir: "public/fonts/nanumpenscript", family: "Nanum Pen Script" },
 ];

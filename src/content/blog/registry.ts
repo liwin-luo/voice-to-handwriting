@@ -90,6 +90,15 @@ import cmcEs from "./calligraphy-motto-cards.es.mdx";
 import clbEn from "./cursive-laws-by-state.en.mdx";
 import bcfEn from "./best-cursive-fonts.en.mdx";
 import phlEn from "./print-handwritten-letters-and-envelopes.en.mdx";
+import hpsEn from "./how-to-practice-your-signature.en.mdx";
+import tnaEn from "./tracing-numbers-by-age.en.mdx";
+import sblEn from "./strokes-before-letter-tracing.en.mdx";
+import hjcEn from "./how-to-join-cursive-letters.en.mdx";
+import emsEn from "./export-a-mirrored-cursive-stencil.en.mdx";
+import shlEn from "./squared-hand-lettering-practice.en.mdx";
+import slwEn from "./spelling-list-word-work.en.mdx";
+import cnbEn from "./color-a-name-before-tracing.en.mdx";
+import ocgEn from "./one-character-in-the-grid.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -256,6 +265,15 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "cursive-laws-by-state": { en: clbEn },
   "best-cursive-fonts": { en: bcfEn },
   "print-handwritten-letters-and-envelopes": { en: phlEn },
+  "how-to-practice-your-signature": { en: hpsEn },
+  "tracing-numbers-by-age": { en: tnaEn },
+  "strokes-before-letter-tracing": { en: sblEn },
+  "how-to-join-cursive-letters": { en: hjcEn },
+  "export-a-mirrored-cursive-stencil": { en: emsEn },
+  "squared-hand-lettering-practice": { en: shlEn },
+  "spelling-list-word-work": { en: slwEn },
+  "color-a-name-before-tracing": { en: cnbEn },
+  "one-character-in-the-grid": { en: ocgEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

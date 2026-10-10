@@ -916,10 +916,12 @@ export const WORDWORK_FAQS: FaqItem[] = [
       en: {
         q: "What activities does it generate?",
         a: "Two per sheet: write each word three times (optionally with a traceable first copy) and a fill-in-the-missing-letter puzzle built from the same list.",
+        link: { href: "/blog/spelling-list-word-work", label: "Four words on Monday" },
       },
       zh: {
         q: "会生成哪些练习?",
         a: "每页两种:每个单词写三遍(可选第一份为描红),以及用同一份清单生成的补全缺失字母练习。",
+        link: { href: "/blog/spelling-list-word-work", label: "周一四个词" },
       },
       ja: {
         q: "どのような練習が生成されますか?",
@@ -1105,10 +1107,12 @@ export const WRITING_FAQS: FaqItem[] = [
       en: {
         q: "Can my child trace, copy or write independently?",
         a: "Three fill modes: light traceable characters, solid dark model characters, or blank cells with just the grid — start with tracing and fade it out as confidence grows.",
+        link: { href: "/blog/one-character-in-the-grid", label: "One character, one row" },
       },
       zh: {
         q: "孩子可以描红、临写还是独立书写?",
         a: "三种填充模式:浅色描红字、深色示范字、纯空白格——建议从描红开始,随着熟练度提升逐步过渡到独立书写。",
+        link: { href: "/blog/one-character-in-the-grid", label: "一个字写一行" },
       },
       ja: {
         q: "子どもはなぞり書き・書き写し・自力書きのどれができますか?",
@@ -1220,10 +1224,12 @@ export const COLORING_FAQS: FaqItem[] = [
       en: {
         q: "How do I make a coloring page with my child's name?",
         a: "Type the name, pick a playful font and a decoration (stars, animals, or machines), and the page draws bubble-letter outlines of each character.",
+        link: { href: "/blog/color-a-name-before-tracing", label: "Color the name first" },
       },
       zh: {
         q: "怎么给孩子做名字涂色页?",
         a: "输入名字、选一个可爱字体和装饰(星星、动物或机器),页面会自动画出每个字的大气泡轮廓。",
+        link: { href: "/blog/color-a-name-before-tracing", label: "先涂名字" },
       },
       ja: {
         q: "子どもの名前のぬりえはどうやって作りますか?",

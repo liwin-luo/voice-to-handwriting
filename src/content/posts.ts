@@ -421,7 +421,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "cursive-name-signature",
     author: "wes-morales",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-10-10",
     image: "/blog/cursive-signature.png",
     i18n: {
       en: {
@@ -645,6 +645,128 @@ const CURSIVE_POSTS: Post[] = [
         title: "Best free cursive fonts: 13 open-source picks, previewed with your own words",
         description:
           "Thirteen free cursive fonts, including signature scripts, compared by job — preview them with your text and export PNG, SVG or PDF, no install.",
+      },
+    },
+  },
+  {
+    slug: "how-to-practice-your-signature",
+    author: "wes-morales",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    i18n: {
+      en: {
+        title: "How to practice your signature for seven days, one script",
+        description:
+          "How to practice your signature: one short form, one script, fifteen minutes a day. The sheet settings, the seven-day drill, and what it will not sign for you.",
+      },
+    },
+  },
+  {
+    slug: "tracing-numbers-by-age",
+    author: "clara-hartley",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    image: "/blog/tracing-numbers-by-age.png",
+    i18n: {
+      en: {
+        title: "How to teach number tracing by age, one number a night",
+        description:
+          "How to teach number tracing by age: ages 3 to 4 stay on lines, ages 5 to 6 trace one numeral a night, and age 7 copies with the model covered. Use the table.",
+      },
+    },
+  },
+  {
+    slug: "strokes-before-letter-tracing",
+    author: "clara-hartley",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    image: "/blog/strokes-before-letter-tracing.png",
+    i18n: {
+      en: {
+        title: "How to practice strokes before a child traces letters",
+        description:
+          "How to practice strokes before a child traces letters: lines at 3 to 4, a circle at 5 to 6, then one letter. A five-minute order for tomorrow morning.",
+      },
+    },
+  },
+  {
+    slug: "how-to-join-cursive-letters",
+    author: "clara-hartley",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    image: "/blog/how-to-join-cursive-letters.png",
+    i18n: {
+      en: {
+        title: "How two cursive letters connect, same way or a turn",
+        description:
+          "How two cursive letters connect: same-direction pairs first, then pairs that turn. One pair per page, a finger on the join, and a step when the pencil lifts.",
+      },
+    },
+  },
+  {
+    slug: "export-a-mirrored-cursive-stencil",
+    author: "theo-lindgren",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    image: "/blog/export-a-mirrored-cursive-stencil.png",
+    i18n: {
+      en: {
+        title: "How to export a black mirrored stencil for transfer",
+        description:
+          "How to export a black mirrored stencil for transfer: a short phrase, mirror on, black on white. The settings from a desktop Chrome check on October 10, 2026.",
+      },
+    },
+  },
+  {
+    slug: "spelling-list-word-work",
+    author: "clara-hartley",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    i18n: {
+      en: {
+        title: "How to do word work with this week's spelling list",
+        description:
+          "How to do word work from four spelling words: write each three times, then fill the missing letter. What fits on Letter, and why the Dolch list does not.",
+      },
+    },
+  },
+  {
+    slug: "color-a-name-before-tracing",
+    author: "clara-hartley",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    i18n: {
+      en: {
+        title: "Color a name before tracing letters at ages 3 to 6",
+        description:
+          "Color a name before tracing the letters: one name, a thick outline, stars or none. Ages 3 to 4 use a crayon. Ages 5 to 6 trace the same name the next night.",
+      },
+    },
+  },
+  {
+    slug: "one-character-in-the-grid",
+    author: "clara-hartley",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    i18n: {
+      en: {
+        title: "Practice one character in the grid, one row a night",
+        description:
+          "Practice one character in the grid: one character, keep the cross, stop after the dark row. A4, three scripts, and why a sentence fills the squares wrong.",
+      },
+    },
+  },
+  {
+    slug: "squared-hand-lettering-practice",
+    author: "wes-morales",
+    date: "2026-10-10",
+    updated: "2026-10-10",
+    image: "/blog/squared-hand-lettering-practice.png",
+    i18n: {
+      en: {
+        title: "Practice squared handwriting for fifteen minutes a day",
+        description:
+          "Practice squared handwriting for fifteen minutes a day: check slant and baseline, then one row of Architects Daughter. Readable capitals take four to six weeks.",
       },
     },
   },

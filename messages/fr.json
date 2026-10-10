@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "Lettres manuscrites imprimables et enveloppes",
       "description": "Collez une liste de destinataires et téléchargez deux PDF : une lettre au style manuscrit pour chaque personne et une enveloppe adressée. Vous imprimez et vous postez. Gratuit, dans le navigateur."
+    },
+    "signaturePractice": {
+      "title": "Feuille de signature : calquer une seule forme",
+      "description": "Tapez votre nom, choisissez une forme courte et imprimez une feuille de signature : un modèle, un pointillé, puis des lignes vides. Quatre tracés. Gratuit, dans le navigateur."
+    },
+    "numberTracing": {
+      "title": "Fiches pour tracer les chiffres : 1–10 ou 1–20",
+      "description": "Imprimez des fiches pour tracer les chiffres de 1 à 10 ou de 1 à 20. Un chiffre par page : une ligne pleine, puis des pointillés. Gratuit, dans le navigateur."
+    },
+    "prewriting": {
+      "title": "Fiche de tracés d'avant les lettres : lignes, courbes",
+      "description": "Imprimez une fiche de tracés : droites, obliques, cercles, vagues et arches. Une ligne pleine, une en pointillés, une vide. Gratuit."
+    },
+    "cursiveJoins": {
+      "title": "Liaisons cursives, deux lettres à la fois",
+      "description": "Exercez les liaisons cursives deux lettres à la fois. D'abord le même sens, puis les paires qui tournent. Chaque paire a sa page. Gratuit."
+    },
+    "tattooStencil": {
+      "title": "Pochoir cursif pour tatouage : noir, en miroir",
+      "description": "Tapez une courte phrase et téléchargez un pochoir cursif : noir sur blanc, en miroir pour le papier transfert. Gratuit, sans compte."
+    },
+    "architectLetter": {
+      "title": "Fiches d'écriture d'architecte, main carrée",
+      "description": "Imprimez des fiches en Architects Daughter : capitales et chiffres, ligne modèle, pointillés, ligne vide. Gratuit."
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "Pour le fun",
     "pageCalc": "Calculateur de feuilles",
     "cursiveText": "Texte cursif",
-    "bulkLetters": "Lettres imprimables"
+    "bulkLetters": "Lettres imprimables",
+    "signaturePractice": "Signature à tracer",
+    "numberTracing": "Tracer les chiffres",
+    "prewriting": "Tracés d'avant les lettres",
+    "cursiveJoins": "Liaisons cursives",
+    "tattooStencil": "Pochoir de tatouage",
+    "architectLetter": "Écriture d'architecte"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -772,5 +802,82 @@
     "seoTitle": "Des lettres et des enveloppes que vous imprimez",
     "seoText": "Une lettre manuscrite imprimable est une feuille que vous imprimez, pliez et glissez dans une enveloppe. Cette page remplit un court mot pour chaque personne de la liste, avec son nom, et compose l'enveloppe correspondante. En anglais, le papier est US Letter et l'enveloppe est une #10. Dans les autres langues, A4 et une enveloppe DL. Le texte se modifie sur place. Les en-têtes restent fixes : écrivez chaque personne dessous, ou importez le modèle Excel. La police, la couleur d'encre et le papier se changent, et la lettre peut prendre une image en fond.\n\nLes lettres sont composées dans une police manuscrite. Elles ne sont pas écrites à la plume, et ce site ne les imprime pas, ne les affranchit pas et ne les envoie pas. Si une ligne contient un mot, ce texte remplace celui du cadre.",
     "faqTitle": "Questions"
+  },
+  "signaturePractice": {
+    "title": "Feuille pour travailler sa signature",
+    "intro": "Tapez votre nom et imprimez une feuille que vous pouvez apprendre : une ligne pleine, une ligne pointillée, puis des lignes vides. Quatre tracés de signature. Un nom long peut se réduire au prénom, ou à l'initiale plus le nom.",
+    "seoTitle": "Une feuille pour une seule signature",
+    "seoText": "Une feuille de signature sert à calquer, à copier, puis à écrire le modèle caché. Celle-ci compose le nom en Great Vibes, Alex Brush, Allura ou Mr Dafoe, sur une seule ligne de base. Ce n'est pas le papier scolaire à trois lignes, ni une signature électronique.\n\nSi le nom complet ne tient pas sur un reçu, prenez la forme courte. La découpe suit seulement les espaces. Imprimez le PDF et suivez les sept jours : quinze minutes, un seul tracé.",
+    "faqTitle": "Questions sur la signature",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "Quoi travailler",
+    "styleLabel": "Tracé",
+    "compare": "Montrer les quatre tracés",
+    "downloadPdf": "Télécharger le PDF",
+    "downloadPng": "Télécharger le PNG",
+    "trace": "Calquer",
+    "copy": "Copier",
+    "sheetLabel": "Feuille de signature"
+  },
+  "numberTracing": {
+    "title": "Fiches pour tracer les chiffres",
+    "intro": "Imprimez de 1 à 10 ou de 1 à 20. Chaque chiffre a sa page : une ligne pleine, puis des pointillés. Patrick Hand, sur trois lignes.",
+    "seoTitle": "Seulement les chiffres en cours d'apprentissage",
+    "seoText": "Une fiche de chiffres répète un nombre jusqu'à ce que la main le fasse sans regarder. Cette page imprime de 1 à 10, ou de 1 à 20, un chiffre par page. La police est Patrick Hand. Ce que le nombre représente se travaille à part, avec des objets sur la table.\n\nSi l'enfant apprend encore à tenir le crayon, restez sur 1–5. Passez à 1–20 quand les dizaines se défont.",
+    "faqTitle": "Tracer les chiffres",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "Tracés d'avant les lettres",
+    "intro": "D'abord les lignes, ensuite les courbes. Chaque tracé a une ligne pleine, une en pointillés et une vide. C'est la page d'avant les lettres.",
+    "seoTitle": "Les tracés à exercer avant les lettres",
+    "seoText": "Ces tracés sont les marques à l'intérieur des lettres : une ligne vers le bas, une horizontale, une oblique, un cercle, une vague, une arche. Cette fiche imprime ces marques. L'alphabet est sur les pages de lettres.\n\nLe premier groupe, ce sont les lignes. Le second, les courbes. Un enfant qui ferme encore son cercle peut rester sur ce tracé, puis passer aux lettres.",
+    "faqTitle": "Tracés",
+    "groupLabel": "Quels tracés",
+    "lines": "Lignes",
+    "curves": "Courbes",
+    "down": "Vers le bas",
+    "across": "Horizontale",
+    "slant": "Oblique",
+    "circle": "Cercle",
+    "wave": "Vague",
+    "arch": "Arche",
+    "downloadPdf": "Télécharger le PDF",
+    "downloadPng": "Télécharger le PNG",
+    "sheetLabel": "Fiche de tracés"
+  },
+  "cursiveJoins": {
+    "title": "Liaisons de lettres cursives",
+    "intro": "Deux lettres à la fois. D'abord le même sens (th, oo, ll), puis les paires qui changent de direction (ai, ou, oa). Chaque paire sur sa page.",
+    "seoTitle": "La liaison est le trait entre deux lettres",
+    "seoText": "Une liaison cursive est le trait entre deux lettres. Cette page imprime des paires en Sacramento. Celles du même sens continuent. Celles qui tournent changent de direction au milieu.\n\nLes lettres seules restent sur l'alphabet cursif. Les mots restent sur les fiches cursives. Cette page est la liaison.",
+    "faqTitle": "Liaisons",
+    "same": "Même sens",
+    "turn": "Change de direction"
+  },
+  "tattooStencil": {
+    "title": "Pochoir cursif pour tatouage",
+    "intro": "Tapez une courte phrase. Téléchargez un PNG noir sur blanc, en miroir, pour qu'il se lise après le transfert. Un pochoir pour papier transfert.",
+    "seoTitle": "Un pochoir cursif inversé",
+    "seoText": "Le pochoir est une écriture noire sur fond blanc, retournée de gauche à droite. Le papier transfert demande l'image en miroir. Coupez le miroir pour lire la phrase telle qu'elle se posera.\n\nLes tracés sont des polices ouvertes. Ce sont des modèles. Ce que vous tapez n'est pas envoyé.",
+    "faqTitle": "Pochoir",
+    "phraseLabel": "Phrase",
+    "placeholder": "always",
+    "styleLabel": "Tracé",
+    "mirror": "Miroir pour le transfert",
+    "downloadPng": "Télécharger le PNG",
+    "sheetLabel": "Pochoir cursif pour tatouage"
+  },
+  "architectLetter": {
+    "title": "Fiches d'écriture d'architecte",
+    "intro": "Capitales et chiffres en Architects Daughter, la main carrée en licence ouverte. Chaque ligne est pleine, puis en pointillés, puis vide.",
+    "seoTitle": "Exercer cette main carrée",
+    "seoText": "L'écriture d'architecte ici, c'est Architects Daughter, la police que Kimberly Geswein a publiée sous SIL Open Font License. Google Fonts la décrit comme inspirée de l'écriture de la fille d'un architecte : carrée, et toujours manuscrite. Les pochoirs à un seul trait et les méthodes scolaires sont d'autres mains.\n\nImprimez la fiche, repassez les pointillés, puis copiez sur la ligne vide. La page porte les capitales et 0–9.",
+    "faqTitle": "Écriture d'architecte",
+    "downloadPdf": "Télécharger le PDF",
+    "downloadPng": "Télécharger le PNG",
+    "sheetLabel": "Fiche d'écriture d'architecte"
   }
 }

@@ -100,6 +100,12 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 `/printables/cursive-alphabet.pdf`(图表+描红两页)和同图 PNG。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`,`alphabetSheet.mjs`,`isEnOnlyTool` |
 | `/cursive-font-generator` | 手写字体预览 + 导出(13 款 OFL:4 签名体 + 4 正式花体 + 2 日常手写 + 3 印刷体。签名体只在本页,不进主工作台。PNG 透明底 / 内嵌字体 SVG / PDF) | `CursiveFontBrowser`,`fontCatalog.ts`,`cursiveSvg.ts`,`fontFace.ts`,FAQ 经 `CURSIVE_FONT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`),`CURSIVE_WORKSHEET_FAQS` |
+| `/signature-practice` | 签名练习纸。姓名按空格拆成全名 / 名 / 首字母加姓。四种签名体各一行对照,选中体下面是实线、虚线、空白。单基线。页头下拉不单列 | `SignaturePractice`,`signatureForms.ts`,`SIGNATURE_FAQS` |
+| `/number-tracing` | 数字描红。1–10 或 1–20,每个数字单独一页(首行实心,其余虚线)。Patrick Hand,行高档。页头下拉不单列 | `TracingGenerator`(`perName`,`defaultOneEach`,`presets`),`practicePresets.ts`,`NUMBER_TRACING_FAQS` |
+| `/prewriting-strokes` | 学前运笔。直线组(向下、横线、斜线)或曲线组(圆、波浪、拱)。每种实线、虚线、空白。页头下拉不单列 | `PrewritingSheet`,`prewritingStrokes.ts`,`PREWRITING_FAQS` |
+| `/cursive-letter-joins` | 连笔字母对。同方向或中途转向,一对一页。Sacramento。页头下拉不单列 | `TracingGenerator`(`rowLabels="lines"`),`CURSIVE_JOIN_GROUPS`,`CURSIVE_JOIN_FAQS` |
+| `/cursive-tattoo-stencil` | 连笔转印稿。短句,白底黑字,默认同左右镜像。签名体加正式花体里带独立样式表的六款。只出 PNG。页头下拉不单列 | `TattooStencil`,`FONT_CATALOG`,`TATTOO_STENCIL_FAQS` |
+| `/architect-lettering` | 建筑字体练习纸。Architects Daughter(OFL,页内单独加载,不进主工作台字体表)。大写三行加 0–9,实线、虚线、空白。页头下拉不单列 | `ArchitectSheet`,`public/fonts/architectsdaughter`,`ARCHITECT_FAQS` |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页。页脚站点水印默认开,下载按钮上方可关。墨色改练习字,描红同色变浅,纸底可改 | `DailyCursivePracticeGenerator`,`WatermarkSwitch`,`DAILY_CURSIVE_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、练习词;练习纸链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=` | `cursiveLetters.ts` + `cursiveLettersRest.ts` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
@@ -154,6 +160,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 - 原始 TTF 在 `fonts-src/`(OFL 授权),`npm run fonts` 用 cn-font-split 切片到 `public/fonts/<id>/result.css`。
 - 加载策略(`lib/fonts.ts` + `layout.tsx` + `FontStylesheets.tsx`):默认字体 mashanzheng **阻塞**加载(首屏字形正确),其余 11 款 preload + 水合后注入,不阻塞首屏。
 - Canvas 生成器里用字体前需 `document.fonts.load` 等待切片就绪(参考 `TracingGenerator`)。
+- `Architects Daughter` 只在 `/architect-lettering` 用 `<link>` 加载 `public/fonts/architectsdaughter/result.css`。不进 `FONTS`,也不进 `FONT_CATALOG`(目录长度测试按签名体/正式体样式表计数)。
 
 ### 4.7 导出与分享
 

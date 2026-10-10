@@ -97,6 +97,7 @@
 ### 3.2 文章多语言
 
 - 语言优先级:**en 必须**;`zh ja ko es` 应当跟进;`de fr pt` 按内容计划逐步补齐。
+- **原生源发例外(2026-10-10)**:选题关键词来源为非英语时(如 Trends 抓到的 DE/FR 词),允许以该语言为**源发版本**先写先登记,en 与其余语言作为它的本地化改写跟进(写作与审核规则见 `docs/seo-audit-standards.md` §7 E0)。源发版同样走接线四步;`en 必须`指最终态,源发版上线后 en 应当在一个内容周期内补齐。
 - 每补一个语言 = 三件事**同一次提交**完成:
   1. `src/content/blog/<slug>.<locale>.mdx` 正文;
   2. `src/content/blog/registry.ts` 静态 import 注册;
@@ -233,6 +234,6 @@
 1. ✅ MDX 正文站内链接不保留语言前缀(zh 文章点工具链接会跳英文版)→ 已在 `mdx-components.tsx` 将 MDX `a` 映射到 next-intl `Link`。
 2. cursive 集群 16 篇文章仅 en 正文 → 按 §3.2 优先级补 zh/ja/ko/es。
 3. 5 篇 8 语文章的 de/fr/pt 缺本地化 title/description(当前回退英文标题)。
-4. `/word-work`、`/writing-practice`、`/name-coloring` 三个工具暂无配套文章(违反 §3.1)。
+4. ✅ `/word-work`、`/writing-practice`、`/name-coloring` 配套文章(2026-10-10):`spelling-list-word-work`、`one-character-in-the-grid`、`color-a-name-before-tracing`,en,工具页英文与中文 FAQ 回链。日文及其他语言等英文有排名后再补正文,不从那些语言链到英文教程。
 5. 工具页无文章回链入口(§3.3 应当级)。
 6. 4 处 `as any`(`src/lib/transcribe.ts` ×2、`src/hooks/useSpeechRecognition.ts` ×2,Web Speech API / WebGPU 缺 lib 类型)→ 按 §4.4 改为最小接口声明或 `unknown` 收窄。

@@ -203,7 +203,7 @@
 
 **P0(本周,窗口与动量):**
 1. ✅(2026-10-09 已执行) **de/fr/es 标题元数据核对与趋势词对齐**:18 对标题逐一核对后仅 6 处需微调(fr écriture cursive 词簇 ×3、de Linienblatt/Schreibschrift lernen ×2、fr feuille d'écriture ×1),已改并构建验证 <title> 生效:diy-wedding-calligraphy(Kalligraphie Hochzeit / calligraphie mariage)、cursive-practice-worksheets(Schreibschrift Arbeitsblätter)、cursive-alphabet-chart(alphabet calligraphie)、how-to-teach-cursive-kids(schreibschrift lernen)、handwritten-thank-you-notes(Danksagung / carte de remerciement)、kindergarten-handwriting-paper(linienblatt);顺带修 §6.3。改动只在 posts.ts/extra-locales,每篇 2 行;
-2. **FR graphisme 新文章**(Clara)——+350%/+150% 动量、法国独有缺口、同时回填 /writing-practice 配套文章缺口(§6.4);FR 先行,含 halloween 季节章节(10 月底前发布吃窗口),EN 版视数据后补。
+2. **FR graphisme 新文章**(Clara)——+350%/+150% 动量、法国独有缺口。§6.4 的 `/writing-practice` 配套已由英文 `one-character-in-the-grid` 补上(工具是中日韩格子,不是法国运笔)。graphisme 仍是法国单独选题,FR 先行,不拿这篇格子文充数;含 halloween 季节章节的窗口已过 2026-10-10,若做则去掉过季章节。
 
 **P1(下周):**
 3. is-cursive-still-taught、xiaohongshu-handwritten-images 补 es/de/fr 正文(矩阵最显眼两洞;前者每年 1 月还要复核州名单);
@@ -253,3 +253,49 @@
 - **形态**:五类短笺(会后感谢、转介绍、新客、重新联系、通知),正文可改,`{name}` / `{from}` 套用。名单表头固定,在格子里填,或下载 Excel 模板再导入(.xlsx / .csv),最多 30 人,可选附言列换全文。字体、墨色、纸样可选,信纸可导入图片。下载两份 PDF。英文 US Letter + #10 信封(按实际尺寸打印),其余语言 A4 + DL。页头下拉「写字与生成」里有入口。
 - **红线**:写明是手写字体,不是钢笔;本站不打印、不贴邮票、不寄出。不接真人代写、USPS 校验、CRM 或 API。
 - **配套文章**:`print-handwritten-letters-and-envelopes`(en,Theo Lindgren,2026-10-09)。场景:一周打完几通介绍电话,给每人印一封短笺和一只写好地址的信封,自己贴邮票寄出。用例是三人名单加回信地址,四张实拍。不抢工具主词 printable handwritten letters,也不抢 thank-you 文案文。
+
+## 十八、已有搜索、站上还没有独立页的工具(2026-10-10)
+
+来源是当天美国英语 Google 自动补全和 Reddit 原帖,不是新造的场景。一个任务一个 URL。工具页吃工具词,文章吃 how to,不跟工具页抢同一句主词。en 先行。D'Nealian / Zaner-Bloser / Handwriting Without Tears、手写转文字、把本人笔迹做成字体文件、交作业、名人笔迹,这轮不接。
+
+| 顺序 | 路由 | 工具主词 | 文章 | 角色 | 状态 |
+|---|---|---|---|---|---|
+| 1 | `/signature-practice` | signature practice sheet | `how-to-practice-your-signature` | Wes | 已落地 2026-10-10 |
+| 2 | `/number-tracing` | number tracing worksheets | `tracing-numbers-by-age` | Clara | 已落地 2026-10-10 |
+| 3 | `/prewriting-strokes` | prewriting strokes worksheet | `strokes-before-letter-tracing` | Clara | 已落地 2026-10-10 |
+| 4 | `/cursive-letter-joins` | cursive letter joins | `how-to-join-cursive-letters` | Clara | 已落地 2026-10-10 |
+| 5 | `/cursive-tattoo-stencil` | cursive tattoo stencil | `export-a-mirrored-cursive-stencil` | Theo | 已落地 2026-10-10 |
+| 6 | `/architect-lettering` | architect lettering practice sheets | `squared-hand-lettering-practice` | Wes | 已落地 2026-10-10 |
+
+### 18.1 `/signature-practice`(本轮)
+
+- **意图**:工具页承接 signature practice sheet / signature practice sheets / signature practice for my name。不承接 signature generator、cursive font generator(那是 `/cursive-font-generator`),也不承接 how to write your name in cursive(那是 `cursive-name-signature`)。
+- **形态**:输入姓名,拆出全名 / 名 / 名首字母加姓(按空格拆,不处理 de、van 这类姓氏虚词)。四种签名体(Great Vibes、Alex Brush、Allura、Mr Dafoe)各一行对照,选中的那一种下面是实线、虚线、空白行。单基线,不是幼儿三线格。
+- **下一跳**:文章指向本工具;工具页指向 `how-to-practice-your-signature`。旧文 `cursive-name-signature` 的「描红纸」问答改指向本页,姓名描红留给还要大字三线格的人。
+- **文章意图**:教程 how to practice your signature。第一屏就是选短签、打开工具。体验资产是一张 7 天、每天 15 分钟的表,以及印出来的四种字体对照。复核:不复核(练法不随年份变)。
+- **红线**:不说这张纸能代替电子签名或法律文件上的亲笔;UCC 对 signed 的定义只说明「记号可以不是全名」,不延伸到地契或证件。字体写明是 OFL 范字,不是用户本人的笔迹。
+- **落地(2026-10-10)**:工具 8 语言,文章 en。本地打开过:Jordan Lee 拆成全名 / Jordan / J. Lee,四种签名体实线对照,选中体下面虚线一行、空白四行。`npm test` 764 通过。
+
+### 18.2 其余五页(2026-10-10)
+
+- **数字描红** `/number-tracing`:工具词 number tracing worksheets。1–10 / 1–20,每个数字一页,这样首行是实心、下面才是虚线。Patrick Hand。文章 `tracing-numbers-by-age` 吃分龄怎么带,不吃工具主词。
+- **学前运笔** `/prewriting-strokes`:工具词 prewriting strokes worksheet。直线组与曲线组,每种实线、虚线、空白。文章 `strokes-before-letter-tracing`。
+- **连笔字母对** `/cursive-letter-joins`:工具词 cursive letter joins。同方向 / 中途转向,一对一页,Sacramento。文章 `how-to-join-cursive-letters`。单字母仍在 `/cursive-alphabet`。
+- **转印稿** `/cursive-tattoo-stencil`:工具词 cursive tattoo stencil。短句、白底黑字、默认镜像,只出 PNG。和 `/cursive-font-generator` 分开:那边是字体预览,这边是转印用的一张稿。文章 `export-a-mirrored-cursive-stencil` 吃怎么导出,不吃工具主词。
+- **建筑字体** `/architect-lettering`:工具词 architect lettering practice sheets。字体是 Google Fonts 上 SIL OFL 的 Architects Daughter(Kimberly Geswein,2010)。页内单独加载,不进主工作台。文案写明是方手写,和工程单线模板、学校课本体是不同的字。文章 `squared-hand-lettering-practice`。
+- **红线不变**:手写转文字、把本人笔迹做成字体文件、交作业入口、照片笔迹鉴定、名人笔迹、D'Nealian / Zaner-Bloser / Handwriting Without Tears,这轮不接。
+- **题图**:五篇各一张 1440×900,是工具页实拍。数字那张是单独一页的 8(实心加虚线)。运笔是直线组。连笔是 th。转印是 Great Vibes、短语 always、镜像开。建筑字体是 Architects Daughter 的大写三行。
+
+## 十九、三个旧工具的配套教程(2026-10-10)
+
+§6.4 的三页原先只有工具页。文章吃 how to,不跟工具页抢主词。en。角色 Clara Hartley。工具页英文和中文 FAQ 回链到文章。复核:不复核(格子规则、词数和描边宽度随工具变了才改)。
+
+| 工具(主词留在工具页) | 文章 | 文章主词 |
+|---|---|---|
+| `/word-work`(word work worksheet generator) | `spelling-list-word-work` | how to do word work with this week's spelling list |
+| `/name-coloring`(name coloring page generator) | `color-a-name-before-tracing` | color a name before tracing letters |
+| `/writing-practice`(writing practice sheet generator) | `one-character-in-the-grid` | practice one character in the grid |
+
+- **拼写**:周一只贴四个词。生成器每 8 个词翻一页,但 US Letter 上第五个词的三条书写线画出纸外。Dolch pre-primer 是 40 词,按钮会整表贴入,文中写明要删到四个。缺字母对 3 字及以上藏中间字母,1–2 字藏首字母。和 sight-word 描红、copywork 整句分开。
+- **涂色**:空输入会画出占位符里的 Emma,文中要求先打孩子的名字。3–4 岁把描边往 22 推,5–6 岁下一晚转 `/name-tracing`。不吃 name coloring page generator。
+- **格子**:只打一个字。默认格宽 84 时是 8×12,描红模式第一行深色。空白模式会去掉中文的十字线,所以独立书写用纸条盖住深色行,不改成空白格。日文、韩文是原稿纸风格,不是教材原寸。不吃 writing practice sheet generator。法国 graphisme 不在这篇里。

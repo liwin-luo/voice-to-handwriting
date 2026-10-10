@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "可打印手写信与信封",
       "description": "粘贴收件人名单,下载两份 PDF:每人一封手写风格的信,以及写好地址的信封。你自己打印寄出。免费,在浏览器里完成。"
+    },
+    "signaturePractice": {
+      "title": "签名练习纸：选定一种写法再描",
+      "description": "输入姓名，选出较短的签法，打印签名练习纸：一行范字、一行虚线、然后空白行。四种签名体。免费，在浏览器里完成。"
+    },
+    "numberTracing": {
+      "title": "数字描红练习纸：打印 1–10 或 1–20",
+      "description": "打印 1–10 或 1–20 的数字描红纸。每个数字单独一页：一行实心，然后是虚线。免费，在浏览器里完成。"
+    },
+    "prewriting": {
+      "title": "学前运笔练习纸：直线、斜线和曲线",
+      "description": "打印学前运笔纸：直线、斜线、圆、波浪和拱。一行实线、一行虚线、一行空白。免费，在浏览器里完成。"
+    },
+    "cursiveJoins": {
+      "title": "连笔字母对：一次练两个字母",
+      "description": "一次练两个字母的连笔。先练同方向，再练中途转向。每一对单独一页。免费，在浏览器里完成。"
+    },
+    "tattooStencil": {
+      "title": "连笔纹身转印稿：纯黑、左右镜像",
+      "description": "输入短句，下载连笔转印稿：白底黑字，左右翻转，方便转印。免费，不用注册，在浏览器里完成。"
+    },
+    "architectLetter": {
+      "title": "建筑字体练习纸：方正手写的字母和数字",
+      "description": "用 Architects Daughter 打印建筑字体练习纸：大写字母和数字，实线、虚线、空白各一行。免费。"
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "趣味",
     "pageCalc": "用纸计算器",
     "cursiveText": "花体文字",
-    "bulkLetters": "可打印信件"
+    "bulkLetters": "可打印信件",
+    "signaturePractice": "签名练习",
+    "numberTracing": "数字描红",
+    "prewriting": "学前运笔",
+    "cursiveJoins": "连笔字母对",
+    "tattooStencil": "纹身转印稿",
+    "architectLetter": "建筑字体"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -772,5 +802,82 @@
     "seoTitle": "自己打印、自己寄出的信和信封",
     "seoText": "可打印手写信就是你打印、折好、放进信封的那一页。这一页按名单给每个人填一封短笺,写上对方的名字,并排出对应的信封。英文页面用 US Letter 和 #10 信封,其他语言用 A4 和 DL 信封。信件正文可以直接改。表头是固定的,在下面逐人填写,也可以导入页面上的 Excel 模板。字体、墨色和纸样可以换,信纸也可以铺一张自己的图片。\n\n信是手写字体排出来的,不是钢笔写的。本站不打印、不贴邮票、也不寄出。某一行如果填了附言,这一封就用那一格的文字,而不用正文框里的这段。",
     "faqTitle": "常见问题"
+  },
+  "signaturePractice": {
+    "title": "签名练习纸",
+    "intro": "输入姓名，印一页能练会的纸：一行实线、一行虚线，然后是空白行。四种签名体。名字很长时，可以改练名，或名的首字母加姓。",
+    "seoTitle": "给一个签法用的签名练习纸",
+    "seoText": "签名练习纸是先描、再抄、然后盖住范字自己写的一页。这一页把姓名排成 Great Vibes、Alex Brush、Allura 或 Mr Dafoe，只用一条基线。它不是幼儿三线格，也不是电子签名。\n\n全名写不进收据那一行，就选更短的签法。只按空格拆开。打印 PDF，按七天来练：每天十五分钟，只留一种字体。",
+    "faqTitle": "签名练习",
+    "nameLabel": "姓名",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "练哪一种",
+    "styleLabel": "字体",
+    "compare": "四种字体都印在纸上",
+    "downloadPdf": "下载 PDF",
+    "downloadPng": "下载 PNG",
+    "trace": "描",
+    "copy": "抄",
+    "sheetLabel": "签名练习纸"
+  },
+  "numberTracing": {
+    "title": "数字描红练习纸",
+    "intro": "打印 1–10 或 1–20。每个数字一页：先看实心行，再描虚线。字体是 Patrick Hand，三线格。",
+    "seoTitle": "只练孩子正在学的那些数字",
+    "seoText": "数字描红是把一个数字重复到不看也能写。这一页打印 1 到 10，或 1 到 20，一页一个数字。字体是 Patrick Hand。数字表示多少，用桌上的实物另上一课。\n\n孩子还在学拿笔，就先做 1–5。十几的数字容易写乱时，再用 1–20。",
+    "faqTitle": "数字描红",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "学前运笔练习纸",
+    "intro": "先直线，再曲线。每种笔画一行实线、一行虚线、一行空白。这是字母之前的那一页。",
+    "seoTitle": "描字母之前要练的笔画",
+    "seoText": "学前运笔是字母里面会出现的痕迹：向下的线、横线、斜线、圆、波浪、拱。这张纸印这些痕迹。字母表在字母页上。\n\n第一组是直线。第二组是曲线。圆还在学着画圆，就先留在这一笔，顺了再去描字母。",
+    "faqTitle": "学前运笔",
+    "groupLabel": "练哪一组",
+    "lines": "直线",
+    "curves": "曲线",
+    "down": "向下",
+    "across": "横线",
+    "slant": "斜线",
+    "circle": "圆",
+    "wave": "波浪",
+    "arch": "拱",
+    "downloadPdf": "下载 PDF",
+    "downloadPng": "下载 PNG",
+    "sheetLabel": "学前运笔练习纸"
+  },
+  "cursiveJoins": {
+    "title": "连笔字母对",
+    "intro": "一次练两个字母。先练同方向（th、oo、ll），再练中途要转的（ai、ou、oa）。每一对单独一页。",
+    "seoTitle": "连笔练的是两个字母中间那一笔",
+    "seoText": "连笔字母对练的是两个字母之间的那一笔。这一页用 Sacramento 印字母对。同方向的一对一直往前走。转向的一对在中间改方向。\n\n单个字母在连笔字母表。整词在连笔练习纸。这一页练的是连接。",
+    "faqTitle": "连笔字母对",
+    "same": "同方向",
+    "turn": "中途转向"
+  },
+  "tattooStencil": {
+    "title": "连笔纹身转印稿",
+    "intro": "输入一句短的。下载白底黑字的 PNG，左右翻转，转印之后正面读得出来。这是给转印纸用的稿。",
+    "seoTitle": "给转印纸用的镜像连笔稿",
+    "seoText": "连笔转印稿是白底上的黑字，左右翻转。转印纸要的是镜像。想看这句话最终怎么读，就把镜像关掉。\n\n这些是开源字体（Great Vibes、Alex Brush，以及这一页上的其他字体）。它们是范字。输入的文字不会上传。",
+    "faqTitle": "转印稿",
+    "phraseLabel": "句子",
+    "placeholder": "always",
+    "styleLabel": "字体",
+    "mirror": "转印用镜像",
+    "downloadPng": "下载 PNG",
+    "sheetLabel": "连笔纹身转印稿"
+  },
+  "architectLetter": {
+    "title": "建筑字体练习纸",
+    "intro": "大写字母和数字用 Architects Daughter，一种开放授权的方手写。每行先实线，再虚线，再空白。",
+    "seoTitle": "在这张纸上练这种方手写",
+    "seoText": "这里的建筑字体是 Architects Daughter，Kimberly Geswein 以 SIL Open Font License 发布的那一款。Google Fonts 的介绍是：受建筑师女儿的字启发，偏方，仍是手写。单线工程模板和学校课本体是另一类字。\n\n打印之后描虚线，再在空白行上抄。纸上是大写字母，外加 0–9。",
+    "faqTitle": "建筑字体",
+    "downloadPdf": "下载 PDF",
+    "downloadPng": "下载 PNG",
+    "sheetLabel": "建筑字体练习纸"
   }
 }

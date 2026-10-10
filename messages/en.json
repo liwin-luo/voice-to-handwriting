@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "Printable Handwritten Letters and Envelopes",
       "description": "Paste a recipient list and download two PDFs: a handwritten-style letter for each person and a matching envelope. You print and mail them. Free, in your browser."
+    },
+    "signaturePractice": {
+      "title": "Signature Practice Sheet: Trace One Form of Your Name",
+      "description": "Type your name, pick a short form, and print a signature practice sheet: a model line, a dotted trace, then blank lines. Four scripts, free, in your browser."
+    },
+    "numberTracing": {
+      "title": "Number Tracing Worksheets to Print for 1–10 or 1–20",
+      "description": "Print number tracing worksheets for 1–10 or 1–20. Each number gets its own page: one solid row, then dotted rows. Free, in your browser."
+    },
+    "prewriting": {
+      "title": "Print a Prewriting Strokes Worksheet: Lines, Curves",
+      "description": "Print a prewriting strokes worksheet: straight lines, slants, circles, waves, and arches. A solid row, a dotted row, then a blank row. Free."
+    },
+    "cursiveJoins": {
+      "title": "Practice Cursive Letter Joins Two Letters at a Time",
+      "description": "Practice cursive letter joins two letters at a time. Same-direction pairs, then pairs that turn. Each pair fills its own tracing page. Free."
+    },
+    "tattooStencil": {
+      "title": "Cursive Tattoo Stencil: Black, Reversed, Ready to Transfer",
+      "description": "Type a short phrase and download a cursive tattoo stencil: black on white, mirrored for transfer paper. Free, no signup, in your browser."
+    },
+    "architectLetter": {
+      "title": "Architect Lettering Practice Sheets for a Squared Hand",
+      "description": "Print architect lettering practice sheets in Architects Daughter: capitals and digits, a model line, a dotted line, then a blank line. Free."
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "Just for fun",
     "pageCalc": "Page Calculator",
     "cursiveText": "Cursive Text",
-    "bulkLetters": "Printable Letters"
+    "bulkLetters": "Printable Letters",
+    "signaturePractice": "Signature Practice",
+    "numberTracing": "Number Tracing",
+    "prewriting": "Prewriting Strokes",
+    "cursiveJoins": "Cursive Joins",
+    "tattooStencil": "Tattoo Stencil",
+    "architectLetter": "Architect Lettering"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -772,5 +802,82 @@
     "seoTitle": "Letters and envelopes you print yourself",
     "seoText": "A printable handwritten letter is a page you print, fold, and put in an envelope. This page fills one short note for each person on your list, using their name, and lays out a matching envelope. English pages use US Letter and a #10 envelope. Other languages use A4 and a DL envelope. The note itself can be edited. Type each person under the fixed headings, or import the Excel template. The font, the ink color, and the paper can be changed, and the letter can use a picture as its background.\n\nThe letters are set in a handwriting font. They are not written with a pen, and this site does not print, stamp, or mail them. If a row includes a note, that text is used instead of the note in the box.",
     "faqTitle": "Questions"
+  },
+  "signaturePractice": {
+    "title": "Signature Practice Sheet",
+    "intro": "Type your name and print a sheet you can learn: one solid line, one dotted line, then blank lines. Four signature scripts. A long name can be shortened to a first name, or an initial plus the last name.",
+    "seoTitle": "A signature practice sheet for one form of your name",
+    "seoText": "A signature practice sheet is a page you trace, then copy, then write with the model covered. This one sets your name in Great Vibes, Alex Brush, Allura, or Mr Dafoe, on a single baseline. It is not three-line school paper, and it is not an electronic signature.\n\nPick the shorter form if the full name will not fit a receipt. The split follows spaces only. Print the PDF and follow the seven-day drill: fifteen minutes, one script, then stop changing fonts.",
+    "faqTitle": "Signature practice questions",
+    "nameLabel": "Name",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "What to practice",
+    "styleLabel": "Script",
+    "compare": "Show all four scripts",
+    "downloadPdf": "Download PDF",
+    "downloadPng": "Download PNG",
+    "trace": "Trace",
+    "copy": "Copy",
+    "sheetLabel": "Signature practice sheet"
+  },
+  "numberTracing": {
+    "title": "Number Tracing Worksheets",
+    "intro": "Print 1–10 or 1–20. Each number is its own page: a solid row to look at, then dotted rows to trace. Patrick Hand, on three-line paper.",
+    "seoTitle": "Number tracing for the numbers a child is actually learning",
+    "seoText": "A number tracing worksheet repeats one numeral until the hand can make it without looking. This page prints 1 through 10, or 1 through 20, one number per page. The font is Patrick Hand. The amount a number stands for is a separate lesson, with counters on the table.\n\nStart with 1–5 if the child is still learning to hold the pencil. Use 1–20 when the teens are the part that falls apart.",
+    "faqTitle": "Number tracing questions",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "Prewriting Strokes Worksheet",
+    "intro": "Lines first, then curves. Each stroke has a solid row, a dotted row, and a blank row. This is the page before letters.",
+    "seoTitle": "Strokes to practice before letter tracing",
+    "seoText": "Prewriting strokes are the marks that show up inside letters: a line down, a line across, a slant, a circle, a wave, an arch. This worksheet prints those marks. The alphabet stays on the letter pages.\n\nLines are the first set. Curves are the second. A child who is still learning to close a circle can stay on that stroke, then move to letter tracing.",
+    "faqTitle": "Prewriting questions",
+    "groupLabel": "Which strokes",
+    "lines": "Lines",
+    "curves": "Curves",
+    "down": "Down",
+    "across": "Across",
+    "slant": "Slant",
+    "circle": "Circle",
+    "wave": "Wave",
+    "arch": "Arch",
+    "downloadPdf": "Download PDF",
+    "downloadPng": "Download PNG",
+    "sheetLabel": "Prewriting strokes worksheet"
+  },
+  "cursiveJoins": {
+    "title": "Cursive Letter Joins",
+    "intro": "Practice two letters at a time. Same-direction pairs first (th, oo, ll), then pairs that change direction (ai, ou, oa). Each pair is its own page.",
+    "seoTitle": "Cursive joins, one pair per page",
+    "seoText": "A cursive letter join is the stroke between two letters. This page prints pairs in Sacramento. Same-direction pairs keep moving the same way. Turning pairs change direction in the middle.\n\nSingle letters stay on the cursive alphabet. Whole words stay on cursive worksheets. This page is the connection.",
+    "faqTitle": "Cursive join questions",
+    "same": "Same direction",
+    "turn": "Change direction"
+  },
+  "tattooStencil": {
+    "title": "Cursive Tattoo Stencil",
+    "intro": "Type a short phrase. Download a black-on-white PNG, mirrored so it reads correctly after you transfer it. It is a stencil for transfer paper.",
+    "seoTitle": "A reversed cursive stencil for transfer paper",
+    "seoText": "A cursive tattoo stencil is black lettering on a white ground, flipped left to right. Transfer paper wants the mirror image. Turn the mirror off when you want to read the phrase the way it will sit.\n\nThe scripts are open fonts (Great Vibes, Alex Brush, and the other scripts on this page). They are models. Nothing you type is uploaded.",
+    "faqTitle": "Stencil questions",
+    "phraseLabel": "Phrase",
+    "placeholder": "always",
+    "styleLabel": "Script",
+    "mirror": "Mirror for transfer",
+    "downloadPng": "Download PNG",
+    "sheetLabel": "Cursive tattoo stencil"
+  },
+  "architectLetter": {
+    "title": "Architect Lettering Practice Sheets",
+    "intro": "Capitals and digits in Architects Daughter, the open squared hand. Each line is solid, then dotted, then blank.",
+    "seoTitle": "Practice the squared hand on this sheet",
+    "seoText": "Architect lettering here means Architects Daughter, the SIL Open Font License face Kimberly Geswein published. Google Fonts describes it as inspired by the writing of an architect's daughter: squared, and still handwritten. Single-stroke drafting templates and school handwriting programs are different hands.\n\nPrint the sheet, trace the dotted line, then copy on the blank line. The alphabet on the page is capitals, plus 0–9.",
+    "faqTitle": "Architect lettering questions",
+    "downloadPdf": "Download PDF",
+    "downloadPng": "Download PNG",
+    "sheetLabel": "Architect lettering practice sheet"
   }
 }

@@ -13,6 +13,15 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/cursive-alphabet": "cursiveAlphabet",
   "/cursive-font-generator": "cursiveFont",
   "/cursive-worksheets": "cursiveWorks",
+  "/signature-practice": "signaturePractice",
+  "/number-tracing": "numberTracing",
+  "/prewriting-strokes": "prewriting",
+  "/cursive-letter-joins": "cursiveJoins",
+  "/cursive-tattoo-stencil": "tattooStencil",
+  "/architect-lettering": "architectLetter",
+  "/word-work": "wordWork",
+  "/writing-practice": "writingPractice",
+  "/name-coloring": "coloring",
   "/daily-cursive-handwriting-practice": "dailyCursive",
   "/handwriting-personality-quiz": "quiz",
   "/doctor-handwriting-generator": "doctor",
@@ -43,7 +52,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["cursive-practice-worksheets", "how-to-write-in-cursive", "cursive-name-signature"],
   },
   "how-to-teach-cursive-kids": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-letter-joins", "/cursive-worksheets", "/cursive"],
     posts: ["is-cursive-still-taught", "cursive-vs-print", "cursive-alphabet-chart"],
   },
   "cursive-vs-print": {
@@ -59,8 +68,44 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["how-to-teach-cursive-kids", "cursive-vs-print", "cursive-alphabet-chart"],
   },
   "cursive-name-signature": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive", "/cursive-worksheets"],
-    posts: ["cursive-alphabet-chart", "name-tracing-generator", "diy-wedding-calligraphy"],
+    tools: ["/signature-practice", "/cursive", "/cursive-worksheets"],
+    posts: ["how-to-practice-your-signature", "cursive-alphabet-chart", "how-to-improve-handwriting-adults"],
+  },
+  "how-to-practice-your-signature": {
+    tools: ["/signature-practice", "/cursive-font-generator", "/cursive"],
+    posts: ["cursive-name-signature", "how-to-improve-handwriting-adults", "best-cursive-fonts"],
+  },
+  "tracing-numbers-by-age": {
+    tools: ["/number-tracing", "/prewriting-strokes", "/name-tracing"],
+    posts: ["strokes-before-letter-tracing", "name-tracing-generator", "kindergarten-handwriting-paper"],
+  },
+  "strokes-before-letter-tracing": {
+    tools: ["/prewriting-strokes", "/number-tracing", "/letter-tracing"],
+    posts: ["tracing-numbers-by-age", "name-tracing-generator", "handwriting-practice-struggling-writers"],
+  },
+  "how-to-join-cursive-letters": {
+    tools: ["/cursive-letter-joins", "/cursive-worksheets", "/cursive-alphabet"],
+    posts: ["how-to-teach-cursive-kids", "cursive-alphabet-chart", "how-to-write-in-cursive"],
+  },
+  "export-a-mirrored-cursive-stencil": {
+    tools: ["/cursive-tattoo-stencil", "/cursive-font-generator", "/signature-practice"],
+    posts: ["best-cursive-fonts", "how-to-practice-your-signature", "cursive-name-signature"],
+  },
+  "squared-hand-lettering-practice": {
+    tools: ["/architect-lettering", "/printable-paper", "/handwriting-workbook-generator"],
+    posts: ["how-to-improve-handwriting-adults", "how-to-practice-your-signature", "free-printable-lined-paper"],
+  },
+  "spelling-list-word-work": {
+    tools: ["/word-work", "/name-tracing", "/handwriting-workbook-generator"],
+    posts: ["sight-word-tracing-worksheets", "copywork-generator", "strokes-before-letter-tracing"],
+  },
+  "color-a-name-before-tracing": {
+    tools: ["/name-coloring", "/name-tracing", "/letter-tracing"],
+    posts: ["name-tracing-generator", "strokes-before-letter-tracing", "tracing-numbers-by-age"],
+  },
+  "one-character-in-the-grid": {
+    tools: ["/writing-practice", "/name-tracing", "/printable-paper"],
+    posts: ["name-tracing-generator", "kindergarten-handwriting-paper", "strokes-before-letter-tracing"],
   },
 
   // voice 核心集群:互相导流 + /templates 枢纽
@@ -95,7 +140,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["free-printable-lined-paper", "name-tracing-generator", "handwriting-practice-struggling-writers"],
   },
   "name-tracing-generator": {
-    tools: ["/name-tracing", "/letter-tracing", "/printable-paper"],
+    tools: ["/number-tracing", "/name-tracing", "/letter-tracing"],
     posts: ["kindergarten-handwriting-paper", "cursive-name-signature", "cursive-practice-worksheets"],
   },
 
@@ -199,8 +244,8 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // copywork(homeschool 抄写)簇:方法讲解 + 免费生成器 + 分学科素材;与 sight-word 词表簇拆开
   "copywork-generator": {
-    tools: ["/name-tracing", "/cursive", "/printable-paper", "/handwriting-workbook-generator"],
-    posts: ["sight-word-tracing-worksheets", "kindergarten-handwriting-paper", "cursive-sentences-to-practice"],
+    tools: ["/name-tracing", "/cursive", "/printable-paper", "/handwriting-workbook-generator", "/word-work"],
+    posts: ["sight-word-tracing-worksheets", "kindergarten-handwriting-paper", "spelling-list-word-work"],
   },
 
   // 短名单自己打印信件和信封:用例文,导流工具页;文案与单张卡片交给既有文章

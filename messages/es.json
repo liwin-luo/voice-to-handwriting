@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "Cartas manuscritas imprimibles y sobres",
       "description": "Pega una lista de destinatarios y descarga dos PDF: una carta con estilo manuscrito para cada persona y un sobre con la dirección. Tú imprimes y envías. Gratis, en el navegador."
+    },
+    "signaturePractice": {
+      "title": "Hoja de práctica de firma: calca una sola forma",
+      "description": "Escribe tu nombre, elige una forma corta e imprime una hoja de práctica de firma: línea de modelo, calco punteado y líneas en blanco. Cuatro trazos. Gratis, en el navegador."
+    },
+    "numberTracing": {
+      "title": "Hojas para trazar números: 1–10 o 1–20",
+      "description": "Imprime hojas para trazar números del 1 al 10 o del 1 al 20. Cada número en su página: una fila continua y luego punteada. Gratis, en el navegador."
+    },
+    "prewriting": {
+      "title": "Hoja de trazos previos: líneas y curvas",
+      "description": "Imprime una hoja de trazos previos: rectas, inclinadas, círculos, olas y arcos. Una fila continua, una punteada y una en blanco. Gratis."
+    },
+    "cursiveJoins": {
+      "title": "Uniones de letra cursiva, de dos en dos",
+      "description": "Practica uniones de letra cursiva de dos en dos. Primero el mismo sentido, luego las que giran. Cada par ocupa su página. Gratis."
+    },
+    "tattooStencil": {
+      "title": "Plantilla cursiva para tatuaje: negra y en espejo",
+      "description": "Escribe una frase corta y descarga una plantilla cursiva: negro sobre blanco, en espejo para el papel de transferencia. Gratis, sin registro."
+    },
+    "architectLetter": {
+      "title": "Hojas de letra de arquitecto, mano cuadrada",
+      "description": "Imprime hojas de letra de arquitecto con Architects Daughter: mayúsculas y dígitos, línea modelo, punteada y en blanco. Gratis."
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "Solo por diversión",
     "pageCalc": "Calculadora de hojas",
     "cursiveText": "Texto cursivo",
-    "bulkLetters": "Cartas imprimibles"
+    "bulkLetters": "Cartas imprimibles",
+    "signaturePractice": "Práctica de firma",
+    "numberTracing": "Trazar números",
+    "prewriting": "Trazos previos",
+    "cursiveJoins": "Uniones cursivas",
+    "tattooStencil": "Plantilla de tatuaje",
+    "architectLetter": "Letras de arquitecto"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -772,5 +802,82 @@
     "seoTitle": "Cartas y sobres que imprimes tú",
     "seoText": "Una carta manuscrita imprimible es una hoja que imprimes, doblas y metes en un sobre. Esta página rellena una nota breve para cada persona de la lista, con su nombre, y compone el sobre correspondiente. En inglés, el papel es US Letter y el sobre es #10. En los demás idiomas, A4 y un sobre DL. La nota se puede editar. Los encabezados están fijos: escribe cada persona debajo, o importa la plantilla Excel. Puedes cambiar la fuente, el color de la tinta y el papel, y la carta puede llevar una imagen de fondo.\n\nLas cartas usan una fuente manuscrita. No están escritas con pluma, y este sitio no las imprime, ni las franquea, ni las envía. Si una fila trae una nota, se usa ese texto en lugar de la nota del recuadro.",
     "faqTitle": "Preguntas"
+  },
+  "signaturePractice": {
+    "title": "Hoja de práctica de firma",
+    "intro": "Escribe tu nombre e imprime una hoja que puedas aprender: una línea continua, una punteada y luego líneas en blanco. Cuatro trazos de firma. Un nombre largo puede quedar en el nombre de pila, o en la inicial más el apellido.",
+    "seoTitle": "Una hoja para practicar una sola firma",
+    "seoText": "Una hoja de práctica de firma es una página para calcar, copiar y luego escribir con el modelo tapado. Esta usa Great Vibes, Alex Brush, Allura o Mr Dafoe, sobre una sola línea base. No es el papel escolar de tres líneas, ni una firma electrónica.\n\nSi el nombre completo no cabe en un recibo, elige la forma corta. El corte sigue solo los espacios. Imprime el PDF y sigue el plan de siete días: quince minutos, un solo trazo.",
+    "faqTitle": "Preguntas sobre la firma",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "Qué practicar",
+    "styleLabel": "Trazo",
+    "compare": "Mostrar los cuatro trazos",
+    "downloadPdf": "Descargar PDF",
+    "downloadPng": "Descargar PNG",
+    "trace": "Calcar",
+    "copy": "Copiar",
+    "sheetLabel": "Hoja de práctica de firma"
+  },
+  "numberTracing": {
+    "title": "Hojas para trazar números",
+    "intro": "Imprime del 1 al 10 o del 1 al 20. Cada número en su página: una fila continua y filas punteadas. Patrick Hand, en pauta de tres líneas.",
+    "seoTitle": "Solo los números que el niño está aprendiendo",
+    "seoText": "Una hoja de números repite un numeral hasta que la mano lo hace sin mirar. Esta página imprime del 1 al 10, o del 1 al 20, un número por página. La fuente es Patrick Hand. Cuánto vale el número es otra lección, con objetos en la mesa.\n\nSi todavía aprende a sujetar el lápiz, empieza por 1–5. Usa 1–20 cuando los números de diez se deshacen.",
+    "faqTitle": "Trazar números",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "Hoja de trazos previos",
+    "intro": "Primero líneas, luego curvas. Cada trazo tiene una fila continua, una punteada y una en blanco. Es la página de antes de las letras.",
+    "seoTitle": "Trazos para practicar antes de las letras",
+    "seoText": "Los trazos previos son las marcas que aparecen dentro de las letras: una línea hacia abajo, una horizontal, una inclinada, un círculo, una ola, un arco. Esta hoja imprime esas marcas. El abecedario está en las páginas de letras.\n\nEl primer grupo son las líneas. El segundo, las curvas. Quien todavía cierra el círculo puede quedarse en ese trazo y pasar a las letras cuando salga seguido.",
+    "faqTitle": "Trazos previos",
+    "groupLabel": "Qué trazos",
+    "lines": "Líneas",
+    "curves": "Curvas",
+    "down": "Abajo",
+    "across": "Horizontal",
+    "slant": "Inclinada",
+    "circle": "Círculo",
+    "wave": "Ola",
+    "arch": "Arco",
+    "downloadPdf": "Descargar PDF",
+    "downloadPng": "Descargar PNG",
+    "sheetLabel": "Hoja de trazos previos"
+  },
+  "cursiveJoins": {
+    "title": "Uniones de letra cursiva",
+    "intro": "Dos letras cada vez. Primero el mismo sentido (th, oo, ll), luego las que cambian de dirección (ai, ou, oa). Cada par en su página.",
+    "seoTitle": "La unión es el trazo entre dos letras",
+    "seoText": "Una unión cursiva es el trazo entre dos letras. Esta página imprime pares en Sacramento. Los del mismo sentido siguen igual. Los que giran cambian de dirección en el medio.\n\nLas letras sueltas están en el abecedario cursivo. Las palabras, en las hojas cursivas. Esta página es la conexión.",
+    "faqTitle": "Uniones cursivas",
+    "same": "Mismo sentido",
+    "turn": "Cambia de dirección"
+  },
+  "tattooStencil": {
+    "title": "Plantilla cursiva para tatuaje",
+    "intro": "Escribe una frase corta. Descarga un PNG negro sobre blanco, en espejo, para que se lea bien después de transferirlo. Es una plantilla para papel de transferencia.",
+    "seoTitle": "Una plantilla cursiva invertida",
+    "seoText": "La plantilla es letra negra sobre blanco, volteada de izquierda a derecha. El papel de transferencia pide la imagen en espejo. Apaga el espejo cuando quieras leer la frase como va a quedar.\n\nLos trazos son fuentes abiertas. Son modelos. Lo que escribes no se sube.",
+    "faqTitle": "Plantilla",
+    "phraseLabel": "Frase",
+    "placeholder": "always",
+    "styleLabel": "Trazo",
+    "mirror": "Espejo para transferir",
+    "downloadPng": "Descargar PNG",
+    "sheetLabel": "Plantilla cursiva para tatuaje"
+  },
+  "architectLetter": {
+    "title": "Hojas de letra de arquitecto",
+    "intro": "Mayúsculas y dígitos en Architects Daughter, la mano cuadrada de licencia abierta. Cada línea es continua, luego punteada, luego en blanco.",
+    "seoTitle": "Practicar esta mano cuadrada",
+    "seoText": "Letra de arquitecto aquí es Architects Daughter, la fuente que Kimberly Geswein publicó con SIL Open Font License. Google Fonts la describe como inspirada en la letra de la hija de un arquitecto: cuadrada, y todavía manuscrita. Las plantillas de un solo trazo y los programas escolares son otras manos.\n\nImprime la hoja, calca la línea punteada y copia en la línea en blanco. En la página hay mayúsculas y 0–9.",
+    "faqTitle": "Letra de arquitecto",
+    "downloadPdf": "Descargar PDF",
+    "downloadPng": "Descargar PNG",
+    "sheetLabel": "Hoja de letra de arquitecto"
   }
 }

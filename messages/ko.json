@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "인쇄하는 손글씨 편지와 봉투",
       "description": "받는 사람 목록을 붙여 넣고 PDF 두 개를 받으세요. 사람마다 손글씨 느낌의 편지와, 주소가 들어간 봉투입니다. 인쇄해서 직접 부치세요. 무료, 브라우저에서 끝납니다."
+    },
+    "signaturePractice": {
+      "title": "서명 연습지: 한 가지 형태를 따라 쓰기",
+      "description": "이름을 입력하고 짧은 형태를 고른 뒤 서명 연습지를 인쇄하세요. 실선, 점선, 빈 줄. 서명체 네 가지. 무료이며 브라우저에서 끝납니다."
+    },
+    "numberTracing": {
+      "title": "숫자 따라 쓰기 연습지: 1–10 또는 1–20",
+      "description": "1–10 또는 1–20 숫자 따라 쓰기를 인쇄합니다. 숫자마다 한 페이지. 실선 다음 점선. 무료이며 브라우저 안에서 끝납니다."
+    },
+    "prewriting": {
+      "title": "글자 전 획 연습지: 직선과 곡선",
+      "description": "직선, 빗금, 원, 물결, 아치가 있는 획 연습지를 인쇄합니다. 실선, 점선, 빈 줄. 무료입니다."
+    },
+    "cursiveJoins": {
+      "title": "필기체 이음: 한 번에 두 글자",
+      "description": "필기체를 두 글자씩 연습합니다. 같은 방향, 그다음 중간에 방향이 바뀌는 쌍. 한 쌍이 한 페이지입니다."
+    },
+    "tattooStencil": {
+      "title": "필기체 타투 전사: 검정, 좌우 반전",
+      "description": "짧은 문장을 넣고 흰 바탕에 검은 글씨, 전사용으로 좌우가 뒤집힌 PNG를 받습니다. 무료, 가입 없음."
+    },
+    "architectLetter": {
+      "title": "건축 레터링 연습지: 각진 손글씨",
+      "description": "Architects Daughter로 건축 레터링 연습지를 인쇄합니다. 대문자와 숫자, 실선, 점선, 빈 줄. 무료입니다."
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "재미",
     "pageCalc": "용지 계산기",
     "cursiveText": "필기체 텍스트",
-    "bulkLetters": "인쇄용 편지"
+    "bulkLetters": "인쇄용 편지",
+    "signaturePractice": "서명 연습",
+    "numberTracing": "숫자 따라 쓰기",
+    "prewriting": "글자 전 획",
+    "cursiveJoins": "필기체 이음",
+    "tattooStencil": "타투 전사",
+    "architectLetter": "건축 레터링"
   },
   "home": {
     "tagline": "말 한마디가 손글씨 원고로 —— 카드, 편지, 다이어리, SNS 이미지에",
@@ -772,5 +802,82 @@
     "seoTitle": "직접 인쇄해서 부치는 편지와 봉투",
     "seoText": "인쇄하는 손글씨 편지는 출력해서 접어 봉투에 넣는 한 장입니다. 이 페이지는 목록의 각 사람에게 짧은 글을 채우고 이름을 넣은 뒤, 맞는 봉투를 만듭니다. 영어 페이지는 US Letter와 #10 봉투, 다른 언어는 A4와 DL 봉투입니다. 편지 본문은 직접 고칠 수 있습니다. 명단은 붙여 넣거나 페이지의 Excel 서식으로 가져올 수 있습니다.\n\n글씨는 손글씨 글꼴입니다. 펜으로 쓴 것이 아니고, 이 사이트는 인쇄하거나 부치지 않습니다. 어떤 줄에 message 열이 있으면 본문 칸 대신 그 문장을 씁니다.",
     "faqTitle": "질문"
+  },
+  "signaturePractice": {
+    "title": "서명 연습지",
+    "intro": "이름을 넣고, 익힐 수 있는 종이를 인쇄하세요. 실선 한 줄, 점선 한 줄, 그다음 빈 줄. 서명체는 네 가지. 긴 이름은 이름만, 또는 첫 글자와 성으로 줄일 수 있습니다.",
+    "seoTitle": "한 가지 서명을 연습하는 종이",
+    "seoText": "서명 연습지는 따라 쓰고, 베껴 쓰고, 본보기를 가린 뒤 직접 쓰는 종이입니다. Great Vibes, Alex Brush, Allura, Mr Dafoe 중 하나로, 기준선은 하나입니다. 어린이용 3선 노트도 아니고 전자 서명도 아닙니다.\n\n전체 이름이 영수증 한 줄에 들어가지 않으면 더 짧은 형태를 고르세요. 띄어쓰기로만 나눕니다. PDF를 인쇄하고, 하루 15분, 서체는 하나만 고정해서 7일을 연습하세요.",
+    "faqTitle": "서명 연습",
+    "nameLabel": "이름",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "연습할 형태",
+    "styleLabel": "서체",
+    "compare": "네 서체를 모두 표시",
+    "downloadPdf": "PDF 받기",
+    "downloadPng": "PNG 받기",
+    "trace": "따라쓰기",
+    "copy": "베껴쓰기",
+    "sheetLabel": "서명 연습지"
+  },
+  "numberTracing": {
+    "title": "숫자 따라 쓰기 연습지",
+    "intro": "1–10 또는 1–20을 인쇄합니다. 숫자마다 한 페이지. 실선을 보고 점선을 따라 씁니다. 글꼴은 Patrick Hand, 세 줄 노트입니다.",
+    "seoTitle": "지금 배우는 숫자만",
+    "seoText": "숫자 따라 쓰기는 보지 않고도 쓸 수 있을 때까지 숫자 하나를 반복합니다. 이 페이지는 1부터 10, 또는 1부터 20을 한 페이지에 하나씩 인쇄합니다. 글꼴은 Patrick Hand입니다. 수가 얼마인지는 책상 위 물건으로 따로 합니다.\n\n연필 잡기가 아직이면 1–5부터. 십 자리가 흐트러지면 1–20입니다.",
+    "faqTitle": "숫자 따라 쓰기",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "글자 전 획 연습지",
+    "intro": "먼저 직선, 그다음 곡선. 각 획은 실선, 점선, 빈 줄입니다. 글자 앞의 페이지입니다.",
+    "seoTitle": "글자를 따라 쓰기 전의 선",
+    "seoText": "글자 전 획은 글자 안에 나오는 자국입니다. 아래로 가는 선, 가로선, 빗금, 원, 물결, 아치. 이 종이는 그 자국을 인쇄합니다. 알파벳은 글자 페이지에 있습니다.\n\n첫 묶음은 직선. 다음은 곡선. 원을 닫는 연습 중이면 그 획에 머물고, 안정되면 글자로 갑니다.",
+    "faqTitle": "획 연습",
+    "groupLabel": "어느 선",
+    "lines": "직선",
+    "curves": "곡선",
+    "down": "아래",
+    "across": "가로",
+    "slant": "빗금",
+    "circle": "원",
+    "wave": "물결",
+    "arch": "아치",
+    "downloadPdf": "PDF",
+    "downloadPng": "PNG",
+    "sheetLabel": "획 연습지"
+  },
+  "cursiveJoins": {
+    "title": "필기체 이음",
+    "intro": "한 번에 두 글자. 먼저 같은 방향(th, oo, ll), 그다음 중간에 방향이 바뀌는 쌍(ai, ou, oa). 한 쌍이 한 페이지입니다.",
+    "seoTitle": "이음은 두 글자 사이의 한 획",
+    "seoText": "필기체 이음은 두 글자 사이의 선입니다. Sacramento로 쌍을 인쇄합니다. 같은 방향의 쌍은 그대로 갑니다. 방향이 바뀌는 쌍은 중간에서 돕니다.\n\n한 글자는 알파벳 표, 단어는 워크시트. 이 페이지는 연결입니다.",
+    "faqTitle": "글자 이음",
+    "same": "같은 방향",
+    "turn": "중간에서 방향 변경"
+  },
+  "tattooStencil": {
+    "title": "필기체 타투 전사",
+    "intro": "짧은 문장을 넣습니다. 흰 바탕에 검은 PNG를, 전사한 뒤 바르게 읽히도록 좌우를 뒤집어 받습니다. 전사지용 초안입니다.",
+    "seoTitle": "전사지용 반전 초안",
+    "seoText": "초안은 흰 바탕의 검은 글씨를 좌우로 뒤집은 것입니다. 전사지는 거울상을 씁니다. 최종적으로 어떻게 읽히는지 볼 때만 반전을 끄세요.\n\n서체는 오픈 폰트입니다. 본보기이며, 입력은 업로드되지 않습니다.",
+    "faqTitle": "전사",
+    "phraseLabel": "문장",
+    "placeholder": "always",
+    "styleLabel": "서체",
+    "mirror": "전사용 좌우 반전",
+    "downloadPng": "PNG 받기",
+    "sheetLabel": "타투 전사"
+  },
+  "architectLetter": {
+    "title": "건축 레터링 연습지",
+    "intro": "대문자와 숫자를 Architects Daughter로. 오픈 라이선스의 각진 손글씨입니다. 실선, 점선, 빈 줄.",
+    "seoTitle": "이 각진 손글씨를 연습하기",
+    "seoText": "여기의 건축 레터링은 Kimberly Geswein이 SIL Open Font License로 공개한 Architects Daughter입니다. Google Fonts의 설명은 건축가 딸의 글씨에서 착안한, 각진 손글씨입니다. 제도용 단선 템플릿과 학교 교과서체는 다른 손입니다.\n\n점선을 따라 쓰고, 빈 줄에 베낍니다. 종이 위는 대문자와 0–9입니다.",
+    "faqTitle": "건축 레터링",
+    "downloadPdf": "PDF",
+    "downloadPng": "PNG",
+    "sheetLabel": "건축 레터링 연습지"
   }
 }

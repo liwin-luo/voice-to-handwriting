@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "Druckbare handschriftliche Briefe und Umschläge",
       "description": "Füge eine Empfängerliste ein und lade zwei PDFs: einen Brief in Handschrift für jede Person und einen Umschlag mit Adresse. Du druckst und verschickst sie. Kostenlos, im Browser."
+    },
+    "signaturePractice": {
+      "title": "Übungsblatt für die Unterschrift: eine Form nachspuren",
+      "description": "Namen eintippen, eine kurze Form wählen und ein Übungsblatt drucken: eine Vorlage, eine Punktlinie, dann leere Zeilen. Vier Schriften. Kostenlos, im Browser."
+    },
+    "numberTracing": {
+      "title": "Zahlen-Übungsblätter: 1–10 oder 1–20 drucken",
+      "description": "Drucke Zahlen-Übungsblätter für 1–10 oder 1–20. Jede Zahl auf einer eigenen Seite: eine durchgezogene Zeile, dann punktierte. Kostenlos, im Browser."
+    },
+    "prewriting": {
+      "title": "Übungsblatt für Striche: Linien und Bögen",
+      "description": "Drucke ein Blatt mit Strichen vor den Buchstaben: Geraden, Schrägen, Kreise, Wellen, Bögen. Durchgezogen, punktiert, leer. Kostenlos."
+    },
+    "cursiveJoins": {
+      "title": "Schreibschrift verbinden, immer zwei Buchstaben",
+      "description": "Übe Schreibschrift-Verbindungen zu zweit. Zuerst gleiche Richtung, dann Paare, die drehen. Jedes Paar füllt eine Seite. Kostenlos."
+    },
+    "tattooStencil": {
+      "title": "Schreibschrift-Schablone: schwarz, gespiegelt",
+      "description": "Tippe einen kurzen Satz und lade eine Schablone: schwarz auf weiß, gespiegelt für Transferpapier. Kostenlos, ohne Anmeldung, im Browser."
+    },
+    "architectLetter": {
+      "title": "Übungsblätter für Architektenschrift, eckige Hand",
+      "description": "Drucke Übungsblätter in Architects Daughter: Großbuchstaben und Ziffern, Linie, Punktlinie, Leerzeile. Kostenlos."
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "Nur zum Spaß",
     "pageCalc": "Blätterrechner",
     "cursiveText": "Schreibschrift-Text",
-    "bulkLetters": "Druckbare Briefe"
+    "bulkLetters": "Druckbare Briefe",
+    "signaturePractice": "Unterschrift üben",
+    "numberTracing": "Zahlen nachspuren",
+    "prewriting": "Striche vor den Buchstaben",
+    "cursiveJoins": "Schreibschrift-Verbindungen",
+    "tattooStencil": "Tattoo-Schablone",
+    "architectLetter": "Architektenschrift"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -772,5 +802,82 @@
     "seoTitle": "Briefe und Umschläge, die du selbst druckst",
     "seoText": "Ein druckbarer handschriftlicher Brief ist ein Blatt, das du druckst, faltest und in einen Umschlag steckst. Diese Seite füllt für jede Person auf der Liste eine kurze Notiz, setzt den Namen ein und setzt den passenden Umschlag. Auf Englisch sind es US Letter und ein #10-Umschlag. In den anderen Sprachen A4 und ein DL-Umschlag. Den Text kannst du ändern. Die Überschriften bleiben fest: schreib jede Person darunter, oder importiere die Excel-Vorlage. Schrift, Tintenfarbe und Papier lassen sich wechseln, und der Brief kann ein eigenes Bild als Hintergrund nehmen.\n\nDie Briefe stehen in einer Handschrift. Sie sind nicht mit einem Stift geschrieben, und diese Website druckt, frankiert oder verschickt sie nicht. Wenn eine Zeile eine Notiz hat, wird dieser Text statt der Notiz im Feld verwendet.",
     "faqTitle": "Fragen"
+  },
+  "signaturePractice": {
+    "title": "Übungsblatt für die Unterschrift",
+    "intro": "Tippe deinen Namen und drucke ein Blatt, das du lernen kannst: eine durchgezogene Zeile, eine gepunktete, dann leere Zeilen. Vier Unterschriften-Schriften. Ein langer Name kann zum Vornamen werden, oder zum Anfangsbuchstaben plus Nachnamen.",
+    "seoTitle": "Ein Blatt für eine einzige Unterschrift",
+    "seoText": "Ein Übungsblatt für die Unterschrift ist eine Seite zum Nachspuren, Abschreiben und dann Schreiben ohne Vorlage. Sie setzt den Namen in Great Vibes, Alex Brush, Allura oder Mr Dafoe, auf eine Grundlinie. Das ist kein Schulblatt mit drei Linien und keine elektronische Unterschrift.\n\nWenn der volle Name nicht in eine Belegzeile passt, nimm die kurze Form. Getrennt wird nur am Leerzeichen. Drucke das PDF und übe sieben Tage: fünfzehn Minuten, eine Schrift.",
+    "faqTitle": "Fragen zur Unterschrift",
+    "nameLabel": "Name",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "Was üben",
+    "styleLabel": "Schrift",
+    "compare": "Alle vier Schriften zeigen",
+    "downloadPdf": "PDF laden",
+    "downloadPng": "PNG laden",
+    "trace": "Spur",
+    "copy": "Kopie",
+    "sheetLabel": "Übungsblatt für die Unterschrift"
+  },
+  "numberTracing": {
+    "title": "Zahlen-Übungsblätter",
+    "intro": "Drucke 1–10 oder 1–20. Jede Zahl hat eine eigene Seite: eine durchgezogene Zeile, dann punktierte. Patrick Hand, auf Dreiliniensystem.",
+    "seoTitle": "Nur die Zahlen, die das Kind gerade lernt",
+    "seoText": "Ein Zahlenblatt wiederholt eine Ziffer, bis die Hand sie ohne Hinsehen schreibt. Diese Seite druckt 1 bis 10 oder 1 bis 20, eine Zahl pro Seite. Die Schrift ist Patrick Hand. Was die Zahl bedeutet, ist eine eigene Übung mit Dingen auf dem Tisch.\n\nWer den Stift noch sucht, bleibt bei 1–5. 1–20, wenn die Zehner auseinanderfallen.",
+    "faqTitle": "Zahlen nachspuren",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "Striche vor den Buchstaben",
+    "intro": "Zuerst Linien, dann Bögen. Jeder Strich hat eine durchgezogene Zeile, eine punktierte und eine leere. Das ist die Seite vor den Buchstaben.",
+    "seoTitle": "Striche üben, bevor die Buchstaben kommen",
+    "seoText": "Diese Striche sind die Spuren in den Buchstaben: eine Linie nach unten, eine quer, eine Schräge, ein Kreis, eine Welle, ein Bogen. Dieses Blatt druckt diese Spuren. Das Alphabet liegt auf den Buchstabenseiten.\n\nDie erste Gruppe sind die Linien. Die zweite die Bögen. Wer den Kreis noch schließt, bleibt bei diesem Strich und geht danach zu den Buchstaben.",
+    "faqTitle": "Striche",
+    "groupLabel": "Welche Striche",
+    "lines": "Linien",
+    "curves": "Bögen",
+    "down": "Nach unten",
+    "across": "Quer",
+    "slant": "Schräg",
+    "circle": "Kreis",
+    "wave": "Welle",
+    "arch": "Bogen",
+    "downloadPdf": "PDF laden",
+    "downloadPng": "PNG laden",
+    "sheetLabel": "Übungsblatt für Striche"
+  },
+  "cursiveJoins": {
+    "title": "Schreibschrift-Verbindungen",
+    "intro": "Zwei Buchstaben auf einmal. Zuerst gleiche Richtung (th, oo, ll), dann Paare, die die Richtung ändern (ai, ou, oa). Jedes Paar auf einer eigenen Seite.",
+    "seoTitle": "Die Verbindung ist der Strich zwischen zwei Buchstaben",
+    "seoText": "Eine Verbindung ist der Strich zwischen zwei Buchstaben. Diese Seite druckt Paare in Sacramento. Paare in gleicher Richtung laufen weiter. Drehende Paare wechseln in der Mitte die Richtung.\n\nEinzelbuchstaben bleiben im Alphabet. Ganze Wörter bleiben auf den Arbeitsblättern. Diese Seite ist die Verbindung.",
+    "faqTitle": "Verbindungen",
+    "same": "Gleiche Richtung",
+    "turn": "Richtung wechseln"
+  },
+  "tattooStencil": {
+    "title": "Schreibschrift-Schablone",
+    "intro": "Tippe einen kurzen Satz. Lade ein PNG, schwarz auf weiß, gespiegelt, damit es nach dem Transfer lesbar ist. Eine Schablone für Transferpapier.",
+    "seoTitle": "Eine gespiegelte Schablone für Transferpapier",
+    "seoText": "Die Schablone ist schwarze Schrift auf weiß, links-rechts gespiegelt. Transferpapier braucht das Spiegelbild. Schalte den Spiegel aus, wenn du den Satz so lesen willst, wie er sitzen wird.\n\nDie Schriften sind offen lizenziert. Sie sind Vorlagen. Der Text wird nicht hochgeladen.",
+    "faqTitle": "Schablone",
+    "phraseLabel": "Satz",
+    "placeholder": "always",
+    "styleLabel": "Schrift",
+    "mirror": "Spiegel für den Transfer",
+    "downloadPng": "PNG laden",
+    "sheetLabel": "Schreibschrift-Schablone"
+  },
+  "architectLetter": {
+    "title": "Übungsblätter für Architektenschrift",
+    "intro": "Großbuchstaben und Ziffern in Architects Daughter, die offene eckige Handschrift. Jede Zeile ist durchgezogen, dann punktiert, dann leer.",
+    "seoTitle": "Diese eckige Hand auf dem Blatt üben",
+    "seoText": "Architektenschrift meint hier Architects Daughter, die Schrift, die Kimberly Geswein unter der SIL Open Font License veröffentlicht hat. Google Fonts beschreibt sie als angeregt von der Schrift der Tochter eines Architekten: eckig, und trotzdem handgeschrieben. Einstrich-Schablonen und Schulprogramme sind andere Hände.\n\nDrucke das Blatt, spur die Punktlinie nach und schreib auf der Leerzeile ab. Auf der Seite stehen Großbuchstaben und 0–9.",
+    "faqTitle": "Architektenschrift",
+    "downloadPdf": "PDF laden",
+    "downloadPng": "PNG laden",
+    "sheetLabel": "Übungsblatt Architektenschrift"
   }
 }

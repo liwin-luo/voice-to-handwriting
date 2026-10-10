@@ -105,6 +105,30 @@
     "bulkLetters": {
       "title": "Cartas manuscritas para imprimir e envelopes",
       "description": "Cole uma lista de destinatários e baixe dois PDFs: uma carta em estilo manuscrito para cada pessoa e um envelope com o endereço. Você imprime e envia. Grátis, no navegador."
+    },
+    "signaturePractice": {
+      "title": "Folha de assinatura: calcar uma só forma",
+      "description": "Digite o nome, escolha uma forma curta e imprima uma folha de assinatura: linha modelo, tracejado e linhas em branco. Quatro traços. Grátis, no navegador."
+    },
+    "numberTracing": {
+      "title": "Folhas para traçar números: 1–10 ou 1–20",
+      "description": "Imprima folhas para traçar números de 1 a 10 ou de 1 a 20. Cada número na sua página: uma linha cheia e depois pontilhada. Grátis, no navegador."
+    },
+    "prewriting": {
+      "title": "Folha de traços antes das letras: linhas e curvas",
+      "description": "Imprima uma folha de traços: retas, inclinadas, círculos, ondas e arcos. Uma linha cheia, uma pontilhada e uma em branco. Grátis."
+    },
+    "cursiveJoins": {
+      "title": "Ligações de letra cursiva, duas de cada vez",
+      "description": "Pratique ligações cursivas duas letras de cada vez. Primeiro o mesmo sentido, depois as que viram. Cada par enche a sua página. Grátis."
+    },
+    "tattooStencil": {
+      "title": "Estêncil cursivo para tatuagem: preto, espelhado",
+      "description": "Digite uma frase curta e baixe um estêncil cursivo: preto no branco, espelhado para o papel de transferência. Grátis, sem cadastro."
+    },
+    "architectLetter": {
+      "title": "Folhas de letra de arquiteto, mão quadrada",
+      "description": "Imprima folhas em Architects Daughter: maiúsculas e dígitos, linha modelo, pontilhada e em branco. Grátis."
     }
   },
   "nav": {
@@ -135,7 +159,13 @@
     "groupFun": "Só por diversão",
     "pageCalc": "Calculadora de folhas",
     "cursiveText": "Texto cursivo",
-    "bulkLetters": "Cartas para imprimir"
+    "bulkLetters": "Cartas para imprimir",
+    "signaturePractice": "Prática de assinatura",
+    "numberTracing": "Traçar números",
+    "prewriting": "Traços antes das letras",
+    "cursiveJoins": "Ligações cursivas",
+    "tattooStencil": "Estêncil de tatuagem",
+    "architectLetter": "Letra de arquiteto"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -772,5 +802,82 @@
     "seoTitle": "Cartas e envelopes que você imprime",
     "seoText": "Uma carta manuscrita para imprimir é uma folha que você imprime, dobra e coloca num envelope. Esta página preenche um bilhete curto para cada pessoa da lista, com o nome dela, e monta o envelope correspondente. Em inglês, o papel é US Letter e o envelope é #10. Nos outros idiomas, A4 e um envelope DL. O texto pode ser editado. Os cabeçalhos ficam fixos: escreva cada pessoa embaixo, ou importe o modelo Excel. A fonte, a cor da tinta e o papel podem mudar, e a carta pode usar uma imagem de fundo.\n\nAs cartas usam uma fonte manuscrita. Não foram escritas à caneta, e este site não imprime, não sela e não envia. Se uma linha tiver um recado, esse texto entra no lugar do texto da caixa.",
     "faqTitle": "Perguntas"
+  },
+  "signaturePractice": {
+    "title": "Folha para praticar a assinatura",
+    "intro": "Digite o nome e imprima uma folha que dá para aprender: uma linha cheia, uma pontilhada e depois linhas em branco. Quatro traços de assinatura. Um nome longo pode virar só o primeiro nome, ou a inicial mais o sobrenome.",
+    "seoTitle": "Uma folha para uma única assinatura",
+    "seoText": "Uma folha de assinatura é uma página para calcar, copiar e depois escrever com o modelo coberto. Esta usa Great Vibes, Alex Brush, Allura ou Mr Dafoe, numa só linha de base. Não é o papel escolar de três linhas, nem uma assinatura eletrônica.\n\nSe o nome completo não cabe num recibo, escolha a forma curta. O corte segue só os espaços. Imprima o PDF e siga os sete dias: quinze minutos, um só traço.",
+    "faqTitle": "Perguntas sobre a assinatura",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Jordan Lee",
+    "formLabel": "O que praticar",
+    "styleLabel": "Traço",
+    "compare": "Mostrar os quatro traços",
+    "downloadPdf": "Baixar PDF",
+    "downloadPng": "Baixar PNG",
+    "trace": "Calcar",
+    "copy": "Copiar",
+    "sheetLabel": "Folha de assinatura"
+  },
+  "numberTracing": {
+    "title": "Folhas para traçar números",
+    "intro": "Imprima de 1 a 10 ou de 1 a 20. Cada número na sua página: uma linha cheia e linhas pontilhadas. Patrick Hand, em pauta de três linhas.",
+    "seoTitle": "Só os números que a criança está a aprender",
+    "seoText": "Uma folha de números repete um numeral até a mão o fazer sem olhar. Esta página imprime de 1 a 10, ou de 1 a 20, um número por página. A fonte é Patrick Hand. O valor do número é outra lição, com objetos na mesa.\n\nSe a criança ainda aprende a segurar o lápis, fique no 1–5. Use 1–20 quando as dezenas se desfazem.",
+    "faqTitle": "Traçar números",
+    "to10": "1–10",
+    "to20": "1–20"
+  },
+  "prewriting": {
+    "title": "Traços antes das letras",
+    "intro": "Primeiro linhas, depois curvas. Cada traço tem uma linha cheia, uma pontilhada e uma em branco. É a página de antes das letras.",
+    "seoTitle": "Traços para praticar antes das letras",
+    "seoText": "Estes traços são as marcas dentro das letras: uma linha para baixo, uma horizontal, uma inclinada, um círculo, uma onda, um arco. Esta folha imprime essas marcas. O alfabeto fica nas páginas de letras.\n\nO primeiro grupo são as linhas. O segundo, as curvas. Quem ainda fecha o círculo pode ficar nesse traço e passar às letras quando ele sair seguido.",
+    "faqTitle": "Traços",
+    "groupLabel": "Quais traços",
+    "lines": "Linhas",
+    "curves": "Curvas",
+    "down": "Para baixo",
+    "across": "Horizontal",
+    "slant": "Inclinada",
+    "circle": "Círculo",
+    "wave": "Onda",
+    "arch": "Arco",
+    "downloadPdf": "Baixar PDF",
+    "downloadPng": "Baixar PNG",
+    "sheetLabel": "Folha de traços"
+  },
+  "cursiveJoins": {
+    "title": "Ligações de letra cursiva",
+    "intro": "Duas letras de cada vez. Primeiro o mesmo sentido (th, oo, ll), depois as que mudam de direção (ai, ou, oa). Cada par na sua página.",
+    "seoTitle": "A ligação é o traço entre duas letras",
+    "seoText": "Uma ligação cursiva é o traço entre duas letras. Esta página imprime pares em Sacramento. Os do mesmo sentido continuam. Os que viram mudam de direção no meio.\n\nLetras soltas ficam no alfabeto cursivo. Palavras ficam nas folhas cursivas. Esta página é a ligação.",
+    "faqTitle": "Ligações",
+    "same": "Mesmo sentido",
+    "turn": "Muda de direção"
+  },
+  "tattooStencil": {
+    "title": "Estêncil cursivo para tatuagem",
+    "intro": "Digite uma frase curta. Baixe um PNG preto no branco, espelhado, para se ler depois da transferência. É um estêncil para papel de transferência.",
+    "seoTitle": "Um estêncil cursivo invertido",
+    "seoText": "O estêncil é letra preta sobre branco, virada da esquerda para a direita. O papel de transferência pede a imagem em espelho. Desligue o espelho quando quiser ler a frase como ela vai ficar.\n\nOs traços são fontes abertas. São modelos. O que você digita não é enviado.",
+    "faqTitle": "Estêncil",
+    "phraseLabel": "Frase",
+    "placeholder": "always",
+    "styleLabel": "Traço",
+    "mirror": "Espelho para transferir",
+    "downloadPng": "Baixar PNG",
+    "sheetLabel": "Estêncil cursivo para tatuagem"
+  },
+  "architectLetter": {
+    "title": "Folhas de letra de arquiteto",
+    "intro": "Maiúsculas e dígitos em Architects Daughter, a mão quadrada de licença aberta. Cada linha é cheia, depois pontilhada, depois em branco.",
+    "seoTitle": "Praticar esta mão quadrada",
+    "seoText": "Letra de arquiteto aqui é Architects Daughter, a fonte que Kimberly Geswein publicou sob a SIL Open Font License. O Google Fonts descreve-a como inspirada na escrita da filha de um arquiteto: quadrada, e ainda manuscrita. Moldes de um só traço e programas escolares são outras mãos.\n\nImprima a folha, trace a linha pontilhada e copie na linha em branco. Na página estão maiúsculas e 0–9.",
+    "faqTitle": "Letra de arquiteto",
+    "downloadPdf": "Baixar PDF",
+    "downloadPng": "Baixar PNG",
+    "sheetLabel": "Folha de letra de arquiteto"
   }
 }
