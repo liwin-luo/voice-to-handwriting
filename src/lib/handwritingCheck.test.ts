@@ -1,12 +1,17 @@
 import { describe, expect, it } from "vitest";
 import {
+  anchorLevel,
+  beatenPercent,
   buildCheckPrompt,
   calendarDay,
   canShareCard,
+  formatScore,
   glmModelId,
   parseCheckResponse,
   readModelContent,
   recordUsage,
+  shownLegibility,
+  socialIntent,
   usageLeft,
   weakestCause,
   type Score,
@@ -106,5 +111,46 @@ describe("model helpers", () => {
     expect(usageLeft(thrice, "2026-10-12")).toBe(0);
     expect(usageLeft(thrice, "2026-10-13")).toBe(3);
     expect(usageLeft("not-json", "2026-10-12")).toBe(3);
+  });
+
+  it("好认保留一位小数,4.8 只在四项都是 5 时留下", () => {
+    const body = (legibility: number, causes: number[]) =>
+      JSON.stringify({
+        status: "scored",
+        summary: "可读。",
+        legibility: { value: legibility, evidence: "每个词都能读出" },
+        size: { value: causes[0], evidence: "高度稳" },
+        baseline: { value: causes[1], evidence: "贴着线" },
+        spacing: { value: causes[2], evidence: "词间开" },
+        slant: { value: causes[3], evidence: "朝向一致" },
+      });
+    const rare = parseCheckResponse(body(4.84, [5, 5, 5, 5]));
+    const capped = parseCheckResponse(body(4.9, [5, 4, 5, 5]));
+    const bareFive = parseCheckResponse(body(5, [5, 5, 5, 5]));
+    if (rare.status !== "scored" || capped.status !== "scored" || bareFive.status !== "scored") throw new Error("status");
+    expect(rare.legibility.value).toBe(4.8);
+    expect(capped.legibility.value).toBe(4.7);
+    expect(bareFive.legibility.value).toBe(4.7);
+    expect(formatScore(rare.legibility.value)).toBe("4.8");
+    expect(anchorLevel(4.4)).toBe(4);
+    expect(anchorLevel(4.8)).toBe(5);
+    expect(shownLegibility(3.2, [3, 3, 3, 3])).toBe(3.2);
+    expect(beatenPercent(1)).toBe(0);
+    expect(beatenPercent(3.5)).toBe(46);
+    expect(beatenPercent(4.7)).toBe(96);
+    expect(beatenPercent(4.8)).toBe(98);
+    expect(beatenPercent(5)).toBe(99);
+  });
+
+  it("社交分享带上分数文案和本页地址", () => {
+    const text = "Legibility 5. Next: size";
+    const url = "https://voicetohandwriting.online/handwriting-check";
+    expect(socialIntent("x", text, url)).toBe(
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
+    );
+    expect(socialIntent("facebook", text, url)).toContain("facebook.com/sharer/sharer.php?u=");
+    expect(socialIntent("whatsapp", text, url)).toContain(encodeURIComponent(`${text} ${url}`));
+    expect(socialIntent("pinterest", text, url)).toContain("pinterest.com/pin/create/button/");
+    expect(socialIntent("email", text, url)).toMatch(/^mailto:\?subject=/);
   });
 });

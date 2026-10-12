@@ -48,6 +48,25 @@ body {
   }
 }
 
+@keyframes wait-slide {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(380%);
+  }
+}
+.wait-slide {
+  animation: wait-slide 1.3s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .wait-slide {
+    animation: none;
+    width: 100%;
+    transform: none;
+  }
+}
+
 /* 浮标面板弹出:从分享按钮一侧缩放浮现,尊重减少动态偏好 */
 @keyframes pop {
   from {
