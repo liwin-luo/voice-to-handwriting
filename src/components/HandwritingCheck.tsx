@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode, type RefObject } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { toPng } from "html-to-image";
 import { EnvelopeSimple, FacebookLogo, PinterestLogo, ShareNetwork, WhatsappLogo, XLogo } from "@phosphor-icons/react";
@@ -25,6 +25,21 @@ import {
 } from "@/lib/handwritingCheck";
 
 const CAUSES: CauseKey[] = ["size", "baseline", "spacing", "slant"];
+const FRAMES = ["seal", "certificate", "paper", "plain"] as const;
+type FrameId = (typeof FRAMES)[number];
+/** 下载时写回克隆节点,避免 html-to-image 的 backgroundColor 盖掉框的底色。 */
+const FRAME_BG: Record<FrameId, string> = {
+  seal: "#15317e",
+  certificate: "#fffcf7",
+  paper: "#f7f1e6",
+  plain: "#ffffff",
+};
+const FRAME_SWATCH: Record<FrameId, string> = {
+  seal: "bg-[#15317e]",
+  certificate: "border-2 border-[#15317e] bg-[#fffcf7]",
+  paper: "border-4 border-[#e7dcc8] bg-[#f7f1e6]",
+  plain: "border border-zinc-300 bg-white",
+};
 const MAX_BYTES = 2 * 1024 * 1024;
 const SOCIAL: Array<{ id: SocialTarget; label: string; icon: ReactNode }> = [
   { id: "x", label: "X", icon: <XLogo weight="fill" className="size-5 text-zinc-900" /> },
@@ -74,6 +89,7 @@ export default function HandwritingCheck() {
   const [looking, setLooking] = useState(false);
   const [sharing, setSharing] = useState(false);
   const [left, setLeft] = useState<number | null>(null);
+  const [frame, setFrame] = useState<FrameId>("seal");
 
   async function onFile(file: File | undefined) {
     if (!file) return;
@@ -126,7 +142,10 @@ export default function HandwritingCheck() {
     if (!node) return null;
     const url = await toPng(node, {
       pixelRatio: Math.max(1, 1080 / node.offsetWidth),
+      // 画布先铺页面底色,圆角外的透明像素才不会发黑。
+      // style 在 backgroundColor 之后写入,把克隆节点的底色改回当前框,否则库会盖掉边框。
       backgroundColor: "#fafaf9",
+      style: { backgroundColor: FRAME_BG[frame] },
     });
     const blob = await (await fetch(url)).blob();
     return { url, file: new File([blob], "handwriting-check.png", { type: "image/png" }) };
@@ -258,10 +277,32 @@ export default function HandwritingCheck() {
         onChange={(e) => onFile(e.target.files?.[0])}
       />
       {card ? (
-        <div className="grid items-start gap-8 lg:grid-cols-[22rem_minmax(0,1fr)]">
-          <div className="max-w-sm">
-            <ShareCard cardRef={cardRef} photo={photo!} result={card} weakest={weakest} />
-            <div className="mt-4 flex flex-wrap gap-3">
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-stretch lg:gap-8">
+          <div className="flex min-w-0 flex-col lg:h-full">
+            <ShareCard cardRef={cardRef} frame={frame} photo={photo!} result={card} weakest={weakest} />
+            <div role="radiogroup" aria-label={t("frameLabel")} className="mt-3 grid shrink-0 grid-cols-4 gap-1.5">
+              {FRAMES.map((id) => {
+                const on = frame === id;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    role="radio"
+                    aria-checked={on}
+                    onClick={() => setFrame(id)}
+                    className={
+                      on
+                        ? "rounded-xl border border-accent bg-white px-1 py-1.5 text-zinc-950"
+                        : "rounded-xl border border-transparent px-1 py-1.5 text-zinc-600 hover:bg-white"
+                    }
+                  >
+                    <span aria-hidden className={`mx-auto block h-6 rounded-md ${FRAME_SWATCH[id]}`} />
+                    <span className="mt-1 block text-center text-[11px] leading-tight">{t(`frames.${id}`)}</span>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-4 flex shrink-0 flex-wrap gap-3">
               <button
                 type="button"
                 className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50"
@@ -278,7 +319,7 @@ export default function HandwritingCheck() {
                 {t("again")}
               </button>
             </div>
-            <div className="mt-3 flex w-fit max-w-full flex-wrap items-center rounded-2xl border border-zinc-200 bg-white py-1 pr-1.5 pl-4">
+            <div className="mt-3 flex w-fit max-w-full shrink-0 flex-wrap items-center rounded-2xl border border-zinc-200 bg-white py-1 pr-1.5 pl-4">
               <span className="mr-1 text-sm text-zinc-500">{shareText("share")}</span>
               <div role="group" aria-label={shareText("share")} className="flex flex-wrap items-center">
                 {SOCIAL.map((item) => (
@@ -309,7 +350,7 @@ export default function HandwritingCheck() {
             <LimitLine left={left} />
             {notice ? <p className="mt-4 text-sm text-zinc-800">{notice}</p> : null}
           </div>
-          <section className="rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6">
+          <section className="select-text rounded-2xl border border-zinc-200 bg-white p-5 sm:p-6 lg:h-full">
             <div className="mb-5 flex items-end justify-between gap-4 rounded-xl bg-[#15317e]/8 px-4 py-4">
               <div>
                 <p className="text-sm font-medium text-zinc-500">{t("legibility")}</p>
@@ -418,56 +459,160 @@ function Spinner({ className }: { className: string }) {
   );
 }
 
+const CARD_SHELL = "w-full overflow-hidden aspect-[4/5] lg:aspect-auto lg:h-auto lg:min-h-[28rem] lg:flex-1";
+
 function ShareCard({
   cardRef,
+  frame,
   photo,
   result,
   weakest,
 }: {
   cardRef: RefObject<HTMLDivElement | null>;
+  frame: FrameId;
   photo: string;
   result: ShareableCheck;
   weakest: CauseKey | null;
 }) {
   const t = useTranslations("handwritingCheck");
-  return (
-    <div
-      ref={cardRef}
-      className="grid w-full overflow-hidden rounded-2xl bg-[#15317e] p-3 text-[#fafaf9] shadow-lg"
-      style={{ aspectRatio: "4 / 5", gridTemplateRows: "1fr auto" }}
-      aria-label={t("cardLabel")}
-    >
-      <div className="flex min-h-0 items-center justify-center rounded-xl bg-[#f7f4ee] p-3">
-        {/* 分享图要用原始像素,不能走 next/image */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={photo} alt={t("photoAlt")} className="max-h-full max-w-full bg-white object-contain" />
+  const score = formatScore(result.legibility.value);
+  const stamp = frame !== "plain";
+  const photoWell = (
+    <PhotoWell photo={photo} alt={t("photoAlt")} score={score} stamp={stamp} bare={frame === "certificate"} />
+  );
+  const scores = <ScorePanel result={result} weakest={weakest} tone={frame === "seal" ? "light" : "dark"} />;
+
+  if (frame === "certificate") {
+    return (
+      <div
+        ref={cardRef}
+        className={`${CARD_SHELL} rounded-sm bg-[#fffcf7] p-2 shadow-lg`}
+        style={{ border: "3px solid #15317e" }}
+        aria-label={t("cardLabel")}
+      >
+        <div className="grid h-full min-h-0 border border-[#15317e] p-3 text-[#1c1917]" style={{ gridTemplateRows: "1fr auto" }}>
+          {photoWell}
+          {scores}
+        </div>
       </div>
-      <div className="flex flex-col gap-3 px-2 pb-1 pt-3">
-        <div className="flex items-end justify-between gap-3">
-          <div>
-            <p className="text-[11px] tracking-[0.16em] text-[#fafaf9]/70">{t("legibility")}</p>
-            <p className="text-5xl font-semibold leading-none tabular-nums">{formatScore(result.legibility.value)}</p>
-          </div>
-          <p className="max-w-[9rem] text-right text-xs leading-snug text-[#fafaf9]/85">{t(`anchors.legibility.${anchorLevel(result.legibility.value)}`)}</p>
+    );
+  }
+
+  const face =
+    frame === "seal"
+      ? "grid rounded-2xl bg-[#15317e] p-3 text-[#fafaf9] shadow-lg"
+      : frame === "paper"
+        ? "grid rounded-2xl border-8 border-[#e7dcc8] bg-[#f7f1e6] p-3 text-[#1c1917]"
+        : "grid rounded-2xl border border-zinc-300 bg-white p-3 text-zinc-950";
+
+  return (
+    <div ref={cardRef} className={`${CARD_SHELL} ${face}`} style={{ gridTemplateRows: "1fr auto" }} aria-label={t("cardLabel")}>
+      <div className={frame === "paper" ? "h-full min-h-0 rounded-lg bg-white" : "h-full min-h-0 rounded-xl bg-[#f7f4ee]"}>{photoWell}</div>
+      {scores}
+    </div>
+  );
+}
+
+function PhotoWell({ photo, alt, score, stamp, bare }: { photo: string; alt: string; score: string; stamp: boolean; bare?: boolean }) {
+  return (
+    <div className={`relative flex h-full min-h-0 items-center justify-center ${bare ? "" : "p-3"}`}>
+      {/* 分享图要用原始像素,不能走 next/image */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={photo} alt={alt} className="max-h-full max-w-full bg-white object-contain" />
+      {stamp ? <ScoreSeal value={score} /> : null}
+    </div>
+  );
+}
+
+function ScorePanel({
+  result,
+  weakest,
+  tone,
+}: {
+  result: ShareableCheck;
+  weakest: CauseKey | null;
+  tone: "light" | "dark";
+}) {
+  const t = useTranslations("handwritingCheck");
+  const light = tone === "light";
+  return (
+    <div className="flex flex-col gap-3 px-2 pb-1 pt-3">
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <p className={light ? "text-[11px] tracking-[0.16em] text-[#fafaf9]/70" : "text-[11px] tracking-[0.16em] text-zinc-500"}>{t("legibility")}</p>
+          <p className={light ? "text-5xl font-semibold leading-none tabular-nums" : "text-5xl font-semibold leading-none tabular-nums text-zinc-950"}>{formatScore(result.legibility.value)}</p>
         </div>
-        <div className="grid grid-cols-4 gap-1.5 text-center">
-          {CAUSES.map((key) => {
-            const score = causeScore(result, key);
-            const marked = weakest === key;
-            return (
-              <div key={key} className={marked ? "rounded-md bg-[#fafaf9] px-1 py-1.5 text-[#15317e]" : "rounded-md px-1 py-1.5 text-[#fafaf9]/75"}>
-                <p className="text-lg font-semibold tabular-nums">{score ? score.value : t("blank")}</p>
-                <p className="text-[11px] leading-tight">{t(key)}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div className="flex items-end justify-between gap-3 border-t border-[#fafaf9]/20 pt-2 text-[11px] leading-tight text-[#fafaf9]/75">
-          <p>{weakest ? t("next", { focus: t(weakest) }) : null}</p>
-          <p className="shrink-0">{t("cardMark")}</p>
-        </div>
+        <p className={light ? "max-w-[9rem] text-right text-xs leading-snug text-[#fafaf9]/85" : "max-w-[9rem] text-right text-xs leading-snug text-zinc-600"}>
+          {t(`anchors.legibility.${anchorLevel(result.legibility.value)}`)}
+        </p>
+      </div>
+      <div className="grid grid-cols-4 gap-1.5 text-center">
+        {CAUSES.map((key) => {
+          const score = causeScore(result, key);
+          const marked = weakest === key;
+          const cell = marked
+            ? light
+              ? "rounded-md bg-[#fafaf9] px-1 py-1.5 text-[#15317e]"
+              : "rounded-md bg-[#15317e] px-1 py-1.5 text-white"
+            : light
+              ? "rounded-md px-1 py-1.5 text-[#fafaf9]/75"
+              : "rounded-md px-1 py-1.5 text-zinc-600";
+          return (
+            <div key={key} className={cell}>
+              <p className="text-lg font-semibold tabular-nums">{score ? score.value : t("blank")}</p>
+              <p className="text-[11px] leading-tight">{t(key)}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className={light ? "flex items-end justify-between gap-3 border-t border-[#fafaf9]/20 pt-2 text-[11px] leading-tight text-[#fafaf9]/75" : "flex items-end justify-between gap-3 border-t border-zinc-200 pt-2 text-[11px] leading-tight text-zinc-500"}>
+        <p>{weakest ? t("next", { focus: t(weakest) }) : null}</p>
+        <p className="shrink-0">{t("cardMark")}</p>
       </div>
     </div>
+  );
+}
+
+function ScoreSeal({ value }: { value: string }) {
+  const uid = useId().replace(/:/g, "");
+  const top = `${uid}-top`;
+  const bottom = `${uid}-bottom`;
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 200 200"
+      className="pointer-events-none absolute right-1 bottom-1 w-32 -rotate-[16deg] sm:w-40"
+    >
+      <defs>
+        <path id={top} d="M36,108 A64,64 0 0 1 164,108" />
+        <path id={bottom} d="M36,108 A64,64 0 0 0 164,108" />
+      </defs>
+      <circle cx="100" cy="100" r="96" fill="rgba(143,42,42,0.08)" stroke="#8f2a2a" strokeWidth="3.5" />
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#8f2a2a" strokeWidth="1.4" />
+      <text fill="#8f2a2a" fontFamily="Georgia, 'Times New Roman', serif" fontSize="15" fontWeight="700" letterSpacing="2.4">
+        <textPath href={`#${top}`} startOffset="50%" textAnchor="middle">
+          CERTIFIED
+        </textPath>
+      </text>
+      <text fill="#8f2a2a" fontFamily="Georgia, 'Times New Roman', serif" fontSize="11" fontWeight="700" letterSpacing="1.6">
+        <textPath href={`#${bottom}`} startOffset="50%" textAnchor="middle">
+          HANDWRITING
+        </textPath>
+      </text>
+      <text
+        x="100"
+        y="112"
+        textAnchor="middle"
+        fill="#8f2a2a"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontSize="40"
+        fontWeight="700"
+      >
+        {value}
+      </text>
+      <circle cx="18" cy="100" r="2.2" fill="#8f2a2a" />
+      <circle cx="182" cy="100" r="2.2" fill="#8f2a2a" />
+    </svg>
   );
 }
 

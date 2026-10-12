@@ -985,6 +985,13 @@
     "shareFailed": "卡片没有保存成功,可以再试。",
     "share": "分享这张卡片",
     "download": "下载",
+    "frameLabel": "卡片样式",
+    "frames": {
+      "seal": "盖章",
+      "certificate": "证书",
+      "paper": "纸面",
+      "plain": "简约"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "你的手写照片",
     "cardLabel": "手写评分卡片",

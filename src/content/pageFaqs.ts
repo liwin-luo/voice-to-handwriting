@@ -854,6 +854,7 @@ export const HANDWRITING_CHECK_FAQS: FaqItem[] = [
       en: {
         q: "Do you keep the photo?",
         a: "No. The model looks, then the photo is discarded. The card is made in your browser.",
+        link: { href: "/blog/share-a-handwriting-score-card", label: "How to share the card" },
       },
       zh: {
         q: "照片会留下吗?",

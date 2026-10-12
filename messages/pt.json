@@ -985,6 +985,13 @@
     "shareFailed": "O cartão não foi guardado. Tente de novo.",
     "share": "Partilhar este cartão",
     "download": "Guardar",
+    "frameLabel": "Moldura do cartão",
+    "frames": {
+      "seal": "Selo",
+      "certificate": "Certificado",
+      "paper": "Papel",
+      "plain": "Simples"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "A sua foto de letra",
     "cardLabel": "Cartão de nota",

@@ -193,6 +193,11 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/handwriting-pad"],
     posts: [],
   },
+  // 手写照片评分:枢纽 /handwriting-check。这篇教选框并下载分享卡。簇里还没有第二篇,尾部不拿别的簇凑数。
+  "share-a-handwriting-score-card": {
+    tools: ["/handwriting-check"],
+    posts: [],
+  },
   "handwriting-practice-struggling-writers": {
     tools: ["/name-tracing", "/printable-paper"],
     posts: ["kindergarten-handwriting-paper", "how-to-improve-handwriting-adults", "free-printable-lined-paper"],

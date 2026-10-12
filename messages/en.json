@@ -985,6 +985,13 @@
     "shareFailed": "The card could not be saved. Try again.",
     "share": "Share this card",
     "download": "Download",
+    "frameLabel": "Card frame",
+    "frames": {
+      "seal": "Seal",
+      "certificate": "Certificate",
+      "paper": "Paper",
+      "plain": "Plain"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "Your handwriting photo",
     "cardLabel": "Handwriting score card",

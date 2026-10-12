@@ -985,6 +985,13 @@
     "shareFailed": "カードを保存できませんでした。もう一度試せます。",
     "share": "このカードを共有",
     "download": "保存",
+    "frameLabel": "カードの枠",
+    "frames": {
+      "seal": "印章",
+      "certificate": "賞状",
+      "paper": "用紙",
+      "plain": "シンプル"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "あなたの手書き写真",
     "cardLabel": "手書き採点カード",

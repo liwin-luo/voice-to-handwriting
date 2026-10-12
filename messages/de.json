@@ -985,6 +985,13 @@
     "shareFailed": "Die Karte konnte nicht gespeichert werden. Versuch es noch einmal.",
     "share": "Diese Karte teilen",
     "download": "Herunterladen",
+    "frameLabel": "Kartenrahmen",
+    "frames": {
+      "seal": "Siegel",
+      "certificate": "Zertifikat",
+      "paper": "Papier",
+      "plain": "Schlicht"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "Dein Handschriftfoto",
     "cardLabel": "Bewertungskarte",

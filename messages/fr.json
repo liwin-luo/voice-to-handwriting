@@ -985,6 +985,13 @@
     "shareFailed": "La carte n'a pas pu être enregistrée. Réessayez.",
     "share": "Partager cette carte",
     "download": "Télécharger",
+    "frameLabel": "Cadre de la carte",
+    "frames": {
+      "seal": "Sceau",
+      "certificate": "Certificat",
+      "paper": "Papier",
+      "plain": "Simple"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "Votre photo d'écriture",
     "cardLabel": "Carte de note",

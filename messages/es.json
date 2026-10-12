@@ -985,6 +985,13 @@
     "shareFailed": "No se pudo guardar la tarjeta. Inténtalo de nuevo.",
     "share": "Compartir esta tarjeta",
     "download": "Descargar",
+    "frameLabel": "Marco de la tarjeta",
+    "frames": {
+      "seal": "Sello",
+      "certificate": "Certificado",
+      "paper": "Papel",
+      "plain": "Simple"
+    },
     "cardMark": "voicetohandwriting.online",
     "photoAlt": "Tu foto de letra",
     "cardLabel": "Tarjeta de puntuación",

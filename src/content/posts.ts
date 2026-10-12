@@ -811,6 +811,20 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "share-a-handwriting-score-card",
+    author: "theo-lindgren",
+    date: "2026-10-13",
+    updated: "2026-10-13",
+    image: "/blog/share-a-handwriting-score-card.png",
+    i18n: {
+      en: {
+        title: "How to share a handwriting score card",
+        description:
+          "How to share a handwriting score card: pick Seal, Certificate, Paper, or Plain, then download the PNG. Free, no signup. The notes beside the card stay selectable text.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);
