@@ -29,9 +29,9 @@ node scripts/fonts.mjs
 
 支持上传 mp3 / wav / m4a 等音频文件,在**用户浏览器本地**用 Whisper 转写成文字再排版——零 API 成本,音频不离开设备。
 
-- 模型自托管在 `public/models/`(同源加载,无 CORS、国内可达),用 `npm run models` 下载(whisper-base 约 78MB,已提交进仓库);
+- 两个模型都从 `https://huggingface.co/` 下载(快速约 80MB,高质量约 250MB),不走本站带宽。浏览器缓存后可离线;音频仍不离开设备。换地址改 `src/lib/transcribe.ts` 里的 `MODEL_HOST`。
 - WebGPU 可用时硬件加速,否则回退 WASM;
-- 转写语言跟随页面语言;中文易输出繁体,可用「高质量」模型(取消 `scripts/models.sh` 中 small 的注释并重跑)改善。
+- 转写语言跟随页面语言;中文易输出繁体,可改用「高质量」模型。下载失败不会被说成文件格式不对。
 
 ## 本地历史记录
 

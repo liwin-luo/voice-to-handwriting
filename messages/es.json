@@ -278,7 +278,8 @@
     "statusTranscribe": "Transcribiendo — los archivos largos tardan…",
     "errorEmpty": "No se reconoció voz en el audio",
     "errorImport": "Falló la transcripción: prueba con mp3 / wav / m4a",
-    "modelNote": "Rápido: ~80MB. Alta calidad: ~250MB, mejor chino. El modelo se descarga una vez; el audio nunca sale de tu equipo",
+    "errorModel": "No se pudo descargar el modelo. Revisa tu conexión e inténtalo de nuevo.",
+    "modelNote": "Los modelos se descargan de Hugging Face, no de este sitio. Rápido ~80MB, Alta calidad ~250MB, una sola vez y luego quedan en la caché del navegador. El audio nunca sale de tu equipo",
     "watermark": "Marca de agua al exportar",
     "trySample": "Probar un ejemplo",
     "paperCustom": {

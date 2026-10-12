@@ -278,7 +278,8 @@
     "statusTranscribe": "Transcribing — long files take a while…",
     "errorEmpty": "No speech recognized in the audio",
     "errorImport": "Transcription failed — try an mp3 / wav / m4a file",
-    "modelNote": "Fast: ~80MB download; High quality: ~250MB, better Chinese. Model downloads once, audio never leaves your device",
+    "errorModel": "Couldn't download the model. Check your connection and try again.",
+    "modelNote": "Models download from Hugging Face, not this site. Fast is about 80MB, High quality about 250MB, once, then cached in the browser. Audio never leaves your device",
     "watermark": "Export watermark",
     "trySample": "Try a sample",
     "paperCustom": {

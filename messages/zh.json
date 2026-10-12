@@ -278,7 +278,8 @@
     "statusTranscribe": "转写中,长音频需要一些时间…",
     "errorEmpty": "未识别到语音内容",
     "errorImport": "转写失败:请换 mp3 / wav / m4a 文件再试",
-    "modelNote": "快速:下载约 80MB;高质量:约 250MB,中文更准。模型仅下载一次,音频不离开设备",
+    "errorModel": "模型下载失败,请检查网络后再试",
+    "modelNote": "模型从 Hugging Face 下载,不走本站。快速约 80MB,高质量约 250MB,只下一次,之后用浏览器缓存。音频不离开设备",
     "watermark": "导出水印",
     "trySample": "试试示例",
     "paperCustom": {

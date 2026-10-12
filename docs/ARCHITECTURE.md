@@ -27,7 +27,7 @@
 ├── messages/                  # next-intl 文案,每语言一个 JSON(en/zh/ja/ko/es/de/fr/pt)
 ├── public/
 │   ├── fonts/<fontId>/        # cn-font-split 切片产物:result.css + *.woff2(勿手改)
-│   ├── models/onnx-community/ # Whisper ONNX 模型(npm run models 下载,已入库)
+│   ├── models/onnx-community/ # 旧的自托管 Whisper 权重(浏览器已改从 huggingface.co 拉取,不再使用)
 │   ├── blog/                  # 博客题图
 │   └── fd1dfcff….txt          # IndexNow 密钥文件(Bing 站点验证)
 ├── scripts/
@@ -159,7 +159,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 ### 4.5 语音能力
 
 - `src/hooks/useSpeechRecognition.ts`:Web Speech API 封装。要点:Chrome ~60s 强制断开 → onend 自动重启(上限 50 次);`lang` 跟随页面 locale;错误分 denied/network/stopped;SSR 水合安全。**需要 HTTPS 或 localhost**,Firefox/移动 Safari 不支持,UI 层做降级。
-- `src/lib/transcribe.ts`:transformers.js 跑 `onnx-community/whisper-base`(可选 small)。模型自托管在同源 `/models/`(国内可达,`env.allowRemoteModels = false`);WebGPU 探测可用才用,否则 WASM q8;音频解码为 16k 单声道 PCM;中文加 `initial_prompt` 推向简体;管线按模型单例缓存,失败可重试。
+- `src/lib/transcribe.ts`:transformers.js 跑 `onnx-community/whisper-base` 与 `whisper-small`。权重从 `https://huggingface.co/` 下载(`allowLocalModels = false`,不走本站 `/models/`),浏览器缓存后可离线。下载过程中可改模型:中止当前下载,用同一个文件换模型重跑。下载失败与音频解码失败用不同文案。WebGPU 探测可用才用,否则 WASM q8;音频解码为 16k 单声道 PCM;中文加 `initial_prompt` 推向简体;管线按模型单例缓存,失败可重试。
 
 ### 4.6 字体体系
 
