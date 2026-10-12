@@ -5,9 +5,13 @@ import { useLocale, useTranslations } from "next-intl";
 import { toPng } from "html-to-image";
 import { Link } from "@/i18n/navigation";
 import {
+  calendarDay,
   canShareCard,
   causeScore,
   DAILY_LIMIT,
+  LOCAL_USAGE_KEY,
+  recordUsage,
+  usageLeft,
   weakestCause,
   type CauseKey,
   type CheckResult,
@@ -92,14 +96,11 @@ export default function HandwritingCheck({
         headers: { "Content-Type": "image/jpeg" },
         body: blob,
       });
-      const data = (await res.json()) as (CheckResult & { remaining?: number }) | { error?: string; remaining?: number };
-      if (typeof data.remaining === "number") setLeft(data.remaining);
+      const data = (await res.json()) as CheckResult | { error?: string };
+      const spent = res.ok || ("error" in data && data.error === "failed");
+      if (spent) rememberTry();
       if (!res.ok || !("status" in data)) {
         const error = "error" in data ? data.error : "failed";
-        if (error === "quota") {
-          setLeft(0);
-          return;
-        }
         setNotice(t(error === "too_big" ? "tooBig" : error === "bad_image" ? "badImage" : "failed"));
         return;
       }
@@ -154,17 +155,23 @@ export default function HandwritingCheck({
     : null;
 
   useEffect(() => {
-    let cancel = false;
-    fetch(`/api/handwriting-check?locale=${encodeURIComponent(locale)}`)
-      .then((res) => res.json())
-      .then((data: { remaining?: unknown }) => {
-        if (!cancel && typeof data.remaining === "number") setLeft(data.remaining);
-      })
-      .catch(() => {});
-    return () => {
-      cancel = true;
-    };
-  }, [locale]);
+    try {
+      setLeft(usageLeft(localStorage.getItem(LOCAL_USAGE_KEY), calendarDay()));
+    } catch {
+      setLeft(DAILY_LIMIT);
+    }
+  }, []);
+
+  function rememberTry() {
+    try {
+      const day = calendarDay();
+      const next = recordUsage(localStorage.getItem(LOCAL_USAGE_KEY), day);
+      localStorage.setItem(LOCAL_USAGE_KEY, next);
+      setLeft(usageLeft(next, day));
+    } catch {
+      // 隐私模式写不进时,这次照常看,不挡用户。
+    }
+  }
 
   useEffect(() => {
     if (!card) return;

@@ -137,22 +137,35 @@ export function readModelContent(data: unknown): string {
 }
 
 export const DAILY_LIMIT = 3;
+export const LOCAL_USAGE_KEY = "vth-handwriting-check";
 
-/** 计数钥匙带 UTC 日期,第二天换一把,当天的次数作废。 */
-export function dayKey(ip: string, day = new Date().toISOString().slice(0, 10)): string {
-  return `vth-handwriting-check:${clientKey(ip)}:${day}`;
+/** 浏览器本地日历日。第二天 0 点换一天,当天次数作废。 */
+export function calendarDay(now = new Date()): string {
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const date = String(now.getDate()).padStart(2, "0");
+  return `${now.getFullYear()}-${month}-${date}`;
 }
 
 export function readsLeft(count: number): number {
   return Math.max(0, DAILY_LIMIT - count);
 }
 
-export function rateLimitDecision(input: { dev: boolean; hasStore: boolean; count: number | null }): "allow" | "quota" | "closed" {
-  if (input.count === null) return !input.hasStore && input.dev ? "allow" : "closed";
-  if (input.count > DAILY_LIMIT) return "quota";
-  return "allow";
+function savedCount(saved: string | null, day: string): number {
+  if (!saved) return 0;
+  try {
+    const parsed = JSON.parse(saved) as { day?: unknown; count?: unknown };
+    if (parsed.day !== day || typeof parsed.count !== "number" || !Number.isInteger(parsed.count) || parsed.count < 0) return 0;
+    return parsed.count;
+  } catch {
+    return 0;
+  }
 }
 
-export function clientKey(ip: string): string {
-  return ip.trim().slice(0, 64).replace(/[^\w.:]/g, "") || "local";
+export function usageLeft(saved: string | null, day: string): number {
+  return readsLeft(savedCount(saved, day));
+}
+
+/** 记一次。换日从 1 开始。返回写回本地的字符串。 */
+export function recordUsage(saved: string | null, day: string): string {
+  return JSON.stringify({ day, count: savedCount(saved, day) + 1 });
 }

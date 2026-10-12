@@ -81,7 +81,7 @@ TEXT_MODEL=glm-5.3-flash
 
 `POST /api/handwriting-check`。路由是全站唯一知道智谱密钥的地方。请求体是 JPEG,超过 2MB 拒绝。响应不带回图片。服务器日志不写图片;Sentry 若打开,请求体不入报。
 
-同一 IP 每天 3 次。计数钥匙带 UTC 日期,第二天 0 点(UTC)换一把,当天次数作废。页面打开就写明每天 3 次,并显示今天还剩几次。用完后上传和拍照停用,文案是明天再来。一次请求计一次,模型没看成也算。pet 用设备 cookie 加自己的存储计每天免费次数,本站没有那套存储。计数放在 Upstash,不用函数内存。没有 `UPSTASH_REDIS_REST_URL` 与 `UPSTASH_REDIS_REST_TOKEN` 时,这条路由在生产环境直接拒绝。本地开发没有这两项时,用本进程内存计数,重启后清零。
+每天 3 次,记在这台浏览器的 localStorage,按本机日历日切。第二天 0 点次数作废。页面打开就写明每天 3 次,并显示今天还剩几次。用完后上传和拍照停用,文案是明天再来。一次请求计一次,模型没看成也算;照片不合格或太大不计。清掉本站数据、换浏览器,次数会重新从 3 开始。接口本身不再按 IP 计数,也不接 Upstash。
 
 校验后的状态:
 
@@ -124,7 +124,7 @@ TEXT_MODEL=glm-5.3-flash
 - `src/components/HandwritingCheck.tsx`
 - `src/lib/handwritingCheck.ts` — `buildCheckPrompt`、`parseCheckResponse`、最低项、能否出卡片
 - `src/lib/handwritingCheck.test.ts`
-- `src/app/api/handwriting-check/route.ts` — 智谱调用、体积、每日 3 次
+- `src/app/api/handwriting-check/route.ts` — 智谱调用、体积。每日 3 次记在浏览器
 
 落地时同步 `docs/ARCHITECTURE.md` 页面地图、`src/app/sitemap.ts`、`src/lib/tools.ts`。
 

@@ -220,7 +220,8 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 | `TEXT_API_KEY` | 手写照片评分的智谱密钥。不配则 `/api/handwriting-check` 不可用 |
 | `TEXT_BASE_URL` | 智谱接口,默认 `https://open.bigmodel.cn/api/coding/paas/v4` |
 | `TEXT_MODEL` | 默认 `glm-5.3-flash`。`custom/` 前缀会去掉 |
-| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | 评分接口每天每 IP 3 次,UTC 日切。生产环境不配则接口关闭;本地开发改用进程内存计数 |
+
+每天 3 次记在浏览器 localStorage,按本机日历日切。接口不计数。
 
 ## 6. 本地开发
 

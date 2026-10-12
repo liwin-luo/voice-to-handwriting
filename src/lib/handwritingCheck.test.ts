@@ -1,14 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
   buildCheckPrompt,
+  calendarDay,
   canShareCard,
-  clientKey,
-  dayKey,
-  readsLeft,
   glmModelId,
   parseCheckResponse,
-  rateLimitDecision,
   readModelContent,
+  recordUsage,
+  usageLeft,
   weakestCause,
   type Score,
 } from "./handwritingCheck";
@@ -98,18 +97,14 @@ describe("model helpers", () => {
     expect(readModelContent({ choices: [{ message: { content: [{ type: "text", text: "ab" }] } }] })).toBe("ab");
   });
 
-  it("每天 3 次,第二天换钥匙;没有计数时只在开发环境放行", () => {
-    expect(rateLimitDecision({ dev: true, hasStore: false, count: null })).toBe("allow");
-    expect(rateLimitDecision({ dev: false, hasStore: false, count: null })).toBe("closed");
-    expect(rateLimitDecision({ dev: false, hasStore: true, count: 3 })).toBe("allow");
-    expect(rateLimitDecision({ dev: false, hasStore: true, count: 4 })).toBe("quota");
-    expect(rateLimitDecision({ dev: true, hasStore: false, count: 4 })).toBe("quota");
-    expect(rateLimitDecision({ dev: false, hasStore: true, count: null })).toBe("closed");
-    expect(readsLeft(0)).toBe(3);
-    expect(readsLeft(2)).toBe(1);
-    expect(readsLeft(4)).toBe(0);
-    expect(dayKey("1.2.3.4", "2026-10-12")).toBe("vth-handwriting-check:1.2.3.4:2026-10-12");
-    expect(dayKey("1.2.3.4", "2026-10-13")).not.toBe(dayKey("1.2.3.4", "2026-10-12"));
-    expect(clientKey(" 203.0.113.5, bad ")).toBe("203.0.113.5bad");
+  it("次数记在浏览器,本地日历日一过就清零", () => {
+    expect(calendarDay(new Date(2026, 9, 12, 23, 30))).toBe("2026-10-12");
+    expect(usageLeft(null, "2026-10-12")).toBe(3);
+    const once = recordUsage(null, "2026-10-12");
+    const twice = recordUsage(once, "2026-10-12");
+    const thrice = recordUsage(twice, "2026-10-12");
+    expect(usageLeft(thrice, "2026-10-12")).toBe(0);
+    expect(usageLeft(thrice, "2026-10-13")).toBe(3);
+    expect(usageLeft("not-json", "2026-10-12")).toBe(3);
   });
 });
