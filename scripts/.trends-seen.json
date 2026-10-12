@@ -39,8 +39,8 @@
    },
    "pandora handwriting necklace": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 2,
+    "lastSeen": "2026-10-12",
+    "count": 3,
     "growth": "+90%",
     "maxGrowth": 90,
     "seed": "handwriting",
@@ -48,8 +48,8 @@
    },
    "albert einstein handwriting": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 2,
+    "lastSeen": "2026-10-12",
+    "count": 3,
     "growth": "+100%",
     "maxGrowth": 100,
     "seed": "handwriting",
@@ -66,28 +66,28 @@
    },
    "free printable cursive handwriting worksheets": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 4,
-    "growth": "+80%",
-    "maxGrowth": 80,
+    "lastSeen": "2026-10-12",
+    "count": 6,
+    "growth": "+90%",
+    "maxGrowth": 90,
     "seed": "handwriting",
     "source": "rising"
    },
    "print script handwriting": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 2,
-    "growth": "+70%",
-    "maxGrowth": 70,
+    "lastSeen": "2026-10-12",
+    "count": 3,
+    "growth": "+100%",
+    "maxGrowth": 100,
     "seed": "handwriting",
     "source": "rising"
    },
    "free handwriting practice sheets for kids": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+40%",
-    "maxGrowth": 40,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+50%",
+    "maxGrowth": 50,
     "seed": "handwriting",
     "source": "rising"
    },
@@ -102,8 +102,8 @@
    },
    "create handwriting worksheets": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+50%",
     "maxGrowth": 50,
     "seed": "handwriting worksheets",
@@ -111,17 +111,17 @@
    },
    "create printables name tracing with lines": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "Breakout",
-    "maxGrowth": null,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+70%",
+    "maxGrowth": 70,
     "seed": "name tracing",
     "source": "rising"
    },
    "createprintables name tracing": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 2,
+    "lastSeen": "2026-10-12",
+    "count": 3,
     "growth": "+850%",
     "maxGrowth": 850,
     "seed": "name tracing",
@@ -210,8 +210,8 @@
    },
    "calligraphy pronunciation": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 2,
+    "lastSeen": "2026-10-12",
+    "count": 3,
     "growth": "+70%",
     "maxGrowth": 70,
     "seed": "calligraphy",
@@ -279,13 +279,121 @@
     "maxGrowth": 40,
     "seed": "calligraphy",
     "source": "rising"
+   },
+   "beware the man whose handwriting sways like a reed in the wind": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+3,650%",
+    "maxGrowth": 650,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "audrey van der meer handwriting": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+950%",
+    "maxGrowth": 950,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "how can i improve my handwriting": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+200%",
+    "maxGrowth": 200,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "grooved handwriting books": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "cursive handwriting name generator": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "daily cursive handwriting practice pdf": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "handwriting practice for kindergarten": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "handwriting worksheet generator": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "www.createprintables.com name tracing": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+250%",
+    "maxGrowth": 250,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "calligraphy cat battle cats": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "yu shinan calligraphy hk auction": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+4,100%",
+    "maxGrowth": 100,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "calligraphy cat": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphy",
+    "source": "rising"
    }
   },
   "DE": {
    "gebundene handschrift im mittelalter": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "Breakout",
     "maxGrowth": null,
     "seed": "handschrift",
@@ -293,8 +401,8 @@
    },
    "gebundene handschrift im mittelalter 5 buchstaben": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "Breakout",
     "maxGrowth": null,
     "seed": "handschrift",
@@ -302,8 +410,8 @@
    },
    "gebundene handschrift im ma": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "Breakout",
     "maxGrowth": null,
     "seed": "handschrift",
@@ -320,8 +428,8 @@
    },
    "sütterlin alphabet schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+350%",
     "maxGrowth": 350,
     "seed": "schreibschrift",
@@ -329,17 +437,17 @@
    },
    "schreibpilot schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+300%",
-    "maxGrowth": 300,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "Breakout",
+    "maxGrowth": null,
     "seed": "schreibschrift",
     "source": "rising"
    },
    "kyrillisch schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+110%",
     "maxGrowth": 110,
     "seed": "schreibschrift",
@@ -347,8 +455,8 @@
    },
    "sütterlin schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+90%",
     "maxGrowth": 90,
     "seed": "schreibschrift",
@@ -356,26 +464,26 @@
    },
    "russische schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+80%",
-    "maxGrowth": 80,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+120%",
+    "maxGrowth": 120,
     "seed": "schreibschrift",
     "source": "rising"
    },
    "russisches alphabet schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+80%",
-    "maxGrowth": 80,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+90%",
+    "maxGrowth": 90,
     "seed": "schreibschrift",
     "source": "rising"
    },
    "schreibschrift s groß": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+70%",
     "maxGrowth": 70,
     "seed": "schreibschrift",
@@ -446,8 +554,8 @@
    },
    "kalligraphie füller": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+70%",
     "maxGrowth": 70,
     "seed": "kalligraphie",
@@ -456,6 +564,96 @@
    "kalligraphie alphabet": {
     "firstSeen": "2026-10-09",
     "lastSeen": "2026-10-09",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "handschrift englisch": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "abc in schreibschrift": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schriftgenerator schreibschrift": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "k in schreibschrift": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibschrift i groß": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "kalligraphie haarschnitt": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+120%",
+    "maxGrowth": 120,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "kalligraphie schrift generator": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "chinesische kalligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "kalligraphie stift": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "was ist kalligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
     "count": 1,
     "growth": "+40%",
     "maxGrowth": 40,
@@ -502,10 +700,10 @@
    },
    "m majuscule calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+90%",
-    "maxGrowth": 90,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+140%",
+    "maxGrowth": 140,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -547,8 +745,8 @@
    },
    "e majuscule calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+50%",
     "maxGrowth": 50,
     "seed": "calligraphie",
@@ -556,10 +754,10 @@
    },
    "t majuscule calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+50%",
-    "maxGrowth": 50,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+90%",
+    "maxGrowth": 90,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -628,8 +826,8 @@
    },
    "graphisme ponts": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-12",
+    "count": 2,
     "growth": "+80%",
     "maxGrowth": 80,
     "seed": "graphisme",
@@ -646,19 +844,19 @@
    },
    "graphisme maternelle à imprimer": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+60%",
-    "maxGrowth": 60,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+70%",
+    "maxGrowth": 70,
     "seed": "graphisme",
     "source": "rising"
    },
    "citrouille graphisme": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+60%",
-    "maxGrowth": 60,
+    "lastSeen": "2026-10-12",
+    "count": 2,
+    "growth": "+90%",
+    "maxGrowth": 90,
     "seed": "graphisme",
     "source": "rising"
    },
@@ -677,6 +875,105 @@
     "count": 1,
     "growth": "+40%",
     "maxGrowth": 40,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "r majuscule calligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+400%",
+    "maxGrowth": 400,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "i majuscule calligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+250%",
+    "maxGrowth": 250,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "a majuscule calligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+190%",
+    "maxGrowth": 190,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "f majuscule calligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+160%",
+    "maxGrowth": 160,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "calligraphie définition": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "lettre e calligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "calligraphie anglaise": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "coffret calligraphie": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "calligraphie tatouage": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "graphisme halloween gs": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "fiches graphisme ms": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
     "seed": "graphisme",
     "source": "rising"
    }
@@ -1026,6 +1323,76 @@
     "count": 1,
     "traffic": "200+",
     "note": "Arthur Gea claims first Masters 1000 win in Shanghai"
+   },
+   "calais campbell": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Ravens’ Calais Campbell breaks NFL record for games by defensive lineman"
+   },
+   "declan doyle": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "News &amp; Notes: Tyler Huntley Says Starting Again Feels Like ‘Riding a Bike’"
+   },
+   "andrew vaughn": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Why isn&apos;t Yelich in Brewers&apos; starting lineup for NLCS Game 1?"
+   },
+   "jake matthews": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Falcons’ injury report: Jake Matthews questionable to make 200th straight start"
+   },
+   "cooper pratt": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Brewers shortstop celebrates series win with soda, not alcohol"
+   },
+   "mookie betts": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Dodgers&apos; Mookie Betts, other MLB players feel haunted by Pfister Hotel"
+   },
+   "landman season 3": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "‘Landman’ Just Announced a Major Cast Change for Season 3"
+   },
+   "jamie lee curtis": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Tea Leoni as Jeanie and Tim Daly as James in the Pilot episode of new NBC show &quot;Newly"
+   },
+   "américa - medellín": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "500+",
+    "note": "América, por la clasificación: David González convocó a 20 jugadores para recibir al DIM"
+   },
+   "marshals cast": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "‘Marshals’ Season 2 Release Guide: Here’s When Episode 2 Drops On CBS And Paramount+"
    }
   },
   "DE": {
@@ -1098,6 +1465,76 @@
     "count": 1,
     "traffic": "100+",
     "note": "Kaninchen in Gewahrsamszelle bei der Polizei in Güstrow"
+   },
+   "crunchyroll": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Sechs weitere Anime-Neustarts ab sofort auf Crunchyroll verfügbar"
+   },
+   "diesel": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Six senators call for Trump administration to &apos;immediately reverse course&apos; on Ru"
+   },
+   "anyps5": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "AnyPS5 Achieves Full PS5 GPU Shader Instruction Translation"
+   },
+   "promi big brother": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Nach Tag 7: Wer ist raus bei „Promi Big Brother“? – Die Nominierungsliste ist komplett"
+   },
+   "citroën 2cv elektro": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "10000+",
+    "note": "CITROËN 2CV CONCEPT: ZEIT FÜR EIN WIEDERSEHEN MIT DER ENTE"
+   },
+   "mike evans": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Tom Brady’s LFG Player of the Game: 49ers’ Mike Evans 🏆 Week 5 DIGITAL EXCLUSIVE"
+   },
+   "jp performance": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "JP Kraemer will Deutschland verlassen"
+   },
+   "olympiasieger": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "200+",
+    "note": "&quot;Fit wie nie&quot;: Plötzliche Wende um deutsche Rekord-Olympiasieger"
+   },
+   "tom welling": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "‘Smallville’ star Tom Welling accidentally exposes himself in hotel window reflection"
+   },
+   "george russell": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "200+",
+    "note": "&quot;Deshalb wird er wahrscheinlich auch kein Weltmeister&quot;: Hartes Urteil für Merced"
    }
   },
   "FR": {
@@ -1170,10 +1607,80 @@
     "count": 1,
     "traffic": "100+",
     "note": "【松竹マルチプレックスシアターズ】音響透過型シネマ LEDスクリーン「トライコーンプレミアム LED」日本初！12月4日（金）MOVIXさいたまに導入"
+   },
+   "ivresse": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Conduite sans permis, en état d’ivresse… un conducteur condamné à 24 mois de prison pour d"
+   },
+   "idealogeek": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Oppo Find X10 Pro Max: la version mondiale apparemment encore revue à la baisse, et pas se"
+   },
+   "palmeiras – corinthians": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Palmeiras 4 x 1 Corinthians | Campeonato Brasileiro: melhores momentos"
+   },
+   "moustiques": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "5000+",
+    "note": "Une alerte à la dengue déclenche une vaste opération de désinfection de tout un quartier e"
+   },
+   "bagayoko": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "VIDÉO. Vote contre l’excision à Saint-Denis : quand Bally Bagayoko s&apos;abstient et cafo"
+   },
+   "calendrier om": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "200+",
+    "note": "&quot;Le calendrier semble plus facile…&quot;, Dupraz reste inquiet pour l&apos;OM avant l"
+   },
+   "gilles chabert": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Disparition. Gilles Chabert, grande figure des “pulls rouges” et de la montagne, est décéd"
+   },
+   "saint-martin-d'arcé": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Piéton de 17 ans tué en Maine-et-Loire : le conducteur placé en garde à vue"
+   },
+   "yassir zabiri": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Zabiri Scores His 7th La Liga Goal in Racing Santander’s 2-2 Draw with Valencia"
+   },
+   "exécution publique": {
+    "firstSeen": "2026-10-12",
+    "lastSeen": "2026-10-12",
+    "count": 1,
+    "traffic": "500+",
+    "note": "« La peine de mort est inadmissible » : Léon XIV à contre-courant de l’administration Trum"
    }
   }
  },
- "lastRun": "2026-10-09",
+ "lastRun": "2026-10-12",
  "lastGeos": [
   "US",
   "DE",
