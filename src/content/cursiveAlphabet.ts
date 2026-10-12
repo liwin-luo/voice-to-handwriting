@@ -119,3 +119,31 @@ export const ALPHABET_UI = {
   traceTitle: "Trace the cursive alphabet",
   traceNote: "Solid letter, then a dashed copy on the same line.",
 };
+
+/** 静态变体 printable 区块(en-only)。PDF/PNG 由 scripts/cursive-alphabet-printables.mjs 生成,
+ *  stem 对应 public/printables/<stem>.png / .pdf;标题与脚本内 COPY 保持一致。 */
+export const ALPHABET_PRINTABLES = {
+  title: "More free printable cursive charts",
+  intro:
+    "Every chart below is a ready-to-print PDF: page one is the reference chart with start dots and arrows, page two adds a dashed copy of each letter to trace.",
+  items: [
+    {
+      stem: "cursive-alphabet-uppercase",
+      title: "Uppercase cursive letters",
+      desc: "All 26 capitals on a three-line guide, one per cell.",
+      alt: "uppercase cursive letters chart, capital A to Z with start dots and stroke arrows",
+    },
+    {
+      stem: "cursive-alphabet-lowercase",
+      title: "Lowercase cursive letters",
+      desc: "All 26 lowercase letters with their exit connectors.",
+      alt: "lowercase cursive letters chart, small a to z with start dots and stroke arrows",
+    },
+    {
+      stem: "cursive-alphabet-black-and-white",
+      title: "Black & white chart",
+      desc: "The full chart in ink-saving grayscale for classroom printing.",
+      alt: "black and white cursive alphabet chart, uppercase and lowercase letters on a three-line guide",
+    },
+  ] satisfies { stem: string; title: string; desc: string; alt: string }[],
+};

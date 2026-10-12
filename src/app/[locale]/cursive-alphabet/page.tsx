@@ -7,7 +7,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import CursiveAlphabetPanel from "@/components/CursiveAlphabetPanel";
 import ToolFaq from "@/components/ToolFaq";
 import ShareBar from "@/components/ShareBar";
-import { ALPHABET_PAGE, ALPHABET_UI } from "@/content/cursiveAlphabet";
+import { ALPHABET_PAGE, ALPHABET_PRINTABLES, ALPHABET_UI } from "@/content/cursiveAlphabet";
 import { pageMetadata } from "@/lib/seo";
 
 /** 交互式连笔字母表(Phase 0 仅 en:其他语言 404,sitemap 只输出 en 变体;
@@ -62,6 +62,33 @@ export default async function CursiveAlphabetPage({
           . {ALPHABET_UI.staticNote}
         </figcaption>
       </figure>
+      <section className="rise mb-8 max-w-3xl" style={{ animationDelay: "40ms" }}>
+        <h2 className="text-base font-semibold text-zinc-900">{ALPHABET_PRINTABLES.title}</h2>
+        <p className="mt-1 text-sm leading-relaxed text-zinc-600">{ALPHABET_PRINTABLES.intro}</p>
+        <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          {ALPHABET_PRINTABLES.items.map((item) => (
+            <a
+              key={item.stem}
+              href={`/printables/${item.stem}.pdf`}
+              className="group rounded-2xl border border-zinc-200 bg-white p-3 transition-colors hover:border-accent/50"
+            >
+              {/* 静态文件不走 i18n Link,理由同上 */}
+              <img
+                src={`/printables/${item.stem}.png`}
+                alt={item.alt}
+                width={816}
+                height={1056}
+                loading="lazy"
+                className="mx-auto h-auto w-full max-w-[170px] rounded-lg border border-zinc-100"
+              />
+              <h3 className="mt-2 text-sm font-medium text-zinc-900 transition-colors group-hover:text-accent">
+                {item.title}
+              </h3>
+              <p className="mt-1 text-xs leading-relaxed text-zinc-500">{item.desc}</p>
+            </a>
+          ))}
+        </div>
+      </section>
       <div className="rise max-w-3xl" style={{ animationDelay: "80ms" }}>
         <CursiveAlphabetPanel />
       </div>

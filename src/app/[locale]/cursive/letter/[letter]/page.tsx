@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { ArrowLeft, ArrowRight, X } from "@phosphor-icons/react/dist/ssr";
 import { routing, type Locale } from "@/i18n/routing";
 import { FONTS } from "@/stores/useEditorStore";
 import ToolFaq from "@/components/ToolFaq";
+import LetterSheetDownload from "@/components/LetterSheetDownload";
 import {
   CURSIVE_LETTERS,
   getLetterPage,
@@ -15,7 +16,8 @@ import {
   letterQueryTitle,
   lettersForLocale,
 } from "@/content/cursiveLetters";
-import { pageMetadata } from "@/lib/seo";
+import { localizedUrl, pageMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 /** 单字母矩阵页(Phase 0 仅 en;其他语言 404,sitemap 同步只输出 en 变体) */
 export function generateStaticParams() {
@@ -61,9 +63,36 @@ export default async function CursiveLetterPage({
   const next = idx >= 0 && idx < available.length - 1 ? available[idx + 1] : undefined;
   const font = FONTS.find((f) => f.id === "cedarvillecursive") ?? FONTS[0];
   const sheetHref = `/cursive-worksheets?words=${encodeURIComponent(letterPracticeWords(copy))}`;
+  const lowerLetters = available.filter((l) => l.form === "lowercase");
+  const capitalLetters = available.filter((l) => l.form === "capital");
+  const sheetTitle =
+    page.form === "capital" ? `Capital ${page.letter} in cursive` : `Cursive letter ${page.letter}`;
+
+  // 面包屑与页面可见层级一致:首页 → 连笔工具 → 本课
+  const tBrand = await getTranslations({ locale, namespace: "meta" });
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: tBrand("brand"), item: SITE.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: ui.backToCursive,
+        item: localizedUrl("/cursive", locale as Locale),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: letterQueryTitle(page),
+        item: localizedUrl(`/cursive/letter/${page.slug}`, locale as Locale),
+      },
+    ],
+  };
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Link
         href="/cursive"
         className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-800"
@@ -151,6 +180,40 @@ export default async function CursiveLetterPage({
         )}
       </nav>
 
+      {/* 全字母导航条:两行 52 页互相全连,加密矩阵内链 */}
+      <nav className="rise mt-8 space-y-2" style={{ animationDelay: "170ms" }} aria-label={ui.lettersNav}>
+        {[
+          { label: ui.hubLowercase, rows: lowerLetters },
+          { label: ui.hubCapital, rows: capitalLetters },
+        ].map((group) => (
+          <div key={group.label} className="flex items-center gap-3">
+            <span className="w-16 shrink-0 text-xs font-semibold tracking-wide text-zinc-400 uppercase">
+              {group.label}
+            </span>
+            <div className="flex flex-wrap gap-1">
+              {group.rows.map((l) => {
+                const current = l.slug === page.slug;
+                return (
+                  <Link
+                    key={l.slug}
+                    href={`/cursive/letter/${l.slug}`}
+                    aria-current={current ? "page" : undefined}
+                    className={`flex size-8 items-center justify-center rounded-lg border text-base ${
+                      current
+                        ? "border-accent bg-accent/5 text-accent"
+                        : "border-zinc-200 bg-white text-zinc-800 hover:border-accent/50"
+                    }`}
+                    style={{ fontFamily: font.css }}
+                  >
+                    {l.letter}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </nav>
+
       <section className="rise mt-10" style={{ animationDelay: "180ms" }}>
         <h2 className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">{ui.wordsTitle}</h2>
         <p
@@ -167,13 +230,20 @@ export default async function CursiveLetterPage({
 
       <section className="rise mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-6" style={{ animationDelay: "200ms" }}>
         <h2 className="text-base font-semibold text-zinc-900">{ui.ctaTitle}</h2>
-        <div className="mt-4 flex flex-col items-start gap-3">
+        <div className="mt-4 flex flex-wrap items-center gap-3">
           <Link href={sheetHref} className="btn btn-primary px-6 py-3">
             {ui.ctaButton}
             <ArrowRight className="size-4" />
           </Link>
-          <p className="text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
-          <p className="text-sm">
+          <LetterSheetDownload
+            fontId={font.id}
+            letter={page.letter}
+            title={sheetTitle}
+            label={ui.sheetButton}
+            fileStem={page.slug}
+          />
+          <p className="w-full text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
+          <p className="w-full text-sm">
             <Link
               href={`/cursive-alphabet?letter=${page.letter}`}
               className="text-accent underline-offset-2 hover:underline"

@@ -615,6 +615,10 @@ export interface LetterUi {
   hubLowercase: string;
   hubCapital: string;
   hubCta: string;
+  /** 字母 A–Z 导航条的 aria-label */
+  lettersNav: string;
+  /** 单字母练习条 PDF 下载按钮 */
+  sheetButton: string;
 }
 
 const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
@@ -637,6 +641,8 @@ const LETTER_UI: Partial<Record<Locale, LetterUi>> = {
     hubLowercase: "Lowercase",
     hubCapital: "Capital",
     hubCta: "See this letter on the alphabet chart and download the sheet",
+    lettersNav: "All cursive letter lessons",
+    sheetButton: "Letter sheet PDF",
   },
 };
 

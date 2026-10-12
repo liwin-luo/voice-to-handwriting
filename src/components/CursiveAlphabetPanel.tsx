@@ -33,7 +33,12 @@ export default function CursiveAlphabetPanel() {
 
   useEffect(() => {
     let cancelled = false;
-    void waitForFontFace(family).then(() => {
+    void waitForFontFace(family).then(async () => {
+      // 字体是切片字体:face 注册 ≠ 文件就绪,必须带样本字符 load 触发对应子集,
+      // 否则首次切字体时 canvas 静默回退衬线体且不再重画(导出会固化回退字形)
+      await document.fonts
+        .load(`108px "${family}"`, pair)
+        .catch(() => {});
       if (cancelled) return;
       const canvas = canvasRef.current;
       const ctx = canvas?.getContext("2d");
