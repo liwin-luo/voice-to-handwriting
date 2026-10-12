@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type PointerEvent } from "react";
+import { createPortal, flushSync } from "react-dom";
 import { useTranslations } from "next-intl";
 import { INKS } from "@/stores/useEditorStore";
 import {
@@ -139,7 +140,7 @@ export default function HandwritingPad() {
   const [draft, setDraft] = useState<PadStroke | null>(null);
   const [tool, setTool] = useState<PadTool>("pen");
   const [penOpen, setPenOpen] = useState(false);
-  const [helpOpen, setHelpOpen] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
   const [clearArmed, setClearArmed] = useState(false);
   const [ready, setReady] = useState(false);
   const [persistFailed, setPersistFailed] = useState(false);
@@ -168,27 +169,16 @@ export default function HandwritingPad() {
   }, []);
 
   useLayoutEffect(() => {
-    const header = document.querySelector("header");
-    const root = rootRef.current;
-    if (!header || !root) return;
-    const apply = () => {
-      root.style.top = `${header.getBoundingClientRect().height}px`;
-    };
-    apply();
-    const observer = new ResizeObserver(apply);
-    observer.observe(header);
-    return () => observer.disconnect();
-  }, []);
-
-  useLayoutEffect(() => {
     const wrap = wrapRef.current;
     if (!wrap) return;
     const fit = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const rect = wrap.getBoundingClientRect();
-      const cssW = Math.max(1, Math.floor(rect.width));
-      const cssH = Math.max(1, Math.floor(rect.height));
+      const cssW = Math.floor(rect.width);
+      const cssH = Math.floor(rect.height);
+      // 挂到 body 的那一帧高度可能是 0。写成 1 像素再被 CSS 拉满,笔迹会变成色块。
+      if (cssW < 2 || cssH < 2) return;
       const dpr = Math.min(window.devicePixelRatio || 1, DPR_CAP);
       canvas.width = Math.floor(cssW * dpr);
       canvas.height = Math.floor(cssH * dpr);
@@ -198,8 +188,12 @@ export default function HandwritingPad() {
     fit();
     const observer = new ResizeObserver(fit);
     observer.observe(wrap);
-    return () => observer.disconnect();
-  }, [redraw]);
+    const frame = requestAnimationFrame(fit);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
+  }, [redraw, fullscreen]);
 
   useLayoutEffect(() => {
     redraw();
@@ -211,12 +205,32 @@ export default function HandwritingPad() {
   }, [ready, sheet]);
 
   useEffect(() => {
+    let ours = false;
+    const onChange = () => {
+      const active = document.fullscreenElement === rootRef.current;
+      if (ours && !active) setFullscreen(false);
+      ours = active;
+    };
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (!fullscreen) {
+      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+      return;
+    }
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setFullscreen(false);
+    };
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
     };
-  }, []);
+  }, [fullscreen]);
 
   function pointFromEvent(event: PointerEvent<HTMLCanvasElement>) {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -302,6 +316,19 @@ export default function HandwritingPad() {
     }, "image/png");
   }
 
+  function toggleFullscreen() {
+    if (fullscreen || document.fullscreenElement === rootRef.current) {
+      setFullscreen(false);
+      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+      return;
+    }
+    // 入场动画的 transform 会困住 fixed,所以先挂到 body,再在同一次点击里请求全屏。
+    flushSync(() => setFullscreen(true));
+    const root = rootRef.current;
+    // ponytail: API 拒绝时(常见于 iOS 非 video)固定层就是全屏,浏览器边栏还在。
+    if (root?.requestFullscreen) void root.requestFullscreen().catch(() => {});
+  }
+
   function choosePen() {
     setTool("pen");
     setPenOpen((open) => !open);
@@ -310,14 +337,17 @@ export default function HandwritingPad() {
   const button = "btn btn-ghost px-2.5 py-1.5 text-xs";
   const pressed = "border-zinc-950";
 
-  return (
+  const sheetView = (
     <div
       ref={rootRef}
-      className="fixed inset-x-0 bottom-0 z-20 flex flex-col bg-white"
-      style={{ top: "3.5rem", overscrollBehavior: "none" }}
+      className={
+        fullscreen
+          ? "fixed inset-0 z-50 flex h-dvh flex-col overflow-hidden bg-white"
+          : "flex h-[min(70dvh,48rem)] min-h-[22rem] flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white"
+      }
+      style={{ overscrollBehavior: "none" }}
     >
       <div className="flex flex-wrap items-center gap-1 border-b border-zinc-200 px-2 py-2">
-        <h1 className="mr-auto max-w-full truncate text-sm font-semibold text-zinc-950">{t("title")}</h1>
         <button
           type="button"
           className={`${button} ${tool === "pen" ? pressed : ""}`}
@@ -366,12 +396,11 @@ export default function HandwritingPad() {
         </button>
         <button
           type="button"
-          className={`${button} ${helpOpen ? pressed : ""}`}
-          aria-expanded={helpOpen}
-          aria-controls="pad-help"
-          onClick={() => setHelpOpen((open) => !open)}
+          className={`${button} ${fullscreen ? pressed : ""}`}
+          aria-pressed={fullscreen}
+          onClick={toggleFullscreen}
         >
-          {t("help")}
+          {fullscreen ? t("exitFullscreen") : t("fullscreen")}
         </button>
         {penOpen && (
           <div className="flex w-full flex-col gap-2 pt-1">
@@ -422,10 +451,6 @@ export default function HandwritingPad() {
             </div>
           </div>
         )}
-        <div id="pad-help" hidden={!helpOpen} className="w-full space-y-1 text-xs leading-relaxed text-zinc-600">
-          <p>{t("helpLocal")}</p>
-          <p>{t("helpRefresh")}</p>
-        </div>
         {persistFailed && <p className="w-full text-xs text-rose-700">{t("persistFailed")}</p>}
         {exportFailed && <p className="w-full text-xs text-rose-700">{t("downloadFailed")}</p>}
       </div>
@@ -442,4 +467,7 @@ export default function HandwritingPad() {
       </div>
     </div>
   );
+
+  if (fullscreen) return createPortal(sheetView, document.body);
+  return sheetView;
 }

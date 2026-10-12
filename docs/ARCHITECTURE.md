@@ -118,7 +118,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
-| `/handwriting-pad` | 在线手写板。一屏纸,手指/鼠标/触控笔书写,空白/横线/方格,导出 PNG。笔迹存在 `vth-pad`。页头下拉不单列。页脚被固定层盖住 | `HandwritingPad`,`pad.ts` |
+| `/handwriting-pad` | 在线手写板。一屏纸,手指/鼠标/触控笔书写,空白/横线/方格,导出 PNG。笔迹存在 `vth-pad`。页头下拉不单列。版式与其他工具页相同(标题、分享、说明、FAQ)。全屏让纸面盖住页头 | `HandwritingPad`,`pad.ts`,`PAD_FAQS` |
 | `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画。墨色改示例和封面标题,描红同色变浅,纸底可改 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
 | `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。打开即第一题的三张笔迹。结果卡用该档案的手写字体写档案名,无 emoji。主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
 | `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
@@ -185,7 +185,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `pages/registry.ts` | `PAGE_CONTENT`:about/privacy/terms/contact × 8 语言 MDX | `makeStaticPage` 工厂 |
 | `templates.ts` | `TEMPLATES`:slug + TemplateStyle(font/paper/ink/size/intensity/align/indent)+ i18n 范文 text | 模板列表/详情、`ToolWorkspace` 的 `?template=` 接线、sitemap |
 | `faqs.ts` | `FAQ_ITEMS`(首页支持问答)及各工具专属 FAQ。`getLocalizedFaqs` 只返回当前语言有翻译的条目;第一条 `id` 以 `-free` 结尾时挪到末尾。`FaqEntry.link` 是答案后的一条站内链接。题目在 `ToolFaq` 里是 H3 | 各工具页 `ToolFaq`;首页用 `FAQ_ITEMS` |
-| `pageFaqs.ts` | 连笔描红 `CURSIVE_WORKSHEET_FAQS`、模板库 `TEMPLATE_FAQS`、详情页 `templateDetailFaqs`(按模板标题和范文首行生成) | `/cursive-worksheets`、`/templates`、`/templates/[slug]` |
+| `pageFaqs.ts` | 后加工具的专属 FAQ,含手写板 `PAD_FAQS`、连笔描红 `CURSIVE_WORKSHEET_FAQS`、模板库 `TEMPLATE_FAQS`、详情页 `templateDetailFaqs`(按模板标题和范文首行生成) | 对应工具页 `ToolFaq` |
 | `faqHub.ts` | `/faq` 目录 `FAQ_HUB`,问法不复制首页 | `/faq` |
 | `paperKindFaqs.ts` | 六种纸各自的 FAQ,按 `paperKinds` 里的行距写 | `/printable-paper/[kind]` |
 | `related.ts` | 文章尾部内链规划(tools[]/posts[]) | `RelatedLinks`(SEO 集群) |

@@ -321,13 +321,13 @@
 - **形态**:照片经服务端交给智谱 `glm-5.3-flash`,看完即丢。能给出观感分时,浏览器把已有分数接在原图下方,导出 4:5 PNG,缺项留空。最低的原因项链到成人练字总览。每天 3 次,记在浏览器里,第二天重新计算。
 - **红线**:不打总分,不诊断,不评性格、力度、速度、笔顺。中日韩手写不套这五项。照片和卡片都不入库。
 
-## 二十一、在线手写板(2026-10-12,工具已落地,文章未写)
+## 二十一、在线手写板(2026-10-12,工具与文章已落地)
 
 设计全文:`docs/plans/2026-10-12-handwriting-pad-design.md`。
 
-- **文章簇**:在线手写笔记。枢纽 `/handwriting-pad`。成员:本工具(在屏幕上写完带走一张图)、`save-a-handwritten-note`(未写,en,Theo Lindgren)。簇里目前只有工具和这一篇计划中的教程,第二篇邻居出来之前不再加近义文。
+- **文章簇**:在线手写笔记。枢纽 `/handwriting-pad`。成员:本工具(在屏幕上写完带走一张图)、`save-a-handwritten-note`(en,Theo Lindgren,2026-10-12)。簇里目前只有工具和这一篇教程,第二篇邻居出来之前不再加近义文。尾部相关文因此先空着。
 - **意图**:工具页承接 online handwriting notepad / handwriting notepad online / digital handwriting pad。不承接 signature maker、signature generator、online signature pad(那些要的是透明底签名图)、signature practice sheet(`/signature-practice`)、语音转手写字体(`/`)。
-- **形态**:一屏纸。手指、鼠标或触控笔。笔、橡皮、撤销、清空、下载 PNG。墨色用站内 7 色,粗细三档,纸底空白 / 横线 / 方格。笔迹存在本机 `vth-pad`。8 语言。`/tools`「写一张」一组,页头下拉不单列。`/faq` 有一条指向本页。
+- **形态**:一屏纸,嵌在和其他工具页相同的页面壳里(标题、分享、说明、FAQ)。手指、鼠标或触控笔。笔、橡皮、撤销、清空、下载 PNG、全屏。墨色用站内 7 色,粗细三档,纸底空白 / 横线 / 方格。笔迹存在本机 `vth-pad`。8 语言。`/tools`「写一张」一组,页头下拉不单列。`/faq` 有一条指向本页。
 - **下一跳**:文章上线后第一屏打开本工具。想印空白横线纸的人去 `/printable-paper`(跨簇,因为下一步是打印纸,不是再写一屏)。
 - **文章**:`save-a-handwritten-note`,en,Theo Lindgren。主词 how to save a handwritten note from your phone。教程,不抢工具主词。体验资产是这一屏导出的 PNG 和「刷新后还在」这件事。复核:不复核(画布写法和年份无关)。动笔前读 `docs/personas/theo-lindgren.md`。
 - **红线**:不识别笔迹、不打分、不上传、不把笔迹做成字体、不改语音工作台。

@@ -797,6 +797,20 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "save-a-handwritten-note",
+    author: "theo-lindgren",
+    date: "2026-10-12",
+    updated: "2026-10-12",
+    image: "/blog/save-a-handwritten-note.png",
+    i18n: {
+      en: {
+        title: "How to save a handwritten note from your phone",
+        description:
+          "Write on one sheet, download handwriting-pad.png, and reload. The strokes stay in the browser until you clear them. Free, no signup.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

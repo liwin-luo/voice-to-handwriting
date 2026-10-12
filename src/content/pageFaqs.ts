@@ -923,3 +923,209 @@ export const HANDWRITING_CHECK_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /handwriting-pad。免费题放最后，第一条留给「字存在哪里」。 */
+export const PAD_FAQS: FaqItem[] = [
+  {
+    id: "pad-saved",
+    i18n: {
+      en: {
+        q: "Where does the handwriting go?",
+        a: "It stays in this browser. Refresh the page and the strokes, paper, ink, and width are still there, until you clear the sheet. Nothing is uploaded.",
+        link: { href: "/blog/save-a-handwritten-note", label: "How to save the note" },
+      },
+      zh: {
+        q: "写的字存在哪里?",
+        a: "这台浏览器里。刷新后笔迹、纸底、墨色和粗细还在,直到清空。不会上传。",
+      },
+      ja: {
+        q: "書いた字はどこに残りますか?",
+        a: "このブラウザの中です。再読み込みしても、筆跡、用紙、インク、太さは消去するまで残ります。アップロードはされません。",
+      },
+      ko: {
+        q: "쓴 글씨는 어디에 남나요?",
+        a: "이 브라우저 안에 남습니다. 새로고침해도 획, 종이, 잉크, 굵기는 지우기 전까지 그대로입니다. 업로드되지 않습니다.",
+      },
+      es: {
+        q: "¿Dónde queda lo que escribo?",
+        a: "En este navegador. Al recargar siguen los trazos, el papel, la tinta y el grosor, hasta que borres la hoja. No se sube nada.",
+      },
+      de: {
+        q: "Wo bleibt das Geschriebene?",
+        a: "In diesem Browser. Nach dem Neuladen sind Striche, Papier, Tinte und Stärke noch da, bis du das Blatt leerst. Nichts wird hochgeladen.",
+      },
+      fr: {
+        q: "Où reste ce que j'écris ?",
+        a: "Dans ce navigateur. Après un rechargement, les traits, le papier, l'encre et l'épaisseur sont encore là, jusqu'à ce que vous effaciez la feuille. Rien n'est envoyé.",
+      },
+      pt: {
+        q: "Onde fica o que eu escrevo?",
+        a: "Neste navegador. Depois de recarregar, os traços, o papel, a tinta e a espessura continuam lá, até você limpar a folha. Nada é enviado.",
+      },
+    },
+  },
+  {
+    id: "pad-png",
+    i18n: {
+      en: {
+        q: "What is in the PNG?",
+        a: "The sheet you write on: paper and ink, including ruled or grid lines. The buttons are not in the file.",
+        link: { href: "/printable-paper", label: "Print blank paper" },
+      },
+      zh: {
+        q: "PNG 里有什么?",
+        a: "能写字的那张纸:纸底和笔迹,横线或方格也在。按钮不在图里。",
+        link: { href: "/printable-paper", label: "打印空白纸" },
+      },
+      ja: {
+        q: "PNG には何が入っていますか?",
+        a: "書ける紙です。用紙と筆跡、横線や方眼も入ります。ボタンは入りません。",
+        link: { href: "/printable-paper", label: "空白の紙を印刷" },
+      },
+      ko: {
+        q: "PNG에는 무엇이 들어가나요?",
+        a: "쓸 수 있는 종이입니다. 종이와 획, 줄이나 모눈도 들어갑니다. 버튼은 들어가지 않습니다.",
+        link: { href: "/printable-paper", label: "빈 종이 인쇄" },
+      },
+      es: {
+        q: "¿Qué hay en el PNG?",
+        a: "La hoja en la que se escribe: papel y tinta, también las líneas o la cuadrícula. Los botones no entran.",
+        link: { href: "/printable-paper", label: "Imprimir papel en blanco" },
+      },
+      de: {
+        q: "Was steckt in der PNG?",
+        a: "Das Blatt, auf dem du schreibst: Papier und Tinte, auch Linien oder Kästchen. Die Schaltflächen sind nicht im Bild.",
+        link: { href: "/printable-paper", label: "Leeres Papier drucken" },
+      },
+      fr: {
+        q: "Que contient le PNG ?",
+        a: "La feuille sur laquelle on écrit : papier et encre, y compris les lignes ou la grille. Les boutons n'y sont pas.",
+        link: { href: "/printable-paper", label: "Imprimer du papier vierge" },
+      },
+      pt: {
+        q: "O que entra no PNG?",
+        a: "A folha em que se escreve: papel e tinta, inclusive linhas ou grade. Os botões não entram.",
+        link: { href: "/printable-paper", label: "Imprimir papel em branco" },
+      },
+    },
+  },
+  {
+    id: "pad-screen",
+    i18n: {
+      en: {
+        q: "Can I write on the whole screen?",
+        a: "Yes. Fullscreen fills the screen with the sheet and the tools. Exit, or press Escape, to come back to this page.",
+      },
+      zh: {
+        q: "可以全屏写吗?",
+        a: "可以。全屏后纸面和工具占满屏幕。点退出全屏,或按 Esc,回到这一页。",
+      },
+      ja: {
+        q: "画面いっぱいに書けますか?",
+        a: "はい。全画面にすると、紙と道具が画面を占めます。終了を押すか、Esc でこのページに戻ります。",
+      },
+      ko: {
+        q: "화면 가득 쓸 수 있나요?",
+        a: "네. 전체 화면이면 종이와 도구가 화면을 채웁니다. 끝내기를 누르거나 Esc를 누르면 이 페이지로 돌아옵니다.",
+      },
+      es: {
+        q: "¿Puedo escribir a pantalla completa?",
+        a: "Sí. Pantalla completa llena la pantalla con la hoja y las herramientas. Salir, o Escape, vuelve a esta página.",
+      },
+      de: {
+        q: "Kann ich den ganzen Bildschirm nutzen?",
+        a: "Ja. Vollbild füllt den Bildschirm mit Blatt und Werkzeugen. Beenden oder Escape bringt dich auf diese Seite zurück.",
+      },
+      fr: {
+        q: "Puis-je écrire en plein écran ?",
+        a: "Oui. Le plein écran remplit l'écran avec la feuille et les outils. Quitter, ou Échap, ramène à cette page.",
+      },
+      pt: {
+        q: "Posso escrever em tela cheia?",
+        a: "Sim. Tela cheia preenche a tela com a folha e as ferramentas. Sair, ou Esc, volta para esta página.",
+      },
+    },
+  },
+  {
+    id: "pad-read",
+    i18n: {
+      en: {
+        q: "Does it read my handwriting?",
+        a: "No. The strokes stay a picture. The page does not recognize letters, score them, or turn them into a font.",
+        link: { href: "/", label: "Set typed words in a handwriting font" },
+      },
+      zh: {
+        q: "它会识别我的笔迹吗?",
+        a: "不会。笔迹只是一张图。这一页不认字、不打分,也不把手写变成字体。",
+        link: { href: "/", label: "把打好的字排成手写体" },
+      },
+      ja: {
+        q: "筆跡を読み取りますか?",
+        a: "しません。筆跡は絵のままです。このページは文字を認識せず、採点せず、フォントにもしません。",
+        link: { href: "/", label: "打った文字を手書きフォントにする" },
+      },
+      ko: {
+        q: "글씨를 읽나요?",
+        a: "읽지 않습니다. 획은 그림으로 남습니다. 이 페이지는 글자를 인식하지 않고, 점수를 매기지 않으며, 글꼴로 바꾸지도 않습니다.",
+        link: { href: "/", label: "친 글을 손글씨 글꼴로" },
+      },
+      es: {
+        q: "¿Lee mi letra?",
+        a: "No. Los trazos se quedan como una imagen. Esta página no reconoce letras, no las puntúa y no las convierte en una fuente.",
+        link: { href: "/", label: "Poner un texto en una fuente manuscrita" },
+      },
+      de: {
+        q: "Liest die Seite meine Handschrift?",
+        a: "Nein. Die Striche bleiben ein Bild. Die Seite erkennt keine Buchstaben, bewertet sie nicht und macht keine Schrift daraus.",
+        link: { href: "/", label: "Getippten Text in einer Handschrift setzen" },
+      },
+      fr: {
+        q: "Est-ce que la page lit mon écriture ?",
+        a: "Non. Les traits restent une image. La page ne reconnaît pas les lettres, ne les note pas et n'en fait pas une police.",
+        link: { href: "/", label: "Mettre un texte tapé en écriture manuscrite" },
+      },
+      pt: {
+        q: "A página lê a minha letra?",
+        a: "Não. Os traços ficam uma imagem. A página não reconhece letras, não dá nota e não transforma isso em fonte.",
+        link: { href: "/", label: "Colocar texto digitado numa fonte manuscrita" },
+      },
+    },
+  },
+  {
+    id: "pad-free",
+    i18n: {
+      en: {
+        q: "Is the online handwriting notepad free?",
+        a: "Yes. No signup. Writing happens in your browser.",
+      },
+      zh: {
+        q: "在线手写板免费吗?",
+        a: "免费,不用注册。书写发生在你的浏览器里。",
+      },
+      ja: {
+        q: "オンライン手書きノートは無料ですか?",
+        a: "はい。登録は不要です。書く処理はこのブラウザの中で行われます。",
+      },
+      ko: {
+        q: "온라인 손글씨 노트는 무료인가요?",
+        a: "네. 가입은 없습니다. 쓰기는 이 브라우저 안에서 이루어집니다.",
+      },
+      es: {
+        q: "¿El bloc de notas manuscrito es gratis?",
+        a: "Sí. Sin registro. Escribes en tu navegador.",
+      },
+      de: {
+        q: "Ist der Online-Handschriftblock kostenlos?",
+        a: "Ja. Ohne Anmeldung. Du schreibst in deinem Browser.",
+      },
+      fr: {
+        q: "Le bloc-notes manuscrit est-il gratuit ?",
+        a: "Oui. Sans inscription. Vous écrivez dans votre navigateur.",
+      },
+      pt: {
+        q: "O bloco de notas manuscrito é grátis?",
+        a: "Sim. Sem cadastro. Você escreve no seu navegador.",
+      },
+    },
+  },
+];

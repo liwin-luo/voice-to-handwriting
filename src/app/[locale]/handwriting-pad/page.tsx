@@ -4,6 +4,10 @@ import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import HandwritingPad from "@/components/HandwritingPad";
+import ToolFaq from "@/components/ToolFaq";
+import ShareBar from "@/components/ShareBar";
+import { PAD_FAQS } from "@/content/pageFaqs";
+import { getLocalizedFaqs } from "@/content/faqs";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -31,10 +35,25 @@ export default async function HandwritingPadPage({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  const t = await getTranslations("handwritingPad");
 
   return (
-    <main>
-      <HandwritingPad />
+    <main className="mx-auto max-w-6xl px-4 py-8">
+      <header className="rise mb-7">
+        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
+        <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
+      </header>
+      <div className="rise" style={{ animationDelay: "80ms" }}>
+        <HandwritingPad />
+      </div>
+      <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
+        <ShareBar />
+      </div>
+      <section className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600" style={{ animationDelay: "160ms" }}>
+        <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
+        <p className="whitespace-pre-line">{t("seoText")}</p>
+      </section>
+      <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(PAD_FAQS, locale as Locale)} />
     </main>
   );
 }

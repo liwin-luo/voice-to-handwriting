@@ -188,6 +188,11 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/handwriting-sentence-practice"],
     posts: ["how-to-improve-handwriting-adults"],
   },
+  // 在线手写笔记:枢纽 /handwriting-pad。这篇教把这一屏存成 PNG。簇里还没有第二篇,尾部不拿别的簇凑数。
+  "save-a-handwritten-note": {
+    tools: ["/handwriting-pad"],
+    posts: [],
+  },
   "handwriting-practice-struggling-writers": {
     tools: ["/name-tracing", "/printable-paper"],
     posts: ["kindergarten-handwriting-paper", "how-to-improve-handwriting-adults", "free-printable-lined-paper"],
