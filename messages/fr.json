@@ -129,6 +129,18 @@
     "architectLetter": {
       "title": "Fiches d'écriture d'architecte, main carrée",
       "description": "Imprimez des fiches en Architects Daughter : capitales et chiffres, ligne modèle, pointillés, ligne vide. Gratuit."
+    },
+    "sentencePractice": {
+      "title": "Exercice d'une phrase manuscrite",
+      "description": "Saisissez une phrase à écrire, choisissez la taille, l'inclinaison, l'espacement ou l'imprimerie, et téléchargez une feuille. Une ligne modèle, une en pointillés, trois vides. Gratuit, dans le navigateur."
+    },
+    "handwritingPad": {
+      "title": "Bloc-notes manuscrit en ligne",
+      "description": "Écrivez avec le doigt, la souris ou un stylet sur une page blanche, lignée ou quadrillée, puis téléchargez un PNG. Un écran, conservé sur cet appareil. Gratuit, sans inscription."
+    },
+    "handwritingCheck": {
+      "title": "Évaluer une écriture sur photo",
+      "description": "Envoyez une photo d'écriture latine et obtenez une impression de lisibilité, de taille, de ligne de base, d'espacement et d'inclinaison. La photo n'est pas conservée."
     }
   },
   "nav": {
@@ -165,7 +177,10 @@
     "prewriting": "Tracés d'avant les lettres",
     "cursiveJoins": "Liaisons cursives",
     "tattooStencil": "Pochoir de tatouage",
-    "architectLetter": "Écriture d'architecte"
+    "architectLetter": "Écriture d'architecte",
+    "sentencePractice": "Une phrase",
+    "handwritingPad": "Bloc manuscrit",
+    "handwritingCheck": "Évaluer l'écriture"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -879,5 +894,135 @@
     "downloadPdf": "Télécharger le PDF",
     "downloadPng": "Télécharger le PNG",
     "sheetLabel": "Fiche d'écriture d'architecte"
+  },
+  "sentencePractice": {
+    "title": "Exercice d'une phrase",
+    "intro": "Écrivez une phrase que vous devez vraiment écrire, entraînez une seule chose, et imprimez une feuille. Arrêtez après les trois lignes vides.",
+    "seoTitle": "Une phrase, un problème, une feuille",
+    "seoText": "Saisissez une phrase à remettre cette semaine et n'en travaillez qu'un aspect : taille, inclinaison, espacement ou écriture scripte. La feuille montre une ligne modèle, une ligne en pointillés et trois lignes vides. Le pied de page dit d'arrêter.\n\nLe modèle est une police, Patrick Hand, ou Sacramento si vous activez le modèle scripte. L'imprimerie verrouille le modèle sur Patrick Hand. Ce que vous tapez n'est pas envoyé, et la page ne note pas ce que vous écrivez sur le papier.",
+    "faqTitle": "Questions",
+    "sentenceLabel": "Phrase",
+    "sample": "Veuillez lire cette note.",
+    "focusLabel": "Quoi travailler",
+    "focusSize": "Taille",
+    "focusSlant": "Inclinaison",
+    "focusSpacing": "Espacement",
+    "focusPrint": "Imprimerie",
+    "script": "Modèle scripte",
+    "leftHand": "Main gauche",
+    "leftHandHint": "La marge rouge passe à droite pour que la main salisse moins l'encre fraîche. Ce n'est pas la seule posture correcte pour une main gauche.",
+    "truncated": "Seule la première phrase est imprimée.",
+    "tooLong": "Raccourcissez la phrase pour qu'elle tienne sur une ligne.",
+    "spacingNeedsSpaces": "L'espace entre les mots a besoin d'une espace. Cette phrase n'en a pas, donc la feuille garde la phrase et la ligne de base, sans traits.",
+    "stopLine": "Arrêtez après ces trois lignes.",
+    "downloadPdf": "Télécharger le PDF",
+    "downloadPng": "Télécharger le PNG",
+    "lineHeight": "Hauteur de ligne",
+    "lineLarge": "Grandes lignes",
+    "lineRegular": "Lignes normales",
+    "lineCompact": "Petites lignes",
+    "writeAgain": "L'écrire encore",
+    "lastSession": "La dernière fois : {focus}, {date}",
+    "mic": "Parler",
+    "listening": "Écoute",
+    "errorDenied": "Le micro est bloqué. Tapez la phrase.",
+    "errorNetwork": "La reconnaissance vocale a besoin du réseau.",
+    "errorStopped": "La reconnaissance vocale s'est arrêtée. Tapez la phrase."
+  },
+  "handwritingPad": {
+    "title": "Bloc-notes manuscrit en ligne",
+    "pen": "Stylo",
+    "eraser": "Gomme",
+    "undo": "Annuler",
+    "clear": "Effacer",
+    "clearConfirm": "Effacer la feuille ?",
+    "download": "Télécharger le PNG",
+    "downloadFailed": "L'image n'a pas pu être enregistrée. Réessayez.",
+    "ink": "Encre",
+    "width": "Épaisseur",
+    "fine": "Fin",
+    "medium": "Moyen",
+    "thick": "Épais",
+    "paper": "Papier",
+    "help": "Note",
+    "helpLocal": "Cette image reste sur cet appareil. Elle n'est pas envoyée.",
+    "helpRefresh": "Elle est encore là après un rechargement, jusqu'à ce que vous l'effaciez. Cet écran est une image.",
+    "persistFailed": "Cette feuille ne survivra pas à un rechargement.",
+    "sheetLabel": "Feuille d'écriture"
+  },
+  "handwritingCheck": {
+    "title": "Évaluer une écriture sur photo",
+    "intro": "Envoyez une photo d'écriture latine. Vous recevez cinq impressions et une carte à partager.",
+    "noteLines": "Photographiez au moins deux lignes entières. Gardez la feuille à plat et ne coupez pas les lettres.",
+    "noteClinical": "C'est une impression à partir d'une photo, pas une évaluation clinique.",
+    "noteDiscard": "La photo est envoyée au modèle, puis écartée. Elle n'est pas conservée.",
+    "upload": "Envoyer une photo",
+    "camera": "Prendre une photo",
+    "looking": "Lecture de cette photo",
+    "lookingHint": "Restez sur cette page. Comptez environ une demi-minute.",
+    "legibility": "Lisibilité",
+    "size": "Taille",
+    "baseline": "Ligne de base",
+    "spacing": "Espacement",
+    "slant": "Inclinaison",
+    "next": "À travailler ensuite : {focus}",
+    "nextLink": "Rendre l'écriture plus lisible",
+    "unstable": "Pas assez pour juger",
+    "blank": "—",
+    "retake": "Reprenez la photo. Elle est floue, coupée ou trop réfléchissante.",
+    "unsupported": "Cette version ne note que l'écriture latine.",
+    "failed": "Le regard n'a pas abouti. Vous pouvez réessayer.",
+    "quota": "Les essais du jour sont épuisés. Revenez demain.",
+    "left": "Il en reste {count} aujourd'hui.",
+    "daily": "{count} photos par jour. Le compteur repart le lendemain.",
+    "tooBig": "Cette photo est trop grande. Essayez-en une autre.",
+    "badImage": "Ce fichier ne se lit pas. Essayez une autre photo.",
+    "shareFailed": "La carte n'a pas pu être enregistrée. Réessayez.",
+    "share": "Partager cette carte",
+    "cardMark": "voicetohandwriting.online",
+    "photoAlt": "Votre photo d'écriture",
+    "cardLabel": "Carte de note",
+    "summaryTitle": "Ce que montre cette photo",
+    "faqTitle": "Questions",
+    "seoTitle": "Cinq notes pour une photo",
+    "seoText": "La lisibilité est le résultat : est-ce qu'on peut lire les mots. Taille, ligne de base, espacement et inclinaison en sont les causes. La plus basse des quatre est celle à travailler ensuite.\n\nLa note est une impression d'une photo fixe. Elle ne mesure ni la vitesse, ni la pression, ni l'ordre des traits, et ce n'est pas une évaluation clinique. Le chinois, le japonais et le coréen ne sont pas notés avec cette grille.",
+    "anchors": {
+      "legibility": {
+        "1": "Presque rien n'est lisible.",
+        "2": "Seuls quelques mots se lisent.",
+        "3": "Environ la moitié se devine grâce au contexte.",
+        "4": "Quelques mots demandent une pause. La page se lit.",
+        "5": "Chaque mot se lit du premier regard."
+      },
+      "size": {
+        "1": "Les hauteurs se confondent.",
+        "2": "La hauteur saute souvent.",
+        "3": "La hauteur varie, mais les sortes de lettres restent distinctes.",
+        "4": "La hauteur est assez stable, avec quelques lettres à l'écart.",
+        "5": "La hauteur reste stable sur la ligne."
+      },
+      "baseline": {
+        "1": "La ligne n'a pas d'appui stable.",
+        "2": "Beaucoup de mots quittent la ligne.",
+        "3": "Quelques mots flottent ou s'enfoncent en bloc.",
+        "4": "La plupart des mots tiennent la ligne, quelques-uns dérivent.",
+        "5": "Les pieds des lettres partagent une ligne."
+      },
+      "spacing": {
+        "1": "Les limites des mots sont illisibles.",
+        "2": "Les limites des mots sont souvent illisibles.",
+        "3": "Des mots se collent, ou les vides ressemblent à une coupure de phrase.",
+        "4": "L'espacement est assez régulier, avec quelques resserrements ou élargissements.",
+        "5": "Serré dans le mot, ouvert entre les mots."
+      },
+      "slant": {
+        "1": "Il n'y a pas de direction stable.",
+        "2": "L'inclinaison change souvent.",
+        "3": "Certains mots penchent à droite, d'autres à gauche.",
+        "4": "L'inclinaison est assez constante, avec quelques lettres à l'écart.",
+        "5": "Tout l'échantillon penche de la même façon."
+      }
+    },
+    "again": "Envoyer une autre photo"
   }
 }

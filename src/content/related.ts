@@ -29,6 +29,9 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/handwriting-repeater": "repeater",
   "/handwriting-page-calculator": "pageCalc",
   "/printable-handwritten-letters": "bulkLetters",
+  "/handwriting-sentence-practice": "sentencePractice",
+  "/handwriting-check": "handwritingCheck",
+  "/handwriting-pad": "handwritingPad",
 };
 
 export interface RelatedConfig {
@@ -40,6 +43,7 @@ export interface RelatedConfig {
  * 每篇文章的站内链接规划:尾部 RelatedLinks 区块按此渲染(所有语言版本生效)。
  * 目标:补齐 /cursive-worksheets 反链、voice 核心集群互链、/templates 枢纽。
  * 新文章:在此登记一项,否则尾部无内链区块。
+ * 每条上方的簇注释与内容规划里的文章簇用同一个名字(seo-article-playbook.md §2)。
  */
 export const RELATED: Record<string, RelatedConfig> = {
   // cursive 集群:全部链向 /cursive-worksheets(原站内 0 反链)
@@ -175,9 +179,14 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/templates", "/cursive"],
     posts: ["handwritten-thank-you-notes", "cursive-name-signature", "handwriting-templates-guide"],
   },
+  // 成人单句练习:枢纽 /handwriting-sentence-practice。总览文只留簇内下一步。
   "how-to-improve-handwriting-adults": {
-    tools: ["/handwriting-personality-quiz", "/printable-paper", "/name-tracing"],
-    posts: ["cursive-vs-print", "how-to-write-in-cursive", "handwriting-practice-struggling-writers"],
+    tools: ["/handwriting-sentence-practice", "/printable-paper", "/name-tracing"],
+    posts: ["practice-one-handwriting-problem"],
+  },
+  "practice-one-handwriting-problem": {
+    tools: ["/handwriting-sentence-practice"],
+    posts: ["how-to-improve-handwriting-adults"],
   },
   "handwriting-practice-struggling-writers": {
     tools: ["/name-tracing", "/printable-paper"],

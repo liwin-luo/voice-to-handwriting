@@ -99,6 +99,7 @@ import shlEn from "./squared-hand-lettering-practice.en.mdx";
 import slwEn from "./spelling-list-word-work.en.mdx";
 import cnbEn from "./color-a-name-before-tracing.en.mdx";
 import ocgEn from "./one-character-in-the-grid.en.mdx";
+import pohEn from "./practice-one-handwriting-problem.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -274,6 +275,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "spelling-list-word-work": { en: slwEn },
   "color-a-name-before-tracing": { en: cnbEn },
   "one-character-in-the-grid": { en: ocgEn },
+  "practice-one-handwriting-problem": { en: pohEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

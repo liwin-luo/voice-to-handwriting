@@ -129,6 +129,18 @@
     "architectLetter": {
       "title": "Übungsblätter für Architektenschrift, eckige Hand",
       "description": "Drucke Übungsblätter in Architects Daughter: Großbuchstaben und Ziffern, Linie, Punktlinie, Leerzeile. Kostenlos."
+    },
+    "sentencePractice": {
+      "title": "Satzübung für die Handschrift",
+      "description": "Tipp einen Satz, den du schreiben musst, wähle Größe, Neigung, Abstand oder Druckschrift, und lade ein Übungsblatt. Musterzeile, punktierte Zeile, drei leere Zeilen. Kostenlos, im Browser."
+    },
+    "handwritingPad": {
+      "title": "Online-Handschriftblock",
+      "description": "Schreib mit Finger, Maus oder Stift auf ein leeres, liniertes oder kariertes Blatt und lade ein PNG herunter. Ein Bildschirm, gespeichert auf diesem Gerät. Kostenlos, ohne Anmeldung."
+    },
+    "handwritingCheck": {
+      "title": "Handschrift auf einem Foto prüfen",
+      "description": "Lade ein Foto lateinischer Handschrift hoch und erhalte einen Eindruck zu Lesbarkeit, Größe, Grundlinie, Abstand und Neigung. Das Foto wird nicht gespeichert."
     }
   },
   "nav": {
@@ -165,7 +177,10 @@
     "prewriting": "Striche vor den Buchstaben",
     "cursiveJoins": "Schreibschrift-Verbindungen",
     "tattooStencil": "Tattoo-Schablone",
-    "architectLetter": "Architektenschrift"
+    "architectLetter": "Architektenschrift",
+    "sentencePractice": "Satzübung",
+    "handwritingPad": "Handschriftblock",
+    "handwritingCheck": "Handschrift prüfen"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -879,5 +894,135 @@
     "downloadPdf": "PDF laden",
     "downloadPng": "PNG laden",
     "sheetLabel": "Übungsblatt Architektenschrift"
+  },
+  "sentencePractice": {
+    "title": "Satzübung",
+    "intro": "Schreib einen Satz, den du wirklich schreiben musst, übe eine Sache und druck ein Blatt. Nach den drei leeren Zeilen aufhören.",
+    "seoTitle": "Ein Satz, ein Problem, ein Blatt",
+    "seoText": "Tippe einen Satz, den du diese Woche abgeben musst, und übe eine Sache: Größe, Neigung, Abstand oder Druckschrift. Das Blatt hat eine Musterzeile, eine punktierte Zeile und drei leere. Die Fußzeile sagt, dass du aufhörst.\n\nDie Vorlage ist eine Schrift, Patrick Hand, oder Sacramento, wenn du die Schreibschrift-Vorlage einschaltest. Druckschrift sperrt die Vorlage auf Patrick Hand. Eingetippter Text wird nicht hochgeladen, und die Seite bewertet nicht, was du aufs Papier schreibst.",
+    "faqTitle": "Fragen",
+    "sentenceLabel": "Satz",
+    "sample": "Bitte lies diese Notiz.",
+    "focusLabel": "Was geübt wird",
+    "focusSize": "Größe",
+    "focusSlant": "Neigung",
+    "focusSpacing": "Abstand",
+    "focusPrint": "Druckschrift",
+    "script": "Schreibschrift-Vorlage",
+    "leftHand": "Linke Hand",
+    "leftHandHint": "Der rote Rand wandert nach rechts, damit die Hand nasse Tinte seltener verwischt. Das ist nicht die einzige richtige Haltung für Linkshänder.",
+    "truncated": "Nur der erste Satz wird gedruckt.",
+    "tooLong": "Kürze den Satz, damit er in eine Zeile passt.",
+    "spacingNeedsSpaces": "Wortabstand braucht ein Leerzeichen. Dieser Satz hat keins, also bleiben Satz und Grundlinie, ohne Striche.",
+    "stopLine": "Nach diesen drei Zeilen aufhören.",
+    "downloadPdf": "PDF herunterladen",
+    "downloadPng": "PNG herunterladen",
+    "lineHeight": "Zeilenhöhe",
+    "lineLarge": "Große Zeilen",
+    "lineRegular": "Normale Zeilen",
+    "lineCompact": "Kleine Zeilen",
+    "writeAgain": "Noch einmal schreiben",
+    "lastSession": "Zuletzt: {focus}, {date}",
+    "mic": "Sprechen",
+    "listening": "Hört zu",
+    "errorDenied": "Das Mikrofon ist blockiert. Tipp den Satz.",
+    "errorNetwork": "Die Spracherkennung braucht ein Netz.",
+    "errorStopped": "Die Spracherkennung wurde beendet. Tipp den Satz."
+  },
+  "handwritingPad": {
+    "title": "Online-Handschriftblock",
+    "pen": "Stift",
+    "eraser": "Radierer",
+    "undo": "Rückgängig",
+    "clear": "Leeren",
+    "clearConfirm": "Blatt leeren?",
+    "download": "PNG laden",
+    "downloadFailed": "Das Bild konnte nicht gespeichert werden. Versuch es noch einmal.",
+    "ink": "Tinte",
+    "width": "Stärke",
+    "fine": "Fein",
+    "medium": "Mittel",
+    "thick": "Dick",
+    "paper": "Papier",
+    "help": "Hinweis",
+    "helpLocal": "Dieses Bild bleibt auf diesem Gerät. Es wird nicht hochgeladen.",
+    "helpRefresh": "Nach dem Neuladen ist es noch da, bis du es leerst. Dieser Bildschirm ist ein Bild.",
+    "persistFailed": "Dieses Blatt übersteht ein Neuladen nicht.",
+    "sheetLabel": "Schreibblatt"
+  },
+  "handwritingCheck": {
+    "title": "Handschrift auf einem Foto prüfen",
+    "intro": "Lade ein Foto lateinischer Handschrift hoch. Du bekommst fünf Eindrücke und eine Karte zum Teilen.",
+    "noteLines": "Fotografiere mindestens zwei volle Zeilen. Lege das Blatt flach und schneide keine Buchstaben ab.",
+    "noteClinical": "Das ist ein Eindruck aus einem Foto, keine klinische Beurteilung.",
+    "noteDiscard": "Das Foto geht an das Modell und wird danach verworfen. Es wird nicht gespeichert.",
+    "upload": "Foto hochladen",
+    "camera": "Foto aufnehmen",
+    "looking": "Dieses Foto wird angesehen",
+    "lookingHint": "Bleib auf dieser Seite. Es dauert etwa eine halbe Minute.",
+    "legibility": "Lesbarkeit",
+    "size": "Größe",
+    "baseline": "Grundlinie",
+    "spacing": "Abstand",
+    "slant": "Neigung",
+    "next": "Als Nächstes üben: {focus}",
+    "nextLink": "Handschrift lesbarer machen",
+    "unstable": "Nicht sicher zu beurteilen",
+    "blank": "—",
+    "retake": "Mach ein neues Foto. Dieses ist unscharf, abgeschnitten oder spiegelt stark.",
+    "unsupported": "Diese Fassung bewertet nur lateinische Schrift.",
+    "failed": "Diesmal hat es nicht geklappt. Du kannst es noch einmal versuchen.",
+    "quota": "Die Prüfungen für heute sind aufgebraucht. Komm morgen wieder.",
+    "left": "Heute noch {count}.",
+    "daily": "{count} Fotos am Tag. Am nächsten Tag beginnt es von vorn.",
+    "tooBig": "Dieses Foto ist zu groß. Versuch ein anderes.",
+    "badImage": "Diese Datei lässt sich nicht lesen. Versuch ein anderes Foto.",
+    "shareFailed": "Die Karte konnte nicht gespeichert werden. Versuch es noch einmal.",
+    "share": "Diese Karte teilen",
+    "cardMark": "voicetohandwriting.online",
+    "photoAlt": "Dein Handschriftfoto",
+    "cardLabel": "Bewertungskarte",
+    "summaryTitle": "Was dieses Foto zeigt",
+    "faqTitle": "Fragen",
+    "seoTitle": "Fünf Werte aus einem Foto",
+    "seoText": "Lesbarkeit ist das Ergebnis: ob sich die Wörter lesen lassen. Größe, Grundlinie, Abstand und Neigung sind die Gründe. Der niedrigste der vier ist der nächste Übungspunkt.\n\nDer Wert ist ein Eindruck von einem Standfoto. Er misst nicht Tempo, Druck oder Strichfolge und ist keine klinische Beurteilung. Chinesisch, Japanisch und Koreanisch werden mit diesem Maßstab nicht bewertet.",
+    "anchors": {
+      "legibility": {
+        "1": "Fast nichts ist lesbar.",
+        "2": "Nur wenige Wörter sind lesbar.",
+        "3": "Etwa die Hälfte muss man aus dem Zusammenhang raten.",
+        "4": "Einzelne Wörter brauchen eine Pause. Die Seite bleibt lesbar.",
+        "5": "Jedes Wort ist auf den ersten Blick lesbar."
+      },
+      "size": {
+        "1": "Die Höhen fallen in ein Band zusammen.",
+        "2": "Die Höhe springt oft.",
+        "3": "Die Höhe schwankt, die Buchstabenarten bleiben unterscheidbar.",
+        "4": "Die Höhe ist weitgehend ruhig, einzelne Buchstaben weichen ab.",
+        "5": "Die Höhe bleibt in der Zeile stabil."
+      },
+      "baseline": {
+        "1": "Die Zeile hat keinen stabilen Stand.",
+        "2": "Viele Wörter verlassen die Linie.",
+        "3": "Einige Wörter schweben oder sinken als Ganzes.",
+        "4": "Die meisten Wörter sitzen auf der Linie, ein paar driften.",
+        "5": "Die Füße der Buchstaben teilen sich eine Linie."
+      },
+      "spacing": {
+        "1": "Wortgrenzen sind unklar.",
+        "2": "Wortgrenzen sind oft unklar.",
+        "3": "Wörter kleben zusammen, oder Lücken wirken wie ein Satzende.",
+        "4": "Der Abstand ist weitgehend gleichmäßig, mit einigen engen oder weiten Stellen.",
+        "5": "Im Wort eng, zwischen den Wörtern offen."
+      },
+      "slant": {
+        "1": "Es gibt keine stabile Richtung.",
+        "2": "Die Neigung wechselt oft.",
+        "3": "Manche Wörter neigen sich nach rechts, manche nach links.",
+        "4": "Die Neigung ist weitgehend gleich, einzelne Buchstaben weichen ab.",
+        "5": "Die ganze Probe neigt sich gleich."
+      }
+    },
+    "again": "Anderes Foto hochladen"
   }
 }

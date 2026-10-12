@@ -14,7 +14,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 1. `docs/personas/README.md` — 角色总览、选题簇 → 角色的分配规则、诚信红线;
 2. 该文选定角色的角色卡 `docs/personas/<id>.md` — 文风必须项/禁止项/结构习惯,写作时严格遵守;
-3. `docs/seo-article-playbook.md` — 这篇要不要写、第一屏写什么、`updated` 何时前进。不替代内容规划里的关键词登记。
+3. `docs/seo-article-playbook.md` — 这篇要不要写、属于哪一个文章簇、第一屏写什么、`updated` 何时前进。不替代内容规划里的关键词登记。
 
 角色在 `src/content/authors.ts` 注册,文章在 `src/content/posts.ts` 登记时 `author` 字段必填;新文章接线四步与验收命令见 `docs/DEVELOPMENT-STANDARDS.md` §3.4–§3.5。改角色人设时 `authors.ts` 与角色卡两处必须同步。
 

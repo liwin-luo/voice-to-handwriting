@@ -129,6 +129,18 @@
     "architectLetter": {
       "title": "建筑字体练习纸：方正手写的字母和数字",
       "description": "用 Architects Daughter 打印建筑字体练习纸：大写字母和数字，实线、虚线、空白各一行。免费。"
+    },
+    "sentencePractice": {
+      "title": "单句练习纸",
+      "description": "写下你真正要写的一句,选大小、斜度、间距或印刷体,下载一张练习纸。一行范字、一行虚线、三行空白。免费,在浏览器里完成。"
+    },
+    "handwritingPad": {
+      "title": "在线手写板",
+      "description": "用手指、鼠标或触控笔在空白、横线或方格纸上写,下载 PNG。只有一屏,留在这台设备上。免费,无需注册。"
+    },
+    "handwritingCheck": {
+      "title": "给手写照片打分",
+      "description": "上传一张拉丁字母手写照片,得到好认、大小、贴线、间距、斜度五项观感分。照片不保存。"
     }
   },
   "nav": {
@@ -165,7 +177,10 @@
     "prewriting": "学前运笔",
     "cursiveJoins": "连笔字母对",
     "tattooStencil": "纹身转印稿",
-    "architectLetter": "建筑字体"
+    "architectLetter": "建筑字体",
+    "sentencePractice": "单句练习",
+    "handwritingPad": "手写板",
+    "handwritingCheck": "手写打分"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -879,5 +894,135 @@
     "downloadPdf": "下载 PDF",
     "downloadPng": "下载 PNG",
     "sheetLabel": "建筑字体练习纸"
+  },
+  "sentencePractice": {
+    "title": "单句练习纸",
+    "intro": "写下你真正要写的一句,这次只练一项,印一张纸。三行空白写完就停。",
+    "seoTitle": "一句、一项、一张纸",
+    "seoText": "把这周要交给别人看的那句话打进去,只练一项:大小、斜度、间距或印刷体。纸上是一行实心范字、一行虚线、三行空白。底部那行小字让你停笔。\n\n范字是字体,默认 Patrick Hand。打开花体范字后改用 Sacramento。选了印刷体就锁定 Patrick Hand。输入的文字不会上传,这页也不给纸上的字打分。",
+    "faqTitle": "问题",
+    "sentenceLabel": "句子",
+    "sample": "请先读这张便条。",
+    "focusLabel": "这次练什么",
+    "focusSize": "大小",
+    "focusSlant": "斜度",
+    "focusSpacing": "间距",
+    "focusPrint": "印刷体",
+    "script": "花体范字",
+    "leftHand": "左手",
+    "leftHandHint": "红边距改到右边,少让手抹到还没干的字。这不是唯一正确的左手姿势。",
+    "truncated": "只印了第一句。",
+    "tooLong": "请缩短这句话,让它放进一行。",
+    "spacingNeedsSpaces": "词距需要空格。这句话没有空格,所以纸上只留这句话和基线,不画竖线。",
+    "stopLine": "写完这三行就停。",
+    "downloadPdf": "下载 PDF",
+    "downloadPng": "下载 PNG",
+    "lineHeight": "行高",
+    "lineLarge": "大行",
+    "lineRegular": "普通",
+    "lineCompact": "小行",
+    "writeAgain": "再写一遍",
+    "lastSession": "上次:{focus},{date}",
+    "mic": "语音",
+    "listening": "正在听",
+    "errorDenied": "麦克风被挡住了。请改为打字。",
+    "errorNetwork": "语音识别需要网络。",
+    "errorStopped": "语音识别已停止。请改为打字。"
+  },
+  "handwritingPad": {
+    "title": "在线手写板",
+    "pen": "笔",
+    "eraser": "橡皮",
+    "undo": "撤销",
+    "clear": "清空",
+    "clearConfirm": "确定清空?",
+    "download": "下载 PNG",
+    "downloadFailed": "图片没能保存,再试一次。",
+    "ink": "墨色",
+    "width": "粗细",
+    "fine": "细",
+    "medium": "中",
+    "thick": "粗",
+    "paper": "纸底",
+    "help": "说明",
+    "helpLocal": "这张图只留在这台设备上,不会上传。",
+    "helpRefresh": "刷新后还在,直到清空。这一屏就是一张图。",
+    "persistFailed": "这一张刷新后不会留下。",
+    "sheetLabel": "手写纸"
+  },
+  "handwritingCheck": {
+    "title": "给手写照片打分",
+    "intro": "上传一张拉丁字母的手写照片。你会得到五项观感分,以及一张可以分享的卡片。",
+    "noteLines": "至少拍两行完整的字。纸放平,不要把字裁掉一半。",
+    "noteClinical": "这是看一张照片得到的观感分,不是临床评估。",
+    "noteDiscard": "照片会送给模型,看完即丢,不保存。",
+    "upload": "上传照片",
+    "camera": "拍照",
+    "looking": "正在看这张照片",
+    "lookingHint": "请留在这一页,大概要半分钟。",
+    "legibility": "好认",
+    "size": "大小",
+    "baseline": "贴线",
+    "spacing": "间距",
+    "slant": "斜度",
+    "next": "下次先练{focus}",
+    "nextLink": "怎样把字练清楚",
+    "unstable": "看不稳",
+    "blank": "—",
+    "retake": "请重拍。这张照片模糊、切掉了字,或反光严重。",
+    "unsupported": "这一版只评拉丁字母。",
+    "failed": "这次没看成,可以再试。",
+    "quota": "今天的次数用完了,明天再来。",
+    "left": "今天还剩 {count} 次。",
+    "daily": "每天可以测 {count} 次,第二天重新计算。",
+    "tooBig": "这张照片太大,换一张试试。",
+    "badImage": "这个文件读不了,换一张照片试试。",
+    "shareFailed": "卡片没有保存成功,可以再试。",
+    "share": "分享这张卡片",
+    "cardMark": "voicetohandwriting.online",
+    "photoAlt": "你的手写照片",
+    "cardLabel": "手写评分卡片",
+    "summaryTitle": "解析",
+    "faqTitle": "常见问题",
+    "seoTitle": "一张照片,五项分数",
+    "seoText": "好认是结果:别人能不能读出这些词。大小、贴线、间距、斜度是原因。四项里最低的那一项,就是下次要练的。\n\n分数来自一张静图。它不量速度、力度或笔顺,也不是临床评估。中文、日文、韩文不用这套标准打分。",
+    "anchors": {
+      "legibility": {
+        "1": "几乎读不出来。",
+        "2": "只能读出少数词。",
+        "3": "大约一半要靠前后文猜。",
+        "4": "个别词要停一下,全文能读完。",
+        "5": "每个词第一眼都能读出。"
+      },
+      "size": {
+        "1": "高低混成一条。",
+        "2": "高低经常跳动。",
+        "3": "忽大忽小,字母种类还分得开。",
+        "4": "高度大体稳定,个别字母偏离。",
+        "5": "同一行高度稳定。"
+      },
+      "baseline": {
+        "1": "一行里没有稳定落点。",
+        "2": "很多词离开了那条线。",
+        "3": "有几个词整词浮起或陷下。",
+        "4": "大多数词贴着线,有几个漂开。",
+        "5": "字脚落在同一条线上。"
+      },
+      "spacing": {
+        "1": "分不清词在哪里结束。",
+        "2": "经常分不清词在哪里结束。",
+        "3": "有的词黏在一起,或词间空得像断句。",
+        "4": "间距大体均匀,有几处偏紧或偏松。",
+        "5": "词内紧、词间开,前后差不多。"
+      },
+      "slant": {
+        "1": "没有稳定朝向。",
+        "2": "朝向经常变。",
+        "3": "有的词往右,有的词往左。",
+        "4": "朝向大体一致,个别字母偏离。",
+        "5": "整段朝向一致。"
+      }
+    },
+    "again": "再传一张"
   }
 }

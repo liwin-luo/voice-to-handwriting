@@ -129,6 +129,18 @@
     "architectLetter": {
       "title": "Hojas de letra de arquitecto, mano cuadrada",
       "description": "Imprime hojas de letra de arquitecto con Architects Daughter: mayúsculas y dígitos, línea modelo, punteada y en blanco. Gratis."
+    },
+    "sentencePractice": {
+      "title": "Práctica de una frase manuscrita",
+      "description": "Escribe una frase que necesites, elige tamaño, inclinación, espacio o imprenta, y descarga una hoja. Una línea de modelo, una de puntos y tres en blanco. Gratis, en el navegador."
+    },
+    "handwritingPad": {
+      "title": "Bloc de notas manuscrito en línea",
+      "description": "Escribe con el dedo, el ratón o un lápiz en una hoja en blanco, pautada o cuadriculada y descarga un PNG. Una pantalla, guardada en este dispositivo. Gratis, sin registro."
+    },
+    "handwritingCheck": {
+      "title": "Revisar la letra en una foto",
+      "description": "Sube una foto de letra latina y obtén una impresión de legibilidad, tamaño, línea base, espaciado e inclinación. La foto no se guarda."
     }
   },
   "nav": {
@@ -165,7 +177,10 @@
     "prewriting": "Trazos previos",
     "cursiveJoins": "Uniones cursivas",
     "tattooStencil": "Plantilla de tatuaje",
-    "architectLetter": "Letras de arquitecto"
+    "architectLetter": "Letras de arquitecto",
+    "sentencePractice": "Una frase",
+    "handwritingPad": "Bloc manuscrito",
+    "handwritingCheck": "Revisar letra"
   },
   "home": {
     "tagline": "Di un párrafo y obtén una página manuscrita — para tarjetas, cartas, diarios y redes sociales",
@@ -879,5 +894,135 @@
     "downloadPdf": "Descargar PDF",
     "downloadPng": "Descargar PNG",
     "sheetLabel": "Hoja de letra de arquitecto"
+  },
+  "sentencePractice": {
+    "title": "Práctica de una frase",
+    "intro": "Escribe una frase que de verdad tengas que escribir, practica una sola cosa e imprime una hoja. Para después de las tres líneas en blanco.",
+    "seoTitle": "Una frase, un problema, una hoja",
+    "seoText": "Escribe una frase que tengas que entregar esta semana y practica una sola cosa: tamaño, inclinación, espacio o letra de imprenta. La hoja tiene una línea de modelo, una de puntos y tres en blanco. El pie te dice que pares.\n\nEl modelo es una fuente, Patrick Hand, o Sacramento si activas el modelo de letra ligada. Imprenta deja el modelo en Patrick Hand. Lo que escribes no se sube, y la página no puntúa lo que pongas en el papel.",
+    "faqTitle": "Preguntas",
+    "sentenceLabel": "Frase",
+    "sample": "Lea esta nota, por favor.",
+    "focusLabel": "Qué practicar",
+    "focusSize": "Tamaño",
+    "focusSlant": "Inclinación",
+    "focusSpacing": "Espacio",
+    "focusPrint": "Imprenta",
+    "script": "Modelo de letra ligada",
+    "leftHand": "Mano izquierda",
+    "leftHandHint": "Pasa el margen rojo a la derecha para que la mano manche menos la tinta fresca. No es la única postura correcta para zurdos.",
+    "truncated": "Solo se imprime la primera frase.",
+    "tooLong": "Acorta la frase para que quepa en una línea.",
+    "spacingNeedsSpaces": "El espacio entre palabras necesita un espacio. Esta frase no tiene, así que la hoja deja la frase y la línea base, sin marcas.",
+    "stopLine": "Para después de estas tres líneas.",
+    "downloadPdf": "Descargar PDF",
+    "downloadPng": "Descargar PNG",
+    "lineHeight": "Altura de línea",
+    "lineLarge": "Líneas altas",
+    "lineRegular": "Líneas normales",
+    "lineCompact": "Líneas bajas",
+    "writeAgain": "Escribirla otra vez",
+    "lastSession": "La última vez: {focus}, {date}",
+    "mic": "Hablar",
+    "listening": "Escuchando",
+    "errorDenied": "El micrófono está bloqueado. Escribe la frase.",
+    "errorNetwork": "El reconocimiento de voz necesita red.",
+    "errorStopped": "El reconocimiento de voz se detuvo. Escribe la frase."
+  },
+  "handwritingPad": {
+    "title": "Bloc de notas manuscrito en línea",
+    "pen": "Lápiz",
+    "eraser": "Goma",
+    "undo": "Deshacer",
+    "clear": "Borrar",
+    "clearConfirm": "¿Borrar la hoja?",
+    "download": "Descargar PNG",
+    "downloadFailed": "No se pudo guardar la imagen. Inténtalo de nuevo.",
+    "ink": "Tinta",
+    "width": "Grosor",
+    "fine": "Fino",
+    "medium": "Medio",
+    "thick": "Grueso",
+    "paper": "Papel",
+    "help": "Nota",
+    "helpLocal": "Esta imagen se queda en este dispositivo. No se sube.",
+    "helpRefresh": "Sigue aquí después de recargar, hasta que la borres. Esta pantalla es una imagen.",
+    "persistFailed": "Esta hoja no sobrevivirá a una recarga.",
+    "sheetLabel": "Hoja de escritura"
+  },
+  "handwritingCheck": {
+    "title": "Revisar la letra en una foto",
+    "intro": "Sube una foto de letra latina. Recibes cinco impresiones y una tarjeta para compartir.",
+    "noteLines": "Fotografía al menos dos líneas completas. Deja el papel plano y no cortes las letras.",
+    "noteClinical": "Es una impresión a partir de una foto, no una evaluación clínica.",
+    "noteDiscard": "La foto se envía al modelo y luego se descarta. No se guarda.",
+    "upload": "Subir una foto",
+    "camera": "Hacer una foto",
+    "looking": "Mirando esta foto",
+    "lookingHint": "Quédate en esta página. Suele tardar medio minuto.",
+    "legibility": "Legibilidad",
+    "size": "Tamaño",
+    "baseline": "Línea base",
+    "spacing": "Espaciado",
+    "slant": "Inclinación",
+    "next": "Practica esto después: {focus}",
+    "nextLink": "Cómo mejorar la letra",
+    "unstable": "No se puede juzgar",
+    "blank": "—",
+    "retake": "Haz otra foto. Esta está borrosa, cortada o con reflejos.",
+    "unsupported": "Esta versión solo puntúa letra latina.",
+    "failed": "Esta vez no se pudo ver. Puedes intentarlo de nuevo.",
+    "quota": "Las revisiones de hoy se agotaron. Vuelve mañana.",
+    "left": "Hoy quedan {count}.",
+    "daily": "Puedes probar {count} fotos al día. Al día siguiente vuelve a empezar.",
+    "tooBig": "Esta foto es demasiado grande. Prueba con otra.",
+    "badImage": "Este archivo no se puede leer. Prueba con otra foto.",
+    "shareFailed": "No se pudo guardar la tarjeta. Inténtalo de nuevo.",
+    "share": "Compartir esta tarjeta",
+    "cardMark": "voicetohandwriting.online",
+    "photoAlt": "Tu foto de letra",
+    "cardLabel": "Tarjeta de puntuación",
+    "summaryTitle": "Lo que muestra esta foto",
+    "faqTitle": "Preguntas",
+    "seoTitle": "Cinco notas de una foto",
+    "seoText": "La legibilidad es el resultado: si se pueden leer las palabras. Tamaño, línea base, espaciado e inclinación son las causas. La más baja de esas cuatro es la que conviene practicar.\n\nLa nota es una impresión de una foto fija. No mide velocidad, presión ni orden de los trazos, y no es una evaluación clínica. El chino, el japonés y el coreano no se puntúan con esta rúbrica.",
+    "anchors": {
+      "legibility": {
+        "1": "Casi no se lee nada.",
+        "2": "Solo se leen unas pocas palabras.",
+        "3": "Aproximadamente la mitad hay que adivinarla por el contexto.",
+        "4": "Algunas palabras piden una pausa. La página se puede leer.",
+        "5": "Cada palabra se lee a la primera."
+      },
+      "size": {
+        "1": "Las alturas se funden en una banda.",
+        "2": "La altura salta a menudo.",
+        "3": "La altura varía, pero los tipos de letra aún se distinguen.",
+        "4": "La altura es bastante estable, con algunas letras fuera.",
+        "5": "La altura se mantiene estable en la línea."
+      },
+      "baseline": {
+        "1": "La línea no tiene un apoyo estable.",
+        "2": "Muchas palabras se salen de la línea.",
+        "3": "Algunas palabras flotan o se hunden enteras.",
+        "4": "La mayoría se apoya en la línea y unas pocas se desvían.",
+        "5": "Los pies de las letras comparten una línea."
+      },
+      "spacing": {
+        "1": "No se ve dónde acaba cada palabra.",
+        "2": "A menudo no se ve dónde acaba cada palabra.",
+        "3": "Algunas palabras se pegan, o los huecos parecen un corte de frase.",
+        "4": "El espacio es bastante regular, con algunos puntos prietos o anchos.",
+        "5": "Dentro de la palabra va junto, y entre palabras va separado."
+      },
+      "slant": {
+        "1": "No hay una dirección estable.",
+        "2": "La inclinación cambia a menudo.",
+        "3": "Unas palabras caen a la derecha y otras a la izquierda.",
+        "4": "La inclinación es bastante constante, con algunas letras fuera.",
+        "5": "Toda la muestra se inclina igual."
+      }
+    },
+    "again": "Subir otra foto"
   }
 }

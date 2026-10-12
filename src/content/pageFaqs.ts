@@ -693,3 +693,233 @@ export const ARCHITECT_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /handwriting-sentence-practice。英文回链到 practice-one-handwriting-problem;该文只有英文,其他语言不链过去。 */
+export const SENTENCE_PRACTICE_FAQS: FaqItem[] = [
+  {
+    id: "sp-score",
+    i18n: {
+      en: {
+        q: "Will this sheet score my handwriting?",
+        a: "No. Pick one thing, print the page, and write it yourself. The site never sees the letters you put on the paper.",
+        link: { href: "/blog/practice-one-handwriting-problem", label: "How to pick one problem" },
+      },
+      zh: {
+        q: "这张纸会给我的字打分吗?",
+        a: "不会。选一项,印出来自己写。你用笔写在纸上的字,站点看不到。",
+      },
+      ja: {
+        q: "この紙は字を採点しますか?",
+        a: "しません。一つ選んで印刷し、自分で書きます。紙に書いた字をサイトが見ることはありません。",
+      },
+      ko: {
+        q: "이 종이가 글씨를 채점하나요?",
+        a: "하지 않습니다. 하나를 고르고, 인쇄해서 직접 쓰세요. 종이에 쓴 글씨를 사이트가 보지 않습니다.",
+      },
+      es: {
+        q: "¿Esta hoja puntúa mi letra?",
+        a: "No. Elige una cosa, imprímela y escríbela tú. El sitio no ve las letras que pones en el papel.",
+      },
+      de: {
+        q: "Bewertet dieses Blatt meine Handschrift?",
+        a: "Nein. Eine Sache wählen, ausdrucken, selbst schreiben. Die Seite sieht nicht, was du mit dem Stift aufs Papier setzt.",
+      },
+      fr: {
+        q: "Cette feuille note-t-elle mon écriture ?",
+        a: "Non. Choisissez une chose, imprimez, écrivez vous-même. Le site ne voit pas les lettres que vous posez sur le papier.",
+      },
+      pt: {
+        q: "Esta folha dá nota à minha letra?",
+        a: "Não. Escolha uma coisa, imprima e escreva você. O site não vê as letras que você põe no papel.",
+      },
+    },
+  },
+  {
+    id: "sp-three",
+    i18n: {
+      en: {
+        q: "Why only three lines?",
+        a: "A long session makes the hand clamp down. Write the three blank lines, then stop.",
+      },
+      zh: {
+        q: "为什么只有三行?",
+        a: "写久了手会握紧。这三行空白写完就停。",
+      },
+      ja: {
+        q: "なぜ三行だけですか?",
+        a: "長く書くと手が握りしめます。空白の三行を書いたら止めてください。",
+      },
+      ko: {
+        q: "왜 세 줄뿐인가요?",
+        a: "오래 쓰면 손에 힘이 들어갑니다. 빈 줄 세 줄을 쓰고 멈추세요.",
+      },
+      es: {
+        q: "¿Por qué solo tres líneas?",
+        a: "Si escribes mucho rato, la mano se cierra. Escribe las tres líneas en blanco y para.",
+      },
+      de: {
+        q: "Warum nur drei Zeilen?",
+        a: "Wer lange schreibt, krampft die Hand. Die drei leeren Zeilen schreiben, dann aufhören.",
+      },
+      fr: {
+        q: "Pourquoi seulement trois lignes ?",
+        a: "À force d'écrire, la main se crispe. Écrivez les trois lignes vides, puis arrêtez.",
+      },
+      pt: {
+        q: "Por que só três linhas?",
+        a: "Escrever por muito tempo faz a mão apertar. Escreva as três linhas em branco e pare.",
+      },
+    },
+  },
+  {
+    id: "sp-font",
+    i18n: {
+      en: {
+        q: "Is the model my handwriting?",
+        a: "No. It is a font: Patrick Hand, or Sacramento if you turn the script model on. Print locks the model to Patrick Hand.",
+      },
+      zh: {
+        q: "范字是我的笔迹吗?",
+        a: "不是,是字体。默认 Patrick Hand。打开花体范字后改用 Sacramento。选了印刷体就锁定 Patrick Hand。",
+      },
+      ja: {
+        q: "見本は自分の筆跡ですか?",
+        a: "違います。フォントです。初期は Patrick Hand。スクリプト見本を開くと Sacramento になります。活字体を選ぶと Patrick Hand に固定されます。",
+      },
+      ko: {
+        q: "본보기가 내 필체인가요?",
+        a: "아닙니다. 글꼴입니다. 기본은 Patrick Hand입니다. 필기체 본보기를 켜면 Sacramento입니다. 인쇄체를 고르면 Patrick Hand로 고정됩니다.",
+      },
+      es: {
+        q: "¿El modelo es mi letra?",
+        a: "No. Es una fuente: Patrick Hand, o Sacramento si activas el modelo de letra ligada. Imprenta deja el modelo en Patrick Hand.",
+      },
+      de: {
+        q: "Ist die Vorlage meine Handschrift?",
+        a: "Nein. Es ist eine Schrift: Patrick Hand, oder Sacramento, wenn du die Schreibschrift-Vorlage einschaltest. Druckschrift sperrt die Vorlage auf Patrick Hand.",
+      },
+      fr: {
+        q: "Le modèle est-il mon écriture ?",
+        a: "Non. C'est une police : Patrick Hand, ou Sacramento si vous activez le modèle scripte. L'imprimerie verrouille le modèle sur Patrick Hand.",
+      },
+      pt: {
+        q: "O modelo é a minha letra?",
+        a: "Não. É uma fonte: Patrick Hand, ou Sacramento se você ligar o modelo de letra cursiva. Imprensa trava o modelo em Patrick Hand.",
+      },
+    },
+  },
+];
+
+export const HANDWRITING_CHECK_FAQS: FaqItem[] = [
+  {
+    id: "hc-clinical",
+    i18n: {
+      en: {
+        q: "Is this a clinical assessment?",
+        a: "It is an impression from one photo. It is not a clinical grade.",
+      },
+      zh: {
+        q: "这是临床评估吗?",
+        a: "这是看一张照片得到的观感分,不是临床评估。",
+      },
+      ja: {
+        q: "これは臨床的な評価ですか?",
+        a: "写真一枚からの印象です。臨床的な評価ではありません。",
+      },
+      ko: {
+        q: "임상 평가인가요?",
+        a: "사진 한 장으로 본 인상 점수입니다. 임상 평가가 아닙니다.",
+      },
+      es: {
+        q: "¿Es una evaluación clínica?",
+        a: "Es una impresión a partir de una foto. No es una nota clínica.",
+      },
+      de: {
+        q: "Ist das eine klinische Beurteilung?",
+        a: "Es ist ein Eindruck aus einem Foto. Es ist keine klinische Bewertung.",
+      },
+      fr: {
+        q: "Est-ce une évaluation clinique ?",
+        a: "C'est une impression à partir d'une photo. Ce n'est pas une évaluation clinique.",
+      },
+      pt: {
+        q: "Isto é uma avaliação clínica?",
+        a: "É uma impressão a partir de uma foto. Não é uma nota clínica.",
+      },
+    },
+  },
+  {
+    id: "hc-keep",
+    i18n: {
+      en: {
+        q: "Do you keep the photo?",
+        a: "No. The model looks, then the photo is discarded. The card is made in your browser.",
+      },
+      zh: {
+        q: "照片会留下吗?",
+        a: "不会。模型看完即丢。卡片在你自己的浏览器里生成。",
+      },
+      ja: {
+        q: "写真は残りますか?",
+        a: "残りません。モデルが見たあと捨てます。カードはお使いのブラウザで作ります。",
+      },
+      ko: {
+        q: "사진을 보관하나요?",
+        a: "보관하지 않습니다. 모델이 본 뒤 버립니다. 카드는 브라우저에서 만듭니다.",
+      },
+      es: {
+        q: "¿Guardáis la foto?",
+        a: "No. El modelo la mira y se descarta. La tarjeta se hace en tu navegador.",
+      },
+      de: {
+        q: "Bleibt das Foto gespeichert?",
+        a: "Nein. Das Modell sieht es, danach wird es verworfen. Die Karte entsteht in deinem Browser.",
+      },
+      fr: {
+        q: "La photo est-elle conservée ?",
+        a: "Non. Le modèle la regarde, puis elle est écartée. La carte est faite dans votre navigateur.",
+      },
+      pt: {
+        q: "A foto fica guardada?",
+        a: "Não. O modelo olha e a foto é descartada. O cartão é feito no seu navegador.",
+      },
+    },
+  },
+  {
+    id: "hc-card",
+    i18n: {
+      en: {
+        q: "Why is there sometimes no card?",
+        a: "The photo needs another shot, or the writing is not Latin.",
+      },
+      zh: {
+        q: "为什么有时没有卡片?",
+        a: "照片需要重拍,或不是拉丁字母。",
+      },
+      ja: {
+        q: "カードが出ないときはなぜですか?",
+        a: "撮り直しが必要か、ラテン文字ではないときです。",
+      },
+      ko: {
+        q: "카드가 없을 때가 있나요?",
+        a: "사진을 다시 찍어야 하거나, 라틴 글자가 아닐 때입니다.",
+      },
+      es: {
+        q: "¿Por qué a veces no hay tarjeta?",
+        a: "Hay que repetir la foto, o la letra no es latina.",
+      },
+      de: {
+        q: "Warum fehlt manchmal die Karte?",
+        a: "Das Foto muss neu aufgenommen werden, oder die Schrift ist nicht lateinisch.",
+      },
+      fr: {
+        q: "Pourquoi n'y a-t-il parfois pas de carte ?",
+        a: "La photo est à refaire, ou l'écriture n'est pas latine.",
+      },
+      pt: {
+        q: "Por que às vezes não há cartão?",
+        a: "A foto precisa ser refeita, ou a letra não é latina.",
+      },
+    },
+  },
+];

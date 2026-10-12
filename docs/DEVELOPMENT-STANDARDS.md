@@ -2,7 +2,7 @@
 
 > 所有新增页面、文章、组件、功能必须满足本文。配套 [ARCHITECTURE.md](./ARCHITECTURE.md) 讲"怎么接线",本文讲"什么算合格"。
 > 覆盖范围:多语言(§1)· SEO(§2)· 文章闭环(§3)· 编码(§4);§5 为自动化校验,§6 为存量整改。
-> 最后更新:2026-10-08。发布时盘点出的现存偏差见 §6,限期整改。
+> 最后更新:2026-10-10(§3 增文章簇)。发布时盘点出的现存偏差见 §6,限期整改。
 
 关键词约定(参考 RFC 2119):
 
@@ -89,6 +89,8 @@
 
 站内 SEO 策略:**工具页承接搜索转化,文章页承接长尾流量并导流回工具**。因此文章不是可选项,是工具页的配套基建。
 
+每篇新文章**必须**先归入一个文章簇再动笔:一个枢纽(工具页或支柱文)+ 各自占一种意图的成员文。簇名、枢纽、与同簇文章的意图差写进 `us-seo-content-plan.md`;`related.ts` 该条注释用同一个簇名,`posts` 指向同簇里读者的下一步。定义、和选题簇/关键词簇的分工、动笔前三问见 [seo-article-playbook.md](./seo-article-playbook.md) §2,登记四行见该文 §6。与同簇已有文章主词和意图都相同的,**禁止**新开 URL。
+
 ### 3.1 覆盖:每个工具必须有配套文章
 
 - 新工具页上线时,**必须**同时(最迟一个内容周期内)发布 ≥1 篇瞄准该工具关键词的支柱文章(en 起步),并在 `docs/us-seo-content-plan.md` 登记该集群的后续选题。
@@ -111,7 +113,7 @@
 
 1. **尾部 RelatedLinks 区块**:`src/content/related.ts` 的 `RELATED[slug]` **必须**登记:
    - `tools`:≥1 个(通常是文章教的那个工具,补 `TOOL_LABEL_KEY` 中已有的路径才能渲染本地化名称);
-   - `posts`:2–3 篇同集群文章。
+   - `posts`:2–3 篇同一文章簇内、读者下一步会打开的文章(playbook §2)。跨簇只允许出现在正文,且是做完本文后的真实下一步,登记时写明原因。尾部相关文不用别的簇凑数。
    没登记 = 文章尾部没有内链区块 = 不合格(自动校验拦截,§5)。相关文章链接只显示当前语言有正文的语言(`relatedPostAvailable`),不会 404。
 2. **正文上下文内链**:正文至少 1 处自然引导到工具(如 `[cursive writing generator](/cursive)`),写在教学步骤里而不是文末凑数。链接格式遵守 §1.1(站内路径不带前缀,组件层自动本地化)。
 
@@ -122,7 +124,7 @@
 
 ### 3.4 新文章接线四步(缺一不可)
 
-1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);动笔前先按选题簇选定写作角色,通读 `docs/personas/` 对应角色卡,按其文风规则写作;并读 `docs/seo-article-playbook.md`(这篇是否该存在、第一屏、`updated` 何时前进);
+1. `src/content/blog/<slug>.<locale>.mdx` 写正文(en 必有,恰好一个 H1);动笔前先定文章簇(playbook §2),再按选题簇选定写作角色,通读 `docs/personas/` 对应角色卡,按其文风规则写作;并读 `docs/seo-article-playbook.md`(这篇是否该存在、第一屏、`updated` 何时前进);
 2. `registry.ts` 注册组件;
 3. `posts.ts` 登记元数据:`slug / author / date / updated / image` + i18n title/description;`author` **必填**(TS 类型限定只能取 `src/content/authors.ts` 已注册的角色,角色体系见 `docs/personas/README.md`);题图可选,有则放 `public/blog/`(约 1440×900 横图,**必须**提交),没有时列表卡片用标题占位;
 4. `related.ts` 登记 `RELATED[slug]`(§3.3)。
@@ -134,6 +136,7 @@
 - [ ] `npm test` 通过(RELATED 覆盖、注册表一致性、H1 校验)
 - [ ] 任一有正文的语言打开文章:尾部有工具 + 相关文章区块,工具链接带正确语言前缀且可达
 - [ ] 该语言 URL 出现在 `/sitemap.xml`;未翻译语言确实 404 且不在 sitemap
+- [ ] 内容规划已登记文章簇(簇名、枢纽、意图差),`related.ts` 注释使用同一簇名,尾部相关文是该簇内的下一步
 - [ ] 内容级审核通过:按 [seo-audit-standards.md](./seo-audit-standards.md) 五维打分 ≥85 且红线清零(E-E-A-T、长尾词命中、Bing、AI 痕迹、多语言质量)
 
 ## 4. 编码规范
@@ -237,3 +240,4 @@
 4. ✅ `/word-work`、`/writing-practice`、`/name-coloring` 配套文章(2026-10-10):`spelling-list-word-work`、`one-character-in-the-grid`、`color-a-name-before-tracing`,en,工具页英文与中文 FAQ 回链。日文及其他语言等英文有排名后再补正文,不从那些语言链到英文教程。
 5. 工具页无文章回链入口(§3.3 应当级)。
 6. 4 处 `as any`(`src/lib/transcribe.ts` ×2、`src/hooks/useSpeechRecognition.ts` ×2,Web Speech API / WebGPU 缺 lib 类型)→ 按 §4.4 改为最小接口声明或 `unknown` 收窄。
+7. 存量文章的 `RELATED.posts` 有跨文章簇尾链(例如 cursive 教程链到成人改进文)。新文按 playbook §2 只链同簇下一步;改到某篇的 RELATED 时顺手收回,不单开一轮全站重链。

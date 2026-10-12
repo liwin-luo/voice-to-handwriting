@@ -55,6 +55,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
     labelKey: "groupWrite",
     tools: [
       { href: "/", navKey: "tool", brand: true, nav: true },
+      { href: "/handwriting-pad", navKey: "handwritingPad", metaKey: "handwritingPad" },
       { href: "/cursive", navKey: "cursive", metaKey: "cursive", nav: true },
       { href: "/cursive-text-generator", navKey: "cursiveText", metaKey: "cursiveText", nav: true },
       { href: "/cursive-font-generator", navKey: "cursiveFont", metaKey: "cursiveFont" },
@@ -74,6 +75,8 @@ export const TOOL_GROUPS: ToolGroup[] = [
       { href: "/cursive-alphabet", navKey: "cursiveAlphabet", metaKey: "cursiveAlphabet", enOnly: true },
       { href: "/cursive-worksheets", navKey: "cursiveWorks", metaKey: "cursiveWorks" },
       { href: "/signature-practice", navKey: "signaturePractice", metaKey: "signaturePractice" },
+      { href: "/handwriting-sentence-practice", navKey: "sentencePractice", metaKey: "sentencePractice" },
+      { href: "/handwriting-check", navKey: "handwritingCheck", metaKey: "handwritingCheck" },
       { href: "/number-tracing", navKey: "numberTracing", metaKey: "numberTracing" },
       { href: "/prewriting-strokes", navKey: "prewriting", metaKey: "prewriting" },
       { href: "/cursive-letter-joins", navKey: "cursiveJoins", metaKey: "cursiveJoins" },

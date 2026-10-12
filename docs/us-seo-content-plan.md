@@ -2,7 +2,7 @@
 
 > 配套交付:10 篇英文 SEO 文章已落地 `src/content/blog/*.en.mdx`(见文末映射表)。
 > 关键词量级为经验估算(高≈1万+/月,中≈1k–1万/月,低<1k/月),以相对热度做优先级判断,发布后用 GSC 实测校准。
-> 写新文章前另读 [seo-article-playbook.md](./seo-article-playbook.md):要不要写、第一屏放什么、`updated` 何时前进。登记选题时按该文 §5 补意图、下一跳、复核月。
+> 写新文章前另读 [seo-article-playbook.md](./seo-article-playbook.md):要不要写、属于哪一个文章簇、第一屏放什么、`updated` 何时前进。登记选题时按该文 §6 补文章簇、意图、下一跳、复核月。
 
 ## 一、为什么美国市场对这款产品是"对口的"
 
@@ -300,3 +300,34 @@
 - **拼写**:周一只贴四个词。生成器每 8 个词翻一页,但 US Letter 上第五个词的三条书写线画出纸外。Dolch pre-primer 是 40 词,按钮会整表贴入,文中写明要删到四个。缺字母对 3 字及以上藏中间字母,1–2 字藏首字母。和 sight-word 描红、copywork 整句分开。
 - **涂色**:空输入会画出占位符里的 Emma,文中要求先打孩子的名字。3–4 岁把描边往 22 推,5–6 岁下一晚转 `/name-tracing`。不吃 name coloring page generator。
 - **格子**:只打一个字。默认格宽 84 时是 8×12,描红模式第一行深色。空白模式会去掉中文的十字线,所以独立书写用纸条盖住深色行,不改成空白格。日文、韩文是原稿纸风格,不是教材原寸。不吃 writing practice sheet generator。法国 graphisme 不在这篇里。
+
+## 二十、单句练习纸(2026-10-12,已落地)
+
+设计全文:`docs/plans/2026-10-12-handwriting-sentence-practice-design.md`。
+
+- **文章簇**:成人单句练习。枢纽 `/handwriting-sentence-practice`。成员:本工具(印一张自己的句子)、`practice-one-handwriting-problem`(一次只改一项,en,Wes Morales)、`how-to-improve-handwriting-adults`(成人练字总览,已有,主词不改,正文补链到枢纽)。
+- **意图**:工具页承接 handwriting sentence practice / sentence handwriting practice sheet。不承接 improve handwriting adults、name tracing generator、cursive worksheet generator、daily cursive handwriting practice。
+- **形态**:一句成人的话,四选一(大小、斜度、间距、印刷体),五行纸(实心、虚线、三行空白),纸上写明三行就停。下载后本地记住这一句,下次可只印三行空白再写。左手只翻边距;选了斜度时斜线反向。8 语言。`/tools` 练习纸分组,页头下拉不单列。
+- **下一跳**:新文第一屏打开本工具;总览文正文加一处到本工具。工具英文 FAQ 回链新文。新文只有英文,其他语言的 FAQ 不链到这篇,避免 404。
+- **文章**:`practice-one-handwriting-problem`,en,Wes Morales。主词 how to fix one handwriting problem。教程,不抢工具主词,也不抢总览文的 improve handwriting adults。体验资产是印出来的五行纸。复核:不复核(练法不随年份变)。
+- **红线**:不上传照片、不打分、不诊断书写障碍、不把范字说成用户本人的笔迹、不改语音工作台。字迹转字体仍按流量天花板路线图的门槛,不在本页做。
+
+## 二十一、手写照片评分(2026-10-12,已落地)
+
+设计全文:`docs/plans/2026-10-12-handwriting-check-design.md`。
+
+- **落地页**:`/handwriting-check`,8 语言。收在 `/tools` 练习纸分组,页头下拉不单列。
+- **意图**:上传一张拉丁字母手写照片,看五项观感分(好认、大小、贴线、间距、斜度),并得到一张可分享的卡片。不承接 improve handwriting adults(那是 `how-to-improve-handwriting-adults`)、不承接单句练习纸、不承接笔迹性格测验。
+- **形态**:照片经服务端交给智谱 `glm-5.3-flash`,看完即丢。能给出观感分时,浏览器把已有分数接在原图下方,导出 4:5 PNG,缺项留空。最低的原因项链到成人练字总览。每天每 IP 3 次,第二天重新计算。
+- **红线**:不打总分,不诊断,不评性格、力度、速度、笔顺。中日韩手写不套这五项。照片和卡片都不入库。
+
+## 二十一、在线手写板(2026-10-12,工具已落地,文章未写)
+
+设计全文:`docs/plans/2026-10-12-handwriting-pad-design.md`。
+
+- **文章簇**:在线手写笔记。枢纽 `/handwriting-pad`。成员:本工具(在屏幕上写完带走一张图)、`save-a-handwritten-note`(未写,en,Theo Lindgren)。簇里目前只有工具和这一篇计划中的教程,第二篇邻居出来之前不再加近义文。
+- **意图**:工具页承接 online handwriting notepad / handwriting notepad online / digital handwriting pad。不承接 signature maker、signature generator、online signature pad(那些要的是透明底签名图)、signature practice sheet(`/signature-practice`)、语音转手写字体(`/`)。
+- **形态**:一屏纸。手指、鼠标或触控笔。笔、橡皮、撤销、清空、下载 PNG。墨色用站内 7 色,粗细三档,纸底空白 / 横线 / 方格。笔迹存在本机 `vth-pad`。8 语言。`/tools`「写一张」一组,页头下拉不单列。`/faq` 有一条指向本页。
+- **下一跳**:文章上线后第一屏打开本工具。想印空白横线纸的人去 `/printable-paper`(跨簇,因为下一步是打印纸,不是再写一屏)。
+- **文章**:`save-a-handwritten-note`,en,Theo Lindgren。主词 how to save a handwritten note from your phone。教程,不抢工具主词。体验资产是这一屏导出的 PNG 和「刷新后还在」这件事。复核:不复核(画布写法和年份无关)。动笔前读 `docs/personas/theo-lindgren.md`。
+- **红线**:不识别笔迹、不打分、不上传、不把笔迹做成字体、不改语音工作台。

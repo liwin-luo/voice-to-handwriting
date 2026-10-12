@@ -129,6 +129,18 @@
     "architectLetter": {
       "title": "Architect Lettering Practice Sheets for a Squared Hand",
       "description": "Print architect lettering practice sheets in Architects Daughter: capitals and digits, a model line, a dotted line, then a blank line. Free."
+    },
+    "sentencePractice": {
+      "title": "Handwriting Sentence Practice",
+      "description": "Type one sentence you need to write, pick size, slant, spacing, or print, and download a practice sheet. A model line, a dotted line, three blank lines. Free, in your browser."
+    },
+    "handwritingPad": {
+      "title": "Online Handwriting Notepad",
+      "description": "Write with a finger, mouse, or stylus on a blank, ruled, or grid page and download a PNG. One screen, kept on this device. Free, no signup."
+    },
+    "handwritingCheck": {
+      "title": "Check Handwriting From a Photo",
+      "description": "Upload a photo of Latin handwriting and get an impression score for legibility, size, baseline, spacing, and slant. The photo is not saved."
     }
   },
   "nav": {
@@ -165,7 +177,10 @@
     "prewriting": "Prewriting Strokes",
     "cursiveJoins": "Cursive Joins",
     "tattooStencil": "Tattoo Stencil",
-    "architectLetter": "Architect Lettering"
+    "architectLetter": "Architect Lettering",
+    "sentencePractice": "Sentence Practice",
+    "handwritingPad": "Handwriting Notepad",
+    "handwritingCheck": "Handwriting Check"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -879,5 +894,135 @@
     "downloadPdf": "Download PDF",
     "downloadPng": "Download PNG",
     "sheetLabel": "Architect lettering practice sheet"
+  },
+  "sentencePractice": {
+    "title": "Handwriting Sentence Practice",
+    "intro": "Write one sentence you actually need, practice one thing, and print a single sheet. Stop after the three blank lines.",
+    "seoTitle": "One sentence, one problem, one sheet",
+    "seoText": "Type a sentence you have to write — a note to a colleague, a line for next week's meeting — and practice one thing on it: size, slant, spacing, or plain print. The sheet is a solid model line, a dotted line, and three blank lines. The footer tells you to stop.\n\nThe model is a font, Patrick Hand, or Sacramento if you turn the script model on. Print locks the model to Patrick Hand. Nothing you type is uploaded, and the page does not score what you write on the paper.",
+    "faqTitle": "Questions",
+    "sentenceLabel": "Sentence",
+    "sample": "Please read this note.",
+    "focusLabel": "Practice one thing",
+    "focusSize": "Size",
+    "focusSlant": "Slant",
+    "focusSpacing": "Spacing",
+    "focusPrint": "Print",
+    "script": "Script model",
+    "leftHand": "Left hand",
+    "leftHandHint": "Moves the red margin to the right so your hand is less likely to smear wet ink. This is not the only correct left-hand posture.",
+    "truncated": "Only the first sentence is printed.",
+    "tooLong": "Shorten this sentence so it fits on one line.",
+    "spacingNeedsSpaces": "Word spacing needs a space. This sentence has none, so the sheet keeps the line and the baseline, with no ticks.",
+    "stopLine": "Stop after these three lines.",
+    "downloadPdf": "Download PDF",
+    "downloadPng": "Download PNG",
+    "lineHeight": "Line height",
+    "lineLarge": "Large lines",
+    "lineRegular": "Regular lines",
+    "lineCompact": "Compact lines",
+    "writeAgain": "Write it again",
+    "lastSession": "Last time: {focus}, {date}",
+    "mic": "Speak",
+    "listening": "Listening",
+    "errorDenied": "The microphone is blocked. Type the sentence instead.",
+    "errorNetwork": "Speech recognition needs a network connection.",
+    "errorStopped": "Speech recognition stopped. Type the sentence instead."
+  },
+  "handwritingPad": {
+    "title": "Online Handwriting Notepad",
+    "pen": "Pen",
+    "eraser": "Eraser",
+    "undo": "Undo",
+    "clear": "Clear",
+    "clearConfirm": "Clear this sheet?",
+    "download": "Download PNG",
+    "downloadFailed": "Could not save the image. Try again.",
+    "ink": "Ink",
+    "width": "Width",
+    "fine": "Fine",
+    "medium": "Medium",
+    "thick": "Thick",
+    "paper": "Paper",
+    "help": "About",
+    "helpLocal": "This image stays on this device. It is not uploaded.",
+    "helpRefresh": "It is still here after a refresh, until you clear it. This screen is one image.",
+    "persistFailed": "This sheet will not survive a refresh.",
+    "sheetLabel": "Handwriting sheet"
+  },
+  "handwritingCheck": {
+    "title": "Check Handwriting From a Photo",
+    "intro": "Upload a photo of Latin handwriting. You get five impression scores, and a card you can share.",
+    "noteLines": "Photograph at least two full lines. Keep the page flat, and do not crop through the letters.",
+    "noteClinical": "This is an impression from a photo, not a clinical assessment.",
+    "noteDiscard": "The photo is sent to the model and then discarded. It is not saved.",
+    "upload": "Upload a photo",
+    "camera": "Take a photo",
+    "looking": "Looking at this photo",
+    "lookingHint": "Stay on this page. This usually takes about half a minute.",
+    "legibility": "Legibility",
+    "size": "Size",
+    "baseline": "Baseline",
+    "spacing": "Spacing",
+    "slant": "Slant",
+    "next": "Practice this next: {focus}",
+    "nextLink": "How to improve your handwriting",
+    "unstable": "Not enough to judge",
+    "blank": "—",
+    "retake": "Take the photo again. It is blurry, cropped, or glared.",
+    "unsupported": "This version scores Latin handwriting only.",
+    "failed": "This look did not finish. You can try again.",
+    "quota": "Today's checks are used up. Come back tomorrow.",
+    "left": "{count} left today.",
+    "daily": "You can check {count} photos a day. It resets the next day.",
+    "tooBig": "This photo is too large. Try another.",
+    "badImage": "This file is not a photo we can read. Try another.",
+    "shareFailed": "The card could not be saved. Try again.",
+    "share": "Share this card",
+    "cardMark": "voicetohandwriting.online",
+    "photoAlt": "Your handwriting photo",
+    "cardLabel": "Handwriting score card",
+    "summaryTitle": "What this photo shows",
+    "faqTitle": "Questions",
+    "seoTitle": "Five scores from one photo",
+    "seoText": "Legibility is the result: whether a reader can make out the words. Size, baseline, spacing, and slant are the reasons. The lowest of those four is the one to practice next.\n\nThe score is an impression of a still photo. It does not measure speed, pressure, or stroke order, and it is not a clinical assessment. Chinese, Japanese, and Korean writing are not scored with this rubric.",
+    "anchors": {
+      "legibility": {
+        "1": "Almost nothing is readable.",
+        "2": "Only a few words can be read.",
+        "3": "About half the words need the surrounding words to guess.",
+        "4": "A few words take a pause. The page can still be read.",
+        "5": "Every word is readable at a first glance."
+      },
+      "size": {
+        "1": "Heights collapse into one band.",
+        "2": "Height jumps often.",
+        "3": "Height jumps, but letter kinds still separate.",
+        "4": "Height is mostly steady, with a few letters off.",
+        "5": "Height stays steady on the line."
+      },
+      "baseline": {
+        "1": "The line has no stable landing.",
+        "2": "Many words leave the line.",
+        "3": "A few words float or sink as a whole.",
+        "4": "Most words sit on the line, with a few that drift.",
+        "5": "The feet of the letters share one line."
+      },
+      "spacing": {
+        "1": "Word boundaries are unclear.",
+        "2": "Word boundaries are often unclear.",
+        "3": "Some words crash together, or gaps look like a new sentence.",
+        "4": "Spacing is mostly even, with a few tight or wide spots.",
+        "5": "Letters sit close inside words, and words sit apart."
+      },
+      "slant": {
+        "1": "There is no stable direction.",
+        "2": "The lean changes often.",
+        "3": "Some words lean right and some lean left.",
+        "4": "The lean is mostly consistent, with a few letters off.",
+        "5": "The whole sample leans the same way."
+      }
+    },
+    "again": "Upload another"
   }
 }

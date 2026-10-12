@@ -362,4 +362,49 @@ export const FAQ_HUB: FaqItem[] = [
       },
     },
   },
+  {
+    id: "hub-pad",
+    i18n: {
+      en: {
+        q: "Where do I write with a finger or stylus and save a PNG?",
+        a: "The handwriting notepad is one screen. The image stays on this device and is not uploaded.",
+        link: { href: "/handwriting-pad", label: "Online handwriting notepad" },
+      },
+      zh: {
+        q: "用手指在屏幕上写并保存图片,在哪里?",
+        a: "手写板是一整屏。图片留在这台设备上,不会上传。",
+        link: { href: "/handwriting-pad", label: "在线手写板" },
+      },
+      ja: {
+        q: "指やスタイラスで書いて PNG を保存するのはどこですか?",
+        a: "手書きノートは画面いっぱいの一枚です。画像はこの端末に残り、アップロードされません。",
+        link: { href: "/handwriting-pad", label: "オンライン手書きノート" },
+      },
+      ko: {
+        q: "손가락이나 스타일러스로 쓰고 PNG로 저장하는 곳은 어디인가요?",
+        a: "손글씨 노트는 화면 한 장입니다. 이미지는 이 기기에 남고 업로드되지 않습니다.",
+        link: { href: "/handwriting-pad", label: "온라인 손글씨 노트" },
+      },
+      es: {
+        q: "¿Dónde escribo con el dedo o un lápiz y guardo un PNG?",
+        a: "El bloc manuscrito es una pantalla. La imagen se queda en este dispositivo y no se sube.",
+        link: { href: "/handwriting-pad", label: "Bloc de notas manuscrito" },
+      },
+      de: {
+        q: "Wo schreibe ich mit Finger oder Stift und speichere ein PNG?",
+        a: "Der Handschriftblock ist ein Bildschirm. Das Bild bleibt auf diesem Gerät und wird nicht hochgeladen.",
+        link: { href: "/handwriting-pad", label: "Online-Handschriftblock" },
+      },
+      fr: {
+        q: "Où écrire au doigt ou au stylet et enregistrer un PNG ?",
+        a: "Le bloc manuscrit tient sur un écran. L'image reste sur cet appareil et n'est pas envoyée.",
+        link: { href: "/handwriting-pad", label: "Bloc-notes manuscrit" },
+      },
+      pt: {
+        q: "Onde escrevo com o dedo ou uma caneta e salvo um PNG?",
+        a: "O bloco manuscrito é uma tela. A imagem fica neste dispositivo e não é enviada.",
+        link: { href: "/handwriting-pad", label: "Bloco de notas manuscrito" },
+      },
+    },
+  },
 ];

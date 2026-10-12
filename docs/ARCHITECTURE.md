@@ -1,6 +1,6 @@
 # 项目结构与能力总览
 
-> 供后续开发使用。最后更新:2026-10-09。
+> 供后续开发使用。最后更新:2026-10-12。
 > 快速上手先读 [README.md](../README.md)(运行指南),本文侧重架构、接线方式与开发约定。
 
 ## 1. 项目概览
@@ -41,6 +41,7 @@
 │   │                          # fonts(CSS 加载清单)、transcribe(Whisper)、
 │   │                          # paperImage(上传图片压缩)、staticPage(静态页工厂)、
 │   │                          # fancyText(花体 Unicode 映射+折行,有单测)、
+│   │                          # handwritingCheck(手写照片评分的解析与提示词,有单测)、
 │   │                          # tools(工具分组:nav 标记进页头下拉,全量给 /tools)
 │   ├── engine/                # 手写渲染引擎:tokens / layout / jitter / paper(纯函数+单测)
 │   ├── hooks/                 # useSpeechRecognition(Web Speech API 封装)
@@ -49,6 +50,7 @@
 │   ├── content/               # 数据层:posts/templates/faqs/related + MDX 注册表(§4.8)
 │   └── app/
 │       ├── sitemap.ts robots.ts icon.svg
+│       ├── api/handwriting-check/route.ts  # 唯一服务端函数:智谱看图打分,照片不入库
 │       └── [locale]/          # 所有页面(§4.2),layout.tsx 挂全站壳
 ├── fonts-src/                 # 字体原始 TTF + OFL 授权
 ├── tests/e2e/                 # Playwright 冒烟
@@ -101,6 +103,8 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-font-generator` | 手写字体预览 + 导出(13 款 OFL:4 签名体 + 4 正式花体 + 2 日常手写 + 3 印刷体。签名体只在本页,不进主工作台。PNG 透明底 / 内嵌字体 SVG / PDF) | `CursiveFontBrowser`,`fontCatalog.ts`,`cursiveSvg.ts`,`fontFace.ts`,FAQ 经 `CURSIVE_FONT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`),`CURSIVE_WORKSHEET_FAQS` |
 | `/signature-practice` | 签名练习纸。姓名按空格拆成全名 / 名 / 首字母加姓。四种签名体各一行对照,选中体下面是实线、虚线、空白。单基线。页头下拉不单列 | `SignaturePractice`,`signatureForms.ts`,`SIGNATURE_FAQS` |
+| `/handwriting-sentence-practice` | 成人单句练习纸。一句、四选一(大小 / 斜度 / 间距 / 印刷体),实心、虚线、三行空白。空输入画当前语言的例句。超长不画纸。左手只翻红边距;斜度时斜线反向。下载后本地记住这一句,可「再写一遍」只留三行空白。页头下拉不单列 | `SentencePractice`,`sentencePractice.ts`,`SENTENCE_PRACTICE_FAQS` |
+| `/handwriting-check` | 拉丁字母手写照片的观感分。好认加大小、贴线、间距、斜度,1–5,无总分。能分析出分数就在浏览器拼 4:5 分享卡,缺项留空。照片经 `/api/handwriting-check` 送智谱后丢弃。页头下拉不单列 | `HandwritingCheck`,`handwritingCheck.ts`,`HANDWRITING_CHECK_FAQS` |
 | `/number-tracing` | 数字描红。1–10 或 1–20,每个数字单独一页(首行实心,其余虚线)。Patrick Hand,行高档。页头下拉不单列 | `TracingGenerator`(`perName`,`defaultOneEach`,`presets`),`practicePresets.ts`,`NUMBER_TRACING_FAQS` |
 | `/prewriting-strokes` | 学前运笔。直线组(向下、横线、斜线)或曲线组(圆、波浪、拱)。每种实线、虚线、空白。页头下拉不单列 | `PrewritingSheet`,`prewritingStrokes.ts`,`PREWRITING_FAQS` |
 | `/cursive-letter-joins` | 连笔字母对。同方向或中途转向,一对一页。Sacramento。页头下拉不单列 | `TracingGenerator`(`rowLabels="lines"`),`CURSIVE_JOIN_GROUPS`,`CURSIVE_JOIN_FAQS` |
@@ -114,6 +118,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
+| `/handwriting-pad` | 在线手写板。一屏纸,手指/鼠标/触控笔书写,空白/横线/方格,导出 PNG。笔迹存在 `vth-pad`。页头下拉不单列。页脚被固定层盖住 | `HandwritingPad`,`pad.ts` |
 | `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画。墨色改示例和封面标题,描红同色变浅,纸底可改 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
 | `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。打开即第一题的三张笔迹。结果卡用该档案的手写字体写档案名,无 emoji。主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
 | `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
@@ -135,6 +140,8 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `jitter.ts` | `mulberry32`/`hash2` 伪随机;`styleFingerprint(seed)` 全局笔迹指纹;`charJitter(charIndex, seed, intensity)` → rotate/translateY/scale/letterSpacing/opacity |
 | `paper.ts` | 纸张预设 blank/ruled/grid/letter(CSS background 画格线)+ `makeCustomPaper`(用户自定义,spacing 钳制 24–64px,支持背景图 cover/tile) |
 | `pageEstimate.ts` | 手写页数估算:纸型行距、字号/字距、单双面张数、原稿纸按格分页、预览截断、带到首页的 sessionStorage 载荷。横线纸贴正文后的真实分页仍走 `layout.ts` |
+| `sentencePractice.ts` | 单句练习纸:第一句截断、一行是否放得下、五行里哪几行有范字、红边距左右、斜线方向、花体是否锁定。下载记录的解析也在这里 |
+| `pad.ts` | 在线手写板:抽点、比例坐标、`vth-pad` 读写。画布绘制在 `HandwritingPad` |
 | `bulkLetters.ts` | 可打印手写信:CSV 收件人、固定表头的行(`recipientsFromRows`)、`{name}`/`{from}` 套用、信封行、按字宽单位分页(约一页,超长硬切) |
 | `xlsxTable.ts` | 手写信名单的最小 xlsx 读写:模板下载与导入。邮编列标成文本;数字格读回时没有前导 0 |
 
@@ -210,6 +217,10 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 | `NEXT_PUBLIC_ICP` | 配置后页脚渲染备案链接 |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | AdSense client id,同时控制 ConsentBanner 显示 |
 | `NEXT_PUBLIC_SENTRY_DSN` | Sentry,不配则关闭 |
+| `TEXT_API_KEY` | 手写照片评分的智谱密钥。不配则 `/api/handwriting-check` 不可用 |
+| `TEXT_BASE_URL` | 智谱接口,默认 `https://open.bigmodel.cn/api/coding/paas/v4` |
+| `TEXT_MODEL` | 默认 `glm-5.3-flash`。`custom/` 前缀会去掉 |
+| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | 评分接口每天每 IP 3 次,UTC 日切。生产环境不配则接口关闭;本地开发改用进程内存计数 |
 
 ## 6. 本地开发
 
@@ -224,7 +235,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 ## 7. 部署
 
-推送 main → Vercel 自动部署(全 SSG,无服务端函数依赖)。生产域名 `https://voicetohandwriting.online`。部署新页面后如需加速收录,跑 `npm run indexnow <url>`(等密钥文件已在线上时;全量提交见 §4.9 注意)。
+推送 main → Vercel 自动部署。页面仍是 SSG。`/api/handwriting-check` 是唯一服务端函数,调用智谱给手写照片打分,照片不入库。生产域名 `https://voicetohandwriting.online`。部署新页面后如需加速收录,跑 `npm run indexnow <url>`(等密钥文件已在线上时;全量提交见 §4.9 注意)。
 
 ## 8. 常见任务接线指南
 
@@ -256,4 +267,4 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 - [README.md](../README.md):运行/字体/模型/部署操作指南
 - [DEVELOPMENT-STANDARDS.md](./DEVELOPMENT-STANDARDS.md):开发规范(多语言 / SEO / 文章闭环 / 编码约定 + 自动化校验)
-- `调研报告.md`、`docs/us-seo-content-plan.md`、`docs/seo-article-playbook.md`、`docs/plans/`:产品与 SEO 策划背景。写文章前读 playbook(要不要写、更新频率)
+- `调研报告.md`、`docs/us-seo-content-plan.md`、`docs/seo-article-playbook.md`、`docs/plans/`:产品与 SEO 策划背景。写文章前读 playbook(要不要写、文章簇、更新频率)

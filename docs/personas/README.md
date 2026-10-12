@@ -29,7 +29,7 @@
 
 ## 新增一篇文章的操作流程
 
-1. **定选题与角色**:按选题簇对照上表选定 1 个角色(跨界选题归主读者所在的桌),并在 `docs/us-seo-content-plan.md` 登记该选题。登记前用 `docs/seo-article-playbook.md` 确认这篇该不该存在、第一屏写什么、何时复核;
+1. **定文章簇、选题与角色**:先按 `docs/seo-article-playbook.md` §2 定这篇属于哪一个文章簇(枢纽、同簇已有文、意图差),再按选题簇对照上表选定 1 个角色(跨界选题归主读者所在的桌),并在 `docs/us-seo-content-plan.md` 登记该选题(含 playbook §6 的四行)。登记前同时确认这篇该不该存在、第一屏写什么、何时复核;
 2. **通读角色卡** `docs/personas/<id>.md`:卡内"必须"是硬约束、"禁止"不可越;开头句式仅作参考,不照抄;
 3. **写正文** `src/content/blog/<slug>.en.mdx`(en 先行,恰好一个 H1;多语言跟进规则见规范 §3.2);
 4. **接线四步**(`docs/DEVELOPMENT-STANDARDS.md` §3.4):`registry.ts` 注册正文 → `posts.ts` 登记 `slug / author / date / updated / image` + i18n 标题描述 → `related.ts` 登记内链;

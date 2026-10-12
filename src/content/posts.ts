@@ -359,7 +359,7 @@ const US_POSTS: Post[] = [
     slug: "how-to-improve-handwriting-adults",
     author: "wes-morales",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-10-12",
     image: "/blog/adult-practice.png",
     i18n: {
       en: {
@@ -781,6 +781,19 @@ const CURSIVE_POSTS: Post[] = [
         title: "Print a handwritten letter and a matching envelope for three people",
         description:
           "A three-person thank-you list, Patrick Hand, US Letter notes and #10 envelopes. Free, no signup — the settings, the pages, and what the two PDFs actually contain.",
+      },
+    },
+  },
+  {
+    slug: "practice-one-handwriting-problem",
+    author: "wes-morales",
+    date: "2026-10-12",
+    updated: "2026-10-12",
+    i18n: {
+      en: {
+        title: "How to fix one handwriting problem",
+        description:
+          "How to fix one handwriting problem: size, slant, spacing, or print. One sentence, three blank lines, then stop. The model is a font, not a score.",
       },
     },
   },
