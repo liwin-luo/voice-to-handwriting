@@ -74,7 +74,7 @@ export const POSTS: Post[] = [
     slug: "handwritten-card-with-voice",
     author: "june-park",
     date: "2026-10-06",
-    updated: "2026-10-07",
+    updated: "2026-10-13",
     image: "/blog/template-love.png",
     i18n: {
       zh: {
@@ -463,7 +463,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "how-to-teach-cursive-kids",
     author: "clara-hartley",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-10-13",
     image: "/blog/tracing-cursive.png",
     i18n: {
       en: {
