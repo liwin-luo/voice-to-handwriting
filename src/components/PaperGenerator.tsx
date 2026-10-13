@@ -4,24 +4,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { FilePdf, Image as ImageIcon } from "@phosphor-icons/react";
 import { jsPDF } from "jspdf";
 import { formatLength, PAGE_FORMATS, type PageFormat } from "@/lib/localeDefaults";
+import { paperOps, spacingFor, wantsPaperMargin, type PaperSheetType } from "@/lib/paperSheet.mjs";
 import ColorSwatch from "./ColorSwatch";
 import PageFormatToggle from "./PageFormatToggle";
 import PracticeLayout from "./PracticeLayout";
 
-type PaperType = "college" | "wide" | "graph" | "handwriting" | "blank" | "dots" | "story" | "cornell";
-
-function spacingFor(type: PaperType): number {
-  if (type === "college" || type === "cornell") return 27; // 9/32 in, college ruled
-  if (type === "wide" || type === "story") return 33; // 11/32 in, wide ruled
-  if (type === "handwriting") return 28;
-  if (type === "dots") return 22;
-  return 26;
-}
-
-/** 红边只对横线/三线/白纸有意义;点阵、图画框、康奈尔自带结构 */
-function wantsMargin(type: PaperType): boolean {
-  return type === "college" || type === "wide" || type === "handwriting" || type === "blank";
-}
+type PaperType = PaperSheetType;
 
 /** 可打印纸张生成器:Canvas 精确绘制,导出打印级 PDF */
 export default function PaperGenerator({
@@ -51,11 +39,21 @@ export default function PaperGenerator({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [size, type, lineColor, bg, spacing, showMargin]);
 
-  function line(ctx: CanvasRenderingContext2D, x1: number, y1: number, x2: number, y2: number, dashed = false, alpha = 1) {
+  function line(
+    ctx: CanvasRenderingContext2D,
+    x1: number,
+    y1: number,
+    x2: number,
+    y2: number,
+    dashed = false,
+    alpha = 1,
+    width = 1,
+    stroke = lineColor,
+  ) {
     ctx.save();
-    ctx.strokeStyle = lineColor;
+    ctx.strokeStyle = stroke;
     ctx.globalAlpha = alpha;
-    ctx.lineWidth = 1;
+    ctx.lineWidth = width;
     if (dashed) ctx.setLineDash([9, 7]);
     ctx.beginPath();
     ctx.moveTo(x1, y1);
@@ -78,76 +76,40 @@ export default function PaperGenerator({
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, w, h);
 
-    const top = 36;
-    const bottom = 36;
-
-    if (type === "college" || type === "wide") {
-      const L = spacing;
-      for (let y = top + L; y <= h - bottom; y += L) line(ctx, 0, y, w, y);
-    } else if (type === "graph") {
-      for (let y = top; y <= h - bottom; y += spacing) line(ctx, 0, y, w, y, false, 0.8);
-      for (let x = 0; x <= w; x += spacing) line(ctx, x, top, x, h - bottom, false, 0.8);
-    } else if (type === "handwriting") {
-      const H = Math.max(60, spacing * 3);
-      for (let y0 = top; y0 + H <= h - bottom + H; y0 += H) {
-        line(ctx, 0, y0, w, y0, false, 0.7); // 顶线
-        line(ctx, 0, y0 + H, w, y0 + H); // 基线
-        line(ctx, 0, y0 + H * 0.52, w, y0 + H * 0.52, true, 0.8); // 中虚线
+    const ops = paperOps({
+      type,
+      w,
+      h,
+      spacing,
+      showMargin,
+      labels: {
+        picture: t("labelPicture"),
+        cues: t("labelCues"),
+        notes: t("labelNotes"),
+        summary: t("labelSummary"),
+      },
+    });
+    for (const op of ops) {
+      if (op.op === "line") {
+        line(ctx, op.x1, op.y1, op.x2, op.y2, op.dashed, op.alpha, op.width, op.color === "margin" ? "#e26d6d" : lineColor);
+      } else if (op.op === "rect") {
+        ctx.save();
+        ctx.strokeStyle = lineColor;
+        ctx.lineWidth = op.width;
+        ctx.strokeRect(op.x, op.y, op.w, op.h);
+        ctx.restore();
+      } else if (op.op === "dot") {
+        ctx.save();
+        ctx.fillStyle = lineColor;
+        ctx.beginPath();
+        ctx.arc(op.x, op.y, op.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      } else if (op.op === "text") {
+        ctx.fillStyle = "#5c6b7a";
+        ctx.font = "16px sans-serif";
+        ctx.fillText(op.text, op.x, op.y);
       }
-    } else if (type === "dots") {
-      ctx.save();
-      ctx.fillStyle = lineColor;
-      const r = 1.15;
-      for (let y = top + spacing; y <= h - bottom; y += spacing) {
-        for (let x = spacing; x <= w - spacing; x += spacing) {
-          ctx.beginPath();
-          ctx.arc(x, y, r, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-      ctx.restore();
-    } else if (type === "story") {
-      const boxH = Math.round((h - top - bottom) * 0.42);
-      ctx.save();
-      ctx.strokeStyle = lineColor;
-      ctx.lineWidth = 1.25;
-      ctx.strokeRect(48, top, w - 96, boxH);
-      ctx.restore();
-      ctx.fillStyle = "#5c6b7a";
-      ctx.font = "16px sans-serif";
-      ctx.fillText(t("labelPicture"), 64, top + 28);
-      for (let y = top + boxH + spacing; y <= h - bottom; y += spacing) line(ctx, 0, y, w, y);
-    } else if (type === "cornell") {
-      const summaryH = 148;
-      const summaryY = h - bottom - summaryH;
-      const cueX = Math.round(w * 0.28);
-      ctx.save();
-      ctx.strokeStyle = lineColor;
-      ctx.lineWidth = 1.25;
-      ctx.beginPath();
-      ctx.moveTo(cueX, top);
-      ctx.lineTo(cueX, summaryY);
-      ctx.moveTo(36, summaryY);
-      ctx.lineTo(w - 36, summaryY);
-      ctx.stroke();
-      ctx.restore();
-      for (let y = top + spacing; y < summaryY - 6; y += spacing) line(ctx, cueX + 10, y, w - 28, y);
-      ctx.fillStyle = "#5c6b7a";
-      ctx.font = "16px sans-serif";
-      ctx.fillText(t("labelCues"), 48, top + 24);
-      ctx.fillText(t("labelNotes"), cueX + 16, top + 24);
-      ctx.fillText(t("labelSummary"), 48, summaryY + 28);
-    }
-
-    if (showMargin && wantsMargin(type)) {
-      ctx.save();
-      ctx.strokeStyle = "#e26d6d";
-      ctx.lineWidth = 1.5;
-      ctx.beginPath();
-      ctx.moveTo(76, 0);
-      ctx.lineTo(76, h);
-      ctx.stroke();
-      ctx.restore();
     }
   }
 
@@ -182,7 +144,9 @@ export default function PaperGenerator({
 
   const types: Array<{ id: PaperType; label: string }> = [
     { id: "college", label: t("typeCollege") },
+    { id: "narrow", label: t("typeNarrow") },
     { id: "wide", label: t("typeWide") },
+    { id: "large", label: t("typeLarge") },
     { id: "graph", label: t("typeGraph") },
     { id: "dots", label: t("typeDots") },
     { id: "handwriting", label: t("typeHandwriting") },
@@ -204,7 +168,7 @@ export default function PaperGenerator({
                   onClick={() => {
                     setType(tp.id);
                     setSpacing(spacingFor(tp.id));
-                    if (!wantsMargin(tp.id)) setShowMargin(false);
+                    if (!wantsPaperMargin(tp.id)) setShowMargin(false);
                   }}
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     type === tp.id
@@ -255,7 +219,7 @@ export default function PaperGenerator({
           )}
           <ColorSwatch label={t("lineColor")} value={lineColor} onChange={setLineColor} />
           <ColorSwatch label={tool("paperCustom.bg")} value={bg} onChange={setBg} />
-          {wantsMargin(type) && (
+          {wantsPaperMargin(type) && (
             <label className="flex items-center justify-between gap-2 text-sm">
               <span className="text-zinc-700">{t("redMargin")}</span>
               <button

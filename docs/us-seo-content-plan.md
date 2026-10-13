@@ -334,3 +334,12 @@
 - **下一跳**:文章上线后第一屏打开本工具。想印空白横线纸的人去 `/printable-paper`(跨簇,因为下一步是打印纸,不是再写一屏)。
 - **文章**:`save-a-handwritten-note`,en,Theo Lindgren。主词 how to save a handwritten note from your phone。教程,不抢工具主词。体验资产是这一屏导出的 PNG 和「刷新后还在」这件事。复核:不复核(画布写法和年份无关)。动笔前读 `docs/personas/theo-lindgren.md`。
 - **红线**:不识别笔迹、不打分、不上传、不把笔迹做成字体、不改语音工作台。
+
+## 二十二、打印纸规格页与可抓取 PDF(2026-10-13)
+
+竞品对照:Suncatcher / PrintablePaper / DadsWorksheets 靠「一个规格一个直链 PDF」吃横线纸;CreatePrintables 的姓名描红拆页这轮不做(没有不同作业就不拆)。姓名日期栏、红基线、编号拼写纸站上没有对应开关,不写成已有功能。
+
+- **新子页**:`/printable-paper/narrow-ruled`(narrow ruled paper,1/4 英寸,Letter 41 行)、`/printable-paper/large-print`(large print writing paper / 1/2 inch,Letter 20 行)、`/printable-paper/graph-paper`(1/4 inch graph paper)。8 语言。不另开文章:已有 `free-printable-lined-paper` 表格链到这三页,`kindergarten-handwriting-paper` 改链到 `/printable-paper/kindergarten`。
+- **幼儿园页**:标题写明 12 行;首段写左侧红边,并写按实际尺寸打印。college ruled 英文导语不再把自己叫成 narrow ruling,避免和窄行页互搏。
+- **静态 PDF**:九种纸各一份 US Letter,`public/printables/<slug>.pdf`,画法在 `src/lib/paperSheet.mjs`,重跑 `node scripts/paper-printables.mjs`。子页服务端放直链。A4 仍走页内生成器。
+- **复核**:不复核(行距是固定规格;改 `paperSheet.mjs` 的行距时同步改文案和 PDF)。

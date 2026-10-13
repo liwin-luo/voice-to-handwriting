@@ -261,7 +261,7 @@ const US_POSTS: Post[] = [
     slug: "free-printable-lined-paper",
     author: "wes-morales",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-10-13",
     image: "/blog/lined-paper.png",
     i18n: {
       en: {
@@ -289,7 +289,7 @@ const US_POSTS: Post[] = [
     slug: "kindergarten-handwriting-paper",
     author: "clara-hartley",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-10-13",
     image: "/blog/handwriting-paper.png",
     i18n: {
       en: {

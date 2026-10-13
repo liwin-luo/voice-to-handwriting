@@ -38,7 +38,7 @@
 
 ### 2.3 Paper 类型子页(Phase 2 顺手做)
 
-- `/printable-paper` 下已有 kindergarten、college ruled、wide ruled,以及 2026-10-09 补上的 picture box(`story-paper`)、dot grid、Cornell。方格仍在生成器里,没有单独子页。乐谱、六边形不做。
+- `/printable-paper` 下已有 kindergarten、college ruled、wide ruled、narrow ruled(1/4 英寸)、large print(1/2 英寸)、graph paper(1/4 英寸方格),以及 picture box(`story-paper`)、dot grid、Cornell。每种纸有可抓取的 US Letter PDF。乐谱、六边形不做。编号拼写测验纸、姓名日期栏仍不做。
 - 目标词:`kindergarten writing paper`(2–6K)、`printable lined paper` 长尾变体(cluster A 合计 76–166K US/月)。
 
 ### 2.4 templates/[slug] 扩容(滚动做,贴季节)

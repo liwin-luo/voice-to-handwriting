@@ -114,7 +114,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、A–Z 两行导航条(52 页互链)、练习词;本字母练习条 PDF 由 `LetterSheetDownload` 客户端导出,练习词链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=`;挂 BreadcrumbList(首页→/cursive→本课) | `cursiveLetters.ts` + `cursiveLettersRest.ts`,`LetterSheetDownload` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
 | `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列。Hub 用 `LETTER_HUB_FAQS`,单字母页用 `letterFaqs` | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
-| `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接。Hub 用 `PAPER_FAQS`(窄行/宽行对比含三线格链接);子页用 `paperKindFaqs`,不把横线问答贴到点阵和康奈尔 | `PaperGenerator`(`lockType`),`paperKinds.ts`,`paperKindFaqs.ts` |
+| `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔,另加 narrow ruled(1/4 英寸)、large print(1/2 英寸)、graph paper(1/4 英寸方格)。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接。每种纸有可抓取的 US Letter PDF(`/printables/<slug>.pdf`,`scripts/paper-printables.mjs`)。Hub 用 `PAPER_FAQS`;子页用 `paperKindFaqs` | `PaperGenerator`(`lockType`),`paperSheet.mjs`,`paperKinds.ts`,`paperKindFaqs.ts` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
 | `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
@@ -187,7 +187,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `faqs.ts` | `FAQ_ITEMS`(首页支持问答)及各工具专属 FAQ。`getLocalizedFaqs` 只返回当前语言有翻译的条目;第一条 `id` 以 `-free` 结尾时挪到末尾。`FaqEntry.link` 是答案后的一条站内链接。题目在 `ToolFaq` 里是 H3 | 各工具页 `ToolFaq`;首页用 `FAQ_ITEMS` |
 | `pageFaqs.ts` | 后加工具的专属 FAQ,含手写板 `PAD_FAQS`、连笔描红 `CURSIVE_WORKSHEET_FAQS`、模板库 `TEMPLATE_FAQS`、详情页 `templateDetailFaqs`(按模板标题和范文首行生成) | 对应工具页 `ToolFaq` |
 | `faqHub.ts` | `/faq` 目录 `FAQ_HUB`,问法不复制首页 | `/faq` |
-| `paperKindFaqs.ts` | 六种纸各自的 FAQ,按 `paperKinds` 里的行距写 | `/printable-paper/[kind]` |
+| `paperKindFaqs.ts` | 九种纸各自的 FAQ,按 `paperKinds` 里的行距写 | `/printable-paper/[kind]` |
 | `related.ts` | 文章尾部内链规划(tools[]/posts[]) | `RelatedLinks`(SEO 集群) |
 | `extra-locales.ts` | de/fr/pt 后补翻译,`mergeI18n` 就地合并进大常量,避免反复内联编辑 | posts.ts、templates.ts |
 

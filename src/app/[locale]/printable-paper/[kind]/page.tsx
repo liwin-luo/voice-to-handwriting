@@ -55,6 +55,11 @@ export default async function PaperKindPage({
         </p>
         <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{copy.h1}</h1>
         <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
+        <p className="mt-2 text-sm">
+          <a href={`/printables/${page.slug}.pdf`} className="text-accent underline underline-offset-2 hover:underline">
+            {t("letterPdf")}
+          </a>
+        </p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <PaperGenerator defaultType={page.type} lockType defaultFormat={defaultPageFormat(locale)} />

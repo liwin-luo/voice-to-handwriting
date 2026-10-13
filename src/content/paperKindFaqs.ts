@@ -11,7 +11,7 @@ const college = [
   item("college-ruled-what", {
     en: {
       q: "What is college ruled paper?",
-      a: "College ruled paper is the narrow ruling used from about third grade through college: 9/32 inch (7.1 mm) between lines, with a red left margin. Wide ruled is the wider sheet, at 11/32 inch (8.7 mm).",
+      a: "College ruled paper leaves 9/32 inch (7.1 mm) between lines, with a red left margin. Wide ruled is wider, at 11/32 inch (8.7 mm). Narrow ruled is tighter, at 1/4 inch (6.4 mm).",
       link: { href: "/printable-paper/wide-ruled", label: "Wide ruled paper" },
     },
     zh: {
@@ -189,7 +189,7 @@ const kindergarten = [
   item("kindergarten-what", {
     en: {
       q: "What is kindergarten handwriting paper?",
-      a: "It uses three guides: a top line, a dashed midline for the height of letters like a and c, and a solid baseline. Children use it before wide ruled. Wide ruled is a single wider gap, not this three-line sheet.",
+      a: "It uses three guides: a top line, a dashed midline for the height of letters like a and c, and a solid baseline. US Letter has 12 of these lines, with a red margin line on the left. Print at actual size. Wide ruled is a single wider gap, not this three-line sheet.",
       link: { href: "/printable-paper/wide-ruled", label: "Wide ruled paper" },
     },
     zh: {
@@ -517,10 +517,272 @@ const cornell = [
   }),
 ];
 
+const narrow = [
+  item("narrow-ruled-what", {
+    en: {
+      q: "What is narrow ruled paper?",
+      a: "Narrow ruled paper has 1/4 inch (6.4 mm) between lines. College ruled is 9/32 inch (7.1 mm). US Letter fits 41 narrow lines, with a red left margin.",
+      link: { href: "/printable-paper/college-ruled", label: "College ruled paper" },
+    },
+    zh: {
+      q: "1/4 英寸横线纸和窄行有什么不同?",
+      a: "这一页行距 6.4 毫米（1/4 英寸）。窄行（college ruled）是 7.1 毫米。Letter 上是 41 行，左侧一条红边。",
+      link: { href: "/printable-paper/college-ruled", label: "窄行横线" },
+    },
+    ja: {
+      q: "1/4インチ罫は細罫とどう違いますか?",
+      a: "この用紙は行間 6.4mm（1/4インチ）です。細罫（college ruled）は 7.1mm。レター判は 41 行、左に赤いマージンです。",
+      link: { href: "/printable-paper/college-ruled", label: "細罫" },
+    },
+    ko: {
+      q: "1/4인치 줄은 좁은 줄과 어떻게 다른가요?",
+      a: "이 용지는 간격 6.4mm(1/4인치)입니다. 좁은 줄(college ruled)은 7.1mm입니다. Letter는 41줄이고, 왼쪽 빨간 여백이 있습니다.",
+      link: { href: "/printable-paper/college-ruled", label: "좁은 줄" },
+    },
+    es: {
+      q: "¿Qué es el papel de 1/4 de pulgada?",
+      a: "Deja 6,4 mm entre líneas. La pauta college ruled deja 7,1 mm. En Letter caben 41 líneas, con un margen rojo a la izquierda.",
+      link: { href: "/printable-paper/college-ruled", label: "Papel de raya estrecha" },
+    },
+    de: {
+      q: "Was ist Papier mit 1/4-Zoll-Linien?",
+      a: "Der Abstand ist 6,4 mm. College Ruled hat 7,1 mm. Auf US Letter passen 41 Zeilen, links ein roter Rand.",
+      link: { href: "/printable-paper/college-ruled", label: "Eng liniertes Papier" },
+    },
+    fr: {
+      q: "Qu'est-ce que le papier ligné à 6,4 mm ?",
+      a: "Une ligne tous les 6,4 mm. Le college ruled est à 7,1 mm. Le Letter en contient 41, avec une marge rouge à gauche.",
+      link: { href: "/printable-paper/college-ruled", label: "Interligne étroit" },
+    },
+    pt: {
+      q: "O que é o papel de 6,4 mm?",
+      a: "Uma linha a cada 6,4 mm. A college ruled tem 7,1 mm. No Letter cabem 41 linhas, com uma margem vermelha à esquerda.",
+      link: { href: "/printable-paper/college-ruled", label: "Pauta estreita" },
+    },
+  }),
+  item("narrow-ruled-print", {
+    en: {
+      q: "How should I print narrow ruled paper?",
+      a: "Print at actual size. Fit-to-page changes the 6.4 mm spacing. The linked PDF is US Letter. Use the page-size control for A4.",
+    },
+    zh: {
+      q: "1/4 英寸横线纸怎么打印?",
+      a: "按实际尺寸打印。「适合页面」会改变 6.4 毫米的行距。页面上的 PDF 是 Letter。要 A4 就在页面里切换纸张再下载。",
+    },
+    ja: {
+      q: "1/4インチ罫はどう印刷しますか?",
+      a: "等倍で印刷してください。「用紙に合わせる」にすると 6.4mm の行間が変わります。リンクの PDF はレター判です。A4 はページ内の用紙サイズで切り替えてからダウンロードします。",
+    },
+    ko: {
+      q: "1/4인치 줄은 어떻게 인쇄하나요?",
+      a: "실제 크기로 인쇄하세요. 페이지에 맞추면 6.4mm 간격이 달라집니다. 링크된 PDF는 Letter입니다. A4는 페이지에서 용지 크기를 바꾼 뒤 다운로드하세요.",
+    },
+    es: {
+      q: "¿Cómo imprimo el papel de 1/4 de pulgada?",
+      a: "A tamaño real. Ajustar a la página cambia los 6,4 mm. El PDF enlazado es Letter. Para A4, cambia el tamaño en la página y descarga.",
+    },
+    de: {
+      q: "Wie drucke ich das 1/4-Zoll-Papier?",
+      a: "In Originalgröße. „An Seite anpassen“ verändert die 6,4 mm. Die verlinkte PDF ist US Letter. Für A4 die Papiergröße auf der Seite umstellen und dann laden.",
+    },
+    fr: {
+      q: "Comment imprimer le papier à 6,4 mm ?",
+      a: "À taille réelle. Ajuster à la page change les 6,4 mm. Le PDF lié est en Letter. Pour l'A4, changez le format sur la page, puis téléchargez.",
+    },
+    pt: {
+      q: "Como imprimo o papel de 6,4 mm?",
+      a: "No tamanho real. Ajustar à página muda os 6,4 mm. O PDF ligado é Letter. Para A4, mude o tamanho na página e baixe.",
+    },
+  }),
+  item("narrow-ruled-free", {
+    en: { q: "Is narrow ruled paper free?", a: "Yes. No signup and no watermark on the PDF." },
+    zh: { q: "1/4 英寸横线纸免费吗?", a: "免费。无需注册,PDF 没有水印。" },
+    ja: { q: "1/4インチ罫は無料ですか?", a: "無料です。登録不要で、PDF に透かしはありません。" },
+    ko: { q: "1/4인치 줄은 무료인가요?", a: "무료입니다. 가입이 없고 PDF에 워터마크도 없습니다." },
+    es: { q: "¿El papel de 1/4 de pulgada es gratis?", a: "Sí. Sin registro y sin marca de agua en el PDF." },
+    de: { q: "Ist das 1/4-Zoll-Papier kostenlos?", a: "Ja. Ohne Anmeldung und ohne Wasserzeichen im PDF." },
+    fr: { q: "Le papier à 6,4 mm est-il gratuit ?", a: "Oui. Sans inscription et sans filigrane dans le PDF." },
+    pt: { q: "O papel de 6,4 mm é grátis?", a: "Sim. Sem cadastro e sem marca d'água no PDF." },
+  }),
+];
+
+const large = [
+  item("large-print-what", {
+    en: {
+      q: "What is large print writing paper?",
+      a: "Large print writing paper leaves 1/2 inch (12.7 mm) between lines. Wide ruled is 11/32 inch (8.7 mm). US Letter has 20 lines and a red left margin. It is the low-vision sheet, not three-line kindergarten paper.",
+      link: { href: "/printable-paper/kindergarten", label: "Kindergarten handwriting paper" },
+    },
+    zh: {
+      q: "大字横线纸是什么?",
+      a: "行距 12.7 毫米（1/2 英寸）。宽行是 8.7 毫米。Letter 上是 20 行，左侧一条红边。这是低视力用的横线，不是幼儿园三线格。",
+      link: { href: "/printable-paper/kindergarten", label: "幼儿园三线格" },
+    },
+    ja: {
+      q: "大活字の罫紙とは何ですか?",
+      a: "行間は 12.7mm（1/2インチ）です。広罫は 8.7mm。レター判は 20 行、左に赤いマージン。ロービジョン向けの横罫で、幼稚園の3本線ではありません。",
+      link: { href: "/printable-paper/kindergarten", label: "3本線" },
+    },
+    ko: {
+      q: "큰 글자 줄 노트란?",
+      a: "간격은 12.7mm(1/2인치)입니다. 넓은 줄은 8.7mm입니다. Letter는 20줄이고, 왼쪽 빨간 여백이 있습니다. 저시력용 줄이며, 유치원 3선이 아닙니다.",
+      link: { href: "/printable-paper/kindergarten", label: "3선 노트" },
+    },
+    es: {
+      q: "¿Qué es el papel de letra grande?",
+      a: "Deja 12,7 mm entre líneas. La pauta ancha deja 8,7 mm. En Letter caben 20 líneas y un margen rojo. Es la hoja de baja visión, no el papel de tres líneas.",
+      link: { href: "/printable-paper/kindergarten", label: "Papel de infantil" },
+    },
+    de: {
+      q: "Was ist Großdruck-Schreibpapier?",
+      a: "Der Abstand ist 12,7 mm. Weit liniert hat 8,7 mm. Auf US Letter passen 20 Zeilen und ein roter Rand. Das Blatt für eingeschränktes Sehen, nicht die Drei-Linien-Lineatur.",
+      link: { href: "/printable-paper/kindergarten", label: "Drei-Linien-Papier" },
+    },
+    fr: {
+      q: "Qu'est-ce que le papier grands caractères ?",
+      a: "12,7 mm entre les lignes. L'interligne large est à 8,7 mm. Le Letter en contient 20, avec une marge rouge. C'est la feuille basse vision, pas le papier à trois lignes.",
+      link: { href: "/printable-paper/kindergarten", label: "Papier de maternelle" },
+    },
+    pt: {
+      q: "O que é papel de letra grande?",
+      a: "Deixa 12,7 mm entre as linhas. A pauta larga tem 8,7 mm. No Letter cabem 20 linhas e uma margem vermelha. É a folha de baixa visão, não o papel de três linhas.",
+      link: { href: "/printable-paper/kindergarten", label: "Papel infantil" },
+    },
+  }),
+  item("large-print-print", {
+    en: {
+      q: "How should I print large print paper?",
+      a: "Print at actual size. Fit-to-page shrinks the 1/2 inch gap. The linked PDF is US Letter. Use the page-size control for A4.",
+    },
+    zh: {
+      q: "大字横线纸怎么打印?",
+      a: "按实际尺寸打印。「适合页面」会把 12.7 毫米的行距缩小。页面上的 PDF 是 Letter。要 A4 就在页面里切换纸张再下载。",
+    },
+    ja: {
+      q: "大活字の罫紙はどう印刷しますか?",
+      a: "等倍で印刷してください。「用紙に合わせる」と 12.7mm の行間が縮みます。リンクの PDF はレター判です。A4 はページ内で切り替えてからダウンロードします。",
+    },
+    ko: {
+      q: "큰 글자 줄은 어떻게 인쇄하나요?",
+      a: "실제 크기로 인쇄하세요. 페이지에 맞추면 12.7mm 간격이 줄어듭니다. 링크된 PDF는 Letter입니다. A4는 페이지에서 용지 크기를 바꾼 뒤 다운로드하세요.",
+    },
+    es: {
+      q: "¿Cómo imprimo el papel de letra grande?",
+      a: "A tamaño real. Ajustar a la página encoge los 12,7 mm. El PDF enlazado es Letter. Para A4, cambia el tamaño en la página y descarga.",
+    },
+    de: {
+      q: "Wie drucke ich das Großdruckpapier?",
+      a: "In Originalgröße. „An Seite anpassen“ verkleinert die 12,7 mm. Die verlinkte PDF ist US Letter. Für A4 die Papiergröße auf der Seite umstellen.",
+    },
+    fr: {
+      q: "Comment imprimer le papier grands caractères ?",
+      a: "À taille réelle. Ajuster à la page réduit les 12,7 mm. Le PDF lié est en Letter. Pour l'A4, changez le format sur la page, puis téléchargez.",
+    },
+    pt: {
+      q: "Como imprimo o papel de letra grande?",
+      a: "No tamanho real. Ajustar à página encolhe os 12,7 mm. O PDF ligado é Letter. Para A4, mude o tamanho na página e baixe.",
+    },
+  }),
+  item("large-print-free", {
+    en: { q: "Is large print writing paper free?", a: "Yes. No signup and no watermark on the PDF." },
+    zh: { q: "大字横线纸免费吗?", a: "免费。无需注册,PDF 没有水印。" },
+    ja: { q: "大活字の罫紙は無料ですか?", a: "無料です。登録不要で、PDF に透かしはありません。" },
+    ko: { q: "큰 글자 줄은 무료인가요?", a: "무료입니다. 가입이 없고 PDF에 워터마크도 없습니다." },
+    es: { q: "¿El papel de letra grande es gratis?", a: "Sí. Sin registro y sin marca de agua en el PDF." },
+    de: { q: "Ist das Großdruckpapier kostenlos?", a: "Ja. Ohne Anmeldung und ohne Wasserzeichen im PDF." },
+    fr: { q: "Le papier grands caractères est-il gratuit ?", a: "Oui. Sans inscription et sans filigrane dans le PDF." },
+    pt: { q: "O papel de letra grande é grátis?", a: "Sim. Sem cadastro e sem marca d'água no PDF." },
+  }),
+];
+
+const graph = [
+  item("graph-paper-what", {
+    en: {
+      q: "What size are the squares on this graph paper?",
+      a: "1/4 inch (6.4 mm), four squares to an inch. There is no red margin. Print at actual size so the squares stay that size.",
+    },
+    zh: {
+      q: "这张方格纸的格子多大?",
+      a: "边长 6.4 毫米（1/4 英寸），一英寸四个。没有红边。按实际尺寸打印，格子才保持这个大小。",
+    },
+    ja: {
+      q: "この方眼紙のマスは何ミリですか?",
+      a: "6.4mm（1/4インチ）で、1インチに四つです。赤いマージンはありません。等倍で印刷すると、マスがその大きさのままです。",
+    },
+    ko: {
+      q: "이 모눈종이 칸은 얼마나 큰가요?",
+      a: "6.4mm(1/4인치)이고, 1인치에 네 칸입니다. 빨간 여백은 없습니다. 실제 크기로 인쇄해야 칸이 그 크기로 남습니다.",
+    },
+    es: {
+      q: "¿De qué tamaño son los cuadros?",
+      a: "6,4 mm (1/4 de pulgada), cuatro por pulgada. No hay margen rojo. Imprime a tamaño real para que los cuadros no cambien.",
+    },
+    de: {
+      q: "Wie groß sind die Kästchen?",
+      a: "6,4 mm (1/4 Zoll), vier pro Zoll. Kein roter Rand. In Originalgröße drucken, damit die Kästchen so bleiben.",
+    },
+    fr: {
+      q: "Quelle est la taille des carreaux ?",
+      a: "6,4 mm (1/4 pouce), quatre par pouce. Pas de marge rouge. Imprimez à taille réelle pour que les carreaux gardent cette taille.",
+    },
+    pt: {
+      q: "Qual é o tamanho dos quadrados?",
+      a: "6,4 mm (1/4 polegada), quatro por polegada. Sem margem vermelha. Imprima no tamanho real para os quadrados ficarem nesse tamanho.",
+    },
+  }),
+  item("graph-paper-a4", {
+    en: {
+      q: "Can I print this graph paper on A4?",
+      a: "Yes. The linked PDF is US Letter. Switch the page size to A4 and download from the page. Print at actual size.",
+    },
+    zh: {
+      q: "方格纸能用 A4 打印吗?",
+      a: "可以。页面上的 PDF 是 Letter。要 A4 就在页面里切换纸张再下载。按实际尺寸打印。",
+    },
+    ja: {
+      q: "この方眼紙は A4 で印刷できますか?",
+      a: "はい。リンクの PDF はレター判です。A4 はページ内の用紙サイズを切り替えてからダウンロードします。等倍で印刷してください。",
+    },
+    ko: {
+      q: "이 모눈종이를 A4로 인쇄할 수 있나요?",
+      a: "네. 링크된 PDF는 Letter입니다. A4는 페이지에서 용지 크기를 바꾼 뒤 다운로드하세요. 실제 크기로 인쇄하세요.",
+    },
+    es: {
+      q: "¿Puedo imprimir este cuadriculado en A4?",
+      a: "Sí. El PDF enlazado es Letter. Cambia el tamaño a A4 en la página y descarga. Imprime a tamaño real.",
+    },
+    de: {
+      q: "Kann ich dieses Karopapier auf A4 drucken?",
+      a: "Ja. Die verlinkte PDF ist US Letter. Für A4 die Papiergröße auf der Seite umstellen und dann laden. In Originalgröße drucken.",
+    },
+    fr: {
+      q: "Puis-je imprimer ce quadrillé en A4 ?",
+      a: "Oui. Le PDF lié est en Letter. Passez le format en A4 sur la page, puis téléchargez. Imprimez à taille réelle.",
+    },
+    pt: {
+      q: "Posso imprimir este quadriculado em A4?",
+      a: "Sim. O PDF ligado é Letter. Mude o tamanho para A4 na página e baixe. Imprima no tamanho real.",
+    },
+  }),
+  item("graph-paper-free", {
+    en: { q: "Is this graph paper free?", a: "Yes. No signup and no watermark on the PDF." },
+    zh: { q: "方格纸免费吗?", a: "免费。无需注册,PDF 没有水印。" },
+    ja: { q: "この方眼紙は無料ですか?", a: "無料です。登録不要で、PDF に透かしはありません。" },
+    ko: { q: "이 모눈종이는 무료인가요?", a: "무료입니다. 가입이 없고 PDF에 워터마크도 없습니다." },
+    es: { q: "¿Este cuadriculado es gratis?", a: "Sí. Sin registro y sin marca de agua en el PDF." },
+    de: { q: "Ist dieses Karopapier kostenlos?", a: "Ja. Ohne Anmeldung und ohne Wasserzeichen im PDF." },
+    fr: { q: "Ce papier quadrillé est-il gratuit ?", a: "Oui. Sans inscription et sans filigrane dans le PDF." },
+    pt: { q: "Este papel quadriculado é grátis?", a: "Sim. Sem cadastro e sem marca d'água no PDF." },
+  }),
+];
+
 const BY_SLUG: Record<string, FaqItem[]> = {
   "college-ruled": college,
+  "narrow-ruled": narrow,
   "wide-ruled": wide,
+  "large-print": large,
   kindergarten,
+  "graph-paper": graph,
   "dot-grid": dots,
   "story-paper": story,
   "cornell-notes": cornell,
