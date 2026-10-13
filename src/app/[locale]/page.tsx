@@ -29,6 +29,8 @@ export default async function HomePage({
   const t = await getTranslations("home");
   const meta = await getTranslations("meta");
   const faqTitle = await getTranslations("meta.faq");
+  // ponytail: 10–12 月显示圣诞信。次年秋天自己回来，没有活动配置。
+  const showSantaLinks = new Date().getUTCMonth() >= 9;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -78,6 +80,40 @@ export default async function HomePage({
         >
           {t("blogLink")}
         </Link>
+        <Link
+          href="/name-tracing"
+          className="text-accent underline underline-offset-2 hover:text-accent-strong"
+        >
+          {t("nameTracingLink")}
+        </Link>
+        <Link
+          href="/cursive-worksheets"
+          className="text-accent underline underline-offset-2 hover:text-accent-strong"
+        >
+          {t("cursiveWorksheetsLink")}
+        </Link>
+        <Link
+          href="/handwriting-repeater"
+          className="text-accent underline underline-offset-2 hover:text-accent-strong"
+        >
+          {t("repeaterLink")}
+        </Link>
+        {showSantaLinks && (
+          <>
+            <Link
+              href="/blog/letter-to-santa-template"
+              className="text-accent underline underline-offset-2 hover:text-accent-strong"
+            >
+              {t("letterToSantaLink")}
+            </Link>
+            <Link
+              href="/templates/letter-from-santa"
+              className="text-accent underline underline-offset-2 hover:text-accent-strong"
+            >
+              {t("letterFromSantaLink")}
+            </Link>
+          </>
+        )}
       </footer>
     </main>
   );

@@ -199,6 +199,11 @@
       "cursiveTitle": "Cursive Practice",
       "cursiveDesc": "Type or speak anything in flowing cursive — and print to trace."
     },
+    "nameTracingLink": "Name tracing worksheets",
+    "cursiveWorksheetsLink": "Cursive worksheets",
+    "repeaterLink": "Handwriting repeater",
+    "letterToSantaLink": "Letter to Santa",
+    "letterFromSantaLink": "Letter from Santa",
     "allToolsLink": "Browse all free tools",
     "h1": "Speak or type, and get a handwritten page"
   },
@@ -420,7 +425,10 @@
     "seoText": "Every style prints edge-to-edge at exact real-world dimensions (Letter and A4), with no watermark and no account required. Pair it with our handwriting tool: print the paper, or let the generator write on it for you.",
     "paperType": "Paper type",
     "faqTitle": "Frequently asked questions",
-    "calculatorCta": "Count how many sheets a text needs"
+    "calculatorCta": "Count how many sheets a text needs",
+    "nameTracingCta": "Name tracing worksheets",
+    "letterToSantaCta": "Letter to Santa",
+    "letterFromSantaCta": "Letter from Santa"
   },
   "tracing": {
     "title": "Name Tracing Worksheet Generator",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "Cursive Writing Generator",
     "intro": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF.",
+    "alphabetLink": "Cursive alphabet",
+    "worksheetsLink": "Cursive worksheets",
+    "repeaterLink": "Handwriting repeater",
     "seoTitle": "Free cursive generator — practice the lost art of penmanship",
     "seoText": "Cursive is barely taught in schools anymore — but learning it has real benefits: it trains fine motor skills, speeds up note-taking and connects you to a century of letters and journals worth reading.\n\nHow to use this page: type or dictate anything, pick one of the two cursive fonts (Cedarville Cursive for everyday handwriting, Dancing Script for elegant flourishes), adjust the realism slider for a natural hand, and export. Print the PDF and trace over it to practice your own cursive.",
     "faqTitle": "Frequently asked questions"

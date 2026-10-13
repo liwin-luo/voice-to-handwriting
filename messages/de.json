@@ -199,6 +199,11 @@
       "cursiveTitle": "Schreibschrift-Generator",
       "cursiveDesc": "Tippen oder sprechen — fließende Schreibschrift, zum Üben druckbar."
     },
+    "nameTracingLink": "Namensübungsblätter",
+    "cursiveWorksheetsLink": "Schreibschrift-Arbeitsblätter",
+    "repeaterLink": "Handschrift wiederholen",
+    "letterToSantaLink": "Brief an den Weihnachtsmann",
+    "letterFromSantaLink": "Brief vom Weihnachtsmann",
     "allToolsLink": "Alle kostenlosen Werkzeuge ansehen",
     "h1": "Sprich oder tippe, und du bekommst eine handgeschriebene Seite"
   },
@@ -420,7 +425,10 @@
     "seoText": "Jeder Stil wird randlos in exakten realen Abmessungen gedruckt (Letter und A4), ohne Wasserzeichen und ohne Anmeldung. Kombiniere ihn mit unserem Handschrift-Generator: Drucke das Papier und schreibe selbst — oder lass den Generator für dich darauf schreiben.",
     "paperType": "Papiertyp",
     "faqTitle": "Häufige Fragen",
-    "calculatorCta": "Ausrechnen, wie viele Blätter ein Text braucht"
+    "calculatorCta": "Ausrechnen, wie viele Blätter ein Text braucht",
+    "nameTracingCta": "Namensübungsblätter",
+    "letterToSantaCta": "Brief an den Weihnachtsmann",
+    "letterFromSantaCta": "Brief vom Weihnachtsmann"
   },
   "tracing": {
     "title": "Namens-Schreibübungs-Generator",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "Schreibschrift-Generator",
     "intro": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken.",
+    "alphabetLink": "Schreibschrift-Alphabet",
+    "worksheetsLink": "Schreibschrift-Arbeitsblätter",
+    "repeaterLink": "Handschrift wiederholen",
     "seoTitle": "Kostenloser Schreibschrift-Generator",
     "seoText": "Schreibschrift wird kaum noch unterrichtet — dabei trainiert sie Feinmotorik und Schreibtempo und verbindet dich mit einem Jahrhundert voller Briefe.\n\nSo geht's: Text eintippen oder diktieren, eine der beiden Schreibschrift-Schriften wählen, Realismus anpassen und exportieren. Das PDF drucken und zum Üben nachspuren.",
     "faqTitle": "Häufige Fragen"

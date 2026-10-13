@@ -199,6 +199,11 @@
       "cursiveTitle": "필기체 생성기",
       "cursiveDesc": "입력이나 음성으로 흐르는 필기체로. 인쇄해서 따라 쓰기도 가능."
     },
+    "nameTracingLink": "이름 쓰기 연습장",
+    "cursiveWorksheetsLink": "필기체 워크시트",
+    "repeaterLink": "손글씨 반복 재생",
+    "letterToSantaLink": "산타에게 보내는 편지",
+    "letterFromSantaLink": "산타가 보내는 편지",
     "allToolsLink": "모든 무료 도구 보기",
     "h1": "말하거나 입력하면 손글씨 한 장이 됩니다"
   },
@@ -420,7 +425,10 @@
     "seoText": "모든 스타일이 실제 크기에 정확히 인쇄됩니다. 워터마크 없음, 가입 불필요. 손글씨 도구와 함께 쓰면 더 좋아요.",
     "paperType": "용지 유형",
     "faqTitle": "자주 묻는 질문",
-    "calculatorCta": "글이 몇 장인지 계산하기"
+    "calculatorCta": "글이 몇 장인지 계산하기",
+    "nameTracingCta": "이름 쓰기 연습장",
+    "letterToSantaCta": "산타에게 보내는 편지",
+    "letterFromSantaCta": "산타가 보내는 편지"
   },
   "tracing": {
     "title": "이름 쓰기 연습장 생성기",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "필기체( Cursive ) 생성기",
     "intro": "입력하거나 말하면 흐르는 필기체로 즉시 변환됩니다. 무료로 이미지나 PDF로 내보낼 수 있고, 인쇄해서 따라 쓰기 연습도 가능해요.",
+    "alphabetLink": "필기체 알파벳",
+    "worksheetsLink": "필기체 워크시트",
+    "repeaterLink": "손글씨 반복 재생",
     "seoTitle": "무료 필기체( Cursive ) 생성기",
     "seoText": "필기체는 학교에서 거의 가르치지 않지만, 소근육 발달과 필기 속도에 실제로 도움이 됩니다.\n\n사용법: 입력이나 음성으로 문장을 만들고, 두 가지 필기체 글꼴 중 고르고, 리얼리즘을 조절해 내보내세요. PDF를 인쇄해 따라 쓰면 연습에 최고입니다.",
     "faqTitle": "자주 묻는 질문"

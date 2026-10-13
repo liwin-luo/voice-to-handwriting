@@ -199,6 +199,11 @@
       "cursiveTitle": "Écriture cursive",
       "cursiveDesc": "Tapez ou dictez — cursive fluide, imprimable pour vous entraîner."
     },
+    "nameTracingLink": "Fiches de prénoms",
+    "cursiveWorksheetsLink": "Fiches d'écriture cursive",
+    "repeaterLink": "Répéteur d'écriture",
+    "letterToSantaLink": "Lettre au Père Noël",
+    "letterFromSantaLink": "Lettre du Père Noël",
     "allToolsLink": "Voir tous les outils gratuits",
     "h1": "Parlez ou tapez, et obtenez une page manuscrite"
   },
@@ -420,7 +425,10 @@
     "seoText": "Chaque style s'imprime bord à bord aux dimensions réelles exactes (Letter et A4), sans filigrane ni inscription. Associez-le à notre générateur d'écriture : imprimez le papier et écrivez vous-même, ou laissez le générateur écrire à votre place.",
     "paperType": "Type de papier",
     "faqTitle": "Questions fréquentes",
-    "calculatorCta": "Calculer combien de feuilles prend un texte"
+    "calculatorCta": "Calculer combien de feuilles prend un texte",
+    "nameTracingCta": "Fiches de prénoms",
+    "letterToSantaCta": "Lettre au Père Noël",
+    "letterFromSantaCta": "Lettre du Père Noël"
   },
   "tracing": {
     "title": "Générateur de fiches d'écriture prénom",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "Générateur d'écriture cursive",
     "intro": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner.",
+    "alphabetLink": "Alphabet cursif",
+    "worksheetsLink": "Fiches d'écriture cursive",
+    "repeaterLink": "Répéteur d'écriture",
     "seoTitle": "Générateur gratuit d'écriture cursive",
     "seoText": "L'écriture cursive n'est presque plus enseignée — pourtant elle développe la motricité fine et la vitesse de prise de notes.\n\nMode d'emploi : tapez ou dictez, choisissez l'une des deux polices cursives, ajustez le réalisme et exportez. Imprimez le PDF et repassez dessus pour vous entraîner.",
     "faqTitle": "Questions fréquentes"

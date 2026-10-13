@@ -199,6 +199,11 @@
       "cursiveTitle": "英文连笔字",
       "cursiveDesc": "输入或说话,即时变流畅连笔字,可打印描红。"
     },
+    "nameTracingLink": "姓名描红字帖",
+    "cursiveWorksheetsLink": "连笔练习纸",
+    "repeaterLink": "手写循环播放",
+    "letterToSantaLink": "写给圣诞老人的信",
+    "letterFromSantaLink": "圣诞老人的回信",
     "allToolsLink": "浏览全部免费工具",
     "h1": "说一段或打一段，得到一页手写"
   },
@@ -420,7 +425,10 @@
     "seoText": "所有样式按真实尺寸精确渲染(Letter 与 A4),无水印、无需注册。配合手写生成器使用效果更佳:打印出来手写,或让生成器直接在纸上写。",
     "paperType": "纸张类型",
     "faqTitle": "常见问题",
-    "calculatorCta": "算一段文字要几张纸"
+    "calculatorCta": "算一段文字要几张纸",
+    "nameTracingCta": "姓名描红字帖",
+    "letterToSantaCta": "写给圣诞老人的信",
+    "letterFromSantaCta": "圣诞老人的回信"
   },
   "tracing": {
     "title": "姓名描红字帖生成器",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "英文连笔字生成器",
     "intro": "输入或说出任意内容,即时变成流畅的英文连笔字——免费、无需注册。可导出图片或 PDF,也可打印后描红练习。",
+    "alphabetLink": "连笔字母表",
+    "worksheetsLink": "连笔练习纸",
+    "repeaterLink": "手写循环播放",
     "seoTitle": "免费英文连笔字(Cursive)生成器",
     "seoText": "连笔字(Cursive)在学校里已经很少教了,但它对手部精细动作、笔记速度都有实打实的好处。\n\n用法:输入或说出任意内容,选择两款连笔字体之一(Cedarville 适合日常手写,Dancing Script 更华丽),调节仿真度获得自然笔触,导出图片或 PDF——打印出来描红练习效果最佳。",
     "faqTitle": "常见问题"

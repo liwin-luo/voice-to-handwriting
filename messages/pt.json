@@ -199,6 +199,11 @@
       "cursiveTitle": "Letra cursiva",
       "cursiveDesc": "Digite ou fale — cursiva fluida, imprimível para praticar."
     },
+    "nameTracingLink": "Fichas de nomes",
+    "cursiveWorksheetsLink": "Fichas de cursiva",
+    "repeaterLink": "Repetidor de escrita",
+    "letterToSantaLink": "Carta ao Papai Noel",
+    "letterFromSantaLink": "Carta do Papai Noel",
     "allToolsLink": "Ver todas as ferramentas grátis",
     "h1": "Fale ou digite e receba uma página manuscrita"
   },
@@ -420,7 +425,10 @@
     "seoText": "Cada estilo é impresso de ponta a ponta em dimensões reais exatas (Letter e A4), sem marca d'água e sem cadastro. Combine com o nosso gerador de escrita: imprima o papel e escreva você, ou deixe o gerador escrever por você.",
     "paperType": "Tipo de papel",
     "faqTitle": "Perguntas frequentes",
-    "calculatorCta": "Calcular quantas folhas um texto ocupa"
+    "calculatorCta": "Calcular quantas folhas um texto ocupa",
+    "nameTracingCta": "Fichas de nomes",
+    "letterToSantaCta": "Carta ao Papai Noel",
+    "letterFromSantaCta": "Carta do Papai Noel"
   },
   "tracing": {
     "title": "Gerador de fichas de caligrafia com nomes",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "Gerador de letra cursiva",
     "intro": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar.",
+    "alphabetLink": "Alfabeto cursivo",
+    "worksheetsLink": "Fichas de cursiva",
+    "repeaterLink": "Repetidor de escrita",
     "seoTitle": "Gerador grátis de letra cursiva",
     "seoText": "A letra cursiva quase não é mais ensinada nas escolas — mas treina a motricidade fina e acelera anotações.\n\nComo usar: digite ou fale, escolha uma das duas fontes cursivas, ajuste o realismo para um traço natural e exporte. Imprima o PDF e repasse para praticar.",
     "faqTitle": "Perguntas frequentes"

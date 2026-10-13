@@ -38,16 +38,31 @@ export default async function PrintablePaperPage({
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("printable");
+  // ponytail: 10–12 月显示圣诞信。次年秋天自己回来，没有活动配置。
+  const showSantaLinks = new Date().getUTCMonth() >= 9;
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <header className="rise mb-7">
         <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
-        <p className="mt-2 text-sm">
+        <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
           <Link href="/handwriting-page-calculator" className="text-accent underline underline-offset-2">
             {t("calculatorCta")}
           </Link>
+          <Link href="/name-tracing" className="text-accent underline underline-offset-2">
+            {t("nameTracingCta")}
+          </Link>
+          {showSantaLinks && (
+            <>
+              <Link href="/blog/letter-to-santa-template" className="text-accent underline underline-offset-2">
+                {t("letterToSantaCta")}
+              </Link>
+              <Link href="/templates/letter-from-santa" className="text-accent underline underline-offset-2">
+                {t("letterFromSantaCta")}
+              </Link>
+            </>
+          )}
         </p>
         <nav className="mt-4 flex flex-wrap gap-2">
           {PAPER_KINDS.map((kind) => (

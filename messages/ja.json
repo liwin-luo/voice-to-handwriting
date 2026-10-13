@@ -199,6 +199,11 @@
       "cursiveTitle": "筆記体ジェネレーター",
       "cursiveDesc": "入力や音声で流れるような筆記体に。印刷してなぞり練習も。"
     },
+    "nameTracingLink": "名前なぞりプリント",
+    "cursiveWorksheetsLink": "筆記体ワークシート",
+    "repeaterLink": "手書きリピーター",
+    "letterToSantaLink": "サンタへの手紙",
+    "letterFromSantaLink": "サンタからの手紙",
     "allToolsLink": "無料ツールをすべて見る",
     "h1": "話すか入力すると、手書きの一枚になる"
   },
@@ -420,7 +425,10 @@
     "seoText": "すべて実際のサイズで正確に印刷できます。透かしも登録も不要。手書きツールと組み合わせればさらに便利。",
     "paperType": "用紙タイプ",
     "faqTitle": "よくある質問",
-    "calculatorCta": "文章が何枚になるか計算する"
+    "calculatorCta": "文章が何枚になるか計算する",
+    "nameTracingCta": "名前なぞりプリント",
+    "letterToSantaCta": "サンタへの手紙",
+    "letterFromSantaCta": "サンタからの手紙"
   },
   "tracing": {
     "title": "名前なぞり書きプリント生成器",
@@ -515,6 +523,9 @@
   "cursive": {
     "title": "筆記体( Cursive )ジェネレーター",
     "intro": "入力または音声で、流れるような筆記体に即変換。無料で画像や PDF に書き出せます。印刷してなぞり練習も。",
+    "alphabetLink": "筆記体アルファベット",
+    "worksheetsLink": "筆記体ワークシート",
+    "repeaterLink": "手書きリピーター",
     "seoTitle": "無料の筆記体( Cursive )ジェネレーター",
     "seoText": "筆記体は学校でほとんど教えられなくなりましたが、細かい動きやメモの速さに良い影響があります。\n\n使い方:入力または音声で文章を作り、2 つの筆記体フォントから選び、リアリズムを調整して書き出し。PDF を印刷してなぞる練習にも最適です。",
     "faqTitle": "よくある質問"
