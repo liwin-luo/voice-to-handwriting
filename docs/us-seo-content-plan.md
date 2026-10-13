@@ -343,3 +343,15 @@
 - **幼儿园页**:标题写明 12 行;首段写左侧红边,并写按实际尺寸打印。college ruled 英文导语不再把自己叫成 narrow ruling,避免和窄行页互搏。
 - **静态 PDF**:九种纸各一份 US Letter,`public/printables/<slug>.pdf`,画法在 `src/lib/paperSheet.mjs`,重跑 `node scripts/paper-printables.mjs`。子页服务端放直链。A4 仍走页内生成器。
 - **复核**:不复核(行距是固定规格;改 `paperSheet.mjs` 的行距时同步改文案和 PDF)。
+
+## 二十三、手写计数(2026-10-13,工具与文章已落地)
+
+设计全文:`docs/plans/2026-10-13-handwriting-count-design.md`。
+
+- **落地页**:`/handwriting-count`,8 语言。收在 `/tools` 练习纸分组,紧挨手写评分,页头下拉不单列。
+- **文章簇**:手写计数。枢纽 `/handwriting-count`。成员:本工具,以及 `count-words-in-handwriting`(怎么数一张手写里的单词)。意图差:工具页吃上传计数,文章吃这次实测怎么读那几个数字。簇里还没有第二篇邻居,尾部相关文先空着。
+- **意图**:工具页承接 count handwriting from a photo / handwriting word counter。文章承接 how to count words in handwriting,不抢工具页的 Count Handwriting From a Photo。不承接 check handwriting from a photo(`/handwriting-check`),不承接 how many pages is handwritten text(`/handwriting-page-calculator`)。
+- **形态**:照片经服务端交给智谱看图,只取回转写。字数由代码按转写计算。文字可改,数字本地重算。每天 3 次,和评分分开,记在浏览器里。
+- **下一跳**:文章第一屏打开本工具。读完若要看字好不好认,正文链到 `/handwriting-check`(跨簇:下一步是打分,不是再数一次)。簇里目前只有工具和这一篇,尾部相关文先空着。
+- **文章**:`count-words-in-handwriting`,en,Theo Lindgren。主词 how to count words in handwriting。教程,不抢工具页主词。体验资产是 2026-10-13 桌面 Chrome 上的一次真实计数(Bradley Hand 两行,不是纸上照片)和结果页截图。复核:不复核(计数口径随工具改了才改)。英文 FAQ「字、单词、数字分别怎么数」回链本文;其他语言不链,避免 404。
+- **红线**:标点不并进字。不把结果说成逐字精确。照片和转写都不入库。不在这一页打分。

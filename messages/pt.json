@@ -141,6 +141,10 @@
     "handwritingCheck": {
       "title": "Avaliar a letra numa foto",
       "description": "Envie uma foto de letra latina e receba uma impressão de legibilidade, tamanho, linha de base, espaçamento e inclinação. A foto não é guardada."
+    },
+    "handwritingCount": {
+      "title": "Contar a letra numa foto",
+      "description": "Envie uma foto de letra manuscrita. Você recebe o texto e uma contagem de caracteres, palavras, letras e dígitos. A foto não é guardada."
     }
   },
   "nav": {
@@ -180,7 +184,8 @@
     "architectLetter": "Letra de arquiteto",
     "sentencePractice": "Uma frase",
     "handwritingPad": "Bloco manuscrito",
-    "handwritingCheck": "Avaliar letra"
+    "handwritingCheck": "Avaliar letra",
+    "handwritingCount": "Contar a letra"
   },
   "home": {
     "tagline": "Fale um parágrafo e ganhe uma página manuscrita — para cartões, cartas, diários e redes sociais",
@@ -1051,5 +1056,45 @@
       }
     },
     "again": "Enviar outra foto"
+  },
+  "handwritingCount": {
+    "title": "Contar a letra numa foto",
+    "intro": "Envie uma foto de letra manuscrita. Você recebe o texto e depois uma contagem de caracteres, palavras, letras e dígitos.",
+    "noteAny": "Uma foto de letra manuscrita, em qualquer idioma.",
+    "noteHow": "Primeiro o texto, depois uma contagem de caracteres, palavras, letras e dígitos. O ilegível fica como □ e não entra na conta. Edite o texto e os números acompanham.",
+    "noteDiscard": "A foto é enviada ao modelo e depois descartada. Não é guardada. O texto fica nesta página até você sair ou enviar outra.",
+    "daily": "Você pode contar {count} fotos por dia. Reinicia no dia seguinte.",
+    "upload": "Enviar uma foto",
+    "camera": "Tirar uma foto",
+    "looking": "Lendo esta foto",
+    "lookingHint": "Fique nesta página. Isso costuma levar cerca de meio minuto.",
+    "cjk": "Caracteres",
+    "words": "Palavras",
+    "latinLetters": "Letras",
+    "otherLetters": "Outras letras",
+    "digits": "Dígitos",
+    "punctuation": "Pontuação",
+    "illegible": "{count} ilegíveis",
+    "other": "Outras marcas",
+    "truncated": "A leitura foi cortada aqui.",
+    "empty": "Não há letra manuscrita nesta foto.",
+    "retake": "Tire a foto de novo. Ela está borrada, cortada ou com reflexo.",
+    "failed": "Esta leitura não terminou. Você pode tentar de novo.",
+    "quota": "As contagens de hoje acabaram. Volte amanhã.",
+    "left": "Restam {count} hoje.",
+    "tooBig": "Esta foto é grande demais. Tente outra.",
+    "badImage": "Este arquivo não é uma foto que conseguimos ler. Tente outra.",
+    "copy": "Copiar texto",
+    "copied": "Copiado",
+    "copyFailed": "O texto não pôde ser copiado. Selecione-o e copie você mesmo.",
+    "again": "Enviar outra foto",
+    "photoAlt": "Sua foto de letra",
+    "transcriptLabel": "Texto da foto",
+    "none": "Não há nada para contar neste texto.",
+    "faqTitle": "Perguntas",
+    "seoTitle": "O que é contado",
+    "seoText": "Caracteres são caracteres chineses, kana e sílabas hangul. Uma palavra é uma sequência de letras. Um apóstrofo ou hífen entre letras fica dentro da palavra e também conta como pontuação. Cada dígito conta como um, então 2026 são quatro. A pontuação, inclusive o ponto chinês, fica numa linha à parte.\n\nO ilegível permanece como □ e fica de fora dos números. Edite o texto e a contagem se atualiza nesta página. Uma página densa pode perder uma marca. Isto é uma contagem do que foi lido.",
+    "checkLead": "Quer uma nota de quão legível ela é?",
+    "checkLink": "Avaliar esta letra numa foto"
   }
 }

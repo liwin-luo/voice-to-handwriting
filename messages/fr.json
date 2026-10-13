@@ -141,6 +141,10 @@
     "handwritingCheck": {
       "title": "Évaluer une écriture sur photo",
       "description": "Envoyez une photo d'écriture latine et obtenez une impression de lisibilité, de taille, de ligne de base, d'espacement et d'inclinaison. La photo n'est pas conservée."
+    },
+    "handwritingCount": {
+      "title": "Compter une écriture sur photo",
+      "description": "Envoyez une photo d'écriture manuscrite. Vous obtenez le texte, puis un compte de caractères, de mots, de lettres et de chiffres. La photo n'est pas conservée."
     }
   },
   "nav": {
@@ -180,7 +184,8 @@
     "architectLetter": "Écriture d'architecte",
     "sentencePractice": "Une phrase",
     "handwritingPad": "Bloc manuscrit",
-    "handwritingCheck": "Évaluer l'écriture"
+    "handwritingCheck": "Évaluer l'écriture",
+    "handwritingCount": "Compter l'écriture"
   },
   "home": {
     "tagline": "Dites un paragraphe, obtenez une page manuscrite — pour cartes, lettres, journals et réseaux sociaux",
@@ -1051,5 +1056,45 @@
       }
     },
     "again": "Envoyer une autre photo"
+  },
+  "handwritingCount": {
+    "title": "Compter une écriture sur photo",
+    "intro": "Envoyez une photo d'écriture manuscrite. Vous obtenez le texte, puis un compte de caractères, de mots, de lettres et de chiffres.",
+    "noteAny": "Une photo d'écriture manuscrite, dans n'importe quelle langue.",
+    "noteHow": "D'abord le texte, puis un compte de caractères, de mots, de lettres et de chiffres. L'illisible est marqué □ et ne compte pas. Modifiez le texte et les nombres suivent.",
+    "noteDiscard": "La photo est envoyée au modèle, puis écartée. Elle n'est pas conservée. Le texte reste sur cette page jusqu'à ce que vous partiez ou en envoyiez une autre.",
+    "daily": "Vous pouvez compter {count} photos par jour. Le compte repart le lendemain.",
+    "upload": "Envoyer une photo",
+    "camera": "Prendre une photo",
+    "looking": "Lecture de cette photo",
+    "lookingHint": "Restez sur cette page. Cela prend en général une demi-minute.",
+    "cjk": "Caractères",
+    "words": "Mots",
+    "latinLetters": "Lettres",
+    "otherLetters": "Autres lettres",
+    "digits": "Chiffres",
+    "punctuation": "Ponctuation",
+    "illegible": "{count} illisibles",
+    "other": "Autres signes",
+    "truncated": "La lecture s'est arrêtée ici.",
+    "empty": "Il n'y a pas d'écriture manuscrite sur cette photo.",
+    "retake": "Reprenez la photo. Elle est floue, coupée ou éblouie.",
+    "failed": "Cette lecture n'a pas abouti. Vous pouvez réessayer.",
+    "quota": "Les comptes du jour sont épuisés. Revenez demain.",
+    "left": "Encore {count} aujourd'hui.",
+    "tooBig": "Cette photo est trop grande. Essayez-en une autre.",
+    "badImage": "Ce fichier n'est pas une photo que nous pouvons lire. Essayez-en une autre.",
+    "copy": "Copier le texte",
+    "copied": "Copié",
+    "copyFailed": "Le texte n'a pas pu être copié. Sélectionnez-le et copiez-le vous-même.",
+    "again": "Envoyer une autre photo",
+    "photoAlt": "Votre photo d'écriture",
+    "transcriptLabel": "Texte de la photo",
+    "none": "Rien à compter dans ce texte.",
+    "faqTitle": "Questions",
+    "seoTitle": "Ce qui est compté",
+    "seoText": "Les caractères sont les caractères chinois, les kana et les syllabes hangul. Un mot est une suite de lettres. Une apostrophe ou un trait d'union entre deux lettres reste dans le mot et compte aussi comme ponctuation. Chaque chiffre compte pour un, donc 2026 en fait quatre. La ponctuation, y compris le point chinois, a sa propre ligne.\n\nL'illisible reste □ et ne compte pas. Modifiez le texte et le compte se met à jour sur cette page. Une page dense peut manquer un signe. C'est un compte de ce qui a été lu.",
+    "checkLead": "Vous voulez une note sur sa lisibilité ?",
+    "checkLink": "Évaluer cette écriture sur photo"
   }
 }

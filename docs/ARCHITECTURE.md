@@ -1,6 +1,6 @@
 # 项目结构与能力总览
 
-> 供后续开发使用。最后更新:2026-10-12。
+> 供后续开发使用。最后更新:2026-10-13。
 > 快速上手先读 [README.md](../README.md)(运行指南),本文侧重架构、接线方式与开发约定。
 
 ## 1. 项目概览
@@ -42,6 +42,7 @@
 │   │                          # paperImage(上传图片压缩)、staticPage(静态页工厂)、
 │   │                          # fancyText(花体 Unicode 映射+折行,有单测)、
 │   │                          # handwritingCheck(手写照片评分的解析与提示词,有单测)、
+│   │                          # handwritingCount(手写照片转写后的字数,有单测)、glmVision(智谱看图)、
 │   │                          # tools(工具分组:nav 标记进页头下拉,全量给 /tools)
 │   ├── engine/                # 手写渲染引擎:tokens / layout / jitter / paper(纯函数+单测)
 │   ├── hooks/                 # useSpeechRecognition(Web Speech API 封装)
@@ -50,7 +51,8 @@
 │   ├── content/               # 数据层:posts/templates/faqs/related + MDX 注册表(§4.8)
 │   └── app/
 │       ├── sitemap.ts robots.ts icon.svg
-│       ├── api/handwriting-check/route.ts  # 唯一服务端函数:智谱看图打分,照片不入库
+│       ├── api/handwriting-check/route.ts  # 智谱看图打分,照片不入库
+│       ├── api/handwriting-count/route.ts  # 智谱看图转写,字数在代码里算,照片不入库
 │       └── [locale]/          # 所有页面(§4.2),layout.tsx 挂全站壳
 ├── fonts-src/                 # 字体原始 TTF + OFL 授权
 ├── tests/e2e/                 # Playwright 冒烟
@@ -105,6 +107,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/signature-practice` | 签名练习纸。姓名按空格拆成全名 / 名 / 首字母加姓。四种签名体各一行对照,选中体下面是实线、虚线、空白。单基线。页头下拉不单列 | `SignaturePractice`,`signatureForms.ts`,`SIGNATURE_FAQS` |
 | `/handwriting-sentence-practice` | 成人单句练习纸。一句、四选一(大小 / 斜度 / 间距 / 印刷体),实心、虚线、三行空白。空输入画当前语言的例句。超长不画纸。左手只翻红边距;斜度时斜线反向。下载后本地记住这一句,可「再写一遍」只留三行空白。页头下拉不单列 | `SentencePractice`,`sentencePractice.ts`,`SENTENCE_PRACTICE_FAQS` |
 | `/handwriting-check` | 拉丁字母手写照片的观感分。好认加大小、贴线、间距、斜度,1–5,无总分。能分析出分数就在浏览器拼分享卡,四选一框(盖章、证书、纸面、简约),下载用当前框。盖章、证书、纸面在照片角上有认证章。宽屏时卡片与右侧解析同高。缺项留空。解析是可选中的文字。照片经 `/api/handwriting-check` 送智谱后丢弃。页头下拉不单列 | `HandwritingCheck`,`handwritingCheck.ts`,`HANDWRITING_CHECK_FAQS` |
+| `/handwriting-count` | 手写照片转成文字再计数。汉字、假名、谚文按字,拉丁文按单词和字母,数码和标点分开。看不清的地方是 □,不计入。文字可改,数字在浏览器里重算。每天 3 次,和评分分开。照片经 `/api/handwriting-count` 送智谱后丢弃。页头下拉不单列 | `HandwritingCount`,`handwritingCount.ts`,`glmVision.ts`,`HANDWRITING_COUNT_FAQS` |
 | `/number-tracing` | 数字描红。1–10 或 1–20,每个数字单独一页(首行实心,其余虚线)。Patrick Hand,行高档。页头下拉不单列 | `TracingGenerator`(`perName`,`defaultOneEach`,`presets`),`practicePresets.ts`,`NUMBER_TRACING_FAQS` |
 | `/prewriting-strokes` | 学前运笔。直线组(向下、横线、斜线)或曲线组(圆、波浪、拱)。每种实线、虚线、空白。页头下拉不单列 | `PrewritingSheet`,`prewritingStrokes.ts`,`PREWRITING_FAQS` |
 | `/cursive-letter-joins` | 连笔字母对。同方向或中途转向,一对一页。Sacramento。页头下拉不单列 | `TracingGenerator`(`rowLabels="lines"`),`CURSIVE_JOIN_GROUPS`,`CURSIVE_JOIN_FAQS` |
@@ -217,11 +220,11 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 | `NEXT_PUBLIC_ICP` | 配置后页脚渲染备案链接 |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | AdSense client id,同时控制 ConsentBanner 显示 |
 | `NEXT_PUBLIC_SENTRY_DSN` | Sentry,不配则关闭 |
-| `TEXT_API_KEY` | 手写照片评分的智谱密钥。不配则 `/api/handwriting-check` 不可用 |
+| `TEXT_API_KEY` | 手写照片评分和手写计数的智谱密钥。不配则 `/api/handwriting-check` 与 `/api/handwriting-count` 不可用 |
 | `TEXT_BASE_URL` | 智谱接口,默认 `https://open.bigmodel.cn/api/coding/paas/v4` |
 | `TEXT_MODEL` | 默认 `glm-5.3-flash`。`custom/` 前缀会去掉 |
 
-每天 3 次记在浏览器 localStorage,按本机日历日切。接口不计数。
+评分和计数各每天 3 次,分别记在浏览器 localStorage(`vth-handwriting-check`、`vth-handwriting-count`),按本机日历日切。接口不计数。
 
 ## 6. 本地开发
 
@@ -236,7 +239,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 ## 7. 部署
 
-推送 main → Vercel 自动部署。页面仍是 SSG。`/api/handwriting-check` 是唯一服务端函数,调用智谱给手写照片打分,照片不入库。生产域名 `https://voicetohandwriting.online`。部署新页面后如需加速收录,跑 `npm run indexnow <url>`(等密钥文件已在线上时;全量提交见 §4.9 注意)。
+推送 main → Vercel 自动部署。页面仍是 SSG。`/api/handwriting-check` 与 `/api/handwriting-count` 调用智谱看手写照片,一个打分,一个转写后由代码计数。照片不入库。生产域名 `https://voicetohandwriting.online`。部署新页面后如需加速收录,跑 `npm run indexnow <url>`(等密钥文件已在线上时;全量提交见 §4.9 注意)。
 
 ## 8. 常见任务接线指南
 

@@ -812,6 +812,20 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
+    slug: "count-words-in-handwriting",
+    author: "theo-lindgren",
+    date: "2026-10-13",
+    updated: "2026-10-13",
+    image: "/blog/count-words-in-handwriting.png",
+    i18n: {
+      en: {
+        title: "How to count words in handwriting",
+        description:
+          "How to count words in handwriting: upload one photo, then read the words, letters, and digits. Two Bradley Hand lines came back as 7 words. Free, no signup.",
+      },
+    },
+  },
+  {
     slug: "share-a-handwriting-score-card",
     author: "theo-lindgren",
     date: "2026-10-13",

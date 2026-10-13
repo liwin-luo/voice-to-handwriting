@@ -31,6 +31,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/printable-handwritten-letters": "bulkLetters",
   "/handwriting-sentence-practice": "sentencePractice",
   "/handwriting-check": "handwritingCheck",
+  "/handwriting-count": "handwritingCount",
   "/handwriting-pad": "handwritingPad",
 };
 
@@ -196,6 +197,11 @@ export const RELATED: Record<string, RelatedConfig> = {
   // 手写照片评分:枢纽 /handwriting-check。这篇教选框并下载分享卡。簇里还没有第二篇,尾部不拿别的簇凑数。
   "share-a-handwriting-score-card": {
     tools: ["/handwriting-check"],
+    posts: [],
+  },
+  // 手写计数:枢纽 /handwriting-count。这篇教怎么数一张手写里的单词。簇里还没有第二篇,尾部不拿别的簇凑数。
+  "count-words-in-handwriting": {
+    tools: ["/handwriting-count"],
     posts: [],
   },
   "handwriting-practice-struggling-writers": {

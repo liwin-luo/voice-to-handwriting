@@ -1130,3 +1130,118 @@ export const PAD_FAQS: FaqItem[] = [
     },
   },
 ];
+
+export const HANDWRITING_COUNT_FAQS: FaqItem[] = [
+  {
+    id: "hcount-keep",
+    i18n: {
+      en: {
+        q: "Do you keep the photo?",
+        a: "No. The model looks, then the photo is discarded. The text stays on this page until you leave or upload another.",
+      },
+      zh: {
+        q: "照片会留下吗?",
+        a: "不会。模型看完即丢。文字留在这一页,直到离开或再传一张。",
+      },
+      ja: {
+        q: "写真は残りますか?",
+        a: "残りません。モデルが見たあと捨てます。文字はこのページに残り、離れるか別の写真を送るまでです。",
+      },
+      ko: {
+        q: "사진은 남나요?",
+        a: "남지 않습니다. 모델이 본 뒤 버립니다. 글자는 이 페이지에 남고, 떠나거나 다른 사진을 올릴 때까지입니다.",
+      },
+      es: {
+        q: "¿Guardáis la foto?",
+        a: "No. El modelo la mira y luego se descarta. El texto se queda en esta página hasta que te vayas o subas otra.",
+      },
+      de: {
+        q: "Behaltet ihr das Foto?",
+        a: "Nein. Das Modell sieht es an, dann wird es verworfen. Der Text bleibt auf dieser Seite, bis du gehst oder ein anderes Foto hochlädst.",
+      },
+      fr: {
+        q: "Gardez-vous la photo ?",
+        a: "Non. Le modèle la regarde, puis elle est écartée. Le texte reste sur cette page jusqu'à ce que vous partiez ou en envoyiez une autre.",
+      },
+      pt: {
+        q: "Vocês guardam a foto?",
+        a: "Não. O modelo olha e a foto é descartada. O texto fica nesta página até você sair ou enviar outra.",
+      },
+    },
+  },
+  {
+    id: "hcount-rules",
+    i18n: {
+      en: {
+        q: "How do characters, words, and digits get counted?",
+        a: "Chinese characters, kana, and Hangul syllables each count as one character. A word is a run of letters. An apostrophe or hyphen between letters stays inside the word and still counts as punctuation. Each digit counts as one, so 2026 is four. Punctuation is its own line.",
+        link: { href: "/blog/count-words-in-handwriting", label: "How to count words in handwriting" },
+      },
+      zh: {
+        q: "字、单词、数字分别怎么数?",
+        a: "每个汉字、假名、谚文音节算一个字。单词是连在一起的字母。字母两侧都是字母时,撇号和连字符留在词里,同时仍算一个标点。每个数码算一个,2026 是 4 个。标点单独一行。",
+      },
+      ja: {
+        q: "字、単語、数字はどう数えますか?",
+        a: "漢字、仮名、ハングルの音節は一つずつ字です。単語はつながった字母です。字母のあいだのアポストロフィとハイフンは単語の中に残り、句読点としても数えます。数字は一つずつで、2026 は 4 です。句読点は別の行です。",
+      },
+      ko: {
+        q: "글자, 단어, 숫자는 어떻게 세나요?",
+        a: "한자, 가나, 한글 음절은 하나씩 글자입니다. 단어는 이어진 글자입니다. 글자 사이의 아포스트로피와 붙임표는 단어 안에 남고, 문장 부호로도 셉니다. 숫자는 하나씩이라 2026은 4입니다. 문장 부호는 따로입니다.",
+      },
+      es: {
+        q: "¿Cómo se cuentan los caracteres, las palabras y los dígitos?",
+        a: "Cada carácter chino, cada kana y cada sílaba hangul cuenta como un carácter. Una palabra es una serie de letras. Un apóstrofo o un guion entre letras se queda dentro de la palabra y también cuenta como puntuación. Cada dígito cuenta como uno, así que 2026 son cuatro. La puntuación va en su propia línea.",
+      },
+      de: {
+        q: "Wie werden Zeichen, Wörter und Ziffern gezählt?",
+        a: "Jedes chinesische Zeichen, jedes Kana und jede Hangul-Silbe zählt als ein Zeichen. Ein Wort ist eine Folge von Buchstaben. Ein Apostroph oder Bindestrich zwischen Buchstaben bleibt im Wort und zählt trotzdem als Satzzeichen. Jede Ziffer zählt einzeln, 2026 ist also vier. Satzzeichen stehen in einer eigenen Zeile.",
+      },
+      fr: {
+        q: "Comment compte-t-on les caractères, les mots et les chiffres ?",
+        a: "Chaque caractère chinois, chaque kana et chaque syllabe hangul compte pour un caractère. Un mot est une suite de lettres. Une apostrophe ou un trait d'union entre deux lettres reste dans le mot et compte aussi comme ponctuation. Chaque chiffre compte pour un, donc 2026 en fait quatre. La ponctuation a sa propre ligne.",
+      },
+      pt: {
+        q: "Como são contados os caracteres, as palavras e os dígitos?",
+        a: "Cada caractere chinês, cada kana e cada sílaba hangul conta como um caractere. Uma palavra é uma sequência de letras. Um apóstrofo ou hífen entre letras fica dentro da palavra e também conta como pontuação. Cada dígito conta como um, então 2026 são quatro. A pontuação fica numa linha à parte.",
+      },
+    },
+  },
+  {
+    id: "hcount-unread",
+    i18n: {
+      en: {
+        q: "What if a mark is unreadable?",
+        a: "That spot is a □ and is left out of the count. Edit the text and the numbers update.",
+      },
+      zh: {
+        q: "有字看不清怎么办?",
+        a: "那个位置是 □,不计入数字。改掉文字后,数字会更新。",
+      },
+      ja: {
+        q: "読めない字はどうなりますか?",
+        a: "その位置は □ で、数に入りません。文字を直すと数字が更新されます。",
+      },
+      ko: {
+        q: "글자를 읽지 못하면요?",
+        a: "그 자리는 □이고, 수에 넣지 않습니다. 글자를 고치면 숫자가 갱신됩니다.",
+      },
+      es: {
+        q: "¿Qué pasa si un trazo no se lee?",
+        a: "Ese lugar es un □ y no entra en la cuenta. Corrige el texto y los números se actualizan.",
+      },
+      de: {
+        q: "Was, wenn ein Zeichen unleserlich ist?",
+        a: "Diese Stelle ist ein □ und zählt nicht mit. Änderst du den Text, aktualisieren sich die Zahlen.",
+      },
+      fr: {
+        q: "Et si un signe est illisible ?",
+        a: "Cet endroit est un □ et ne compte pas. Modifiez le texte et les nombres se mettent à jour.",
+      },
+      pt: {
+        q: "E se um traço não der para ler?",
+        a: "Esse lugar é um □ e fica de fora da contagem. Edite o texto e os números se atualizam.",
+      },
+    },
+  },
+];

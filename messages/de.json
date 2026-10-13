@@ -141,6 +141,10 @@
     "handwritingCheck": {
       "title": "Handschrift auf einem Foto prüfen",
       "description": "Lade ein Foto lateinischer Handschrift hoch und erhalte einen Eindruck zu Lesbarkeit, Größe, Grundlinie, Abstand und Neigung. Das Foto wird nicht gespeichert."
+    },
+    "handwritingCount": {
+      "title": "Handschrift auf einem Foto zählen",
+      "description": "Lade ein Foto von Handschrift hoch. Du bekommst den Text und eine Zählung von Zeichen, Wörtern, Buchstaben und Ziffern. Das Foto wird nicht gespeichert."
     }
   },
   "nav": {
@@ -180,7 +184,8 @@
     "architectLetter": "Architektenschrift",
     "sentencePractice": "Satzübung",
     "handwritingPad": "Handschriftblock",
-    "handwritingCheck": "Handschrift prüfen"
+    "handwritingCheck": "Handschrift prüfen",
+    "handwritingCount": "Schrift zählen"
   },
   "home": {
     "tagline": "Sprich einen Absatz – und er wird zur Handschrift: für Karten, Briefe, Journals und Social Posts",
@@ -1051,5 +1056,45 @@
       }
     },
     "again": "Anderes Foto hochladen"
+  },
+  "handwritingCount": {
+    "title": "Handschrift auf einem Foto zählen",
+    "intro": "Lade ein Foto von Handschrift hoch. Du bekommst den Text und dann eine Zählung von Zeichen, Wörtern, Buchstaben und Ziffern.",
+    "noteAny": "Ein Foto von Handschrift, in jeder Sprache.",
+    "noteHow": "Zuerst der Text, dann eine Zählung von Zeichen, Wörtern, Buchstaben und Ziffern. Unleserliches steht als □ und zählt nicht mit. Änderst du den Text, folgen die Zahlen.",
+    "noteDiscard": "Das Foto geht an das Modell und wird dann verworfen. Es wird nicht gespeichert. Der Text bleibt auf dieser Seite, bis du gehst oder ein anderes Foto hochlädst.",
+    "daily": "Du kannst {count} Fotos am Tag zählen. Am nächsten Tag beginnt es neu.",
+    "upload": "Foto hochladen",
+    "camera": "Foto aufnehmen",
+    "looking": "Dieses Foto wird gelesen",
+    "lookingHint": "Bleib auf dieser Seite. Das dauert meist etwa eine halbe Minute.",
+    "cjk": "Zeichen",
+    "words": "Wörter",
+    "latinLetters": "Buchstaben",
+    "otherLetters": "Andere Buchstaben",
+    "digits": "Ziffern",
+    "punctuation": "Satzzeichen",
+    "illegible": "{count} unleserlich",
+    "other": "Andere Zeichen",
+    "truncated": "Die Lesung wurde hier abgeschnitten.",
+    "empty": "Auf diesem Foto ist keine Handschrift.",
+    "retake": "Mach das Foto noch einmal. Es ist unscharf, abgeschnitten oder spiegelt.",
+    "failed": "Dieses Lesen ist nicht fertig geworden. Du kannst es noch einmal versuchen.",
+    "quota": "Die Zählungen für heute sind aufgebraucht. Komm morgen wieder.",
+    "left": "Heute noch {count}.",
+    "tooBig": "Dieses Foto ist zu groß. Versuch ein anderes.",
+    "badImage": "Diese Datei ist kein Foto, das wir lesen können. Versuch ein anderes.",
+    "copy": "Text kopieren",
+    "copied": "Kopiert",
+    "copyFailed": "Der Text ließ sich nicht kopieren. Markiere ihn und kopiere ihn selbst.",
+    "again": "Anderes Foto hochladen",
+    "photoAlt": "Dein Handschriftfoto",
+    "transcriptLabel": "Text aus dem Foto",
+    "none": "In diesem Text ist nichts zu zählen.",
+    "faqTitle": "Fragen",
+    "seoTitle": "Was gezählt wird",
+    "seoText": "Zeichen sind chinesische Zeichen, Kana und Hangul-Silben. Ein Wort ist eine Folge von Buchstaben. Ein Apostroph oder Bindestrich zwischen Buchstaben bleibt im Wort und zählt trotzdem als Satzzeichen. Jede Ziffer zählt einzeln, 2026 ist also vier. Satzzeichen, auch ein chinesischer Punkt, stehen in einer eigenen Zeile.\n\nUnleserliches bleibt □ und zählt nicht mit. Änderst du den Text, aktualisiert sich die Zählung auf dieser Seite. Eine dichte Seite kann ein Zeichen verpassen. Das ist eine Zählung dessen, was gelesen wurde.",
+    "checkLead": "Willst du eine Note, wie lesbar es ist?",
+    "checkLink": "Diese Handschrift auf einem Foto prüfen"
   }
 }

@@ -77,6 +77,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
       { href: "/signature-practice", navKey: "signaturePractice", metaKey: "signaturePractice" },
       { href: "/handwriting-sentence-practice", navKey: "sentencePractice", metaKey: "sentencePractice" },
       { href: "/handwriting-check", navKey: "handwritingCheck", metaKey: "handwritingCheck" },
+      { href: "/handwriting-count", navKey: "handwritingCount", metaKey: "handwritingCount" },
       { href: "/number-tracing", navKey: "numberTracing", metaKey: "numberTracing" },
       { href: "/prewriting-strokes", navKey: "prewriting", metaKey: "prewriting" },
       { href: "/cursive-letter-joins", navKey: "cursiveJoins", metaKey: "cursiveJoins" },

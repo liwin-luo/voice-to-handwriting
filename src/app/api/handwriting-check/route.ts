@@ -1,4 +1,5 @@
-import { buildCheckPrompt, glmModelId, parseCheckResponse, readModelContent } from "@/lib/handwritingCheck";
+import { buildCheckPrompt, parseCheckResponse } from "@/lib/handwritingCheck";
+import { askGlmVision } from "@/lib/glmVision";
 import { routing, type Locale } from "@/i18n/routing";
 
 export const runtime = "nodejs";
@@ -8,33 +9,6 @@ const MAX_BYTES = 2 * 1024 * 1024;
 
 function jsonError(error: "bad_image" | "too_big" | "failed" | "unavailable", status: number) {
   return Response.json({ error }, { status });
-}
-
-async function askModel(jpeg: Uint8Array, locale: string): Promise<string> {
-  const key = process.env.TEXT_API_KEY?.trim();
-  if (!key) throw new Error("no key");
-  const base = (process.env.TEXT_BASE_URL?.trim() || "https://open.bigmodel.cn/api/coding/paas/v4").replace(/\/$/, "");
-  const model = glmModelId(process.env.TEXT_MODEL?.trim() || "glm-5.3-flash");
-  const dataUrl = `data:image/jpeg;base64,${Buffer.from(jpeg).toString("base64")}`;
-  const res = await fetch(`${base}/chat/completions`, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-    signal: AbortSignal.timeout(60_000),
-    body: JSON.stringify({
-      model,
-      messages: [
-        {
-          role: "user",
-          content: [
-            { type: "text", text: buildCheckPrompt(locale) },
-            { type: "image_url", image_url: { url: dataUrl } },
-          ],
-        },
-      ],
-    }),
-  });
-  if (!res.ok) throw new Error(`model ${res.status}`);
-  return readModelContent(await res.json());
 }
 
 export async function POST(req: Request) {
@@ -49,11 +23,11 @@ export async function POST(req: Request) {
   if (!process.env.TEXT_API_KEY?.trim()) return jsonError("unavailable", 503);
 
   try {
-    let text = await askModel(bytes, locale);
+    let text = await askGlmVision(buildCheckPrompt(locale), bytes);
     try {
       return Response.json(parseCheckResponse(text));
     } catch {
-      text = await askModel(bytes, locale);
+      text = await askGlmVision(buildCheckPrompt(locale), bytes);
       return Response.json(parseCheckResponse(text));
     }
   } catch (err) {

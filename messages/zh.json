@@ -141,6 +141,10 @@
     "handwritingCheck": {
       "title": "给手写照片打分",
       "description": "上传一张拉丁字母手写照片,得到好认、大小、贴线、间距、斜度五项观感分。照片不保存。"
+    },
+    "handwritingCount": {
+      "title": "数一数这张手写有多少字",
+      "description": "上传一张手写照片,先转成文字,再按字、单词、字母、数字分开统计。照片不保存。"
     }
   },
   "nav": {
@@ -180,7 +184,8 @@
     "architectLetter": "建筑字体",
     "sentencePractice": "单句练习",
     "handwritingPad": "手写板",
-    "handwritingCheck": "手写打分"
+    "handwritingCheck": "手写打分",
+    "handwritingCount": "手写计数"
   },
   "home": {
     "tagline": "说一段话,一键变成手写文稿 —— 贺卡、书信、手账与文案配图",
@@ -1051,5 +1056,45 @@
       }
     },
     "again": "再传一张"
+  },
+  "handwritingCount": {
+    "title": "数一数这张手写有多少字",
+    "intro": "上传一张手写照片。先得到文字,再按字、单词、字母、数字分开数。",
+    "noteAny": "一张手写照片,什么语言都可以。",
+    "noteHow": "先得到文字,再按字、单词、字母、数字分开数。看不清的地方写成 □,不计入数字。文字可以改,数字跟着变。",
+    "noteDiscard": "照片送给模型看完即丢,不保存。文字留在这一页,直到离开或再传一张。",
+    "daily": "每天可以数 {count} 张照片,第二天重新计算。",
+    "upload": "上传照片",
+    "camera": "拍照",
+    "looking": "正在读这张照片",
+    "lookingHint": "请留在这一页。通常大约半分钟。",
+    "cjk": "字",
+    "words": "单词",
+    "latinLetters": "字母",
+    "otherLetters": "其他字母",
+    "digits": "数字",
+    "punctuation": "标点",
+    "illegible": "看不清 {count} 处",
+    "other": "其他符号",
+    "truncated": "读到的文字在这里截断了。",
+    "empty": "这张照片上看不到手写。",
+    "retake": "请重拍。照片模糊、切掉了字,或反光严重。",
+    "failed": "这次没读成,可以再试。",
+    "quota": "今天的次数用完了。明天再来。",
+    "left": "今天还剩 {count} 次。",
+    "tooBig": "这张照片太大了。换一张试试。",
+    "badImage": "这个文件读不了。换一张试试。",
+    "copy": "复制文字",
+    "copied": "已复制",
+    "copyFailed": "没能复制。选中文字后自己复制。",
+    "again": "再传一张",
+    "photoAlt": "你的手写照片",
+    "transcriptLabel": "照片里的文字",
+    "none": "这段文字里没有可数的内容。",
+    "faqTitle": "问题",
+    "seoTitle": "这一页在数什么",
+    "seoText": "字是汉字、假名和谚文音节。单词是连在一起的字母。字母两侧都是字母时,撇号和连字符留在词里,同时仍算一个标点。数字逐个计,2026 是 4 个。标点单独一行,包括中文句号。\n\n看不清的地方保留为 □,不计入数字。改文字后,数字在这一页更新。字很密的一页可能会漏。这是按读出的内容计数。",
+    "checkLead": "想看这张字好不好认?",
+    "checkLink": "去给手写照片打分"
   }
 }

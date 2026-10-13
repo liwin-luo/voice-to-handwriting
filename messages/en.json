@@ -141,6 +141,10 @@
     "handwritingCheck": {
       "title": "Check Handwriting From a Photo",
       "description": "Upload a photo of Latin handwriting and get an impression score for legibility, size, baseline, spacing, and slant. The photo is not saved."
+    },
+    "handwritingCount": {
+      "title": "Count Handwriting From a Photo",
+      "description": "Upload a photo of handwriting and get the text, plus a count of characters, words, letters, and digits. A handwriting word counter. The photo is not saved."
     }
   },
   "nav": {
@@ -180,7 +184,8 @@
     "architectLetter": "Architect Lettering",
     "sentencePractice": "Sentence Practice",
     "handwritingPad": "Handwriting Notepad",
-    "handwritingCheck": "Handwriting Check"
+    "handwritingCheck": "Handwriting Check",
+    "handwritingCount": "Handwriting Count"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -1051,5 +1056,45 @@
       }
     },
     "again": "Upload another"
+  },
+  "handwritingCount": {
+    "title": "Count Handwriting From a Photo",
+    "intro": "Upload a photo of handwriting. You get the text, then a count of characters, words, letters, and digits.",
+    "noteAny": "One photo of handwriting, in any language.",
+    "noteHow": "You get the text first, then a count of characters, words, letters, and digits. Unreadable spots are marked □ and left out of the count. Edit the text and the numbers follow.",
+    "noteDiscard": "The photo is sent to the model and then discarded. It is not saved. The text stays on this page until you leave or upload another.",
+    "daily": "You can count {count} photos a day. It resets the next day.",
+    "upload": "Upload a photo",
+    "camera": "Take a photo",
+    "looking": "Reading this photo",
+    "lookingHint": "Stay on this page. This usually takes about half a minute.",
+    "cjk": "Characters",
+    "words": "Words",
+    "latinLetters": "Letters",
+    "otherLetters": "Other letters",
+    "digits": "Digits",
+    "punctuation": "Punctuation",
+    "illegible": "{count} unreadable",
+    "other": "Other marks",
+    "truncated": "The reading was cut off here.",
+    "empty": "No handwriting on this photo.",
+    "retake": "Take the photo again. It is blurry, cropped, or glared.",
+    "failed": "This read did not finish. You can try again.",
+    "quota": "Today's counts are used up. Come back tomorrow.",
+    "left": "{count} left today.",
+    "tooBig": "This photo is too large. Try another.",
+    "badImage": "This file is not a photo we can read. Try another.",
+    "copy": "Copy text",
+    "copied": "Copied",
+    "copyFailed": "The text could not be copied. Select it and copy it yourself.",
+    "again": "Upload another",
+    "photoAlt": "Your handwriting photo",
+    "transcriptLabel": "Text from the photo",
+    "none": "Nothing to count in this text.",
+    "faqTitle": "Questions",
+    "seoTitle": "What gets counted",
+    "seoText": "Characters are Chinese characters, kana, and Hangul syllables. Words are runs of letters. An apostrophe or hyphen between letters stays inside the word and still counts as punctuation. Digits count one by one, so 2026 is four. Punctuation, including a Chinese full stop, is its own line.\n\nUnreadable spots stay as □ and are left out of the numbers. Edit the text and the count updates on this page. A dense page can miss a mark. This is a count of what was read.",
+    "checkLead": "Want a score for how readable it is?",
+    "checkLink": "Check this handwriting from a photo"
   }
 }
