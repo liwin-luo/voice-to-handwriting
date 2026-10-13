@@ -206,7 +206,7 @@
 2. **FR graphisme 新文章**(Clara)——+350%/+150% 动量、法国独有缺口。§6.4 的 `/writing-practice` 配套已由英文 `one-character-in-the-grid` 补上(工具是中日韩格子,不是法国运笔)。graphisme 仍是法国单独选题,FR 先行,不拿这篇格子文充数;含 halloween 季节章节的窗口已过 2026-10-10,若做则去掉过季章节。
 
 **P1(下周):**
-3. is-cursive-still-taught、xiaohongshu-handwritten-images 补 es/de/fr 正文(矩阵最显眼两洞;前者每年 1 月还要复核州名单);
+3. ~~xiaohongshu-handwritten-images 补 es/de/fr~~ **停(2026-10-13)**。es/de/fr 正文已在仓库里,GSC 覆盖率下钻显示该 slug 已抓取的语言全部是「已抓取、暂未收录」,英文标题又被改成泛泛的 social media,和贺卡文、手写图文抢同一套步骤。按 `traffic-ceiling-roadmap.md`,这篇留在中文/小红书线,不再为 Google 补语言。`is-cursive-still-taught` 的 es/de/fr 正文已有,维持每年 1 月复核州名单,不为收录再扩语言;
 4. 新发布两篇 name-tracing-with-lines、calligraphy-motto-cards 补 zh/ja/ko/es(§3.2 应当级,趁发布动量)。
 
 **P2(本月内):**
