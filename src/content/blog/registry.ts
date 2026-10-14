@@ -103,6 +103,8 @@ import pohEn from "./practice-one-handwriting-problem.en.mdx";
 import shnEn from "./save-a-handwritten-note.en.mdx";
 import shscEn from "./share-a-handwriting-score-card.en.mdx";
 import cwihEn from "./count-words-in-handwriting.en.mdx";
+import hwsEn from "./handwriting-worksheets.en.mdx";
+import nicEn from "./numbers-in-cursive.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -282,6 +284,8 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "save-a-handwritten-note": { en: shnEn },
   "share-a-handwriting-score-card": { en: shscEn },
   "count-words-in-handwriting": { en: cwihEn },
+  "handwriting-worksheets": { en: hwsEn },
+  "numbers-in-cursive": { en: nicEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

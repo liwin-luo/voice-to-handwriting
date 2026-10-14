@@ -839,6 +839,34 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "handwriting-worksheets",
+    author: "clara-hartley",
+    date: "2026-10-14",
+    updated: "2026-10-14",
+    image: "/blog/handwriting-worksheets.png",
+    i18n: {
+      en: {
+        title: "How to make handwriting worksheets for a whole week, tonight",
+        description:
+          "How to make handwriting worksheets in one sitting: what to type by age, five lists for five school days, and what the sheets will not do. Free generator, no signup.",
+      },
+    },
+  },
+  {
+    slug: "numbers-in-cursive",
+    author: "clara-hartley",
+    date: "2026-10-14",
+    updated: "2026-10-14",
+    image: "/blog/numbers-in-cursive.png",
+    i18n: {
+      en: {
+        title: "Numbers in cursive: what 1 to 10 look like and how to practice them",
+        description:
+          "Numbers in cursive: numerals stand alone instead of joining, the loops show up in 2, 6, and 8, and the practice page prints with one number per row. Free, no signup.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

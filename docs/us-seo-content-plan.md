@@ -364,4 +364,12 @@
 - **配套文章(下一内容周期,§3.1 登记)**:`handwriting-worksheets`(en,工作标题)——how-to 意图「怎么用生成器排一周的练习纸」,与工具页的工具意图拆开;角色动笔前按 `docs/personas/` 定(成人练法 Wes、课堂用法 Clara 二选一)。内链本工具与 `/printable-paper`。
 - **红线**:字体写明是开源手写体、不是教材规范体(诚实口径);不碰 HWT / D'Nealian / Zaner-Bloser 商标;不碰「作业伪装」话术。
 - **同批词表盘点确认不接**:letterschool(品牌导航词)、handwriting without tears 全簇(商标红线)、d nealian(商标)、the good and the beautiful(品牌)、OT/手写治疗(医疗红线,dysgraphia 文只转介)、analysing handwriting(维持 §6.5.2 P2,做时用美式拼写 analyzing)。**待排期两项**:numbers in cursive(9.9K/月、LOW,站内零覆盖,可复用字母矩阵机制加 0–9 连笔数字课页);print handwriting 簇(约 2.2K/月,先看本页与 `/letter-tracing` 的 GSC 表现再定是否单独出文)。
-- **落地结果(2026-10-14)**:工具已上线并实测(en/zh 目检,截图核过三线格绘制、CJK 默认字体切换、SSR canonical/hreflang/FAQPage)。`TracingGenerator` 加了可选 `inputLabel` prop(通用页把「Names (one per line)」换成「Words or sentences」);星期预填在 `practicePresets.ts` 的 `worksheetStarterLines(locale)`。8 语言 meta/文案齐,`/tools` 练习纸分组卡片已挂(页头下拉不单列)。配套文章 `handwriting-worksheets`(en)按上表下一内容周期动笔;设计全文 `docs/plans/2026-10-14-handwriting-worksheet-generator-design.md`。
+- **落地结果(2026-10-14)**:工具已上线并实测(en/zh 目检,截图核过三线格绘制、CJK 默认字体切换、SSR canonical/hreflang/FAQPage)。`TracingGenerator` 加了可选 `inputLabel` prop(通用页把「Names (one per line)」换成「Words or sentences」);星期预填在 `practicePresets.ts` 的 `worksheetStarterLines(locale)`。8 语言 meta/文案齐,`/tools` 练习纸分组卡片已挂(页头下拉不单列)。设计全文 `docs/plans/2026-10-14-handwriting-worksheet-generator-design.md`。
+- **配套文章落地(2026-10-14,提前于一个内容周期内完成)**:`handwriting-worksheets`(en,Clara Hartley)。文章簇「通用练习纸」,枢纽 `/handwriting-worksheet-generator`,本文是教程意图(怎么排一周的练习纸),与工具页的工具意图拆开;下一跳 `/printable-paper`(周五自由写,跨簇真实下一步)与 name-tracing-generator / sight-word-tracing-worksheets / cursive-practice-worksheets。复核:不复核(生成器参数随工具改了才改)。体验资产:分龄表 + 周一到周五清单 + 生成器具体参数;题图为工具页实拍。
+
+## 二十五、numbers in cursive(2026-10-14,§二十四待排期项提级落地)
+
+- **数据源**:同批关键词研究 CSV。numbers in cursive 9900/月、LOW、informational,当时站内零覆盖(全库检索确认),是性价比最高的待排期项。
+- **落地**:`numbers-in-cursive`(en,Clara Hartley)。文章簇「cursive 数字簇」,隶属 cursive 集群;枢纽 `/cursive-worksheets`(练习承接)。意图:资讯(字形参考:数字不连写、环在 2/6/8、7 无横杠——均以站内 Sacramento 实拍核对)+ 练法(生成器 `?words=` 预填配方);与 `tracing-numbers-by-age`(印刷体、分龄教学)拆开,文内互链。下一跳 `/cursive-worksheets?words=1…10` 预填、`/number-tracing`(印刷体还没稳时先回去)、cursive-alphabet-chart / cursive-sentences-to-practice。复核:不复核(字形描述随字体变才改)。
+- **诚实口径(红线)**:数字无起笔点指引(letter 专属数据)在文内写明;字体非教材字帖、风格间差异(如 7 的横杠)如实标注,「课本赢」。不接数字连写教学(这些字体里数字不连写,不虚构笔顺)。
+- **落地结果**:文章与题图(cursive-worksheets 数字预填实拍)已发布;RELATED 已登记。`cursive numbers` 词的其余变体(如 cursive numbers tattoo)留观不接。

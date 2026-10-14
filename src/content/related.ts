@@ -279,6 +279,19 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/printable-handwritten-letters", "/templates"],
     posts: ["handwritten-thank-you-notes", "handwriting-templates-guide", "handwritten-card-with-voice"],
   },
+
+  // 通用练习纸簇:枢纽 /handwriting-worksheet-generator。本文教怎么排一周的练习纸;
+  // 尾部相关文是同一任务链上的细分生成器文章(姓名/词表/连笔),不是凑数
+  "handwriting-worksheets": {
+    tools: ["/handwriting-worksheet-generator", "/printable-paper", "/name-tracing"],
+    posts: ["name-tracing-generator", "sight-word-tracing-worksheets", "cursive-practice-worksheets"],
+  },
+
+  // cursive 数字簇:cursive 集群的数字分支。资讯(字形参考)+ 练法,与印刷体 tracing-numbers-by-age 拆开
+  "numbers-in-cursive": {
+    tools: ["/cursive-worksheets", "/number-tracing", "/cursive-alphabet"],
+    posts: ["cursive-sentences-to-practice", "cursive-alphabet-chart", "tracing-numbers-by-age"],
+  },
 };
 
 /** 文章在当前语言是否有正文(给相关文章链接防 404) */
