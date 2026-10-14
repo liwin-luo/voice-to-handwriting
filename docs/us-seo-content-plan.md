@@ -355,3 +355,13 @@
 - **下一跳**:文章第一屏打开本工具。读完若要看字好不好认,正文链到 `/handwriting-check`(跨簇:下一步是打分,不是再数一次)。簇里目前只有工具和这一篇,尾部相关文先空着。
 - **文章**:`count-words-in-handwriting`,en,Theo Lindgren。主词 how to count words in handwriting。教程,不抢工具页主词。体验资产是 2026-10-13 桌面 Chrome 上的一次真实计数(Bradley Hand 两行,不是纸上照片)和结果页截图。复核:不复核(计数口径随工具改了才改)。英文 FAQ「字、单词、数字分别怎么数」回链本文;其他语言不链,避免 404。
 - **红线**:标点不并进字。不把结果说成逐字精确。照片和转写都不入库。不在这一页打分。
+
+## 二十四、通用手写练习纸生成器(2026-10-14,关键词研究驱动)
+
+- **数据源**:2026-10-14 Google Keyword Planner 关键词研究(72 词 CSV)。盘点结论:cursive 簇已有 11 个页面覆盖充分,但第二大簇 **handwriting worksheets**(handwriting worksheets / writing practice sheets / handwriting practice worksheets 各 12.1K、handwriting practice sheets 9.9K、printable handwriting worksheets 2.9K,合计约 78K/月)没有落地页;站内 worksheet 工具全是细分场景(姓名/连笔/拼写/单句),通用意图错配。
+- **落地**:`/handwriting-worksheet-generator`,8 语言。主词 handwriting worksheet generator;次词 printable handwriting worksheets / handwriting practice sheets(印刷体练习纸意图)。形态:复用 TracingGenerator,三线格描红(Pre-K / Kindergarten / Grade 2 三档),任意词表或一行一句;预填各语言的星期词表,`?words=` 预填沿用;默认字体随语言,印刷体为 Patrick Hand。
+- **同簇分工(§2.5)**:`/name-tracing` 管姓名(name tracing generator),`/cursive-worksheets` 管连笔词表,`/word-work` 管拼写词表练习,`/handwriting-sentence-practice` 管成人单句五行纸;本页吃通用印刷体练习纸。页内互链这些邻居。
+- **配套文章(下一内容周期,§3.1 登记)**:`handwriting-worksheets`(en,工作标题)——how-to 意图「怎么用生成器排一周的练习纸」,与工具页的工具意图拆开;角色动笔前按 `docs/personas/` 定(成人练法 Wes、课堂用法 Clara 二选一)。内链本工具与 `/printable-paper`。
+- **红线**:字体写明是开源手写体、不是教材规范体(诚实口径);不碰 HWT / D'Nealian / Zaner-Bloser 商标;不碰「作业伪装」话术。
+- **同批词表盘点确认不接**:letterschool(品牌导航词)、handwriting without tears 全簇(商标红线)、d nealian(商标)、the good and the beautiful(品牌)、OT/手写治疗(医疗红线,dysgraphia 文只转介)、analysing handwriting(维持 §6.5.2 P2,做时用美式拼写 analyzing)。**待排期两项**:numbers in cursive(9.9K/月、LOW,站内零覆盖,可复用字母矩阵机制加 0–9 连笔数字课页);print handwriting 簇(约 2.2K/月,先看本页与 `/letter-tracing` 的 GSC 表现再定是否单独出文)。
+- **落地结果(2026-10-14)**:工具已上线并实测(en/zh 目检,截图核过三线格绘制、CJK 默认字体切换、SSR canonical/hreflang/FAQPage)。`TracingGenerator` 加了可选 `inputLabel` prop(通用页把「Names (one per line)」换成「Words or sentences」);星期预填在 `practicePresets.ts` 的 `worksheetStarterLines(locale)`。8 语言 meta/文案齐,`/tools` 练习纸分组卡片已挂(页头下拉不单列)。配套文章 `handwriting-worksheets`(en)按上表下一内容周期动笔;设计全文 `docs/plans/2026-10-14-handwriting-worksheet-generator-design.md`。

@@ -40,6 +40,10 @@
       "title": "Free Name Tracing Worksheet Generator",
       "description": "Create free personalized name tracing worksheets with dashed midlines. One dark example row plus traceable rows — download as PDF. Perfect for homeschool."
     },
+    "worksheet": {
+      "title": "Free Handwriting Worksheet Generator (Printable PDF)",
+      "description": "Make free printable handwriting worksheets from any word list or sentence — traceable print-style rows on three-line practice paper. Download the PDF, no signup, no watermark."
+    },
     "cursive": {
       "title": "Cursive Writing Generator - Free",
       "description": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF."
@@ -154,6 +158,7 @@
     "templates": "Templates",
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
+    "worksheet": "Handwriting Worksheets",
     "letterTracing": "Letter Tracing",
     "cursive": "Cursive Writing",
     "cursiveAlphabet": "Cursive Alphabet",
@@ -470,6 +475,15 @@
     "letterIndexLead": "Tracing one letter, not a name?",
     "letterIndexLink": "Letter tracing worksheets",
     "faqTitle": "Frequently asked questions"
+  },
+  "worksheet": {
+    "title": "Handwriting Worksheet Generator",
+    "intro": "Type any word list — or one sentence per line — and print your own handwriting worksheets: a dark example row first, then traceable rows on three-line practice paper. Free PDF, right in your browser.",
+    "inputLabel": "Words or sentences (one per line)",
+    "seoTitle": "Printable handwriting worksheets from any word list",
+    "seoText": "Handwriting practice sheets like these work for spelling words, sight words, days and months, classmates' names, or a short sentence per line. The first pass through your list prints solid to copy; every row after that is dotted to trace. Rows sit on three-line practice paper with a dashed midline — the format used for print handwriting in classrooms.\n\nThe fonts are open-source handwriting styles — Patrick Hand for neat print — not a school textbook font, so letterforms may differ slightly from your curriculum. Everything renders in your browser: nothing you type is uploaded, and the PDF carries no watermark.",
+    "faqTitle": "Handwriting worksheet questions",
+    "relatedLead": "More practice makers:"
   },
   "doctor": {
     "title": "Doctor Handwriting Generator",

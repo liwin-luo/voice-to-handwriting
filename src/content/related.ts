@@ -7,6 +7,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/templates": "templates",
   "/printable-paper": "printablePaper",
   "/name-tracing": "nameTracing",
+  "/handwriting-worksheet-generator": "worksheet",
   "/letter-tracing": "letterTracing",
   "/cursive": "cursive",
   "/cursive-text-generator": "cursiveText",

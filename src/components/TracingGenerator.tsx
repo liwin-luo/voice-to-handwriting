@@ -45,6 +45,7 @@ export default function TracingGenerator({
   defaultOneEach = false,
   initialText = "",
   sampleText,
+  inputLabel,
   fileStem = "name-tracing-worksheet",
   presets,
 }: {
@@ -60,6 +61,8 @@ export default function TracingGenerator({
   initialText?: string;
   /** 输入为空时画在纸上的示例。不传则用姓名描红的占位名 */
   sampleText?: string;
+  /** 输入框标签。不传用姓名描红的「Names (one per line)」,通用练习纸等页面传自己的说法 */
+  inputLabel?: string;
   fileStem?: string;
   presets?: { id: string; label: string; text: string }[];
 }) {
@@ -69,6 +72,7 @@ export default function TracingGenerator({
   const locale = useLocale();
   const [names, setNames] = useState(initialText);
   const sample = sampleText ?? t("namesPlaceholder");
+  const inputLabelText = inputLabel ?? t("namesLabel");
   useEffect(() => {
     const prefill = tracingPrefill(window.location.search);
     // 查询串只在浏览器里有,首屏保持空字符串,避免和水合结果不一致
@@ -240,7 +244,7 @@ export default function TracingGenerator({
       input={
         <>
           <div className="flex flex-col gap-1.5">
-            <span className="field-label">{t("namesLabel")}</span>
+            <span className="field-label">{inputLabelText}</span>
             {presets && presets.length > 0 && (
               <div className="flex flex-wrap gap-1.5">
                 {presets.map((preset) => (

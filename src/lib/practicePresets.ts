@@ -14,3 +14,19 @@ export const CURSIVE_JOIN_GROUPS = {
 export function joinLines(pairs: readonly string[]): string {
   return pairs.join("\n");
 }
+
+/** 通用练习纸的预填词表：星期是各语言都成立的练字素材，短词、高频、不依赖课程进度。 */
+const WORKSHEET_STARTERS: Record<string, string> = {
+  en: "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday",
+  es: "lunes\nmartes\nmiércoles\njueves\nviernes\nsábado\ndomingo",
+  fr: "lundi\nmardi\nmercredi\njeudi\nvendredi\nsamedi\ndimanche",
+  de: "Montag\nDienstag\nMittwoch\nDonnerstag\nFreitag\nSamstag\nSonntag",
+  pt: "segunda\nterça\nquarta\nquinta\nsexta\nsábado\ndomingo",
+  zh: "星期一\n星期二\n星期三\n星期四\n星期五\n星期六\n星期日",
+  ja: "月曜日\n火曜日\n水曜日\n木曜日\n金曜日\n土曜日\n日曜日",
+  ko: "월요일\n화요일\n수요일\n목요일\n금요일\n토요일\n일요일",
+};
+
+export function worksheetStarterLines(locale: string): string {
+  return WORKSHEET_STARTERS[locale] ?? WORKSHEET_STARTERS.en;
+}

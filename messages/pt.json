@@ -40,6 +40,10 @@
       "title": "Gerador grátis de fichas de nomes para caligrafia",
       "description": "Crie fichas de caligrafia com o nome, uma linha de exemplo escura e linhas para treinar. Baixe o PDF grátis, sem cadastro."
     },
+    "worksheet": {
+      "title": "Gerador grátis de fichas de caligrafia (PDF para imprimir)",
+      "description": "Crie fichas de caligrafia imprimíveis grátis com qualquer lista de palavras ou frases: linhas de exemplo e linhas para treinar em papel de três linhas. Baixe o PDF sem marca d'água e sem cadastro."
+    },
     "cursive": {
       "title": "Gerador de letra cursiva - Free",
       "description": "Digite ou fale qualquer coisa e veja em letra cursiva fluida — grátis, sem cadastro. Exporte como imagem ou PDF, ou imprima para praticar."
@@ -154,6 +158,7 @@
     "about": "Sobre",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nomes",
+    "worksheet": "Fichas de caligrafia",
     "letterTracing": "Traçar letras",
     "cursive": "Letra cursiva",
     "cursiveAlphabet": "Alfabeto cursivo",
@@ -470,6 +475,15 @@
     "letterIndexLead": "Só uma letra, não um nome?",
     "letterIndexLink": "Traçar letras",
     "faqTitle": "Perguntas frequentes"
+  },
+  "worksheet": {
+    "title": "Gerador de fichas de caligrafia",
+    "intro": "Digite qualquer lista de palavras — ou uma frase por linha — e imprima suas próprias fichas de caligrafia: primeiro uma linha de exemplo em tinta cheia, depois linhas pontilhadas em papel de três linhas. PDF grátis, direto no navegador.",
+    "inputLabel": "Palavras ou frases (uma por linha)",
+    "seoTitle": "Fichas de caligrafia imprimíveis com qualquer lista de palavras",
+    "seoText": "Estas fichas de caligrafia servem para palavras de ortografia, vocabulário, dias e meses, nomes dos alunos ou uma frase curta por linha. A primeira passada pela lista sai em tinta cheia para copiar; todas as linhas seguintes vêm pontilhadas para treinar. O papel tem três linhas com a linha do meio pontilhada, o formato clássico das fichas de caligrafia.\n\nAs fontes são estilos manuscritos de código aberto — Patrick Hand para letra de fôrma —, não fontes de livro didático, então a forma das letras pode ser um pouco diferente do seu método. Tudo é gerado no seu navegador: o que você digita não é enviado a nenhum servidor e o PDF não tem marca d'água.",
+    "faqTitle": "Perguntas sobre as fichas de caligrafia",
+    "relatedLead": "Mais ferramentas de prática:"
   },
   "doctor": {
     "title": "Gerador de letra de médico",

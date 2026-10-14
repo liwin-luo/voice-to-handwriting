@@ -40,6 +40,10 @@
       "title": "Kostenloser Namens-Schreibübungsblatt-Generator",
       "description": "Kostenlose personalisierte Schreibübungsblätter mit gestrichelter Mittellinie und dunkler Beispielzeile erstellen. PDF-Download, ideal für Homeschooling."
     },
+    "worksheet": {
+      "title": "Kostenloser Schreibblätter-Generator (PDF zum Ausdrucken)",
+      "description": "Erstelle kostenlose druckbare Schreibblätter aus jeder Wortliste oder jedem Satz: Vorlagenzeile und Nachspur-Zeilen auf Dreilinien-Papier. PDF-Download ohne Wasserzeichen, ohne Anmeldung."
+    },
     "cursive": {
       "title": "Schreibschrift-Generator - Free",
       "description": "Tippe oder diktiere etwas und sieh es in fließender Schreibschrift — kostenlos, ohne Anmeldung. Als Bild oder PDF exportieren oder zum Üben drucken."
@@ -154,6 +158,7 @@
     "about": "Über",
     "printablePaper": "Druckpapier-Vorlagen",
     "nameTracing": "Schreibübungsblätter",
+    "worksheet": "Schreibblätter",
     "letterTracing": "Buchstaben nachspuren",
     "cursive": "Schreibschrift-Generator",
     "cursiveAlphabet": "Schreibschrift-Alphabet",
@@ -470,6 +475,15 @@
     "letterIndexLead": "Nur ein Buchstabe, kein Name?",
     "letterIndexLink": "Buchstaben nachspuren",
     "faqTitle": "Häufige Fragen"
+  },
+  "worksheet": {
+    "title": "Schreibblätter-Generator",
+    "intro": "Gib eine Wortliste ein — oder einen Satz pro Zeile — und drucke deine eigenen Schreibblätter: zuerst eine dunkle Vorlagenzeile, danach Nachspur-Zeilen auf Dreilinien-Papier. Kostenloser PDF-Download direkt im Browser.",
+    "inputLabel": "Wörter oder Sätze (eine pro Zeile)",
+    "seoTitle": "Druckbare Schreibblätter aus jeder Wortliste",
+    "seoText": "Diese Schreibblätter eignen sich für Rechtschreibwörter, Sichtwörter, Wochentage und Monate, Namen der Kinder oder einen kurzen Satz pro Zeile. Der erste Durchlauf durch die Liste wird als dunkle Vorlage gedruckt; alle folgenden Zeilen sind gepunktet zum Nachspuren. Das Papier hat drei Linien mit gestrichelter Mittellinie — das klassische Format der Schreibschullehre.\n\nDie Schriften sind Open-Source-Handschriftstile — Patrick Hand für Druckschrift —, keine Schulbuchschriften, daher können Buchstabenformen leicht vom Lehrwerk abweichen. Alles wird im Browser erzeugt: Eingaben werden nicht hochgeladen, das PDF hat kein Wasserzeichen.",
+    "faqTitle": "Fragen zu den Schreibblättern",
+    "relatedLead": "Weitere Übungsgeneratoren:"
   },
   "doctor": {
     "title": "Arzt-Krakel-Schrift-Generator",

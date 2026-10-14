@@ -40,6 +40,10 @@
       "title": "Generador gratis de fichas de nombres para repasar",
       "description": "Crea fichas de caligrafía con el nombre, una línea de ejemplo oscura y filas para repasar. Descarga el PDF gratis, sin registro."
     },
+    "worksheet": {
+      "title": "Generador gratis de hojas de caligrafía (PDF imprimible)",
+      "description": "Crea hojas de caligrafía imprimibles gratis con cualquier lista de palabras o frases: filas de ejemplo y filas para repasar en papel de tres líneas. Descarga el PDF sin marca de agua ni registro."
+    },
     "cursive": {
       "title": "Generador de letra cursiva - Free",
       "description": "Escribe o dicta lo que quieras y verlo en letra cursiva fluida — gratis, sin registro. Exporta como imagen o PDF, o imprime para practicar."
@@ -154,6 +158,7 @@
     "templates": "Plantillas",
     "printablePaper": "Papel para imprimir",
     "nameTracing": "Fichas de nombres",
+    "worksheet": "Hojas de caligrafía",
     "letterTracing": "Trazado de letras",
     "cursive": "Letra cursiva",
     "cursiveAlphabet": "Alfabeto cursivo",
@@ -470,6 +475,15 @@
     "letterIndexLead": "¿Solo una letra, no un nombre?",
     "letterIndexLink": "Fichas de trazado",
     "faqTitle": "Preguntas frecuentes"
+  },
+  "worksheet": {
+    "title": "Generador de hojas de caligrafía",
+    "intro": "Escribe cualquier lista de palabras —o una frase por línea— e imprime tus propias hojas de caligrafía: primero una fila de ejemplo en tinta sólida y luego filas para repasar sobre papel de tres líneas. PDF gratis, directamente en tu navegador.",
+    "inputLabel": "Palabras o frases (una por línea)",
+    "seoTitle": "Hojas de caligrafía imprimibles con cualquier lista de palabras",
+    "seoText": "Estas hojas de caligrafía sirven para palabras de ortografía, vocabulario, días y meses, nombres de tus alumnos o una frase corta por línea. La primera pasada por tu lista se imprime en tinta sólida para copiar; todas las filas siguientes salen punteadas para repasar. El papel tiene tres líneas con guía central discontinua, el formato clásico de las hojas de caligrafía.\n\nLas fuentes son estilos manuscritos de código abierto —Patrick Hand para letra de imprenta—, no fuentes de libro de texto, así que la forma de las letras puede diferir algo de tu método. Todo se genera en tu navegador: lo que escribes no se sube a ningún servidor y el PDF no lleva marca de agua.",
+    "faqTitle": "Preguntas sobre las hojas de caligrafía",
+    "relatedLead": "Más herramientas de práctica:"
   },
   "doctor": {
     "title": "Generador de letra de médico",

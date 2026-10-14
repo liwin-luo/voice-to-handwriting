@@ -40,6 +40,10 @@
       "title": "Générateur gratuit de fiches d'écriture prénom",
       "description": "Créez des fiches d'écriture personnalisées avec lignes à repasser et ligne exemple en foncé. Téléchargement PDF, idéal pour l'école à la maison."
     },
+    "worksheet": {
+      "title": "Générateur gratuit de fiches d'écriture (PDF à imprimer)",
+      "description": "Créez gratuitement des fiches d'écriture imprimables à partir de n'importe quelle liste de mots ou de phrases : lignes modèles et lignes à repasser sur papier à trois lignes. PDF sans filigrane, sans inscription."
+    },
     "cursive": {
       "title": "Générateur d'écriture cursive - Free",
       "description": "Tapez ou dictez ce que vous voulez et voyez-le en écriture cursive fluide — gratuit, sans inscription. Exportez en image ou PDF, ou imprimez pour vous entraîner."
@@ -154,6 +158,7 @@
     "about": "À propos",
     "printablePaper": "Papier à imprimer",
     "nameTracing": "Fiches de prénoms",
+    "worksheet": "Fiches d'écriture",
     "letterTracing": "Tracé de lettres",
     "cursive": "Écriture cursive",
     "cursiveAlphabet": "Alphabet cursive",
@@ -470,6 +475,15 @@
     "letterIndexLead": "Une seule lettre, pas un prénom ?",
     "letterIndexLink": "Tracé de lettres",
     "faqTitle": "Questions fréquentes"
+  },
+  "worksheet": {
+    "title": "Générateur de fiches d'écriture",
+    "intro": "Tapez une liste de mots — ou une phrase par ligne — et imprimez vos propres fiches d'écriture : une ligne modèle en encre pleine, puis des lignes à repasser en pointillés. PDF gratuit, directement dans votre navigateur.",
+    "inputLabel": "Mots ou phrases (un par ligne)",
+    "seoTitle": "Fiches d'écriture imprimables à partir de n'importe quels mots",
+    "seoText": "Ces fiches d'écriture servent pour les mots d'orthographe, le vocabulaire, les jours et les mois, les prénoms des élèves ou une phrase courte par ligne. La première passe sur votre liste s'imprime en encre pleine à copier ; toutes les lignes suivantes sont en pointillés à repasser. Le papier utilise trois lignes avec un axe médian en pointillés, le format classique des fiches d'écriture.\n\nLes polices sont des styles manuscrits open source — Patrick Hand pour l'écriture droite — et non des polices de manuel scolaire : la forme des lettres peut donc différer légèrement de votre méthode. Tout est généré dans votre navigateur : rien de ce que vous tapez n'est envoyé, et le PDF ne porte aucun filigrane.",
+    "faqTitle": "Questions sur les fiches d'écriture",
+    "relatedLead": "Autres outils de pratique :"
   },
   "doctor": {
     "title": "Générateur d'écriture de médecin",

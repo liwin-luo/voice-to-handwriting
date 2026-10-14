@@ -1245,3 +1245,172 @@ export const HANDWRITING_COUNT_FAQS: FaqItem[] = [
     },
   },
 ];
+
+/** /handwriting-worksheet-generator。/letter-tracing 是 en-only,字体题只有英文带链接;免费题放最后。 */
+export const HANDWRITING_WORKSHEET_FAQS: FaqItem[] = [
+  {
+    id: "worksheet-make",
+    i18n: {
+      en: {
+        q: "How do I make my own handwriting worksheet?",
+        a: "Type your words one per line — or one short sentence per line. The first pass through your list prints solid to copy, and the rows after it are dotted to trace. Pick a row height, download the PDF, and print at actual size. Nothing you type is uploaded.",
+        link: { href: "/cursive-worksheets", label: "Same list in cursive" },
+      },
+      zh: {
+        q: "怎么做一张自己的手写练习纸?",
+        a: "一行输入一个单词,或者一行一个短句。词表第一遍印成深色范字,后面的行都是浅色虚线描红。选好行高,下载 PDF,按实际尺寸打印。输入的内容不会上传。",
+        link: { href: "/cursive-worksheets", label: "同一份词表的连笔版" },
+      },
+      ja: {
+        q: "自分の単語で書き取りプリントを作るには?",
+        a: "単語は 1 行に 1 つ、短い文は 1 行に 1 つ入力します。リストの最初の一周は濃いお手本として印刷され、その後の行は点線のなぞり行です。行の高さを選び、PDF をダウンロードして実際のサイズで印刷します。入力内容はアップロードされません。",
+        link: { href: "/cursive-worksheets", label: "同じリストを筆記体で" },
+      },
+      ko: {
+        q: "나만의 쓰기 연습지를 만들려면?",
+        a: "단어는 한 줄에 하나씩, 짧은 문장은 한 줄에 하나씩 입력하세요. 목록의 첫 반복은 진한 예시로 인쇄되고 그다음 행은 점선 따라 쓰기 행입니다. 줄 높이를 고르고 PDF를 받아 실제 크기로 인쇄하세요. 입력한 내용은 업로드되지 않습니다.",
+        link: { href: "/cursive-worksheets", label: "같은 목록을 필기체로" },
+      },
+      es: {
+        q: "¿Cómo hago mi propia hoja de caligrafía?",
+        a: "Escribe tus palabras una por línea — o una frase corta por línea. La primera pasada por tu lista se imprime en tinta sólida para copiar, y las filas siguientes salen punteadas para repasar. Elige la altura de fila, descarga el PDF e imprime a tamaño real. Lo que escribes no se sube.",
+        link: { href: "/cursive-worksheets", label: "La misma lista en cursiva" },
+      },
+      de: {
+        q: "Wie erstelle ich mein eigenes Schreibblatt?",
+        a: "Tippe deine Wörter je eine Zeile ein — oder einen kurzen Satz pro Zeile. Der erste Durchlauf durch die Liste wird als dunkle Vorlage gedruckt, alle folgenden Zeilen sind gepunktet zum Nachspuren. Wähle die Zeilenhöhe, lade das PDF herunter und drucke in Originalgröße. Eingaben werden nicht hochgeladen.",
+        link: { href: "/cursive-worksheets", label: "Dieselbe Liste in Schreibschrift" },
+      },
+      fr: {
+        q: "Comment créer ma propre fiche d'écriture ?",
+        a: "Tapez vos mots un par ligne — ou une phrase courte par ligne. La première passe sur votre liste s'imprime en encre pleine pour copier, et les lignes suivantes sont en pointillés à repasser. Choisissez la hauteur de ligne, téléchargez le PDF et imprimez à taille réelle. Ce que vous tapez n'est pas envoyé.",
+        link: { href: "/cursive-worksheets", label: "La même liste en cursive" },
+      },
+      pt: {
+        q: "Como faço minha própria ficha de caligrafia?",
+        a: "Digite suas palavras uma por linha — ou uma frase curta por linha. A primeira passada pela lista sai em tinta cheia para copiar, e as linhas seguintes vêm pontilhadas para treinar. Escolha a altura da linha, baixe o PDF e imprima em tamanho real. O que você digita não é enviado.",
+        link: { href: "/cursive-worksheets", label: "A mesma lista em cursiva" },
+      },
+    },
+  },
+  {
+    id: "worksheet-font",
+    i18n: {
+      en: {
+        q: "Which font do the worksheets use?",
+        a: "Neat print defaults to Patrick Hand, an open-source handwriting font. It is close to classroom print, but not a school textbook font, so a few letterforms may differ from your curriculum. You can switch to any font in the list.",
+        link: { href: "/letter-tracing", label: "Letter-by-letter print practice" },
+      },
+      zh: {
+        q: "练习纸用的是什么字体?",
+        a: "印刷体默认是 Patrick Hand,一款开源手写字体。它接近课堂印刷体,但不是教材规范体,个别字形会和课本略有差别。字体列表里的任何一款都可以换着用。",
+      },
+      ja: {
+        q: "プリントで使うフォントは?",
+        a: "きれいな印刷体の既定は Patrick Hand、オープンソースの手書きフォントです。教室の印刷体に近いですが、教科書体ではないため、一部の字形は教科書と少し異なることがあります。フォントはリストからいつでも変更できます。",
+      },
+      ko: {
+        q: "연습지에는 어떤 글꼴을 쓰나요?",
+        a: "깔끔한 인쇄체의 기본값은 Patrick Hand, 오픈소스 손글씨 글꼴입니다. 교실 인쇄체에 가깝지만 교과서 서체는 아니어서 일부 글자 모양이 교과서와 조금 다를 수 있습니다. 글꼴은 목록에서 언제든 바꿀 수 있습니다.",
+      },
+      es: {
+        q: "¿Qué fuente usan las hojas?",
+        a: "La letra de imprenta usa por defecto Patrick Hand, una fuente manuscrita de código abierto. Se parece a la letra de imprenta de clase, pero no es una fuente de libro de texto: algunas formas de letra pueden diferir de tu método. Puedes cambiar a cualquier fuente de la lista.",
+      },
+      de: {
+        q: "Welche Schrift verwenden die Blätter?",
+        a: "Für Druckschrift ist standardmäßig Patrick Hand eingestellt, eine Open-Source-Handschrift. Sie liegt nahe an der Druckschrift aus dem Klassenzimmer, ist aber keine Schulbuchschrift — einzelne Buchstabenformen können vom Lehrwerk abweichen. Jede Schrift der Liste ist wählbar.",
+      },
+      fr: {
+        q: "Quelle police les fiches utilisent-elles ?",
+        a: "L'écriture droite utilise par défaut Patrick Hand, une police manuscrite open source. Elle est proche de l'écriture droite scolaire, mais ce n'est pas une police de manuel : certaines formes de lettres peuvent différer de votre méthode. Toutes les polices de la liste sont disponibles.",
+      },
+      pt: {
+        q: "Que fonte as fichas usam?",
+        a: "A letra de fôrma usa por padrão Patrick Hand, uma fonte manuscrita de código aberto. Ela se parece com a letra de fôrma da sala de aula, mas não é uma fonte de livro didático: algumas formas podem diferir do seu método. Você pode trocar para qualquer fonte da lista.",
+      },
+    },
+  },
+  {
+    id: "worksheet-names",
+    i18n: {
+      en: {
+        q: "Can I use it for names too?",
+        a: "Yes — type one name per line. If you want each name on its own page with grade-sized rows, the name tracing generator does exactly that, with one dark example row per page.",
+        link: { href: "/name-tracing", label: "Name tracing generator" },
+      },
+      zh: {
+        q: "也能用来练名字吗?",
+        a: "可以——一行输入一个名字。想把每个名字单独放一页、按年级行高排,用姓名描红字帖生成器正合适,每页同样带一行深色范字。",
+        link: { href: "/name-tracing", label: "姓名描红字帖生成器" },
+      },
+      ja: {
+        q: "名前の練習にも使えますか?",
+        a: "はい — 名前は 1 行に 1 つ入力します。名前ごとに 1 ページ、学年別の行の高さにしたい場合は、名前なぞり書きプリント生成器がぴったりです。各ページに濃いお手本行が 1 行付きます。",
+        link: { href: "/name-tracing", label: "名前なぞり書きプリント生成器" },
+      },
+      ko: {
+        q: "이름 연습에도 쓸 수 있나요?",
+        a: "네 — 이름은 한 줄에 하나씩 입력하세요. 이름마다 한 페이지, 학년별 줄 높이로 만들고 싶다면 이름 따라쓰기 생성기가 딱 맞습니다. 매 페이지에 진한 예시 행이 한 줄 있습니다.",
+        link: { href: "/name-tracing", label: "이름 따라쓰기 생성기" },
+      },
+      es: {
+        q: "¿Sirve también para nombres?",
+        a: "Sí — escribe un nombre por línea. Si quieres cada nombre en su propia página con filas de tamaño escolar, el generador de fichas para calcar el nombre hace exactamente eso, con una fila de ejemplo por página.",
+        link: { href: "/name-tracing", label: "Generador de fichas para calcar el nombre" },
+      },
+      de: {
+        q: "Geht auch Namen?",
+        a: "Ja — ein Name pro Zeile. Soll jeder Name auf eine eigene Seite mit Zeilen in Schulgröße, macht genau das der Namens-Nachspurblatt-Generator, mit je einer dunklen Vorlagenzeile pro Seite.",
+        link: { href: "/name-tracing", label: "Namens-Nachspurblatt-Generator" },
+      },
+      fr: {
+        q: "Marche aussi pour les prénoms ?",
+        a: "Oui — un prénom par ligne. Pour placer chaque prénom sur sa propre page avec des lignes de taille scolaire, le générateur de fiches pour tracer le prénom fait exactement cela, avec une ligne modèle par page.",
+        link: { href: "/name-tracing", label: "Générateur de fiches pour tracer le prénom" },
+      },
+      pt: {
+        q: "Serve para nomes também?",
+        a: "Sim — um nome por linha. Se quiser cada nome em sua própria página com linhas de tamanho escolar, o gerador de fichas para calcar o nome faz exatamente isso, com uma linha de exemplo por página.",
+        link: { href: "/name-tracing", label: "Gerador de fichas para calcar o nome" },
+      },
+    },
+  },
+  {
+    id: "worksheet-free",
+    i18n: {
+      en: {
+        q: "Is this handwriting worksheet generator free?",
+        a: "Yes. No signup, no watermark on the PDF or PNG, and no usage limit — everything is generated in your browser.",
+      },
+      zh: {
+        q: "这个手写练习纸生成器免费吗?",
+        a: "免费。无需注册,PDF 和 PNG 都没有水印,也没有次数限制——全部在你的浏览器里生成。",
+      },
+      ja: {
+        q: "この書き取りプリント生成器は無料ですか?",
+        a: "はい。登録不要で、PDF にも PNG にも透かしは入らず、回数制限もありません。すべてブラウザ内で生成されます。",
+      },
+      ko: {
+        q: "이 쓰기 연습지 생성기는 무료인가요?",
+        a: "무료입니다. 가입도 필요 없고, PDF와 PNG에 워터마크도 없고, 사용 횟수 제한도 없습니다. 모두 브라우저에서 생성됩니다.",
+      },
+      es: {
+        q: "¿Este generador de hojas de caligrafía es gratis?",
+        a: "Sí. Sin registro, sin marca de agua en el PDF ni en el PNG y sin límite de uso: todo se genera en tu navegador.",
+      },
+      de: {
+        q: "Ist dieser Schreibblatt-Generator kostenlos?",
+        a: "Ja. Keine Anmeldung, kein Wasserzeichen auf PDF oder PNG, kein Nutzungslimit — alles entsteht in deinem Browser.",
+      },
+      fr: {
+        q: "Ce générateur de fiches d'écriture est-il gratuit ?",
+        a: "Oui. Sans inscription, sans filigrane sur le PDF ni sur le PNG, et sans limite d'utilisation : tout est généré dans votre navigateur.",
+      },
+      pt: {
+        q: "Este gerador de fichas de caligrafia é grátis?",
+        a: "Sim. Sem cadastro, sem marca d'água no PDF nem no PNG e sem limite de uso — tudo é gerado no seu navegador.",
+      },
+    },
+  },
+];
