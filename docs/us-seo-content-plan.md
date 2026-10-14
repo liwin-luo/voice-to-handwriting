@@ -365,7 +365,7 @@
 - **红线**:字体写明是开源手写体、不是教材规范体(诚实口径);不碰 HWT / D'Nealian / Zaner-Bloser 商标;不碰「作业伪装」话术。
 - **同批词表盘点确认不接**:letterschool(品牌导航词)、handwriting without tears 全簇(商标红线)、d nealian(商标)、the good and the beautiful(品牌)、OT/手写治疗(医疗红线,dysgraphia 文只转介)、analysing handwriting(维持 §6.5.2 P2,做时用美式拼写 analyzing)。**待排期两项**:numbers in cursive(9.9K/月、LOW,站内零覆盖,可复用字母矩阵机制加 0–9 连笔数字课页);print handwriting 簇(约 2.2K/月,先看本页与 `/letter-tracing` 的 GSC 表现再定是否单独出文)。
 - **落地结果(2026-10-14)**:工具已上线并实测(en/zh 目检,截图核过三线格绘制、CJK 默认字体切换、SSR canonical/hreflang/FAQPage)。`TracingGenerator` 加了可选 `inputLabel` prop(通用页把「Names (one per line)」换成「Words or sentences」);星期预填在 `practicePresets.ts` 的 `worksheetStarterLines(locale)`。8 语言 meta/文案齐,`/tools` 练习纸分组卡片已挂(页头下拉不单列)。设计全文 `docs/plans/2026-10-14-handwriting-worksheet-generator-design.md`。
-- **配套文章落地(2026-10-14,提前于一个内容周期内完成)**:`handwriting-worksheets`(en,Clara Hartley)。文章簇「通用练习纸」,枢纽 `/handwriting-worksheet-generator`,本文是教程意图(怎么排一周的练习纸),与工具页的工具意图拆开;下一跳 `/printable-paper`(周五自由写,跨簇真实下一步)与 name-tracing-generator / sight-word-tracing-worksheets / cursive-practice-worksheets。复核:不复核(生成器参数随工具改了才改)。体验资产:分龄表 + 周一到周五清单 + 生成器具体参数;题图为工具页实拍。
+- **配套文章落地(2026-10-14,提前于一个内容周期内完成)**:`handwriting-worksheets`(en,Clara Hartley)。文章簇「通用练习纸」,枢纽 `/handwriting-worksheet-generator`,本文是教程意图(怎么排一周的练习纸),与工具页的工具意图拆开;下一跳 `/printable-paper`(周五自由写,跨簇真实下一步)与 name-tracing-generator / sight-word-tracing-worksheets / cursive-practice-worksheets。复核:不复核(生成器参数随工具改了才改)。体验资产:分龄表 + 周一到周五清单 + 生成器具体参数;题图为工具页实拍。**zh/ja/ko/es 四语正文已补(2026-10-14,§3.2 应当级)**;`numbers-in-cursive` 同批补齐同四语。
 
 ## 二十五、numbers in cursive(2026-10-14,§二十四待排期项提级落地)
 
@@ -381,4 +381,4 @@
 - **落地**:`graphisme-maternelle`(**fr 源发**,Clara Hartley,§3.2 原生源发例外:选题词是法语,en 与其他语言按本地化改写跟进)。主词 graphisme maternelle / graphisme boucles gs;次词 gestes graphiques、graphisme PS MS GS。
 - **文章簇**:graphisme/pré-écriture,枢纽 `/prewriting-strokes`(8 语言工具,fr 文案已有);同簇 en 姊妹篇 `strokes-before-letter-tracing`(教法怎么带),本篇占法国体系进度(PS/MS/GS 分龄 + 五类笔画家族),不与 one-character-in-the-grid(CJK 格子)混。尾部相关文当前只有 en 邻居,不跨簇凑数。
 - **下一跳**:`/prewriting-strokes`(fiche 配方里)、`/printable-paper`(自由书写)。复核:不复核(进度表随法国教学大纲变才改;每年 9 月开学季可再看一次 GSC)。
-- **落地结果**:fr 正文 + 题图(运笔工具法语页实拍)已发布;posts.ts 带 en 标题回退(规范校验要求,无 en 正文、en URL 404);RELATED 已登记。en 版本按 §3.2 在下一内容周期补。
+- **落地结果**:fr 正文 + 题图(运笔工具法语页实拍)已发布;posts.ts 带 en 标题回退(规范校验要求,无 en 正文、en URL 404);RELATED 已登记。**en 版本已于同日补齐**(§3.2 源发文 en 必须),同一 slug 按语言出 fr/en 两个 URL,hreflang 组只声明 en+fr。

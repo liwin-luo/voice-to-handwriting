@@ -104,8 +104,17 @@ import shnEn from "./save-a-handwritten-note.en.mdx";
 import shscEn from "./share-a-handwriting-score-card.en.mdx";
 import cwihEn from "./count-words-in-handwriting.en.mdx";
 import hwsEn from "./handwriting-worksheets.en.mdx";
+import hwsZh from "./handwriting-worksheets.zh.mdx";
+import hwsJa from "./handwriting-worksheets.ja.mdx";
+import hwsKo from "./handwriting-worksheets.ko.mdx";
+import hwsEs from "./handwriting-worksheets.es.mdx";
 import nicEn from "./numbers-in-cursive.en.mdx";
+import nicZh from "./numbers-in-cursive.zh.mdx";
+import nicJa from "./numbers-in-cursive.ja.mdx";
+import nicKo from "./numbers-in-cursive.ko.mdx";
+import nicEs from "./numbers-in-cursive.es.mdx";
 import gpmFr from "./graphisme-maternelle.fr.mdx";
+import gpmEn from "./graphisme-maternelle.en.mdx";
 
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
@@ -285,9 +294,9 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "save-a-handwritten-note": { en: shnEn },
   "share-a-handwriting-score-card": { en: shscEn },
   "count-words-in-handwriting": { en: cwihEn },
-  "handwriting-worksheets": { en: hwsEn },
-  "numbers-in-cursive": { en: nicEn },
-  "graphisme-maternelle": { fr: gpmFr },
+  "handwriting-worksheets": { en: hwsEn, zh: hwsZh, ja: hwsJa, ko: hwsKo, es: hwsEs },
+  "numbers-in-cursive": { en: nicEn, zh: nicZh, ja: nicJa, ko: nicKo, es: nicEs },
+  "graphisme-maternelle": { fr: gpmFr, en: gpmEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

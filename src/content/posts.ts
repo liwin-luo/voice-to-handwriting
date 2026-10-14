@@ -851,6 +851,26 @@ const CURSIVE_POSTS: Post[] = [
         description:
           "How to make handwriting worksheets in one sitting: what to type by age, five lists for five school days, and what the sheets will not do. Free generator, no signup.",
       },
+      zh: {
+        title: "手写练习纸怎么排:今晚做好一周的五张",
+        description:
+          "怎么给孩子做手写练习纸:一次做完周一到周五的五张,分龄词表、星期到周五的清单,以及练习纸做不到的事。免费生成器,无需注册。",
+      },
+      ja: {
+        title: "書き取りプリントの1週間分を今夜作ってしまう方法",
+        description:
+          "書き取りプリントの一括作り方:年齢別の中身、月曜から金曜までの 5 リスト、そしてこのプリントにできないこと。無料の生成器、登録不要。",
+      },
+      ko: {
+        title: "쓰기 연습지 일주일 치, 오늘 밤 다 만드는 방법",
+        description:
+          "쓰기 연습지를 한 번에 만드는 법: 나이별 내용, 월요일부터 금요일까지 다섯 목록, 그리고 이 연습지가 못 하는 것. 무료 생성기, 가입 불필요.",
+      },
+      es: {
+        title: "Cómo dejar listas cinco hojas de caligrafía para toda la semana, esta misma noche",
+        description:
+          "Cómo hacer hojas de caligrafía de una sola vez: qué escribir según la edad, cinco listas para cinco días escolares y lo que estas hojas no hacen. Generador gratis, sin registro.",
+      },
     },
   },
   {
@@ -864,6 +884,26 @@ const CURSIVE_POSTS: Post[] = [
         title: "Numbers in cursive: what 1 to 10 look like and how to practice them",
         description:
           "Numbers in cursive: numerals stand alone instead of joining, the loops show up in 2, 6, and 8, and the practice page prints with one number per row. Free, no signup.",
+      },
+      zh: {
+        title: "连笔里的数字:1 到 10 长什么样,怎么练",
+        description:
+          "连笔里的数字不连写:环在 2、6、8,7 在部分字体没有横杠;练习页一行一个数字。免费,无需注册。",
+      },
+      ja: {
+        title: "筆記体の数字:1 から 10 の形と、練習ページの作り方",
+        description:
+          "筆記体の数字はつながらず単独で立ちます。輪は 2・6・8 に出て、7 に横棒のないフォントもある。練習ページは 1 行に 1 桁で印刷。無料、登録不要。",
+      },
+      ko: {
+        title: "필기체 숫자: 1부터 10까지 모양과 연습 방법",
+        description:
+          "필기체 숫자는 이어 쓰지 않고 혼자 섭니다. 고리는 2, 6, 8에 나타나고 7은 글꼴에 따라 가로줄이 없습니다. 연습지는 한 줄에 한 숫자. 무료, 가입 불필요.",
+      },
+      es: {
+        title: "Los números en cursiva: cómo son del 1 al 10 y cómo practicarlos",
+        description:
+          "Los números en cursiva no se unen: los bucles aparecen en el 2, el 6 y el 8, y el 7 no lleva barra en algunas fuentes. La hoja imprime un número por fila. Gratis, sin registro.",
       },
     },
   },
