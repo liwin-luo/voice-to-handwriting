@@ -867,6 +867,26 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "graphisme-maternelle",
+    author: "clara-hartley",
+    date: "2026-10-14",
+    updated: "2026-10-14",
+    image: "/blog/graphisme-maternelle.png",
+    i18n: {
+      // fr 源发(trends FR 词),en 标题仅作列表回退与规范校验,无 en 正文
+      en: {
+        title: "Graphisme: pre-writing patterns in French maternelle (PS to GS)",
+        description:
+          "How French maternelle builds writing through graphisme: the strokes to train in PS, MS, and GS, the five pattern families, and free printable pre-writing sheets.",
+      },
+      fr: {
+        title: "Le graphisme en maternelle : les gestes à entraîner avant l'écriture",
+        description:
+          "Le graphisme en maternelle, de la PS à la GS : les cinq familles de traits, la progression par section, et des fiches de tracés à imprimer gratuitement.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

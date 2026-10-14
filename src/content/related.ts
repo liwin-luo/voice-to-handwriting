@@ -292,6 +292,13 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/cursive-worksheets", "/number-tracing", "/cursive-alphabet"],
     posts: ["cursive-sentences-to-practice", "cursive-alphabet-chart", "tracing-numbers-by-age"],
   },
+
+  // graphisme/pré-écriture 簇:FR 源发(trends graphisme 词),与 strokes-before-letter-tracing
+  // 是同簇两桌的姊妹篇;法国读者尾部相关文当前只有 en 邻居,不拿别的簇凑数
+  "graphisme-maternelle": {
+    tools: ["/prewriting-strokes", "/printable-paper"],
+    posts: ["strokes-before-letter-tracing"],
+  },
 };
 
 /** 文章在当前语言是否有正文(给相关文章链接防 404) */

@@ -256,9 +256,9 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-09 | FR | alphabet calligraphie moderne | Breakout | June Park | fr 正文已存在 → title/description 元数据对齐 calligraphie moderne | ✅ 已完成:de/fr/es 标题核对,6 处标题已对齐趋势词(2026-10-09) |
 | 2026-10-09 | FR | apprendre la calligraphie | +140% | June Park | 同上:元数据对齐 | ✅ 已完成:de/fr/es 标题核对,6 处标题已对齐趋势词(2026-10-09) |
 | 2026-10-09 | FR | lettre s calligraphie | +110% | Wes Morales | fr 正文已存在 → 元数据对齐即可 | ✅ 已完成:de/fr/es 标题核对,6 处标题已对齐趋势词(2026-10-09) |
-| 2026-10-09 | FR | blog graphisme | +350% | Clara Hartley | graphisme(运笔训练)是法国幼儿园真实内容缺口:图样卡+可打印,用 /writing-practice、/printable-paper 实测参数 | 排期(新 FR 文章) |
-| 2026-10-09 | FR | graphisme boucles gs | +150% | Clara Hartley | 并入 graphisme 文章:boucles 图样分龄(GS/MS) | 排期(同上合并) |
-| 2026-10-09 | FR | graphisme halloween | +130% | Clara Hartley | 季节窗口在 10 月内;来不及则放弃今年,登记明年 9 月底发 | 排期(季节,窗口紧) |
+| 2026-10-09 | FR | blog graphisme | +350% | Clara Hartley | graphisme(运笔训练)是法国幼儿园真实内容缺口:图样卡+可打印;对口工具是 /prewriting-strokes(/writing-practice 是中日韩格子,不接) | ✅ 已写 `graphisme-maternelle`(fr 源发,2026-10-14) |
+| 2026-10-09 | FR | graphisme boucles gs | +150% | Clara Hartley | 并入 graphisme 文章:boucles 图样分龄(GS/MS) | ✅ 已并入 `graphisme-maternelle`(五类笔画家族含 boucles,GS 行写明) |
+| 2026-10-09 | FR | graphisme halloween | +130% | Clara Hartley | 季节窗口在 10 月内;来不及则放弃今年,登记明年 9 月底发 | 放弃今年(窗口 10-10 已过);文章按 §6.7 P0-2 去掉过季章节,2027 年 9 月底再评估季节加章 |
 | 2026-10-12 | US | beware the man whose handwriting sways like a reed in the wind | +3,650% | — | — | 放弃:病毒式金句/台词波,无产品契合 |
 | 2026-10-12 | US | audrey van der meer handwriting | +950% | Mara Voss | 维护触发:van der Meer 是本站已引用的研究者(2024 EEG),核对 handwriting-vs-typing-brain 是否需补充新报道并 bump updated | 继续观察(维护) |
 | 2026-10-12 | US | how can i improve my handwriting | +200% | Wes Morales | 支柱文章 how-to-improve-your-handwriting 已覆盖该意图;核对标题/首段是否命中口语问句变体 | 继续观察(已覆盖) |
@@ -270,4 +270,4 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-12 | DE | abc in schreibschrift | +110% | Clara Hartley | cursive-alphabet-chart 的 de 版标题已命中 Schreibschrift-Alphabet | 已覆盖 |
 | 2026-10-12 | DE | kalligraphie haarschnitt | +120% | — | — | 放弃:与站内主题无关 |
 | 2026-10-12 | FR | r/i/a/f majuscule calligraphie(4 词簇) | +400/+250/+190/+160% | Wes Morales | 法语用户逐个学书法大写字母:强化 cursive-alphabet-chart fr 正文的 majuscules 章节,或做单字母系列 | 排期(轻量增强) |
-| 2026-10-12 | FR | graphisme halloween gs | +100% | Clara Hartley | 连续两周上榜且带年级限定词,季节窗口将关:P0-2 graphisme 文章立即动笔(含 halloween gs 章节),否则明确放弃今年 | 催办(§6.7 P0-2) |
+| 2026-10-12 | FR | graphisme halloween gs | +100% | Clara Hartley | 连续两周上榜且带年级限定词,季节窗口将关:P0-2 graphisme 文章立即动笔(含 halloween gs 章节),否则明确放弃今年 | ✅ 已动笔 `graphisme-maternelle`,季节章节按窗口放弃(2026-10-14) |

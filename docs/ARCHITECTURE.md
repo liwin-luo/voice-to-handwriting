@@ -115,6 +115,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/architect-lettering` | 建筑字体练习纸。Architects Daughter(OFL,页内单独加载,不进主工作台字体表)。大写三行加 0–9,实线、虚线、空白。页头下拉不单列 | `ArchitectSheet`,`public/fonts/architectsdaughter`,`ARCHITECT_FAQS` |
 | `/daily-cursive-handwriting-practice` | 每日连笔练习页。页脚站点水印默认开,下载按钮上方可关。墨色改练习字,描红同色变浅,纸底可改 | `DailyCursivePracticeGenerator`,`WatermarkSwitch`,`DAILY_CURSIVE_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、A–Z 两行导航条(52 页互链)、练习词;本字母练习条 PDF 由 `LetterSheetDownload` 客户端导出,练习词链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=`;挂 BreadcrumbList(首页→/cursive→本课) | `cursiveLetters.ts` + `cursiveLettersRest.ts`,`LetterSheetDownload` |
+| `/cursive/number/[number]` | 连笔数字课(en-only,0–9 共 10 页)。结构与字母课平行(范字/步骤/易错/0–9 导航条/练习词/练习条 PDF);数字无入笔数据,练习条无起笔点,页内 fontNote 写明;CTA 链 `/blog/numbers-in-cursive`;hub 在 `/cursive` 页字母矩阵下方的 Numbers 网格,文章 `numbers-in-cursive` 正文回链 | `cursiveNumbers.ts`(复用 `LetterCopy` 类型),`CursiveLettersHub` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
 | `/handwriting-worksheet-generator` | 通用手写练习纸(任意词表/一行一句,印刷体)。三线格加 Pre-K/K/Grade 2 三档行高;打开预填当前语言的星期词表;默认字体随语言(`defaultFontId`),英文区 Patrick Hand。`?words=` 预填沿用。页头下拉不单列 | `TracingGenerator`(`inputLabel`,`worksheetStarterLines`),`HANDWRITING_WORKSHEET_FAQS` |
 | `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列。Hub 用 `LETTER_HUB_FAQS`,单字母页用 `letterFaqs` | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
@@ -200,7 +201,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 ### 4.9 SEO 基建
 
 - `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)+ `pageMetadata`(在 alternates 上加 `og:type` 与 `og:url`;文章页传 `article` 才写 `publishedTime`/`modifiedTime`)。
-- `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 连笔字母矩阵 + 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
+- `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 连笔字母矩阵 + 连笔数字矩阵(en-only)+ 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、连笔单字母页 BreadcrumbList、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
 - IndexNow(`scripts/indexnow-submit.mjs`,`npm run indexnow`):无参提交 sitemap 全量,带参数提交指定 URL;密钥文件在 `public/fd1dfcff….txt`。**日常只提交有变化的 URL**,反复全量提交会被视为滥用。

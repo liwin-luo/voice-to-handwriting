@@ -3,6 +3,7 @@ import { POSTS } from "@/content/posts";
 import { postLocales } from "@/content/blog/registry";
 import { TEMPLATES } from "@/content/templates";
 import { CURSIVE_LETTERS } from "@/content/cursiveLetters";
+import { CURSIVE_NUMBERS } from "@/content/cursiveNumbers";
 import { PRINT_LETTERS } from "@/content/letterTracing";
 import { PAPER_KINDS } from "@/content/paperKinds";
 import { routing } from "@/i18n/routing";
@@ -48,6 +49,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages: buildAlternates(p, locale, available).languages },
       });
     }
+  }
+  // 连笔数字课页:en-only,同字母矩阵口径
+  for (const n of CURSIVE_NUMBERS) {
+    const p = `/cursive/number/${n.slug}`;
+    entries.push({
+      url: localizedUrl(p, routing.defaultLocale),
+      changeFrequency: "monthly",
+      priority: 0.6,
+      alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
+    });
   }
   // /cursive-alphabet 与 /letter-tracing:en-only,仅输出 en,避免非英文 URL 404 混入 sitemap
   for (const p of ["/cursive-alphabet", "/letter-tracing"]) {

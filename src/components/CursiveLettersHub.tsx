@@ -1,12 +1,16 @@
 import { Link } from "@/i18n/navigation";
 import { FONTS } from "@/stores/useEditorStore";
 import { getLetterUi, lettersForLocale } from "@/content/cursiveLetters";
+import { getNumberUi, numbersForLocale } from "@/content/cursiveNumbers";
 import type { Locale } from "@/i18n/routing";
 
-/** /cursive 页底部的字母矩阵 hub:仅当前语言有字母页时渲染(Phase 0 只有 en) */
+/** /cursive 页底部的字母矩阵 hub:仅当前语言有字母页时渲染(Phase 0 只有 en)。
+ *  数字课页(0–9)同 hub 挂出,同为 en-only 内容层。 */
 export default function CursiveLettersHub({ locale }: { locale: Locale }) {
   const ui = getLetterUi(locale);
   const letters = lettersForLocale(locale);
+  const numberUi = getNumberUi(locale);
+  const numbers = numbersForLocale(locale);
   if (!ui || letters.length === 0) return null;
   const font = FONTS.find((f) => f.id === "cedarvillecursive") ?? FONTS[0];
 
@@ -42,6 +46,25 @@ export default function CursiveLettersHub({ locale }: { locale: Locale }) {
           </div>
         </div>
       ))}
+      {numberUi && numbers.length > 0 ? (
+        <div className="mt-5">
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-400">{numberUi.hubNumbers}</h3>
+          <div className="mt-2 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
+            {numbers.map((n) => (
+              <Link
+                key={n.slug}
+                href={`/cursive/number/${n.slug}`}
+                className="group flex flex-col items-center gap-1 rounded-2xl border border-zinc-200 bg-white px-3 py-4 transition-colors hover:border-accent/40"
+              >
+                <span className="pb-2 text-3xl leading-none text-zinc-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
+                  {n.digit}
+                </span>
+                <span className="text-[11px] leading-tight text-zinc-400">{n.name}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

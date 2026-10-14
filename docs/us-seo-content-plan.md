@@ -203,7 +203,7 @@
 
 **P0(本周,窗口与动量):**
 1. ✅(2026-10-09 已执行) **de/fr/es 标题元数据核对与趋势词对齐**:18 对标题逐一核对后仅 6 处需微调(fr écriture cursive 词簇 ×3、de Linienblatt/Schreibschrift lernen ×2、fr feuille d'écriture ×1),已改并构建验证 <title> 生效:diy-wedding-calligraphy(Kalligraphie Hochzeit / calligraphie mariage)、cursive-practice-worksheets(Schreibschrift Arbeitsblätter)、cursive-alphabet-chart(alphabet calligraphie)、how-to-teach-cursive-kids(schreibschrift lernen)、handwritten-thank-you-notes(Danksagung / carte de remerciement)、kindergarten-handwriting-paper(linienblatt);顺带修 §6.3。改动只在 posts.ts/extra-locales,每篇 2 行;
-2. **FR graphisme 新文章**(Clara)——+350%/+150% 动量、法国独有缺口。§6.4 的 `/writing-practice` 配套已由英文 `one-character-in-the-grid` 补上(工具是中日韩格子,不是法国运笔)。graphisme 仍是法国单独选题,FR 先行,不拿这篇格子文充数;含 halloween 季节章节的窗口已过 2026-10-10,若做则去掉过季章节。
+2. ✅(2026-10-14 已执行) **FR graphisme 新文章**(Clara)——+350%/+150% 动量、法国独有缺口。§6.4 的 `/writing-practice` 配套已由英文 `one-character-in-the-grid` 补上(工具是中日韩格子,不是法国运笔)。graphisme 仍是法国单独选题,FR 先行,不拿这篇格子文充数;含 halloween 季节章节的窗口已过 2026-10-10,若做则去掉过季章节。→ 已落地 `graphisme-maternelle`(fr 源发),详见 §二十六。
 
 **P1(下周):**
 3. ~~xiaohongshu-handwritten-images 补 es/de/fr~~ **停(2026-10-13)**。es/de/fr 正文已在仓库里,GSC 覆盖率下钻显示该 slug 已抓取的语言全部是「已抓取、暂未收录」,英文标题又被改成泛泛的 social media,和贺卡文、手写图文抢同一套步骤。按 `traffic-ceiling-roadmap.md`,这篇留在中文/小红书线,不再为 Google 补语言。`is-cursive-still-taught` 的 es/de/fr 正文已有,维持每年 1 月复核州名单,不为收录再扩语言;
@@ -373,3 +373,12 @@
 - **落地**:`numbers-in-cursive`(en,Clara Hartley)。文章簇「cursive 数字簇」,隶属 cursive 集群;枢纽 `/cursive-worksheets`(练习承接)。意图:资讯(字形参考:数字不连写、环在 2/6/8、7 无横杠——均以站内 Sacramento 实拍核对)+ 练法(生成器 `?words=` 预填配方);与 `tracing-numbers-by-age`(印刷体、分龄教学)拆开,文内互链。下一跳 `/cursive-worksheets?words=1…10` 预填、`/number-tracing`(印刷体还没稳时先回去)、cursive-alphabet-chart / cursive-sentences-to-practice。复核:不复核(字形描述随字体变才改)。
 - **诚实口径(红线)**:数字无起笔点指引(letter 专属数据)在文内写明;字体非教材字帖、风格间差异(如 7 的横杠)如实标注,「课本赢」。不接数字连写教学(这些字体里数字不连写,不虚构笔顺)。
 - **落地结果**:文章与题图(cursive-worksheets 数字预填实拍)已发布;RELATED 已登记。`cursive numbers` 词的其余变体(如 cursive numbers tattoo)留观不接。
+- **工具侧配套(2026-10-14,同日落地)**:`/cursive/number/[number]` 连笔数字课 0–9(en-only,复用字母矩阵机制,§二十四预登记的方式)。字形描述以站内 Cedarville/Sacramento 实拍核对;数字无入笔数据→练习条无起笔点,课页 fontNote 如实写明,笔顺只按常规教法描述。入口三处:`/cursive` hub 的 Numbers 网格、`numbers-in-cursive` 文章正文(2/7/8 深链)、0–9 导航条互链;全量进 sitemap(en)。
+
+## 二十六、graphisme-maternelle(2026-10-14,§6.7 P0-2 落地,FR 源发)
+
+- **数据源**:trends backlog FR 簇——blog graphisme +350%(2026-10-09)、graphisme boucles gs +150%。graphisme halloween 两条过季不接(窗口 2026-10-10,§6.7 P0-2 已注明)。
+- **落地**:`graphisme-maternelle`(**fr 源发**,Clara Hartley,§3.2 原生源发例外:选题词是法语,en 与其他语言按本地化改写跟进)。主词 graphisme maternelle / graphisme boucles gs;次词 gestes graphiques、graphisme PS MS GS。
+- **文章簇**:graphisme/pré-écriture,枢纽 `/prewriting-strokes`(8 语言工具,fr 文案已有);同簇 en 姊妹篇 `strokes-before-letter-tracing`(教法怎么带),本篇占法国体系进度(PS/MS/GS 分龄 + 五类笔画家族),不与 one-character-in-the-grid(CJK 格子)混。尾部相关文当前只有 en 邻居,不跨簇凑数。
+- **下一跳**:`/prewriting-strokes`(fiche 配方里)、`/printable-paper`(自由书写)。复核:不复核(进度表随法国教学大纲变才改;每年 9 月开学季可再看一次 GSC)。
+- **落地结果**:fr 正文 + 题图(运笔工具法语页实拍)已发布;posts.ts 带 en 标题回退(规范校验要求,无 en 正文、en URL 404);RELATED 已登记。en 版本按 §3.2 在下一内容周期补。
