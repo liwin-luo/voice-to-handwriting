@@ -54,3 +54,6 @@ vth-debug*.mjs
 
 # zcode local session data
 /.zcode/
+
+# 手动 GUI 目检截图(t1_/t8_ 等),本地留档不入库
+/gui-test-screenshots/
