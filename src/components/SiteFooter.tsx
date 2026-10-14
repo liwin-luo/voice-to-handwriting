@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { SITE } from "@/lib/site";
 
 export default async function SiteFooter() {
   const t = await getTranslations("footer");
@@ -32,23 +33,8 @@ export default async function SiteFooter() {
             {t("faq")}
           </Link>
         </nav>
-        <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-zinc-400">
-          <a
-            href="https://saasfame.com/item/handwriting-generator"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-opacity hover:opacity-80"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element -- 外部 SVG 徽章,不走 next/image */}
-            <img
-              src="https://saasfame.com/badge-light.svg"
-              alt="Featured on saasfame.com"
-              className="h-[54px] w-auto"
-            />
-          </a>
-          <span>
-            © {new Date().getFullYear()} {meta("brand")}
-          </span>
+        <p className="text-zinc-400">
+          © {new Date().getFullYear()} {meta("brand")}
         </p>
         {icp && (
           <p>
