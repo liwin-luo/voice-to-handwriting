@@ -382,3 +382,13 @@
 - **文章簇**:graphisme/pré-écriture,枢纽 `/prewriting-strokes`(8 语言工具,fr 文案已有);同簇 en 姊妹篇 `strokes-before-letter-tracing`(教法怎么带),本篇占法国体系进度(PS/MS/GS 分龄 + 五类笔画家族),不与 one-character-in-the-grid(CJK 格子)混。尾部相关文当前只有 en 邻居,不跨簇凑数。
 - **下一跳**:`/prewriting-strokes`(fiche 配方里)、`/printable-paper`(自由书写)。复核:不复核(进度表随法国教学大纲变才改;每年 9 月开学季可再看一次 GSC)。
 - **落地结果**:fr 正文 + 题图(运笔工具法语页实拍)已发布;posts.ts 带 en 标题回退(规范校验要求,无 en 正文、en URL 404);RELATED 已登记。**en 版本已于同日补齐**(§3.2 源发文 en 必须),同一 slug 按语言出 fr/en 两个 URL,hreflang 组只声明 en+fr。
+
+## 二十七、导入前的两篇准备文(2026-10-16,外链到 Free Audio Editor)
+
+两篇不是译文,也不做 hreflang 对。站点自己的转写文 `audio-to-handwriting` 仍吃「上传并转写」。这两篇吃导入之前的两件不同的事,做完再回到首页 `/`。
+
+- **文章簇**:录音进手写。枢纽 `/`(导入音频)。同簇已有 `audio-to-handwriting`(Theo)。意图差:已有文是文件已经能打开时怎么转写;英文新文是整段都太轻时先抬电平;德文新文是 WhatsApp/iPhone 语音条先变成能导入的 MP3。
+- **en**:`quiet-voice-before-handwriting`(Theo Lindgren)。主路径是高通 → 峰值归一化 → 限幅增益,然后在本站导入。外链 [Free Audio Editor](https://freeaudioeditor.online/) 的 high-pass、normalize、increase-volume,锚文本是步骤名。另引 MDN BiquadFilterNode、ITU-R BS.1770、削波词条。体验资产:2026-10-16 桌面 Chrome(macOS)上对故意录轻的短句的三张实拍。未测转写前后正确率,文内写明。复核:工具旋钮变了才改。
+- **de 源发**:`whatsapp-voice-note-handwriting`(Theo Lindgren,§3.2 原生源发例外)。en 标题只满足规范校验,无 en 正文,en URL 404。路径是 Opus 或 iPhone M4A → MP3 → 裁一段 → 本站导入。外链 `freeaudioeditor.online/de/` 下的 opus-to-mp3、m4a-to-mp3、audio-trimmer、audio-joiner、mp4-to-mp3。另引 opus-codec.org、RFC 6716、Apple「Aufnahme teilen」、DSGVO。不编造 WhatsApp 导出点击路径。复核:同上。
+- **下一跳**:两篇正文都进 `/`,相关文挂 `audio-to-handwriting` 与 `handwriting-image-generator`(两语都有正文)。`audio-to-handwriting` 的 en 正文回链电平文,de 正文回链格式文。不把两篇新文互相链(对方语言没有正文,会 404)。
+- **红线**:不写「最佳免费音频编辑器」清单。不把峰值归一化说成 LUFS。不承诺变速保音高。不写未测的 Whisper 正确率。别人的语音转发前要征得同意。

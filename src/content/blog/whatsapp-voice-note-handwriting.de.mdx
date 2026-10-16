@@ -1,0 +1,49 @@
+# WhatsApp-Sprachnachricht in Handschrift verwandeln
+
+Eine WhatsApp-Sprachnachricht ist oft Opus. Eine iPhone-Sprachmemo ist meist M4A. Diese Seite importiert mp3, wav und m4a. Kostenlos, ohne Anmeldung, etwa zehn Minuten: zuerst eine MP3 machen, dann hier die handschriftliche Seite exportieren.
+
+Die Bilder unten sind eine kurze Testaufnahme in [Free Audio Editor](https://freeaudioeditor.online/de), Desktop Chrome, macOS, 16. Oktober 2026. Kein echtes Chat-Protokoll.
+
+## Welche Datei du in der Hand hast
+
+[Opus](https://opus-codec.org/) ist der Codec aus [RFC 6716](https://www.rfc-editor.org/rfc/rfc6716). WhatsApp- und Telegram-Sprachnachrichten liegen oft als `.opus` vor, oder als Opus in OGG oder WebM. Wenn du die Datei schon auf dem Gerät hast, gehört sie auf [Opus in MP3 umwandeln](https://freeaudioeditor.online/de/opus-to-mp3). Die Datei wird nicht hochgeladen.
+
+Eine Sprachmemo vom iPhone ist etwas anderes. In der App Sprachmemos teilst du die Aufnahme und wählst die Variante, die alle Ebenen zu einer einzelnen `.m4a` mischt. Apple beschreibt den Weg unter [Aufnahme teilen](https://support.apple.com/guide/iphone/share-a-recording-iph3d6dc359/ios). Diese Datei gehört auf [M4A in MP3](https://freeaudioeditor.online/de/m4a-to-mp3). Ein Video im MP4-Format gehört auf [MP4 in MP3 umwandeln](https://freeaudioeditor.online/de/mp4-to-mp3).
+
+Bleibt die Datei in einem normalen Browser-Tab stumm, kann die Seite sie auch nicht lesen. Apple Lossless in einer M4A dekodiert der Browser oft nicht. Dann zuerst auf dem Gerät in AAC oder WAV wandeln, und danach dorthin.
+
+Wenn du nur eine Stelle brauchst und der Browser die Datei schon abspielt, schneidest du direkt im [Audio-Trimmer](https://freeaudioeditor.online/de/audio-trimmer) und exportierst einmal als MP3. Zweimal nach MP3 zu kodieren kostet Details, die du nicht zurückbekommst.
+
+## Sprache mit 128 kbps
+
+Für eine Sprachnachricht reichen **128 kbps**. 192 oder 320 kbps sind für Musik. Die MP3 bleibt verlustbehaftet. Das Original behältst du, wenn du die Quelle noch brauchst.
+
+![sprachnachricht.opus ist offen. Das Format steht auf MP3 · 128 kbps, der Knopf heißt In MP3 umwandeln.](/blog/sprachnachricht-opus.webp)
+
+Dieselbe Wahl auf der M4A-Seite. Der Knopf heißt auch dort **In MP3 umwandeln**.
+
+![sprachmemo.m4a ist offen. Das Format steht auf MP3 · 128 kbps, der Knopf heißt In MP3 umwandeln.](/blog/sprachnachricht-m4a.webp)
+
+Titel und Interpret werden nicht mitkopiert. Für eine Notiz ist das egal. Wenn du nach der Umwandlung noch schneiden willst, nimm **WAV · verlustfrei** und kodiere die MP3 einmal, ganz am Ende.
+
+## Nur die Antwort behalten
+
+Öffne die Datei im [Audio-Trimmer](https://freeaudioeditor.online/de/audio-trimmer). Zieh auf der Wellenform über die Stelle, die bleiben soll. **Auswahl behalten** exportiert nur dieses Stück. **Auswahl löschen** wirft das markierte Stück weg. Ein Export ist eine Datei.
+
+![sprachnachricht.opus im Audio-Trimmer. Auswahl behalten ist aktiv, der markierte Bereich ist hervorgehoben, das Format ist MP3 · 128 kbps.](/blog/whatsapp-voice-note-handwriting.webp)
+
+Mehrere Nachrichten hintereinander macht der [Audio-Joiner](https://freeaudioeditor.online/de/audio-joiner). Für gesprochene Antworten stellst du die Überblendung auf 0.
+
+## Hier zur Handschrift
+
+Auf der [Werkzeugseite](/) **Audiodatei importieren** wählen und die MP3, WAV oder M4A öffnen. Das Transkript landet im Editor. Wörter korrigieren, Papier wählen, PNG oder PDF exportieren.
+
+Wie der Import funktioniert und wo das lokale Modell danebenliegt, steht in [Aufnahmen in Handschrift verwandeln](/blog/audio-to-handwriting). Diese Seite hier löst das Format. Sie macht eine leise Aufnahme nicht lauter.
+
+## Bevor du weiterleitest
+
+Eine Stimme kann personenbezogene Daten sein. Was das bedeutet, steht in der [DSGVO](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679). Frag die Person, bevor du ihre Nachricht weitergibst. Dass die Bearbeitung auf deinem Gerät bleibt, ändert diese Frage nicht.
+
+## Getestet, mit ehrlichen Grenzen
+
+Die drei Bilder sind eine kurze Testzeile, am 16. Oktober 2026 in Free Audio Editor geöffnet, Desktop Chrome auf macOS. Sie sind kein Echtheitsbeweis für ein Transkript. Safari liest manche Codecs schlechter. Desktop Chrome oder Edge ist der sicherere Import. Wir bekommen das Audio nicht — siehe die [Datenschutzerklärung](/privacy).

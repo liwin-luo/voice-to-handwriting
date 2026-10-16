@@ -927,6 +927,40 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "quiet-voice-before-handwriting",
+    author: "theo-lindgren",
+    date: "2026-10-16",
+    updated: "2026-10-16",
+    image: "/blog/quiet-voice-before-handwriting.webp",
+    i18n: {
+      en: {
+        title: "Fix a quiet voice memo before you turn it into handwriting",
+        description:
+          "High-pass the rumble, peak-normalize, then boost with a limiter. Then import the file and export a handwritten page. Free, no signup.",
+      },
+    },
+  },
+  {
+    slug: "whatsapp-voice-note-handwriting",
+    author: "theo-lindgren",
+    date: "2026-10-16",
+    updated: "2026-10-16",
+    image: "/blog/whatsapp-voice-note-handwriting.webp",
+    i18n: {
+      // de 源发。en 标题仅作列表回退与规范校验,无 en 正文。与英文电平文不是译文。
+      en: {
+        title: "Turn a WhatsApp voice note into handwriting",
+        description:
+          "Convert an Opus voice note or an iPhone M4A to MP3, keep the part you need, then import it and export a handwritten page.",
+      },
+      de: {
+        title: "WhatsApp-Sprachnachricht in Handschrift verwandeln",
+        description:
+          "Opus-Sprachnachricht oder iPhone-M4A in MP3 wandeln, die Stelle schneiden und hier als Handschrift exportieren. Nichts wird hochgeladen.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

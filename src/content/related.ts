@@ -127,6 +127,15 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/templates"],
     posts: ["handwritten-card-with-voice", "handwriting-image-generator", "handwriting-templates-guide"],
   },
+  // 导入前的准备:电平(en)与格式(de)。枢纽是首页导入,不是彼此的译文。
+  "quiet-voice-before-handwriting": {
+    tools: ["/"],
+    posts: ["audio-to-handwriting", "handwriting-image-generator"],
+  },
+  "whatsapp-voice-note-handwriting": {
+    tools: ["/"],
+    posts: ["audio-to-handwriting", "handwriting-image-generator"],
+  },
   "xiaohongshu-handwritten-images": {
     tools: ["/templates"],
     posts: ["handwriting-image-generator", "handwritten-card-with-voice", "handwriting-templates-guide"],
