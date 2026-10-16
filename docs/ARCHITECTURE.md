@@ -87,7 +87,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 ### 4.1 i18n 与路由
 
 - `src/i18n/routing.ts`:`locales` 数组顺序 = 语言切换器显示顺序(当前 en→es→fr→de→pt→zh→ja→ko);`localePrefix: "as-needed"` 即 en 无前缀。`LOCALE_LABELS` 用语言全名(endonym)。
-- `src/proxy.ts`:Next 16 中 middleware 更名为 proxy,内容就是 `createMiddleware(routing)`。
+- `src/proxy.ts`:Next 16 中 middleware 更名为 proxy,内容是 `createMiddleware({ ...routing, alternateLinks: false })`。**必须保持 alternateLinks 关闭**:middleware 默认按 `routing.locales` 给每个响应注入全语言 hreflang `Link` 头,不认识页面级 `available` 过滤,会给 en-only 页面(字母矩阵/数字课/letter-tracing/cursive-alphabet)和未翻译文章宣告大量 404 变体(2026-10 Semrush 报告 1646 条 404 的根因);hreflang 统一以页面 metadata 的 `<link rel="alternate">` 为准。
 - `src/i18n/navigation.ts` 导出带语言前缀的 `Link`/`usePathname`/`useRouter`,页面内链接**必须**用它而非 `next/link`。
 - 页面文案全部在 `messages/*.json`;注意 8 个文件要同步加 key(历史上漏过,见 git log "fix missing wordwork i18n x8")。
 
@@ -201,6 +201,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 ### 4.9 SEO 基建
 
 - `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)+ `pageMetadata`(在 alternates 上加 `og:type` 与 `og:url`;文章页传 `article` 才写 `publishedTime`/`modifiedTime`)。
+- `next.config.ts` redirects:已收录旧 URL 的 308 收尾(`/history`、4 个缺 `/blog` 前缀的旧文章 slug)+ www 主机 308 归一到裸域(`has: type:'host'`,与 `SITE.url` 一致)。新增重定向要持续挂着,不要删。
 - `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 连笔字母矩阵 + 连笔数字矩阵(en-only)+ 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、连笔单字母页 BreadcrumbList、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
