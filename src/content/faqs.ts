@@ -1377,6 +1377,7 @@ export const DAILY_CURSIVE_FAQS: FaqItem[] = [
       en: {
         q: "What is on each daily sheet?",
         a: "One printable page with a complete practice ladder: a stroke warm-up row, the cursive letters of the day, three words that use them, and one sentence to trace and then copy on the blank lines. Ten to fifteen minutes, done.",
+        link: { href: "/blog/daily-cursive-practice-pdf", label: "Fifteen minutes on today's PDF" },
       },
       zh: {
         q: "每天的练习页上有什么?",

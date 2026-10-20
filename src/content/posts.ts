@@ -942,6 +942,34 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
+    slug: "handwriting-personality-test",
+    author: "theo-lindgren",
+    date: "2026-10-20",
+    updated: "2026-10-20",
+    image: "/blog/handwriting-personality-test.png",
+    i18n: {
+      en: {
+        title: "Handwriting personality test: pick the shapes you write",
+        description:
+          "A free handwriting personality test with no upload. Eight shape answers, a fictional label, and one drill to bring back to a practice sheet.",
+      },
+    },
+  },
+  {
+    slug: "daily-cursive-practice-pdf",
+    author: "wes-morales",
+    date: "2026-10-20",
+    updated: "2026-10-20",
+    image: "/blog/daily-cursive-practice-pdf.png",
+    i18n: {
+      en: {
+        title: "Daily cursive handwriting practice PDF: fifteen minutes, then stop",
+        description:
+          "A free daily handwriting practice PDF: switch to Adults, print today's cursive sheet, and stop at fifteen minutes. The settings, one real page, and what the file will not do.",
+      },
+    },
+  },
+  {
     slug: "whatsapp-voice-note-handwriting",
     author: "theo-lindgren",
     date: "2026-10-16",

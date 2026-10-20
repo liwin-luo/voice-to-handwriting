@@ -219,10 +219,10 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["kindergarten-handwriting-paper", "how-to-improve-handwriting-adults", "free-printable-lined-paper"],
   },
 
-  // 笔迹性格测验集群:文章承接 information 词,导流 quiz 工具
+  // 笔迹性格测验集群:科普文承接「字迹说明什么」,字形测验文把完整测验指到新站,练习留在本站
   "what-does-your-handwriting-say-about-you": {
     tools: ["/handwriting-personality-quiz", "/printable-paper", "/name-tracing"],
-    posts: ["how-to-improve-handwriting-adults", "cursive-vs-print", "is-cursive-still-taught"],
+    posts: ["handwriting-personality-test", "how-to-improve-handwriting-adults", "cursive-vs-print"],
   },
 
   // 上升词两篇:脑科学 Breakout 簇 + 练好字攻略簇,互链并导流 workbook/练习工具
@@ -307,6 +307,19 @@ export const RELATED: Record<string, RelatedConfig> = {
   "graphisme-maternelle": {
     tools: ["/prewriting-strokes", "/printable-paper"],
     posts: ["strokes-before-letter-tracing"],
+  },
+
+  // 每日连笔:工具页吃「打开就下载今天的纸」,本文吃成人十五分钟怎么用这一页 PDF。
+  // 自选句子去 cursive-practice-worksheets;字母散了去 alphabet chart;还不会连笔去 how-to-write-in-cursive。
+  "daily-cursive-practice-pdf": {
+    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets"],
+    posts: ["cursive-practice-worksheets", "cursive-alphabet-chart", "how-to-write-in-cursive"],
+  },
+
+  // 笔迹性格测验:完整字形测验在新站,本站 quiz 是两分钟看图版,练那个字形回到练习纸
+  "handwriting-personality-test": {
+    tools: ["/handwriting-personality-quiz", "/handwriting-worksheet-generator", "/number-tracing"],
+    posts: ["what-does-your-handwriting-say-about-you", "tracing-numbers-by-age", "handwriting-worksheets"],
   },
 };
 

@@ -392,3 +392,23 @@
 - **de 源发**:`whatsapp-voice-note-handwriting`(Theo Lindgren,§3.2 原生源发例外)。en 标题只满足规范校验,无 en 正文,en URL 404。路径是 Opus 或 iPhone M4A → MP3 → 裁一段 → 本站导入。外链 `freeaudioeditor.online/de/` 下的 opus-to-mp3、m4a-to-mp3、audio-trimmer、audio-joiner、mp4-to-mp3。另引 opus-codec.org、RFC 6716、Apple「Aufnahme teilen」、DSGVO。不编造 WhatsApp 导出点击路径。复核:同上。
 - **下一跳**:两篇正文都进 `/`,相关文挂 `audio-to-handwriting` 与 `handwriting-image-generator`(两语都有正文)。`audio-to-handwriting` 的 en 正文回链电平文,de 正文回链格式文。不把两篇新文互相链(对方语言没有正文,会 404)。
 - **红线**:不写「最佳免费音频编辑器」清单。不把峰值归一化说成 LUFS。不承诺变速保音高。不写未测的 Whisper 正确率。别人的语音转发前要征得同意。
+
+## 二十八、每日连笔 PDF(2026-10-20,Trends Breakout)
+
+- **数据源**:2026-10-12 `daily cursive handwriting practice pdf` +130%;2026-10-20 扫描 `daily handwriting practice pdf free` Breakout。同一缺口,工具 `/daily-cursive-handwriting-practice` 此前没有专文。
+- **文章簇**:每日连笔。枢纽 `/daily-cursive-handwriting-practice`(工具意图:打开就下载今天的纸)。本文是教程:成人用这一页 PDF 练满十五分钟后停。与 `cursive-practice-worksheets`(自选词表)和 `handwriting-workbook`(自己的十五行、两周)拆开。
+- **意图**:教程。不抢工具页主词 Daily Cursive Handwriting Practice。主词 daily cursive handwriting practice PDF;首段同时承接 free daily handwriting practice PDF,并写明这一页是连笔,不是印刷体。
+- **下一跳**:正文进枢纽。自选句子去 `/cursive-worksheets` 与 `cursive-practice-worksheets`。字母散了去 `cursive-alphabet-chart`。还不会连笔去 `how-to-write-in-cursive`。印刷体或自己的词去 `handwriting-workbook`(跨簇:每日谚语不是读者下周要写的句子)。尾部相关文只留同簇下一步那三篇。
+- **角色**:Wes Morales。体验资产:2026-10-20 桌面 Chrome、英文、US Letter、Cedarville、默认墨色下的成人页(ooo ddd ccc / sep·own / pen·owl·brown / A friend in need is a friend indeed)+ 十五分钟日程 + 参数表。儿童默认页只用来说明要先切到 Adults。
+- **落地**:`daily-cursive-practice-pdf`(en)。工具页英文 FAQ「每天的练习页上有什么」回链本文。复核:不复核(练习阶梯随工具改了才改)。
+- **同轮不接**:createprintables name tracing(已覆盖);editable handwriting worksheets(生成器不是可填表单,继续观察);dafont、毛笔、伊斯兰书法(放弃);linienblatt 3. klasse、schreibschrift 单字母、calligraphie latine(继续观察)。handwriting personality test 簇另文,见 §二十九。
+
+## 二十九、字形性格测验(2026-10-20,指向新站)
+
+- **数据源**:2026-10-20 扫描 handwriting personality test +150%、handwriting test +140%、handwriting personality +130%、handwriting personality test game +110%。站内 `/handwriting-personality-quiz` 是两分钟看图测验,`what-does-your-handwriting-say-about-you` 是五项观感加科学边界。完整「选你怎么写这个字形」的测验在新站。
+- **文章簇**:笔迹性格测验。枢纽仍是 `/handwriting-personality-quiz`。本文不重做测验,也不重写 Mara 的科学文。
+- **意图**:教程。介绍并推荐 [Handwriting Personality Test](https://handwritingpersonalitytest.online/):免费、不上传、八个字形即可出结果。主词 handwriting personality test。不抢本站 quiz 页的主词,不抢 Mara 文的 H1。
+- **下一跳**:测验本身去新站首页;科学边界去新站 `/science` 与本站 `what-does-your-handwriting-say-about-you`。结果附带的 7 横杠练习回到 `/handwriting-worksheet-generator`(Patrick Hand,输入单个 `7`)。还在学数字的孩子去 `/number-tracing`。
+- **角色**:Theo Lindgren。体验资产:2026-10-20 桌面 Chrome、英文。依次选 Open 4、Plain 7、Single storey a、Open tail g、Plain 0、Plain stroke 1、No bar t、Close dot i,跳过 y、&、间距、斜度。结果 Everyday Minimalist,链接 `/r/100000000----`,四项分数 Structure 2 / Endings 10 / Page rhythm 5 / Flourish 5。未点 Download card,文内写明。
+- **落地**:`handwriting-personality-test`(en)。`what-does-your-handwriting-say-about-you` 的相关文换成本文(en 才有正文,其他语言不出现这条链接)。复核:新站计分或六个标签改了才改。
+- **红线**:标签是归档名,不是诊断、健康、诚实、智力或用人依据。不编造公司名。不把本站 quiz 写成和新站是同一套题。

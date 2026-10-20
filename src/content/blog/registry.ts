@@ -243,6 +243,8 @@ import hiyEs from "./how-to-improve-your-handwriting.es.mdx";
 import hiyPt from "./how-to-improve-your-handwriting.pt.mdx";
 import qvhEn from "./quiet-voice-before-handwriting.en.mdx";
 import wvnDe from "./whatsapp-voice-note-handwriting.de.mdx";
+import dcpEn from "./daily-cursive-practice-pdf.en.mdx";
+import hptEn from "./handwriting-personality-test.en.mdx";
 
 /** slug → 语言 → 内容组件;新增文章:建 <slug>.<locale>.mdx 后在此注册。
  * 值允许 Partial:仅部分语言有正文时,页面按语言 404,sitemap/索引按 availableLocales 过滤 */
@@ -301,6 +303,8 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "graphisme-maternelle": { fr: gpmFr, en: gpmEn },
   "quiet-voice-before-handwriting": { en: qvhEn },
   "whatsapp-voice-note-handwriting": { de: wvnDe },
+  "daily-cursive-practice-pdf": { en: dcpEn },
+  "handwriting-personality-test": { en: hptEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

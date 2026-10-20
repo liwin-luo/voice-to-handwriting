@@ -387,6 +387,240 @@
     "maxGrowth": 50,
     "seed": "calligraphy",
     "source": "rising"
+   },
+   "personality test": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+160%",
+    "maxGrowth": 160,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting personality test": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 2,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting test": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting personality": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting personality test game": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "personality test based on handwriting": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting repeater": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "r74n handwriting": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting personality quiz": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting without tears letter order": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting heroes": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "how to turn handwriting into a font": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "daily handwriting practice pdf free": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "handwriting practice sheets pdf free download": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+200%",
+    "maxGrowth": 200,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "handwriting practice sheet": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "editable handwriting worksheets": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+250%",
+    "maxGrowth": 250,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "1st grade handwriting worksheets": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "createprintables.com name tracing": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "name tracing template": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "tpt": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "cursive name tracing generator": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "name tracing",
+    "source": "rising"
+   },
+   "calligraphy practice sheets": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "lucida calligraphy": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "calligraphy tattoo fonts": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "lucida calligraphy font": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "calligraphy generator free": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "calligraphy",
+    "source": "rising"
    }
   },
   "DE": {
@@ -419,10 +653,10 @@
    },
    "pandora gravur handschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+50%",
-    "maxGrowth": 50,
+    "lastSeen": "2026-10-20",
+    "count": 2,
+    "growth": "+250%",
+    "maxGrowth": 250,
     "seed": "handschrift",
     "source": "rising"
    },
@@ -518,8 +752,8 @@
    },
    "schreibschrift kopieren": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-10-20",
+    "count": 2,
     "growth": "+40%",
     "maxGrowth": 40,
     "seed": "schreibschrift",
@@ -659,6 +893,114 @@
     "maxGrowth": 40,
     "seed": "kalligraphie",
     "source": "rising"
+   },
+   "dafont handschrift": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+170%",
+    "maxGrowth": 170,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "handschrift font": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "schreibschrift h groß": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "v in schreibschrift": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "f in schreibschrift": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schriftarten schreibschrift": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schreibschrift zum kopieren": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "b in schreibschrift": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "linienblatt 3. klasse": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+250%",
+    "maxGrowth": 250,
+    "seed": "linienblatt",
+    "source": "rising"
+   },
+   "kalligraphie pinsel": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "islamische kalligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "kalligraphie adventskalender": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "kalligraphie",
+    "source": "rising"
    }
   },
   "FR": {
@@ -781,10 +1123,10 @@
    },
    "calligraphie gothique": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+40%",
-    "maxGrowth": 40,
+    "lastSeen": "2026-10-20",
+    "count": 2,
+    "growth": "+80%",
+    "maxGrowth": 80,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -880,8 +1222,8 @@
    },
    "r majuscule calligraphie": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-12",
-    "count": 1,
+    "lastSeen": "2026-10-20",
+    "count": 2,
     "growth": "+400%",
     "maxGrowth": 400,
     "seed": "calligraphie",
@@ -889,10 +1231,10 @@
    },
    "i majuscule calligraphie": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-12",
-    "count": 1,
-    "growth": "+250%",
-    "maxGrowth": 250,
+    "lastSeen": "2026-10-20",
+    "count": 2,
+    "growth": "+550%",
+    "maxGrowth": 550,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -974,6 +1316,168 @@
     "count": 1,
     "growth": "+60%",
     "maxGrowth": 60,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "calligraphie latine": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+250%",
+    "maxGrowth": 250,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "lettre l calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "l majuscule calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "g majuscule calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "cahier calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "b majuscule calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "cahier de calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "alphabet calligraphie facile": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "dafont calligraphie": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "progression graphisme ms": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "centre du graphisme echirolles": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "progression graphisme ps": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "gta 6 graphisme": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "cahier de graphisme gs": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "agence de graphisme paris": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "ia graphisme": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "stage graphisme": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "alternance graphisme": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
     "seed": "graphisme",
     "source": "rising"
    }
@@ -1393,6 +1897,76 @@
     "count": 1,
     "traffic": "1000+",
     "note": "‘Marshals’ Season 2 Release Guide: Here’s When Episode 2 Drops On CBS And Paramount+"
+   },
+   "tampa bay rays": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "20000+",
+    "note": "Rays 3-1 Guardians (Oct 18, 2026) Final Score"
+   },
+   "rockstar games gta vi": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "10000+",
+    "note": "&apos;There&apos;s No One Person That Has This Whole Thing in Their Head&apos; — GTA 6 Dev"
+   },
+   "kylie cosmetics": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Victoria’s Secret reboots its fantasy with Kylie Jenner’s $50M diamond bra"
+   },
+   "renee montgomery": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Renee Montgomery Defends Dual Role As WNBA Analyst and Owner"
+   },
+   "brandon cooks": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Brandin Cooks&apos; first TD catch as a 49er gives San Francisco a 27-26 lead in Seattle"
+   },
+   "kaitlyn chen": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "500+",
+    "note": "The Valkyries&apos; secret weapon is a &apos;goofy&apos; Ivy League grad from SoCal"
+   },
+   "amy acton vs vivek ramaswamy": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Ramaswamy Facing Tougher Fight Than Republicans Had Expected in Ohio"
+   },
+   "valkyries": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "10000+",
+    "note": "WNBA Finals 2026: Valkyries vs. Dream schedule, scores, more"
+   },
+   "brandon aiyuk": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Brandon Aiyuk was a star receiver with a $120M contract. Now he’s the NFL’s biggest enigma"
+   },
+   "rays score": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Rays 3-1 Guardians (Oct 18, 2026) Final Score"
    }
   },
   "DE": {
@@ -1468,8 +2042,8 @@
    },
    "crunchyroll": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-12",
-    "count": 1,
+    "lastSeen": "2026-10-20",
+    "count": 2,
     "traffic": "100+",
     "note": "Sechs weitere Anime-Neustarts ab sofort auf Crunchyroll verfügbar"
    },
@@ -1535,6 +2109,69 @@
     "count": 1,
     "traffic": "200+",
     "note": "&quot;Deshalb wird er wahrscheinlich auch kein Weltmeister&quot;: Hartes Urteil für Merced"
+   },
+   "49ers – commanders": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Washington Commanders face unbeaten San Francisco 49ers in Monday night football showdown"
+   },
+   "fryzza airfryer pizza": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Bekannter TV-Modarator aus Viersen: Könnes kämpft – in der Höhle der Löwen"
+   },
+   "chevron": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Better Oil Stock: Chevron (CVX) vs. ExxonMobil (XOM)"
+   },
+   "femizid": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Gewalttat: 47-Jähriger soll mutmaßlich Frau in Köln getötet haben"
+   },
+   "drive": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "100+",
+    "note": "LSU student and fiance, both with New Orleans area ties, killed leaving Tigerland by drunk"
+   },
+   "friedrich merz": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Bundesregierung vereinbart KI-Kooperation mit Nvidia"
+   },
+   "rbb24": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "82-Jähriger und 84-Jährige sterben nach Autounfall im Krankenhaus"
+   },
+   "cyberpunk edgerunners season 2": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Cyberpunk: Edgerunners 2 Delivers the Gory, Action-Packed Goods"
+   },
+   "bruce willis": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Licensable video: Bruce Willis advised Ben Affleck to change his voice"
    }
   },
   "FR": {
@@ -1677,10 +2314,80 @@
     "count": 1,
     "traffic": "500+",
     "note": "« La peine de mort est inadmissible » : Léon XIV à contre-courant de l’administration Trum"
+   },
+   "loto résultats loto": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Résultats Loto FDJ : les numéros gagnants du lundi 19 octobre"
+   },
+   "nhl": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Anton Frondell’s New Challenge Is The Grind Of A Full NHL Season"
+   },
+   "wnba": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Williams lifts Valkyries past Dream in WNBA Finals opener"
+   },
+   "manchester city football club": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Man City rivals ‘cannot see saga being sorted this season’"
+   },
+   "faustine bollaert": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Faustine Bollaert (47 ans) : après sa séparation, la grande annonce que tout le monde atte"
+   },
+   "nuit": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Le dossier de la semaine. Ces professionnels exercent la nuit : vous dormez, ils travaille"
+   },
+   "macbook pro": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Apple pourrait dévoiler un MacBook Pro tactile le 28 octobre"
+   },
+   "casseur": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "500+",
+    "note": "La «panoplie du casseur» : des peines sévères lors des premières comparutions immédiates a"
+   },
+   "snap": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "500+",
+    "note": "NFL Week 6 Winners and Losers: With another listless loss, Eagles face possibility of majo"
+   },
+   "daniel mouchard": {
+    "firstSeen": "2026-10-20",
+    "lastSeen": "2026-10-20",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "Intervention de la police dans un campus : le président de l&apos;université Sorbonne Nouv"
    }
   }
  },
- "lastRun": "2026-10-12",
+ "lastRun": "2026-10-20",
  "lastGeos": [
   "US",
   "DE",
