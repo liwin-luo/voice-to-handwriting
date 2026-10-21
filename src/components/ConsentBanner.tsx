@@ -1,8 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-import Script from "next/script";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Cookie } from "@phosphor-icons/react";
 import { Link } from "@/i18n/navigation";
 
 const CONSENT_KEY = "vth-consent";
@@ -41,23 +39,50 @@ export default function ConsentBanner() {
     setChoice(v);
   };
 
-  if (choice !== null || !adsenseClient) return null;
+  const visible = choice === null && !!adsenseClient;
+  const bannerRef = useRef<HTMLDivElement>(null);
+
+  // 横幅盖住工具页吸底导出条。把占用高度写到 --consent-offset,导出条和侧栏据此上移。
+  useLayoutEffect(() => {
+    const el = bannerRef.current;
+    if (!el) {
+      document.documentElement.style.removeProperty("--consent-offset");
+      return;
+    }
+    const apply = () => {
+      document.documentElement.style.setProperty("--consent-offset", `${el.offsetHeight + 20}px`);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty("--consent-offset");
+    };
+  }, [visible]);
+
+  if (!visible) return null;
 
   return (
-    <div className="fixed inset-x-3 bottom-3 z-40 mx-auto flex max-w-3xl flex-col items-start gap-3 rounded-2xl border border-zinc-200 bg-white/95 p-4 shadow-[0_16px_40px_-16px_rgba(23,23,23,0.25)] backdrop-blur-md sm:flex-row sm:items-center">
-      <Cookie weight="duotone" className="hidden size-6 shrink-0 text-accent sm:block" />
-      <p className="flex-1 text-xs leading-relaxed text-zinc-600">
-        {t("text")}{" "}
-        <Link href="/privacy" className="text-accent underline underline-offset-2">
+    <div
+      ref={bannerRef}
+      className="glass-bar fixed inset-x-3 bottom-3 z-40 mx-auto flex max-w-3xl flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5"
+    >
+      <div className="min-w-0 flex-1">
+        <p className="text-sm leading-relaxed text-zinc-600">{t("text")}</p>
+        <Link
+          href="/privacy"
+          className="mt-2 inline-block text-sm text-accent underline underline-offset-2 hover:text-accent-strong"
+        >
           {t("privacy")}
         </Link>
-      </p>
-      <div className="flex shrink-0 gap-2">
-        <button onClick={() => decide("rejected")} className="btn btn-ghost px-3.5 py-2 text-xs">
-          {t("reject")}
-        </button>
-        <button onClick={() => decide("accepted")} className="btn btn-primary px-3.5 py-2 text-xs">
+      </div>
+      <div className="flex w-full shrink-0 flex-col gap-2 sm:w-60">
+        <button type="button" onClick={() => decide("accepted")} className="btn btn-primary w-full px-4 py-2.5">
           {t("accept")}
+        </button>
+        <button type="button" onClick={() => decide("rejected")} className="btn btn-ghost w-full px-4 py-2.5">
+          {t("reject")}
         </button>
       </div>
     </div>

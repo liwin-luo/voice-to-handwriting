@@ -131,7 +131,7 @@ export default function ToolWorkspace({
   );
 
   const bar = (
-    <div ref={barRef} className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-4">
+    <div ref={barRef} className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-[var(--consent-offset,1rem)]">
       <button type="button" onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
         <ClockCounterClockwise className="size-4 text-zinc-500" />
         {tHistory("open")}
@@ -146,7 +146,7 @@ export default function ToolWorkspace({
     return (
       <div className="flex flex-col gap-5">
         <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
-          <aside ref={sideRef} className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-11.25rem)] lg:overflow-y-auto lg:pr-1">
+          <aside ref={sideRef} className="flex flex-col gap-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-10.25rem-var(--consent-offset,1rem))] lg:overflow-y-auto lg:pr-1">
             <TranscriptEditor />
             {capture}
             <StylePanel layout="doctor" />
@@ -163,7 +163,7 @@ export default function ToolWorkspace({
     <div className="flex flex-col gap-5">
       {/* 窄屏 contents:字体和纸样跟在录音后,字号墨色排到纸和导出条后面。宽屏收成左栏,底栏在栅格外面,避免吸底时盖住左栏 */}
       <div className="contents lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start lg:gap-x-6">
-        <div ref={sideRef} className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-11.25rem)] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
+        <div ref={sideRef} className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-10.25rem-var(--consent-offset,1rem))] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
           <div className="order-1 flex flex-col gap-5 lg:order-none">
             <TranscriptEditor />
             {capture}
@@ -174,7 +174,7 @@ export default function ToolWorkspace({
           <PaperView />
         </div>
       </div>
-      <div className="order-3 lg:sticky lg:bottom-4 lg:z-30">{bar}</div>
+      <div className="order-3 lg:sticky lg:bottom-[var(--consent-offset,1rem)] lg:z-30">{bar}</div>
       {drawer}
     </div>
   );
