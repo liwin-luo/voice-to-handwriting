@@ -29,7 +29,8 @@
 │   ├── fonts/<fontId>/        # cn-font-split 切片产物:result.css + *.woff2(勿手改)
 │   ├── models/onnx-community/ # 旧的自托管 Whisper 权重(浏览器已改从 huggingface.co 拉取,不再使用)
 │   ├── blog/                  # 博客题图
-│   └── fd1dfcff….txt          # IndexNow 密钥文件(Bing 站点验证)
+│   ├── fd1dfcff….txt          # IndexNow 密钥文件(Bing 站点验证)
+│   └── google824e0769c16d7fbd.html  # Google Search Console HTML 验证
 ├── scripts/
 │   ├── fonts.mjs              # fonts-src/*.ttf → public/fonts/ 切片(npm run fonts)
 │   ├── models.sh              # 从 hf-mirror 下载 Whisper 模型(npm run models)
