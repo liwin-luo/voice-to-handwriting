@@ -412,3 +412,12 @@
 - **角色**:Theo Lindgren。体验资产:2026-10-20 桌面 Chrome、英文。依次选 Open 4、Plain 7、Single storey a、Open tail g、Plain 0、Plain stroke 1、No bar t、Close dot i,跳过 y、&、间距、斜度。结果 Everyday Minimalist,链接 `/r/100000000----`,四项分数 Structure 2 / Endings 10 / Page rhythm 5 / Flourish 5。未点 Download card,文内写明。
 - **落地**:`handwriting-personality-test`(en)。`what-does-your-handwriting-say-about-you` 的相关文换成本文(en 才有正文,其他语言不出现这条链接)。复核:新站计分或六个标签改了才改。
 - **红线**:标签是归档名,不是诊断、健康、诚实、智力或用人依据。不编造公司名。不把本站 quiz 写成和新站是同一套题。
+
+## 三十、短名圆泡字(2026-10-26,外链到 FancyFont)
+
+- **文章簇**:可复制花体。枢纽 `/cursive-text-generator`(整句 Unicode 花体)。同簇已有 `cursive-text-generator`(六种数学花体怎么贴进简介)、`best-cursive-fonts`(真字体选型)。意图差:本篇只处理一个短名字的圆泡字母加一对装饰(爱心、蝴蝶结、花、软括号),以及同一个名字何时改走手写图片。不抢 cursive text generator,也不把 cute font generator 当主词(那是工具意图,本站没有这个工具)。
+- **意图**:教程。主词 bubble letters for a display name。外链 [FancyFont](https://fancyfont.tools/cute-font-generator/),锚文本是品牌名,全文一条,dofollow(MDX 外链不加 nofollow)。
+- **下一跳**:圆泡字去 FancyFont。要印的同一个名字去 `/cursive-font-generator`。一整句连笔粘贴去 `/cursive-text-generator` 与 `best-cursive-fonts`。名字要练成签名去 `cursive-name-signature`。
+- **角色**:Theo Lindgren。体验资产:2026-10-26 桌面 Chrome、macOS。页面先开在 Momo(4/120,♡ 圆泡)。换成 Peach2(6/120,七行对照表)、José 加爱心 emoji(计数 7,é 与 emoji 原样)、一长串 a(计数 120/120,圆泡行 120 字)。预览字号停在 24,透明底未勾。点过爱心行 Copy,剪贴板读不回,文内写明。未下载 PNG,未贴进 Instagram / TikTok / Discord。题图 `public/blog/bubble-letters-peach2.png`(1440×810)。
+- **落地**:`bubble-letters-for-a-display-name`(en)。复核:FancyFont 的样式行或 120 字上限变了才改。
+- **红线**:不称这些字符为可安装字体。不把未贴过的 App 写成已测。不把外链锚文本写成 cute font generator。

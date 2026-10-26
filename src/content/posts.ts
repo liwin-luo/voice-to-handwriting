@@ -989,6 +989,20 @@ const CURSIVE_POSTS: Post[] = [
       },
     },
   },
+  {
+    slug: "bubble-letters-for-a-display-name",
+    author: "theo-lindgren",
+    date: "2026-10-26",
+    updated: "2026-10-26",
+    image: "/blog/bubble-letters-peach2.png",
+    i18n: {
+      en: {
+        title: "Bubble letters for a short display name",
+        description:
+          "Type a short name and copy bubble letters for a display name: one heart, bow, or flower. Use a handwriting font when the name has to be a picture.",
+      },
+    },
+  },
 ];
 
 POSTS.push(...CURSIVE_POSTS);

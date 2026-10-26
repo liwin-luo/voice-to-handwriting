@@ -321,6 +321,13 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/handwriting-personality-quiz", "/handwriting-worksheet-generator", "/number-tracing"],
     posts: ["what-does-your-handwriting-say-about-you", "tracing-numbers-by-age", "handwriting-worksheets"],
   },
+
+  // 可复制花体:短名圆泡加一个装饰,枢纽仍是 /cursive-text-generator(整句花体)。
+  // 印到卡片上走字体预览;一整句连笔粘贴走已有花体文。
+  "bubble-letters-for-a-display-name": {
+    tools: ["/cursive-font-generator", "/cursive-text-generator"],
+    posts: ["cursive-text-generator", "best-cursive-fonts", "cursive-name-signature"],
+  },
 };
 
 /** 文章在当前语言是否有正文(给相关文章链接防 404) */
