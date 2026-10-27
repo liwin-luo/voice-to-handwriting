@@ -107,7 +107,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`),`CURSIVE_WORKSHEET_FAQS` |
 | `/signature-practice` | 签名练习纸。姓名按空格拆成全名 / 名 / 首字母加姓。四种签名体各一行对照,选中体下面是实线、虚线、空白。单基线。页头下拉不单列 | `SignaturePractice`,`signatureForms.ts`,`SIGNATURE_FAQS` |
 | `/handwriting-sentence-practice` | 成人单句练习纸。一句、四选一(大小 / 斜度 / 间距 / 印刷体),实心、虚线、三行空白。空输入画当前语言的例句。超长不画纸。左手只翻红边距;斜度时斜线反向。下载后本地记住这一句,可「再写一遍」只留三行空白。页头下拉不单列 | `SentencePractice`,`sentencePractice.ts`,`SENTENCE_PRACTICE_FAQS` |
-| `/handwriting-check` | 拉丁字母手写照片的观感分。好认加大小、贴线、间距、斜度,1–5,无总分。能分析出分数就在浏览器拼分享卡,四选一框(盖章、证书、纸面、简约),下载用当前框。盖章、证书、纸面在照片角上有认证章。宽屏时卡片与右侧解析同高。缺项留空。解析是可选中的文字。照片经 `/api/handwriting-check` 送智谱后丢弃。页头下拉不单列 | `HandwritingCheck`,`handwritingCheck.ts`,`HANDWRITING_CHECK_FAQS` |
+| `/handwriting-check` | 拉丁字母手写照片的观感分。好认加大小、贴线、间距、斜度,1–5,无总分。并列时按贴线、大小、间距、斜度取第一项。「超越 N%」是该分数的固定标签,不是人数。能分析出分数就在浏览器拼分享卡,四选一框(盖章、证书、纸面、简约),下载用当前框,PNG 不含右侧解析。盖章、证书、纸面在照片角上有认证章。宽屏时卡片与右侧解析同高。缺项留空。不满两行可能只留好认。解析是可选中的文字。照片经 `/api/handwriting-check` 送智谱后丢弃。页头下拉不单列 | `HandwritingCheck`,`handwritingCheck.ts`,`HANDWRITING_CHECK_FAQS` |
 | `/handwriting-count` | 手写照片转成文字再计数。汉字、假名、谚文按字,拉丁文按单词和字母,数码和标点分开。看不清的地方是 □,不计入。文字可改,数字在浏览器里重算。每天 3 次,和评分分开。照片经 `/api/handwriting-count` 送智谱后丢弃。页头下拉不单列 | `HandwritingCount`,`handwritingCount.ts`,`glmVision.ts`,`HANDWRITING_COUNT_FAQS` |
 | `/number-tracing` | 数字描红。1–10 或 1–20,每个数字单独一页(首行实心,其余虚线)。Patrick Hand,行高档。页头下拉不单列 | `TracingGenerator`(`perName`,`defaultOneEach`,`presets`),`practicePresets.ts`,`NUMBER_TRACING_FAQS` |
 | `/prewriting-strokes` | 学前运笔。直线组(向下、横线、斜线)或曲线组(圆、波浪、拱)。每种实线、虚线、空白。页头下拉不单列 | `PrewritingSheet`,`prewritingStrokes.ts`,`PREWRITING_FAQS` |

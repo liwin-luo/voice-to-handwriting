@@ -923,6 +923,43 @@ export const HANDWRITING_CHECK_FAQS: FaqItem[] = [
       },
     },
   },
+  {
+    id: "hc-card-file",
+    i18n: {
+      en: {
+        q: "What is on the downloaded card?",
+        a: "On a tie, the page names baseline first, then size, then spacing, then slant. “Ahead of N% of people” is a fixed label for that legibility score, not a count of people. The notes beside the card stay on the page. Download saves the selected frame as handwriting-check.png and leaves the notes out. Fewer than two full lines can come back with only legibility, and the other four cells stay blank.",
+      },
+      zh: {
+        q: "下载的卡片里有什么?",
+        a: "分数并列时，页面先标贴线，然后是大小、间距、斜度。「超越 N% 的用户」是这个好认分的固定标签，不是真实人数。卡片旁边的解析留在页面上。下载保存的是当前框，文件名 handwriting-check.png，解析不在文件里。不满两行完整的字时，可能只留下好认，另外四项空着。",
+      },
+      ja: {
+        q: "ダウンロードしたカードには何が入っていますか?",
+        a: "同点のときは、ベースライン、大きさ、間隔、傾きの順で最初の項目を出します。「利用者の N% を上回る」はその読みやすさの固定ラベルで、人数の集計ではありません。カード横のメモはページに残ります。ダウンロードは選んだ枠を handwriting-check.png として保存し、メモは入れません。全文が2行に満たないと、読みやすさだけになり、ほかの4項目は空のままです。",
+      },
+      ko: {
+        q: "내려받은 카드에는 무엇이 들어가나요?",
+        a: "동점이면 베이스라인, 크기, 간격, 기울기 순으로 먼저 표시합니다. 「사용자 N%보다 높음」은 그 가독성 점수의 고정 라벨이며, 사람 수를 센 것이 아닙니다. 카드 옆의 설명은 페이지에 남습니다. 다운로드는 고른 프레임을 handwriting-check.png로 저장하고 설명은 넣지 않습니다. 온전한 두 줄이 안 되면 가독성만 나오고 나머지 네 칸은 비어 있습니다.",
+      },
+      es: {
+        q: "¿Qué incluye la tarjeta descargada?",
+        a: "Si hay empate, la página nombra primero la línea base, luego el tamaño, el espaciado y la inclinación. «Por encima del N% de las personas» es una etiqueta fija de esa puntuación de legibilidad, no un recuento de personas. Las notas junto a la tarjeta se quedan en la página. La descarga guarda el marco elegido como handwriting-check.png y deja fuera las notas. Con menos de dos líneas completas puede volver solo la legibilidad, y las otras cuatro casillas quedan en blanco.",
+      },
+      de: {
+        q: "Was steht auf der heruntergeladenen Karte?",
+        a: "Bei Gleichstand nennt die Seite zuerst die Grundlinie, dann Größe, Abstand und Neigung. „Besser als N % der Nutzer“ ist eine feste Bezeichnung für diesen Lesbarkeitswert, keine Zählung von Personen. Die Notizen neben der Karte bleiben auf der Seite. Der Download speichert den gewählten Rahmen als handwriting-check.png und lässt die Notizen weg. Bei weniger als zwei vollen Zeilen kann nur die Lesbarkeit zurückkommen, die anderen vier Felder bleiben leer.",
+      },
+      fr: {
+        q: "Que contient la carte téléchargée ?",
+        a: "En cas d'égalité, la page nomme d'abord la ligne de base, puis la taille, l'espacement et l'inclinaison. « Devant N % des personnes » est une étiquette fixe pour ce score de lisibilité, pas un décompte de personnes. Les notes à côté de la carte restent sur la page. Le téléchargement enregistre le cadre choisi en handwriting-check.png et laisse les notes dehors. Avec moins de deux lignes complètes, seule la lisibilité peut revenir, et les quatre autres cases restent vides.",
+      },
+      pt: {
+        q: "O que entra no cartão baixado?",
+        a: "No empate, a página nomeia primeiro a linha de base, depois o tamanho, o espaçamento e a inclinação. «À frente de N% das pessoas» é um rótulo fixo dessa pontuação de legibilidade, não uma contagem de pessoas. As notas ao lado do cartão ficam na página. O download grava o quadro escolhido como handwriting-check.png e deixa as notas de fora. Com menos de duas linhas completas, pode voltar só a legibilidade, e as outras quatro casas ficam em branco.",
+      },
+    },
+  },
 ];
 
 /** /handwriting-pad。免费题放最后，第一条留给「字存在哪里」。 */

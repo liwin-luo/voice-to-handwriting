@@ -25,7 +25,7 @@ export const POSTS: Post[] = [
     slug: "what-does-your-handwriting-say-about-you",
     author: "mara-voss",
     date: "2026-10-08",
-    updated: "2026-10-08",
+    updated: "2026-10-27",
     image: "/blog/adult-practice.png",
     i18n: {
       en: {
@@ -34,9 +34,9 @@ export const POSTS: Post[] = [
           "The five features people read in handwriting — slant, size, spacing, baseline, pressure — what science actually says, and how to change the habits you don't like.",
       },
       zh: {
-        title: "你的字迹说明了什么?诚实版解读指南",
+        title: "你的字迹说明了什么?读得出习惯,读不出性格",
         description:
-          "人们从字迹里读的五个特征——倾斜、字号、间距、基线、笔压,科学到底怎么说,以及如何改掉你不喜欢的书写习惯。附 2 分钟笔迹性格小测验。",
+          "字迹读得出习惯,读不出性格。1989 年 Neter 与 Ben-Shakhar 的荟萃分析里,笔迹师不比瞎猜更准。字号和占格用田字格练,签名另练。",
       },
       ja: {
         title: "あなたの字は何を語る?正直な筆跡ガイド",
@@ -693,13 +693,13 @@ const CURSIVE_POSTS: Post[] = [
     slug: "how-to-join-cursive-letters",
     author: "clara-hartley",
     date: "2026-10-10",
-    updated: "2026-10-10",
+    updated: "2026-10-27",
     image: "/blog/how-to-join-cursive-letters.png",
     i18n: {
       en: {
         title: "How two cursive letters connect, same way or a turn",
         description:
-          "How two cursive letters connect: same-direction pairs first, then pairs that turn. One pair per page, a finger on the join, and a step when the pencil lifts.",
+          "How two cursive letters connect: th keeps traveling the same way, ai turns in the middle. One pair per page. If the pencil lifts, the join did not happen.",
       },
     },
   },
@@ -945,7 +945,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "handwriting-personality-test",
     author: "theo-lindgren",
     date: "2026-10-20",
-    updated: "2026-10-20",
+    updated: "2026-10-27",
     image: "/blog/handwriting-personality-test.png",
     i18n: {
       en: {
@@ -973,7 +973,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "whatsapp-voice-note-handwriting",
     author: "theo-lindgren",
     date: "2026-10-16",
-    updated: "2026-10-16",
+    updated: "2026-10-27",
     image: "/blog/whatsapp-voice-note-handwriting.webp",
     i18n: {
       // de 源发。en 标题仅作列表回退与规范校验,无 en 正文。与英文电平文不是译文。

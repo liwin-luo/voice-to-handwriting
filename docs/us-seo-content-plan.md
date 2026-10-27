@@ -103,7 +103,7 @@
 
 - **落地页**:`/handwriting-personality-quiz`,8 语言全量。主词 handwriting personality quiz(估 2K–5K/月)+ what does your handwriting say about you quiz(估 1K–3K/月)。
 - **定位**:娱乐向视觉 quiz(看图选择、无需上传,2 分钟)+ 结果页每个维度配练字建议直链站内工具(差异化闭环,SERP 无竞品做);页内 "Is handwriting analysis real?" 段落诚实承接 graphology 词簇与怀疑论流量。
-- **配套文章**:`what-does-your-handwriting-say-about-you`(信息主词 what does your handwriting say about you,估 10K–30K/月),8 语言正文(用户要求全语言,高于 §3.2 优先级基线),正文内链 quiz 工具与练字工具。
+- **配套文章**:`what-does-your-handwriting-say-about-you`(信息主词 what does your handwriting say about you,估 10K–30K/月),8 语言正文(用户要求全语言,高于 §3.2 优先级基线),正文内链 quiz 工具与练字工具。2026-10-27 只改 zh:短答先行,五个特征收成对照表,练法换成田字格(`/writing-practice`)和签名练习纸。米字格写明本站不印。英文和其他语言正文不动。引用补上 Neter & Ben-Shakhar 1989 的 DOI。
 - **后续选题**(未排期):signature analysis personality(独立簇,估 1K–3K/月,可做签名版 quiz 或文章);handwriting slant/spacing/pressure meaning 等单特征长尾(quiz 结果页维度段落先行承接);is handwriting analysis real / pseudoscience(信任流量)。
 - **红线**:娱乐定位+免责声明贯穿(全部竞品标配);科学共识段落(Neter & Ben-Shakhar 1989 meta 分析)不可删;不做严肃性格断言、招聘/情感兼容暗示;不碰医疗与儿童发育评估。
 
@@ -281,7 +281,7 @@
 
 - **数字描红** `/number-tracing`:工具词 number tracing worksheets。1–10 / 1–20,每个数字一页,这样首行是实心、下面才是虚线。Patrick Hand。文章 `tracing-numbers-by-age` 吃分龄怎么带,不吃工具主词。
 - **学前运笔** `/prewriting-strokes`:工具词 prewriting strokes worksheet。直线组与曲线组,每种实线、虚线、空白。文章 `strokes-before-letter-tracing`。
-- **连笔字母对** `/cursive-letter-joins`:工具词 cursive letter joins。同方向 / 中途转向,一对一页,Sacramento。文章 `how-to-join-cursive-letters`。单字母仍在 `/cursive-alphabet`。
+- **连笔字母对** `/cursive-letter-joins`:工具词 cursive letter joins。同方向 / 中途转向,一对一页,Sacramento。文章 `how-to-join-cursive-letters`。单字母仍在 `/cursive-alphabet`。2026-10-27 改稿:第一屏写 th 怎么连过去、ai 在中间转向,工具页留在步骤里当打印机。GSC「已抓取 - 尚未编入索引」校验失败(2026-10-14)之后改的。
 - **转印稿** `/cursive-tattoo-stencil`:工具词 cursive tattoo stencil。短句、白底黑字、默认镜像,只出 PNG。和 `/cursive-font-generator` 分开:那边是字体预览,这边是转印用的一张稿。文章 `export-a-mirrored-cursive-stencil` 吃怎么导出,不吃工具主词。
 - **建筑字体** `/architect-lettering`:工具词 architect lettering practice sheets。字体是 Google Fonts 上 SIL OFL 的 Architects Daughter(Kimberly Geswein,2010)。页内单独加载,不进主工作台。文案写明是方手写,和工程单线模板、学校课本体是不同的字。文章 `squared-hand-lettering-practice`。
 - **红线不变**:手写转文字、把本人笔迹做成字体文件、交作业入口、照片笔迹鉴定、名人笔迹、D'Nealian / Zaner-Bloser / Handwriting Without Tears,这轮不接。
@@ -321,7 +321,7 @@
 - **意图**:上传一张拉丁字母手写照片,看五项观感分(好认、大小、贴线、间距、斜度),并得到一张可分享的卡片。不承接 improve handwriting adults(那是 `how-to-improve-handwriting-adults`)、不承接单句练习纸、不承接笔迹性格测验。
 - **形态**:照片经服务端交给智谱 `glm-5.3-flash`,看完即丢。能给出观感分时,浏览器拼一张分享卡,四选一框(盖章、证书、纸面、简约)。宽屏时卡片与右侧解析同高。缺项留空。最低的原因项链到成人练字总览。每天 3 次,记在浏览器里,第二天重新计算。
 - **下一跳**:文章第一屏打开本工具。读完若要练最低那一项,正文链到 `how-to-improve-handwriting-adults`(跨簇:下一步是练,不是再看一张卡)。簇里目前只有工具和这一篇,尾部相关文先空着。
-- **文章**:`share-a-handwriting-score-card`,en,Theo Lindgren。主词 how to share a handwriting score card。教程,不抢工具页的 check handwriting from a photo。体验资产是 2026-10-13 桌面 Chrome 上的一次真实打分(Bradley Hand 两行,不是纸上照片)和四张框的截图。复核:不复核(框的样子随工具改了才改)。英文 FAQ「照片会留下吗」回链本文;其他语言不链,避免 404。
+- **文章**:`share-a-handwriting-score-card`,en,Theo Lindgren。主词 how to share a handwriting score card。教程,不抢工具页的 check handwriting from a photo。体验资产是 2026-10-13 桌面 Chrome 上的一次真实打分(Bradley Hand 两行,不是纸上照片)和四张框的截图。复核:不复核(框的样子随工具改了才改)。英文 FAQ「照片会留下吗」回链本文;其他语言不链,避免 404。2026-10-27:并列顺序、固定百分比标签、PNG 不含解析、不满两行只留好认,写进工具页 FAQ `hc-card-file`(8 语言)。正文不改,这篇继续只讲四个框。
 - **红线**:不打总分,不诊断,不评性格、力度、速度、笔顺。中日韩手写不套这五项。照片和卡片都不入库。不把页面上的「超越 92%」写成真实人数统计。
 
 ## 二十一、在线手写板(2026-10-12,工具与文章已落地)
@@ -389,7 +389,7 @@
 
 - **文章簇**:录音进手写。枢纽 `/`(导入音频)。同簇已有 `audio-to-handwriting`(Theo)。意图差:已有文是文件已经能打开时怎么转写;英文新文是整段都太轻时先抬电平;德文新文是 WhatsApp/iPhone 语音条先变成能导入的 MP3。
 - **en**:`quiet-voice-before-handwriting`(Theo Lindgren)。主路径是高通 → 峰值归一化 → 限幅增益,然后在本站导入。外链 [Free Audio Editor](https://freeaudioeditor.online/) 的 high-pass、normalize、increase-volume,锚文本是步骤名。另引 MDN BiquadFilterNode、ITU-R BS.1770、削波词条。体验资产:2026-10-16 桌面 Chrome(macOS)上对故意录轻的短句的三张实拍。未测转写前后正确率,文内写明。复核:工具旋钮变了才改。
-- **de 源发**:`whatsapp-voice-note-handwriting`(Theo Lindgren,§3.2 原生源发例外)。en 标题只满足规范校验,无 en 正文,en URL 404。路径是 Opus 或 iPhone M4A → MP3 → 裁一段 → 本站导入。外链 `freeaudioeditor.online/de/` 下的 opus-to-mp3、m4a-to-mp3、audio-trimmer、audio-joiner、mp4-to-mp3。另引 opus-codec.org、RFC 6716、Apple「Aufnahme teilen」、DSGVO。不编造 WhatsApp 导出点击路径。复核:同上。
+- **de 源发**:`whatsapp-voice-note-handwriting`(Theo Lindgren,§3.2 原生源发例外)。en 标题只满足规范校验,无 en 正文,en URL 404。路径是 Opus 或 iPhone M4A → MP3 → 裁一段 → 本站导入。外链 `freeaudioeditor.online/de/` 下的 opus-to-mp3、m4a-to-mp3、audio-trimmer、audio-joiner、mp4-to-mp3。另引 opus-codec.org、RFC 6716、Apple「Aufnahme teilen」、DSGVO。不编造 WhatsApp 导出点击路径。复核:同上。2026-10-27 改稿:结尾落到本站导入(Audiodatei importieren、默认 Liniert、PNG/PDF)。10 月 16 日的三张图仍只证明转换设置,文内写明当天没有转写过一条 WhatsApp 消息。不补 en 正文。
 - **下一跳**:两篇正文都进 `/`,相关文挂 `audio-to-handwriting` 与 `handwriting-image-generator`(两语都有正文)。`audio-to-handwriting` 的 en 正文回链电平文,de 正文回链格式文。不把两篇新文互相链(对方语言没有正文,会 404)。
 - **红线**:不写「最佳免费音频编辑器」清单。不把峰值归一化说成 LUFS。不承诺变速保音高。不写未测的 Whisper 正确率。别人的语音转发前要征得同意。
 
@@ -410,7 +410,7 @@
 - **意图**:教程。介绍并推荐 [Handwriting Personality Test](https://handwritingpersonalitytest.online/):免费、不上传、八个字形即可出结果。主词 handwriting personality test。不抢本站 quiz 页的主词,不抢 Mara 文的 H1。
 - **下一跳**:测验本身去新站首页;科学边界去新站 `/science` 与本站 `what-does-your-handwriting-say-about-you`。结果附带的 7 横杠练习回到 `/handwriting-worksheet-generator`(Patrick Hand,输入单个 `7`)。还在学数字的孩子去 `/number-tracing`。
 - **角色**:Theo Lindgren。体验资产:2026-10-20 桌面 Chrome、英文。依次选 Open 4、Plain 7、Single storey a、Open tail g、Plain 0、Plain stroke 1、No bar t、Close dot i,跳过 y、&、间距、斜度。结果 Everyday Minimalist,链接 `/r/100000000----`,四项分数 Structure 2 / Endings 10 / Page rhythm 5 / Flourish 5。未点 Download card,文内写明。
-- **落地**:`handwriting-personality-test`(en)。`what-does-your-handwriting-say-about-you` 的相关文换成本文(en 才有正文,其他语言不出现这条链接)。复核:新站计分或六个标签改了才改。
+- **落地**:`handwriting-personality-test`(en)。`what-does-your-handwriting-say-about-you` 的相关文换成本文(en 才有正文,其他语言不出现这条链接)。复核:新站计分或六个标签改了才改。2026-10-27 改稿:第一屏是八个字形和本站练习纸上的 7 横杠。10 月 20 日那次点选留在实测段,不另编一次。科学边界仍只链 Mara 那篇。
 - **红线**:标签是归档名,不是诊断、健康、诚实、智力或用人依据。不编造公司名。不把本站 quiz 写成和新站是同一套题。
 
 ## 三十、短名圆泡字(2026-10-26,外链到 FancyFont)
