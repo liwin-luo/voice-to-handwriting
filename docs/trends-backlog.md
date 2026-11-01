@@ -354,7 +354,7 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-12 | US | yu shinan calligraphy hk auction | +4,100% | — | — | 放弃:拍卖新闻 |
 | 2026-10-12 | DE | abc in schreibschrift | +110% | Clara Hartley | cursive-alphabet-chart 的 de 版标题已命中 Schreibschrift-Alphabet | 已覆盖 |
 | 2026-10-12 | DE | kalligraphie haarschnitt | +120% | — | — | 放弃:与站内主题无关 |
-| 2026-10-12 | FR | r/i/a/f majuscule calligraphie(4 词簇) | +400/+250/+190/+160% | Wes Morales | 法语用户逐个学书法大写字母:强化 cursive-alphabet-chart fr 正文的 majuscules 章节,或做单字母系列 | 排期(轻量增强) |
+| 2026-10-12 | FR | r/i/a/f majuscule calligraphie(4 词簇) | +400/+250/+190/+160% | Wes Morales | 法语用户逐个学书法大写字母:强化 cursive-alphabet-chart fr 正文的 majuscules 章节,或做单字母系列 | ✅ 已完成(2026-11-01):fr 正文新增「Les capitales une par une」(15 个常用大写的 geste/piège 表 + 一周 15 分钟计划),fr 标题补 majuscules;en 与其他语言正文不动 |
 | 2026-10-12 | FR | graphisme halloween gs | +100% | Clara Hartley | 连续两周上榜且带年级限定词,季节窗口将关:P0-2 graphisme 文章立即动笔(含 halloween gs 章节),否则明确放弃今年 | ✅ 已动笔 `graphisme-maternelle`,季节章节按窗口放弃(2026-10-14) |
 | 2026-10-20 | US | daily handwriting practice pdf free | Breakout | Wes Morales | 与 10-12 的 daily cursive pdf 同一缺口:成人十五分钟 + 当日页实拍 | ✅ 已写 `daily-cursive-practice-pdf` |
 | 2026-10-20 | US | handwriting practice sheets pdf free download | +200% | — | `handwriting-worksheets` 与通用练习纸生成器已吃「免费练习纸 PDF」 | 已覆盖 |

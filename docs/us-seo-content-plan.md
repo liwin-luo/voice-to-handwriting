@@ -89,6 +89,7 @@
 - **Authoritativeness(权威)**:is-cursive-still-taught 引用 California AB 446(2023)、Texas TEKS,外链 leginfo.legislature.ca.gov / tea.texas.gov / Wikipedia;研究引用点名研究者与期刊(James & Engelhardt 2012、Berninger、Mueller & Oppenheimer 2014)并诚实标注"复制研究结果不一";
 - **Trustworthiness(可信)**:不做超纲声明(明确"cursive 不是补脑神药")、信息标注时效("as of late 2026, last reviewed October 2026")、外链指向一手机构而非媒体报道、站内 datePublished/dateModified 由 posts.ts 输出。
 - **维护建议**:is-cursive-still-taught 每年 1 月复核一次州名单与年份(该词簇有新闻属性,内容新鲜度直接影响排名)。
+- **fr 正文 majuscules 增强(2026-11-01,trends 人工评估 2026-10-12 排期项)**:FR 词簇「a/f/r/i/m/l/g/b/e/t/h/j majuscule calligraphie」由 `cursive-alphabet-chart` fr 正文承接——新增「Les capitales une par une」:15 个常用大写的 geste/piège 表 + 一周每天 15 分钟计划(Wes 口径);fr 标题改为「Alphabet écriture cursive : minuscules et majuscules」,`updated` 前进;en 与其他语言正文不动。
 
 ## 四、执行要点
 

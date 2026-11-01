@@ -407,7 +407,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "cursive-alphabet-chart",
     author: "wes-morales",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-11-01",
     image: "/blog/cursive-alphabet.png",
     i18n: {
       en: {

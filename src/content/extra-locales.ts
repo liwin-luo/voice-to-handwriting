@@ -453,8 +453,8 @@ export const EXTRA_POST_I18N: Record<string, Partial<Record<Locale, PostMetaI18n
       description: "Alle Schreibschrift-Buchstaben nach Strichfamilien: Klein- und Großbuchstaben, die fünf häufigsten Fehlerquellen und eine kostenlose Tabelle zum Ausdrucken.",
     },
     fr: {
-      title: "Alphabet écriture cursive, organisé pour bien apprendre",
-      description: "Toutes les lettres cursives par familles de gestes — minuscules et majuscules, les cinq lettres les plus piégeuses, plus une fiche imprimable gratuite.",
+      title: "Alphabet écriture cursive : minuscules et majuscules",
+      description: "Toutes les lettres cursives par familles de gestes : minuscules et majuscules une par une — geste et piège de chacune, un plan d'une semaine à quinze minutes par jour, plus une fiche imprimable gratuite.",
     },
     es: {
       title: "El abecedario en cursiva, organizado como lo aprenderás",
