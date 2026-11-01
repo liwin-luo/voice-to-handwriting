@@ -32,7 +32,7 @@ export function getTemplateMeta(tpl: HandwritingTemplate, locale: Locale): Templ
   return tpl.i18n[locale] ?? tpl.i18n.en ?? { title: tpl.slug, description: "", text: "" };
 }
 
-/** 场景模板:文案 + 配套样式。新模板:在 TEMPLATES 加一项并在 sitemap 补 URL */
+/** 场景模板:文案 + 配套样式。新模板:在 TEMPLATES 加一项(en 范文必填),de/fr/pt 进 extra-locales 的 EXTRA_TEMPLATE_I18N;页面与 sitemap 自动覆盖 */
 export const TEMPLATES: HandwritingTemplate[] = [
   {
     slug: "love-letter",
@@ -434,6 +434,99 @@ export const TEMPLATES: HandwritingTemplate[] = [
         title: "Plantilla de carta de Santa (imprimible)",
         description: "Una carta manuscrita del Polo Norte con deseo y ánimo en letra de Santa. Edita, imprime y déjala bajo el árbol en Nochebuena.",
         text: "¡Feliz Navidad!\n¡Oh, oh, oh! Soy Santa. Los elfos y los renos votaron y estás en la Lista de los Buenos (la revisamos dos veces).\nEn Nochebuena no olvides dejarme una galleta, y zanahorias para los renos.\nSigue siendo tan curioso y amable.\nSanta Claus, Polo Norte",
+      },
+    },
+  },
+  {
+    slug: "letter-to-santa",
+    style: { fontId: "patrickhand", paperId: "festive", ink: "#8c1f28", fontSize: 26, intensity: 0.45, align: "left", indent: false },
+    i18n: {
+      zh: {
+        title: "给圣诞老人的信模板(儿童可打印,手写体)",
+        description: "一封孩子自己写、自己签名的圣诞老人信:友好的印刷体配节日信纸,问候、今年的好事、小心愿、给圣诞老人的一个问题都已排好。改几行,打印出来就能寄。",
+        text: "亲爱的圣诞老人:\n我叫米娅,今年六岁。\n今年我学会了游泳,还把玩具分给了弟弟。\n圣诞节我想要一辆红色滑板车和一些画画的工具,可以吗?\n驯鹿是怎么飞起来的呀?\n我会给你留饼干,给驯鹿留胡萝卜。\n爱你的,米娅",
+      },
+      en: {
+        title: "Dear Santa letter template for kids (printable)",
+        description: "A letter to Santa the child writes and signs: greeting, one true kindness from the year, a short wish list and a question for Santa — friendly print font on festive paper. Edit the lines, print, done.",
+        text: "Dear Santa,\nMy name is Mia and I am six.\nThis year I learned to swim, and I shared my toys with my little brother.\nFor Christmas, may I please have a red scooter and some art supplies?\nHow do the reindeer fly?\nI will leave out cookies for you and carrots for the reindeer.\nLove, Mia",
+      },
+      ja: {
+        title: "サンタへの手紙テンプレート(子ども用・印刷OK)",
+        description: "子どもが自分で書いてサインできるサンタへの手紙。挨拶、今年がんばったこと、ほしい物、サンタへの質問をそっくりな書体で用意しました。直して印刷すれば届きます。",
+        text: "サンタへ。\nボクはミア、6歳だよ。\nことしは泳げるようになったし、弟におもちゃを貸してあげたよ。\nクリスマスには赤いキックボードとお絵かきセットがほしいです。\nトナカイはどうやって飛ぶの?\nクッキーはサンタに、にんじんはトナカイに用意しておくね。\nミアより",
+      },
+      ko: {
+        title: "산타에게 보내는 편지 템플릿(아이용, 인쇄 가능)",
+        description: "아이가 직접 쓰고 서명하는 산타 편지. 인사, 올해의 좋은 일, 소원 두세 가지, 산타에게 궁금한 질문까지 어린이 글씨체에 담았어요. 몇 줄만 고쳐 인쇄하면 돼요.",
+        text: "산타에게:\n저는 미아라고 해요, 여섯 살이에요.\n올해는 수영을 배웠고, 동생에게 장난감을 나눠 줬어요.\n크리스마스에는 빨간 킥보드와 그림 도구를 받을 수 있을까요?\n순록은 어떻게 나는 건가요?\n산타에게는 쿠키, 순록에게는 당근을 준비할게요.\n미아가",
+      },
+      es: {
+        title: "Plantilla de carta a Santa para niños (imprimible)",
+        description: "Una carta a Santa que el niño escribe y firma: saludo, una buena acción del año, dos o tres deseos y una pregunta para Santa, en letra amable sobre papel festivo. Edita, imprime y listo.",
+        text: "Querido Santa:\nme llamo Mia y tengo seis años.\nEste año aprendí a nadar y compartí mis juguetes con mi hermanito.\nPara Navidad, ¿me traerías un patinete rojo y materiales de pintura?\n¿Cómo vuelan los renos?\nTe dejaré galletas y zanahorias para los renos.\nCon cariño, Mia",
+      },
+    },
+  },
+  {
+    slug: "christmas-card-messages",
+    style: { fontId: "longcang", paperId: "festive", ink: "#1b4332", fontSize: 30, intensity: 0.6, align: "center", indent: false },
+    i18n: {
+      zh: {
+        title: "圣诞贺卡文案怎么写?手写祝福语模板",
+        description: "圣诞贺卡写什么不俗套?慢一点的早晨、暖一点的灯、你在就好——手写体配节日信纸,居中排版,导出就能发给家人朋友,或只改一行再发。",
+        text: "圣诞快乐!\n愿你的假期有慢一点的早晨、暖一点的灯,\n和喜欢的人待在一起。\n这一年无论怎样,有你在,就更好了一点。\n愿新的一年健康、常笑,还有一点点魔法。",
+      },
+      en: {
+        title: "Christmas card messages (ready to send)",
+        description: "What to write in a Christmas card? Slow mornings, warm lights and people you love — warm without being sappy, in handwriting on festive paper. Send as is or edit one line.",
+        text: "Merry Christmas!\nWishing you slow mornings, warm lights and people you love.\nWhatever this year brought, you made it better just by being in it.\nHere's to health, laughter and a little magic in the new year.\nWith love,",
+      },
+      ja: {
+        title: "クリスマスカードのメッセージ(そのまま送れる文例)",
+        description: "クリスマスカードに書く一言に迷ったら:ゆっくりした朝、あたたかい灯り、あなたがいてくれたこと。手書き風の文字で、そのまま送っても、一行だけ直しても。",
+        text: "メリークリスマス!\nゆっくりのお朝ごはんと、あたたかい灯りと、大好きな人たちに囲まれますように。\n今年どんな年でも、あなたがいてくれたからいい年になりました。\n新しい年も、健康と笑顔と少しの魔法を。",
+      },
+      ko: {
+        title: "크리스마스 카드 문구(그대로 보내도 좋은 메시지)",
+        description: "크리스마스 카드에 뭐라고 쓸지 고민될 때: 느긋한 아침, 따뜻한 불빛, 당신이 있어서 좋았다는 한 마디. 손글씨로 그대로 보내도, 한 줄만 바꿔도 좋아요.",
+        text: "메리 크리스마스!\n느긋한 아침과 따뜻한 불빛, 사랑하는 사람들과 함께하길 바라요.\n올해 어떤 해였든, 당신이 있어서 더 좋은 한 해였어요.\n새해에는 건강과 웃음, 그리고 조금의 마법이 함께하기를.",
+      },
+      es: {
+        title: "Mensajes para tarjetas de Navidad (listos para enviar)",
+        description: "¿Qué escribir en una tarjeta de Navidad? Mañanas lentas, luces cálidas y gente querida — cálido sin cursilerías, en letra manuscrita sobre papel festivo. Envíalo tal cual o retoca una línea.",
+        text: "¡Feliz Navidad!\nTe deseo mañanas lentas, luces cálidas y gente querida.\nSea como sea este año, lo hiciste mejor solo con estar.\nBrindemos por la salud, las risas y un poco de magia en el año nuevo.\nCon cariño,",
+      },
+    },
+  },
+  {
+    slug: "christmas-gift-thank-you",
+    style: { fontId: "longcang", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.6, align: "left", indent: true },
+    i18n: {
+      zh: {
+        title: "圣诞礼物感谢卡怎么写?手写感谢信模板",
+        description: "收到圣诞礼物后的感谢卡怎么写?点出礼物、写上怎么用、再约下一次见面——行书信纸配蓝黑墨,把礼物和称呼换成你收到的就好。",
+        text: "亲爱的卡罗尔阿姨:\n谢谢您的围巾,从圣诞节早上到现在我一直围着。\n每次戴上它,就想起您那间飘着饼干香的厨房。\n希望您的假期温暖又安心。\n一月找个下午,我们一起喝茶。\n爱您的,XX",
+      },
+      en: {
+        title: "Christmas gift thank-you note template",
+        description: "The day-after-Christmas note that actually gets sent: name the gift, say how you're using it, look one step ahead. Handwriting on letter paper — swap in your gift and sign-off.",
+        text: "Dear Aunt Carol,\nthank you for the scarf — I haven't taken it off since Christmas morning.\nEvery time I wear it, I think of your kitchen full of cookies.\nI hope your holidays were warm and restful.\nLet's find a day for tea in January.\nWith love,",
+      },
+      ja: {
+        title: "クリスマスプレゼントのお礼状テンプレート",
+        description: "プレゼントのお礼はこう書きます:贈り物に触れて、どう使っているかを書いて、次の約束で締める。レターペーパー×藍黒インクで、そのまま送れる文例。",
+        text: "キャロルおばさんへ。\nマフラーありがとう。クリスマスの朝からずっと巻いています。\nするたびに、クッキーの焼ける匂いのするキッチンを思い出します。\nおばさんの休日が、あたたかく穏やかなものでしたように。\n1月にお茶しましょう。日を決めて。\n愛を込めて",
+      },
+      ko: {
+        title: "크리스마스 선물 감사 카드 템플릿",
+        description: "선물 감사 인사는 이렇게: 받은 선물을 언급하고, 어떻게 쓰고 있는지 쓰고, 다음 약속으로 마무리해요. 편지지 + 청흑 잉크, 그대로 써도 좋아요.",
+        text: "캐롤 이모에게:\n목도리 고마워요. 크리스마스 아침부터 계속 하고 다녔어요.\n할 때마다 쿠키 냄새 가득한 이모 부엌이 생각나요.\n이모의 연휴가 따뜻하고 편안했길 바라요.\n1월에 차 마시는 날을 정해요.\n사랑을 담아",
+      },
+      es: {
+        title: "Plantilla de agradecimiento por regalo de Navidad",
+        description: "La nota del día después de Navidad que sí se envía: nombra el regalo, cuenta cómo lo usas y mira un paso adelante. Letra manuscrita sobre papel carta — cambia el regalo y el firmante.",
+        text: "Querida tía Carol:\ngracias por la bufanda — no me la he quitado desde la mañana de Navidad.\nCada vez que la uso, pienso en tu cocina llena de galletas.\nEspero que tus fiestas hayan sido cálidas y tranquilas.\nBusquemos un día para un té en enero.\nCon cariño,",
       },
     },
   },

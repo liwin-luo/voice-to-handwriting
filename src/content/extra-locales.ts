@@ -953,6 +953,66 @@ export const EXTRA_TEMPLATE_I18N: Record<string, Partial<Record<Locale, Template
       text: "Feliz Natal!\nHo ho ho! Sou eu, o Papai Noel. Os elfos e as renas votaram: você está oficialmente na lista dos bonzinhos (checada duas vezes).\nNa véspera, deixe um biscoito para mim e cenouras para as renas.\nContinue curioso e gentil.\nPapai Noel, Polo Norte",
     },
   },
+  "letter-to-santa": {
+    de: {
+      title: "Brief-an-den-Weihnachtsmann-Vorlage für Kinder (druckbar)",
+      description:
+        "Ein Brief an den Weihnachtsmann, den das Kind selbst schreibt und unterschreibt: Gruß, eine gute Tat des Jahres, zwei drei Wünsche und eine Frage an den Weihnachtsmann — in freundlicher Druckschrift auf festlichem Papier.",
+      text: "Lieber Weihnachtsmann,\nich bin die Mia und ich bin sechs.\nDieses Jahr habe ich schwimmen gelernt und meine Spielsachen mit meinem kleinen Bruder geteilt.\nZu Weihnachten darf ich bitte einen roten Roller und Malzeug haben?\nWie fliegen die Rentiere eigentlich?\nPlätzchen lege ich für dich hin, Karotten für die Rentiere.\nDeine Mia",
+    },
+    fr: {
+      title: "Modèle de lettre au Père Noël pour enfants (imprimable)",
+      description:
+        "Une lettre au Père Noël que l’enfant écrit et signe : bonjour, une belle action de l’année, deux ou trois souhaits et une question pour le Père Noël — en écriture enfantine sur papier festif.",
+      text: "Cher Père Noël,\nje m’appelle Mia et j’ai six ans.\nCette année, j’ai appris à nager et j’ai prêté mes jouets à mon petit frère.\nPour Noël, puis-je avoir une trottinette rouge et des crayons, s’il te plaît ?\nComment font les rennes pour voler ?\nJe te laisserai des cookies et des carottes pour les rennes.\nMia",
+    },
+    pt: {
+      title: "Modelo de carta para o Papai Noel (infantil, imprimível)",
+      description:
+        "Uma carta para o Papai Noel que a criança escreve e assina: saudação, uma boa ação do ano, dois ou três desejos e uma pergunta para o Papai Noel, em letra infantil no papel festivo.",
+      text: "Querido Papai Noel,\nmeu nome é Mia e eu tenho seis anos.\nEste ano aprendi a nadar e dividi meus brinquedos com meu irmãozinho.\nPara o Natal, posso ganhar um patinete vermelho e materiais de pintura?\nComo os renas voam?\nVou deixar biscoitos para você e cenouras para as renas.\nCom carinho, Mia",
+    },
+  },
+  "christmas-card-messages": {
+    de: {
+      title: "Weihnachtskarten-Sprüche (zum direkten Senden)",
+      description:
+        "Was schreibt man auf eine Weihnachtskarte? Langsame Morgen, warme Lichter und Menschen, die man liebt — warmherzig ohne Kitsch, in Handschrift auf festlichem Papier. Direkt senden oder eine Zeile anpassen.",
+      text: "Frohe Weihnachten!\nIch wünsche dir langsame Morgen, warme Lichter und Menschen, die du liebst.\nWas dieses Jahr auch brachte — du hast es besser gemacht, einfach weil du da bist.\nAuf Gesundheit, Lachen und ein wenig Magie im neuen Jahr.\nIn Liebe,",
+    },
+    fr: {
+      title: "Messages de carte de Noël (prêts à envoyer)",
+      description:
+        "Qu’écrire sur une carte de Noël ? Des matins tranquilles, des lumières chaudes et les gens qu’on aime — chaleureux sans mièvrerie, en écriture manuscrite sur papier festif. Envoyez tel quel ou modifiez une ligne.",
+      text: "Joyeux Noël !\nJe vous souhaite des matins tranquilles, des lumières chaudes et les gens que vous aimez.\nQuoi qu’ait apporté cette année, vous l’avez rendue meilleure juste en y étant.\nÀ la santé, aux rires et à un peu de magie pour la nouvelle année.\nAvec amour,",
+    },
+    pt: {
+      title: "Mensagens de cartão de Natal (prontas para enviar)",
+      description:
+        "O que escrever em um cartão de Natal? Manhãs tranquilas, luzes quentes e pessoas queridas — calorosa sem exagero, à mão no papel festivo. Envie como está ou ajuste uma linha.",
+      text: "Feliz Natal!\nDesejo manhãs tranquilas, luzes quentes e pessoas queridas por perto.\nSeja como for este ano, você o deixou melhor só por estar nele.\nÀ saúde, ao riso e a um pouco de magia no ano novo.\nCom carinho,",
+    },
+  },
+  "christmas-gift-thank-you": {
+    de: {
+      title: "Danksagung für Weihnachtsgeschenke (Vorlage)",
+      description:
+        "Die Notiz für den Tag nach Weihnachten, die wirklich geschrieben wird: Geschenk nennen, sagen wie du es nutzt, einen Schritt nach vorn blicken. Handschrift auf Briefpapier — Geschenk und Absender einfach tauschen.",
+      text: "Liebe Tante Carol,\ndanke für den Schal — ich habe ihn seit dem Weihnachtsmorgen nicht mehr abgelegt.\nJedes Mal, wenn ich ihn trage, denke ich an deine Küche voller Plätzchen.\nIch hoffe, deine Feiertage waren warm und erholsam.\nLass uns einen Nachmittag für Tee im Januar finden.\nIn Liebe,",
+    },
+    fr: {
+      title: "Remerciements pour un cadeau de Noël (modèle)",
+      description:
+        "La note du lendemain de Noël qui part vraiment : nommez le cadeau, dites comment vous l’utilisez, ouvrez sur la suite. Écriture manuscrite sur papier lettre — changez le cadeau et la signature.",
+      text: "Chère tante Carol,\nmerci pour l’écharpe — je ne l’ai pas quittée depuis le matin de Noël.\nChaque fois que je la porte, je pense à ta cuisine pleine de cookies.\nJ’espère que tes fêtes ont été douces et reposantes.\nTrouvons un après-midi de thé en janvier.\nAvec amour,",
+    },
+    pt: {
+      title: "Agradecimento por presente de Natal (modelo)",
+      description:
+        "O bilhete do dia depois do Natal que realmente é enviado: nomeie o presente, diga como vai usá-lo e abra o próximo passo. Escrita à mão no papel carta — troque o presente e quem assina.",
+      text: "Querida tia Carol,\nque presente lindo, o cachecol — não tirei desde a manhã de Natal.\nToda vez que uso, lembro da sua cozinha cheia de biscoitos.\nEspero que suas festas tenham sido quentinhas e tranquilas.\nVamos marcar um chá em janeiro.\nCom carinho,",
+    },
+  },
 };
 
 /** 将后补语言的 i18n 合并进目标数组(Post[] / Template[]) */

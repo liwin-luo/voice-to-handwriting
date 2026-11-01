@@ -422,3 +422,18 @@
 - **角色**:Theo Lindgren。体验资产:2026-10-26 桌面 Chrome、macOS。页面先开在 Momo(4/120,♡ 圆泡)。换成 Peach2(6/120,七行对照表)、José 加爱心 emoji(计数 7,é 与 emoji 原样)、一长串 a(计数 120/120,圆泡行 120 字)。预览字号停在 24,透明底未勾。点过爱心行 Copy,剪贴板读不回,文内写明。未下载 PNG,未贴进 Instagram / TikTok / Discord。题图 `public/blog/bubble-letters-peach2.png`(1440×810)。
 - **落地**:`bubble-letters-for-a-display-name`(en)。复核:FancyFont 的样式行或 120 字上限变了才改。
 - **红线**:不称这些字符为可安装字体。不把未贴过的 App 写成已测。不把外链锚文本写成 cute font generator。
+
+## 三十一、圣诞模板批次(2026-11-01,§2.4 templates 扩容 + 圣诞窗口)
+
+路线图 §2.4 的「10–12 月 Santa/节日全家桶」本批落地;发布时点符合「季节选题提前 6–8 周」(圣诞前 ~8 周)。与既有 `letter-from-santa`(圣诞老人回信)合成四件套:孩子写信 → 回信 → 贺卡祝福 → 礼物致谢。全部走 `/templates` 现有管线(templates.ts + extra-locales de/fr/pt),8 语言全量,页面/sitemap 自动覆盖。
+
+| slug | 主词/次词 | 意图分工 | 样式 |
+| --- | --- | --- | --- |
+| `letter-to-santa` | dear santa letter template / letter to santa with lines 型变体 | 与文章 `letter-to-santa-template`(教程,吃 letter to santa template)标题错位防互搏:模板页只吃「dear santa letter template」,正文是五步结构预填 | Patrick Hand + festive + 朱红 |
+| `christmas-card-messages` | what to write in a christmas card / christmas card messages | 模板吃「拿来即发的成句祝福」;「怎么写」的建议意图留给后续 June Park 文章(下一内容周期,登记为待写) | Long Cang + festive + 墨绿,居中 |
+| `christmas-gift-thank-you` | thank you for the christmas gift / christmas gift thank you note | 与 `thank-you-letter` 模板(通用感谢)拆开:本模板只做「圣诞礼物+使用方式+约下次见面」结构;建议意图归 `handwritten-thank-you-notes` 文章 | Long Cang + letter + 蓝黑 |
+
+- **文章回链**:`letter-to-santa-template` 8 语正文两处接线——三步教学的第一步链 `/templates/letter-to-santa`,「怎么收到回信」FAQ 链 `/templates/letter-from-santa`。
+- **复核**:季前(每年 11 月)改一次措辞即可;正文里的操作步骤不随年份变。
+- **待观察**:GSC 里 4 个 `/templates/*` 圣诞页(含 letter-from-santa)11–12 月的曝光/点击;`christmas-card-messages` 的文章是否立项按此数据定。
+- **红线**:Santa 相关文案延续「写给孩子的角色扮演」,不承诺 USPS/Canada Post 回信时效;不碰品牌(Elf on the Shelf 等)。
