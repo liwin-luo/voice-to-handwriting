@@ -30,8 +30,8 @@
    },
    "einstein handwriting": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-11-02",
+    "count": 2,
     "growth": "+140%",
     "maxGrowth": 140,
     "seed": "handwriting",
@@ -48,8 +48,8 @@
    },
    "albert einstein handwriting": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-12",
-    "count": 3,
+    "lastSeen": "2026-11-02",
+    "count": 4,
     "growth": "+100%",
     "maxGrowth": 100,
     "seed": "handwriting",
@@ -327,10 +327,10 @@
    },
    "daily cursive handwriting practice pdf": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-12",
-    "count": 1,
-    "growth": "+130%",
-    "maxGrowth": 130,
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+650%",
+    "maxGrowth": 650,
     "seed": "handwriting practice",
     "source": "rising"
    },
@@ -621,6 +621,195 @@
     "maxGrowth": 40,
     "seed": "calligraphy",
     "source": "rising"
+   },
+   "handwriting analysis quiz": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+600%",
+    "maxGrowth": 600,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "spooky handwriting": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+120%",
+    "maxGrowth": 120,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "dafont": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "adult handwriting practice": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "handwriting without tears screener": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "halloween handwriting": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "best handwriting fonts": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "a reason for handwriting": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "what your handwriting says about you": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting",
+    "source": "rising"
+   },
+   "november cursive": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+450%",
+    "maxGrowth": 450,
+    "seed": "cursive",
+    "source": "rising"
+   },
+   "november in cursive": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+450%",
+    "maxGrowth": 450,
+    "seed": "cursive",
+    "source": "rising"
+   },
+   "happy halloween in cursive": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+120%",
+    "maxGrowth": 120,
+    "seed": "cursive",
+    "source": "rising"
+   },
+   "handwriting practice worksheets pdf for adults": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting practice",
+    "source": "rising"
+   },
+   "handwriting worksheets for kids": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "2nd grade handwriting worksheets": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "handwriting worksheets",
+    "source": "rising"
+   },
+   "november calligraphy": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+700%",
+    "maxGrowth": 700,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "november in calligraphy": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+450%",
+    "maxGrowth": 450,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "free calligraphy fonts copy and paste": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+170%",
+    "maxGrowth": 170,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "happy halloween calligraphy": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "faux calligraphy": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphy",
+    "source": "rising"
+   },
+   "what does calligraphy mean": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "calligraphy",
+    "source": "rising"
    }
   },
   "DE": {
@@ -671,8 +860,8 @@
    },
    "schreibpilot schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-12",
-    "count": 2,
+    "lastSeen": "2026-11-02",
+    "count": 3,
     "growth": "Breakout",
     "maxGrowth": null,
     "seed": "schreibschrift",
@@ -716,8 +905,8 @@
    },
    "schreibschrift s groß": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-12",
-    "count": 2,
+    "lastSeen": "2026-11-02",
+    "count": 3,
     "growth": "+70%",
     "maxGrowth": 70,
     "seed": "schreibschrift",
@@ -725,8 +914,8 @@
    },
    "schreibschrift f groß": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-11-02",
+    "count": 2,
     "growth": "+70%",
     "maxGrowth": 70,
     "seed": "schreibschrift",
@@ -743,10 +932,10 @@
    },
    "jandorf schreibschrift": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+60%",
-    "maxGrowth": 60,
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+160%",
+    "maxGrowth": 160,
     "seed": "schreibschrift",
     "source": "rising"
    },
@@ -1001,6 +1190,96 @@
     "maxGrowth": 90,
     "seed": "kalligraphie",
     "source": "rising"
+   },
+   "persönliche handschrift 4 buchstaben": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "schlechte handschrift scherzhaft": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "sütterlin handschrift": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "persönliche handschrift": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "handschrift",
+    "source": "rising"
+   },
+   "schreibschrift arten": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+170%",
+    "maxGrowth": 170,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "schwungübungen schreibschrift": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+90%",
+    "maxGrowth": 90,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "c in schreibschrift": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+60%",
+    "maxGrowth": 60,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "g in schreibschrift": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+40%",
+    "maxGrowth": 40,
+    "seed": "schreibschrift",
+    "source": "rising"
+   },
+   "kalligraphie abc": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "kalligraphie",
+    "source": "rising"
+   },
+   "happy birthday kalligraphie": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "kalligraphie",
+    "source": "rising"
    }
   },
   "FR": {
@@ -1033,8 +1312,8 @@
    },
    "lettres calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-11-02",
+    "count": 2,
     "growth": "+90%",
     "maxGrowth": 90,
     "seed": "calligraphie",
@@ -1060,10 +1339,10 @@
    },
    "feutre calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+60%",
-    "maxGrowth": 60,
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+80%",
+    "maxGrowth": 80,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -1078,8 +1357,8 @@
    },
    "h majuscule calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
+    "lastSeen": "2026-11-02",
+    "count": 2,
     "growth": "+60%",
     "maxGrowth": 60,
     "seed": "calligraphie",
@@ -1105,10 +1384,10 @@
    },
    "j majuscule calligraphie": {
     "firstSeen": "2026-10-09",
-    "lastSeen": "2026-10-09",
-    "count": 1,
-    "growth": "+50%",
-    "maxGrowth": 50,
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+250%",
+    "maxGrowth": 250,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -1231,8 +1510,8 @@
    },
    "i majuscule calligraphie": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-20",
-    "count": 2,
+    "lastSeen": "2026-11-02",
+    "count": 3,
     "growth": "+550%",
     "maxGrowth": 550,
     "seed": "calligraphie",
@@ -1267,10 +1546,10 @@
    },
    "lettre e calligraphie": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-12",
-    "count": 1,
-    "growth": "+70%",
-    "maxGrowth": 70,
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+180%",
+    "maxGrowth": 180,
     "seed": "calligraphie",
     "source": "rising"
    },
@@ -1303,10 +1582,10 @@
    },
    "graphisme halloween gs": {
     "firstSeen": "2026-10-12",
-    "lastSeen": "2026-10-12",
-    "count": 1,
-    "growth": "+100%",
-    "maxGrowth": 100,
+    "lastSeen": "2026-11-02",
+    "count": 2,
+    "growth": "+160%",
+    "maxGrowth": 160,
     "seed": "graphisme",
     "source": "rising"
    },
@@ -1478,6 +1757,177 @@
     "count": 1,
     "growth": "+40%",
     "maxGrowth": 40,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "écriture cursive gs": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "écriture cursive",
+    "source": "rising"
+   },
+   "écriture cursive russe": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "écriture cursive",
+    "source": "rising"
+   },
+   "police écriture cursive": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "écriture cursive",
+    "source": "rising"
+   },
+   "d majuscule calligraphie": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "Breakout",
+    "maxGrowth": null,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "calligraphie def": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "s majuscule calligraphie": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "n majuscule calligraphie": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "calligraphie chiffre": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
+    "seed": "calligraphie",
+    "source": "rising"
+   },
+   "graphisme novembre": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+250%",
+    "maxGrowth": 250,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme citrouille": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+150%",
+    "maxGrowth": 150,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "fiche graphisme gs": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+140%",
+    "maxGrowth": 140,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "fiche de graphisme gs": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "dnmade graphisme": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+130%",
+    "maxGrowth": 130,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "fiche graphisme ms": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+110%",
+    "maxGrowth": 110,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme automne gs": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme automne": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+100%",
+    "maxGrowth": 100,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "fiche graphisme": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+80%",
+    "maxGrowth": 80,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme ms": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+70%",
+    "maxGrowth": 70,
+    "seed": "graphisme",
+    "source": "rising"
+   },
+   "graphisme gs": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "growth": "+50%",
+    "maxGrowth": 50,
     "seed": "graphisme",
     "source": "rising"
    }
@@ -1967,6 +2417,76 @@
     "count": 1,
     "traffic": "1000+",
     "note": "Rays 3-1 Guardians (Oct 18, 2026) Final Score"
+   },
+   "zizou bergs": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "̳̳‍‍++[ＬＩＶＥＳｔｒｅａｍ]𝐓𝐕!!] Ignacio Buse VS Zizou Bergs 𝐋𝐈𝐕𝐄 Ｓｔｒｅａｍ"
+   },
+   "lorenzo musetti": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "̳̳‍‍++[𝐋𝐈𝐕𝐄𝐒𝐓𝐑𝐄𝐀𝐌]TODAY!!] Lorenzo Musetti VS Hubert Hurkacz Live Free November "
+   },
+   "merrimack basketball": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Ascoli vs. Palermo (Nov 6, 2026) Odds and Spread"
+   },
+   "nashville weather": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Cloudy for Trick or Treating with showers moving in Sunday"
+   },
+   "venus williams": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Sports News, Transfers, Scores | Watch Live Sport"
+   },
+   "olivia colman": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "100+",
+    "note": "What does Olivia Colman&apos;s hot sex with a basket tell us about heteropessimism? | Emma"
+   },
+   "crime": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "5000+",
+    "note": "Violent Halloween weekend in US with more than a dozen killed, over 90 injured in shooting"
+   },
+   "did the eagles win": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "10000+",
+    "note": "Eagles at Commanders Injury Report"
+   },
+   "peso mexicano": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Así está el dólar en México hoy: tipo de cambio y cotizaciones en bancos"
+   },
+   "local news": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "100+",
+    "note": "Calhoun tennis star gives back to hometown and surprises the high school girls’ team"
    }
   },
   "DE": {
@@ -2172,6 +2692,76 @@
     "count": 1,
     "traffic": "200+",
     "note": "Licensable video: Bruce Willis advised Ben Affleck to change his voice"
+   },
+   "hubert hurkacz": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "500+",
+    "note": "NA ŻYWO: Hubert Hurkacz — Lorenzo Musetti w Paryżu. Relacja i wynik live"
+   },
+   "raumschiff enterprise": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "500+",
+    "note": "»Star Trek«: US-Schauspieler Walter Koenig ist tot"
+   },
+   "dieselkraftstoff": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Russland-Prognose: Im November gehen Ölexporte über Häfen an Ostsee und am Schwarzen Meer "
+   },
+   "die rosenheim-cops": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "ZDF streicht am 3. November „Die Rosenheim-Cops“ aus dem Programm"
+   },
+   "sporting lissabon": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Trainerwechsel bei Sporting Lissabon - Borges geht, Fonseca vor der Tür"
+   },
+   "atp paris": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Rolex Paris Masters | Moïse Kouame laisse le charme agir : &quot;Il faut être patient, mêm"
+   },
+   "wahlen usa midterms": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "2000+",
+    "note": "Drohende Schlappe bei den Midterms: Was Trump als Nächstes planen könnte"
+   },
+   "fc bayern münchen borussia dortmund": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "500+",
+    "note": "Großes Alupech und der späte Fabio Silva: FC Bayern lässt Sieg im Topspiel liegen"
+   },
+   "halloween süssigkeiten nadeln": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "10000+",
+    "note": "Halloween: Polizei ruft wegen präparierter Halloween-Süßigkeiten zu Vorsicht auf"
+   },
+   "restaurant korea": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "1000+",
+    "note": "North Korea touts BBQ restaurant boom, but sceptics dismiss it as propaganda"
    }
   },
   "FR": {
@@ -2384,10 +2974,80 @@
     "count": 1,
     "traffic": "1000+",
     "note": "Intervention de la police dans un campus : le président de l&apos;université Sorbonne Nouv"
+   },
+   "jean luc": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "5000+",
+    "note": "Présidentielle 2027 : Jean-Luc Mélenchon dit annuler sa venue au « 20 heures » de TF1, qu’"
+   },
+   "jean luc reichmann": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "5000+",
+    "note": "Jean-Luc Reichmann (66 ans) vit dans une maison de 600 m2 à Versailles, &quot;moi, je m&ap"
+   },
+   "lorenzo musetti": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "DIRECT. Musetti - Hurkacz, ATP 1000, Rolex Paris Masters, Premier tour : 6-6 en direct"
+   },
+   "sous-marin nucléaire": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "La Russie tire un missile capable de transporter plusieurs ogives nucléaires : lancé depui"
+   },
+   "laeticia hallyday": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Laeticia et Joy Hallyday : après avoir profité d’Halloween à Saint-Barth, mère et fille cé"
+   },
+   "apiculteur": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Vosges. Le mystère des ruches volées pendant plusieurs années avait pour responsable un ap"
+   },
+   "david schwimmer": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "Today’s famous birthdays list for November 2, 2026 includes celebrities David Schwimmer, R"
+   },
+   "marion bartoli": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "200+",
+    "note": "[Podcasts] Bartoli Time du Dimanche 1er novembre 2026"
+   },
+   "rtx 5080": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "500+",
+    "note": "En Chine, des milliers de cartes graphiques haut de gamme de Nvidia sont démontées pour al"
+   },
+   "flo film florence arthaud": {
+    "firstSeen": "2026-11-02",
+    "lastSeen": "2026-11-02",
+    "count": 1,
+    "traffic": "50000+",
+    "note": "Florence Arthaud : fausse couche, pannes, 10 jours coupée du monde… L’incroyable récit de "
    }
   }
  },
- "lastRun": "2026-10-20",
+ "lastRun": "2026-11-02",
  "lastGeos": [
   "US",
   "DE",

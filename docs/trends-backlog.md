@@ -13,17 +13,24 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 <!-- AUTO:RISING START 由 scripts/trends-backlog.mjs 维护,勿手工编辑此区间 -->
 | 首见 | 最近见 | Geo | 关键词 | 近7天增长 | 种子词 | 次数 |
 |---|---|---|---|---|---|---|
-| 2026-10-20 | 2026-10-20 | US | daily handwriting practice pdf free | Breakout | handwriting practice | 1 |
-| 2026-10-20 | 2026-10-20 | FR | progression graphisme ms | Breakout | graphisme | 1 |
-| 2026-10-20 | 2026-10-20 | FR | centre du graphisme echirolles | Breakout | graphisme | 1 |
+| 2026-10-09 | 2026-11-02 | DE | schreibpilot schreibschrift | Breakout | schreibschrift | 3 |
+| 2026-11-02 | 2026-11-02 | FR | d majuscule calligraphie | Breakout | calligraphie | 1 |
 | 2026-10-12 | 2026-10-12 | US | audrey van der meer handwriting | +950% | handwriting | 1 |
 | 2026-10-09 | 2026-10-12 | US | createprintables name tracing | +850% | name tracing | 3 |
+| 2026-11-02 | 2026-11-02 | US | november calligraphy | +700% | calligraphy | 1 |
+| 2026-10-12 | 2026-11-02 | US | daily cursive handwriting practice pdf | +650% | handwriting practice | 2 |
 | 2026-10-12 | 2026-10-12 | US | beware the man whose handwriting sways like a reed in the wind | +3,650% | handwriting | 1 |
-| 2026-10-12 | 2026-10-20 | FR | i majuscule calligraphie | +550% | calligraphie | 2 |
+| 2026-11-02 | 2026-11-02 | US | handwriting analysis quiz | +600% | handwriting | 1 |
+| 2026-10-12 | 2026-11-02 | FR | i majuscule calligraphie | +550% | calligraphie | 3 |
+| 2026-11-02 | 2026-11-02 | US | november cursive | +450% | cursive | 1 |
+| 2026-11-02 | 2026-11-02 | US | november in cursive | +450% | cursive | 1 |
+| 2026-11-02 | 2026-11-02 | US | november in calligraphy | +450% | calligraphy | 1 |
 | 2026-10-09 | 2026-10-09 | US | meghan markle handwriting | +450% | handwriting | 1 |
 | 2026-10-12 | 2026-10-20 | FR | r majuscule calligraphie | +400% | calligraphie | 2 |
 | 2026-10-09 | 2026-10-12 | DE | sütterlin alphabet schreibschrift | +350% | schreibschrift | 2 |
 | 2026-10-09 | 2026-10-09 | FR | blog graphisme | +350% | graphisme | 1 |
+| 2026-10-09 | 2026-11-02 | FR | j majuscule calligraphie | +250% | calligraphie | 2 |
+| 2026-11-02 | 2026-11-02 | FR | graphisme novembre | +250% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | editable handwriting worksheets | +250% | handwriting worksheets | 1 |
 | 2026-10-09 | 2026-10-20 | DE | pandora gravur handschrift | +250% | handschrift | 2 |
 | 2026-10-20 | 2026-10-20 | DE | linienblatt 3. klasse | +250% | linienblatt | 1 |
@@ -32,42 +39,63 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-20 | 2026-10-20 | US | handwriting practice sheets pdf free download | +200% | handwriting practice | 1 |
 | 2026-10-12 | 2026-10-12 | US | how can i improve my handwriting | +200% | handwriting | 1 |
 | 2026-10-12 | 2026-10-12 | FR | a majuscule calligraphie | +190% | calligraphie | 1 |
+| 2026-10-12 | 2026-11-02 | FR | lettre e calligraphie | +180% | calligraphie | 2 |
+| 2026-11-02 | 2026-11-02 | US | free calligraphy fonts copy and paste | +170% | calligraphy | 1 |
+| 2026-11-02 | 2026-11-02 | DE | schreibschrift arten | +170% | schreibschrift | 1 |
 | 2026-10-20 | 2026-10-20 | DE | dafont handschrift | +170% | handschrift | 1 |
 | 2026-10-09 | 2026-10-09 | US | devoted followers of painter o keeffe crossword | +170% | calligraphy | 2 |
+| 2026-10-09 | 2026-11-02 | DE | jandorf schreibschrift | +160% | schreibschrift | 2 |
+| 2026-10-12 | 2026-11-02 | FR | graphisme halloween gs | +160% | graphisme | 2 |
 | 2026-10-20 | 2026-10-20 | US | personality test | +160% | handwriting | 1 |
 | 2026-10-12 | 2026-10-12 | FR | f majuscule calligraphie | +160% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | US | happy halloween calligraphy | +150% | calligraphy | 1 |
+| 2026-11-02 | 2026-11-02 | FR | calligraphie def | +150% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | FR | graphisme citrouille | +150% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting personality test | +150% | handwriting | 2 |
 | 2026-10-20 | 2026-10-20 | US | createprintables.com name tracing | +150% | name tracing | 1 |
 | 2026-10-20 | 2026-10-20 | DE | schreibschrift h groß | +150% | schreibschrift | 1 |
 | 2026-10-09 | 2026-10-09 | FR | graphisme boucles gs | +150% | graphisme | 1 |
+| 2026-10-09 | 2026-11-02 | US | einstein handwriting | +140% | handwriting | 2 |
+| 2026-11-02 | 2026-11-02 | FR | fiche graphisme gs | +140% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting test | +140% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | FR | lettre l calligraphie | +140% | calligraphie | 1 |
 | 2026-10-20 | 2026-10-20 | FR | l majuscule calligraphie | +140% | calligraphie | 1 |
 | 2026-10-20 | 2026-10-20 | FR | progression graphisme ps | +140% | graphisme | 1 |
 | 2026-10-09 | 2026-10-12 | FR | m majuscule calligraphie | +140% | calligraphie | 2 |
-| 2026-10-09 | 2026-10-09 | US | einstein handwriting | +140% | handwriting | 1 |
 | 2026-10-09 | 2026-10-09 | FR | apprendre la calligraphie | +140% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | DE | persönliche handschrift 4 buchstaben | +130% | handschrift | 1 |
+| 2026-11-02 | 2026-11-02 | FR | fiche de graphisme gs | +130% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | FR | dnmade graphisme | +130% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting personality | +130% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | DE | v in schreibschrift | +130% | schreibschrift | 1 |
 | 2026-10-20 | 2026-10-20 | FR | g majuscule calligraphie | +130% | calligraphie | 1 |
-| 2026-10-12 | 2026-10-12 | US | daily cursive handwriting practice pdf | +130% | handwriting practice | 1 |
 | 2026-10-09 | 2026-10-09 | FR | graphisme halloween | +130% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | US | spooky handwriting | +120% | handwriting | 1 |
+| 2026-11-02 | 2026-11-02 | US | happy halloween in cursive | +120% | cursive | 1 |
 | 2026-10-09 | 2026-10-12 | DE | russische schreibschrift | +120% | schreibschrift | 2 |
 | 2026-10-12 | 2026-10-12 | DE | kalligraphie haarschnitt | +120% | kalligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | US | create printables name tracing | +120% | name tracing | 2 |
 | 2026-10-09 | 2026-10-09 | DE | kalligraphie feder | +120% | kalligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | US | adult handwriting practice | +110% | handwriting | 2 |
+| 2026-11-02 | 2026-11-02 | DE | schlechte handschrift scherzhaft | +110% | handschrift | 1 |
+| 2026-11-02 | 2026-11-02 | FR | écriture cursive gs | +110% | écriture cursive | 1 |
+| 2026-11-02 | 2026-11-02 | FR | fiche graphisme ms | +110% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting personality test game | +110% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | DE | kalligraphie pinsel | +110% | kalligraphie | 1 |
 | 2026-10-20 | 2026-10-20 | DE | islamische kalligraphie | +110% | kalligraphie | 1 |
 | 2026-10-09 | 2026-10-12 | DE | kyrillisch schreibschrift | +110% | schreibschrift | 2 |
 | 2026-10-12 | 2026-10-12 | DE | abc in schreibschrift | +110% | schreibschrift | 1 |
 | 2026-10-09 | 2026-10-09 | FR | lettre s calligraphie | +110% | calligraphie | 1 |
+| 2026-10-09 | 2026-11-02 | US | albert einstein handwriting | +100% | handwriting | 4 |
+| 2026-11-02 | 2026-11-02 | US | handwriting worksheets for kids | +100% | handwriting worksheets | 1 |
+| 2026-11-02 | 2026-11-02 | FR | graphisme automne gs | +100% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | FR | graphisme automne | +100% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | FR | gta 6 graphisme | +100% | graphisme | 1 |
-| 2026-10-09 | 2026-10-12 | US | albert einstein handwriting | +100% | handwriting | 3 |
 | 2026-10-09 | 2026-10-12 | US | print script handwriting | +100% | handwriting | 3 |
 | 2026-10-12 | 2026-10-12 | US | handwriting worksheet generator | +100% | handwriting worksheets | 1 |
 | 2026-10-12 | 2026-10-12 | US | yu shinan calligraphy hk auction | +4,100% | calligraphy | 1 |
-| 2026-10-12 | 2026-10-12 | FR | graphisme halloween gs | +100% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | DE | schwungübungen schreibschrift | +90% | schreibschrift | 1 |
+| 2026-10-09 | 2026-11-02 | FR | lettres calligraphie | +90% | calligraphie | 2 |
 | 2026-10-20 | 2026-10-20 | US | personality test based on handwriting | +90% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting repeater | +90% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | US | r74n handwriting | +90% | handwriting | 1 |
@@ -82,8 +110,12 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-09 | 2026-10-12 | FR | citrouille graphisme | +90% | graphisme | 2 |
 | 2026-10-09 | 2026-10-09 | US | create name tracing worksheets | +90% | name tracing | 2 |
 | 2026-10-09 | 2026-10-09 | DE | linienblatt zum ausdrucken pdf | +90% | linienblatt | 1 |
-| 2026-10-09 | 2026-10-09 | FR | lettres calligraphie | +90% | calligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | FR | logiciel graphisme | +90% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | US | dafont | +80% | handwriting | 1 |
+| 2026-11-02 | 2026-11-02 | DE | sütterlin handschrift | +80% | handschrift | 1 |
+| 2026-10-09 | 2026-11-02 | FR | feutre calligraphie | +80% | calligraphie | 2 |
+| 2026-11-02 | 2026-11-02 | FR | s majuscule calligraphie | +80% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | FR | fiche graphisme | +80% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting personality quiz | +80% | handwriting | 1 |
 | 2026-10-09 | 2026-10-20 | FR | calligraphie gothique | +80% | calligraphie | 2 |
 | 2026-10-12 | 2026-10-12 | DE | schriftgenerator schreibschrift | +80% | schreibschrift | 1 |
@@ -92,18 +124,26 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-12 | 2026-10-12 | FR | calligraphie définition | +80% | calligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | US | architect handwriting | +80% | handwriting | 2 |
 | 2026-10-09 | 2026-10-09 | FR | tableau calligraphie arabe | +80% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | US | handwriting without tears screener | +70% | handwriting | 1 |
+| 2026-10-09 | 2026-11-02 | DE | schreibschrift s groß | +70% | schreibschrift | 3 |
+| 2026-10-09 | 2026-11-02 | DE | schreibschrift f groß | +70% | schreibschrift | 2 |
+| 2026-11-02 | 2026-11-02 | DE | persönliche handschrift | +70% | handschrift | 1 |
+| 2026-11-02 | 2026-11-02 | DE | kalligraphie abc | +70% | kalligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | FR | écriture cursive russe | +70% | écriture cursive | 1 |
+| 2026-11-02 | 2026-11-02 | FR | police écriture cursive | +70% | écriture cursive | 1 |
+| 2026-11-02 | 2026-11-02 | FR | graphisme ms | +70% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting without tears letter order | +70% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | DE | f in schreibschrift | +70% | schreibschrift | 1 |
 | 2026-10-20 | 2026-10-20 | FR | b majuscule calligraphie | +70% | calligraphie | 1 |
 | 2026-10-20 | 2026-10-20 | FR | agence de graphisme paris | +70% | graphisme | 1 |
 | 2026-10-09 | 2026-10-12 | US | create printables name tracing with lines | +70% | name tracing | 2 |
 | 2026-10-09 | 2026-10-12 | US | calligraphy pronunciation | +70% | calligraphy | 3 |
-| 2026-10-09 | 2026-10-12 | DE | schreibschrift s groß | +70% | schreibschrift | 2 |
 | 2026-10-09 | 2026-10-12 | DE | kalligraphie füller | +70% | kalligraphie | 2 |
 | 2026-10-09 | 2026-10-12 | FR | graphisme maternelle à imprimer | +70% | graphisme | 2 |
-| 2026-10-12 | 2026-10-12 | FR | lettre e calligraphie | +70% | calligraphie | 1 |
-| 2026-10-09 | 2026-10-09 | DE | schreibschrift f groß | +70% | schreibschrift | 1 |
 | 2026-10-09 | 2026-10-09 | FR | graphisme en france | +70% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | US | halloween handwriting | +60% | handwriting | 1 |
+| 2026-11-02 | 2026-11-02 | DE | c in schreibschrift | +60% | schreibschrift | 1 |
+| 2026-10-09 | 2026-11-02 | FR | h majuscule calligraphie | +60% | calligraphie | 2 |
 | 2026-10-20 | 2026-10-20 | US | handwriting heroes | +60% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | US | name tracing template | +60% | name tracing | 1 |
 | 2026-10-20 | 2026-10-20 | US | tpt | +60% | name tracing | 1 |
@@ -116,11 +156,15 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-12 | 2026-10-12 | DE | chinesische kalligraphie | +60% | kalligraphie | 1 |
 | 2026-10-12 | 2026-10-12 | FR | fiches graphisme ms | +60% | graphisme | 1 |
 | 2026-10-09 | 2026-10-09 | DE | schreibschrift übungsblätter | +60% | schreibschrift | 1 |
-| 2026-10-09 | 2026-10-09 | DE | jandorf schreibschrift | +60% | schreibschrift | 1 |
-| 2026-10-09 | 2026-10-09 | FR | feutre calligraphie | +60% | calligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | FR | définition calligraphie | +60% | calligraphie | 1 |
-| 2026-10-09 | 2026-10-09 | FR | h majuscule calligraphie | +60% | calligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | FR | école de graphisme | +60% | graphisme | 1 |
+| 2026-11-02 | 2026-11-02 | US | best handwriting fonts | +50% | handwriting | 1 |
+| 2026-11-02 | 2026-11-02 | US | a reason for handwriting | +50% | handwriting | 1 |
+| 2026-11-02 | 2026-11-02 | US | faux calligraphy | +50% | calligraphy | 1 |
+| 2026-11-02 | 2026-11-02 | DE | happy birthday kalligraphie | +50% | kalligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | FR | n majuscule calligraphie | +50% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | FR | calligraphie chiffre | +50% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | FR | graphisme gs | +50% | graphisme | 1 |
 | 2026-10-20 | 2026-10-20 | US | handwriting practice sheet | +50% | handwriting practice | 1 |
 | 2026-10-20 | 2026-10-20 | US | 1st grade handwriting worksheets | +50% | handwriting worksheets | 1 |
 | 2026-10-20 | 2026-10-20 | US | cursive name tracing generator | +50% | name tracing | 1 |
@@ -142,8 +186,12 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-09 | 2026-10-09 | US | neat handwriting practice | +50% | handwriting practice | 1 |
 | 2026-10-09 | 2026-10-09 | US | name tracing with lines | +50% | name tracing | 1 |
 | 2026-10-09 | 2026-10-09 | US | name tracing generator with lines | +50% | name tracing | 1 |
-| 2026-10-09 | 2026-10-09 | FR | j majuscule calligraphie | +50% | calligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | FR | kit calligraphie | +50% | calligraphie | 1 |
+| 2026-11-02 | 2026-11-02 | US | what your handwriting says about you | +40% | handwriting | 1 |
+| 2026-11-02 | 2026-11-02 | US | handwriting practice worksheets pdf for adults | +40% | handwriting practice | 1 |
+| 2026-11-02 | 2026-11-02 | US | 2nd grade handwriting worksheets | +40% | handwriting worksheets | 1 |
+| 2026-11-02 | 2026-11-02 | US | what does calligraphy mean | +40% | calligraphy | 1 |
+| 2026-11-02 | 2026-11-02 | DE | g in schreibschrift | +40% | schreibschrift | 1 |
 | 2026-10-20 | 2026-10-20 | US | how to turn handwriting into a font | +40% | handwriting | 1 |
 | 2026-10-20 | 2026-10-20 | US | calligraphy generator free | +40% | calligraphy | 1 |
 | 2026-10-09 | 2026-10-20 | DE | schreibschrift kopieren | +40% | schreibschrift | 2 |
@@ -162,11 +210,13 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-09 | 2026-10-09 | US | modern calligraphy alphabet | +40% | calligraphy | 1 |
 | 2026-10-09 | 2026-10-09 | DE | kalligraphie alphabet | +40% | kalligraphie | 1 |
 | 2026-10-09 | 2026-10-09 | FR | graphisme octobre | +40% | graphisme | 1 |
+| 2026-10-20 | 2026-10-20 | US | daily handwriting practice pdf free | Breakout | handwriting practice | 1 |
+| 2026-10-20 | 2026-10-20 | FR | progression graphisme ms | Breakout | graphisme | 1 |
+| 2026-10-20 | 2026-10-20 | FR | centre du graphisme echirolles | Breakout | graphisme | 1 |
 | 2026-10-12 | 2026-10-12 | US | calligraphy cat battle cats | Breakout | calligraphy | 1 |
 | 2026-10-09 | 2026-10-12 | DE | gebundene handschrift im mittelalter | Breakout | handschrift | 2 |
 | 2026-10-09 | 2026-10-12 | DE | gebundene handschrift im mittelalter 5 buchstaben | Breakout | handschrift | 2 |
 | 2026-10-09 | 2026-10-12 | DE | gebundene handschrift im ma | Breakout | handschrift | 2 |
-| 2026-10-09 | 2026-10-12 | DE | schreibpilot schreibschrift | Breakout | schreibschrift | 2 |
 | 2026-10-09 | 2026-10-09 | US | angelina jolie handwriting viral note | Breakout | handwriting | 2 |
 | 2026-10-09 | 2026-10-09 | US | angelina jolie handwriting | Breakout | handwriting | 2 |
 | 2026-10-09 | 2026-10-09 | US | motto of a calligraphy enthusiast | Breakout | calligraphy | 2 |
@@ -186,6 +236,36 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 <!-- AUTO:GENERAL START 由 scripts/trends-backlog.mjs 维护,勿手工编辑此区间 -->
 | 首见 | Geo | 关键词 | 热度 | 次数 | 当日新闻语境 |
 |---|---|---|---|---|---|
+| 2026-11-02 | US | zizou bergs | 200+ | 1 | ̳̳‍‍++[ＬＩＶＥＳｔｒｅａｍ]𝐓𝐕!!] Ignacio Buse VS Zizou Bergs 𝐋𝐈𝐕𝐄 Ｓｔｒｅａｍ |
+| 2026-11-02 | US | lorenzo musetti | 200+ | 1 | ̳̳‍‍++[𝐋𝐈𝐕𝐄𝐒𝐓𝐑𝐄𝐀𝐌]TODAY!!] Lorenzo Musetti VS Hubert Hurkacz Live Free November  |
+| 2026-11-02 | US | merrimack basketball | 2000+ | 1 | Ascoli vs. Palermo (Nov 6, 2026) Odds and Spread |
+| 2026-11-02 | US | nashville weather | 200+ | 1 | Cloudy for Trick or Treating with showers moving in Sunday |
+| 2026-11-02 | US | venus williams | 200+ | 1 | Sports News, Transfers, Scores / Watch Live Sport |
+| 2026-11-02 | US | olivia colman | 100+ | 1 | What does Olivia Colman&apos;s hot sex with a basket tell us about heteropessimism? / Emma |
+| 2026-11-02 | US | crime | 5000+ | 1 | Violent Halloween weekend in US with more than a dozen killed, over 90 injured in shooting |
+| 2026-11-02 | US | did the eagles win | 10000+ | 1 | Eagles at Commanders Injury Report |
+| 2026-11-02 | US | peso mexicano | 200+ | 1 | Así está el dólar en México hoy: tipo de cambio y cotizaciones en bancos |
+| 2026-11-02 | US | local news | 100+ | 1 | Calhoun tennis star gives back to hometown and surprises the high school girls’ team |
+| 2026-11-02 | DE | hubert hurkacz | 500+ | 1 | NA ŻYWO: Hubert Hurkacz — Lorenzo Musetti w Paryżu. Relacja i wynik live |
+| 2026-11-02 | DE | raumschiff enterprise | 500+ | 1 | »Star Trek«: US-Schauspieler Walter Koenig ist tot |
+| 2026-11-02 | DE | dieselkraftstoff | 200+ | 1 | Russland-Prognose: Im November gehen Ölexporte über Häfen an Ostsee und am Schwarzen Meer  |
+| 2026-11-02 | DE | die rosenheim-cops | 2000+ | 1 | ZDF streicht am 3. November „Die Rosenheim-Cops“ aus dem Programm |
+| 2026-11-02 | DE | sporting lissabon | 200+ | 1 | Trainerwechsel bei Sporting Lissabon - Borges geht, Fonseca vor der Tür |
+| 2026-11-02 | DE | atp paris | 200+ | 1 | Rolex Paris Masters / Moïse Kouame laisse le charme agir : &quot;Il faut être patient, mêm |
+| 2026-11-02 | DE | wahlen usa midterms | 2000+ | 1 | Drohende Schlappe bei den Midterms: Was Trump als Nächstes planen könnte |
+| 2026-11-02 | DE | fc bayern münchen borussia dortmund | 500+ | 1 | Großes Alupech und der späte Fabio Silva: FC Bayern lässt Sieg im Topspiel liegen |
+| 2026-11-02 | DE | halloween süssigkeiten nadeln | 10000+ | 1 | Halloween: Polizei ruft wegen präparierter Halloween-Süßigkeiten zu Vorsicht auf |
+| 2026-11-02 | DE | restaurant korea | 1000+ | 1 | North Korea touts BBQ restaurant boom, but sceptics dismiss it as propaganda |
+| 2026-11-02 | FR | jean luc | 5000+ | 1 | Présidentielle 2027 : Jean-Luc Mélenchon dit annuler sa venue au « 20 heures » de TF1, qu’ |
+| 2026-11-02 | FR | jean luc reichmann | 5000+ | 1 | Jean-Luc Reichmann (66 ans) vit dans une maison de 600 m2 à Versailles, &quot;moi, je m&ap |
+| 2026-11-02 | FR | lorenzo musetti | 200+ | 1 | DIRECT. Musetti - Hurkacz, ATP 1000, Rolex Paris Masters, Premier tour : 6-6 en direct |
+| 2026-11-02 | FR | sous-marin nucléaire | 200+ | 1 | La Russie tire un missile capable de transporter plusieurs ogives nucléaires : lancé depui |
+| 2026-11-02 | FR | laeticia hallyday | 200+ | 1 | Laeticia et Joy Hallyday : après avoir profité d’Halloween à Saint-Barth, mère et fille cé |
+| 2026-11-02 | FR | apiculteur | 200+ | 1 | Vosges. Le mystère des ruches volées pendant plusieurs années avait pour responsable un ap |
+| 2026-11-02 | FR | david schwimmer | 200+ | 1 | Today’s famous birthdays list for November 2, 2026 includes celebrities David Schwimmer, R |
+| 2026-11-02 | FR | marion bartoli | 200+ | 1 | [Podcasts] Bartoli Time du Dimanche 1er novembre 2026 |
+| 2026-11-02 | FR | rtx 5080 | 500+ | 1 | En Chine, des milliers de cartes graphiques haut de gamme de Nvidia sont démontées pour al |
+| 2026-11-02 | FR | flo film florence arthaud | 50000+ | 1 | Florence Arthaud : fausse couche, pannes, 10 jours coupée du monde… L’incroyable récit de  |
 | 2026-10-20 | US | tampa bay rays | 20000+ | 1 | Rays 3-1 Guardians (Oct 18, 2026) Final Score |
 | 2026-10-20 | US | rockstar games gta vi | 10000+ | 1 | &apos;There&apos;s No One Person That Has This Whole Thing in Their Head&apos; — GTA 6 Dev |
 | 2026-10-20 | US | kylie cosmetics | 2000+ | 1 | Victoria’s Secret reboots its fantasy with Kylie Jenner’s $50M diamond bra |
@@ -366,3 +446,14 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-20 | DE | linienblatt 3. klasse | +250% | Clara Hartley | 德国三年级横线纸。先核现有 de 纸张文能否接,不新开 | 继续观察 |
 | 2026-10-20 | DE | kalligraphie pinsel / islamische kalligraphie | +110% / +110% | — | 毛笔与伊斯兰书法,站内字体不接 | 放弃 |
 | 2026-10-20 | FR | calligraphie latine | +250% | — | 拉丁书法。先看 best-cursive-fonts / calligraphy 文是否已吃到,不新开 | 继续观察 |
+| 2026-11-02 | US | handwriting analysis quiz | +600% | Theo Lindgren | 正中 /handwriting-personality-quiz 工具词;核对规划 §五 的配套文章状态,未动工则尽快补配(§3.1) | 建议排期(核对 §五) |
+| 2026-11-02 | US | november cursive / november in cursive | +450% | Wes Morales | 月份词连笔练习(每年 11 月复现的常青季节需求):months in cursive 描红/练习页小文,11 月初发布正当时 | 建议排期(小而准) |
+| 2026-11-02 | US | november calligraphy / november in calligraphy | +700/+450% | June Park | 同簇的书法版:月历/手账 banner 字幕场景,可与上一条同周发布成对 | 建议排期(同上) |
+| 2026-10-12→11-02 | US | happy halloween in cursive / happy halloween calligraphy / spooky handwriting | +120~150% | Wes/June | 万圣节书写簇已过窗口(10-31):放弃今年,统一登记 2027 年 9 月底发布 | 放弃(登记明年) |
+| 2026-11-02 | US | handwriting worksheets for kids | +100% | Clara Hartley | 广义词,现有 kindergarten/sight-word/copywork 已广覆盖;评估是否值得一篇 umbrella 汇总文 | 继续观察 |
+| 2026-11-02 | US | free calligraphy fonts copy and paste | +170% | Theo Lindgren | cursive-text-generator 文章已覆盖 copy-paste 需求;核对正文是否点明 calligraphy 变体词 | 已覆盖(核对) |
+| 2026-11-02 | DE | persönliche handschrift 4 buchstaben | +130% | — | — | 放弃:填字解题流量 |
+| 2026-11-02 | DE | schlechte handschrift scherzhaft | +110% | — | — | 放弃:梗图娱乐向,与工具/教学无契合 |
+| 2026-11-02 | DE | schreibschrift arten | +170% | Clara Hartley | 德国学校连笔体系确实有"Aarten"内容需求(Vereinfachte/Lateinische Ausgangsschrift 等):de 先行科普文,挂生成器实测参数 | 建议排期(de 新文章,当地独有) |
+| 2026-11-02 | FR | écriture cursive gs | +110% | Clara Hartley | GS( Grande Section)衔接需求:并入 §6.7 P0-2 graphisme 文章的 GS 章节,不单开 | 并入 P0-2 |
+| 2026-10-26→11-02 | FR | d majuscule calligraphie(Breakout) | Breakout | Wes Morales | majuscule 逐字母簇连续两周确认(上周 r/i/a/f,本周 d):cursive-alphabet-chart fr 正文 majuscules 增强升级为催办 | 催办(连续两周确认) |
