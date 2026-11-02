@@ -169,6 +169,11 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["handwritten-card-with-voice", "xiaohongshu-handwritten-images", "handwriting-templates-guide"],
   },
 
+  "november-in-cursive": {
+    tools: ["/cursive", "/cursive-worksheets"],
+    posts: ["how-to-write-in-cursive", "cursive-practice-worksheets", "cursive-alphabet-chart"],
+  },
+
   // cursive 立法数据簇:is-cursive-still-taught 的深度数据页,吃 "cursive laws by state" 词簇
   "cursive-laws-by-state": {
     tools: ["/cursive-worksheets", "/daily-cursive-handwriting-practice", "/printable-paper"],

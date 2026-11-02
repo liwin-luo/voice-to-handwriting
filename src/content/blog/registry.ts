@@ -87,6 +87,7 @@ import cmcZh from "./calligraphy-motto-cards.zh.mdx";
 import cmcJa from "./calligraphy-motto-cards.ja.mdx";
 import cmcKo from "./calligraphy-motto-cards.ko.mdx";
 import cmcEs from "./calligraphy-motto-cards.es.mdx";
+import novEn from "./november-in-cursive.en.mdx";
 import clbEn from "./cursive-laws-by-state.en.mdx";
 import bcfEn from "./best-cursive-fonts.en.mdx";
 import phlEn from "./print-handwritten-letters-and-envelopes.en.mdx";
@@ -283,6 +284,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "copywork-generator": { en: cwgEn },
   "name-tracing-with-lines": { en: ntlEn, zh: ntlZh, ja: ntlJa, ko: ntlKo, es: ntlEs },
   "calligraphy-motto-cards": { en: cmcEn, zh: cmcZh, ja: cmcJa, ko: cmcKo, es: cmcEs },
+  "november-in-cursive": { en: novEn },
   "cursive-laws-by-state": { en: clbEn },
   "best-cursive-fonts": { en: bcfEn },
   "print-handwritten-letters-and-envelopes": { en: phlEn },

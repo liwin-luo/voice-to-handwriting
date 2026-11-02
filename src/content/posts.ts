@@ -407,7 +407,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "cursive-alphabet-chart",
     author: "wes-morales",
     date: "2026-10-07",
-    updated: "2026-11-01",
+    updated: "2026-11-02",
     image: "/blog/cursive-alphabet.png",
     i18n: {
       en: {
@@ -1000,6 +1000,20 @@ const CURSIVE_POSTS: Post[] = [
         title: "Bubble letters for a short display name",
         description:
           "Type a short name and copy bubble letters for a display name: one heart, bow, or flower. Use a handwriting font when the name has to be a picture.",
+      },
+    },
+  },
+  {
+    slug: "november-in-cursive",
+    author: "wes-morales",
+    date: "2026-11-02",
+    updated: "2026-11-02",
+    image: "/blog/november-cursive.png",
+    i18n: {
+      en: {
+        title: "November in cursive: how to write the month (+ all 12 months)",
+        description:
+          "The capital N rule, the m-b crowd spot and every junction in the word — plus all twelve months ranked by difficulty, with a free printable practice sheet.",
       },
     },
   },

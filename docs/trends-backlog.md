@@ -447,7 +447,7 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-10-20 | DE | kalligraphie pinsel / islamische kalligraphie | +110% / +110% | — | 毛笔与伊斯兰书法,站内字体不接 | 放弃 |
 | 2026-10-20 | FR | calligraphie latine | +250% | — | 拉丁书法。先看 best-cursive-fonts / calligraphy 文是否已吃到,不新开 | 继续观察 |
 | 2026-11-02 | US | handwriting analysis quiz | +600% | Theo Lindgren | 正中 /handwriting-personality-quiz 工具词;核对规划 §五 的配套文章状态,未动工则尽快补配(§3.1) | 建议排期(核对 §五) |
-| 2026-11-02 | US | november cursive / november in cursive | +450% | Wes Morales | 月份词连笔练习(每年 11 月复现的常青季节需求):months in cursive 描红/练习页小文,11 月初发布正当时 | 建议排期(小而准) |
+| 2026-11-02 | US | november cursive / november in cursive | +450% | Wes Morales | 已发布 november-in-cursive(Wes,实测截图题图,含大写 N 断连规则、m-b 拥挤点、12 个月难度表) | ✅ 已完成(2026-11-02) |
 | 2026-11-02 | US | november calligraphy / november in calligraphy | +700/+450% | June Park | 同簇的书法版:月历/手账 banner 字幕场景,可与上一条同周发布成对 | 建议排期(同上) |
 | 2026-10-12→11-02 | US | happy halloween in cursive / happy halloween calligraphy / spooky handwriting | +120~150% | Wes/June | 万圣节书写簇已过窗口(10-31):放弃今年,统一登记 2027 年 9 月底发布 | 放弃(登记明年) |
 | 2026-11-02 | US | handwriting worksheets for kids | +100% | Clara Hartley | 广义词,现有 kindergarten/sight-word/copywork 已广覆盖;评估是否值得一篇 umbrella 汇总文 | 继续观察 |
@@ -456,4 +456,4 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-11-02 | DE | schlechte handschrift scherzhaft | +110% | — | — | 放弃:梗图娱乐向,与工具/教学无契合 |
 | 2026-11-02 | DE | schreibschrift arten | +170% | Clara Hartley | 德国学校连笔体系确实有"Aarten"内容需求(Vereinfachte/Lateinische Ausgangsschrift 等):de 先行科普文,挂生成器实测参数 | 建议排期(de 新文章,当地独有) |
 | 2026-11-02 | FR | écriture cursive gs | +110% | Clara Hartley | GS( Grande Section)衔接需求:并入 §6.7 P0-2 graphisme 文章的 GS 章节,不单开 | 并入 P0-2 |
-| 2026-10-26→11-02 | FR | d majuscule calligraphie(Breakout) | Breakout | Wes Morales | majuscule 逐字母簇连续两周确认(上周 r/i/a/f,本周 d):cursive-alphabet-chart fr 正文 majuscules 增强升级为催办 | 催办(连续两周确认) |
+| 2026-10-26→11-02 | FR | d majuscule calligraphie(Breakout) | Breakout | Wes Morales | 在 2026-11-01 的 15 字母表基础上补 D 行(geste/piège)+周计划归组+「majuscule calligraphie」检索词衔接 | ✅ 已完成(2026-11-02) |
