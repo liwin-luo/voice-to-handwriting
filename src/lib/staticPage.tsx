@@ -5,6 +5,7 @@ import { routing, type Locale } from "@/i18n/routing";
 import ProseShell from "@/components/ProseShell";
 import { PAGE_CONTENT, type PageKey } from "@/content/pages/registry";
 import { pageMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 /** 生成 about/privacy/terms/contact 的通用页面:内容来自 src/content/pages 的双语 MDX */
 export function makeStaticPage(key: PageKey) {
@@ -13,8 +14,18 @@ export function makeStaticPage(key: PageKey) {
     if (!hasLocale(routing.locales, locale)) notFound();
     setRequestLocale(locale);
     const Body = PAGE_CONTENT[key][locale as Locale];
+    const t = await getTranslations({ locale, namespace: `meta.${key}` });
+    const breadcrumbLd = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+        { "@type": "ListItem", position: 2, name: t("title"), item: `${SITE.url}/${key}` },
+      ],
+    };
     return (
       <ProseShell>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
         <Body />
       </ProseShell>
     );

@@ -42,7 +42,7 @@
     },
     "worksheet": {
       "title": "Free Handwriting Worksheet Generator (Printable PDF)",
-      "description": "Make free printable handwriting worksheets from any word list or sentence — traceable print-style rows on three-line practice paper. Download the PDF, no signup, no watermark."
+      "description": "Make free printable handwriting worksheets from any word list or sentence — traceable print-style rows on three-line practice paper."
     },
     "cursive": {
       "title": "Cursive Writing Generator - Free",
@@ -50,7 +50,7 @@
     },
     "cursiveWorks": {
       "title": "Free Cursive Worksheets Generator (Printable PDF)",
-      "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper with start-dot stroke guides, no watermark — built for classrooms bringing back cursive."
+      "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper with start-dot stroke guides, no watermark —…"
     },
     "writing": {
       "title": "Writing Practice Sheet Generator",
@@ -65,15 +65,15 @@
       "description": "Create a printable handwriting workbook PDF in seconds: a cover page, the alphabet or your own word list, example and traceable rows on three-line guides. Free, no signup, no watermark."
     },
     "quiz": {
-      "title": "Free Handwriting Personality Test — What Does Your Handwriting Say About You?",
-      "description": "Take this free handwriting personality test: 12 quick questions about your handwriting reveal a fun personality profile plus practice tips. No upload, no signup — about 2 minutes."
+      "title": "Free Handwriting Personality Test (What It Reveals)",
+      "description": "Take this free handwriting personality test: 12 quick questions about your handwriting reveal a fun personality profile plus practice tips."
     },
     "tools": {
       "title": "All Free Handwriting Tools",
       "description": "Every free handwriting tool in one place: voice-to-handwriting, cursive, tracing, practice sheets, and a personality quiz. No signup."
     },
     "pageCalc": {
-      "title": "Handwriting Page Calculator — How Many Sheets for Handwritten Text?",
+      "title": "Handwriting Page Calculator (Words to Pages)",
       "description": "See how many sheets handwritten text needs. Choose college ruled, wide ruled, grid, or genkou paper, then preview each page. Free, no signup."
     },
     "cursiveText": {
@@ -572,7 +572,13 @@
     },
     "unitWord": "words",
     "unitChar": "characters",
-    "textStatsChars": "{chars} characters"
+    "textStatsChars": "{chars} characters",
+    "wordsTitle": "Words to pages: a quick conversion table",
+    "wordsIntro": "Handwriting runs larger than typed text — plan roughly 200–250 handwritten words per college-ruled page, or about 180–200 on wide ruled. The table below uses those one-side, single-spacing figures; your own hand may run larger or smaller, which is exactly what the calculator above is for.",
+    "wordsColWords": "Your words",
+    "wordsColCollege": "College ruled",
+    "wordsColWide": "Wide ruled",
+    "wordsNote": "Figures assume an average adult hand on US Letter, writing on the front of each sheet. Add a page whenever you change papers, switch to large print, or double-space between letters."
   },
   "cursiveText": {
     "title": "Cursive Text Generator",

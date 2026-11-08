@@ -45,14 +45,22 @@ type PageMetaOptions = {
 /**
  * 页面 metadata:title/description + canonical/hreflang + og:type/og:url。
  * og:url 等于该语言的 canonical,分享时才会落到正确语言。
- * 不写 openGraph.title,交给 Next 用页面 title(含品牌模板)补上。
+ * 不写 openGraph.title,交给 Next 用页面 title 补上。description 超 165 字符时按词边界钳制。
  */
+function clampDescription(text: string, max = 158): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[—\-,,;:]\s*$/, "").trimEnd() + "…";
+}
+
 export function pageMetadata(
   pathname: string,
   locale: Locale,
   meta: PageMetaInput = {},
   options?: PageMetaOptions,
 ): Metadata {
+  if (meta.description && meta.description.length > 165) meta.description = clampDescription(meta.description);
   const alternates = buildAlternates(pathname, locale, options?.available);
   const article = options?.article;
   // 子页面一旦写 openGraph,会整段替换布局上的分享图。

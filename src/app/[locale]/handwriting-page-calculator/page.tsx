@@ -52,6 +52,37 @@ export default async function HandwritingPageCalculatorPage({
         <h2 className="mb-2 text-base font-semibold text-stone-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
+      {/* words-to-pages 速查表:德/韩语市场该词簇的自然拉力(GSC 2026-11),在英文页正面承接 */}
+      <section className="rise mt-10 max-w-3xl text-sm leading-relaxed text-stone-600" style={{ animationDelay: "180ms" }}>
+        <h2 className="mb-2 text-base font-semibold text-stone-900">{t("wordsTitle")}</h2>
+        <p className="whitespace-pre-line">{t("wordsIntro")}</p>
+        <table className="mt-3 w-full border-collapse text-[13px]">
+          <thead>
+            <tr className="border-b border-stone-300 text-left text-stone-800">
+              <th className="py-2 pr-4 font-semibold">{t("wordsColWords")}</th>
+              <th className="py-2 pr-4 font-semibold">{t("wordsColCollege")}</th>
+              <th className="py-2 font-semibold">{t("wordsColWide")}</th>
+            </tr>
+          </thead>
+          <tbody className="text-stone-600">
+            {[
+              ["100 words", "½ page", "½ page"],
+              ["250 words", "1 page", "1¼ pages"],
+              ["500 words", "2 pages", "2½ pages"],
+              ["1,000 words", "4 pages", "5 pages"],
+              ["2,000 words", "8 pages", "10 pages"],
+              ["3,000 words", "12 pages", "15 pages"],
+            ].map(([w, c, wd]) => (
+              <tr key={w} className="border-b border-stone-100">
+                <td className="py-2 pr-4">{w}</td>
+                <td className="py-2 pr-4">{c}</td>
+                <td className="py-2">{wd}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="mt-3">{t("wordsNote")}</p>
+      </section>
       <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(PAGE_CALC_FAQS, locale as Locale)} />
     </main>
   );

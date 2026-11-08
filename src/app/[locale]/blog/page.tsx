@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { POSTS } from "@/content/posts";
+import { SITE } from "@/lib/site";
 import { getAuthor } from "@/content/authors";
 import { BLOG_CONTENT } from "@/content/blog/registry";
 import { RELATED, TOOL_LABEL_KEY } from "@/content/related";
@@ -55,8 +56,24 @@ export default async function BlogIndex({
     .filter((href) => used.has(href))
     .map((href) => ({ href, label: tNav(TOOL_LABEL_KEY[href]) }));
 
+  const blogLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: tm("title"),
+    blogPost: cards.map((c) => ({
+      "@type": "BlogPosting",
+      headline: c.title,
+      url: `${SITE.url}/blog/${c.slug}`,
+      datePublished: c.date,
+      dateModified: c.updated,
+      author: { "@type": "Person", name: c.author },
+    })),
+  };
+
   return (
-    <main className="mx-auto max-w-5xl px-4 py-10">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogLd) }} />
+      <main className="mx-auto max-w-5xl px-4 py-10">
       <header className="rise">
         <h1 className="font-hand text-4xl leading-none">{tm("title")}</h1>
         <p className="mt-3 max-w-2xl text-sm text-stone-500">{t("tagline")}</p>
@@ -65,5 +82,6 @@ export default async function BlogIndex({
         <BlogExplorer posts={cards} toolOptions={toolOptions} />
       </div>
     </main>
+    </>
   );
 }

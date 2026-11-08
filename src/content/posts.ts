@@ -229,7 +229,7 @@ const US_POSTS: Post[] = [
     image: "/blog/tracing-worksheet.png",
     i18n: {
       en: {
-        title: "Handwriting practice for struggling writers (dysgraphia-friendly)",
+        title: "Handwriting for struggling writers (dysgraphia-friendly)",
         description:
           "Low-pressure handwriting adjustments for kids who fight the pencil: taller bands, light-gray tracing, short sessions and voice input.",
       },
@@ -319,7 +319,7 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/tracing-cursive.png",
     i18n: {
       en: {
-        title: "How to teach cursive writing to kids at home (10-min lessons)",
+        title: "How to teach cursive writing to kids at home (10 min)",
         description:
           "Readiness signs, letter-family teaching order, and 10-minute lessons with free printable cursive practice sheets for every step.",
       },
@@ -399,7 +399,7 @@ const CURSIVE_POSTS: Post[] = [
     updated: "2026-10-09",
     i18n: {
       en: {
-        title: "Cursive sentences to practice: printable pages for the sentence jump",
+        title: "Cursive sentences to practice: free printable pages",
         description:
           "Free cursive sentence worksheets by grade: ten starter sentences built on the o-b-v-w joins, plus the exact tracing and copy-page generator settings. Trace first, then copy.",
       },
@@ -453,7 +453,7 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/calligraphy-motto.png",
     i18n: {
       en: {
-        title: "Calligraphy motto cards: from trending phrase to handwritten card",
+        title: "Calligraphy motto cards: from trending phrase to card",
         description:
           "Turn 'motto of a calligraphy enthusiast' into a real card: Dancing Script, blue-black ink, blank paper — tested settings, motto copy and export sizes.",
       },
@@ -480,7 +480,7 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/best-cursive-fonts.png",
     i18n: {
       en: {
-        title: "Best free cursive fonts: 13 open-source picks, previewed with your own words",
+        title: "Best free cursive fonts: 13 open-source picks reviewed",
         description:
           "Thirteen free cursive fonts, including signature scripts, compared by job — preview them with your text and export PNG, SVG or PDF, no install.",
       },
@@ -547,7 +547,7 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/print-handwritten-letters.png",
     i18n: {
       en: {
-        title: "Print a handwritten letter and a matching envelope for three people",
+        title: "Print a handwritten letter and envelope for three people",
         description:
           "A three-person thank-you list, Patrick Hand, US Letter notes and #10 envelopes. Free, no signup — the settings, the pages, and what the two PDFs actually contain.",
       },
@@ -598,7 +598,7 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/graphisme-maternelle.png",
     i18n: {
       en: {
-        title: "Graphisme: pre-writing patterns in French maternelle (PS to GS)",
+        title: "Graphisme: pre-writing patterns in French maternelle",
         description:
           "How French maternelle builds writing through graphisme: the strokes to train in PS, MS, and GS, the five pattern families, and free printable pre-writing sheets.",
       },
@@ -654,7 +654,7 @@ const CURSIVE_POSTS: Post[] = [
     image: "/blog/november-cursive.png",
     i18n: {
       en: {
-        title: "November in cursive: how to write the month (+ all 12 months)",
+        title: "November in cursive: the month plus all 12 months",
         description:
           "The capital N rule, the m-b crowd spot and every junction in the word — plus all twelve months ranked by difficulty, with a free printable practice sheet.",
       },

@@ -9,6 +9,7 @@ import { FONTS } from "@/stores/useEditorStore";
 import ToolLane from "@/components/ToolLane";
 import PageHeader from "@/components/ui/PageHeader";
 import { pageMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -62,8 +63,23 @@ export default async function ToolsHubPage({
 
   const fontCss = (fontId: string) => FONTS.find((f) => f.id === fontId)!.css;
 
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: t("title"),
+    itemListElement: toolGroupsFor(locale).flatMap((group) =>
+      group.tools.map((tool, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: tool.brand ? tmeta("brand") : tnav(tool.navKey),
+        url: `${SITE.url}${tool.href}`,
+      })),
+    ),
+  };
+
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <PageHeader title={t("title")} intro={t("intro")} />
       {toolGroupsFor(locale).map((group, gi) => (
         <ToolLane

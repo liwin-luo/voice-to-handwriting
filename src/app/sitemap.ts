@@ -76,7 +76,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: localizedUrl(p, locale),
         // lastmod 用文章真实日期:全站统一刷成构建时间会被 Google 判为不可信
-        lastModified: new Date(post.date),
+        lastModified: new Date(post.updated),
         changeFrequency: "monthly",
         priority: 0.6,
         alternates: { languages: buildAlternates(p, locale, available).languages },

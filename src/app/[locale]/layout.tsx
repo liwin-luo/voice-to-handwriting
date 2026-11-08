@@ -27,7 +27,9 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
   return {
     metadataBase: new URL(SITE.url),
-    title: { default: t("title"), template: `%s | ${t("brand")}` },
+    // 不再用 "%s | 品牌" 模板:2026-11 审计 158/159 页标题超 60 字符,后缀在 SERP 被截断
+    // 且 Google 已单独展示站名,标题预算全部留给关键词(首页 default 自带品牌)
+    title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
     twitter: { card: "summary_large_image" },
