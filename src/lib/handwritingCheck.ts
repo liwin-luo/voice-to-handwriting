@@ -5,16 +5,7 @@ export function glmModelId(raw: string): string {
   return raw.trim().replace(/^custom\//, "") || "glm-5.3-flash";
 }
 
-const EVIDENCE_LANG: Record<Locale, string> = {
-  en: "English",
-  es: "Spanish",
-  fr: "French",
-  de: "German",
-  pt: "Portuguese",
-  zh: "Chinese",
-  ja: "Japanese",
-  ko: "Korean",
-};
+const EVIDENCE_LANG: Record<Locale, string> = { en: "English" };
 
 export function buildCheckPrompt(locale: string): string {
   const lang = EVIDENCE_LANG[locale as Locale] ?? "English";

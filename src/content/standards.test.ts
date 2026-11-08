@@ -1,7 +1,6 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { routing } from "@/i18n/routing";
 import { POSTS } from "@/content/posts";
 import { BLOG_CONTENT, postLocales } from "@/content/blog/registry";
 import { RELATED, TOOL_LABEL_KEY } from "@/content/related";
@@ -14,31 +13,6 @@ import { RELATED, TOOL_LABEL_KEY } from "@/content/related";
 const ROOT = process.cwd();
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
-
-/** messages JSON 扁平化为 "a.b.c" key 集合 */
-function flatKeys(value: unknown, prefix = ""): Set<string> {
-  const keys = new Set<string>();
-  for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
-    const key = prefix ? `${prefix}.${k}` : k;
-    if (v && typeof v === "object") for (const sub of flatKeys(v, key)) keys.add(sub);
-    else keys.add(key);
-  }
-  return keys;
-}
-
-describe("规范 §1.2:messages 八语言 key 一致性", () => {
-  const enKeys = flatKeys(JSON.parse(readFileSync(path.join(ROOT, "messages/en.json"), "utf8")));
-
-  it.each(routing.locales.filter((l) => l !== "en"))("%s 与 en 的 key 集合完全一致", (locale) => {
-    const keys = flatKeys(JSON.parse(readFileSync(path.join(ROOT, `messages/${locale}.json`), "utf8")));
-    const missing = [...enKeys].filter((k) => !keys.has(k));
-    const extra = [...keys].filter((k) => !enKeys.has(k));
-    expect({ missing, extra }, `${locale} 缺 ${missing.length} 个 key、多 ${extra.length} 个`).toEqual({
-      missing: [],
-      extra: [],
-    });
-  });
-});
 
 describe("规范 §3.4:POSTS 元数据", () => {
   it("slug 唯一且为小写 kebab-case", () => {

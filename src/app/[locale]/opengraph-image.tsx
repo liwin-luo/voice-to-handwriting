@@ -11,13 +11,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const TAGLINES = {
-  zh: "说一段话,一键变成手写文稿",
-  en: "Speak a paragraph, get a handwritten page",
-  ja: "話すだけで手書きの文書に",
-  ko: "말하면 손글씨로",
-  es: "Habla y conviértelo en escritura a mano",
-} as const;
+const TAGLINES = { en: "Speak a paragraph, get a handwritten page" } as const;
 
 /** 默认品牌 OG 卡:手写字体渲染(服务端读自托管 TTF,支持 CJK) */
 export default async function OgImage({

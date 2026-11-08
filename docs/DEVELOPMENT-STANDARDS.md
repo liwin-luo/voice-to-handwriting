@@ -13,8 +13,8 @@
 
 ### 1.1 语言清单与路由
 
-- 支持 8 语言:`en`(默认,URL 无前缀)、`es fr de pt zh ja ko`(URL 带前缀)。清单只允许改 `src/i18n/routing.ts`(`locales` 数组顺序 = 切换器顺序),其他地方**禁止**散落语言列表。
-- 新页面**必须**建在 `src/app/[locale]/` 下,并**必须**实现 `generateStaticParams` 展开 8 语言 + `setRequestLocale`(复制现有页面模式)。**禁止**在 `[locale]` 之外创建面向用户的路由(那等于只做了一个语言版本)。
+- 单语言 en(2026-11-08 从 8 语种收缩,GSC 数据驱动决策):URL 无前缀,`src/i18n/routing.ts` 是唯一语言清单;旧语言前缀 URL 由 next.config.ts 308 回英文版,不得删除重定向。
+- 新页面**必须**建在 `src/app/[locale]/` 下,并**必须**实现 `generateStaticParams` + `setRequestLocale`(复制现有页面模式)。**禁止**在 `[locale]` 之外创建面向用户的路由。
 - 页面内部链接**必须**用 `@/i18n/navigation` 导出的 `Link` / `useRouter` / `usePathname`,**禁止**直接用 `next/link`(会丢语言前缀,把用户扔回英文版)。
 - 生成绝对 URL(sitemap、JSON-LD、og:url、分享)**必须**用 `localizedUrl()`(src/lib/seo.ts),**禁止**手拼 `/zh/...` 字符串。
 - MDX 正文(blogs、静态页)里的站内链接**必须**用以 `/` 开头的站内路径(不带语言前缀、不带尾斜杠),由 `mdx-components.tsx` 统一映射到 next-intl `Link` 自动补当前语言前缀;外链和 `mailto:` 写完整 URL 原样放行。
@@ -22,7 +22,7 @@
 ### 1.2 文案(用户可见字符串)
 
 - **禁止**在组件里硬编码任何用户可见文案(包括按钮、aria-label、placeholder、title 属性、错误提示)。一律进 `messages/*.json`,server 组件用 `getTranslations`,client 组件用 `useTranslations`。
-- 8 个语言文件**必须同步**加 key:先写 `en.json`(源语言),其余 7 语**同一个 PR** 补齐。key 一致性由自动校验拦截(§5)——历史上漏加过 8 次,不要再犯。
+- 页面文案只写 `messages/en.json`(单语言)。
 - key 按页面/功能区组织命名空间(`nav`、`footer`、`meta`、`<pageName>`…);新加 key 前先搜现有 key,能复用就复用。
 - 插值用 ICU 占位符 `{name}`;各语言译文**必须保留全部占位符**,不得删改。
 - 翻译质量底线:非英语条目至少人工通读一遍再上线,**禁止**纯机翻直出;日/韩用敬体,西/葡用中性称谓,与现有文案风格一致。
@@ -37,7 +37,7 @@
 ### 1.4 切换器与降级
 
 - 语言切换器名称**必须**用 `LOCALE_LABELS` 的 endonym(语言自称),新增语言同步补该表。
-- 功能降级提示(如浏览器不支持 Web Speech API)**必须**有全部 8 语文案,与功能本身同一个 PR 交付。
+- 功能降级提示(如浏览器不支持 Web Speech API)**必须**有 en 文案,与功能本身同一个 PR 交付。
 
 ### 1.5 多语言验收清单
 
@@ -49,7 +49,7 @@
 
 ### 2.1 元数据与 hreflang
 
-- 每个页面**必须**导出 `generateMetadata`,title 与 description **必须逐语言提供**(取 messages `meta` 命名空间或内容数据 i18n),**禁止** 8 个语言共用一份英文 description。
+- 每个页面**必须**导出 `generateMetadata`,title 与 description **必须提供**(取 messages `meta` 命名空间或内容数据 i18n)。
 - 页面 `generateMetadata` **必须**走 `pageMetadata(path, locale, { title, description }, options?)`,不得手写 alternates 或 `og:url`。它内部调用 `buildAlternates`,并写入 `og:type`(`website`;文章页传 `options.article` 时为 `article`,带 `publishedTime`/`modifiedTime`)。`og:url` 等于该语言 canonical。
 - canonical / hreflang **必须**通过 `buildAlternates(path, locale, available?)` 生成,不得手写:
   - 每个语言版本自引用 canonical(多语言站 canonical **禁止**跨语言指向);
@@ -235,8 +235,8 @@
 按 §1–§3 标准盘点存量,以下项不符合规范,限期整改(标 ✅ 的为发布本规范时已修复):
 
 1. ✅ MDX 正文站内链接不保留语言前缀(zh 文章点工具链接会跳英文版)→ 已在 `mdx-components.tsx` 将 MDX `a` 映射到 next-intl `Link`。
-2. cursive 集群 16 篇文章仅 en 正文 → 按 §3.2 优先级补 zh/ja/ko/es。
-3. 5 篇 8 语文章的 de/fr/pt 缺本地化 title/description(当前回退英文标题)。
+2. ~~cursive 集群 16 篇文章仅 en 正文 → 按 §3.2 优先级补 zh/ja/ko/es。~~ 作废:2026-11-08 站点收缩为 en-only。
+3. ~~5 篇 8 语文章的 de/fr/pt 缺本地化 title/description。~~ 作废:同上,多语言整改项全部作废。
 4. ✅ `/word-work`、`/writing-practice`、`/name-coloring` 配套文章(2026-10-10):`spelling-list-word-work`、`one-character-in-the-grid`、`color-a-name-before-tracing`,en,工具页英文与中文 FAQ 回链。日文及其他语言等英文有排名后再补正文,不从那些语言链到英文教程。
 5. 工具页无文章回链入口(§3.3 应当级)。
 6. 4 处 `as any`(`src/lib/transcribe.ts` ×2、`src/hooks/useSpeechRecognition.ts` ×2,Web Speech API / WebGPU 缺 lib 类型)→ 按 §4.4 改为最小接口声明或 `unknown` 收窄。

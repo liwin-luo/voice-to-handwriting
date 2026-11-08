@@ -132,10 +132,6 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/"],
     posts: ["audio-to-handwriting", "handwriting-image-generator"],
   },
-  "whatsapp-voice-note-handwriting": {
-    tools: ["/"],
-    posts: ["audio-to-handwriting", "handwriting-image-generator"],
-  },
   "xiaohongshu-handwritten-images": {
     tools: ["/templates"],
     posts: ["handwriting-image-generator", "handwritten-card-with-voice", "handwriting-templates-guide"],

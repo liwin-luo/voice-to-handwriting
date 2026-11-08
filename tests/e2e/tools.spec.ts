@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("英文版", () => {
-  test.use({ locale: "en" });
+test.describe("en-only", () => {
+  test.use({ locale: "en-US" });
 
   test("/tools 聚合页:三组分类 + 全部工具卡片", async ({ page }) => {
     await page.goto("/tools");
@@ -30,17 +30,5 @@ test.describe("英文版", () => {
     await page.goto("/");
     await page.getByRole("link", { name: "Browse all free tools" }).click();
     await expect(page.getByRole("heading", { level: 1 })).toContainText("All free handwriting tools");
-  });
-});
-
-test.describe("中文版", () => {
-  test.use({ locale: "zh-CN" });
-
-  test("/zh/tools 中文渲染", async ({ page }) => {
-    await page.goto("/zh/tools");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("全部免费手写工具");
-    await expect(page.getByRole("heading", { name: "写字与生成" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "趣味" })).toBeVisible();
-    await expect(page.getByRole("main").getByRole("link", { name: "笔迹测验" })).toBeVisible();
   });
 });

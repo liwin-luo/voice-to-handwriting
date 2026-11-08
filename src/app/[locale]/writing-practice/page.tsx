@@ -43,7 +43,7 @@ export default async function WritingPracticePage({
         <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
-        <WritingPracticeGenerator defaultScript={locale === "ja" ? "ja" : locale === "ko" ? "ko" : "zh"} />
+        <WritingPracticeGenerator defaultScript="zh" />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />

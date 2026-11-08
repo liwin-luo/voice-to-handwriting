@@ -12,7 +12,7 @@
 | 层 | 技术 |
 |---|---|
 | 框架 | Next.js 16(App Router,注意版本有破坏性变更,见 §9)· React 19 |
-| i18n | next-intl 4,8 语言:`en`(默认,无前缀)`es fr de pt zh ja ko`(前缀路由) |
+| i18n | next-intl 4,单语言 `en`(无前缀;2026-11-08 从 8 语种收缩,旧 URL 308 回英文版) |
 | 样式 | Tailwind CSS 4 |
 | 状态 | Zustand 5 + persist(localStorage) |
 | 内容 | @next/mdx + remark-gfm,静态 import 注册表模式 |
@@ -24,7 +24,7 @@
 ## 2. 目录结构
 
 ```
-├── messages/                  # next-intl 文案,每语言一个 JSON(en/zh/ja/ko/es/de/fr/pt)
+├── messages/                  # next-intl 文案,单语言 en.json(2026-11-08 从 8 语种收缩)
 ├── public/
 │   ├── fonts/<fontId>/        # cn-font-split 切片产物:result.css + *.woff2(勿手改)
 │   ├── models/onnx-community/ # 旧的自托管 Whisper 权重(浏览器已改从 huggingface.co 拉取,不再使用)
@@ -87,14 +87,14 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 ### 4.1 i18n 与路由
 
-- `src/i18n/routing.ts`:`locales` 数组顺序 = 语言切换器显示顺序(当前 en→es→fr→de→pt→zh→ja→ko);`localePrefix: "as-needed"` 即 en 无前缀。`LOCALE_LABELS` 用语言全名(endonym)。
-- `src/proxy.ts`:Next 16 中 middleware 更名为 proxy,内容是 `createMiddleware({ ...routing, alternateLinks: false })`。**必须保持 alternateLinks 关闭**:middleware 默认按 `routing.locales` 给每个响应注入全语言 hreflang `Link` 头,不认识页面级 `available` 过滤,会给 en-only 页面(字母矩阵/数字课/letter-tracing/cursive-alphabet)和未翻译文章宣告大量 404 变体(2026-10 Semrush 报告 1646 条 404 的根因);hreflang 统一以页面 metadata 的 `<link rel="alternate">` 为准。
+- `src/i18n/routing.ts`:单语言 `locales: ["en"]`,`localePrefix: "as-needed"` 即无前缀。`LOCALE_LABELS` 只剩 en。语言切换器组件(LocaleSwitch)已删除。
+- `src/proxy.ts`:Next 16 中 middleware 更名为 proxy,内容是 `createMiddleware({ ...routing, alternateLinks: false })`。**必须保持 alternateLinks 关闭**(middleware 会按 `routing.locales` 注入 hreflang `Link` 头,hreflang 统一以页面 metadata 为准;2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。旧语言前缀 URL(/es /fr /de /pt /zh /ja /ko)不在 middleware 处理,由 next.config.ts redirects() 整体 308 回英文版。
 - `src/i18n/navigation.ts` 导出带语言前缀的 `Link`/`usePathname`/`useRouter`,页面内链接**必须**用它而非 `next/link`。
-- 页面文案全部在 `messages/*.json`;注意 8 个文件要同步加 key(历史上漏过,见 git log "fix missing wordwork i18n x8")。
+- 页面文案全部在 `messages/en.json`(单语言,不存在跨文件 key 同步问题)。
 
 ### 4.2 页面地图(src/app/[locale]/)
 
-所有页面同一模式:`setRequestLocale` + `getTranslations` + `pageMetadata(path, locale, { title, description })` 生成 canonical/hreflang 和 `og:type`/`og:url` + `generateStaticParams` 展开 8 语言,全站 SSG。
+所有页面同一模式:`setRequestLocale` + `getTranslations` + `pageMetadata(path, locale, { title, description })` 生成 canonical/hreflang 和 `og:type`/`og:url` + `generateStaticParams` 展开单语言 en,全站 SSG。
 
 | 路由 | 内容 | 核心组件 / 数据 |
 |---|---|---|
@@ -188,14 +188,13 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 |---|---|---|
 | `blog/registry.ts` | `BLOG_CONTENT`:slug → locale → MDX 组件(静态 import,**这是 MDX 的实际加载方式**) | blog 页;`postLocales(slug)` 供索引/sitemap/hreflang/静态参数四处过滤防 404 |
 | `posts.ts` | `POSTS` 元数据(slug/date/题图/i18n 标题描述) | blog 页、sitemap(lastmod 用文章真实日期) |
-| `pages/registry.ts` | `PAGE_CONTENT`:about/privacy/terms/contact × 8 语言 MDX | `makeStaticPage` 工厂 |
+| `pages/registry.ts` | `PAGE_CONTENT`:about/privacy/terms/contact × en MDX | `makeStaticPage` 工厂 |
 | `templates.ts` | `TEMPLATES`:slug + TemplateStyle(font/paper/ink/size/intensity/align/indent)+ i18n 范文 text | 模板列表/详情、`ToolWorkspace` 的 `?template=` 接线、sitemap |
 | `faqs.ts` | `FAQ_ITEMS`(首页支持问答)及各工具专属 FAQ。`getLocalizedFaqs` 只返回当前语言有翻译的条目;第一条 `id` 以 `-free` 结尾时挪到末尾。`FaqEntry.link` 是答案后的一条站内链接。题目在 `ToolFaq` 里是 H3 | 各工具页 `ToolFaq`;首页用 `FAQ_ITEMS` |
 | `pageFaqs.ts` | 后加工具的专属 FAQ,含手写板 `PAD_FAQS`、连笔描红 `CURSIVE_WORKSHEET_FAQS`、模板库 `TEMPLATE_FAQS`、详情页 `templateDetailFaqs`(按模板标题和范文首行生成) | 对应工具页 `ToolFaq` |
 | `faqHub.ts` | `/faq` 目录 `FAQ_HUB`,问法不复制首页 | `/faq` |
 | `paperKindFaqs.ts` | 九种纸各自的 FAQ,按 `paperKinds` 里的行距写 | `/printable-paper/[kind]` |
 | `related.ts` | 文章尾部内链规划(tools[]/posts[]) | `RelatedLinks`(SEO 集群) |
-| `extra-locales.ts` | de/fr/pt 后补翻译,`mergeI18n` 就地合并进大常量,避免反复内联编辑 | posts.ts、templates.ts |
 
 MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `ProseShell`(max-w-3xl + prose 排版)。无 frontmatter、无运行时文件读取(仅 blog/[slug] 读源码统计阅读时长)。`mdx-components.tsx` 把 MDX 的 `a` 映射到 next-intl `Link`,站内链接自动补语言前缀(约定见 [DEVELOPMENT-STANDARDS.md](./DEVELOPMENT-STANDARDS.md) §3.3)。
 
@@ -203,7 +202,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 
 - `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)+ `pageMetadata`(在 alternates 上加 `og:type` 与 `og:url`;文章页传 `article` 才写 `publishedTime`/`modifiedTime`)。
 - `next.config.ts` redirects:已收录旧 URL 的 308 收尾(`/history`、4 个缺 `/blog` 前缀的旧文章 slug)+ www 主机 308 归一到裸域(`has: type:'host'`,与 `SITE.url` 一致)。新增重定向要持续挂着,不要删。
-- `app/sitemap.ts`:静态路径 × 8 语言 + 全部模板页 + 连笔字母矩阵 + 连笔数字矩阵(en-only)+ 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
+- `app/sitemap.ts`:静态路径(en)+ 全部模板页 + 连笔字母矩阵 + 连笔数字矩阵(en-only)+ 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、连笔单字母页 BreadcrumbList、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
 - IndexNow(`scripts/indexnow-submit.mjs`,`npm run indexnow`):无参提交 sitemap 全量,带参数提交指定 URL;密钥文件在 `public/fd1dfcff….txt`。**日常只提交有变化的 URL**,反复全量提交会被视为滥用。
@@ -213,7 +212,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 - Sentry:5 个配置文件(instrumentation* + sentry.{server,edge}.config),**未配置 DSN 时零开销跳过**;client 采样 0.1。
 - AdSense 双保险:layout 只在 `NEXT_PUBLIC_ADSENSE_CLIENT` 存在时注入 script;`ConsentBanner`(`localStorage["vth-consent"]`)用户点"接受"后才真正生效注入。
 - Vercel Analytics 挂在 locale layout。
-- Microsoft Clarity(`ClarityAnalytics.tsx`,挂在 locale layout):无 Cookie 会话回放/热图,官方代码原样内联(ID 硬编码于组件);与 Vercel Analytics 同为无 Cookie 统计,不经 ConsentBanner 直接加载;隐私政策 §4(8 语言)已披露。
+- Microsoft Clarity(`ClarityAnalytics.tsx`,挂在 locale layout):无 Cookie 会话回放/热图,官方代码原样内联(ID 硬编码于组件);与 Vercel Analytics 同为无 Cookie 统计,不经 ConsentBanner 直接加载;隐私政策 §4(en)已披露。
 
 ## 5. 环境变量(均有缺省/降级,本地可不配)
 
@@ -250,15 +249,15 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 **新增工具页**(参考最接近的现有页):
 1. 建组件 `src/components/XxxGenerator.tsx`(Canvas 类生成器参考 `useDebouncedImeSafe` + jsPDF 模式);
 2. 建 `src/app/[locale]/xxx/page.tsx`,复制现有模式(`generateStaticParams` + `pageMetadata` + ShareBar + ToolFaq);
-3. 8 个 `messages/*.json` 加 nav/meta/footer 文案;
+3. `messages/en.json` 加 nav/meta/footer 文案;
 4. `src/lib/tools.ts` 的 `TOOL_GROUPS` 加卡片(进 /tools);要出现在页头下拉再标 `nav: true`。`sitemap.ts` 的 PATHS 加路径;
-5. `faqs.ts` 加该工具 FAQ(没翻译的语言不会渲染,无需 8 语全翻)。
+5. `faqs.ts` 加该工具 FAQ。
 
 **新增博客文章**:① `src/content/blog/<slug>.<locale>.mdx`;② `blog/registry.ts` 注册;③ `posts.ts` 登记元数据;④ 需要内链则 `related.ts` 登记。只有写了正文的语言会出现对应 URL(其余语言自动不生成)。
 
 **新增手写模板**:`templates.ts` 加一项(样式 + en 范文必填,其他语言进 `extra-locales.ts`),页面/sitemap 自动覆盖。
 
-**新增语言**:`i18n/routing.ts` locales + `LOCALE_LABELS`;新增 `messages/<lc>.json`;补齐 content 各处该语言条目(可缺省回退 en);Playwright 的 locale 固定值如受影响需同步。
+**新增语言**:2026-11-08 起站点 en-only,不再新增语言。如未来恢复多语言,从 git 历史找回 8 语种基建(`git log -- src/i18n/routing.ts`),并同步移除 next.config.ts 的 locale 308 规则。
 
 **新增字体**:TTF 放 `fonts-src/` → `npm run fonts` → `FONTS` 加项(css 栈)→ `lib/fonts.ts` 的 ASYNC_FONT_CSS 加 `/fonts/<id>/result.css`。**两处都要加**,只加 FONTS 会导致 @font-face 不加载(见 §9 已知问题)。
 

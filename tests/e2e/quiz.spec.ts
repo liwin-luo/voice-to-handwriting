@@ -1,9 +1,8 @@
 import { test, expect } from "@playwright/test";
 
-// 中间件按 Accept-Language 协商无前缀 URL(默认语言 en 无前缀),
-// 所以英文用例把 context locale 设为 en,中文用例显式走 /zh 前缀。
-test.describe("英文版", () => {
-  test.use({ locale: "en" });
+// 站点 en-only(2026-11-08),locale 固定 en-US 避免中间件按 Accept-Language 协商。
+test.describe("en-only", () => {
+  test.use({ locale: "en-US" });
 
   test("quiz 全流程:开始 → 12 题作答 → 结果卡与练字链接", async ({ page }) => {
     await page.goto("/handwriting-personality-quiz");
@@ -41,16 +40,5 @@ test.describe("英文版", () => {
     await expect(page.getByText("Question 2 of 12").first()).toBeVisible();
     await page.getByRole("button", { name: /Back/ }).click();
     await expect(page.getByText("Question 1 of 12").first()).toBeVisible();
-  });
-});
-
-test.describe("中文版", () => {
-  test.use({ locale: "zh-CN" });
-
-  test("中文版渲染完整中文内容", async ({ page }) => {
-    await page.goto("/zh/handwriting-personality-quiz");
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("手写性格测试");
-    await expect(page.getByText("笔迹分析是科学的吗?")).toBeVisible();
-    await expect(page.getByTestId("quiz-option").first()).toBeVisible();
   });
 });

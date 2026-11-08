@@ -16,21 +16,20 @@ describe("pageMetadata", () => {
   it("文章页输出 article 和发布、修改时间", () => {
     const meta = pageMetadata(
       "/blog/x",
-      "zh",
+      "en",
       { title: "T", description: "D" },
       {
-        available: ["en", "zh"],
         article: { publishedTime: "2026-10-08", modifiedTime: "2026-10-09" },
       },
     );
     expect(meta.openGraph).toMatchObject({
       type: "article",
-      url: `${SITE.url}/zh/blog/x`,
+      url: `${SITE.url}/blog/x`,
       publishedTime: "2026-10-08",
       modifiedTime: "2026-10-09",
     });
     expect(meta.alternates).toMatchObject({
-      languages: { en: `${SITE.url}/blog/x`, zh: `${SITE.url}/zh/blog/x` },
+      languages: { en: `${SITE.url}/blog/x` },
     });
     expect(meta.openGraph).not.toHaveProperty("images");
   });

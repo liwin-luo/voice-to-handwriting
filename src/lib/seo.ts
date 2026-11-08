@@ -57,9 +57,9 @@ export function pageMetadata(
   const article = options?.article;
   // 子页面一旦写 openGraph,会整段替换布局上的分享图。
   // 文章页同目录有自己的 opengraph-image,不填 images 才会用那张。
-  // 其余页面指回 [locale]/opengraph-image。
+  // 其余页面指回站点级 opengraph-image(en-only 后无语言前缀分支)。
   const brandImage = {
-    url: locale === routing.defaultLocale ? "/opengraph-image" : `/${locale}/opengraph-image`,
+    url: "/opengraph-image",
     width: 1200,
     height: 630,
     alt: "Voice to Handwriting",

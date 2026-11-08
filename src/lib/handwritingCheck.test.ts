@@ -81,16 +81,15 @@ describe("weakestCause", () => {
 });
 
 describe("buildCheckPrompt", () => {
-  it("含五项锚点,并要求证语用传入的语言", () => {
-    const prompt = buildCheckPrompt("zh");
+  it("含五项锚点,并要求证语用英文", () => {
+    const prompt = buildCheckPrompt("en");
     expect(prompt).toContain("every word is readable at a first glance");
     expect(prompt).toContain("height stays steady on the line");
     expect(prompt).toContain("feet of the letters share one line");
     expect(prompt).toContain("letters sit close inside words");
     expect(prompt).toContain("whole sample leans the same way");
     expect(prompt).toContain("summary");
-    expect(prompt).toContain("Chinese");
-    expect(buildCheckPrompt("en")).toContain("English");
+    expect(prompt).toContain("English");
   });
 });
 

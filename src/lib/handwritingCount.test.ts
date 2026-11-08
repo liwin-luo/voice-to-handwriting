@@ -88,14 +88,12 @@ describe("parseCountResponse", () => {
 });
 
 describe("buildCountPrompt", () => {
-  it("要求只转写手写,看不清写方框,不改错字不翻译,备注用传入的语言", () => {
-    const prompt = buildCountPrompt("zh");
+  it("要求只转写手写,看不清写方框,不改错字不翻译,备注用英文", () => {
+    const prompt = buildCountPrompt("en");
     expect(prompt).toContain("handwritten");
     expect(prompt).toContain("□");
     expect(prompt).toContain("Do not correct spelling");
     expect(prompt).toContain("Do not translate");
-    expect(prompt).toContain("Chinese");
-    expect(buildCountPrompt("en")).toContain("English");
-    expect(buildCountPrompt("ja")).toContain("Japanese");
+    expect(prompt).toContain("English");
   });
 });

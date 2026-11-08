@@ -1,15 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 
-const NOTE_LANG: Record<Locale, string> = {
-  en: "English",
-  es: "Spanish",
-  fr: "French",
-  de: "German",
-  pt: "Portuguese",
-  zh: "Chinese",
-  ja: "Japanese",
-  ko: "Korean",
-};
+const NOTE_LANG: Record<Locale, string> = { en: "English" };
 
 /** 看不清的记号。计数前先剥掉,本身不加进字数。 */
 export const ILLEGIBLE_MARK = "\u25A1";

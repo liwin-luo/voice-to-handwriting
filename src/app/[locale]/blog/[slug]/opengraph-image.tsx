@@ -30,14 +30,8 @@ export default async function OgImage({
   const font = readFileSync(
     path.join(process.cwd(), "src/assets/fonts/MaShanZheng-Regular.ttf"),
   );
-  const brand = locale === "zh" ? "声音转手写" : "Voice to Handwriting";
-  const taglines = {
-    zh: "说一段话,一键变成手写文稿",
-    en: "Speak a paragraph, get a handwritten page",
-    ja: "話すだけで手書きの文書に",
-    ko: "말하면 손글씨로",
-    es: "Habla y conviértelo en escritura a mano",
-  };
+  const brand = "Voice to Handwriting";
+  const taglines = { en: "Speak a paragraph, get a handwritten page" };
 
   return new ImageResponse(
     (
