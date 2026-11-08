@@ -18,6 +18,32 @@ const nextConfig: NextConfig = {
       },
       // 唯一没有英文正文就下线的文章(de 源发),旧 slug 308 回博客索引
       { source: "/blog/whatsapp-voice-note-handwriting", destination: "/blog", permanent: true },
+      // 2026-11-08 第二批功能收缩:11 个零曝光/死押注工具页 308 到最近的存活承接页(GSC 依据见 us-seo-content-plan 登记)
+      { source: "/handwriting-check", destination: "/tools", permanent: true },
+      { source: "/handwriting-count", destination: "/tools", permanent: true },
+      { source: "/handwriting-pad", destination: "/tools", permanent: true },
+      { source: "/handwriting-repeater", destination: "/cursive-worksheets", permanent: true },
+      { source: "/architect-lettering", destination: "/handwriting-worksheet-generator", permanent: true },
+      { source: "/cursive-tattoo-stencil", destination: "/cursive-font-generator", permanent: true },
+      { source: "/prewriting-strokes", destination: "/handwriting-worksheet-generator", permanent: true },
+      { source: "/signature-practice", destination: "/cursive-font-generator", permanent: true },
+      { source: "/cursive-letter-joins", destination: "/cursive-worksheets", permanent: true },
+      { source: "/daily-cursive-handwriting-practice", destination: "/cursive-worksheets", permanent: true },
+      { source: "/letter-tracing", destination: "/name-tracing", permanent: true },
+      { source: "/letter-tracing/:letter", destination: "/name-tracing?letter=:letter", permanent: true },
+      // 随工具一起下线的 10 篇纯配套文章,slug 308 回博客索引
+      ...[
+        "handwriting-repeater",
+        "daily-cursive-practice-pdf",
+        "count-words-in-handwriting",
+        "share-a-handwriting-score-card",
+        "save-a-handwritten-note",
+        "export-a-mirrored-cursive-stencil",
+        "how-to-practice-your-signature",
+        "squared-hand-lettering-practice",
+        "strokes-before-letter-tracing",
+        "how-to-join-cursive-letters",
+      ].map((slug) => ({ source: `/blog/${slug}`, destination: "/blog", permanent: true })),
       // 文章早期收录在无 /blog 前缀的路径上,外部反链仍指向旧 URL(Semrush 404 报告)
       ...[
         "xiaohongshu-handwritten-images",

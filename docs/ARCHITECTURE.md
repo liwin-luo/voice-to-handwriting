@@ -52,8 +52,6 @@
 │   ├── content/               # 数据层:posts/templates/faqs/related + MDX 注册表(§4.8)
 │   └── app/
 │       ├── sitemap.ts robots.ts icon.svg
-│       ├── api/handwriting-check/route.ts  # 智谱看图打分,照片不入库
-│       ├── api/handwriting-count/route.ts  # 智谱看图转写,字数在代码里算,照片不入库
 │       └── [locale]/          # 所有页面(§4.2),layout.tsx 挂全站壳
 ├── fonts-src/                 # 字体原始 TTF + OFL 授权
 ├── tests/e2e/                 # Playwright 冒烟
@@ -105,26 +103,16 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 printable 家族 4 变体(全表/大写/小写/黑白,`/printables/cursive-alphabet*.png|.pdf`,由 `scripts/cursive-alphabet-printables.mjs` 生成),静态区 3 张变体卡。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`(`ALPHABET_PRINTABLES`),`alphabetSheet.mjs`,`isEnOnlyTool` |
 | `/cursive-font-generator` | 手写字体预览 + 导出(13 款 OFL:4 签名体 + 4 正式花体 + 2 日常手写 + 3 印刷体。签名体只在本页,不进主工作台。PNG 透明底 / 内嵌字体 SVG / PDF) | `CursiveFontBrowser`,`fontCatalog.ts`,`cursiveSvg.ts`,`fontFace.ts`,FAQ 经 `CURSIVE_FONT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`),`CURSIVE_WORKSHEET_FAQS` |
-| `/signature-practice` | 签名练习纸。姓名按空格拆成全名 / 名 / 首字母加姓。四种签名体各一行对照,选中体下面是实线、虚线、空白。单基线。页头下拉不单列 | `SignaturePractice`,`signatureForms.ts`,`SIGNATURE_FAQS` |
+| (已下线 2026-11-08) | `/handwriting-check` `/handwriting-count` `/handwriting-pad` `/handwriting-repeater` `/architect-lettering` `/cursive-tattoo-stencil` `/prewriting-strokes` `/signature-practice` `/cursive-letter-joins` `/daily-cursive-handwriting-practice` `/letter-tracing`(含 26 子页)及配套 10 篇文章:GSC 零曝光/死押注,308 到最近存活页(映射见 next.config.ts);`src/app/api/` 整目录删除,全站回归零后端 | — |
 | `/handwriting-sentence-practice` | 成人单句练习纸。一句、四选一(大小 / 斜度 / 间距 / 印刷体),实心、虚线、三行空白。空输入画当前语言的例句。超长不画纸。左手只翻红边距;斜度时斜线反向。下载后本地记住这一句,可「再写一遍」只留三行空白。页头下拉不单列 | `SentencePractice`,`sentencePractice.ts`,`SENTENCE_PRACTICE_FAQS` |
-| `/handwriting-check` | 拉丁字母手写照片的观感分。好认加大小、贴线、间距、斜度,1–5,无总分。并列时按贴线、大小、间距、斜度取第一项。「超越 N%」是该分数的固定标签,不是人数。能分析出分数就在浏览器拼分享卡,四选一框(盖章、证书、纸面、简约),下载用当前框,PNG 不含右侧解析。盖章、证书、纸面在照片角上有认证章。宽屏时卡片与右侧解析同高。缺项留空。不满两行可能只留好认。解析是可选中的文字。照片经 `/api/handwriting-check` 送智谱后丢弃。页头下拉不单列 | `HandwritingCheck`,`handwritingCheck.ts`,`HANDWRITING_CHECK_FAQS` |
-| `/handwriting-count` | 手写照片转成文字再计数。汉字、假名、谚文按字,拉丁文按单词和字母,数码和标点分开。看不清的地方是 □,不计入。文字可改,数字在浏览器里重算。每天 3 次,和评分分开。照片经 `/api/handwriting-count` 送智谱后丢弃。页头下拉不单列 | `HandwritingCount`,`handwritingCount.ts`,`glmVision.ts`,`HANDWRITING_COUNT_FAQS` |
 | `/number-tracing` | 数字描红。1–10 或 1–20,每个数字单独一页(首行实心,其余虚线)。Patrick Hand,行高档。页头下拉不单列 | `TracingGenerator`(`perName`,`defaultOneEach`,`presets`),`practicePresets.ts`,`NUMBER_TRACING_FAQS` |
-| `/prewriting-strokes` | 学前运笔。直线组(向下、横线、斜线)或曲线组(圆、波浪、拱)。每种实线、虚线、空白。页头下拉不单列 | `PrewritingSheet`,`prewritingStrokes.ts`,`PREWRITING_FAQS` |
-| `/cursive-letter-joins` | 连笔字母对。同方向或中途转向,一对一页。Sacramento。页头下拉不单列 | `TracingGenerator`(`rowLabels="lines"`),`CURSIVE_JOIN_GROUPS`,`CURSIVE_JOIN_FAQS` |
-| `/cursive-tattoo-stencil` | 连笔转印稿。短句,白底黑字,默认同左右镜像。签名体加正式花体里带独立样式表的六款。只出 PNG。页头下拉不单列 | `TattooStencil`,`FONT_CATALOG`,`TATTOO_STENCIL_FAQS` |
-| `/architect-lettering` | 建筑字体练习纸。Architects Daughter(OFL,页内单独加载,不进主工作台字体表)。大写三行加 0–9,实线、虚线、空白。页头下拉不单列 | `ArchitectSheet`,`public/fonts/architectsdaughter`,`ARCHITECT_FAQS` |
-| `/daily-cursive-handwriting-practice` | 每日连笔练习页。页脚站点水印默认开,下载按钮上方可关。墨色改练习字,描红同色变浅,纸底可改 | `DailyCursivePracticeGenerator`,`WatermarkSwitch`,`DAILY_CURSIVE_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、A–Z 两行导航条(52 页互链)、练习词;本字母练习条 PDF 由 `LetterSheetDownload` 客户端导出,练习词链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=`;挂 BreadcrumbList(首页→/cursive→本课) | `cursiveLetters.ts` + `cursiveLettersRest.ts`,`LetterSheetDownload` |
 | `/cursive/number/[number]` | 连笔数字课(en-only,0–9 共 10 页)。结构与字母课平行(范字/步骤/易错/0–9 导航条/练习词/练习条 PDF);数字无入笔数据,练习条无起笔点,页内 fontNote 写明;CTA 链 `/blog/numbers-in-cursive`;hub 在 `/cursive` 页字母矩阵下方的 Numbers 网格,文章 `numbers-in-cursive` 正文回链 | `cursiveNumbers.ts`(复用 `LetterCopy` 类型),`CursiveLettersHub` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
 | `/handwriting-worksheet-generator` | 通用手写练习纸(任意词表/一行一句,印刷体)。三线格加 Pre-K/K/Grade 2 三档行高;打开预填当前语言的星期词表;默认字体随语言(`defaultFontId`),英文区 Patrick Hand。`?words=` 预填沿用。页头下拉不单列 | `TracingGenerator`(`inputLabel`,`worksheetStarterLines`),`HANDWRITING_WORKSHEET_FAQS` |
-| `/letter-tracing` · `/letter-tracing/[letter]` | 印刷体单字母描红(**en-only**,a–z 共 26 页 + hub)。每页落笔、走笔、邻字母差别不同。首屏是实心示例行 + 虚线行(SVG 文本),PDF 在本页下载。改行高或写整词仍走 `/name-tracing?letter=`。收在 /tools「练习纸与打印」,非英文不显示,页头下拉不单列。Hub 用 `LETTER_HUB_FAQS`,单字母页用 `letterFaqs` | `letterTracing.ts`,`LetterTraceRows`,`LetterTracingDownload`,`ToolFaq` |
 | `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔,另加 narrow ruled(1/4 英寸)、large print(1/2 英寸)、graph paper(1/4 英寸方格)。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接。每种纸有可抓取的 US Letter PDF(`/printables/<slug>.pdf`,`scripts/paper-printables.mjs`)。Hub 用 `PAPER_FAQS`;子页用 `paperKindFaqs` | `PaperGenerator`(`lockType`),`paperSheet.mjs`,`paperKinds.ts`,`paperKindFaqs.ts` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
-| `/handwriting-repeater` | 循环书写演示(笔尖跟随 + 循环 GIF)。墨色和纸底可改,GIF 跟着当前颜色 | `HandwritingRepeater`,`REPEATER_FAQS` |
-| `/handwriting-pad` | 在线手写板。一屏纸,手指/鼠标/触控笔书写,空白/横线/方格,导出 PNG。笔迹存在 `vth-pad`。页头下拉不单列。版式与其他工具页相同(标题、分享、说明、FAQ)。全屏让纸面盖住页头 | `HandwritingPad`,`pad.ts`,`PAD_FAQS` |
 | `/handwriting-workbook-generator` | 成人练习册(封面+字母/词/句页,整本 PDF,最多 100 词)。词表与拼写页共用 Dolch / Fry,Fry 前 100 整表可画。墨色改示例和封面标题,描红同色变浅,纸底可改 | `HandwritingWorkbookGenerator`,`spellingLists.ts`,`WORKBOOK_FAQS` |
 | `/handwriting-personality-quiz` | 笔迹性格测验(娱乐向)。打开即第一题的三张笔迹。结果卡用该档案的手写字体写档案名,无 emoji。主按钮按性格档案打开 `/?font=` | `HandwritingQuiz`,`QUIZ_FAQS` |
 | `/doctor-handwriting-generator` | Doctor 手写体(rx 处方笺纸张,gag)。仿真度在样式区最上方(预设 90%),字体、纸张、墨水收进折叠 | `ToolWorkspace` `layout="doctor"`,`DOCTOR_FAQS` |
@@ -173,7 +161,6 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 - 原始 TTF 在 `fonts-src/`(OFL 授权),`npm run fonts` 用 cn-font-split 切片到 `public/fonts/<id>/result.css`。
 - 加载策略(`lib/fonts.ts` + `layout.tsx` + `FontStylesheets.tsx`):默认字体 mashanzheng **阻塞**加载(首屏字形正确),其余 11 款 preload + 水合后注入,不阻塞首屏。
 - Canvas 生成器里用字体前需 `document.fonts.load` 等待切片就绪(参考 `TracingGenerator`)。
-- `Architects Daughter` 只在 `/architect-lettering` 用 `<link>` 加载 `public/fonts/architectsdaughter/result.css`。不进 `FONTS`,也不进 `FONT_CATALOG`(目录长度测试按签名体/正式体样式表计数)。
 
 ### 4.7 导出与分享
 
@@ -223,11 +210,6 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 | `NEXT_PUBLIC_ICP` | 配置后页脚渲染备案链接 |
 | `NEXT_PUBLIC_ADSENSE_CLIENT` | AdSense client id,同时控制 ConsentBanner 显示 |
 | `NEXT_PUBLIC_SENTRY_DSN` | Sentry,不配则关闭 |
-| `TEXT_API_KEY` | 手写照片评分和手写计数的智谱密钥。不配则 `/api/handwriting-check` 与 `/api/handwriting-count` 不可用 |
-| `TEXT_BASE_URL` | 智谱接口,默认 `https://open.bigmodel.cn/api/coding/paas/v4` |
-| `TEXT_MODEL` | 默认 `glm-5.3-flash`。`custom/` 前缀会去掉 |
-
-评分和计数各每天 3 次,分别记在浏览器 localStorage(`vth-handwriting-check`、`vth-handwriting-count`),按本机日历日切。接口不计数。
 
 ## 6. 本地开发
 
@@ -242,7 +224,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 ## 7. 部署
 
-推送 main → Vercel 自动部署。页面仍是 SSG。`/api/handwriting-check` 与 `/api/handwriting-count` 调用智谱看手写照片,一个打分,一个转写后由代码计数。照片不入库。生产域名 `https://voicetohandwriting.online`。部署新页面后如需加速收录,跑 `npm run indexnow <url>`(等密钥文件已在线上时;全量提交见 §4.9 注意)。
+推送 main → Vercel 自动部署。全站 SSG、零后端(2026-11-08 起无任何 API 路由)。生产域名 `https://voicetohandwriting.online`。部署新页面后如需加速收录,跑 `npm run indexnow <url>`(等密钥文件已在线上时;全量提交见 §4.9 注意)。
 
 ## 8. 常见任务接线指南
 

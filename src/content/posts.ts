@@ -367,20 +367,6 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
-    slug: "handwriting-repeater",
-    author: "theo-lindgren",
-    date: "2026-10-08",
-    updated: "2026-10-08",
-    image: "/blog/handwriting-repeater.png",
-    i18n: {
-      en: {
-        title: "Handwriting repeater: loop a sentence until the strokes stick",
-        description:
-          "Free handwriting repeater settings: Patrick Hand, trace guide on, loop on. Watch the pen, then download a looping GIF of one pass.",
-      },
-    },
-  },
-  {
     slug: "how-many-sheets-handwriting",
     author: "theo-lindgren",
     date: "2026-10-08",
@@ -501,19 +487,6 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
-    slug: "how-to-practice-your-signature",
-    author: "wes-morales",
-    date: "2026-10-10",
-    updated: "2026-10-10",
-    i18n: {
-      en: {
-        title: "How to practice your signature for seven days, one script",
-        description:
-          "How to practice your signature: one short form, one script, fifteen minutes a day. The sheet settings, the seven-day drill, and what it will not sign for you.",
-      },
-    },
-  },
-  {
     slug: "tracing-numbers-by-age",
     author: "clara-hartley",
     date: "2026-10-10",
@@ -524,48 +497,6 @@ const CURSIVE_POSTS: Post[] = [
         title: "How to teach number tracing by age, one number a night",
         description:
           "How to teach number tracing by age: ages 3 to 4 stay on lines, ages 5 to 6 trace one numeral a night, and age 7 copies with the model covered. Use the table.",
-      },
-    },
-  },
-  {
-    slug: "strokes-before-letter-tracing",
-    author: "clara-hartley",
-    date: "2026-10-10",
-    updated: "2026-10-10",
-    image: "/blog/strokes-before-letter-tracing.png",
-    i18n: {
-      en: {
-        title: "How to practice strokes before a child traces letters",
-        description:
-          "How to practice strokes before a child traces letters: lines at 3 to 4, a circle at 5 to 6, then one letter. A five-minute order for tomorrow morning.",
-      },
-    },
-  },
-  {
-    slug: "how-to-join-cursive-letters",
-    author: "clara-hartley",
-    date: "2026-10-10",
-    updated: "2026-10-27",
-    image: "/blog/how-to-join-cursive-letters.png",
-    i18n: {
-      en: {
-        title: "How two cursive letters connect, same way or a turn",
-        description:
-          "How two cursive letters connect: th keeps traveling the same way, ai turns in the middle. One pair per page. If the pencil lifts, the join did not happen.",
-      },
-    },
-  },
-  {
-    slug: "export-a-mirrored-cursive-stencil",
-    author: "theo-lindgren",
-    date: "2026-10-10",
-    updated: "2026-10-10",
-    image: "/blog/export-a-mirrored-cursive-stencil.png",
-    i18n: {
-      en: {
-        title: "How to export a black mirrored stencil for transfer",
-        description:
-          "How to export a black mirrored stencil for transfer: a short phrase, mirror on, black on white. The settings from a desktop Chrome check on October 10, 2026.",
       },
     },
   },
@@ -609,20 +540,6 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
-    slug: "squared-hand-lettering-practice",
-    author: "wes-morales",
-    date: "2026-10-10",
-    updated: "2026-10-10",
-    image: "/blog/squared-hand-lettering-practice.png",
-    i18n: {
-      en: {
-        title: "Practice squared handwriting for fifteen minutes a day",
-        description:
-          "Practice squared handwriting for fifteen minutes a day: check slant and baseline, then one row of Architects Daughter. Readable capitals take four to six weeks.",
-      },
-    },
-  },
-  {
     slug: "print-handwritten-letters-and-envelopes",
     author: "theo-lindgren",
     date: "2026-10-09",
@@ -646,48 +563,6 @@ const CURSIVE_POSTS: Post[] = [
         title: "How to fix one handwriting problem",
         description:
           "How to fix one handwriting problem: size, slant, spacing, or print. One sentence, three blank lines, then stop. The model is a font, not a score.",
-      },
-    },
-  },
-  {
-    slug: "save-a-handwritten-note",
-    author: "theo-lindgren",
-    date: "2026-10-12",
-    updated: "2026-10-12",
-    image: "/blog/save-a-handwritten-note.png",
-    i18n: {
-      en: {
-        title: "How to save a handwritten note from your phone",
-        description:
-          "Write on one sheet, download handwriting-pad.png, and reload. The strokes stay in the browser until you clear them. Free, no signup.",
-      },
-    },
-  },
-  {
-    slug: "count-words-in-handwriting",
-    author: "theo-lindgren",
-    date: "2026-10-13",
-    updated: "2026-10-13",
-    image: "/blog/count-words-in-handwriting.png",
-    i18n: {
-      en: {
-        title: "How to count words in handwriting",
-        description:
-          "How to count words in handwriting: upload one photo, then read the words, letters, and digits. Two Bradley Hand lines came back as 7 words. Free, no signup.",
-      },
-    },
-  },
-  {
-    slug: "share-a-handwriting-score-card",
-    author: "theo-lindgren",
-    date: "2026-10-13",
-    updated: "2026-10-13",
-    image: "/blog/share-a-handwriting-score-card.png",
-    i18n: {
-      en: {
-        title: "How to share a handwriting score card",
-        description:
-          "How to share a handwriting score card: pick Seal, Certificate, Paper, or Plain, then download the PNG. Free, no signup. The notes beside the card stay selectable text.",
       },
     },
   },
@@ -754,20 +629,6 @@ const CURSIVE_POSTS: Post[] = [
         title: "Handwriting personality test: pick the shapes you write",
         description:
           "A free handwriting personality test with no upload. Eight shape answers, a fictional label, and one drill to bring back to a practice sheet.",
-      },
-    },
-  },
-  {
-    slug: "daily-cursive-practice-pdf",
-    author: "wes-morales",
-    date: "2026-10-20",
-    updated: "2026-10-20",
-    image: "/blog/daily-cursive-practice-pdf.png",
-    i18n: {
-      en: {
-        title: "Daily cursive handwriting practice PDF: fifteen minutes, then stop",
-        description:
-          "A free daily handwriting practice PDF: switch to Adults, print today's cursive sheet, and stop at fifteen minutes. The settings, one real page, and what the file will not do.",
       },
     },
   },

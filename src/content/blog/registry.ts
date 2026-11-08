@@ -26,7 +26,6 @@ import wden from "./what-does-your-handwriting-say-about-you.en.mdx";
 import bvtEn from "./handwriting-vs-typing-brain.en.mdx";
 import hiyEn from "./how-to-improve-your-handwriting.en.mdx";
 import swtEn from "./sight-word-tracing-worksheets.en.mdx";
-import hrpEn from "./handwriting-repeater.en.mdx";
 import hwbEn from "./handwriting-workbook.en.mdx";
 import hshEn from "./how-many-sheets-handwriting.en.mdx";
 import ctgEn from "./cursive-text-generator.en.mdx";
@@ -38,19 +37,11 @@ import novEn from "./november-in-cursive.en.mdx";
 import clbEn from "./cursive-laws-by-state.en.mdx";
 import bcfEn from "./best-cursive-fonts.en.mdx";
 import phlEn from "./print-handwritten-letters-and-envelopes.en.mdx";
-import hpsEn from "./how-to-practice-your-signature.en.mdx";
 import tnaEn from "./tracing-numbers-by-age.en.mdx";
-import sblEn from "./strokes-before-letter-tracing.en.mdx";
-import hjcEn from "./how-to-join-cursive-letters.en.mdx";
-import emsEn from "./export-a-mirrored-cursive-stencil.en.mdx";
-import shlEn from "./squared-hand-lettering-practice.en.mdx";
 import slwEn from "./spelling-list-word-work.en.mdx";
 import cnbEn from "./color-a-name-before-tracing.en.mdx";
 import ocgEn from "./one-character-in-the-grid.en.mdx";
 import pohEn from "./practice-one-handwriting-problem.en.mdx";
-import shnEn from "./save-a-handwritten-note.en.mdx";
-import shscEn from "./share-a-handwriting-score-card.en.mdx";
-import cwihEn from "./count-words-in-handwriting.en.mdx";
 import hwsEn from "./handwriting-worksheets.en.mdx";
 import nicEn from "./numbers-in-cursive.en.mdx";
 import gpmEn from "./graphisme-maternelle.en.mdx";
@@ -58,7 +49,6 @@ import gpmEn from "./graphisme-maternelle.en.mdx";
 
 // 18 篇原仅英文文章的 7 语言补全(zh/ja/ko/de/fr/es/pt)
 import qvhEn from "./quiet-voice-before-handwriting.en.mdx";
-import dcpEn from "./daily-cursive-practice-pdf.en.mdx";
 import hptEn from "./handwriting-personality-test.en.mdx";
 import bldEn from "./bubble-letters-for-a-display-name.en.mdx";
 
@@ -90,7 +80,6 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "handwriting-vs-typing-brain": { en: bvtEn },
   "how-to-improve-your-handwriting": { en: hiyEn },
   "sight-word-tracing-worksheets": { en: swtEn },
-  "handwriting-repeater": { en: hrpEn },
   "handwriting-workbook": { en: hwbEn },
   "how-many-sheets-handwriting": { en: hshEn },
   "cursive-text-generator": { en: ctgEn },
@@ -102,24 +91,15 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "cursive-laws-by-state": { en: clbEn },
   "best-cursive-fonts": { en: bcfEn },
   "print-handwritten-letters-and-envelopes": { en: phlEn },
-  "how-to-practice-your-signature": { en: hpsEn },
   "tracing-numbers-by-age": { en: tnaEn },
-  "strokes-before-letter-tracing": { en: sblEn },
-  "how-to-join-cursive-letters": { en: hjcEn },
-  "export-a-mirrored-cursive-stencil": { en: emsEn },
-  "squared-hand-lettering-practice": { en: shlEn },
   "spelling-list-word-work": { en: slwEn },
   "color-a-name-before-tracing": { en: cnbEn },
   "one-character-in-the-grid": { en: ocgEn },
   "practice-one-handwriting-problem": { en: pohEn },
-  "save-a-handwritten-note": { en: shnEn },
-  "share-a-handwriting-score-card": { en: shscEn },
-  "count-words-in-handwriting": { en: cwihEn },
   "handwriting-worksheets": { en: hwsEn },
   "numbers-in-cursive": { en: nicEn },
   "graphisme-maternelle": { en: gpmEn },
   "quiet-voice-before-handwriting": { en: qvhEn },
-  "daily-cursive-practice-pdf": { en: dcpEn },
   "handwriting-personality-test": { en: hptEn },
   "bubble-letters-for-a-display-name": { en: bldEn },
 };

@@ -1,8 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { FAQ_HUB } from "./faqHub";
-import { CURSIVE_FAQS, FAQ_ITEMS, REPEATER_FAQS, getLocalizedFaqs } from "./faqs";
+import { CURSIVE_FAQS, FAQ_ITEMS, getLocalizedFaqs } from "./faqs";
 import { CURSIVE_WORKSHEET_FAQS, TEMPLATE_FAQS, templateDetailFaqs } from "./pageFaqs";
-import { LETTER_HUB_FAQS } from "./letterTracing";
 import { getTemplate, getTemplateMeta } from "./templates";
 import { routing, type Locale } from "@/i18n/routing";
 import { paperKindFaqs } from "./paperKindFaqs";
@@ -12,10 +11,6 @@ describe("tool FAQ order and page ownership", () => {
     const cursive = getLocalizedFaqs(CURSIVE_FAQS, "en");
     expect(cursive[0].q).toMatch(/fonts/i);
     expect(cursive.at(-1)?.q).toMatch(/free/i);
-    const repeater = getLocalizedFaqs(REPEATER_FAQS, "en");
-    expect(repeater[0].q).toMatch(/animation/i);
-    expect(repeater[1].q).toMatch(/watch letters/i);
-    expect(repeater.at(-1)?.q).toMatch(/free/i);
   });
 
   it("gives each paper its own questions", () => {
@@ -36,8 +31,6 @@ describe("tool FAQ order and page ownership", () => {
   });
 
   it("gives worksheets, the template index, and each template their own questions", () => {
-    expect(LETTER_HUB_FAQS).toHaveLength(3);
-    expect(LETTER_HUB_FAQS[2].link?.href).toBe("/name-tracing");
     for (const locale of routing.locales) {
       const sheets = getLocalizedFaqs(CURSIVE_WORKSHEET_FAQS, locale as Locale);
       const library = getLocalizedFaqs(TEMPLATE_FAQS, locale as Locale);

@@ -92,12 +92,6 @@ export default async function HomePage({
         >
           {t("cursiveWorksheetsLink")}
         </Link>
-        <Link
-          href="/handwriting-repeater"
-          className="text-accent underline underline-offset-2 hover:text-accent-strong"
-        >
-          {t("repeaterLink")}
-        </Link>
         {showSantaLinks && (
           <>
             <Link

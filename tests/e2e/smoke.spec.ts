@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("输入文字后渲染手写页并可导出", async ({ page }) => {
   await page.goto("/");
   await page
-    .getByPlaceholder(/What you say will appear here/)
+    .getByPlaceholder(/Your speech appears here/)
     .fill("Hello world, this is a test line.\nSecond line with 123.");
   await expect(page.locator(".paper").first()).toBeVisible();
   await expect(page.locator(".paper [data-idx]").first()).toBeVisible();
@@ -15,5 +15,5 @@ test("旧语言前缀 308 回英文版", async ({ page }) => {
   const response = await page.goto("/zh");
   expect(response?.status()).toBe(200); // 跟随重定向后的最终页
   expect(page.url()).not.toContain("/zh");
-  await expect(page.getByRole("heading", { name: "Voice to Handwriting" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Speak or type, and get a handwritten page" })).toBeVisible();
 });

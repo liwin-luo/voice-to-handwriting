@@ -9,8 +9,11 @@ test.describe("en-only", () => {
     await expect(page.getByRole("heading", { name: "Write & generate" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Practice sheets & printing" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Just for fun" })).toBeVisible();
-    // 英文全量:6 写字 + 12 练习(含 2 个 en-only)+ 2 趣味
+    // 2026-11 两轮收缩后:17 个存活工具卡(其中 3 张同时是组主卡)= 20 条链接
     await expect(page.getByRole("main").getByRole("link")).toHaveCount(20);
+    for (const cut of ["/handwriting-check", "/handwriting-count", "/handwriting-pad", "/handwriting-repeater", "/letter-tracing", "/daily-cursive-handwriting-practice"]) {
+      await expect(page.getByRole("main").locator(`a[href="${cut}"]`)).toHaveCount(0);
+    }
     await expect(page.getByRole("main").getByRole("link", { name: "Printable Letters" })).toBeVisible();
     await expect(page.getByRole("main").getByRole("link", { name: "Handwriting Quiz" })).toBeVisible();
   });

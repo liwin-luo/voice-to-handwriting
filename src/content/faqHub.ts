@@ -35,14 +35,6 @@ export const FAQ_HUB: FaqItem[] = [
       } },
   },
   {
-    id: "hub-watch",
-    i18n: { en: {
-        q: "Where can I watch letters being written?",
-        a: "The handwriting repeater uncovers each letter from left to right and loops. It is a font animation, not textbook stroke order, and cursive entry strokes are not marked.",
-        link: { href: "/handwriting-repeater", label: "Handwriting repeater" },
-      } },
-  },
-  {
     id: "hub-quiz",
     i18n: { en: {
         q: "Where is the handwriting personality quiz?",
@@ -64,14 +56,6 @@ export const FAQ_HUB: FaqItem[] = [
         q: "Where do I turn speech into handwriting?",
         a: "The homepage does that: speak or type, then export PNG or PDF. Microphone troubleshooting and audio-file formats are answered there, not on this index.",
         link: { href: "/", label: "Voice to handwriting" },
-      } },
-  },
-  {
-    id: "hub-pad",
-    i18n: { en: {
-        q: "Where do I write with a finger or stylus and save a PNG?",
-        a: "The handwriting notepad is one screen. The image stays on this device and is not uploaded.",
-        link: { href: "/handwriting-pad", label: "Online handwriting notepad" },
       } },
   },
 ];

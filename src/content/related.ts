@@ -8,32 +8,21 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/printable-paper": "printablePaper",
   "/name-tracing": "nameTracing",
   "/handwriting-worksheet-generator": "worksheet",
-  "/letter-tracing": "letterTracing",
   "/cursive": "cursive",
   "/cursive-text-generator": "cursiveText",
   "/cursive-alphabet": "cursiveAlphabet",
   "/cursive-font-generator": "cursiveFont",
   "/cursive-worksheets": "cursiveWorks",
-  "/signature-practice": "signaturePractice",
   "/number-tracing": "numberTracing",
-  "/prewriting-strokes": "prewriting",
-  "/cursive-letter-joins": "cursiveJoins",
-  "/cursive-tattoo-stencil": "tattooStencil",
-  "/architect-lettering": "architectLetter",
   "/word-work": "wordWork",
   "/writing-practice": "writingPractice",
   "/name-coloring": "coloring",
-  "/daily-cursive-handwriting-practice": "dailyCursive",
   "/handwriting-personality-quiz": "quiz",
   "/doctor-handwriting-generator": "doctor",
   "/handwriting-workbook-generator": "workbook",
-  "/handwriting-repeater": "repeater",
   "/handwriting-page-calculator": "pageCalc",
   "/printable-handwritten-letters": "bulkLetters",
   "/handwriting-sentence-practice": "sentencePractice",
-  "/handwriting-check": "handwritingCheck",
-  "/handwriting-count": "handwritingCount",
-  "/handwriting-pad": "handwritingPad",
 };
 
 export interface RelatedConfig {
@@ -50,68 +39,48 @@ export interface RelatedConfig {
 export const RELATED: Record<string, RelatedConfig> = {
   // cursive 集群:全部链向 /cursive-worksheets(原站内 0 反链)
   "cursive-practice-worksheets": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-worksheets", "/cursive"],
     posts: ["cursive-alphabet-chart", "how-to-write-in-cursive", "name-tracing-generator"],
   },
   "cursive-alphabet-chart": {
-    tools: ["/cursive-alphabet", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-alphabet", "/cursive-worksheets", "/cursive"],
     posts: ["cursive-practice-worksheets", "how-to-write-in-cursive", "cursive-name-signature"],
   },
   "how-to-teach-cursive-kids": {
-    tools: ["/cursive-letter-joins", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-worksheets", "/cursive"],
     posts: ["is-cursive-still-taught", "cursive-vs-print", "cursive-alphabet-chart"],
   },
   "cursive-vs-print": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-worksheets", "/cursive"],
     posts: ["how-to-write-in-cursive", "cursive-name-signature", "is-cursive-still-taught"],
   },
   "how-to-write-in-cursive": {
-    tools: ["/cursive-alphabet", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-alphabet", "/cursive-worksheets", "/cursive"],
     posts: ["cursive-alphabet-chart", "cursive-practice-worksheets", "how-to-improve-handwriting-adults"],
   },
   "is-cursive-still-taught": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets", "/cursive"],
+    tools: ["/cursive-worksheets", "/cursive"],
     posts: ["how-to-teach-cursive-kids", "cursive-vs-print", "cursive-alphabet-chart"],
   },
   "cursive-name-signature": {
-    tools: ["/signature-practice", "/cursive", "/cursive-worksheets"],
-    posts: ["how-to-practice-your-signature", "cursive-alphabet-chart", "how-to-improve-handwriting-adults"],
-  },
-  "how-to-practice-your-signature": {
-    tools: ["/signature-practice", "/cursive-font-generator", "/cursive"],
-    posts: ["cursive-name-signature", "how-to-improve-handwriting-adults", "best-cursive-fonts"],
+    tools: ["/cursive", "/cursive-worksheets"],
+    posts: ["cursive-alphabet-chart", "how-to-improve-handwriting-adults"],
   },
   "tracing-numbers-by-age": {
-    tools: ["/number-tracing", "/prewriting-strokes", "/name-tracing"],
-    posts: ["strokes-before-letter-tracing", "name-tracing-generator", "kindergarten-handwriting-paper"],
-  },
-  "strokes-before-letter-tracing": {
-    tools: ["/prewriting-strokes", "/number-tracing", "/letter-tracing"],
-    posts: ["tracing-numbers-by-age", "name-tracing-generator", "handwriting-practice-struggling-writers"],
-  },
-  "how-to-join-cursive-letters": {
-    tools: ["/cursive-letter-joins", "/cursive-worksheets", "/cursive-alphabet"],
-    posts: ["how-to-teach-cursive-kids", "cursive-alphabet-chart", "how-to-write-in-cursive"],
-  },
-  "export-a-mirrored-cursive-stencil": {
-    tools: ["/cursive-tattoo-stencil", "/cursive-font-generator", "/signature-practice"],
-    posts: ["best-cursive-fonts", "how-to-practice-your-signature", "cursive-name-signature"],
-  },
-  "squared-hand-lettering-practice": {
-    tools: ["/architect-lettering", "/printable-paper", "/handwriting-workbook-generator"],
-    posts: ["how-to-improve-handwriting-adults", "how-to-practice-your-signature", "free-printable-lined-paper"],
+    tools: ["/number-tracing", "/name-tracing"],
+    posts: ["name-tracing-generator", "kindergarten-handwriting-paper"],
   },
   "spelling-list-word-work": {
     tools: ["/word-work", "/name-tracing", "/handwriting-workbook-generator"],
-    posts: ["sight-word-tracing-worksheets", "copywork-generator", "strokes-before-letter-tracing"],
+    posts: ["sight-word-tracing-worksheets", "copywork-generator"],
   },
   "color-a-name-before-tracing": {
-    tools: ["/name-coloring", "/name-tracing", "/letter-tracing"],
-    posts: ["name-tracing-generator", "strokes-before-letter-tracing", "tracing-numbers-by-age"],
+    tools: ["/name-coloring", "/name-tracing"],
+    posts: ["name-tracing-generator", "tracing-numbers-by-age"],
   },
   "one-character-in-the-grid": {
     tools: ["/writing-practice", "/name-tracing", "/printable-paper"],
-    posts: ["name-tracing-generator", "kindergarten-handwriting-paper", "strokes-before-letter-tracing"],
+    posts: ["name-tracing-generator", "kindergarten-handwriting-paper"],
   },
 
   // voice 核心集群:互相导流 + /templates 枢纽
@@ -151,7 +120,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["free-printable-lined-paper", "name-tracing-generator", "handwriting-practice-struggling-writers"],
   },
   "name-tracing-generator": {
-    tools: ["/number-tracing", "/name-tracing", "/letter-tracing"],
+    tools: ["/number-tracing", "/name-tracing"],
     posts: ["kindergarten-handwriting-paper", "cursive-name-signature", "cursive-practice-worksheets"],
   },
 
@@ -172,7 +141,7 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // cursive 立法数据簇:is-cursive-still-taught 的深度数据页,吃 "cursive laws by state" 词簇
   "cursive-laws-by-state": {
-    tools: ["/cursive-worksheets", "/daily-cursive-handwriting-practice", "/printable-paper"],
+    tools: ["/cursive-worksheets", "/printable-paper"],
     posts: ["is-cursive-still-taught", "how-to-teach-cursive-kids", "cursive-sentences-to-practice"],
   },
   "letter-to-santa-template": {
@@ -200,21 +169,6 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/handwriting-sentence-practice"],
     posts: ["how-to-improve-handwriting-adults"],
   },
-  // 在线手写笔记:枢纽 /handwriting-pad。这篇教把这一屏存成 PNG。簇里还没有第二篇,尾部不拿别的簇凑数。
-  "save-a-handwritten-note": {
-    tools: ["/handwriting-pad"],
-    posts: [],
-  },
-  // 手写照片评分:枢纽 /handwriting-check。这篇教选框并下载分享卡。簇里还没有第二篇,尾部不拿别的簇凑数。
-  "share-a-handwriting-score-card": {
-    tools: ["/handwriting-check"],
-    posts: [],
-  },
-  // 手写计数:枢纽 /handwriting-count。这篇教怎么数一张手写里的单词。簇里还没有第二篇,尾部不拿别的簇凑数。
-  "count-words-in-handwriting": {
-    tools: ["/handwriting-count"],
-    posts: [],
-  },
   "handwriting-practice-struggling-writers": {
     tools: ["/name-tracing", "/printable-paper"],
     posts: ["kindergarten-handwriting-paper", "how-to-improve-handwriting-adults", "free-printable-lined-paper"],
@@ -228,11 +182,11 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // 上升词两篇:脑科学 Breakout 簇 + 练好字攻略簇,互链并导流 workbook/练习工具
   "handwriting-vs-typing-brain": {
-    tools: ["/handwriting-workbook-generator", "/daily-cursive-handwriting-practice", "/printable-paper"],
+    tools: ["/handwriting-workbook-generator", "/printable-paper"],
     posts: ["how-to-improve-your-handwriting", "how-to-improve-handwriting-adults", "is-cursive-still-taught"],
   },
   "how-to-improve-your-handwriting": {
-    tools: ["/handwriting-workbook-generator", "/daily-cursive-handwriting-practice", "/cursive-worksheets", "/printable-paper"],
+    tools: ["/handwriting-workbook-generator", "/cursive-worksheets", "/printable-paper"],
     posts: ["handwriting-vs-typing-brain", "how-to-improve-handwriting-adults", "handwriting-practice-struggling-writers"],
   },
 
@@ -249,10 +203,6 @@ export const RELATED: Record<string, RelatedConfig> = {
   },
 
   // 循环书写演示:文章教参数,导流 repeater;练习册与描红承接「要打印一整张」
-  "handwriting-repeater": {
-    tools: ["/handwriting-repeater", "/name-tracing", "/handwriting-workbook-generator"],
-    posts: ["handwriting-workbook", "how-to-improve-your-handwriting", "sight-word-tracing-worksheets"],
-  },
 
   // 手写用纸页数:数字估算与贴正文预览,导流计算器与空白纸
   "how-many-sheets-handwriting": {
@@ -274,7 +224,7 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // cursive 句子簇:句子级与 cursive-practice-worksheets(字母/单词级)拆开;描红引擎吃整句
   "cursive-sentences-to-practice": {
-    tools: ["/name-tracing", "/cursive", "/daily-cursive-handwriting-practice", "/cursive-worksheets"],
+    tools: ["/name-tracing", "/cursive", "/cursive-worksheets"],
     posts: ["cursive-practice-worksheets", "how-to-teach-cursive-kids", "cursive-alphabet-chart"],
   },
 
@@ -303,18 +253,11 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["cursive-sentences-to-practice", "cursive-alphabet-chart", "tracing-numbers-by-age"],
   },
 
-  // graphisme/pré-écriture 簇:FR 源发(trends graphisme 词),与 strokes-before-letter-tracing
-  // 是同簇两桌的姊妹篇;法国读者尾部相关文当前只有 en 邻居,不拿别的簇凑数
+  // graphisme/pré-écriture 簇:FR 源发(trends graphisme 词)。姊妹篇 strokes-before-letter-tracing
+  // 已随 prewriting 工具下线(2026-11);法国读者尾部相关文当前只有 en 邻居,不拿别的簇凑数
   "graphisme-maternelle": {
-    tools: ["/prewriting-strokes", "/printable-paper"],
-    posts: ["strokes-before-letter-tracing"],
-  },
-
-  // 每日连笔:工具页吃「打开就下载今天的纸」,本文吃成人十五分钟怎么用这一页 PDF。
-  // 自选句子去 cursive-practice-worksheets;字母散了去 alphabet chart;还不会连笔去 how-to-write-in-cursive。
-  "daily-cursive-practice-pdf": {
-    tools: ["/daily-cursive-handwriting-practice", "/cursive-worksheets"],
-    posts: ["cursive-practice-worksheets", "cursive-alphabet-chart", "how-to-write-in-cursive"],
+    tools: ["/printable-paper"],
+    posts: [],
   },
 
   // 笔迹性格测验:完整字形测验在新站,本站 quiz 是两分钟看图版,练那个字形回到练习纸

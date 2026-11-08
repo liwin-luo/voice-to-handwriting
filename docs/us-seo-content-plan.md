@@ -438,3 +438,27 @@
 - **复核**:季前(每年 11 月)改一次措辞即可;正文里的操作步骤不随年份变。
 - **待观察**:GSC 里 4 个 `/templates/*` 圣诞页(含 letter-from-santa)11–12 月的曝光/点击;`christmas-card-messages` 的文章是否立项按此数据定。
 - **红线**:Santa 相关文案延续「写给孩子的角色扮演」,不承诺 USPS/Canada Post 回信时效;不碰品牌(Elf on the Shelf 等)。
+
+
+## 二十二、第二批工具砍单(2026-11-08,GSC 数据驱动,已落地)
+
+依据 3 个月 GSC 导出(2321 曝光/36 点击,美国 613 曝光 1 点击)执行第二批收缩。**下线 11 个工具页 + 10 篇纯配套文章**,全部 308:check/count/pad → /tools;repeater/joins/daily → /cursive-worksheets;architect/prewriting → /handwriting-worksheet-generator;tattoo/signature → /cursive-font-generator;letter-tracing(27 页)→ /name-tracing(?letter= 预填保留在 TracingGenerator)。删文 slug → /blog。
+
+| 下线路由 | 原登记 | 3 个月曝光/点击 | 判定 |
+|---|---|---|---|
+| /handwriting-check | §二十一 | 0 / 0 | API 依赖,与 count 一起砍,全站回归零后端 |
+| /handwriting-count | 2026-10-13 设计文档 | 0 / 0 | 同上 |
+| /handwriting-pad | §二十一(第二个) | 1 / 0 | 与核心方向相反(手画 vs 生成) |
+| /handwriting-repeater | §八 | 70 / 2(pos 65) | 品牌词自搜,无需求簇 |
+| /handwriting-page-calculator | §十 | 176 / 4 | **不砍**(唯一非品牌自然信号,德/韩词簇) |
+| /architect-lettering | §18 表 6 | 2 / 0 | 单字体窄门 |
+| /cursive-tattoo-stencil | §18 表 5 | 0 / 0 | 0 曝光 |
+| /prewriting-strokes | §18 表 3 | 0 / 0 | 0 曝光 |
+| /signature-practice | §18.1 | 3 / 0 | 死押注 |
+| /cursive-letter-joins | §18 表 4 | 3 / 0 | 死押注 |
+| /daily-cursive-handwriting-practice | §6.5 时段登记 | 31 / 0 | 与 /cursive-worksheets 重复 |
+| /letter-tracing + 26 子页 | §十六 | 5 / 0(全部) | 返校季押注死亡 |
+
+配套文章 10 篇删除:handwriting-repeater、daily-cursive-practice-pdf、count-words-in-handwriting、share-a-handwriting-score-card、save-a-handwritten-note、export-a-mirrored-cursive-stencil、how-to-practice-your-signature、squared-hand-lettering-practice、strokes-before-letter-tracing、how-to-join-cursive-letters(正文第一屏均为「打开那个工具」)。保留文章的相关链接已改指存活工具;每日连笔簇的经验教训:一个工具没有自然曝光前,不为它写配套文。
+
+**后续砍留判据**:2027-01 GSC 复盘(roadmap Go/No-Go),冻结名单(doctor、quiz、name-coloring、bulk-letters、word-work、writing-practice、workbook、cursive-font-generator)按数据定生死。

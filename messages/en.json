@@ -52,10 +52,6 @@
       "title": "Free Cursive Worksheets Generator (Printable PDF)",
       "description": "Create free printable cursive practice worksheets from any word list. Traceable cursive rows on 3-line paper with start-dot stroke guides, no watermark — built for classrooms bringing back cursive."
     },
-    "dailyCursive": {
-      "title": "Free Daily Cursive Handwriting Practice PDF (Printable)",
-      "description": "A fresh cursive handwriting practice sheet every day — warm-up strokes, letters, words and a sentence on one printable page. Free PDF for kids and adults, no signup. A small watermark is on by default and can be turned off."
-    },
     "writing": {
       "title": "Writing Practice Sheet Generator",
       "description": "Free printable writing practice sheets for Chinese, Japanese and Korean: tianzige squares, genkoyoshi-style grids and hangul practice cells. Type the characters, print the PDF."
@@ -76,10 +72,6 @@
       "title": "Free Handwriting Workbook Generator (Printable PDF)",
       "description": "Create a printable handwriting workbook PDF in seconds: a cover page, the alphabet or your own word list, example and traceable rows on three-line guides. Free, no signup, no watermark."
     },
-    "repeater": {
-      "title": "Free Handwriting Repeater — Loop Any Sentence on Lined Paper",
-      "description": "Type a word or sentence and this free handwriting repeater writes it on lined paper, then loops. Follow the pen, then download a GIF of one pass. No signup."
-    },
     "quiz": {
       "title": "Free Handwriting Personality Test — What Does Your Handwriting Say About You?",
       "description": "Take this free handwriting personality test: 12 quick questions about your handwriting reveal a fun personality profile plus practice tips. No upload, no signup — about 2 minutes."
@@ -99,9 +91,6 @@
     "cursiveAlphabet": {
       "description": "Every cursive letter A to Z with start-dot stroke guides — tap a letter, switch teaching fonts, and print the chart free."
     },
-    "letterTracing": {
-      "description": "Free letter tracing worksheets for a to z. Each letter has its own start point and a dashed practice sheet."
-    },
     "cursiveFont": {
       "title": "Cursive Font Generator – Preview & Export Handwriting Fonts",
       "description": "Preview your text in thirteen handwriting fonts, including signature scripts, then export PNG, SVG or PDF — free, no install, no signup. Open-source (OFL) fonts with clear licenses."
@@ -110,45 +99,13 @@
       "title": "Printable Handwritten Letters and Envelopes",
       "description": "Paste a recipient list and download two PDFs: a handwritten-style letter for each person and a matching envelope. You print and mail them. Free, in your browser."
     },
-    "signaturePractice": {
-      "title": "Signature Practice Sheet: Trace One Form of Your Name",
-      "description": "Type your name, pick a short form, and print a signature practice sheet: a model line, a dotted trace, then blank lines. Four scripts, free, in your browser."
-    },
     "numberTracing": {
       "title": "Number Tracing Worksheets to Print for 1–10 or 1–20",
       "description": "Print number tracing worksheets for 1–10 or 1–20. Each number gets its own page: one solid row, then dotted rows. Free, in your browser."
     },
-    "prewriting": {
-      "title": "Print a Prewriting Strokes Worksheet: Lines, Curves",
-      "description": "Print a prewriting strokes worksheet: straight lines, slants, circles, waves, and arches. A solid row, a dotted row, then a blank row. Free."
-    },
-    "cursiveJoins": {
-      "title": "Practice Cursive Letter Joins Two Letters at a Time",
-      "description": "Practice cursive letter joins two letters at a time. Same-direction pairs, then pairs that turn. Each pair fills its own tracing page. Free."
-    },
-    "tattooStencil": {
-      "title": "Cursive Tattoo Stencil: Black, Reversed, Ready to Transfer",
-      "description": "Type a short phrase and download a cursive tattoo stencil: black on white, mirrored for transfer paper. Free, no signup, in your browser."
-    },
-    "architectLetter": {
-      "title": "Architect Lettering Practice Sheets for a Squared Hand",
-      "description": "Print architect lettering practice sheets in Architects Daughter: capitals and digits, a model line, a dotted line, then a blank line. Free."
-    },
     "sentencePractice": {
       "title": "Handwriting Sentence Practice",
       "description": "Type one sentence you need to write, pick size, slant, spacing, or print, and download a practice sheet. A model line, a dotted line, three blank lines. Free, in your browser."
-    },
-    "handwritingPad": {
-      "title": "Online Handwriting Notepad",
-      "description": "Write with a finger, mouse, or stylus on a blank, ruled, or grid page and download a PNG. One screen, kept on this device. Free, no signup."
-    },
-    "handwritingCheck": {
-      "title": "Check Handwriting From a Photo",
-      "description": "Upload a photo of Latin handwriting and get an impression score for legibility, size, baseline, spacing, and slant. The photo is not saved."
-    },
-    "handwritingCount": {
-      "title": "Count Handwriting From a Photo",
-      "description": "Upload a photo of handwriting and get the text, plus a count of characters, words, letters, and digits. A handwriting word counter. The photo is not saved."
     }
   },
   "nav": {
@@ -159,19 +116,16 @@
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
     "worksheet": "Handwriting Worksheets",
-    "letterTracing": "Letter Tracing",
     "cursive": "Cursive Writing",
     "cursiveAlphabet": "Cursive Alphabet",
     "cursiveFont": "Cursive Font Generator",
     "cursiveWorks": "Cursive Worksheets",
-    "dailyCursive": "Daily Cursive Practice",
     "writingPractice": "Writing Practice",
     "coloring": "Name Coloring",
     "wordWork": "Word Work",
     "quiz": "Handwriting Quiz",
     "doctor": "Doctor Handwriting",
     "workbook": "Workbook Maker",
-    "repeater": "Handwriting Repeater",
     "menu": "Menu",
     "allTools": "All tools",
     "viewAll": "View all tools",
@@ -181,16 +135,8 @@
     "pageCalc": "Page Calculator",
     "cursiveText": "Cursive Text",
     "bulkLetters": "Printable Letters",
-    "signaturePractice": "Signature Practice",
     "numberTracing": "Number Tracing",
-    "prewriting": "Prewriting Strokes",
-    "cursiveJoins": "Cursive Joins",
-    "tattooStencil": "Tattoo Stencil",
-    "architectLetter": "Architect Lettering",
-    "sentencePractice": "Sentence Practice",
-    "handwritingPad": "Handwriting Notepad",
-    "handwritingCheck": "Handwriting Check",
-    "handwritingCount": "Handwriting Count"
+    "sentencePractice": "Sentence Practice"
   },
   "home": {
     "tagline": "Speak a paragraph, get a handwritten page — for cards, letters, journals and social posts",
@@ -211,7 +157,6 @@
     },
     "nameTracingLink": "Name tracing worksheets",
     "cursiveWorksheetsLink": "Cursive worksheets",
-    "repeaterLink": "Handwriting repeater",
     "letterToSantaLink": "Letter to Santa",
     "letterFromSantaLink": "Letter from Santa",
     "allToolsLink": "Browse all free tools",
@@ -472,8 +417,6 @@
     "downloadPng": "Download PNG",
     "seoTitle": "Free name tracing worksheets for homeschool and classroom",
     "seoText": "Personalized tracing sheets are one of the most effective ways to teach handwriting: the child follows the example row, then repeats. Generate as many as you need — each PDF prints at exact letter size with no watermark.",
-    "letterIndexLead": "Tracing one letter, not a name?",
-    "letterIndexLink": "Letter tracing worksheets",
     "faqTitle": "Frequently asked questions"
   },
   "worksheet": {
@@ -513,41 +456,11 @@
     "seoText": "A workbook keeps practice structured: one word per group, example first, then traceable repetitions on three-line guides with a dashed midline.\n\nHow to use: paste your list — the alphabet for preschoolers, sight words for kindergarten, this week's spelling list for older kids — pick a print or cursive font, and download the PDF. Print the whole book, or just the pages you need.\n\nIdeas: a name book for your child, a summer bridge workbook, a classroom set with each student's word list. Everything renders in your browser — no signup, no watermark.",
     "faqTitle": "Frequently asked questions"
   },
-  "repeater": {
-    "title": "Handwriting Repeater",
-    "intro": "Type a word or a short sentence and watch a pen write it on lined paper, then write it again. Free, no signup — download a looping GIF of one pass.",
-    "textLabel": "Text",
-    "textPlaceholder": "Type a word or a short sentence",
-    "hint": "Up to 240 characters. A short line loops more clearly than a paragraph.",
-    "sampleSentence": "The quick brown fox jumps over the lazy dog.",
-    "presetSentence": "Sentence",
-    "presetAlphabet": "Alphabet",
-    "presetNumbers": "Numbers",
-    "font": "Font",
-    "speed": "Writing speed",
-    "speedSlow": "Slow",
-    "speedFast": "Fast",
-    "ink": "Ink",
-    "loop": "Loop",
-    "trace": "Trace guide",
-    "play": "Play",
-    "pause": "Pause",
-    "replay": "Replay",
-    "downloadGif": "Download GIF",
-    "downloadGifBusy": "Preparing GIF…",
-    "stageLabel": "Handwriting animation on lined paper",
-    "seoTitle": "A handwriting repeater that loops the model",
-    "seoText": "A still example shows the finished letter. A repeater shows the letter appearing, then does it again, so you can watch size, spacing, and where the letter sits on the line.\n\nType a sentence, a name, or use the alphabet and number drills. Leave the trace guide on to see the faint model under the pen. Loop plays the line until you pause it. Download GIF saves one writing pass, including the pause at the end, and the file loops. Two blank ruled lines stay under the sentence to copy.\n\nThe pen uncovers each letter from left to right in the font you picked. It is a model to copy, not a textbook stroke-order diagram.",
-    "faqTitle": "Frequently asked questions",
-    "sampleAlphabet": "Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk",
-    "sampleNumbers": "1 2 3 4 5 6 7 8 9 10"
-  },
   "cursive": {
     "title": "Cursive Writing Generator",
     "intro": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF.",
     "alphabetLink": "Cursive alphabet",
     "worksheetsLink": "Cursive worksheets",
-    "repeaterLink": "Handwriting repeater",
     "seoTitle": "Free cursive generator — practice the lost art of penmanship",
     "seoText": "Cursive is barely taught in schools anymore — but learning it has real benefits: it trains fine motor skills, speeds up note-taking and connects you to a century of letters and journals worth reading.\n\nHow to use this page: type or dictate anything, pick one of the two cursive fonts (Cedarville Cursive for everyday handwriting, Dancing Script for elegant flourishes), adjust the realism slider for a natural hand, and export. Print the PDF and trace over it to practice your own cursive.",
     "faqTitle": "Frequently asked questions"
@@ -558,31 +471,6 @@
     "seoTitle": "Free printable cursive worksheets for the classroom",
     "seoText": "More and more US states are bringing cursive back into the curriculum (Florida, Pennsylvania and others since 2024) — and teachers need materials overnight.\n\nHow to use: paste your word list (alphabet, spelling words, names — one per line), pick Sacramento or Cedarville Cursive for continuous-stroke practice — the connected style used by D'Nealian classrooms — set the row height, and download the PDF. Stroke guides (green start dot, red direction arrow) show exactly where the pencil lands and which way to move. No watermark, no signup.\n\nTips for the classroom: print one dark-example sheet per student, then double-sided traceable sheets for the week. Pair with the printable 3-line paper for free-writing practice.",
     "faqTitle": "Cursive worksheet questions"
-  },
-  "dailyCursive": {
-    "title": "Daily Cursive Handwriting Practice",
-    "intro": "One printable cursive worksheet for every day of the year: warm-up strokes, the letters of the day, three words and one sentence to trace and copy. Pick kids or adults, add a name, and download today's PDF — no signup.",
-    "todayLabel": "Today's sheet",
-    "todayBadge": "New daily",
-    "levelLabel": "Level",
-    "levelKids": "Kids",
-    "levelAdults": "Adults",
-    "font": "Font",
-    "nameLabel": "Name on the sheet (optional)",
-    "namePlaceholder": "Type a name…",
-    "downloadPdf": "Download today's PDF",
-    "downloadWeek": "This week (7 pages)",
-    "downloadPng": "Download PNG",
-    "backTomorrow": "A new sheet is generated every day — come back tomorrow for fresh letters, words and a new sentence.",
-    "sheetTitle": "Daily Cursive Practice",
-    "warmup": "Warm-up",
-    "letters": "Letters",
-    "words": "Words",
-    "sentence": "Sentence",
-    "nameField": "Name",
-    "faqTitle": "Frequently asked questions",
-    "seoTitle": "A daily cursive practice routine that actually sticks",
-    "seoText": "Short, daily practice is how cursive sticks: ten to fifteen minutes a day builds muscle memory far faster than one long weekly session. This page gives you a ready-made routine — every sheet pairs a stroke warm-up with the letters of the day, three words that use them, and one sentence to trace and then copy on the blank lines below.\n\nThe sheet changes every day. A deterministic daily pick means everyone printing on the same date gets the same worksheet, so it is easy to follow along with a class or a friend. Choose the Kids level for larger lines and simple words, or the Adults level for smaller lines and proverbs to trace. Add a name before printing to keep pages from mixing up in the classroom.\n\nNeed a whole week at once? The week button bundles Monday through Sunday into a single PDF. If you would rather practice your own spelling list or sentences, the cursive worksheets generator makes traceable pages from any text."
   },
   "writing": {
     "title": "Writing Practice Sheet Generator",
@@ -852,23 +740,6 @@
     "seoText": "A printable handwritten letter is a page you print, fold, and put in an envelope. This page fills one short note for each person on your list, using their name, and lays out a matching envelope. English pages use US Letter and a #10 envelope. Other languages use A4 and a DL envelope. The note itself can be edited. Type each person under the fixed headings, or import the Excel template. The font, the ink color, and the paper can be changed, and the letter can use a picture as its background.\n\nThe letters are set in a handwriting font. They are not written with a pen, and this site does not print, stamp, or mail them. If a row includes a note, that text is used instead of the note in the box.",
     "faqTitle": "Questions"
   },
-  "signaturePractice": {
-    "title": "Signature Practice Sheet",
-    "intro": "Type your name and print a sheet you can learn: one solid line, one dotted line, then blank lines. Four signature scripts. A long name can be shortened to a first name, or an initial plus the last name.",
-    "seoTitle": "A signature practice sheet for one form of your name",
-    "seoText": "A signature practice sheet is a page you trace, then copy, then write with the model covered. This one sets your name in Great Vibes, Alex Brush, Allura, or Mr Dafoe, on a single baseline. It is not three-line school paper, and it is not an electronic signature.\n\nPick the shorter form if the full name will not fit a receipt. The split follows spaces only. Print the PDF and follow the seven-day drill: fifteen minutes, one script, then stop changing fonts.",
-    "faqTitle": "Signature practice questions",
-    "nameLabel": "Name",
-    "namePlaceholder": "Jordan Lee",
-    "formLabel": "What to practice",
-    "styleLabel": "Script",
-    "compare": "Show all four scripts",
-    "downloadPdf": "Download PDF",
-    "downloadPng": "Download PNG",
-    "trace": "Trace",
-    "copy": "Copy",
-    "sheetLabel": "Signature practice sheet"
-  },
   "numberTracing": {
     "title": "Number Tracing Worksheets",
     "intro": "Print 1–10 or 1–20. Each number is its own page: a solid row to look at, then dotted rows to trace. Patrick Hand, on three-line paper.",
@@ -877,57 +748,6 @@
     "faqTitle": "Number tracing questions",
     "to10": "1–10",
     "to20": "1–20"
-  },
-  "prewriting": {
-    "title": "Prewriting Strokes Worksheet",
-    "intro": "Lines first, then curves. Each stroke has a solid row, a dotted row, and a blank row. This is the page before letters.",
-    "seoTitle": "Strokes to practice before letter tracing",
-    "seoText": "Prewriting strokes are the marks that show up inside letters: a line down, a line across, a slant, a circle, a wave, an arch. This worksheet prints those marks. The alphabet stays on the letter pages.\n\nLines are the first set. Curves are the second. A child who is still learning to close a circle can stay on that stroke, then move to letter tracing.",
-    "faqTitle": "Prewriting questions",
-    "groupLabel": "Which strokes",
-    "lines": "Lines",
-    "curves": "Curves",
-    "down": "Down",
-    "across": "Across",
-    "slant": "Slant",
-    "circle": "Circle",
-    "wave": "Wave",
-    "arch": "Arch",
-    "downloadPdf": "Download PDF",
-    "downloadPng": "Download PNG",
-    "sheetLabel": "Prewriting strokes worksheet"
-  },
-  "cursiveJoins": {
-    "title": "Cursive Letter Joins",
-    "intro": "Practice two letters at a time. Same-direction pairs first (th, oo, ll), then pairs that change direction (ai, ou, oa). Each pair is its own page.",
-    "seoTitle": "Cursive joins, one pair per page",
-    "seoText": "A cursive letter join is the stroke between two letters. This page prints pairs in Sacramento. Same-direction pairs keep moving the same way. Turning pairs change direction in the middle.\n\nSingle letters stay on the cursive alphabet. Whole words stay on cursive worksheets. This page is the connection.",
-    "faqTitle": "Cursive join questions",
-    "same": "Same direction",
-    "turn": "Change direction"
-  },
-  "tattooStencil": {
-    "title": "Cursive Tattoo Stencil",
-    "intro": "Type a short phrase. Download a black-on-white PNG, mirrored so it reads correctly after you transfer it. It is a stencil for transfer paper.",
-    "seoTitle": "A reversed cursive stencil for transfer paper",
-    "seoText": "A cursive tattoo stencil is black lettering on a white ground, flipped left to right. Transfer paper wants the mirror image. Turn the mirror off when you want to read the phrase the way it will sit.\n\nThe scripts are open fonts (Great Vibes, Alex Brush, and the other scripts on this page). They are models. Nothing you type is uploaded.",
-    "faqTitle": "Stencil questions",
-    "phraseLabel": "Phrase",
-    "placeholder": "always",
-    "styleLabel": "Script",
-    "mirror": "Mirror for transfer",
-    "downloadPng": "Download PNG",
-    "sheetLabel": "Cursive tattoo stencil"
-  },
-  "architectLetter": {
-    "title": "Architect Lettering Practice Sheets",
-    "intro": "Capitals and digits in Architects Daughter, the open squared hand. Each line is solid, then dotted, then blank.",
-    "seoTitle": "Practice the squared hand on this sheet",
-    "seoText": "Architect lettering here means Architects Daughter, the SIL Open Font License face Kimberly Geswein published. Google Fonts describes it as inspired by the writing of an architect's daughter: squared, and still handwritten. Single-stroke drafting templates and school handwriting programs are different hands.\n\nPrint the sheet, trace the dotted line, then copy on the blank line. The alphabet on the page is capitals, plus 0–9.",
-    "faqTitle": "Architect lettering questions",
-    "downloadPdf": "Download PDF",
-    "downloadPng": "Download PNG",
-    "sheetLabel": "Architect lettering practice sheet"
   },
   "sentencePractice": {
     "title": "Handwriting Sentence Practice",
@@ -962,153 +782,5 @@
     "errorDenied": "The microphone is blocked. Type the sentence instead.",
     "errorNetwork": "Speech recognition needs a network connection.",
     "errorStopped": "Speech recognition stopped. Type the sentence instead."
-  },
-  "handwritingPad": {
-    "title": "Online Handwriting Notepad",
-    "pen": "Pen",
-    "eraser": "Eraser",
-    "undo": "Undo",
-    "clear": "Clear",
-    "clearConfirm": "Clear this sheet?",
-    "download": "Download PNG",
-    "downloadFailed": "Could not save the image. Try again.",
-    "ink": "Ink",
-    "width": "Width",
-    "fine": "Fine",
-    "medium": "Medium",
-    "thick": "Thick",
-    "paper": "Paper",
-    "intro": "Write with a finger, mouse, or stylus on one sheet, then download a PNG. Open fullscreen when you want the whole screen.",
-    "seoTitle": "One sheet, kept on this device",
-    "seoText": "Pen, eraser, undo, and clear sit on the sheet. Clear asks a second time before the ink goes. Ink, width, and paper — blank, ruled, or grid — open under Pen. Ruled and grid lines are part of the PNG. The buttons are not.\n\nThe image stays on this device and is not uploaded. Refresh and it is still here, until you clear it. Fullscreen fills the screen with the sheet. Exit brings this page back, including the notes below.",
-    "faqTitle": "Questions",
-    "fullscreen": "Fullscreen",
-    "exitFullscreen": "Exit",
-    "persistFailed": "This sheet will not survive a refresh.",
-    "sheetLabel": "Handwriting sheet"
-  },
-  "handwritingCheck": {
-    "title": "Check Handwriting From a Photo",
-    "intro": "Upload a photo of Latin handwriting. You get five impression scores, and a card you can share.",
-    "noteLines": "Photograph at least two full lines. Keep the page flat, and do not crop through the letters.",
-    "noteClinical": "This is an impression from a photo, not a clinical assessment.",
-    "noteDiscard": "The photo is sent to the model and then discarded. It is not saved.",
-    "upload": "Upload a photo",
-    "camera": "Take a photo",
-    "looking": "Looking at this photo",
-    "lookingHint": "Stay on this page. This usually takes about half a minute.",
-    "legibility": "Legibility",
-    "ahead": "Ahead of {percent}% of people",
-    "size": "Size",
-    "baseline": "Baseline",
-    "spacing": "Spacing",
-    "slant": "Slant",
-    "next": "Practice this next: {focus}",
-    "nextLink": "How to improve your handwriting",
-    "unstable": "Not enough to judge",
-    "blank": "—",
-    "retake": "Take the photo again. It is blurry, cropped, or glared.",
-    "unsupported": "This version scores Latin handwriting only.",
-    "failed": "This look did not finish. You can try again.",
-    "quota": "Today's checks are used up. Come back tomorrow.",
-    "left": "{count} left today.",
-    "daily": "You can check {count} photos a day. It resets the next day.",
-    "tooBig": "This photo is too large. Try another.",
-    "badImage": "This file is not a photo we can read. Try another.",
-    "shareFailed": "The card could not be saved. Try again.",
-    "share": "Share this card",
-    "download": "Download",
-    "frameLabel": "Card frame",
-    "frames": {
-      "seal": "Seal",
-      "certificate": "Certificate",
-      "paper": "Paper",
-      "plain": "Plain"
-    },
-    "cardMark": "voicetohandwriting.online",
-    "photoAlt": "Your handwriting photo",
-    "cardLabel": "Handwriting score card",
-    "summaryTitle": "What this photo shows",
-    "faqTitle": "Questions",
-    "seoTitle": "Five scores from one photo",
-    "seoText": "Legibility is the result: whether a reader can make out the words. Size, baseline, spacing, and slant are the reasons. The lowest of those four is the one to practice next.\n\nThe score is an impression of a still photo. It does not measure speed, pressure, or stroke order, and it is not a clinical assessment. Chinese, Japanese, and Korean writing are not scored with this rubric.",
-    "anchors": {
-      "legibility": {
-        "1": "Almost nothing is readable.",
-        "2": "Only a few words can be read.",
-        "3": "About half the words need the surrounding words to guess.",
-        "4": "A few words take a pause. The page can still be read.",
-        "5": "Every word is readable at a first glance."
-      },
-      "size": {
-        "1": "Heights collapse into one band.",
-        "2": "Height jumps often.",
-        "3": "Height jumps, but letter kinds still separate.",
-        "4": "Height is mostly steady, with a few letters off.",
-        "5": "Height stays steady on the line."
-      },
-      "baseline": {
-        "1": "The line has no stable landing.",
-        "2": "Many words leave the line.",
-        "3": "A few words float or sink as a whole.",
-        "4": "Most words sit on the line, with a few that drift.",
-        "5": "The feet of the letters share one line."
-      },
-      "spacing": {
-        "1": "Word boundaries are unclear.",
-        "2": "Word boundaries are often unclear.",
-        "3": "Some words crash together, or gaps look like a new sentence.",
-        "4": "Spacing is mostly even, with a few tight or wide spots.",
-        "5": "Letters sit close inside words, and words sit apart."
-      },
-      "slant": {
-        "1": "There is no stable direction.",
-        "2": "The lean changes often.",
-        "3": "Some words lean right and some lean left.",
-        "4": "The lean is mostly consistent, with a few letters off.",
-        "5": "The whole sample leans the same way."
-      }
-    },
-    "again": "Upload another"
-  },
-  "handwritingCount": {
-    "title": "Count Handwriting From a Photo",
-    "intro": "Upload a photo of handwriting. You get the text, then a count of characters, words, letters, and digits.",
-    "noteAny": "One photo of handwriting, in any language.",
-    "noteHow": "You get the text first, then a count of characters, words, letters, and digits. Unreadable spots are marked □ and left out of the count. Edit the text and the numbers follow.",
-    "noteDiscard": "The photo is sent to the model and then discarded. It is not saved. The text stays on this page until you leave or upload another.",
-    "daily": "You can count {count} photos a day. It resets the next day.",
-    "upload": "Upload a photo",
-    "camera": "Take a photo",
-    "looking": "Reading this photo",
-    "lookingHint": "Stay on this page. This usually takes about half a minute.",
-    "cjk": "Characters",
-    "words": "Words",
-    "latinLetters": "Letters",
-    "otherLetters": "Other letters",
-    "digits": "Digits",
-    "punctuation": "Punctuation",
-    "illegible": "{count} unreadable",
-    "other": "Other marks",
-    "truncated": "The reading was cut off here.",
-    "empty": "No handwriting on this photo.",
-    "retake": "Take the photo again. It is blurry, cropped, or glared.",
-    "failed": "This read did not finish. You can try again.",
-    "quota": "Today's counts are used up. Come back tomorrow.",
-    "left": "{count} left today.",
-    "tooBig": "This photo is too large. Try another.",
-    "badImage": "This file is not a photo we can read. Try another.",
-    "copy": "Copy text",
-    "copied": "Copied",
-    "copyFailed": "The text could not be copied. Select it and copy it yourself.",
-    "again": "Upload another",
-    "photoAlt": "Your handwriting photo",
-    "transcriptLabel": "Text from the photo",
-    "none": "Nothing to count in this text.",
-    "faqTitle": "Questions",
-    "seoTitle": "What gets counted",
-    "seoText": "Characters are Chinese characters, kana, and Hangul syllables. Words are runs of letters. An apostrophe or hyphen between letters stays inside the word and still counts as punctuation. Digits count one by one, so 2026 is four. Punctuation, including a Chinese full stop, is its own line.\n\nUnreadable spots stay as □ and are left out of the numbers. Edit the text and the count updates on this page. A dense page can miss a mark. This is a count of what was read.",
-    "checkLead": "Want a score for how readable it is?",
-    "checkLink": "Check this handwriting from a photo"
   }
 }

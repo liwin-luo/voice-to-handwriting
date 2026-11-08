@@ -68,9 +68,6 @@ export default async function CursivePage({
         <Link href="/cursive-worksheets" className="text-accent underline underline-offset-2 hover:text-accent-strong">
           {t("worksheetsLink")}
         </Link>
-        <Link href="/handwriting-repeater" className="text-accent underline underline-offset-2 hover:text-accent-strong">
-          {t("repeaterLink")}
-        </Link>
       </nav>
       <CursiveLettersHub locale={locale as Locale} />
       <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(CURSIVE_FAQS, locale as Locale)} />

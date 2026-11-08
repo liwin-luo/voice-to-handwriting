@@ -296,45 +296,6 @@ export const COLORING_FAQS: FaqItem[] = [
   },
 ];
 
-export const DAILY_CURSIVE_FAQS: FaqItem[] = [
-  {
-    id: "daily-free",
-    i18n: { en: {
-        q: "Is the daily cursive practice really free?",
-        a: "Yes — every daily sheet is free to download and print, with no signup. A small site watermark is on by default and can be turned off with the switch above the download buttons. Print as many copies as you need for your family or classroom.",
-      } },
-  },
-  {
-    id: "daily-content",
-    i18n: { en: {
-        q: "What is on each daily sheet?",
-        a: "One printable page with a complete practice ladder: a stroke warm-up row, the cursive letters of the day, three words that use them, and one sentence to trace and then copy on the blank lines. Ten to fifteen minutes, done.",
-        link: { href: "/blog/daily-cursive-practice-pdf", label: "Fifteen minutes on today's PDF" },
-      } },
-  },
-  {
-    id: "daily-changes",
-    i18n: { en: {
-        q: "Does the worksheet really change every day?",
-        a: "Yes — the letters, words and sentence are picked deterministically from the date, so a new sheet appears every day. Everyone printing on the same date gets the same sheet, which makes it easy to follow along as a class or with a friend.",
-      } },
-  },
-  {
-    id: "daily-levels",
-    i18n: { en: {
-        q: "Is it for kids or for adults?",
-        a: "Both. The Kids level uses bigger lines and simple words and sentences; the Adults level uses smaller lines with proverbs and sayings. Switch levels any time — the sheet adjusts instantly.",
-      } },
-  },
-  {
-    id: "daily-week",
-    i18n: { en: {
-        q: "Can I print a whole week at once?",
-        a: "Yes — the week button bundles Monday through Sunday into one seven-page PDF, each page with that day's own letters, words and sentence. Great for printing the week ahead on Monday.",
-      } },
-  },
-];
-
 /** /handwriting-personality-quiz 笔迹性格测验页 FAQ(8 语言) */
 export const QUIZ_FAQS: FaqItem[] = [
   {
@@ -434,45 +395,6 @@ export const WORKBOOK_FAQS: FaqItem[] = [
     i18n: { en: {
         q: "Can I make a print or a cursive workbook?",
         a: "Both. Pick any font in the font menu — Patrick Hand for clean print practice, Cedarville Cursive or Dancing Script for cursive, or Kalam for a everyday pen look. The guide rows (top line, dashed midline, baseline) stay the same either way.",
-      } },
-  },
-];
-
-/** /handwriting-repeater 循环书写演示 FAQ(8 语言) */
-export const REPEATER_FAQS: FaqItem[] = [
-  {
-    id: "repeater-free",
-    i18n: { en: {
-        q: "Is the handwriting repeater free?",
-        a: "Yes — no signup and no watermark. The animation runs in your browser, and GIF downloads are unlimited.",
-      } },
-  },
-  {
-    id: "repeater-animation",
-    i18n: { en: {
-        q: "Is this a handwriting animation?",
-        a: "Yes. It plays in your browser: each letter is uncovered from left to right, then the line loops. You can save a GIF. It is an animation of the font, not a video of someone writing with a pen.",
-      } },
-  },
-  {
-    id: "repeater-watch",
-    i18n: { en: {
-        q: "Can I watch letters being written?",
-        a: "Yes. Type a word and the repeater draws it one letter at a time on a loop, so you can see where each letter sits on the line. It does not draw textbook stroke order, and cursive entry strokes are not marked.",
-      } },
-  },
-  {
-    id: "repeater-stroke-order",
-    i18n: { en: {
-        q: "Does the repeater show real stroke order?",
-        a: "It uncovers each letter from left to right in the font you picked, then loops. That shows size, spacing, and where the letter sits on the line. It is not a textbook stroke-order diagram, and cursive entry strokes are not marked.",
-      } },
-  },
-  {
-    id: "repeater-print",
-    i18n: { en: {
-        q: "Can I save the animation?",
-        a: "Yes. Download GIF saves one writing pass, including the pause at the end, and the file loops. It is drawn in your browser. The two blank lines stay in the picture. It is a loop to watch, not a print worksheet.",
       } },
   },
 ];

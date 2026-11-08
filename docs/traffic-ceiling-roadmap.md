@@ -29,7 +29,7 @@
 - **内链 hub**:`/cursive` 页改造成 hub,链全部 52 页;`cursive-alphabet-chart` 文章互链。
 - **现状(2026-10-09)**:52 页已齐,仅英文。`/cursive` 底部 hub 分小写/大写链到全部课程。`cursive-alphabet-chart`(chart 角度)与矩阵(单字母深度)仍然分开。
 
-### 2.2 Letter tracing 矩阵(2026-10-09 已上线,原 Phase 2)
+### 2.2 Letter tracing 矩阵(~~2026-10-09 已上线~~ **2026-11-08 已下线**:27 页 3 个月仅 5 曝光,押注死亡,路由 308 到 /name-tracing;下表为历史记录)
 
 - **路由**:`/letter-tracing`(hub)+ `/letter-tracing/[letter]` 26 页,仅英文。非英文 404,sitemap 只收 en。
 - **目标词**:`letter a tracing`、`tracing letter s` 等,合计 30–80K US/月,8–9 月洪峰。

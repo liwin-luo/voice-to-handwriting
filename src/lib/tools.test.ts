@@ -23,9 +23,7 @@ describe("navGroupsFor", () => {
 
     expect(hrefs("zh", true)).toEqual(NAV_HREFS);
     expect(hrefs("en", true)).toEqual(NAV_HREFS);
-    expect(hrefs("zh", false)).toContain("/handwriting-page-calculator");
-    expect(hrefs("zh", false)).not.toContain("/letter-tracing");
-    expect(hrefs("en", false)).toContain("/letter-tracing");
+    expect(hrefs("en", false)).toContain("/handwriting-page-calculator");
   });
 
   it("每组的主入口都在该组、且中英都在", () => {
