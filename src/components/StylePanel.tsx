@@ -47,7 +47,7 @@ export default function StylePanel({ layout = "write" }: { layout?: "write" | "d
 
   const fontSpecimens = (
     <div className="flex flex-col gap-1.5">
-      <h2 className="field-label">{t("sectionHandwriting")}</h2>
+      <h2 className="section-title">{t("sectionHandwriting")}</h2>
       <span className="text-zinc-700">{t("font")}</span>
       <div className="grid grid-cols-3 gap-1.5">
         {fonts.map((f) => (
@@ -89,7 +89,7 @@ export default function StylePanel({ layout = "write" }: { layout?: "write" | "d
 
   const paperChoice = (
     <>
-        <h2 className="field-label">{t("sectionPaper")}</h2>
+        <h2 className="section-title">{t("sectionPaper")}</h2>
         <PageFormatToggle value={s.pageFormat} onChange={s.setPageFormat} />
         <div className="flex flex-col gap-1.5">
           <span className="text-zinc-700">{t("paper")}</span>

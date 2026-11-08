@@ -1,11 +1,15 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* 「现代工作台」设计令牌(2026-11 UI 重构第一期):
+   冷中性底 + 产品蓝强调 + 小圆角 + 细线条,唯一海拔与唯一选中态语言。
+   扫尾期(工具页/博客/模板套壳)只调这里的令牌,不动结构。 */
 :root {
-  --background: #fafaf9; /* zinc-50:暖调纸面底色 */
+  --background: #fafafa; /* zinc-50 冷调底 */
   --foreground: #18181b; /* zinc-900,不用纯黑 */
-  --accent: #15317e; /* 墨蓝:与默认墨水色一致,全站唯一强调色 */
-  --accent-strong: #0f245e;
+  --accent: #2563eb; /* blue-600:产品蓝,全站唯一强调色 */
+  --accent-strong: #1d4ed8; /* blue-700 */
+  --tool-col: 300px; /* 工具布局壳的控制列宽(ToolLayout 消费) */
 }
 
 @theme inline {
@@ -13,15 +17,20 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
-  --font-hand: "Ma Shan Zheng", "Kaiti SC", "STKaiti", serif;
+  /* 品牌字标专用手写栈(仅导航字标/博客 h1);产品手写体走 fonts 管线,与此无关 */
+  --font-hand: "Bradley Hand", "Segoe Script", "Comic Sans MS", cursive;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family:
-    -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei",
-    "Segoe UI", sans-serif;
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    sans-serif;
 }
 
 ::selection {
@@ -40,7 +49,7 @@ body {
   }
 }
 .rise {
-  animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
   .rise {
@@ -109,41 +118,43 @@ body {
 }
 
 @layer components {
-  /* 按钮基底:统一的触感反馈与过渡 */
+  /* 按钮基底:方角紧凑,150ms 快过渡,无弹跳 */
   .btn {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full text-sm font-medium transition-all duration-300 outline-offset-2 focus-visible:outline-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40;
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .btn:active {
-    transform: scale(0.97);
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 outline-offset-2 focus-visible:outline-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40;
   }
   .btn-primary {
-    @apply bg-accent text-white shadow-sm hover:bg-accent-strong;
+    @apply bg-accent text-white hover:bg-accent-strong;
   }
   .btn-recording {
-    @apply bg-rose-700 text-white shadow-sm hover:bg-rose-800;
+    @apply bg-rose-700 text-white hover:bg-rose-800;
   }
   .btn-ghost {
-    @apply border border-zinc-300 bg-white text-zinc-800 hover:border-zinc-400 hover:bg-zinc-50;
+    @apply border border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:bg-zinc-50;
+  }
+  /* 分区标题:面板/页面分节的唯一 h2/h3 样式(替代散落的 field-label 误用) */
+  .section-title {
+    @apply text-sm font-semibold tracking-tight text-zinc-900;
   }
   .field-label {
-    @apply text-xs font-medium tracking-wide text-zinc-500;
+    @apply text-xs font-medium text-zinc-500;
   }
   .surface-input {
-    @apply w-full rounded-lg border border-zinc-300 bg-white text-sm transition-colors duration-200 hover:border-zinc-400 focus:border-accent focus:outline-none;
+    @apply w-full rounded-md border border-zinc-200 bg-white text-sm transition-colors duration-150 hover:border-zinc-300 focus:border-accent focus:outline-none;
   }
   .select-field {
-    @apply w-full cursor-pointer appearance-none rounded-lg border border-zinc-300 bg-white py-2 pr-8 pl-3 text-sm transition-colors duration-200 hover:border-zinc-400 focus:border-accent focus:outline-none;
+    @apply w-full cursor-pointer appearance-none rounded-md border border-zinc-200 bg-white py-2 pr-8 pl-3 text-sm transition-colors duration-150 hover:border-zinc-300 focus:border-accent focus:outline-none;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 256 256' fill='%2352525b'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.65rem center;
   }
-  /* 玻璃面板:1px 内缘高光 + 染色扩散阴影 */
+  /* 卡片基底:1px 线 + 白面,唯一海拔(不再有 2xl/3xl 圆角与自定义阴影) */
+  .card {
+    @apply rounded-lg border border-zinc-200 bg-white;
+  }
+  /* 吸顶条:原玻璃拟态已实心化(现代工作台方向),类名保留以兼容两处消费方 */
   .glass-bar {
-    @apply rounded-2xl border border-zinc-200/70 bg-white/85 backdrop-blur-md;
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.9),
-      0 16px 40px -16px rgba(23, 23, 23, 0.16);
+    @apply rounded-lg border border-zinc-200 bg-white;
+    box-shadow: 0 1px 2px rgba(23, 23, 23, 0.05);
   }
   .color-swatch {
     appearance: none;
@@ -168,7 +179,8 @@ body {
     border: 1px solid rgba(23, 23, 23, 0.12);
     border-radius: 9999px;
   }
+  /* 纸面预览专用海拔(产品输出的一部分,不随 UI 风格走) */
   .shadow-paper {
-    box-shadow: 0 24px 48px -24px rgba(23, 23, 23, 0.18);
+    box-shadow: 0 16px 32px -16px rgba(23, 23, 23, 0.16);
   }
 }

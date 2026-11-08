@@ -20,12 +20,12 @@ export default function ToolFaq({ title, items }: { title?: string; items: FaqEn
   return (
     <section className="rise mt-12 max-w-3xl" style={{ animationDelay: "200ms" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      {title ? <h2 className="mb-4 text-lg font-semibold text-zinc-900">{title}</h2> : null}
+      {title ? <h2 className="section-title mb-3 text-base">{title}</h2> : null}
       <div className="flex flex-col gap-3">
         {items.map((it, i) => (
           <details
             key={i}
-            className="group rounded-2xl border border-zinc-200 bg-white p-5 [&_summary::-webkit-details-marker]:hidden"
+            className="card group p-4 [&_summary::-webkit-details-marker]:hidden"
             open={i === 0}
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
@@ -46,9 +46,6 @@ export default function ToolFaq({ title, items }: { title?: string; items: FaqEn
           </details>
         ))}
       </div>
-      <p className="mt-6 text-xs text-zinc-400">
-        Voice to Handwriting · voicetohandwriting.online
-      </p>
     </section>
   );
 }

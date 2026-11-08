@@ -3,11 +3,11 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
-import { FEATURED_HREF, toolGroupsFor } from "@/lib/tools";
+import { toolGroupsFor } from "@/lib/tools";
 import { getPaper } from "@/engine/paper";
 import { FONTS } from "@/stores/useEditorStore";
-import { defaultFontId } from "@/lib/localeDefaults";
 import ToolLane from "@/components/ToolLane";
+import PageHeader from "@/components/ui/PageHeader";
 import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -27,6 +27,30 @@ export async function generateMetadata({
   });
 }
 
+/** 每个工具卡顶部纸样的字体与纸底:取该工具默认输出的代表组合(rx/festive 等装饰纸直接用)。 */
+const TOOL_SWATCH: Record<string, { fontId: string; paperId: string }> = {
+  "/": { fontId: "patrickhand", paperId: "ruled" },
+  "/cursive": { fontId: "cedarvillecursive", paperId: "ruled" },
+  "/cursive-text-generator": { fontId: "sacramento", paperId: "letter" },
+  "/cursive-font-generator": { fontId: "dancingscript", paperId: "letter" },
+  "/templates": { fontId: "dancingscript", paperId: "letter" },
+  "/printable-handwritten-letters": { fontId: "dancingscript", paperId: "letter" },
+  "/handwriting-workbook-generator": { fontId: "patrickhand", paperId: "ruled" },
+  "/name-tracing": { fontId: "patrickhand", paperId: "ruled" },
+  "/handwriting-worksheet-generator": { fontId: "patrickhand", paperId: "ruled" },
+  "/printable-paper": { fontId: "patrickhand", paperId: "grid" },
+  "/handwriting-page-calculator": { fontId: "patrickhand", paperId: "grid" },
+  "/cursive-alphabet": { fontId: "sacramento", paperId: "ruled" },
+  "/cursive-worksheets": { fontId: "sacramento", paperId: "ruled" },
+  "/handwriting-sentence-practice": { fontId: "kalam", paperId: "ruled" },
+  "/number-tracing": { fontId: "patrickhand", paperId: "ruled" },
+  "/writing-practice": { fontId: "mashanzheng", paperId: "grid" },
+  "/word-work": { fontId: "patrickhand", paperId: "ruled" },
+  "/name-coloring": { fontId: "indieflower", paperId: "blank" },
+  "/handwriting-personality-quiz": { fontId: "caveat", paperId: "blank" },
+  "/doctor-handwriting-generator": { fontId: "caveat", paperId: "rx" },
+};
+
 export default async function ToolsHubPage({
   params,
 }: {
@@ -39,31 +63,29 @@ export default async function ToolsHubPage({
   const tnav = await getTranslations("nav");
   const tmeta = await getTranslations("meta");
 
+  const fontCss = (fontId: string) => FONTS.find((f) => f.id === fontId)!.css;
+
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8">
-      <header className="rise mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
-      </header>
-      {toolGroupsFor(locale).map((group, gi) => {
-        const fontCss = FONTS.find((f) => f.id === defaultFontId(locale))!.css;
-        return (
-          <ToolLane
-            key={group.labelKey}
-            title={tnav(group.labelKey)}
-            sample={t("sampleWord")}
-            fontCss={fontCss}
-            paperBackground={getPaper(group.labelKey === "groupFun" ? "letter" : "ruled").background}
-            featuredHref={FEATURED_HREF[group.labelKey]}
-            delayMs={80 + gi * 60}
-            tools={group.tools.map((tool) => ({
+    <main className="mx-auto max-w-5xl px-4 py-8">
+      <PageHeader title={t("title")} intro={t("intro")} />
+      {toolGroupsFor(locale).map((group, gi) => (
+        <ToolLane
+          key={group.labelKey}
+          title={tnav(group.labelKey)}
+          sample={t("sampleWord")}
+          delayMs={80 + gi * 60}
+          tools={group.tools.map((tool) => {
+            const swatch = TOOL_SWATCH[tool.href] ?? { fontId: "patrickhand", paperId: "ruled" };
+            return {
               href: tool.href,
               name: tool.brand ? tmeta("brand") : tnav(tool.navKey),
               description: tool.brand ? tmeta("description") : tmeta(`${tool.metaKey}.description`),
-            }))}
-          />
-        );
-      })}
+              fontCss: fontCss(swatch.fontId),
+              paperBackground: getPaper(swatch.paperId).background,
+            };
+          })}
+        />
+      ))}
     </main>
   );
 }

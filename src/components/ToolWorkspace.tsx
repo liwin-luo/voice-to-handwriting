@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { ClockCounterClockwise } from "@phosphor-icons/react";
 import AudioImportPanel from "./AudioImportPanel";
+import ToolLayout from "./ToolLayout";
 import ExportBar from "./ExportBar";
 import HistoryDrawer from "./HistoryDrawer";
 import PaperView from "./PaperView";
@@ -160,22 +161,26 @@ export default function ToolWorkspace({
   }
 
   return (
-    <div className="flex flex-col gap-5">
+    <>
       {/* 窄屏 contents:字体和纸样跟在录音后,字号墨色排到纸和导出条后面。宽屏收成左栏,底栏在栅格外面,避免吸底时盖住左栏 */}
-      <div className="contents lg:grid lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start lg:gap-x-6">
-        <div ref={sideRef} className="contents lg:sticky lg:top-20 lg:flex lg:max-h-[calc(100vh-10.25rem-var(--consent-offset,1rem))] lg:flex-col lg:gap-5 lg:overflow-y-auto lg:pr-1 lg:col-start-1 lg:row-start-1">
-          <div className="order-1 flex flex-col gap-5 lg:order-none">
-            <TranscriptEditor />
-            {capture}
-          </div>
-          <StylePanel layout="write" />
-        </div>
-        <div className="order-2 min-w-0 lg:col-start-2 lg:row-start-1">
-          <PaperView />
-        </div>
-      </div>
-      <div className="order-3 lg:sticky lg:bottom-[var(--consent-offset,1rem)] lg:z-30">{bar}</div>
+      <ToolLayout
+        sideRef={sideRef}
+        side={
+          <>
+            <div className="order-1 flex flex-col gap-5 lg:order-none">
+              <TranscriptEditor />
+              {capture}
+            </div>
+            <StylePanel layout="write" />
+          </>
+        }
+        preview={<PaperView />}
+        previewClassName="order-2"
+        below={bar}
+        belowClassName="order-3 lg:sticky lg:bottom-[var(--consent-offset,1rem)] lg:z-30"
+        sideClassName="lg:max-h-[calc(100vh-10.25rem-var(--consent-offset,1rem))] lg:overflow-y-auto lg:pr-1"
+      />
       {drawer}
-    </div>
+    </>
   );
 }

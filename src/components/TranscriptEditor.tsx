@@ -23,7 +23,7 @@ export default function TranscriptEditor() {
   return (
     <section className="flex flex-col gap-1.5">
       <div className="flex items-baseline justify-between">
-        <h2 className="field-label">{t("editorLabel")}</h2>
+        <h2 className="section-title">{t("editorLabel")}</h2>
         <span className="font-mono text-[11px] text-zinc-400">
           {text.length} {t("charUnit")}
         </span>

@@ -25,6 +25,7 @@ export default async function SiteHeader() {
       blogLabel={t("blog")}
       aboutLabel={t("about")}
       menuLabel={t("menu")}
+      openToolLabel={t("openTool")}
     />
   );
 }

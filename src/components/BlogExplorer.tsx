@@ -30,12 +30,12 @@ const PAGE_SIZE = 12;
 /** 无题图时的封面:横线纸 + 装订线,标题写在纸面中央 */
 function TitleCover({ title, featured }: { title: string; featured: boolean }) {
   return (
-    <span aria-hidden className="absolute inset-0 flex items-center overflow-hidden bg-[#f6f3ec] pr-5 pl-4">
+    <span aria-hidden className="absolute inset-0 flex items-center overflow-hidden bg-[#f7f7f8] pr-5 pl-4">
       <span
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(to_bottom,transparent_0_27px,rgba(21,49,126,0.08)_27px_28px)]"
       />
-      <span aria-hidden className="pointer-events-none absolute inset-y-3 left-6 w-px bg-[#e7b4b4]" />
+      <span aria-hidden className="pointer-events-none absolute inset-y-3 left-6 w-px bg-accent/15" />
       <span
         className={`relative w-full min-w-0 pl-5 font-semibold tracking-tight text-accent ${
           featured
