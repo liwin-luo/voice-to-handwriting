@@ -80,7 +80,7 @@ export default function AudioImportPanel() {
           disabled={busy}
           className="btn btn-ghost px-4 py-2.5"
         >
-          <Waveform className="size-4 text-zinc-500" />
+          <Waveform className="size-4 text-stone-500" />
           {t("importAudio")}
         </button>
         <select
@@ -105,7 +105,7 @@ export default function AudioImportPanel() {
       </div>
       {statusText && (
         <div className="flex max-w-xs flex-col gap-1.5">
-          <p className="text-xs text-zinc-500">{statusText}</p>
+          <p className="text-xs text-stone-500">{statusText}</p>
           <div
             role="progressbar"
             aria-label={statusText}
@@ -113,7 +113,7 @@ export default function AudioImportPanel() {
             aria-valuemax={progress?.phase === "model" ? 100 : undefined}
             aria-valuenow={progress?.phase === "model" ? progress.percent ?? 0 : undefined}
             aria-valuetext={progress?.phase === "model" ? undefined : statusText}
-            className="h-1.5 overflow-hidden rounded-full bg-zinc-200"
+            className="h-1.5 overflow-hidden rounded-full bg-stone-200"
           >
             {progress?.phase === "model" ? (
               <div

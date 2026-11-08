@@ -29,7 +29,7 @@ export default function ToolFaq({ title, items }: { title?: string; items: FaqEn
             open={i === 0}
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
-              <h3 className="m-0 text-[15px] font-semibold leading-snug text-zinc-900">{it.q}</h3>
+              <h3 className="m-0 text-[15px] font-semibold leading-snug text-stone-900">{it.q}</h3>
               <span
                 aria-hidden
                 className="text-xl leading-none text-accent transition-transform duration-200 group-open:rotate-45"
@@ -37,7 +37,7 @@ export default function ToolFaq({ title, items }: { title?: string; items: FaqEn
                 +
               </span>
             </summary>
-            <p className="mt-3 text-sm leading-relaxed text-zinc-600">{it.a}</p>
+            <p className="mt-3 text-sm leading-relaxed text-stone-600">{it.a}</p>
             {it.link ? (
               <Link href={it.link.href} className="mt-2 inline-block text-sm text-accent underline">
                 {it.link.label}

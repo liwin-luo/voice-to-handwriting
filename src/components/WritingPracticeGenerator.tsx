@@ -186,7 +186,7 @@ export default function WritingPracticeGenerator({
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     script === sc.id
                       ? "border-accent bg-accent/5 text-accent"
-                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                      : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                   }`}
                 >
                   {sc.label}
@@ -215,7 +215,7 @@ export default function WritingPracticeGenerator({
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     guide === g.id
                       ? "border-accent bg-accent/5 text-accent"
-                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                      : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                   }`}
                 >
                   {g.label}
@@ -233,7 +233,7 @@ export default function WritingPracticeGenerator({
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     fillMode === f.id
                       ? "border-accent bg-accent/5 text-accent"
-                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                      : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                   }`}
                 >
                   {f.label}
@@ -264,16 +264,16 @@ export default function WritingPracticeGenerator({
           <ColorSwatch label={fontNames("ink")} value={ink} onChange={setInk} />
           <ColorSwatch label={fontNames("paperCustom.bg")} value={bg} onChange={setBg} />
           <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("cellSize")}</span>
+            <span className="text-stone-700">{t("cellSize")}</span>
             <span className="flex flex-1 items-center gap-2">
               <input type="range" min={64} max={110} value={cell} onChange={(e) => setCell(Number(e.target.value))} className="accent-accent" />
-              <span className="font-mono text-xs text-zinc-400">{cell}px</span>
+              <span className="font-mono text-xs text-stone-400">{cell}px</span>
             </span>
           </label>
         </>
       }
       preview={
-        <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+        <div className="overflow-hidden rounded-xl border border-stone-200 shadow-paper">
           <canvas ref={canvasRef} className="block h-auto w-full" />
         </div>
       }

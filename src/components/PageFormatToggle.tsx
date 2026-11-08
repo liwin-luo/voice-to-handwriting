@@ -27,7 +27,7 @@ export default function PageFormatToggle({
             className={`flex-1 cursor-pointer rounded-lg border px-2 py-1.5 text-xs transition-colors ${
               value === opt.id
                 ? "border-accent bg-accent/5 text-accent"
-                : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
             }`}
           >
             {opt.label}

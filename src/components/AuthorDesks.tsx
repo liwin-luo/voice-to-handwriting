@@ -10,12 +10,12 @@ export default async function AuthorDesks() {
       {Object.values(AUTHORS).map((author) => {
         const t = author.i18n[locale] ?? author.i18n.en;
         return (
-          <li key={author.id} className="rounded-xl border border-zinc-200 bg-white p-4">
+          <li key={author.id} className="rounded-xl border border-stone-200 bg-white p-4">
             <p className="text-sm">
-              <span className="font-semibold text-zinc-900">{author.name}</span>
-              <span className="text-zinc-500"> · {t?.role}</span>
+              <span className="font-semibold text-stone-900">{author.name}</span>
+              <span className="text-stone-500"> · {t?.role}</span>
             </p>
-            <p className="mt-1 text-sm leading-relaxed text-zinc-500">{t?.bio}</p>
+            <p className="mt-1 text-sm leading-relaxed text-stone-500">{t?.bio}</p>
           </li>
         );
       })}

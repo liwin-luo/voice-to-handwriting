@@ -184,7 +184,7 @@ export default function PageCalculator() {
       {!est.cell && (
         <span className="absolute top-0 bottom-0 w-px bg-[#e26d6d]" style={{ left: 76 }} />
       )}
-      <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
+      <span className="absolute right-5 bottom-3 font-mono text-[11px] text-stone-400">
         {t("pageMark", { n: index + 1, total: writingPages })}
       </span>
     </div>
@@ -199,10 +199,10 @@ export default function PageCalculator() {
           onChange={(e) => setText(e.target.value.slice(0, 20000))}
           rows={5}
           placeholder={t("textPlaceholder")}
-          className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm leading-relaxed"
+          className="w-full rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm leading-relaxed"
           {...compositionProps}
         />
-        <span className="flex items-center justify-between gap-2 text-xs text-zinc-400">
+        <span className="flex items-center justify-between gap-2 text-xs text-stone-400">
           <span>{t("textHint")}</span>
           <button type="button" className="cursor-pointer text-accent" onClick={() => setText(SAMPLE_TEXT[script])}>
             {t("sample")}
@@ -219,9 +219,9 @@ export default function PageCalculator() {
               min={0}
               value={countRaw}
               onChange={(e) => setCountRaw(e.target.value)}
-              className="rounded-lg border border-zinc-200 px-2 py-1.5 text-sm"
+              className="rounded-lg border border-stone-200 px-2 py-1.5 text-sm"
             />
-            <span className="text-xs text-zinc-400">{hasText ? t("usingText") : t("countHint")}</span>
+            <span className="text-xs text-stone-400">{hasText ? t("usingText") : t("countHint")}</span>
           </label>
 
           <label className="flex flex-col gap-1.5">
@@ -229,7 +229,7 @@ export default function PageCalculator() {
             <select
               value={script}
               onChange={(e) => setScript(e.target.value as CalcScript)}
-              className="rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm"
+              className="rounded-lg border border-stone-200 bg-white px-2 py-1.5 text-sm"
             >
               {CALC_SCRIPTS.map((id) => (
                 <option key={id} value={id}>
@@ -244,7 +244,7 @@ export default function PageCalculator() {
             <select
               value={paper}
               onChange={(e) => setPaper(e.target.value as CalcPaper)}
-              className="rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-sm"
+              className="rounded-lg border border-stone-200 bg-white px-2 py-1.5 text-sm"
             >
               {CALC_PAPERS.map((id) => (
                 <option key={id} value={id}>
@@ -256,7 +256,7 @@ export default function PageCalculator() {
 
           {paper === "custom" && (
             <label className="flex items-center justify-between gap-2 text-sm">
-              <span className="text-zinc-700">{t("pitchLabel")}</span>
+              <span className="text-stone-700">{t("pitchLabel")}</span>
               <input
                 type="range"
                 min={24}
@@ -277,7 +277,7 @@ export default function PageCalculator() {
                   type="button"
                   onClick={() => setSize(id)}
                   className={`flex-1 cursor-pointer rounded-lg border px-2 py-1.5 text-xs ${
-                    size === id ? "border-accent bg-accent/5 text-accent" : "border-zinc-200 bg-white text-zinc-500"
+                    size === id ? "border-accent bg-accent/5 text-accent" : "border-stone-200 bg-white text-stone-500"
                   }`}
                 >
                   {t(`size.${id}`)}
@@ -298,7 +298,7 @@ export default function PageCalculator() {
               onChange={(e) => setGap(GAPS[Number(e.target.value)] ?? "normal")}
               className="accent-accent disabled:opacity-40"
             />
-            <span className="text-xs text-zinc-400">{est.gapLocked ? t("gapLocked") : t(`gap.${gap}`)}</span>
+            <span className="text-xs text-stone-400">{est.gapLocked ? t("gapLocked") : t(`gap.${gap}`)}</span>
           </label>
 
           <div className="flex flex-col gap-1.5">
@@ -310,7 +310,7 @@ export default function PageCalculator() {
                   type="button"
                   onClick={() => setSides(n)}
                   className={`flex-1 cursor-pointer rounded-lg border px-2 py-1.5 text-xs ${
-                    sides === n ? "border-accent bg-accent/5 text-accent" : "border-zinc-200 bg-white text-zinc-500"
+                    sides === n ? "border-accent bg-accent/5 text-accent" : "border-stone-200 bg-white text-stone-500"
                   }`}
                 >
                   {n === 1 ? t("sidesOne") : t("sidesTwo")}
@@ -323,8 +323,8 @@ export default function PageCalculator() {
         </aside>
 
         <div className="flex flex-col gap-4">
-          <div className="rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm leading-relaxed" aria-live="polite">
-            <p className="font-medium text-zinc-900">
+          <div className="rounded-xl border border-stone-200 bg-white px-4 py-3 text-sm leading-relaxed" aria-live="polite">
+            <p className="font-medium text-stone-900">
               {hasText
                 ? t("summaryText", { pages: writingPages, sheets: textSheets, line: textLastLine })
                 : count > 0
@@ -332,14 +332,14 @@ export default function PageCalculator() {
                   : t("enterPrompt")}
             </p>
             {hasText && (
-              <p className="mt-1 text-zinc-500">
+              <p className="mt-1 text-stone-500">
                 {isWordScript(script) ? t("textStats", { words, chars }) : t("textStatsChars", { chars })}
               </p>
             )}
             {!hasText && count > 0 && !est.gapLocked && (
-              <p className="mt-1 text-zinc-500">{t("range", { tight: est.tightPerPage, loose: est.loosePerPage, unit })}</p>
+              <p className="mt-1 text-stone-500">{t("range", { tight: est.tightPerPage, loose: est.loosePerPage, unit })}</p>
             )}
-            <p className="mt-1 text-xs text-zinc-400">
+            <p className="mt-1 text-xs text-stone-400">
               {t("assumption", {
                 paper: paperLabel,
                 size: t(`size.${size}`),
@@ -382,7 +382,7 @@ export default function PageCalculator() {
                   {slots.map((slot, i) => {
                     if (slot.kind === "gap") {
                       return (
-                        <p key={`gap-${i}`} className="text-center text-sm text-zinc-400" style={{ width: est.pageW }}>
+                        <p key={`gap-${i}`} className="text-center text-sm text-stone-400" style={{ width: est.pageW }}>
                           {t("omitted", { count: slot.omitted })}
                         </p>
                       );

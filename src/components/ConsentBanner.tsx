@@ -69,7 +69,7 @@ export default function ConsentBanner() {
       className="glass-bar fixed inset-x-3 bottom-3 z-40 mx-auto flex max-w-3xl flex-col gap-4 p-4 sm:flex-row sm:items-center sm:gap-6 sm:p-5"
     >
       <div className="min-w-0 flex-1">
-        <p className="text-sm leading-relaxed text-zinc-600">{t("text")}</p>
+        <p className="text-sm leading-relaxed text-stone-600">{t("text")}</p>
         <Link
           href="/privacy"
           className="mt-2 inline-block text-sm text-accent underline underline-offset-2 hover:text-accent-strong"

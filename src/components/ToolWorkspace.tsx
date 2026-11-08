@@ -134,7 +134,7 @@ export default function ToolWorkspace({
   const bar = (
     <div ref={barRef} className="glass-bar z-30 flex flex-wrap items-center justify-between gap-4 px-5 py-3.5 lg:sticky lg:bottom-[var(--consent-offset,1rem)]">
       <button type="button" onClick={() => setHistoryOpen(true)} className="btn btn-ghost px-4 py-2.5">
-        <ClockCounterClockwise className="size-4 text-zinc-500" />
+        <ClockCounterClockwise className="size-4 text-stone-500" />
         {tHistory("open")}
       </button>
       <ExportBar />

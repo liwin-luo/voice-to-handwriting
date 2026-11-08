@@ -173,7 +173,7 @@ export default function PaperGenerator({
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     type === tp.id
                       ? "border-accent bg-accent/5 text-accent"
-                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                      : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                   }`}
                 >
                   {tp.label}
@@ -190,7 +190,7 @@ export default function PaperGenerator({
             {t("downloadPdf")}
           </button>
           <button onClick={downloadPng} className="btn btn-ghost flex-1 px-4 py-2.5 text-sm">
-            <ImageIcon className="size-4 text-zinc-500" />
+            <ImageIcon className="size-4 text-stone-500" />
             {t("downloadPng")}
           </button>
         </div>
@@ -199,7 +199,7 @@ export default function PaperGenerator({
         <>
           {type !== "blank" && (
             <label className="flex items-center justify-between gap-2 text-sm">
-              <span className="text-zinc-700">
+              <span className="text-stone-700">
                 {type === "graph" || type === "dots" ? t("gridSize") : type === "handwriting" ? t("bandHeight") : t("lineSpacing")}
               </span>
               <span className="flex flex-1 items-center gap-2">
@@ -211,7 +211,7 @@ export default function PaperGenerator({
                   onChange={(e) => setSpacing(Number(e.target.value))}
                   className="accent-accent"
                 />
-                <span className="font-mono text-xs text-zinc-400">
+                <span className="font-mono text-xs text-stone-400">
                   {formatLength(type === "handwriting" ? Math.max(60, spacing * 3) : spacing, locale)}
                 </span>
               </span>
@@ -221,13 +221,13 @@ export default function PaperGenerator({
           <ColorSwatch label={tool("paperCustom.bg")} value={bg} onChange={setBg} />
           {wantsPaperMargin(type) && (
             <label className="flex items-center justify-between gap-2 text-sm">
-              <span className="text-zinc-700">{t("redMargin")}</span>
+              <span className="text-stone-700">{t("redMargin")}</span>
               <button
                 role="switch"
                 aria-checked={showMargin}
                 onClick={() => setShowMargin(!showMargin)}
                 className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                  showMargin ? "bg-accent" : "bg-zinc-300"
+                  showMargin ? "bg-accent" : "bg-stone-300"
                 }`}
               >
                 <span
@@ -242,7 +242,7 @@ export default function PaperGenerator({
         </>
       }
       preview={
-        <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+        <div className="overflow-hidden rounded-xl border border-stone-200 shadow-paper">
           <canvas ref={canvasRef} className="block h-auto w-full" />
         </div>
       }

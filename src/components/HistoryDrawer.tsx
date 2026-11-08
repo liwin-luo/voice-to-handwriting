@@ -27,7 +27,7 @@ export default function HistoryDrawer({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   return createPortal(
-    <div className="fixed inset-0 z-50 bg-zinc-950/50 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 bg-stone-950/50 backdrop-blur-sm" onClick={onClose}>
       <div
         role="dialog"
         aria-label={t("title")}
@@ -35,12 +35,12 @@ export default function HistoryDrawer({ onClose }: { onClose: () => void }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* 头部 */}
-        <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-3.5">
-          <h2 className="text-sm font-semibold text-zinc-900">{t("title")}</h2>
+        <div className="flex items-center justify-between border-b border-stone-200 px-5 py-3.5">
+          <h2 className="text-sm font-semibold text-stone-900">{t("title")}</h2>
           <button
             onClick={onClose}
             aria-label={t("close")}
-            className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700"
+            className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-stone-400 transition-colors hover:bg-stone-100 hover:text-stone-700"
           >
             <X className="size-4" />
           </button>

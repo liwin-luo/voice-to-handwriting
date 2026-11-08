@@ -141,7 +141,7 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
 
   const chip = (active: boolean) =>
     `btn h-8 whitespace-nowrap rounded-full border px-3.5 text-[13px] ${
-      active ? "border-accent bg-accent text-white" : "border-zinc-200 bg-white text-zinc-600 hover:border-zinc-300 hover:text-zinc-900"
+      active ? "border-accent bg-accent text-white" : "border-stone-200 bg-white text-stone-600 hover:border-stone-300 hover:text-stone-900"
     }`;
 
   // 放不下的 chip 始终离开第一行,展开时原样排到下一行,第一行不重排
@@ -174,7 +174,7 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
       <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
         <div className="flex w-full min-w-0 flex-col gap-2 md:w-auto md:flex-1">
           <div ref={clusterRef} className="relative flex min-w-0 items-center gap-2">
-            <Funnel className="size-4 shrink-0 text-zinc-400" aria-hidden />
+            <Funnel className="size-4 shrink-0 text-stone-400" aria-hidden />
             <div ref={clipRef} className="flex min-w-0 flex-nowrap gap-2 overflow-hidden">
               {topics.map((topic, index) => topicButton(topic, concealed(index)))}
             </div>
@@ -225,12 +225,12 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
         </div>
       </div>
 
-      <p className="mt-4 text-xs text-zinc-400">
+      <p className="mt-4 text-xs text-stone-400">
         {t("count", { n: filtered.length })}
       </p>
 
       {pagePosts.length === 0 ? (
-        <div className="mt-10 rounded-2xl border border-dashed border-zinc-300 p-10 text-center text-sm text-zinc-500">
+        <div className="mt-10 rounded-xl border border-dashed border-stone-300 p-10 text-center text-sm text-stone-500">
           {t("noPosts")}
         </div>
       ) : (
@@ -245,12 +245,12 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
               >
                 <Link
                   href={`/blog/${p.slug}`}
-                  className={`group flex h-full overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all duration-300 hover:border-zinc-300 hover:shadow-[0_16px_32px_-20px_rgba(23,23,23,0.2)] ${
+                  className={`group flex h-full overflow-hidden rounded-xl border border-stone-200 bg-white transition-all duration-300 hover:border-stone-300 hover:shadow-sm ${
                     featured ? "flex-col md:flex-row" : "flex-col"
                   }`}
                 >
                   <span
-                    className={`relative block shrink-0 overflow-hidden bg-zinc-100 ${
+                    className={`relative block shrink-0 overflow-hidden bg-stone-100 ${
                       featured ? "aspect-[16/9] md:aspect-auto md:w-1/2" : "aspect-[16/10] w-full"
                     }`}
                   >
@@ -273,24 +273,24 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
                     className={`flex flex-1 flex-col ${featured ? "justify-center gap-3 p-6 md:p-8" : "gap-2 p-5"}`}
                   >
                     <span
-                      className={`font-semibold text-zinc-900 transition-colors group-hover:text-accent ${
+                      className={`font-semibold text-stone-900 transition-colors group-hover:text-accent ${
                         featured ? "text-xl md:text-2xl" : "text-[17px]"
                       }`}
                     >
                       {p.title}
                     </span>
                     <span
-                      className={`text-sm leading-relaxed text-zinc-500 ${featured ? "" : "line-clamp-3"}`}
+                      className={`text-sm leading-relaxed text-stone-500 ${featured ? "" : "line-clamp-3"}`}
                     >
                       {p.description}
                     </span>
-                    <span className="mt-auto flex flex-wrap items-center gap-x-2 pt-2 text-[11px] text-zinc-400">
+                    <span className="mt-auto flex flex-wrap items-center gap-x-2 pt-2 text-[11px] text-stone-400">
                       <span className="font-medium">{p.author}</span>
-                      <span className="text-zinc-300">·</span>
+                      <span className="text-stone-300">·</span>
                       <time dateTime={p.date} className="font-mono">
                         {p.date}
                       </time>
-                      <span className="text-zinc-300">·</span>
+                      <span className="text-stone-300">·</span>
                       <span>{tPost("reading", { m: p.minutes })}</span>
                       {featured && (
                         <span className="ml-auto inline-flex items-center gap-1 text-accent">
@@ -320,7 +320,7 @@ export default function BlogExplorer({ posts, toolOptions }: { posts: BlogCardDa
           </button>
           {pageWindow(safePage, totalPages).map((n, idx) =>
             n === "…" ? (
-              <span key={`gap-${idx}`} className="px-1 text-sm text-zinc-400">
+              <span key={`gap-${idx}`} className="px-1 text-sm text-stone-400">
                 …
               </span>
             ) : (

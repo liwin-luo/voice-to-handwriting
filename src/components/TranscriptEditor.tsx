@@ -17,14 +17,14 @@ export default function TranscriptEditor() {
     `flex size-8 cursor-pointer items-center justify-center rounded-lg border transition-all duration-200 active:scale-90 ${
       active
         ? "border-accent bg-accent/5 text-accent"
-        : "border-zinc-200 bg-white text-zinc-400 hover:border-zinc-300 hover:text-zinc-600"
+        : "border-stone-200 bg-white text-stone-400 hover:border-stone-300 hover:text-stone-600"
     }`;
 
   return (
     <section className="flex flex-col gap-1.5">
       <div className="flex items-baseline justify-between">
         <h2 className="section-title">{t("editorLabel")}</h2>
-        <span className="font-mono text-[11px] text-zinc-400">
+        <span className="font-mono text-[11px] text-stone-400">
           {text.length} {t("charUnit")}
         </span>
       </div>
@@ -50,7 +50,7 @@ export default function TranscriptEditor() {
         >
           <TextAlignCenter className="size-4" />
         </button>
-        <span className="mx-1 h-4 w-px bg-zinc-200" />
+        <span className="mx-1 h-4 w-px bg-stone-200" />
         <button
           title={t("indent")}
           aria-label={t("indent")}

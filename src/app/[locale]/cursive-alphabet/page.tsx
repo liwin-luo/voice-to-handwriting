@@ -41,10 +41,10 @@ export default async function CursiveAlphabetPage({
   setRequestLocale(locale);
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8">
+    <main className="mx-auto max-w-5xl px-4 py-8">
       <header className="rise mb-7 max-w-3xl">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{ALPHABET_PAGE.h1}</h1>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-600">{ALPHABET_PAGE.intro}</p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px]">{ALPHABET_PAGE.h1}</h1>
+        <p className="mt-3 text-sm leading-relaxed text-stone-600">{ALPHABET_PAGE.intro}</p>
       </header>
       <figure className="rise mb-8 max-w-md">
         {/* 静态文件不走 i18n Link,避免被加上语言前缀 */}
@@ -53,9 +53,9 @@ export default async function CursiveAlphabetPage({
           alt={ALPHABET_UI.staticAlt}
           width={816}
           height={1056}
-          className="h-auto w-full rounded-2xl border border-zinc-200 bg-white"
+          className="h-auto w-full rounded-xl border border-stone-200 bg-white"
         />
-        <figcaption className="mt-3 text-sm leading-relaxed text-zinc-600">
+        <figcaption className="mt-3 text-sm leading-relaxed text-stone-600">
           <a href="/printables/cursive-alphabet.pdf" className="text-accent underline-offset-2 hover:underline">
             {ALPHABET_UI.staticPdf}
           </a>
@@ -63,14 +63,14 @@ export default async function CursiveAlphabetPage({
         </figcaption>
       </figure>
       <section className="rise mb-8 max-w-3xl" style={{ animationDelay: "40ms" }}>
-        <h2 className="text-base font-semibold text-zinc-900">{ALPHABET_PRINTABLES.title}</h2>
-        <p className="mt-1 text-sm leading-relaxed text-zinc-600">{ALPHABET_PRINTABLES.intro}</p>
+        <h2 className="text-base font-semibold text-stone-900">{ALPHABET_PRINTABLES.title}</h2>
+        <p className="mt-1 text-sm leading-relaxed text-stone-600">{ALPHABET_PRINTABLES.intro}</p>
         <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {ALPHABET_PRINTABLES.items.map((item) => (
             <a
               key={item.stem}
               href={`/printables/${item.stem}.pdf`}
-              className="group rounded-2xl border border-zinc-200 bg-white p-3 transition-colors hover:border-accent/50"
+              className="group rounded-xl border border-stone-200 bg-white p-3 transition-colors hover:border-accent/50"
             >
               {/* 静态文件不走 i18n Link,理由同上 */}
               <img
@@ -79,12 +79,12 @@ export default async function CursiveAlphabetPage({
                 width={816}
                 height={1056}
                 loading="lazy"
-                className="mx-auto h-auto w-full max-w-[170px] rounded-lg border border-zinc-100"
+                className="mx-auto h-auto w-full max-w-[170px] rounded-lg border border-stone-100"
               />
-              <h3 className="mt-2 text-sm font-medium text-zinc-900 transition-colors group-hover:text-accent">
+              <h3 className="mt-2 text-sm font-medium text-stone-900 transition-colors group-hover:text-accent">
                 {item.title}
               </h3>
-              <p className="mt-1 text-xs leading-relaxed text-zinc-500">{item.desc}</p>
+              <p className="mt-1 text-xs leading-relaxed text-stone-500">{item.desc}</p>
             </a>
           ))}
         </div>
@@ -107,10 +107,10 @@ export default async function CursiveAlphabetPage({
         <ShareBar />
       </div>
       <section
-        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"
+        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-stone-600"
         style={{ animationDelay: "200ms" }}
       >
-        <h2 className="mb-2 text-base font-semibold text-zinc-900">{ALPHABET_PAGE.seoTitle}</h2>
+        <h2 className="mb-2 text-base font-semibold text-stone-900">{ALPHABET_PAGE.seoTitle}</h2>
         <p className="whitespace-pre-line">{ALPHABET_PAGE.seoText}</p>
       </section>
       <ToolFaq title="Cursive alphabet FAQ" items={ALPHABET_PAGE.faqs} />

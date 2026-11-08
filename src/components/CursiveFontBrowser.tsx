@@ -149,8 +149,8 @@ export default function CursiveFontBrowser() {
 
   return (
     <div>
-      <div className="rounded-2xl border border-zinc-200 bg-white p-5">
-        <label htmlFor="font-preview-input" className="text-sm font-semibold text-zinc-900">
+      <div className="rounded-xl border border-stone-200 bg-white p-5">
+        <label htmlFor="font-preview-input" className="text-sm font-semibold text-stone-900">
           {t("inputLabel")}
         </label>
         <textarea
@@ -159,10 +159,10 @@ export default function CursiveFontBrowser() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder={t("placeholder")}
-          className="mt-2 w-full resize-y rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm outline-none focus:border-accent"
+          className="mt-2 w-full resize-y rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm outline-none focus:border-accent"
           {...compositionProps}
         />
-        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-700">
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-stone-700">
           <label className="flex items-center gap-2">
             <span>{t("sizeLabel")}</span>
             <input
@@ -173,7 +173,7 @@ export default function CursiveFontBrowser() {
               onChange={(e) => setSize(Number(e.target.value))}
               aria-label={t("sizeLabel")}
             />
-            <span className="w-8 tabular-nums text-zinc-500">{size}</span>
+            <span className="w-8 tabular-nums text-stone-500">{size}</span>
           </label>
           <div className="flex items-center gap-2">
             <span>{t("inkLabel")}</span>
@@ -187,7 +187,7 @@ export default function CursiveFontBrowser() {
                   aria-pressed={inkId === c.id}
                   title={inkLabel(c.id)}
                   className={`size-6 rounded-full border-2 transition-transform ${
-                    inkId === c.id ? "scale-110 border-accent" : "border-zinc-200"
+                    inkId === c.id ? "scale-110 border-accent" : "border-stone-200"
                   }`}
                   style={{ backgroundColor: c.value }}
                 />
@@ -199,7 +199,7 @@ export default function CursiveFontBrowser() {
             <select
               value={bgId}
               onChange={(e) => setBgId(e.target.value as BgId)}
-              className="rounded-lg border border-zinc-200 bg-white px-2 py-1.5"
+              className="rounded-lg border border-stone-200 bg-white px-2 py-1.5"
             >
               <option value="white">{t("bgWhite")}</option>
               <option value="paper">{t("bgPaper")}</option>
@@ -213,18 +213,18 @@ export default function CursiveFontBrowser() {
       <div className="mt-4 flex flex-col gap-3">
         {FONT_CATALOG.map((entry) => {
           return (
-            <div key={entry.id} className="rounded-2xl border border-zinc-200 bg-white p-4">
+            <div key={entry.id} className="rounded-xl border border-stone-200 bg-white p-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <p className="text-sm font-semibold text-zinc-900">
+                <p className="text-sm font-semibold text-stone-900">
                   {entry.displayName}
-                  <span className="ml-2 rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-normal text-zinc-500">
+                  <span className="ml-2 rounded-full bg-stone-100 px-2 py-0.5 text-xs font-normal text-stone-500">
                     {entry.style}
                   </span>
                   <a
                     href={entry.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-2 text-xs font-normal text-zinc-400 underline-offset-2 hover:text-accent hover:underline"
+                    className="ml-2 text-xs font-normal text-stone-400 underline-offset-2 hover:text-accent hover:underline"
                   >
                     {entry.author} · {entry.license}
                   </a>
@@ -257,7 +257,7 @@ export default function CursiveFontBrowser() {
                 </div>
               </div>
               <div
-                className="mt-3 overflow-hidden rounded-xl border border-zinc-100 px-4 py-3"
+                className="mt-3 overflow-hidden rounded-xl border border-stone-100 px-4 py-3"
                 style={{
                   fontFamily: entry.css,
                   fontSize: size,
@@ -267,7 +267,7 @@ export default function CursiveFontBrowser() {
                   overflowWrap: "anywhere",
                 }}
               >
-                {lines.length > 0 ? drawText : <span className="text-base text-zinc-400">{t("empty")}</span>}
+                {lines.length > 0 ? drawText : <span className="text-base text-stone-400">{t("empty")}</span>}
               </div>
             </div>
           );

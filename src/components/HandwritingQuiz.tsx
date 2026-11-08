@@ -119,11 +119,11 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
       </p>
 
       {step >= 0 && !done && (
-        <div className="rounded-3xl border border-zinc-200 bg-white p-5 md:p-8">
-          <div className="mb-2 text-xs font-medium text-zinc-400">
+        <div className="rounded-xl border border-stone-200 bg-white p-5 md:p-8">
+          <div className="mb-2 text-xs font-medium text-stone-400">
             {formatProgress(c.progress, step + 1, total)}
           </div>
-          <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-zinc-100" aria-hidden>
+          <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-stone-100" aria-hidden>
             <div
               className="h-full rounded-full bg-accent transition-all duration-300"
               style={{ width: `${(step / total) * 100}%` }}
@@ -132,7 +132,7 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
           <h3
             ref={headingRef}
             tabIndex={-1}
-            className="outline-none text-lg font-semibold text-zinc-900 md:text-xl"
+            className="outline-none text-lg font-semibold text-stone-900 md:text-xl"
           >
             {c.questions[step].prompt}
           </h3>
@@ -143,7 +143,7 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
                 type="button"
                 data-testid="quiz-option"
                 onClick={() => choose(j)}
-                className="group flex cursor-pointer flex-col items-center justify-between gap-3 rounded-2xl border border-zinc-200 p-4 text-center transition-all duration-300 hover:border-accent hover:shadow-[0_10px_30px_-14px_rgba(21,49,126,0.35)] focus-visible:outline-2 focus-visible:outline-accent"
+                className="group flex cursor-pointer flex-col items-center justify-between gap-3 rounded-xl border border-stone-200 p-4 text-center transition-all duration-300 hover:border-accent hover:shadow-sm focus-visible:outline-2 focus-visible:outline-accent"
               >
                 {c.questions[step].text ? (
                   <span
@@ -154,7 +154,7 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
                     {c.questions[step].text}
                   </span>
                 ) : null}
-                <span className="text-sm leading-snug text-zinc-600 group-hover:text-zinc-900">
+                <span className="text-sm leading-snug text-stone-600 group-hover:text-stone-900">
                   {opt.label}
                 </span>
               </button>
@@ -175,37 +175,37 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
         <div className="rise">
           <div
             ref={cardRef}
-            className="rounded-3xl border border-zinc-200 bg-white p-6 md:p-8"
+            className="rounded-xl border border-stone-200 bg-white p-6 md:p-8"
           >
-            <h3 className="text-sm font-medium text-zinc-400">{c.resultHeading}</h3>
+            <h3 className="text-sm font-medium text-stone-400">{c.resultHeading}</h3>
             <p
-              className="mt-3 text-4xl leading-tight text-zinc-900 md:text-5xl"
+              className="mt-3 text-4xl leading-tight text-stone-900 md:text-5xl"
               style={{ fontFamily: FONT_STACKS[PROFILE_STACK[result.profile]] }}
             >
               {profile.name}
             </p>
-            <p className="mt-2 text-sm text-zinc-500">{profile.tagline}</p>
+            <p className="mt-2 text-sm text-stone-500">{profile.tagline}</p>
             <ul className="mt-6 space-y-3">
               {result.dimensions.map((d) => {
                 const dim = c.dimensions[d.id];
                 return (
                   <li key={d.id} className="flex items-center gap-3 text-sm">
-                    <span className="w-28 shrink-0 text-zinc-600 md:w-36">{dim.label}</span>
-                    <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-zinc-100" aria-hidden>
+                    <span className="w-28 shrink-0 text-stone-600 md:w-36">{dim.label}</span>
+                    <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-stone-100" aria-hidden>
                       <span
                         className="block h-full rounded-full bg-accent"
                         style={{ width: LEVEL_WIDTH[d.level] }}
                       />
                     </span>
-                    <span className="w-24 shrink-0 text-right text-xs text-zinc-500 md:w-28">
+                    <span className="w-24 shrink-0 text-right text-xs text-stone-500 md:w-28">
                       {dim.levels[d.level]}
                     </span>
                   </li>
                 );
               })}
             </ul>
-            <p className="mt-6 text-[10px] leading-snug text-zinc-400">{c.disclaimer}</p>
-            <p className="mt-1 text-right text-[10px] text-zinc-300">
+            <p className="mt-6 text-[10px] leading-snug text-stone-400">{c.disclaimer}</p>
+            <p className="mt-1 text-right text-[10px] text-stone-300">
               Voice to Handwriting · voicetohandwriting.online
             </p>
           </div>
@@ -224,18 +224,18 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
               {c.retake}
             </button>
           </div>
-          <p className="mt-3 text-xs text-zinc-400">{c.disclaimer}</p>
+          <p className="mt-3 text-xs text-stone-400">{c.disclaimer}</p>
 
           <div className="mt-8 grid gap-3">
-            <h3 className="text-lg font-semibold text-zinc-900">{c.dimsHeading}</h3>
+            <h3 className="text-lg font-semibold text-stone-900">{c.dimsHeading}</h3>
             {result.dimensions.map((d) => {
               const dim = c.dimensions[d.id];
               return (
-                <div key={d.id} className="rounded-2xl border border-zinc-200 bg-white p-5">
-                  <p className="text-[15px] font-semibold text-zinc-900">
+                <div key={d.id} className="rounded-xl border border-stone-200 bg-white p-5">
+                  <p className="text-[15px] font-semibold text-stone-900">
                     {dim.label} · {dim.levels[d.level]}
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                  <p className="mt-2 text-sm leading-relaxed text-stone-600">
                     <Link
                       href={dim.practice.href}
                       className="text-accent underline underline-offset-2 transition-colors hover:text-accent-strong"
@@ -246,9 +246,9 @@ export default function HandwritingQuiz({ locale }: { locale: Locale }) {
                 </div>
               );
             })}
-            <div className="rounded-2xl border border-zinc-200 bg-white p-5">
-              <p className="text-[15px] font-semibold text-zinc-900">{c.growthLabel}</p>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{profile.growth}</p>
+            <div className="rounded-xl border border-stone-200 bg-white p-5">
+              <p className="text-[15px] font-semibold text-stone-900">{c.growthLabel}</p>
+              <p className="mt-2 text-sm leading-relaxed text-stone-600">{profile.growth}</p>
             </div>
           </div>
         </div>

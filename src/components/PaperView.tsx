@@ -187,15 +187,15 @@ export default function PaperView() {
           className="shadow-paper flex flex-col items-center gap-4 rounded-xl pt-24"
           style={{ width: pageW, height: pageH, background: paper.background }}
         >
-          <p className="font-hand text-4xl text-zinc-300">{t("emptyTitle")}</p>
-          <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+          <p className="font-hand text-4xl text-stone-300">{t("emptyTitle")}</p>
+          <p className="text-sm text-stone-400">{t("emptyHint")}</p>
           <button
             onClick={() => setText(th("sampleText"))}
             className="btn btn-ghost mt-1 px-4 py-2 text-xs"
           >
             {t("trySample")}
           </button>
-          <ArrowDown className="size-4 animate-bounce text-zinc-300" />
+          <ArrowDown className="size-4 animate-bounce text-stone-300" />
         </div>
       ) : (
         pages.map((pageTokens, p) => (
@@ -210,11 +210,11 @@ export default function PaperView() {
             }}
           >
             {tokenFlow(pageTokens)}
-            <span className="absolute right-5 bottom-3 font-mono text-[11px] text-zinc-400">
+            <span className="absolute right-5 bottom-3 font-mono text-[11px] text-stone-400">
               {p + 1} / {pages.length}
             </span>
             {watermark && (
-              <span className="absolute left-5 bottom-3 text-[10px] tracking-wide text-zinc-400/90 select-none">
+              <span className="absolute left-5 bottom-3 text-[10px] tracking-wide text-stone-400/90 select-none">
                 {th("watermarkLabel")}
               </span>
             )}

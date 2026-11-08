@@ -133,7 +133,7 @@ export default function CursiveAlphabetPanel() {
             className={`h-11 w-14 rounded-xl border text-xl transition-colors ${
               i === selected
                 ? "border-accent bg-accent/5 text-accent"
-                : "border-zinc-200 bg-white text-zinc-800 hover:border-accent/50"
+                : "border-stone-200 bg-white text-stone-800 hover:border-accent/50"
             }`}
           >
             {e.capital}
@@ -142,7 +142,7 @@ export default function CursiveAlphabetPanel() {
         ))}
       </div>
 
-      <div className="mt-5 rounded-2xl border border-zinc-200 bg-white p-4">
+      <div className="mt-5 rounded-xl border border-stone-200 bg-white p-4">
         <canvas
           ref={canvasRef}
           width={LETTER_STRIP.w}
@@ -150,13 +150,13 @@ export default function CursiveAlphabetPanel() {
           className="h-auto w-full"
           aria-label={`Cursive ${entry.capital} and ${entry.lower} on a three-line guide`}
         />
-        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-zinc-700">
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-stone-700">
           <label className="flex items-center gap-2">
             <span>{ALPHABET_UI.fontLabel}</span>
             <select
               value={fontId}
               onChange={(e) => setFontId(e.target.value)}
-              className="rounded-lg border border-zinc-200 bg-white px-2 py-1.5"
+              className="rounded-lg border border-stone-200 bg-white px-2 py-1.5"
             >
               {ALPHABET_FONTS.map((f) => (
                 <option key={f.id} value={f.id}>
@@ -180,14 +180,14 @@ export default function CursiveAlphabetPanel() {
             {ALPHABET_UI.downloadPdf}
           </button>
         </div>
-        <p className="mt-3 text-xs leading-relaxed text-zinc-400">{ALPHABET_UI.printNote}</p>
+        <p className="mt-3 text-xs leading-relaxed text-stone-400">{ALPHABET_UI.printNote}</p>
       </div>
 
       {(entry.words || lessonSlug) && (
-        <div className="mt-4 text-sm text-zinc-600">
+        <div className="mt-4 text-sm text-stone-600">
           {entry.words && (
             <p>
-              <span className="font-semibold text-zinc-900">{ALPHABET_UI.wordsLabel}: </span>
+              <span className="font-semibold text-stone-900">{ALPHABET_UI.wordsLabel}: </span>
               <span style={{ fontFamily: font.css, fontSize: "1.15rem" }}>{entry.words.join(" · ")}</span>
             </p>
           )}

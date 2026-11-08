@@ -46,8 +46,8 @@ export default function NavDropdown({
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className={`flex cursor-pointer items-center gap-1 transition-colors hover:text-zinc-950 ${
-          isActive ? "text-zinc-950" : "text-zinc-600"
+        className={`flex cursor-pointer items-center gap-1 transition-colors hover:text-stone-950 ${
+          isActive ? "text-stone-950" : "text-stone-600"
         }`}
       >
         {label}
@@ -58,13 +58,13 @@ export default function NavDropdown({
         <div className="absolute left-0 top-full z-40 pt-2">
           <div
             role="menu"
-            className="w-64 rounded-xl border border-zinc-200 bg-white p-2 shadow-[0_16px_40px_-16px_rgba(23,23,23,0.25)]"
+            className="w-64 rounded-xl border border-stone-200 bg-white p-2 shadow-sm"
           >
             {groups.map((g, gi) => (
-              <div key={g.label} className={gi > 0 ? "mt-1 border-t border-zinc-100 pt-1.5" : ""}>
+              <div key={g.label} className={gi > 0 ? "mt-1 border-t border-stone-100 pt-1.5" : ""}>
                 <p
                   aria-hidden
-                  className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wide text-zinc-400"
+                  className="px-3 pb-1 pt-1.5 text-[11px] font-semibold uppercase tracking-wide text-stone-400"
                 >
                   {g.label}
                 </p>
@@ -73,18 +73,18 @@ export default function NavDropdown({
                     key={i.href}
                     href={i.href}
                     role="menuitem"
-                    className="block rounded-lg px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
+                    className="block rounded-lg px-3 py-2 text-sm text-stone-600 transition-colors hover:bg-stone-50 hover:text-stone-950"
                   >
                     {i.label}
                   </Link>
                 ))}
               </div>
             ))}
-            <div className="mt-1 border-t border-zinc-100 pt-1">
+            <div className="mt-1 border-t border-stone-100 pt-1">
               <Link
                 href={viewAll.href}
                 role="menuitem"
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-zinc-950 transition-colors hover:bg-zinc-50"
+                className="block rounded-lg px-3 py-2 text-sm font-medium text-stone-950 transition-colors hover:bg-stone-50"
               >
                 {viewAll.label}
               </Link>

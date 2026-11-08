@@ -16,12 +16,12 @@ export default function PageHeader({
 }) {
   return (
     <header className="rise mb-6 flex flex-col gap-2.5">
-      <h1 className="text-2xl font-semibold tracking-tight text-zinc-950 md:text-[28px] md:leading-snug">
+      <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px] md:leading-snug">
         {title}
       </h1>
       {intro || badge ? (
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-          {intro ? <p className="text-sm leading-relaxed text-zinc-600">{intro}</p> : null}
+          {intro ? <p className="text-sm leading-relaxed text-stone-600">{intro}</p> : null}
           {badge}
         </div>
       ) : null}

@@ -26,7 +26,7 @@ export default function TemplatesBrowser({ templates }: { templates: TemplateCar
   return (
     <div className="flex flex-col gap-5">
       <label className="relative block">
-        <MagnifyingGlass className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-zinc-400" />
+        <MagnifyingGlass className="pointer-events-none absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-stone-400" />
         <input
           type="search"
           value={query}
@@ -36,14 +36,14 @@ export default function TemplatesBrowser({ templates }: { templates: TemplateCar
         />
       </label>
 
-      <p className="font-mono text-[11px] text-zinc-400">
+      <p className="font-mono text-[11px] text-stone-400">
         {filtered.length} / {templates.length}
       </p>
 
       {filtered.length === 0 ? (
-        <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-16">
-          <p className="font-hand text-3xl text-zinc-300">{t("noResult")}</p>
-          <p className="text-sm text-zinc-400">{t("noResultHint")}</p>
+        <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-stone-300 py-16">
+          <p className="font-hand text-3xl text-stone-300">{t("noResult")}</p>
+          <p className="text-sm text-stone-400">{t("noResultHint")}</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -51,16 +51,16 @@ export default function TemplatesBrowser({ templates }: { templates: TemplateCar
             <Link
               key={tpl.slug}
               href={`/templates/${tpl.slug}`}
-              className="group flex flex-col gap-2 rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 hover:border-zinc-300 hover:shadow-[0_16px_32px_-20px_rgba(23,23,23,0.2)]"
+              className="group flex flex-col gap-2 rounded-xl border border-stone-200 bg-white p-5 transition-all duration-300 hover:border-stone-300 hover:shadow-sm"
               style={{ animationDelay: `${Math.min(i, 8) * 40}ms` }}
             >
               <span className="flex items-center justify-between gap-3">
-                <span className="text-[17px] font-semibold text-zinc-900 transition-colors group-hover:text-accent">
+                <span className="text-[17px] font-semibold text-stone-900 transition-colors group-hover:text-accent">
                   {tpl.title}
                 </span>
                 <ArrowRight />
               </span>
-              <span className="text-sm leading-relaxed text-zinc-500">{tpl.description}</span>
+              <span className="text-sm leading-relaxed text-stone-500">{tpl.description}</span>
             </Link>
           ))}
         </div>
@@ -72,7 +72,7 @@ export default function TemplatesBrowser({ templates }: { templates: TemplateCar
 function ArrowRight() {
   // 内联箭头,避免额外依赖路径
   return (
-    <svg viewBox="0 0 256 256" className="size-4 shrink-0 text-zinc-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent" fill="currentColor" aria-hidden>
+    <svg viewBox="0 0 256 256" className="size-4 shrink-0 text-stone-300 transition-all duration-300 group-hover:translate-x-1 group-hover:text-accent" fill="currentColor" aria-hidden>
       <path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L187.06,140H40a8,8,0,0,1,0-16H187.06L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72Z" />
     </svg>
   );

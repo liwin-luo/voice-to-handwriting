@@ -213,7 +213,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
         className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
           pressed
             ? "border-accent bg-accent/5 text-accent"
-            : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+            : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
         }`}
       >
         {t(LIST_LABEL[list.id])}
@@ -241,7 +241,7 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
             <div className="flex flex-wrap gap-1.5">
               {SPELLING_LISTS.filter((list) => list.id !== "fry100").map(chip)}
             </div>
-            <details className="text-xs text-zinc-500">
+            <details className="text-xs text-stone-500">
               <summary className="cursor-pointer">{t("listMore")}</summary>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {SPELLING_LISTS.filter((list) => list.id === "fry100").map(chip)}
@@ -269,13 +269,13 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
             </select>
           </div>
           <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("showTrace")}</span>
+            <span className="text-stone-700">{t("showTrace")}</span>
             <button
               role="switch"
               aria-checked={showTrace}
               onClick={() => setShowTrace(!showTrace)}
               className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                showTrace ? "bg-accent" : "bg-zinc-300"
+                showTrace ? "bg-accent" : "bg-stone-300"
               }`}
             >
               <span
@@ -289,14 +289,14 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
             className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
             title={guidesAvailable ? undefined : t("strokeGuidesHint")}
           >
-            <span className="text-zinc-700">{t("strokeGuides")}</span>
+            <span className="text-stone-700">{t("strokeGuides")}</span>
             <button
               role="switch"
               aria-checked={guides && guidesAvailable}
               disabled={!guidesAvailable}
               onClick={() => setGuides(!guides)}
               className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-                guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+                guides && guidesAvailable ? "bg-accent" : "bg-stone-300"
               } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
             >
               <span
@@ -314,15 +314,15 @@ export default function WordWorkGenerator({ defaultFormat }: { defaultFormat: Pa
       preview={
         <div className="flex flex-col gap-6">
           {pageUrls.map((u, i) => (
-            <div key={i} className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+            <div key={i} className="overflow-hidden rounded-xl border border-stone-200 shadow-paper">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={u} alt={`page ${i + 1}`} className="block h-auto w-full" />
             </div>
           ))}
           {pageUrls.length === 0 && (
-            <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-24">
-              <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
-              <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-stone-300 py-24">
+              <p className="font-hand text-3xl text-stone-300">{t("emptyTitle")}</p>
+              <p className="text-sm text-stone-400">{t("emptyHint")}</p>
             </div>
           )}
         </div>

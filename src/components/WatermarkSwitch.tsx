@@ -13,7 +13,7 @@ export default function WatermarkSwitch({
   const t = useTranslations("tool");
   return (
     <div className="flex items-center justify-between">
-      <span className="text-sm text-zinc-700">{t("watermark")}</span>
+      <span className="text-sm text-stone-700">{t("watermark")}</span>
       <button
         type="button"
         role="switch"
@@ -21,7 +21,7 @@ export default function WatermarkSwitch({
         aria-label={t("watermark")}
         onClick={() => onChange(!on)}
         className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-          on ? "bg-accent" : "bg-zinc-300"
+          on ? "bg-accent" : "bg-stone-300"
         }`}
       >
         <span

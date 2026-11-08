@@ -52,7 +52,7 @@ export default async function TemplateDetail({
     <main className="mx-auto max-w-3xl px-4 py-10">
       <Link
         href="/templates"
-        className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-800"
+        className="inline-flex items-center gap-1.5 text-sm text-stone-500 transition-colors hover:text-stone-800"
       >
         <ArrowLeft className="size-3.5" />
         {tm("title")}
@@ -60,7 +60,7 @@ export default async function TemplateDetail({
 
       <header className="rise mt-6">
         <h1 className="text-2xl font-bold leading-snug">{meta.title}</h1>
-        <p className="mt-2 text-sm leading-relaxed text-zinc-500">{meta.description}</p>
+        <p className="mt-2 text-sm leading-relaxed text-stone-500">{meta.description}</p>
       </header>
 
       {/* 手写效果预览:使用模板配套的字体/纸张/墨色/对齐 */}
@@ -87,7 +87,7 @@ export default async function TemplateDetail({
         <Link href={`/?template=${tpl.slug}`} className="btn btn-primary px-6 py-3">
           {t("use")}
         </Link>
-        <p className="text-xs text-zinc-400">{t("editHint")}</p>
+        <p className="text-xs text-stone-400">{t("editHint")}</p>
       </div>
       <ToolFaq title={t("faqTitle")} items={templateDetailFaqs(meta, locale as Locale, t("use"))} />
     </main>

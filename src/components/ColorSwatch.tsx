@@ -10,7 +10,7 @@ export default function ColorSwatch({
 }) {
   return (
     <label className="flex items-center justify-between gap-2 text-sm">
-      <span className="text-zinc-700">{label}</span>
+      <span className="text-stone-700">{label}</span>
       <input
         type="color"
         value={value}

@@ -39,10 +39,10 @@ export default async function CursivePage({
   const t = await getTranslations("cursive");
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8">
+    <main className="mx-auto max-w-5xl px-4 py-8">
       <header className="rise mb-7">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px]">{t("title")}</h1>
+        <p className="mt-3 text-sm leading-relaxed text-stone-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <ToolWorkspace
@@ -53,10 +53,10 @@ export default async function CursivePage({
         <ShareBar />
       </div>
       <section
-        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"
+        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-stone-600"
         style={{ animationDelay: "160ms" }}
       >
-        <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
+        <h2 className="mb-2 text-base font-semibold text-stone-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
       <nav className="rise mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ animationDelay: "170ms" }}>

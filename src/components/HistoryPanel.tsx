@@ -69,7 +69,7 @@ export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
           ) : (
             <button
               onClick={() => armClear("all")}
-              className="btn btn-ghost px-3 py-1.5 text-xs text-zinc-500"
+              className="btn btn-ghost px-3 py-1.5 text-xs text-stone-500"
             >
               <TrashSimple className="size-3.5" />
               {t("clearAll")}
@@ -79,10 +79,10 @@ export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
       )}
 
       {mounted && entries.length === 0 && (
-        <div className="flex flex-col items-center gap-4 rounded-2xl border border-dashed border-zinc-300 py-20">
-          <NoteBlank className="size-10 text-zinc-300" />
-          <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
-          <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+        <div className="flex flex-col items-center gap-4 rounded-xl border border-dashed border-stone-300 py-20">
+          <NoteBlank className="size-10 text-stone-300" />
+          <p className="font-hand text-3xl text-stone-300">{t("emptyTitle")}</p>
+          <p className="text-sm text-stone-400">{t("emptyHint")}</p>
         </div>
       )}
 
@@ -90,14 +90,14 @@ export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
         {entries.map((e, i) => (
           <li
             key={e.id}
-            className="rise flex items-start justify-between gap-4 rounded-2xl border border-zinc-200 bg-white p-5"
+            className="rise flex items-start justify-between gap-4 rounded-xl border border-stone-200 bg-white p-5"
             style={{ animationDelay: `${Math.min(i, 8) * 40}ms` }}
           >
             <div className="min-w-0 flex-1">
-              <p className="line-clamp-2 whitespace-pre-wrap text-sm leading-relaxed text-zinc-800">
+              <p className="line-clamp-2 whitespace-pre-wrap text-sm leading-relaxed text-stone-800">
                 {e.text}
               </p>
-              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-zinc-400">
+              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-stone-400">
                 <time className="font-mono">
                   {new Date(e.savedAt).toLocaleString(undefined, {
                     year: "numeric",
@@ -107,7 +107,7 @@ export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
                     minute: "2-digit",
                   })}
                 </time>
-                <span className="rounded-full bg-zinc-100 px-2 py-0.5">{t(SOURCE_KEY[e.source])}</span>
+                <span className="rounded-full bg-stone-100 px-2 py-0.5">{t(SOURCE_KEY[e.source])}</span>
                 <span className="font-mono">{e.text.length} {t("charUnit")}</span>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function HistoryPanel({ onRestore }: { onRestore: () => void }) {
                   onClick={() => armDelete(e.id)}
                   title={t("delete")}
                   aria-label={t("delete")}
-                  className="flex size-8 cursor-pointer items-center justify-center rounded-lg border border-zinc-200 text-zinc-400 transition-colors hover:border-rose-200 hover:text-rose-600"
+                  className="flex size-8 cursor-pointer items-center justify-center rounded-lg border border-stone-200 text-stone-400 transition-colors hover:border-rose-200 hover:text-rose-600"
                 >
                   <Trash className="size-4" />
                 </button>

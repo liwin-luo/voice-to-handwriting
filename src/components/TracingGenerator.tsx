@@ -259,7 +259,7 @@ export default function TracingGenerator({
                     className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                       names === preset.text
                         ? "border-accent bg-accent/5 text-accent"
-                        : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                        : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                     }`}
                   >
                     {preset.label}
@@ -294,7 +294,7 @@ export default function TracingGenerator({
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     traceInk === id
                       ? "border-accent bg-accent/5 text-accent"
-                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                      : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                   }`}
                 >
                   {label}
@@ -304,7 +304,7 @@ export default function TracingGenerator({
           </div>
           {perName && (
             <label className="flex items-center justify-between gap-2 text-sm">
-              <span className="text-zinc-700">{t("oneEach")}</span>
+              <span className="text-stone-700">{t("oneEach")}</span>
               <button
                 type="button"
                 role="switch"
@@ -314,7 +314,7 @@ export default function TracingGenerator({
                   setPageIndex(0);
                 }}
                 className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                  oneEach ? "bg-accent" : "bg-zinc-300"
+                  oneEach ? "bg-accent" : "bg-stone-300"
                 }`}
               >
                 <span
@@ -334,7 +334,7 @@ export default function TracingGenerator({
             {t("downloadPdf")}
           </button>
           <button onClick={downloadPng} className="btn btn-ghost flex-1 px-4 py-2.5 text-sm">
-            <ImageIcon className="size-4 text-zinc-500" />
+            <ImageIcon className="size-4 text-stone-500" />
             {t("downloadPng")}
           </button>
         </div>
@@ -352,13 +352,13 @@ export default function TracingGenerator({
             </select>
           </div>
           <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("showExample")}</span>
+            <span className="text-stone-700">{t("showExample")}</span>
             <button
               role="switch"
               aria-checked={showExample}
               onClick={() => setShowExample(!showExample)}
               className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                showExample ? "bg-accent" : "bg-zinc-300"
+                showExample ? "bg-accent" : "bg-stone-300"
               }`}
             >
               <span
@@ -372,14 +372,14 @@ export default function TracingGenerator({
             className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable && traceInk !== "blank" ? "" : "opacity-50"}`}
             title={guidesAvailable ? undefined : t("strokeGuidesHint")}
           >
-            <span className="text-zinc-700">{t("strokeGuides")}</span>
+            <span className="text-stone-700">{t("strokeGuides")}</span>
             <button
               role="switch"
               aria-checked={guidesOn}
               disabled={!guidesAvailable || traceInk === "blank"}
               onClick={() => setGuides(!guides)}
               className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-                guidesOn ? "bg-accent" : "bg-zinc-300"
+                guidesOn ? "bg-accent" : "bg-stone-300"
               } ${guidesAvailable && traceInk !== "blank" ? "cursor-pointer" : "cursor-not-allowed"}`}
             >
               <span
@@ -403,7 +403,7 @@ export default function TracingGenerator({
                     className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                       selected
                         ? "border-accent bg-accent/5 text-accent"
-                        : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                        : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                     }`}
                   >
                     {rowLabel[g.id]}
@@ -421,7 +421,7 @@ export default function TracingGenerator({
                 className="accent-accent flex-1"
                 aria-label={t("rowHeight")}
               />
-              <span className="font-mono text-xs text-zinc-400">{formatLength(bandH, locale)}</span>
+              <span className="font-mono text-xs text-stone-400">{formatLength(bandH, locale)}</span>
             </label>
           </div>
           <ColorSwatch label={t("textColor")} value={textColor} onChange={setTextColor} />
@@ -431,11 +431,11 @@ export default function TracingGenerator({
       }
       preview={
         <div className="flex flex-col gap-2">
-          <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+          <div className="overflow-hidden rounded-xl border border-stone-200 shadow-paper">
             <canvas ref={canvasRef} className="block h-auto w-full" />
           </div>
           {sheets.length > 1 && (
-            <div className="flex items-center justify-between text-sm text-zinc-500">
+            <div className="flex items-center justify-between text-sm text-stone-500">
               <button type="button" className="btn btn-ghost px-3 py-1.5 text-xs" disabled={sheetIndex === 0} onClick={() => setPageIndex(sheetIndex - 1)}>
                 {t("prevSheet")}
               </button>

@@ -7,7 +7,7 @@ type Size = "sm" | "md";
 const variantClass: Record<Variant, string> = {
   primary: "btn-primary",
   secondary: "btn-ghost",
-  ghost: "border border-transparent text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900",
+  ghost: "border border-transparent text-stone-600 hover:bg-stone-100 hover:text-stone-900",
   recording: "btn-recording",
 };
 

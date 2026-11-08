@@ -29,7 +29,7 @@ export default async function RelatedLinks({ slug, locale }: { slug: string; loc
   if (!tools.length && !posts.length) return null;
 
   return (
-    <div className="mt-10 space-y-6 border-t border-zinc-200 pt-6 text-[15px]">
+    <div className="mt-10 space-y-6 border-t border-stone-200 pt-6 text-[15px]">
       {tools.length > 0 && (
         <section>
           <h2 className="mb-2 text-base font-semibold">{t("tryTools")}</h2>

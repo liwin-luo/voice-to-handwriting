@@ -99,15 +99,15 @@ export default function ExportBar() {
   return (
     <div className="flex gap-2">
       <button onClick={openPreview} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
-        <Eye className="size-4 text-zinc-500" />
+        <Eye className="size-4 text-stone-500" />
         {busy ? t("exporting") : t("preview")}
       </button>
       <button onClick={exportPng} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
-        <DownloadSimple className="size-4 text-zinc-500" />
+        <DownloadSimple className="size-4 text-stone-500" />
         {busy ? t("exporting") : t("exportPng")}
       </button>
       <button onClick={exportPdf} disabled={disabled} className="btn btn-ghost px-4 py-2.5">
-        <FilePdf className="size-4 text-zinc-500" />
+        <FilePdf className="size-4 text-stone-500" />
         {t("exportPdf")}
       </button>
       {/* 打开时才挂载:弹窗内部状态(页码/复制态)随挂载自然重置 */}

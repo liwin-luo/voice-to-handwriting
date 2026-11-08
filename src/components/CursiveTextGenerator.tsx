@@ -105,8 +105,8 @@ export default function CursiveTextGenerator() {
 
   return (
     <div>
-      <div className="rounded-2xl border border-zinc-200 bg-white p-5">
-        <label htmlFor="ct-input" className="text-sm font-semibold text-zinc-900">
+      <div className="rounded-xl border border-stone-200 bg-white p-5">
+        <label htmlFor="ct-input" className="text-sm font-semibold text-stone-900">
           {t("inputLabel")}
         </label>
         <div className="mt-2 flex flex-col gap-2 sm:flex-row">
@@ -116,7 +116,7 @@ export default function CursiveTextGenerator() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder={t("placeholder")}
-            className="w-full resize-y rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm text-zinc-900 outline-none focus:border-accent"
+            className="w-full resize-y rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm text-stone-900 outline-none focus:border-accent"
           />
           {supported && (
             <button
@@ -129,7 +129,7 @@ export default function CursiveTextGenerator() {
             </button>
           )}
         </div>
-        {listening && <p className="mt-2 text-sm text-zinc-400">{interim}…</p>}
+        {listening && <p className="mt-2 text-sm text-stone-400">{interim}…</p>}
         {!supported && <p className="mt-2 max-w-md text-xs leading-relaxed text-amber-700">{t("speakUnsupported")}</p>}
         {errorText && <p className="mt-2 max-w-md text-xs leading-relaxed text-rose-700">{errorText}</p>}
         <div className="mt-3 flex flex-col gap-2">
@@ -144,11 +144,11 @@ export default function CursiveTextGenerator() {
           return (
             <div
               key={style.id}
-              className="rise rounded-2xl border border-zinc-200 bg-white p-4"
+              className="rise rounded-xl border border-stone-200 bg-white p-4"
               style={{ animationDelay: `${i * 40}ms` }}
             >
               <div className="flex items-center justify-between gap-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                <p className="text-xs font-semibold uppercase tracking-wide text-stone-500">
                   {t(`styles.${style.id}`)}
                 </p>
                 <div className="flex shrink-0 items-center gap-2">
@@ -165,7 +165,7 @@ export default function CursiveTextGenerator() {
                     onClick={() => downloadRowPng(style.id, value, ink, bg)}
                     disabled={!value}
                     aria-label={`${t("download")} — ${t(`styles.${style.id}`)}`}
-                    className="flex items-center gap-1 rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-40"
+                    className="flex items-center gap-1 rounded-full border border-stone-200 px-3 py-1 text-xs font-medium text-stone-700 transition-colors hover:border-accent hover:text-accent disabled:opacity-40"
                   >
                     <DownloadSimple weight="regular" className="size-3.5" />
                     {t("download")}
@@ -177,16 +177,16 @@ export default function CursiveTextGenerator() {
                 className="mt-1.5 break-words rounded-lg px-2 py-1 text-lg leading-relaxed"
                 style={value ? { color: ink, backgroundColor: bg } : undefined}
               >
-                {value || <span className="text-sm text-zinc-400">{t("empty")}</span>}
+                {value || <span className="text-sm text-stone-400">{t("empty")}</span>}
               </p>
             </div>
           );
         })}
       </div>
       <section className="mt-8">
-        <h2 className="text-base font-semibold text-zinc-900">{t("alphabetTitle")}</h2>
-        <p className="mt-1 text-xs leading-relaxed text-zinc-500">{t("alphabetHint")}</p>
-        <h3 className="mt-4 text-xs font-semibold uppercase tracking-wide text-zinc-500">{t("phrasesTitle")}</h3>
+        <h2 className="text-base font-semibold text-stone-900">{t("alphabetTitle")}</h2>
+        <p className="mt-1 text-xs leading-relaxed text-stone-500">{t("alphabetHint")}</p>
+        <h3 className="mt-4 text-xs font-semibold uppercase tracking-wide text-stone-500">{t("phrasesTitle")}</h3>
         <div className="mt-2 flex flex-wrap gap-2">
           {FANCY_PHRASES.map((phrase) => {
             const value = toFancyText(phrase, "script");
@@ -196,7 +196,7 @@ export default function CursiveTextGenerator() {
                 key={phrase}
                 type="button"
                 onClick={() => handleCopy(key, value)}
-                className="rounded-full border border-zinc-200 px-3 py-1 text-lg leading-none text-zinc-800 transition-colors hover:border-accent hover:text-accent"
+                className="rounded-full border border-stone-200 px-3 py-1 text-lg leading-none text-stone-800 transition-colors hover:border-accent hover:text-accent"
               >
                 {copiedId === key ? t("copied") : value}
               </button>
@@ -209,9 +209,9 @@ export default function CursiveTextGenerator() {
             const lower = toFancyText("abcdefghijklmnopqrstuvwxyz", style.id);
             const key = `alpha:${style.id}`;
             return (
-              <div key={style.id} className="rounded-2xl border border-zinc-200 bg-white p-4">
+              <div key={style.id} className="rounded-xl border border-stone-200 bg-white p-4">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-stone-500">
                     {t(`styles.${style.id}`)}
                   </p>
                   <button
@@ -229,7 +229,7 @@ export default function CursiveTextGenerator() {
           })}
         </div>
       </section>
-      <p className="mt-3 text-xs leading-relaxed text-zinc-500">{t("unicodeNote")}</p>
+      <p className="mt-3 text-xs leading-relaxed text-stone-500">{t("unicodeNote")}</p>
     </div>
   );
 }

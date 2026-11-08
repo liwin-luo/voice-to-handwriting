@@ -64,7 +64,7 @@ export default async function HomePage({
         title={t("h1")}
         intro={t("tagline")}
         badge={
-          <span className="inline-flex items-center gap-1.5 rounded-md border border-zinc-200 bg-white px-2 py-0.5 text-xs text-zinc-500">
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-stone-200 bg-white px-2 py-0.5 text-xs text-stone-500">
             <ShieldCheck weight="duotone" className="size-3.5 text-accent" />
             {t("badge")}
           </span>
@@ -82,8 +82,8 @@ export default async function HomePage({
           const font = FONTS.find((f) => f.id === s.fontId)!;
           return (
             <div key={s.paperId} className="card overflow-hidden">
-              <div className="h-28 border-b border-zinc-100" style={{ background: getPaper(s.paperId).background }}>
-                <p className="px-4 pt-6 text-lg leading-snug text-zinc-800" style={{ fontFamily: font.css }}>
+              <div className="h-28 border-b border-stone-100" style={{ background: getPaper(s.paperId).background }}>
+                <p className="px-4 pt-6 text-lg leading-snug text-stone-800" style={{ fontFamily: font.css }}>
                   {s.line}
                 </p>
               </div>
@@ -92,7 +92,7 @@ export default async function HomePage({
         })}
       </div>
       <ToolFaq title={faqTitle("title")} items={getLocalizedFaqs(FAQ_ITEMS, locale as Locale)} />
-      <footer className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-zinc-400">
+      <footer className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-stone-400">
         <span>{t("footerNote")}</span>
         <Link
           href="/tools"

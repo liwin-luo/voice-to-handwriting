@@ -462,7 +462,7 @@ export default function NameColoringGenerator({
             {t("downloadPng")}
           </button>
           <button onClick={downloadPdf} disabled={!pageUrls.length} className="btn btn-ghost px-4 py-2.5 text-sm disabled:opacity-40">
-            <FilePdf className="size-4 text-zinc-500" />
+            <FilePdf className="size-4 text-stone-500" />
             {t("downloadPdf")}
           </button>
         </div>
@@ -480,10 +480,10 @@ export default function NameColoringGenerator({
             </select>
           </div>
           <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("outlineWidth")}</span>
+            <span className="text-stone-700">{t("outlineWidth")}</span>
             <span className="flex flex-1 items-center gap-2">
               <input type="range" min={4} max={22} value={outline} onChange={(e) => setOutline(Number(e.target.value))} className="accent-accent" />
-              <span className="font-mono text-xs text-zinc-400">{outline}px</span>
+              <span className="font-mono text-xs text-stone-400">{outline}px</span>
             </span>
           </label>
           <div className="flex flex-col gap-1.5">
@@ -498,7 +498,7 @@ export default function NameColoringGenerator({
                   className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
                     motif === id
                       ? "border-accent bg-accent/5 text-accent"
-                      : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+                      : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
                   }`}
                 >
                   {t(MOTIF_LABEL[id])}
@@ -512,15 +512,15 @@ export default function NameColoringGenerator({
       preview={
         <div className="flex flex-col gap-6">
           {pageUrls.map((u, i) => (
-            <div key={i} className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+            <div key={i} className="overflow-hidden rounded-xl border border-stone-200 shadow-paper">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={u} alt={`coloring page ${i + 1}`} className="block h-auto w-full" />
             </div>
           ))}
           {pageUrls.length === 0 && (
-            <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-zinc-300 py-24">
-              <p className="font-hand text-3xl text-zinc-300">{t("emptyTitle")}</p>
-              <p className="text-sm text-zinc-400">{t("emptyHint")}</p>
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-dashed border-stone-300 py-24">
+              <p className="font-hand text-3xl text-stone-300">{t("emptyTitle")}</p>
+              <p className="text-sm text-stone-400">{t("emptyHint")}</p>
             </div>
           )}
         </div>

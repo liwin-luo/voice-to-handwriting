@@ -59,7 +59,7 @@ export default async function BlogIndex({
     <main className="mx-auto max-w-5xl px-4 py-10">
       <header className="rise">
         <h1 className="font-hand text-4xl leading-none">{tm("title")}</h1>
-        <p className="mt-3 max-w-2xl text-sm text-zinc-500">{t("tagline")}</p>
+        <p className="mt-3 max-w-2xl text-sm text-stone-500">{t("tagline")}</p>
       </header>
       <div className="rise mt-8" style={{ animationDelay: "80ms" }}>
         <BlogExplorer posts={cards} toolOptions={toolOptions} />

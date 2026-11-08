@@ -52,11 +52,11 @@ export default async function HandwritingQuizPage({
   };
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8">
+    <main className="mx-auto max-w-5xl px-4 py-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <header className="rise mb-7">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{c.title}</h1>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-600">{c.intro}</p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px]">{c.title}</h1>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stone-600">{c.intro}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <HandwritingQuiz locale={locale as Locale} />
@@ -65,10 +65,10 @@ export default async function HandwritingQuizPage({
         <ShareBar />
       </div>
       <section
-        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"
+        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-stone-600"
         style={{ animationDelay: "160ms" }}
       >
-        <h2 className="mb-2 text-base font-semibold text-zinc-900">{c.scienceTitle}</h2>
+        <h2 className="mb-2 text-base font-semibold text-stone-900">{c.scienceTitle}</h2>
         {c.scienceText.map((p, i) => (
           <p key={i} className="mt-2">
             {p}
@@ -82,7 +82,7 @@ export default async function HandwritingQuizPage({
             {c.articleLink}
           </Link>
         </p>
-        <p className="mt-4 text-xs text-zinc-400">{c.disclaimer}</p>
+        <p className="mt-4 text-xs text-stone-400">{c.disclaimer}</p>
       </section>
       <ToolFaq title={c.faqTitle} items={getLocalizedFaqs(QUIZ_FAQS, locale as Locale)} />
     </main>

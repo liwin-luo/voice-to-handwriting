@@ -46,15 +46,15 @@ export default async function PaperKindPage({
   const t = await getTranslations("printable");
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8">
+    <main className="mx-auto max-w-5xl px-4 py-8">
       <header className="rise mb-7">
-        <p className="mb-2 text-xs text-zinc-500">
-          <Link href="/printable-paper" className="underline underline-offset-2 hover:text-zinc-800">
+        <p className="mb-2 text-xs text-stone-500">
+          <Link href="/printable-paper" className="underline underline-offset-2 hover:text-stone-800">
             {t("title")}
           </Link>
         </p>
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{copy.h1}</h1>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px]">{copy.h1}</h1>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-stone-600">{copy.intro}</p>
         <p className="mt-2 text-sm">
           <a href={`/printables/${page.slug}.pdf`} className="text-accent underline underline-offset-2 hover:underline">
             {t("letterPdf")}
@@ -72,7 +72,7 @@ export default async function PaperKindPage({
           <Link
             key={k.slug}
             href={`/printable-paper/${k.slug}`}
-            className="rounded-full border border-zinc-200 px-3 py-1 text-zinc-600 hover:border-zinc-400"
+            className="rounded-full border border-stone-200 px-3 py-1 text-stone-600 hover:border-stone-400"
           >
             {k.copy[locale].label}
           </Link>

@@ -29,10 +29,10 @@ export default async function NumberTracingPage({ params }: { params: Promise<{ 
   const t = await getTranslations("numberTracing");
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8">
+    <main className="mx-auto max-w-5xl px-4 py-8">
       <header className="rise mb-7">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("title")}</h1>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-600">{t("intro")}</p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px]">{t("title")}</h1>
+        <p className="mt-3 text-sm leading-relaxed text-stone-600">{t("intro")}</p>
       </header>
       <div className="rise" style={{ animationDelay: "80ms" }}>
         <TracingGenerator
@@ -54,8 +54,8 @@ export default async function NumberTracingPage({ params }: { params: Promise<{ 
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>
         <ShareBar />
       </div>
-      <section className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600" style={{ animationDelay: "160ms" }}>
-        <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
+      <section className="rise mt-10 max-w-3xl text-sm leading-relaxed text-stone-600" style={{ animationDelay: "160ms" }}>
+        <h2 className="mb-2 text-base font-semibold text-stone-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
       <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(NUMBER_TRACING_FAQS, locale as Locale)} />

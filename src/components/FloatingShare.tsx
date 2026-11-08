@@ -83,7 +83,7 @@ export default function FloatingShare() {
         <div
           role="group"
           aria-label={t("barLabel")}
-          className="pop flex flex-col items-center gap-0.5 rounded-2xl border border-zinc-200 bg-white p-1.5 shadow-[0_12px_32px_-12px_rgba(23,23,23,0.3)]"
+          className="pop flex flex-col items-center gap-0.5 rounded-xl border border-stone-200 bg-white p-1.5 shadow-sm"
         >
           {buttons.map((b) => (
             <button
@@ -91,7 +91,7 @@ export default function FloatingShare() {
               onClick={() => share(b.id)}
               title={b.label}
               aria-label={b.label}
-              className="flex size-10 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-zinc-100 focus-visible:bg-zinc-100 focus-visible:outline-none"
+              className="flex size-10 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-stone-100 focus-visible:bg-stone-100 focus-visible:outline-none"
             >
               {b.icon}
             </button>

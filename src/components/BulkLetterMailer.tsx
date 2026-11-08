@@ -351,7 +351,7 @@ export default function BulkLetterMailer() {
                   setDraft(null);
                 }}
                 className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs ${
-                  body === t(`body.${id}`) ? "border-accent bg-accent/5 text-accent" : "border-zinc-200 bg-white text-zinc-600"
+                  body === t(`body.${id}`) ? "border-accent bg-accent/5 text-accent" : "border-stone-200 bg-white text-stone-600"
                 }`}
               >
                 {t(`kind.${id}`)}
@@ -367,9 +367,9 @@ export default function BulkLetterMailer() {
             onChange={(e) => setDraft(e.target.value)}
             rows={6}
             aria-label={t("bodyLabel")}
-            className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm leading-relaxed"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm leading-relaxed"
           />
-          <span className="text-xs leading-relaxed text-zinc-500">{t("bodyHint")}</span>
+          <span className="text-xs leading-relaxed text-stone-500">{t("bodyHint")}</span>
         </label>
 
         <div className="flex flex-col gap-1.5">
@@ -397,7 +397,7 @@ export default function BulkLetterMailer() {
               </button>
             </span>
           </span>
-          <div className="max-h-64 overflow-auto rounded-xl border border-zinc-200">
+          <div className="max-h-64 overflow-auto rounded-xl border border-stone-200">
             <table className="w-full table-fixed border-collapse text-left text-xs">
               <colgroup>
                 <col style={{ width: "18%" }} />
@@ -408,7 +408,7 @@ export default function BulkLetterMailer() {
                 <col style={{ width: "14%" }} />
                 <col style={{ width: "4%" }} />
               </colgroup>
-              <thead className="sticky top-0 z-10 bg-zinc-50 text-zinc-600">
+              <thead className="sticky top-0 z-10 bg-stone-50 text-stone-600">
                 <tr>
                   {COLS.map((col) => (
                     <th key={col} scope="col" className="px-2 py-1.5 font-medium">
@@ -422,7 +422,7 @@ export default function BulkLetterMailer() {
               </thead>
               <tbody>
                 {rows.map((row, rowIndex) => (
-                  <tr key={rowIndex} className="border-t border-zinc-100">
+                  <tr key={rowIndex} className="border-t border-stone-100">
                     {COLS.map((col) => (
                       <td key={col} className="p-1">
                         <input
@@ -430,7 +430,7 @@ export default function BulkLetterMailer() {
                           aria-label={`${t(`col.${col}`)} ${rowIndex + 1}`}
                           onChange={(e) => setCell(rowIndex, col, e.target.value)}
                           spellCheck={false}
-                          className="w-full min-w-0 rounded-md border border-zinc-200 bg-white px-1.5 py-1"
+                          className="w-full min-w-0 rounded-md border border-stone-200 bg-white px-1.5 py-1"
                         />
                       </td>
                     ))}
@@ -445,7 +445,7 @@ export default function BulkLetterMailer() {
                           setFileIssues([]);
                           setCursor(0);
                         }}
-                        className="cursor-pointer px-1 text-zinc-400 hover:text-zinc-700"
+                        className="cursor-pointer px-1 text-stone-400 hover:text-stone-700"
                       >
                         ×
                       </button>
@@ -463,7 +463,7 @@ export default function BulkLetterMailer() {
           >
             {t("addRow")}
           </button>
-          <span className="text-xs leading-relaxed text-zinc-500">{t("listHint")}</span>
+          <span className="text-xs leading-relaxed text-stone-500">{t("listHint")}</span>
           <input
             ref={fileRef}
             type="file"
@@ -485,9 +485,9 @@ export default function BulkLetterMailer() {
             onChange={(e) => setReturnAddress(e.target.value)}
             rows={4}
             placeholder={t("returnPlaceholder")}
-            className="w-full rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm leading-relaxed"
+            className="w-full rounded-xl border border-stone-200 bg-white px-3 py-2 text-sm leading-relaxed"
           />
-          <span className="text-xs leading-relaxed text-zinc-500">{t("returnHint")}</span>
+          <span className="text-xs leading-relaxed text-stone-500">{t("returnHint")}</span>
         </label>
 
         <div className="flex flex-col gap-1.5">
@@ -510,7 +510,7 @@ export default function BulkLetterMailer() {
                 type="button"
                 onClick={() => setPaperId(id)}
                 className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs ${
-                  paperId === id ? "border-accent bg-accent/5 text-accent" : "border-zinc-200 bg-white text-zinc-600"
+                  paperId === id ? "border-accent bg-accent/5 text-accent" : "border-stone-200 bg-white text-stone-600"
                 }`}
               >
                 {id === "cream" ? t("paperCream") : tool(`papers.${id}`)}
@@ -528,7 +528,7 @@ export default function BulkLetterMailer() {
                   setPaperImage(null);
                   setPaperError(false);
                 }}
-                className="cursor-pointer text-xs text-zinc-500"
+                className="cursor-pointer text-xs text-stone-500"
               >
                 {tool("paperCustom.removeImage")}
               </button>
@@ -553,17 +553,17 @@ export default function BulkLetterMailer() {
               );
             }}
           />
-          <span className="text-xs leading-relaxed text-zinc-500">{t("paperHint")}</span>
+          <span className="text-xs leading-relaxed text-stone-500">{t("paperHint")}</span>
         </div>
 
         {issues.map((issue, i) => (
-          <p key={i} className="text-xs leading-relaxed text-zinc-600">
+          <p key={i} className="text-xs leading-relaxed text-stone-600">
             {issueText(issue)}
           </p>
         ))}
-        {importError && <p className="text-xs leading-relaxed text-zinc-600">{t("importFailed")}</p>}
-        {paperError && <p className="text-xs leading-relaxed text-zinc-600">{t("paperFailed")}</p>}
-        {exportError && <p className="text-xs text-zinc-600">{t("exportFailed")}</p>}
+        {importError && <p className="text-xs leading-relaxed text-stone-600">{t("importFailed")}</p>}
+        {paperError && <p className="text-xs leading-relaxed text-stone-600">{t("paperFailed")}</p>}
+        {exportError && <p className="text-xs text-stone-600">{t("exportFailed")}</p>}
 
         <div className="flex flex-col gap-2">
           <button
@@ -582,7 +582,7 @@ export default function BulkLetterMailer() {
           >
             {job === "envelopes" ? t("exporting") : t("downloadEnvelopes")}
           </button>
-          <p className="text-xs leading-relaxed text-zinc-500">{t(format === "letter" ? "printHintLetter" : "printHintA4")}</p>
+          <p className="text-xs leading-relaxed text-stone-500">{t(format === "letter" ? "printHintLetter" : "printHintA4")}</p>
         </div>
       </div>
 
@@ -593,7 +593,7 @@ export default function BulkLetterMailer() {
               <button type="button" disabled={index === 0} onClick={() => setCursor(index - 1)} className="btn btn-ghost px-3 py-1.5 text-xs disabled:opacity-40">
                 {t("prev")}
               </button>
-              <span className="text-xs text-zinc-500">{t("recipientN", { n: index + 1, total: recipients.length })}</span>
+              <span className="text-xs text-stone-500">{t("recipientN", { n: index + 1, total: recipients.length })}</span>
               <button
                 type="button"
                 disabled={index >= recipients.length - 1}
@@ -630,7 +630,7 @@ export default function BulkLetterMailer() {
             </Scaled>
           </>
         ) : (
-          <div className="rounded-xl border border-dashed border-zinc-300 px-6 py-16 text-center text-sm text-zinc-500">{t("previewEmpty")}</div>
+          <div className="rounded-xl border border-dashed border-stone-300 px-6 py-16 text-center text-sm text-stone-500">{t("previewEmpty")}</div>
         )}
       </div>
 

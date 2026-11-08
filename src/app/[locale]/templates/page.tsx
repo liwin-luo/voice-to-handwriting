@@ -36,19 +36,19 @@ export default async function TemplatesIndex({
   });
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-10">
+    <main className="mx-auto max-w-5xl px-4 py-10">
       <header className="rise">
-        <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">{t("libraryTitle")}</h1>
-        <p className="mt-3 text-sm text-zinc-500">{t("tagline")}</p>
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-stone-900 md:text-[28px]">{t("libraryTitle")}</h1>
+        <p className="mt-3 text-sm text-stone-500">{t("tagline")}</p>
       </header>
       <div className="rise mt-9" style={{ animationDelay: "60ms" }}>
         <TemplatesBrowser templates={cards} />
       </div>
       <section
-        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-zinc-600"
+        className="rise mt-10 max-w-3xl text-sm leading-relaxed text-stone-600"
         style={{ animationDelay: "200ms" }}
       >
-        <h2 className="mb-2 text-base font-semibold text-zinc-900">{t("seoTitle")}</h2>
+        <h2 className="mb-2 text-base font-semibold text-stone-900">{t("seoTitle")}</h2>
         <p className="whitespace-pre-line">{t("seoText")}</p>
       </section>
       <ToolFaq title={t("faqTitle")} items={getLocalizedFaqs(TEMPLATE_FAQS, locale as Locale)} />

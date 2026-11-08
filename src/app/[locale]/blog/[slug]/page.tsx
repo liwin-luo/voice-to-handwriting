@@ -85,17 +85,17 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* 署名栏:写作角色 / 更新时间 / 阅读时长(EEAT);悬浮显示角色 bio */}
-      <div className="mb-8 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-zinc-200 pb-4 text-xs text-zinc-500">
-        <span className="font-medium text-zinc-700" title={author.bio}>
+      <div className="mb-8 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-stone-200 pb-4 text-xs text-stone-500">
+        <span className="font-medium text-stone-700" title={author.bio}>
           {author.name}
         </span>
-        <span className="text-zinc-300">·</span>
+        <span className="text-stone-300">·</span>
         <span>{author.role}</span>
-        <span className="text-zinc-300">·</span>
+        <span className="text-stone-300">·</span>
         <span>
           {tp("updated")} {post?.updated}
         </span>
-        <span className="text-zinc-300">·</span>
+        <span className="text-stone-300">·</span>
         <span>{tp("reading", { m: minutes })}</span>
       </div>
       {post?.image && (
@@ -105,7 +105,7 @@ export default async function BlogPostPage({
           alt={meta?.title ?? ""}
           width={1440}
           height={900}
-          className="mb-8 w-full rounded-xl border border-zinc-200"
+          className="mb-8 w-full rounded-xl border border-stone-200"
         />
       )}
       <Body />

@@ -24,7 +24,7 @@ export default function ShareBar({ anchor = true }: { anchor?: boolean }) {
       onClick={() => onShare(b.id)}
       title={b.label}
       aria-label={b.label}
-      className="flex size-9 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-zinc-100 focus-visible:outline-2 focus-visible:outline-accent"
+      className="flex size-9 cursor-pointer items-center justify-center rounded-full transition-colors hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-accent"
     >
       {b.icon}
     </button>
@@ -33,14 +33,14 @@ export default function ShareBar({ anchor = true }: { anchor?: boolean }) {
   return (
     <div
       id={anchor ? "share-bar" : undefined}
-      className="flex w-fit max-w-full flex-wrap items-center rounded-2xl border border-zinc-200/70 bg-white py-1 pr-1.5 pl-4"
+      className="flex w-fit max-w-full flex-wrap items-center rounded-xl border border-stone-200/70 bg-white py-1 pr-1.5 pl-4"
     >
-      <span aria-hidden className="mr-1 text-sm text-zinc-500">{t("barLabel")}</span>
+      <span aria-hidden className="mr-1 text-sm text-stone-500">{t("barLabel")}</span>
       <div role="group" aria-label={t("barLabel")} className="flex flex-wrap items-center">
         {networks.map(iconButton)}
         {more && (
           <>
-            <span aria-hidden className="mx-1 h-4 w-px bg-zinc-200" />
+            <span aria-hidden className="mx-1 h-4 w-px bg-stone-200" />
             {iconButton(more)}
           </>
         )}

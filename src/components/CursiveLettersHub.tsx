@@ -16,8 +16,8 @@ export default function CursiveLettersHub({ locale }: { locale: Locale }) {
 
   return (
     <section className="rise mt-10" style={{ animationDelay: "180ms" }}>
-      <h2 className="text-base font-semibold text-zinc-900">{ui.hubTitle}</h2>
-      <p className="mt-2 max-w-3xl text-sm leading-relaxed text-zinc-600">{ui.hubIntro}</p>
+      <h2 className="text-base font-semibold text-stone-900">{ui.hubTitle}</h2>
+      <p className="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600">{ui.hubIntro}</p>
       {(
         [
           ["lowercase", ui.hubLowercase],
@@ -25,7 +25,7 @@ export default function CursiveLettersHub({ locale }: { locale: Locale }) {
         ] as const
       ).map(([form, heading]) => (
         <div key={form} className="mt-5">
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-400">{heading}</h3>
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-stone-400">{heading}</h3>
           <div className="mt-2 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
             {letters
               .filter((l) => l.form === form)
@@ -33,12 +33,12 @@ export default function CursiveLettersHub({ locale }: { locale: Locale }) {
                 <Link
                   key={l.slug}
                   href={`/cursive/letter/${l.slug}`}
-                  className="group flex flex-col items-center gap-1 rounded-2xl border border-zinc-200 bg-white px-3 py-4 transition-colors hover:border-accent/40"
+                  className="group flex flex-col items-center gap-1 rounded-xl border border-stone-200 bg-white px-3 py-4 transition-colors hover:border-accent/40"
                 >
-                  <span className="pb-2 text-3xl leading-none text-zinc-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
+                  <span className="pb-2 text-3xl leading-none text-stone-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
                     {l.letter}
                   </span>
-                  <span className="text-[11px] leading-tight text-zinc-400">
+                  <span className="text-[11px] leading-tight text-stone-400">
                     {heading} {l.name}
                   </span>
                 </Link>
@@ -48,18 +48,18 @@ export default function CursiveLettersHub({ locale }: { locale: Locale }) {
       ))}
       {numberUi && numbers.length > 0 ? (
         <div className="mt-5">
-          <h3 className="text-xs font-semibold uppercase tracking-wide text-zinc-400">{numberUi.hubNumbers}</h3>
+          <h3 className="text-xs font-semibold uppercase tracking-wide text-stone-400">{numberUi.hubNumbers}</h3>
           <div className="mt-2 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6">
             {numbers.map((n) => (
               <Link
                 key={n.slug}
                 href={`/cursive/number/${n.slug}`}
-                className="group flex flex-col items-center gap-1 rounded-2xl border border-zinc-200 bg-white px-3 py-4 transition-colors hover:border-accent/40"
+                className="group flex flex-col items-center gap-1 rounded-xl border border-stone-200 bg-white px-3 py-4 transition-colors hover:border-accent/40"
               >
-                <span className="pb-2 text-3xl leading-none text-zinc-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
+                <span className="pb-2 text-3xl leading-none text-stone-900 transition-colors group-hover:text-accent" style={{ fontFamily: font.css }} aria-hidden>
                   {n.digit}
                 </span>
-                <span className="text-[11px] leading-tight text-zinc-400">{n.name}</span>
+                <span className="text-[11px] leading-tight text-stone-400">{n.name}</span>
               </Link>
             ))}
           </div>

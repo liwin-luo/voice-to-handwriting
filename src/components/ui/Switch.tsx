@@ -21,7 +21,7 @@ export default function Switch({
       disabled={disabled}
       onClick={() => onChange(!checked)}
       className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer items-center rounded-md border transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-40 ${
-        checked ? "border-accent bg-accent" : "border-zinc-300 bg-zinc-100"
+        checked ? "border-accent bg-accent" : "border-stone-300 bg-stone-100"
       }`}
     >
       <span

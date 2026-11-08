@@ -1,14 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-/* 「现代工作台」设计令牌(2026-11 UI 重构第一期):
-   冷中性底 + 产品蓝强调 + 小圆角 + 细线条,唯一海拔与唯一选中态语言。
-   扫尾期(工具页/博客/模板套壳)只调这里的令牌,不动结构。 */
+/* 「纸与墨・文具精品」设计令牌(2026-11 UI 重构第二稿):
+   奶油纸底 + 深墨蓝强调 + 衬线大标题 + 胶囊墨水按钮 + 暖调纸感投影。
+   与产品(手写/纸张)同一气质;扫尾只调这里的令牌,不动结构。 */
 :root {
-  --background: #fafafa; /* zinc-50 冷调底 */
-  --foreground: #18181b; /* zinc-900,不用纯黑 */
-  --accent: #2563eb; /* blue-600:产品蓝,全站唯一强调色 */
-  --accent-strong: #1d4ed8; /* blue-700 */
+  --background: #faf7f0; /* 奶油纸底 */
+  --foreground: #1c1917; /* stone-900 暖墨字,不用纯黑 */
+  --accent: #1e3a5f; /* 深墨蓝:钢笔墨水色,全站唯一强调色 */
+  --accent-strong: #16293f;
   --tool-col: 300px; /* 工具布局壳的控制列宽(ToolLayout 消费) */
 }
 
@@ -17,8 +17,9 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
-  /* 品牌字标专用手写栈(仅导航字标/博客 h1);产品手写体走 fonts 管线,与此无关 */
-  --font-hand: "Bradley Hand", "Segoe Script", "Comic Sans MS", cursive;
+  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  /* 品牌字标手写栈:Ma Shan Zheng 在 layout 阻塞加载,首帧即就绪 */
+  --font-hand: "Ma Shan Zheng", "Bradley Hand", "Segoe Script", cursive;
 }
 
 body {
@@ -34,7 +35,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
 }
 
 /* 入场级联:仅 transform/opacity,尊重减少动态偏好 */
@@ -49,7 +50,7 @@ body {
   }
 }
 .rise {
-  animation: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: rise 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 @media (prefers-reduced-motion: reduce) {
   .rise {
@@ -118,9 +119,9 @@ body {
 }
 
 @layer components {
-  /* 按钮基底:方角紧凑,150ms 快过渡,无弹跳 */
+  /* 按钮基底:胶囊墨水按钮,150ms 快过渡 */
   .btn {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-3 py-1.5 text-[13px] font-medium transition-colors duration-150 outline-offset-2 focus-visible:outline-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40;
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-150 outline-offset-2 focus-visible:outline-2 focus-visible:outline-accent disabled:pointer-events-none disabled:opacity-40;
   }
   .btn-primary {
     @apply bg-accent text-white hover:bg-accent-strong;
@@ -129,32 +130,32 @@ body {
     @apply bg-rose-700 text-white hover:bg-rose-800;
   }
   .btn-ghost {
-    @apply border border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300 hover:bg-zinc-50;
+    @apply border border-stone-300 bg-white text-stone-800 hover:border-stone-400 hover:bg-stone-50;
   }
-  /* 分区标题:面板/页面分节的唯一 h2/h3 样式(替代散落的 field-label 误用) */
+  /* 分区标题:面板/页面分节;大标题(h1)走 font-display 衬线,这里保持无衬线小字 */
   .section-title {
-    @apply text-sm font-semibold tracking-tight text-zinc-900;
+    @apply text-sm font-semibold tracking-tight text-stone-900;
   }
   .field-label {
-    @apply text-xs font-medium text-zinc-500;
+    @apply text-xs font-medium text-stone-500;
   }
   .surface-input {
-    @apply w-full rounded-md border border-zinc-200 bg-white text-sm transition-colors duration-150 hover:border-zinc-300 focus:border-accent focus:outline-none;
+    @apply w-full rounded-lg border border-stone-300 bg-white text-sm transition-colors duration-150 hover:border-stone-400 focus:border-accent focus:outline-none;
   }
   .select-field {
-    @apply w-full cursor-pointer appearance-none rounded-md border border-zinc-200 bg-white py-2 pr-8 pl-3 text-sm transition-colors duration-150 hover:border-zinc-300 focus:border-accent focus:outline-none;
+    @apply w-full cursor-pointer appearance-none rounded-lg border border-stone-300 bg-white py-2 pr-8 pl-3 text-sm transition-colors duration-150 hover:border-stone-400 focus:border-accent focus:outline-none;
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 256 256' fill='%2352525b'%3E%3Cpath d='M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.65rem center;
   }
-  /* 卡片基底:1px 线 + 白面,唯一海拔(不再有 2xl/3xl 圆角与自定义阴影) */
+  /* 卡片基底:白纸片落在奶油底上,1px 暖线 */
   .card {
-    @apply rounded-lg border border-zinc-200 bg-white;
+    @apply rounded-xl border border-stone-200 bg-white;
   }
-  /* 吸顶条:原玻璃拟态已实心化(现代工作台方向),类名保留以兼容两处消费方 */
+  /* 吸顶条:暖白 + 暖线(历史类名,已非玻璃拟态) */
   .glass-bar {
-    @apply rounded-lg border border-zinc-200 bg-white;
-    box-shadow: 0 1px 2px rgba(23, 23, 23, 0.05);
+    @apply rounded-xl border border-stone-200 bg-white;
+    box-shadow: 0 2px 8px rgba(87, 68, 35, 0.06);
   }
   .color-swatch {
     appearance: none;
@@ -172,15 +173,15 @@ body {
     padding: 0;
   }
   .color-swatch::-webkit-color-swatch {
-    border: 1px solid rgba(23, 23, 23, 0.12);
+    border: 1px solid rgba(28, 25, 23, 0.14);
     border-radius: 9999px;
   }
   .color-swatch::-moz-color-swatch {
-    border: 1px solid rgba(23, 23, 23, 0.12);
+    border: 1px solid rgba(28, 25, 23, 0.14);
     border-radius: 9999px;
   }
-  /* 纸面预览专用海拔(产品输出的一部分,不随 UI 风格走) */
+  /* 纸面预览专用海拔:暖调纸感投影(产品输出的一部分) */
   .shadow-paper {
-    box-shadow: 0 16px 32px -16px rgba(23, 23, 23, 0.16);
+    box-shadow: 0 20px 40px -20px rgba(87, 68, 35, 0.25);
   }
 }

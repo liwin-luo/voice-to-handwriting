@@ -95,7 +95,7 @@ export default async function CursiveLetterPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Link
         href="/cursive"
-        className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-zinc-800"
+        className="inline-flex items-center gap-1.5 text-sm text-stone-500 transition-colors hover:text-stone-800"
       >
         <ArrowLeft className="size-3.5" />
         {ui.backToCursive}
@@ -103,28 +103,28 @@ export default async function CursiveLetterPage({
 
       <header className="rise mt-6">
         <h1 className="text-2xl font-bold leading-snug md:text-3xl">{letterQueryTitle(page)}</h1>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-600">{copy.intro}</p>
+        <p className="mt-3 text-sm leading-relaxed text-stone-600">{copy.intro}</p>
       </header>
 
       <div
-        className="rise mt-8 flex items-end justify-center rounded-2xl border border-zinc-200 bg-white px-6 pt-8 pb-4 shadow-paper"
+        className="rise mt-8 flex items-end justify-center rounded-xl border border-stone-200 bg-white px-6 pt-8 pb-4 shadow-paper"
         style={{ animationDelay: "80ms" }}
       >
         <p
-          className="select-none text-8xl leading-none text-zinc-900 sm:text-9xl"
+          className="select-none text-8xl leading-none text-stone-900 sm:text-9xl"
           style={{ fontFamily: font.css }}
         >
           {page.letter}
         </p>
       </div>
-      <p className="mt-2 text-xs leading-relaxed text-zinc-400">{ui.fontNote}</p>
+      <p className="mt-2 text-xs leading-relaxed text-stone-400">{ui.fontNote}</p>
 
       {/* 笔顺 */}
       <section className="rise mt-10" style={{ animationDelay: "120ms" }}>
-        <h2 className="text-base font-semibold text-zinc-900">{ui.stepsTitle}</h2>
+        <h2 className="text-base font-semibold text-stone-900">{ui.stepsTitle}</h2>
         <ol className="mt-4 flex flex-col gap-3">
           {copy.steps.map((step, i) => (
-            <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-zinc-600">
+            <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-stone-600">
               <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-semibold text-accent">
                 {i + 1}
               </span>
@@ -136,10 +136,10 @@ export default async function CursiveLetterPage({
 
       {/* 常见错误 */}
       <section className="rise mt-10" style={{ animationDelay: "140ms" }}>
-        <h2 className="text-base font-semibold text-zinc-900">{ui.mistakesTitle}</h2>
+        <h2 className="text-base font-semibold text-stone-900">{ui.mistakesTitle}</h2>
         <ul className="mt-4 flex flex-col gap-3">
           {copy.mistakes.map((mistake, i) => (
-            <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-zinc-600">
+            <li key={i} className="flex items-start gap-3 text-sm leading-relaxed text-stone-600">
               <X className="mt-0.5 size-4 shrink-0 text-red-700/70" weight="bold" />
               {mistake}
             </li>
@@ -147,11 +147,11 @@ export default async function CursiveLetterPage({
         </ul>
       </section>
 
-      <nav className="rise mt-10 flex items-center justify-between gap-4 border-t border-zinc-100 pt-6" style={{ animationDelay: "160ms" }}>
+      <nav className="rise mt-10 flex items-center justify-between gap-4 border-t border-stone-100 pt-6" style={{ animationDelay: "160ms" }}>
         {prev ? (
           <Link
             href={`/cursive/letter/${prev.slug}`}
-            className="group inline-flex items-center gap-2 text-sm text-zinc-500 transition-colors hover:text-zinc-800"
+            className="group inline-flex items-center gap-2 text-sm text-stone-500 transition-colors hover:text-stone-800"
             aria-label={ui.prevLetter}
           >
             <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-0.5" />
@@ -166,7 +166,7 @@ export default async function CursiveLetterPage({
         {next ? (
           <Link
             href={`/cursive/letter/${next.slug}`}
-            className="group inline-flex items-center gap-2 text-right text-sm text-zinc-500 transition-colors hover:text-zinc-800"
+            className="group inline-flex items-center gap-2 text-right text-sm text-stone-500 transition-colors hover:text-stone-800"
             aria-label={ui.nextLetter}
           >
             cursive {next.name}
@@ -187,7 +187,7 @@ export default async function CursiveLetterPage({
           { label: ui.hubCapital, rows: capitalLetters },
         ].map((group) => (
           <div key={group.label} className="flex items-center gap-3">
-            <span className="w-16 shrink-0 text-xs font-semibold tracking-wide text-zinc-400 uppercase">
+            <span className="w-16 shrink-0 text-xs font-semibold tracking-wide text-stone-400 uppercase">
               {group.label}
             </span>
             <div className="flex flex-wrap gap-1">
@@ -201,7 +201,7 @@ export default async function CursiveLetterPage({
                     className={`flex size-8 items-center justify-center rounded-lg border text-base ${
                       current
                         ? "border-accent bg-accent/5 text-accent"
-                        : "border-zinc-200 bg-white text-zinc-800 hover:border-accent/50"
+                        : "border-stone-200 bg-white text-stone-800 hover:border-accent/50"
                     }`}
                     style={{ fontFamily: font.css }}
                   >
@@ -215,9 +215,9 @@ export default async function CursiveLetterPage({
       </nav>
 
       <section className="rise mt-10" style={{ animationDelay: "180ms" }}>
-        <h2 className="text-xs font-semibold tracking-wide text-zinc-400 uppercase">{ui.wordsTitle}</h2>
+        <h2 className="text-xs font-semibold tracking-wide text-stone-400 uppercase">{ui.wordsTitle}</h2>
         <p
-          className="mt-3 leading-[44px] text-zinc-800"
+          className="mt-3 leading-[44px] text-stone-800"
           style={{
             fontFamily: font.css,
             fontSize: 30,
@@ -228,8 +228,8 @@ export default async function CursiveLetterPage({
         </p>
       </section>
 
-      <section className="rise mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-6" style={{ animationDelay: "200ms" }}>
-        <h2 className="text-base font-semibold text-zinc-900">{ui.ctaTitle}</h2>
+      <section className="rise mt-10 rounded-xl border border-accent/20 bg-accent/5 p-6" style={{ animationDelay: "200ms" }}>
+        <h2 className="text-base font-semibold text-stone-900">{ui.ctaTitle}</h2>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <Link href={sheetHref} className="btn btn-primary px-6 py-3">
             {ui.ctaButton}
@@ -242,7 +242,7 @@ export default async function CursiveLetterPage({
             label={ui.sheetButton}
             fileStem={page.slug}
           />
-          <p className="w-full text-xs leading-relaxed text-zinc-500">{ui.ctaHint}</p>
+          <p className="w-full text-xs leading-relaxed text-stone-500">{ui.ctaHint}</p>
           <p className="w-full text-sm">
             <Link
               href={`/cursive-alphabet?letter=${page.letter}`}

@@ -121,26 +121,26 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
 
   return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-zinc-950/80 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-stone-950/80 p-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl"
+        className="flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-xl bg-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* 头部 */}
-        <div className="flex items-center justify-between border-b border-zinc-200 px-5 py-3.5">
-          <h2 className="text-sm font-semibold text-zinc-900">{t("preview")}</h2>
+        <div className="flex items-center justify-between border-b border-stone-200 px-5 py-3.5">
+          <h2 className="text-sm font-semibold text-stone-900">{t("preview")}</h2>
           <div className="flex items-center gap-3">
             {pages.length > 1 && (
-              <span className="font-mono text-xs text-zinc-400">
+              <span className="font-mono text-xs text-stone-400">
                 {index + 1} / {pages.length}
               </span>
             )}
             <button
               onClick={onClose}
               aria-label={t("close")}
-              className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700"
+              className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-stone-400 transition-colors hover:bg-stone-100 hover:text-stone-700"
             >
               <X className="size-4" />
             </button>
@@ -148,13 +148,13 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
         </div>
 
         {/* 页面真图预览:整页完整可见,高度受限时居中缩放 */}
-        <div className="flex min-h-0 flex-1 items-center justify-center overflow-y-auto bg-zinc-100 p-5">
+        <div className="flex min-h-0 flex-1 items-center justify-center overflow-y-auto bg-stone-100 p-5">
           <div className="relative mx-auto flex w-fit max-w-full items-center justify-center">
             {pages.length > 1 && index > 0 && (
               <button
                 onClick={() => setIndex(index - 1)}
                 aria-label={t("prevPage")}
-                className="absolute left-2 top-1/2 z-10 flex size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow hover:bg-white"
+                className="absolute left-2 top-1/2 z-10 flex size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/90 text-stone-700 shadow hover:bg-white"
               >
                 <ArrowLeft className="size-4" />
               </button>
@@ -163,13 +163,13 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
             <img
               src={current}
               alt={`page ${index + 1}`}
-              className="max-h-[60vh] w-auto max-w-full rounded-lg border border-zinc-200 bg-white shadow-sm"
+              className="max-h-[60vh] w-auto max-w-full rounded-lg border border-stone-200 bg-white shadow-sm"
             />
             {pages.length > 1 && index < pages.length - 1 && (
               <button
                 onClick={() => setIndex(index + 1)}
                 aria-label={t("nextPage")}
-                className="absolute right-2 top-1/2 z-10 flex size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/90 text-zinc-700 shadow hover:bg-white"
+                className="absolute right-2 top-1/2 z-10 flex size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white/90 text-stone-700 shadow hover:bg-white"
               >
                 <ArrowRight className="size-4" />
               </button>
@@ -178,14 +178,14 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
         </div>
 
         {/* 分享区:复制图片是社交分享的主路径,置为主按钮 */}
-        <div className="border-t border-zinc-200 px-5 py-4">
+        <div className="border-t border-stone-200 px-5 py-4">
           <div className="flex items-center justify-between gap-3">
             <button onClick={copyImage} className="btn btn-primary px-4 py-2.5 text-sm">
               {copied === "image" ? <Check className="size-4" /> : <Copy className="size-4" />}
               {copied === "image" ? t("copied") : t("copyImage")}
             </button>
             <label className="flex cursor-pointer select-none items-center gap-2">
-              <span className="text-sm text-zinc-700">{tTool("watermark")}</span>
+              <span className="text-sm text-stone-700">{tTool("watermark")}</span>
               <button
                 role="switch"
                 aria-checked={watermark}
@@ -193,7 +193,7 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
                 disabled={wmPending}
                 onClick={flipWatermark}
                 className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 disabled:opacity-50 ${
-                  watermark ? "bg-accent" : "bg-zinc-300"
+                  watermark ? "bg-accent" : "bg-stone-300"
                 }`}
               >
                 <span
@@ -221,7 +221,7 @@ export default function SharePreviewModal({ open, onClose, pages, watermark, onW
             </button>
           </div>
           {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
-          <p className="mt-2 text-[11px] text-zinc-400">{t("shareHint")}</p>
+          <p className="mt-2 text-[11px] text-stone-400">{t("shareHint")}</p>
         </div>
       </div>
     </div>,

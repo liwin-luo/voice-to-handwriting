@@ -56,7 +56,7 @@ export default function RecorderPanel() {
           </span>
         )}
       </div>
-      {interim && <p className="text-sm text-zinc-400">{interim}…</p>}
+      {interim && <p className="text-sm text-stone-400">{interim}…</p>}
       {!supported && <p className="max-w-xs text-xs leading-relaxed text-amber-700">{t("unsupported")}</p>}
       {errorText && <p className="max-w-xs text-xs leading-relaxed text-rose-700">{errorText}</p>}
     </div>

@@ -270,7 +270,7 @@ export default function HandwritingWorkbookGenerator({
         className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
           pressed
             ? "border-accent bg-accent/5 text-accent"
-            : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+            : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
         }`}
       >
         {lists(listLabel[list.id])}
@@ -297,7 +297,7 @@ export default function HandwritingWorkbookGenerator({
             <div className="flex flex-wrap gap-1.5">
               {SPELLING_LISTS.filter((list) => list.id !== "fry100").map(listChip)}
             </div>
-            <details className="text-xs text-zinc-500">
+            <details className="text-xs text-stone-500">
               <summary className="cursor-pointer">{lists("listMore")}</summary>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
                 {SPELLING_LISTS.filter((list) => list.id === "fry100").map(listChip)}
@@ -316,7 +316,7 @@ export default function HandwritingWorkbookGenerator({
       }
       download={
         <>
-          <p className="text-xs text-zinc-400">{t("stats", { pages: pageCount, words: wordList.length })}</p>
+          <p className="text-xs text-stone-400">{t("stats", { pages: pageCount, words: wordList.length })}</p>
           <button onClick={downloadPdf} className="btn btn-primary flex-1 px-4 py-2.5 text-sm">
             <FilePdf className="size-4" />
             {t("downloadPdf")}
@@ -336,13 +336,13 @@ export default function HandwritingWorkbookGenerator({
             </select>
           </div>
           <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("showCover")}</span>
+            <span className="text-stone-700">{t("showCover")}</span>
             <button
               role="switch"
               aria-checked={showCover}
               onClick={() => setShowCover(!showCover)}
               className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                showCover ? "bg-accent" : "bg-zinc-300"
+                showCover ? "bg-accent" : "bg-stone-300"
               }`}
             >
               <span
@@ -353,13 +353,13 @@ export default function HandwritingWorkbookGenerator({
             </button>
           </label>
           <label className="flex items-center justify-between gap-2 text-sm">
-            <span className="text-zinc-700">{t("showExample")}</span>
+            <span className="text-stone-700">{t("showExample")}</span>
             <button
               role="switch"
               aria-checked={showExample}
               onClick={() => setShowExample(!showExample)}
               className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                showExample ? "bg-accent" : "bg-zinc-300"
+                showExample ? "bg-accent" : "bg-stone-300"
               }`}
             >
               <span
@@ -373,14 +373,14 @@ export default function HandwritingWorkbookGenerator({
             className={`flex items-center justify-between gap-2 text-sm ${guidesAvailable ? "" : "opacity-50"}`}
             title={guidesAvailable ? undefined : t("strokeGuidesHint")}
           >
-            <span className="text-zinc-700">{t("strokeGuides")}</span>
+            <span className="text-stone-700">{t("strokeGuides")}</span>
             <button
               role="switch"
               aria-checked={guides && guidesAvailable}
               disabled={!guidesAvailable}
               onClick={() => setGuides(!guides)}
               className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-                guides && guidesAvailable ? "bg-accent" : "bg-zinc-300"
+                guides && guidesAvailable ? "bg-accent" : "bg-stone-300"
               } ${guidesAvailable ? "cursor-pointer" : "cursor-not-allowed"}`}
             >
               <span
@@ -398,10 +398,10 @@ export default function HandwritingWorkbookGenerator({
       preview={
         <div ref={wrapRef} className="flex flex-col gap-6 overflow-hidden rounded-xl">
           {showCover && (
-            <canvas className="block h-auto w-full rounded-xl border border-zinc-200 shadow-paper" />
+            <canvas className="block h-auto w-full rounded-xl border border-stone-200 shadow-paper" />
           )}
           {(pages.length > 0 ? pages : [[]]).map((_, i) => (
-            <canvas key={i} className="block h-auto w-full rounded-xl border border-zinc-200 shadow-paper" />
+            <canvas key={i} className="block h-auto w-full rounded-xl border border-stone-200 shadow-paper" />
           ))}
         </div>
       }

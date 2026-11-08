@@ -8,32 +8,32 @@ export default async function SiteFooter() {
   const meta = await getTranslations("meta");
   const icp = process.env.NEXT_PUBLIC_ICP;
   return (
-    <footer className="mt-14 border-t border-zinc-200 py-7 text-[13px] text-zinc-500">
+    <footer className="mt-14 border-t border-stone-200 py-7 text-[13px] text-stone-500">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4">
         <nav className="flex flex-wrap gap-x-5 gap-y-2">
-          <Link href="/" className="transition-colors hover:text-zinc-900">
+          <Link href="/" className="transition-colors hover:text-stone-900">
             {nav("tool")}
           </Link>
-          <Link href="/blog" className="transition-colors hover:text-zinc-900">
+          <Link href="/blog" className="transition-colors hover:text-stone-900">
             {nav("blog")}
           </Link>
-          <Link href="/about" className="transition-colors hover:text-zinc-900">
+          <Link href="/about" className="transition-colors hover:text-stone-900">
             {nav("about")}
           </Link>
-          <Link href="/privacy" className="transition-colors hover:text-zinc-900">
+          <Link href="/privacy" className="transition-colors hover:text-stone-900">
             {t("privacy")}
           </Link>
-          <Link href="/terms" className="transition-colors hover:text-zinc-900">
+          <Link href="/terms" className="transition-colors hover:text-stone-900">
             {t("terms")}
           </Link>
-          <Link href="/contact" className="transition-colors hover:text-zinc-900">
+          <Link href="/contact" className="transition-colors hover:text-stone-900">
             {t("contact")}
           </Link>
-          <Link href="/faq" className="transition-colors hover:text-zinc-900">
+          <Link href="/faq" className="transition-colors hover:text-stone-900">
             {t("faq")}
           </Link>
         </nav>
-        <p className="text-zinc-400">
+        <p className="text-stone-400">
           © {new Date().getFullYear()} {meta("brand")}
         </p>
         {icp && (
@@ -42,7 +42,7 @@ export default async function SiteFooter() {
               href="https://beian.miit.gov.cn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-zinc-900"
+              className="transition-colors hover:text-stone-900"
             >
               {icp}
             </a>

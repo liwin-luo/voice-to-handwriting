@@ -67,13 +67,13 @@ export function useShareActions() {
 
   // 具体平台在前,系统分享收在末尾(溢出入口,不是又一个目的地)
   const buttons: ShareButton[] = [
-    { id: "x", label: "X", icon: <XLogo weight="fill" className="size-5 text-zinc-900" /> },
+    { id: "x", label: "X", icon: <XLogo weight="fill" className="size-5 text-stone-900" /> },
     { id: "facebook", label: "Facebook", icon: <FacebookLogo weight="fill" className="size-5 text-[#1877F2]" /> },
     { id: "whatsapp", label: "WhatsApp", icon: <WhatsappLogo weight="fill" className="size-5 text-[#25D366]" /> },
     { id: "pinterest", label: "Pinterest", icon: <PinterestLogo weight="fill" className="size-5 text-[#E60023]" /> },
-    { id: "email", label: t("email"), icon: <EnvelopeSimple className="size-5 text-zinc-500" /> },
+    { id: "email", label: t("email"), icon: <EnvelopeSimple className="size-5 text-stone-500" /> },
     ...(hasNative
-      ? [{ id: "native" as const, label: t("shareSystem"), icon: <ShareNetwork className="size-5 text-zinc-500" /> }]
+      ? [{ id: "native" as const, label: t("shareSystem"), icon: <ShareNetwork className="size-5 text-stone-500" /> }]
       : []),
   ];
 

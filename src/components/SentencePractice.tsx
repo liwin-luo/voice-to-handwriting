@@ -341,7 +341,7 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
 
   const choiceClass = (on: boolean) =>
     `cursor-pointer rounded-lg border px-2.5 py-1.5 text-xs transition-colors ${
-      on ? "border-accent bg-accent/5 text-accent" : "border-zinc-200 bg-white text-zinc-500 hover:border-zinc-300"
+      on ? "border-accent bg-accent/5 text-accent" : "border-stone-200 bg-white text-stone-500 hover:border-stone-300"
     }`;
 
   return (
@@ -349,8 +349,8 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
       input={
         <>
           {record && (
-            <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2">
-              <p className="text-sm text-zinc-600">{t("lastSession", { focus: focusLabel(record.focus), date: lastDate })}</p>
+            <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-stone-200 bg-stone-50 px-3 py-2">
+              <p className="text-sm text-stone-600">{t("lastSession", { focus: focusLabel(record.focus), date: lastDate })}</p>
               <button type="button" className="btn btn-ghost px-3 py-1.5 text-xs" onClick={writeAgain}>
                 {t("writeAgain")}
               </button>
@@ -379,8 +379,8 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
               aria-label={t("sentenceLabel")}
               className="surface-input resize-y p-3 text-sm leading-relaxed"
             />
-            {printed.truncated && <p className="text-xs leading-relaxed text-zinc-500">{t("truncated")}</p>}
-            {listening && interim && <p className="text-xs text-zinc-400">{interim}…</p>}
+            {printed.truncated && <p className="text-xs leading-relaxed text-stone-500">{t("truncated")}</p>}
+            {listening && interim && <p className="text-xs text-stone-400">{interim}…</p>}
             {errorText && <p className="text-xs leading-relaxed text-rose-700">{errorText}</p>}
           </div>
           <div className="flex flex-col gap-1.5">
@@ -404,7 +404,7 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
           </div>
           <div className="flex flex-col gap-1.5">
             <label className="flex items-center justify-between gap-2 text-sm">
-              <span className="text-zinc-700">{t("leftHand")}</span>
+              <span className="text-stone-700">{t("leftHand")}</span>
               <button
                 type="button"
                 role="switch"
@@ -412,7 +412,7 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
                 aria-label={t("leftHand")}
                 onClick={() => setLeftHand((on) => !on)}
                 className={`relative h-6 w-11 cursor-pointer rounded-full transition-colors duration-200 ${
-                  leftHand ? "bg-accent" : "bg-zinc-300"
+                  leftHand ? "bg-accent" : "bg-stone-300"
                 }`}
               >
                 <span
@@ -422,8 +422,8 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
                 />
               </button>
             </label>
-            <p className="text-xs leading-relaxed text-zinc-500">{t("leftHandHint")}</p>
-            {showSpacingNote && <p className="text-xs leading-relaxed text-zinc-500">{t("spacingNeedsSpaces")}</p>}
+            <p className="text-xs leading-relaxed text-stone-500">{t("leftHandHint")}</p>
+            {showSpacingNote && <p className="text-xs leading-relaxed text-stone-500">{t("spacingNeedsSpaces")}</p>}
           </div>
         </>
       }
@@ -436,7 +436,7 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
               {t("downloadPdf")}
             </button>
             <button type="button" onClick={downloadPng} disabled={!ready} className="btn btn-ghost flex-1 px-4 py-2.5 text-sm disabled:cursor-not-allowed disabled:opacity-40">
-              <ImageIcon className="size-4 text-zinc-500" />
+              <ImageIcon className="size-4 text-stone-500" />
               {t("downloadPng")}
             </button>
           </div>
@@ -455,7 +455,7 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
             </div>
           </div>
           <label className={`flex items-center justify-between gap-2 text-sm ${focus === "print" ? "opacity-50" : ""}`}>
-            <span className="text-zinc-700">{t("script")}</span>
+            <span className="text-stone-700">{t("script")}</span>
             <button
               type="button"
               role="switch"
@@ -464,7 +464,7 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
               disabled={focus === "print"}
               onClick={() => setScript((on) => !on)}
               className={`relative h-6 w-11 rounded-full transition-colors duration-200 ${
-                focus !== "print" && script ? "bg-accent" : "bg-zinc-300"
+                focus !== "print" && script ? "bg-accent" : "bg-stone-300"
               } ${focus === "print" ? "cursor-not-allowed" : "cursor-pointer"}`}
             >
               <span
@@ -480,11 +480,11 @@ export default function SentencePractice({ defaultFormat }: { defaultFormat: Pag
       }
       preview={
         ready ? (
-          <div className="overflow-hidden rounded-xl border border-zinc-200 shadow-paper">
+          <div className="overflow-hidden rounded-xl border border-stone-200 shadow-paper">
             <canvas ref={canvasRef} className="block h-auto w-full" aria-label={t("title")} />
           </div>
         ) : (
-          <p role="status" className="rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-8 text-sm leading-relaxed text-zinc-600">
+          <p role="status" className="rounded-xl border border-stone-200 bg-stone-50 px-4 py-8 text-sm leading-relaxed text-stone-600">
             {t("tooLong")}
           </p>
         )

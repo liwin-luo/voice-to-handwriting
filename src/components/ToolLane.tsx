@@ -34,21 +34,21 @@ export default function ToolLane({
           >
             <span
               aria-hidden
-              className="block h-24 border-b border-zinc-100"
+              className="block h-24 border-b border-stone-100"
               style={{ background: tool.paperBackground }}
             >
               <span
-                className="block px-4 pt-6 text-xl leading-none text-zinc-800"
+                className="block px-4 pt-6 text-xl leading-none text-stone-800"
                 style={{ fontFamily: tool.fontCss }}
               >
                 {sample}
               </span>
             </span>
             <span className="flex flex-1 flex-col gap-1 p-4">
-              <span className="font-semibold text-zinc-950 transition-colors duration-150 group-hover:text-accent">
+              <span className="font-semibold text-stone-950 transition-colors duration-150 group-hover:text-accent">
                 {tool.name}
               </span>
-              <span className="text-[13px] leading-relaxed text-zinc-500">{tool.description}</span>
+              <span className="text-[13px] leading-relaxed text-stone-500">{tool.description}</span>
             </span>
           </Link>
         ))}
