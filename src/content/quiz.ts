@@ -120,8 +120,8 @@ const en: QuizLocaleContent = {
       label: "Personal space",
       levels: { low: "Close", mid: "Flexible", high: "Airy" },
       practice: {
-        text: "Word-spacing rhythm improves with repetition — build a sheet from your own word list in Word Work.",
-        href: "/word-work",
+        text: "Word-spacing rhythm improves with repetition — build a sheet from your own word list in the worksheet generator.",
+        href: "/handwriting-worksheet-generator",
       },
     },
     focus: {

@@ -42,13 +42,10 @@ const TOOL_SWATCH: Record<string, { fontId: string; paperId: string }> = {
   "/handwriting-page-calculator": { fontId: "patrickhand", paperId: "grid" },
   "/cursive-alphabet": { fontId: "sacramento", paperId: "ruled" },
   "/cursive-worksheets": { fontId: "sacramento", paperId: "ruled" },
-  "/handwriting-sentence-practice": { fontId: "kalam", paperId: "ruled" },
   "/number-tracing": { fontId: "patrickhand", paperId: "ruled" },
   "/writing-practice": { fontId: "mashanzheng", paperId: "grid" },
-  "/word-work": { fontId: "patrickhand", paperId: "ruled" },
   "/name-coloring": { fontId: "indieflower", paperId: "blank" },
   "/handwriting-personality-quiz": { fontId: "caveat", paperId: "blank" },
-  "/doctor-handwriting-generator": { fontId: "caveat", paperId: "rx" },
 };
 
 export default async function ToolsHubPage({

@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
       },
       // 唯一没有英文正文就下线的文章(de 源发),旧 slug 308 回博客索引
       { source: "/blog/whatsapp-voice-note-handwriting", destination: "/blog", permanent: true },
+      // 2026-11-08 第三批聚类合并:同功能工具并入承接方(分析见 us-seo-content-plan §二十三)
+      { source: "/word-work", destination: "/handwriting-worksheet-generator", permanent: true },
+      { source: "/handwriting-sentence-practice", destination: "/handwriting-worksheet-generator?words=The+quick+brown+fox+jumps+over+the+lazy+dog.", permanent: true },
+      { source: "/doctor-handwriting-generator", destination: "/templates/doctor-prescription", permanent: true },
       // 2026-11-08 第二批功能收缩:11 个零曝光/死押注工具页 308 到最近的存活承接页(GSC 依据见 us-seo-content-plan 登记)
       { source: "/handwriting-check", destination: "/tools", permanent: true },
       { source: "/handwriting-count", destination: "/tools", permanent: true },

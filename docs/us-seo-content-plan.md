@@ -462,3 +462,17 @@
 配套文章 10 篇删除:handwriting-repeater、daily-cursive-practice-pdf、count-words-in-handwriting、share-a-handwriting-score-card、save-a-handwritten-note、export-a-mirrored-cursive-stencil、how-to-practice-your-signature、squared-hand-lettering-practice、strokes-before-letter-tracing、how-to-join-cursive-letters(正文第一屏均为「打开那个工具」)。保留文章的相关链接已改指存活工具;每日连笔簇的经验教训:一个工具没有自然曝光前,不为它写配套文。
 
 **后续砍留判据**:2027-01 GSC 复盘(roadmap Go/No-Go),冻结名单(doctor、quiz、name-coloring、bulk-letters、word-work、writing-practice、workbook、cursive-font-generator)按数据定生死。
+
+## 二十三、功能聚类合并(2026-11-08,第三批收缩,已落地)
+
+按「功能相同或关键词相同则合并」对 20 个存活工具聚类。**合并 3 个(20 → 17)**:
+
+| 下线路由 | 并入 | 依据 | 关键词处置 |
+|---|---|---|---|
+| /word-work | /handwriting-worksheet-generator | = worksheet + Dolch/Fry 词表预设;词表按钮已搬入 worksheet 页(TracingGenerator presets) | "word work" 簇由 worksheet 页与配套文承接,slug 308 |
+| /handwriting-sentence-practice | /handwriting-worksheet-generator | 494 行定制组件,功能被 worksheet「一行一句 + ?words=」覆盖;308 带例句参数 | "sentence practice" 簇由 worksheet 页承接 |
+| /doctor-handwriting-generator | /templates/doctor-prescription | = `/` 换 rx 纸预设;新建处方恶搞模板承接 | "doctor handwriting" 由模板详情页承接 |
+
+**明确不合并的同族**:cursive-text vs cursive-font(复制文字 vs 字体导出,SERP 意图不同,内容须显式区分);/cursive vs /(关键词落地 + 52 页矩阵 hub);name-tracing vs worksheet(词簇头部各自独立);printable-handwritten-letters vs templates(名单合并 vs 文案库)。
+
+**留观**:/handwriting-workbook-generator(= worksheet 多页聚合,合并需开发整本模式;33 曝光 pos 17.6 为练习族最好位置,2027-01 GSC 定)、/writing-practice(CJK 田字格,en-only 后受众存疑)、/name-coloring(功能唯一,涂色赛道)。

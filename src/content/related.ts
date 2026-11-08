@@ -14,15 +14,12 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/cursive-font-generator": "cursiveFont",
   "/cursive-worksheets": "cursiveWorks",
   "/number-tracing": "numberTracing",
-  "/word-work": "wordWork",
   "/writing-practice": "writingPractice",
   "/name-coloring": "coloring",
   "/handwriting-personality-quiz": "quiz",
-  "/doctor-handwriting-generator": "doctor",
   "/handwriting-workbook-generator": "workbook",
   "/handwriting-page-calculator": "pageCalc",
   "/printable-handwritten-letters": "bulkLetters",
-  "/handwriting-sentence-practice": "sentencePractice",
 };
 
 export interface RelatedConfig {
@@ -71,7 +68,7 @@ export const RELATED: Record<string, RelatedConfig> = {
     posts: ["name-tracing-generator", "kindergarten-handwriting-paper"],
   },
   "spelling-list-word-work": {
-    tools: ["/word-work", "/name-tracing", "/handwriting-workbook-generator"],
+    tools: ["/handwriting-worksheet-generator", "/name-tracing", "/handwriting-workbook-generator"],
     posts: ["sight-word-tracing-worksheets", "copywork-generator"],
   },
   "color-a-name-before-tracing": {
@@ -160,13 +157,13 @@ export const RELATED: Record<string, RelatedConfig> = {
     tools: ["/templates", "/cursive"],
     posts: ["handwritten-thank-you-notes", "cursive-name-signature", "handwriting-templates-guide"],
   },
-  // 成人单句练习:枢纽 /handwriting-sentence-practice。总览文只留簇内下一步。
+  // 成人单句练习:枢纽已并入 /handwriting-worksheet-generator(2026-11 聚类合并)。
   "how-to-improve-handwriting-adults": {
-    tools: ["/handwriting-sentence-practice", "/printable-paper", "/name-tracing"],
+    tools: ["/handwriting-worksheet-generator", "/printable-paper", "/name-tracing"],
     posts: ["practice-one-handwriting-problem"],
   },
   "practice-one-handwriting-problem": {
-    tools: ["/handwriting-sentence-practice"],
+    tools: ["/handwriting-worksheet-generator"],
     posts: ["how-to-improve-handwriting-adults"],
   },
   "handwriting-practice-struggling-writers": {
@@ -230,7 +227,7 @@ export const RELATED: Record<string, RelatedConfig> = {
 
   // copywork(homeschool 抄写)簇:方法讲解 + 免费生成器 + 分学科素材;与 sight-word 词表簇拆开
   "copywork-generator": {
-    tools: ["/name-tracing", "/cursive", "/printable-paper", "/handwriting-workbook-generator", "/word-work"],
+    tools: ["/name-tracing", "/cursive", "/printable-paper", "/handwriting-workbook-generator"],
     posts: ["sight-word-tracing-worksheets", "kindergarten-handwriting-paper", "spelling-list-word-work"],
   },
 

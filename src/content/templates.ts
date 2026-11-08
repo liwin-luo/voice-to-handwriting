@@ -34,6 +34,15 @@ export function getTemplateMeta(tpl: HandwritingTemplate, locale: Locale): Templ
 /** 场景模板:文案 + 配套样式。新模板:在 TEMPLATES 加一项(en 范文必填),en 范文必填;页面与 sitemap 自动覆盖 */
 export const TEMPLATES: HandwritingTemplate[] = [
   {
+    slug: "doctor-prescription",
+    style: { fontId: "caveat", paperId: "rx", ink: "#1a1a1a", fontSize: 30, intensity: 0.85, align: "left", indent: false },
+    i18n: { en: {
+        title: "Doctor handwriting template",
+        description: "The infamous doctor's prescription scrawl, as a gag. Rx paper, chaotic pen — for joke gifts, props and cards. Obviously not a real prescription.",
+        text: "Rx\nCoffee 1000 mg — take one cup at sunrise, refills as needed.\nOne long walk after dinner.\nLaughter, twice daily.\n— Dr. Scribble",
+      } },
+  },
+  {
     slug: "love-letter",
     style: { fontId: "longcang", paperId: "letter", ink: "#15317e", fontSize: 28, intensity: 0.6, align: "left", indent: true },
     i18n: { en: {

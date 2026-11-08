@@ -11,7 +11,6 @@ const NAV_HREFS = [
   "/writing-practice",
   "/handwriting-workbook-generator",
   "/handwriting-personality-quiz",
-  "/doctor-handwriting-generator",
 ];
 
 describe("navGroupsFor", () => {

@@ -197,39 +197,6 @@ export const FAQ_ITEMS: FaqItem[] = [
   },
 ];
 
-/** /word-work 拼写练习页 FAQ(8 语言) */
-export const WORDWORK_FAQS: FaqItem[] = [
-  {
-    id: "wordwork-free",
-    i18n: { en: {
-        q: "Is the word work generator free?",
-        a: "Yes — unlimited worksheets, no signup, no watermark. Everything is generated in your browser and your word list is never uploaded.",
-      } },
-  },
-  {
-    id: "wordwork-activities",
-    i18n: { en: {
-        q: "What activities does it generate?",
-        a: "Two per sheet: write each word three times (optionally with a traceable first copy) and a fill-in-the-missing-letter puzzle built from the same list.",
-        link: { href: "/blog/spelling-list-word-work", label: "Four words on Monday" },
-      } },
-  },
-  {
-    id: "wordwork-deterministic",
-    i18n: { en: {
-        q: "Are the worksheets the same every time for the same list?",
-        a: "Yes — the generator is deterministic, so Monday's preview matches Friday's printout. No AI surprises or garbled words: what you paste is exactly what prints.",
-      } },
-  },
-  {
-    id: "wordwork-words",
-    i18n: { en: {
-        q: "Which words can I use?",
-        a: "Any list: weekly spelling words, sight words, vocabulary — one word per line. Keep it to a dozen or so per sheet so the writing rows stay comfortable.",
-      } },
-  },
-];
-
 /** /writing-practice CJK 练字帖页 FAQ(8 语言) */
 export const WRITING_FAQS: FaqItem[] = [
   {
@@ -345,31 +312,6 @@ export const QUIZ_FAQS: FaqItem[] = [
     i18n: { en: {
         q: "Can I improve my handwriting based on my result?",
         a: "That's the point! Each dimension in your result links to a free practice tool matched to that habit — three-line paper for a straight baseline, rhythm rows for even size, and so on. No signup, no watermark.",
-      } },
-  },
-];
-
-/** /doctor-handwriting-generator 工具页 FAQ(8 语言) */
-export const DOCTOR_FAQS: FaqItem[] = [
-  {
-    id: "doctor-why-messy",
-    i18n: { en: {
-        q: "Why is doctors' handwriting so messy?",
-        a: "Volume and speed. A hospital doctor writes thousands of notes a year, often standing, between patients — so letters collapse into shorthand scrawl. Interestingly, studies comparing doctors with other professionals found their handwriting is only slightly worse; the legend owes a lot to prescriptions' private abbreviations and, of course, memes.",
-      } },
-  },
-  {
-    id: "doctor-not-real",
-    i18n: { en: {
-        q: "Is this a real prescription?",
-        a: "No — it's a gag. The output is a novelty image/PDF for jokes, gifts and party laughs: a fake \"prescription\" telling a friend to take two vacations a day, for example. It is not a medical document and must never be used to deceive a pharmacy, an employer or anyone else.",
-      } },
-  },
-  {
-    id: "doctor-how-to",
-    i18n: { en: {
-        q: "How do I make my own doctor handwriting note?",
-        a: "Type or dictate your text, and the generator writes it in a scrawl on an Rx pad. Push the realism slider toward 100% for maximum illegibility, pick the ℞ paper, then export a PNG or a print-ready PDF. Popular uses: gag prescriptions, \"doctor's orders\" notes excusing chores, and get-well cards with mock side effects like \"may cause napping\".",
       } },
   },
 ];

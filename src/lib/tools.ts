@@ -71,10 +71,8 @@ export const TOOL_GROUPS: ToolGroup[] = [
       { href: "/handwriting-page-calculator", navKey: "pageCalc", metaKey: "pageCalc" },
       { href: "/cursive-alphabet", navKey: "cursiveAlphabet", metaKey: "cursiveAlphabet", enOnly: true },
       { href: "/cursive-worksheets", navKey: "cursiveWorks", metaKey: "cursiveWorks" },
-      { href: "/handwriting-sentence-practice", navKey: "sentencePractice", metaKey: "sentencePractice" },
       { href: "/number-tracing", navKey: "numberTracing", metaKey: "numberTracing" },
       { href: "/writing-practice", navKey: "writingPractice", metaKey: "writing", nav: true },
-      { href: "/word-work", navKey: "wordWork", metaKey: "wordwork" },
       { href: "/name-coloring", navKey: "coloring", metaKey: "coloring" },
       { href: "/handwriting-workbook-generator", navKey: "workbook", metaKey: "workbook", nav: true },
     ],
@@ -83,7 +81,6 @@ export const TOOL_GROUPS: ToolGroup[] = [
     labelKey: "groupFun",
     tools: [
       { href: "/handwriting-personality-quiz", navKey: "quiz", metaKey: "quiz", nav: true },
-      { href: "/doctor-handwriting-generator", navKey: "doctor", metaKey: "doctor", nav: true },
     ],
   },
 ];

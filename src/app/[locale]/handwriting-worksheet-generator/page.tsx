@@ -12,6 +12,7 @@ import { getLocalizedFaqs } from "@/content/faqs";
 import { pageMetadata } from "@/lib/seo";
 import { defaultFontId, defaultPageFormat } from "@/lib/localeDefaults";
 import { worksheetStarterLines } from "@/lib/practicePresets";
+import { DOLCH_PREPRIMER, FRY_100 } from "@/lib/spellingLists";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -56,6 +57,11 @@ export default async function HandwritingWorksheetGeneratorPage({
           sampleText={worksheetStarterLines(locale)}
           inputLabel={t("inputLabel")}
           fileStem="handwriting-worksheet"
+          presets={[
+            { id: "dolch", label: "Dolch Pre-K", text: DOLCH_PREPRIMER.slice(0, 25).join("\n") },
+            { id: "fry25", label: "Fry 1–25", text: FRY_100.slice(0, 25).join("\n") },
+            { id: "fry100", label: "Fry 1–100", text: FRY_100.join("\n") },
+          ]}
         />
       </div>
       <div className="rise mt-6" style={{ animationDelay: "120ms" }}>

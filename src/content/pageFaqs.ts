@@ -107,32 +107,6 @@ export const NUMBER_TRACING_FAQS: FaqItem[] = [
   },
 ];
 
-/** /handwriting-sentence-practice。英文回链到 practice-one-handwriting-problem;该文只有英文,其他语言不链过去。 */
-export const SENTENCE_PRACTICE_FAQS: FaqItem[] = [
-  {
-    id: "sp-score",
-    i18n: { en: {
-        q: "Will this sheet score my handwriting?",
-        a: "No. Pick one thing, print the page, and write it yourself. The site never sees the letters you put on the paper.",
-        link: { href: "/blog/practice-one-handwriting-problem", label: "How to pick one problem" },
-      } },
-  },
-  {
-    id: "sp-three",
-    i18n: { en: {
-        q: "Why only three lines?",
-        a: "A long session makes the hand clamp down. Write the three blank lines, then stop.",
-      } },
-  },
-  {
-    id: "sp-font",
-    i18n: { en: {
-        q: "Is the model my handwriting?",
-        a: "No. It is a font: Patrick Hand, or Sacramento if you turn the script model on. Print locks the model to Patrick Hand.",
-      } },
-  },
-];
-
 /** /handwriting-worksheet-generator。/letter-tracing 是 en-only,字体题只有英文带链接;免费题放最后。 */
 export const HANDWRITING_WORKSHEET_FAQS: FaqItem[] = [
   {

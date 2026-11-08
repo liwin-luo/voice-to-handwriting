@@ -60,14 +60,6 @@
       "title": "Name Coloring Page Generator",
       "description": "Turn any name into printable bubble-letter coloring pages. Kids color their own name, then download a free PDF. No signup."
     },
-    "wordwork": {
-      "title": "Word Work Worksheet Generator (Printable PDF)",
-      "description": "Turn any spelling list into two printable activities: write each word three times and fill in the missing letter. Deterministic, free, no watermark, no signup."
-    },
-    "doctor": {
-      "title": "Doctor Handwriting Generator — Illegible Rx Pad, Just for Fun",
-      "description": "Type or speak anything and this doctor handwriting generator writes it as an illegible prescription scrawl on an ℞ pad. Free gag gift maker — download as PNG or PDF."
-    },
     "workbook": {
       "title": "Free Handwriting Workbook Generator (Printable PDF)",
       "description": "Create a printable handwriting workbook PDF in seconds: a cover page, the alphabet or your own word list, example and traceable rows on three-line guides. Free, no signup, no watermark."
@@ -102,10 +94,6 @@
     "numberTracing": {
       "title": "Number Tracing Worksheets to Print for 1–10 or 1–20",
       "description": "Print number tracing worksheets for 1–10 or 1–20. Each number gets its own page: one solid row, then dotted rows. Free, in your browser."
-    },
-    "sentencePractice": {
-      "title": "Handwriting Sentence Practice",
-      "description": "Type one sentence you need to write, pick size, slant, spacing, or print, and download a practice sheet. A model line, a dotted line, three blank lines. Free, in your browser."
     }
   },
   "nav": {
@@ -124,7 +112,6 @@
     "coloring": "Name Coloring",
     "wordWork": "Word Work",
     "quiz": "Handwriting Quiz",
-    "doctor": "Doctor Handwriting",
     "workbook": "Workbook Maker",
     "menu": "Menu",
     "allTools": "All tools",
@@ -136,7 +123,6 @@
     "cursiveText": "Cursive Text",
     "bulkLetters": "Printable Letters",
     "numberTracing": "Number Tracing",
-    "sentencePractice": "Sentence Practice",
     "openTool": "Open the tool"
   },
   "home": {
@@ -429,14 +415,6 @@
     "faqTitle": "Handwriting worksheet questions",
     "relatedLead": "More practice makers:"
   },
-  "doctor": {
-    "title": "Doctor Handwriting Generator",
-    "intro": "Type or dictate anything and watch it become an unreadable doctor's prescription — scrawl included. Purely for fun: gag gifts, party jokes and get-well cards.",
-    "seoTitle": "The famous doctor handwriting, generated",
-    "seoText": "Doctors don't write badly because they can't write — they write too much, too fast. A hospital doctor produces thousands of notes a year, so letters collapse into shorthand scrawl. This ℞ pad recreates that \"unreadable to outsiders\" charm, but you decide exactly what it says.\n\nHow to use: type or dictate what you want to \"prescribe\" — for example, \"Doctor's orders: two vacations a day, milk tea with every meal\" — push the realism slider past 90% for maximum illegibility, then export a PNG or a print-ready PDF.\n\nPlease note: the output is a novelty for laughs, not a medical document. Don't use it to deceive a pharmacy, an employer or anyone else.",
-    "faqTitle": "Frequently asked questions",
-    "disclaimer": "For fun only — the output is a gag, not a medical document. Never use it to deceive anyone."
-  },
   "workbook": {
     "title": "Handwriting Workbook Generator",
     "intro": "Build a whole practice book in one click: cover page, one group per word with an example row and traceable rows, exported as a single print-ready PDF.",
@@ -516,29 +494,6 @@
     "seoTitle": "Free name coloring page generator for kids",
     "seoText": "Personalized name coloring pages are a classroom and rainy-day classic: kids color the letters of their own name, practicing letter shapes without noticing. Bubble-letter outlines with stars, animals, or machines to color — print at exact Letter size. A small site watermark is on by default and can be turned off.",
     "faqTitle": "Frequently asked questions"
-  },
-  "wordwork": {
-    "title": "Word Work Worksheet Generator",
-    "intro": "Paste your weekly spelling list and get two printable activities: write each word three times, and fill in the missing letter. Deterministic, no watermark, free PDF.",
-    "wordsLabel": "Spelling words (one per line)",
-    "wordsPlaceholder": "cat\ndog\nsun\nball",
-    "listsLabel": "Starter lists",
-    "list_dolch": "Dolch sight words",
-    "list_fry25": "Fry 1–25",
-    "list_fry100": "Fry first 100",
-    "listMore": "More lists",
-    "font": "Font",
-    "showTrace": "Traceable first copy",
-    "strokeGuides": "Stroke guides (start dot & arrow)",
-    "strokeGuidesHint": "Stroke guides are available for Latin-alphabet fonts only",
-    "downloadPdf": "Download PDF",
-    "a1Title": "Write each word three times.",
-    "a2Title": "Fill in the missing letter.",
-    "emptyTitle": "No words yet",
-    "emptyHint": "Paste your weekly spelling list — the worksheet builds itself.",
-    "faqTitle": "Frequently asked questions",
-    "seoTitle": "Free word work worksheets from any spelling list",
-    "seoText": "Teachers are drowning in AI-generated worksheets full of errors. This generator is deterministic: the same list always produces the same clean, printable pages — write-it-three-times plus a fill-in-the-missing-letter activity, in your choice of handwriting fonts, at exact letter size with no watermark."
   },
   "tools": {
     "title": "All free handwriting tools",
@@ -749,39 +704,5 @@
     "faqTitle": "Number tracing questions",
     "to10": "1–10",
     "to20": "1–20"
-  },
-  "sentencePractice": {
-    "title": "Handwriting Sentence Practice",
-    "intro": "Write one sentence you actually need, practice one thing, and print a single sheet. Stop after the three blank lines.",
-    "seoTitle": "One sentence, one problem, one sheet",
-    "seoText": "Type a sentence you have to write — a note to a colleague, a line for next week's meeting — and practice one thing on it: size, slant, spacing, or plain print. The sheet is a solid model line, a dotted line, and three blank lines. The footer tells you to stop.\n\nThe model is a font, Patrick Hand, or Sacramento if you turn the script model on. Print locks the model to Patrick Hand. Nothing you type is uploaded, and the page does not score what you write on the paper.",
-    "faqTitle": "Questions",
-    "sentenceLabel": "Sentence",
-    "sample": "Please read this note.",
-    "focusLabel": "Practice one thing",
-    "focusSize": "Size",
-    "focusSlant": "Slant",
-    "focusSpacing": "Spacing",
-    "focusPrint": "Print",
-    "script": "Script model",
-    "leftHand": "Left hand",
-    "leftHandHint": "Moves the red margin to the right so your hand is less likely to smear wet ink. This is not the only correct left-hand posture.",
-    "truncated": "Only the first sentence is printed.",
-    "tooLong": "Shorten this sentence so it fits on one line.",
-    "spacingNeedsSpaces": "Word spacing needs a space. This sentence has none, so the sheet keeps the line and the baseline, with no ticks.",
-    "stopLine": "Stop after these three lines.",
-    "downloadPdf": "Download PDF",
-    "downloadPng": "Download PNG",
-    "lineHeight": "Line height",
-    "lineLarge": "Large lines",
-    "lineRegular": "Regular lines",
-    "lineCompact": "Compact lines",
-    "writeAgain": "Write it again",
-    "lastSession": "Last time: {focus}, {date}",
-    "mic": "Speak",
-    "listening": "Listening",
-    "errorDenied": "The microphone is blocked. Type the sentence instead.",
-    "errorNetwork": "Speech recognition needs a network connection.",
-    "errorStopped": "Speech recognition stopped. Type the sentence instead."
   }
 }

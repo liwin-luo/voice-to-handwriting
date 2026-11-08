@@ -9,7 +9,7 @@ import { routing } from "@/i18n/routing";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
 
 /** 内容仅来自 localStorage 的本地工具页禁止进 sitemap */
-const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-text-generator", "/cursive-font-generator", "/cursive-worksheets", "/handwriting-sentence-practice", "/number-tracing", "/handwriting-personality-quiz", "/doctor-handwriting-generator", "/handwriting-workbook-generator", "/handwriting-page-calculator", "/printable-handwritten-letters", "/printable-paper", ...PAPER_KINDS.map((k) => `/printable-paper/${k.slug}`), "/name-tracing", "/handwriting-worksheet-generator", "/word-work", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact"];
+const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-text-generator", "/cursive-font-generator", "/cursive-worksheets", "/number-tracing", "/handwriting-personality-quiz", "/handwriting-workbook-generator", "/handwriting-page-calculator", "/printable-handwritten-letters", "/printable-paper", ...PAPER_KINDS.map((k) => `/printable-paper/${k.slug}`), "/name-tracing", "/handwriting-worksheet-generator", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact"];
 const YEARLY_PATHS = new Set(["/privacy", "/terms", "/contact", "/about"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -99,7 +99,7 @@ describe("内容完整性(8 语言)", () => {
     const known = new Set([
       "/cursive",
       "/name-tracing",
-      "/word-work",
+      "/handwriting-worksheet-generator",
       "/printable-paper",
       "/cursive-worksheets",
       "/writing-practice",
