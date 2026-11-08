@@ -8,11 +8,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/history", destination: "/", permanent: true },
-      // 2026-11-08 语种收缩为 en-only:旧 7 个语言前缀整体 308 回英文版,保已收录 URL 权重
-      // 裸前缀(/zh)单独放前面:通用规则的空 :path* 会产出空 Location
-      { source: "/:locale(es|fr|de|pt|zh|ja|ko)", destination: "/", permanent: true },
+      // 2026-11-08 语种收缩为 en-only:旧语言前缀整体 308 回英文版,保已收录 URL 权重。
+      // 放宽为任意两字母前缀:hreflang 事故期被爬的 /ur/* /ru/* 等垃圾前缀也在 GSC 收录里
+      // (2026-11-08 审计:266 个历史 URL 中 3 个 404 即此类);裸前缀单独放前面,空 :path* 会产出空 Location
+      { source: "/:locale([a-z]{2})", destination: "/", permanent: true },
       {
-        source: "/:locale(es|fr|de|pt|zh|ja|ko)/:path*",
+        source: "/:locale([a-z]{2})/:path*",
         destination: "/:path*",
         permanent: true,
       },
