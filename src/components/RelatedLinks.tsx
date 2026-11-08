@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
-import { RELATED, relatedPostAvailable, TOOL_LABEL_KEY } from "@/content/related";
+import { RELATED, relatedPostAvailable, TOOL_ANCHOR, TOOL_LABEL_KEY } from "@/content/related";
 import { isEnOnlyTool } from "@/lib/tools";
 import { getPostMeta } from "@/content/posts";
 
@@ -20,7 +20,8 @@ export default async function RelatedLinks({ slug, locale }: { slug: string; loc
     .filter((href) => TOOL_LABEL_KEY[href])
     // en-only 工具只在默认语言的页面出现,其他语言链过去是 404
     .filter((href) => locale === routing.defaultLocale || !isEnOnlyTool(href))
-    .map((href) => ({ href, label: tnav(TOOL_LABEL_KEY[href]) }));
+        // 锚文本优先用描述短语（Bing 维度 C），缺失时回退导航名
+    .map((href) => ({ href, label: TOOL_ANCHOR[href] ?? tnav(TOOL_LABEL_KEY[href]) }));
 
   const posts = cfg.posts
     .filter((s) => s !== slug && relatedPostAvailable(s, locale))

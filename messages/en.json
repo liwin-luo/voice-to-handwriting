@@ -94,6 +94,10 @@
     "numberTracing": {
       "title": "Number Tracing Worksheets to Print for 1–10 or 1–20",
       "description": "Print number tracing worksheets for 1–10 or 1–20. Each number gets its own page: one solid row, then dotted rows. Free, in your browser."
+    },
+    "authors": {
+      "title": "The five writing desks",
+      "description": "Meet the five editorial desks behind the guides: classroom, adult practice, research, letters and tools. Pen names, disclosed on the About page."
     }
   },
   "nav": {
@@ -311,7 +315,11 @@
   },
   "author": {
     "name": "Voice to Handwriting Team",
-    "role": "Product & engineering team"
+    "role": "Product & engineering team",
+    "backToAuthors": "All writing desks",
+    "postCount": "{n, plural, one {# guide on this desk} other {# guides on this desk}}",
+    "updatedLabel": "Updated",
+    "penNameDisclosure": "The desk names are pen names for our editorial process, not verifiable individuals — how we write and why we sign this way is disclosed on the About page."
   },
   "post": {
     "tryTools": "Try it yourself",
@@ -710,5 +718,11 @@
     "faqTitle": "Number tracing questions",
     "to10": "1–10",
     "to20": "1–20"
+  },
+  "authors": {
+    "title": "Who writes here",
+    "intro": "Five editorial desks, one per audience — every guide is signed with the desk that wrote it. Pen names, no hidden identities: the About page explains why.",
+    "disclosure": "These are pen names for our editorial desks, not verifiable individuals. What each desk covers — and what it refuses to write — is disclosed on the About page.",
+    "postCount": "{n, plural, one {# guide} other {# guides}}"
   }
 }

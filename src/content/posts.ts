@@ -25,7 +25,7 @@ export const POSTS: Post[] = [
     author: "mara-voss",
     date: "2026-10-08",
     updated: "2026-10-27",
-    image: "/blog/adult-practice.png",
+    image: "/blog/adult-practice.webp",
     i18n: { en: {
         title: "What does your handwriting say about you? The honest guide",
         description:
@@ -37,7 +37,7 @@ export const POSTS: Post[] = [
     author: "june-park",
     date: "2026-10-06",
     updated: "2026-10-13",
-    image: "/blog/template-love.png",
+    image: "/blog/template-love.webp",
     i18n: { en: {
         title: "Write a greeting card with your voice in 3 minutes",
         description:
@@ -49,7 +49,7 @@ export const POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-06",
     updated: "2026-10-07",
-    image: "/blog/workspace.png",
+    image: "/blog/workspace.webp",
     i18n: { en: {
         title: "Handwriting image generator tutorial: speak, don't type",
         description:
@@ -61,7 +61,7 @@ export const POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-06",
     updated: "2026-10-07",
-    image: "/blog/templates.png",
+    image: "/blog/templates.webp",
     i18n: { en: {
         title: "Handwritten quote cards for social media, done in a browser",
         description:
@@ -84,7 +84,7 @@ export const POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/templates.png",
+    image: "/blog/templates.webp",
     i18n: { en: {
         title: "Handwriting template library: six scenarios, pick one and write",
         description:
@@ -100,7 +100,7 @@ const US_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/tracing-worksheet.png",
+    image: "/blog/tracing-worksheet.webp",
     i18n: {
       en: {
         title: "Free name tracing generator: editable worksheets to print",
@@ -114,7 +114,7 @@ const US_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-13",
-    image: "/blog/lined-paper.png",
+    image: "/blog/lined-paper.webp",
     i18n: {
       en: {
         title: "Free printable lined paper: college, wide, graph & 3-line",
@@ -128,7 +128,7 @@ const US_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/cursive-workspace.png",
+    image: "/blog/cursive-workspace.webp",
     i18n: {
       en: {
         title: "Custom cursive practice worksheets, free and printable",
@@ -142,7 +142,7 @@ const US_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-13",
-    image: "/blog/handwriting-paper.png",
+    image: "/blog/handwriting-paper.webp",
     i18n: {
       en: {
         title: "Kindergarten handwriting paper: the three lines, explained",
@@ -156,7 +156,7 @@ const US_POSTS: Post[] = [
     author: "june-park",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/santa-letter.png",
+    image: "/blog/santa-letter.webp",
     i18n: {
       en: {
         title: "Free printable letter to Santa template (kids can write it)",
@@ -170,7 +170,7 @@ const US_POSTS: Post[] = [
     author: "june-park",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/thank-you-note.png",
+    image: "/blog/thank-you-note.webp",
     i18n: {
       en: {
         title: "How to write a thank you note people keep (with examples)",
@@ -184,7 +184,7 @@ const US_POSTS: Post[] = [
     author: "june-park",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/wedding-script.png",
+    image: "/blog/wedding-script.webp",
     i18n: {
       en: {
         title: "DIY wedding calligraphy: place cards & signs without a pro",
@@ -198,7 +198,7 @@ const US_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/pen-pal-letter.png",
+    image: "/blog/pen-pal-letter.webp",
     i18n: {
       en: {
         title: "Pen pal letters for kids: friendly letter format & prompts",
@@ -212,7 +212,7 @@ const US_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-12",
-    image: "/blog/adult-practice.png",
+    image: "/blog/adult-practice.webp",
     i18n: {
       en: {
         title: "How to improve your handwriting as an adult: 4-week plan",
@@ -226,7 +226,7 @@ const US_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/tracing-worksheet.png",
+    image: "/blog/tracing-worksheet.webp",
     i18n: {
       en: {
         title: "Handwriting for struggling writers (dysgraphia-friendly)",
@@ -246,7 +246,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/cursive-workspace.png",
+    image: "/blog/cursive-workspace.webp",
     i18n: {
       en: {
         title: "How to write in cursive: a beginner's guide that works",
@@ -260,7 +260,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-11-02",
-    image: "/blog/cursive-alphabet.png",
+    image: "/blog/cursive-alphabet.webp",
     i18n: {
       en: {
         title: "The cursive alphabet, organized the way you'll learn it",
@@ -274,7 +274,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-07",
     updated: "2026-10-10",
-    image: "/blog/cursive-signature.png",
+    image: "/blog/cursive-signature.webp",
     i18n: {
       en: {
         title: "How to write your name in cursive (and build a signature)",
@@ -288,7 +288,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "mara-voss",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/cursive-workspace.png",
+    image: "/blog/cursive-workspace.webp",
     i18n: {
       en: {
         title: "Is cursive still taught in schools? The state of cursive",
@@ -302,7 +302,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "mara-voss",
     date: "2026-10-07",
     updated: "2026-10-07",
-    image: "/blog/cursive-workspace.png",
+    image: "/blog/cursive-workspace.webp",
     i18n: {
       en: {
         title: "Cursive vs print: which handwriting style should you learn?",
@@ -316,7 +316,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-07",
     updated: "2026-10-13",
-    image: "/blog/tracing-cursive.png",
+    image: "/blog/tracing-cursive.webp",
     i18n: {
       en: {
         title: "How to teach cursive writing to kids at home (10 min)",
@@ -330,7 +330,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "mara-voss",
     date: "2026-10-08",
     updated: "2026-10-08",
-    image: "/blog/handwriting-vs-typing-brain.png",
+    image: "/blog/handwriting-vs-typing-brain.webp",
     i18n: {
       en: {
         title: "Handwriting vs typing: what the brain research actually says",
@@ -344,7 +344,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-10-08",
     updated: "2026-10-08",
-    image: "/blog/improve-your-handwriting.png",
+    image: "/blog/improve-your-handwriting.webp",
     i18n: {
       en: {
         title: "How to improve your handwriting: the complete guide",
@@ -436,7 +436,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-09",
     updated: "2026-10-09",
-    image: "/blog/name-tracing-lines.png",
+    image: "/blog/name-tracing-lines.webp",
     i18n: {
       en: {
         title: "Name tracing with lines: free three-line worksheets to print",
@@ -450,7 +450,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-09",
     updated: "2026-10-09",
-    image: "/blog/calligraphy-motto.png",
+    image: "/blog/calligraphy-motto.webp",
     i18n: {
       en: {
         title: "Calligraphy motto cards: from trending phrase to card",
@@ -477,7 +477,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-09",
     updated: "2026-10-09",
-    image: "/blog/best-cursive-fonts.png",
+    image: "/blog/best-cursive-fonts.webp",
     i18n: {
       en: {
         title: "Best free cursive fonts: 13 open-source picks reviewed",
@@ -491,7 +491,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-10",
     updated: "2026-10-10",
-    image: "/blog/tracing-numbers-by-age.png",
+    image: "/blog/tracing-numbers-by-age.webp",
     i18n: {
       en: {
         title: "How to teach number tracing by age, one number a night",
@@ -544,7 +544,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-09",
     updated: "2026-10-09",
-    image: "/blog/print-handwritten-letters.png",
+    image: "/blog/print-handwritten-letters.webp",
     i18n: {
       en: {
         title: "Print a handwritten letter and envelope for three people",
@@ -571,7 +571,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-14",
     updated: "2026-10-14",
-    image: "/blog/handwriting-worksheets.png",
+    image: "/blog/handwriting-worksheets.webp",
     i18n: { en: {
         title: "How to make handwriting worksheets for a whole week, tonight",
         description:
@@ -583,7 +583,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-14",
     updated: "2026-10-14",
-    image: "/blog/numbers-in-cursive.png",
+    image: "/blog/numbers-in-cursive.webp",
     i18n: { en: {
         title: "Numbers in cursive: what 1 to 10 look like and how to practice them",
         description:
@@ -595,7 +595,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "clara-hartley",
     date: "2026-10-14",
     updated: "2026-10-14",
-    image: "/blog/graphisme-maternelle.png",
+    image: "/blog/graphisme-maternelle.webp",
     i18n: {
       en: {
         title: "Graphisme: pre-writing patterns in French maternelle",
@@ -623,7 +623,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-20",
     updated: "2026-10-27",
-    image: "/blog/handwriting-personality-test.png",
+    image: "/blog/handwriting-personality-test.webp",
     i18n: {
       en: {
         title: "Handwriting personality test: pick the shapes you write",
@@ -637,7 +637,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "theo-lindgren",
     date: "2026-10-26",
     updated: "2026-10-26",
-    image: "/blog/bubble-letters-peach2.png",
+    image: "/blog/bubble-letters-peach2.webp",
     i18n: {
       en: {
         title: "Bubble letters for a short display name",
@@ -651,7 +651,7 @@ const CURSIVE_POSTS: Post[] = [
     author: "wes-morales",
     date: "2026-11-02",
     updated: "2026-11-02",
-    image: "/blog/november-cursive.png",
+    image: "/blog/november-cursive.webp",
     i18n: {
       en: {
         title: "November in cursive: the month plus all 12 months",

@@ -1,6 +1,27 @@
 import type { Locale } from "@/i18n/routing";
 import { postLocales } from "@/content/blog/registry";
 
+/** 工具页 href → 描述性锚文本(RelatedLinks 用,Bing 维度 C;缺失时回退 TOOL_LABEL_KEY 的导航名) */
+export const TOOL_ANCHOR: Record<string, string> = {
+  "/": "the speak-to-handwriting workspace",
+  "/cursive": "the cursive writing generator",
+  "/cursive-text-generator": "the cursive text generator (copy-paste letters)",
+  "/cursive-font-generator": "the cursive font previewer",
+  "/templates": "the handwriting template library",
+  "/printable-handwritten-letters": "the printable letters and envelopes tool",
+  "/name-tracing": "the name tracing worksheet generator",
+  "/handwriting-worksheet-generator": "the handwriting worksheet generator",
+  "/printable-paper": "the printable paper pack",
+  "/handwriting-page-calculator": "the words-to-pages handwriting calculator",
+  "/cursive-alphabet": "the interactive cursive alphabet",
+  "/cursive-worksheets": "the cursive worksheets generator",
+  "/number-tracing": "the number tracing generator",
+  "/writing-practice": "the grid practice sheet generator",
+  "/name-coloring": "the name coloring page generator",
+  "/handwriting-workbook-generator": "the handwriting workbook builder",
+  "/handwriting-personality-quiz": "the handwriting personality quiz",
+};
+
 /** 工具页 href → messages nav 里的名称 key(8 语言均有) */
 export const TOOL_LABEL_KEY: Record<string, string> = {
   "/": "tool",

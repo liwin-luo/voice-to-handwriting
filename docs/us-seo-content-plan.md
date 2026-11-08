@@ -476,3 +476,11 @@
 **明确不合并的同族**:cursive-text vs cursive-font(复制文字 vs 字体导出,SERP 意图不同,内容须显式区分);/cursive vs /(关键词落地 + 52 页矩阵 hub);name-tracing vs worksheet(词簇头部各自独立);printable-handwritten-letters vs templates(名单合并 vs 文案库)。
 
 **留观**:/handwriting-workbook-generator(= worksheet 多页聚合,合并需开发整本模式;33 曝光 pos 17.6 为练习族最好位置,2027-01 GSC 定)、/writing-practice(CJK 田字格,en-only 后受众存疑)、/name-coloring(功能唯一,涂色赛道)。
+
+## 二十四、SEO 技术/内容优化批次(2026-11-08,已上线,随后冻结)
+
+技术面(站级审计 159 页后落地):①标题预算——移除全站品牌后缀模板,修剪 10 个最长标题(超长 80 → 6);②描述钳制(pageMetadata 按词边界 ~158)+ 3 条源数据手压;③JSON-LD 补齐(/tools ItemList、/blog Blog、静态四页 BreadcrumbList),博客 lastmod 改用真实 updated;④题图 39 张 PNG→webp(-4.6MB);⑤RelatedLinks 锚文本描述化(TOOL_ANCHOR 17 条,Bing 维度 C);⑥**作者页**:`/authors` + 5 个桌位详情页(Person JSON-LD + 桌位全部文章内链),文章署名接线,红线保持(只写视角、无照片、About 披露)。
+
+内容机会(登记待做,不在冻结期执行):1/23 National Handwriting Day 页;1 月 `how to improve handwriting` 峰值推社媒;workbook 整本模式等留观名单随 2027-01 Go/No-Go 复盘。
+
+**冻结:2026-11-08 起站点进入观察期,不做新改动**;下一步动作全部以 2027-01 GSC 复盘(roadmap Go/No-Go)为准。

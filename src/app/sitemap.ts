@@ -6,10 +6,11 @@ import { CURSIVE_LETTERS } from "@/content/cursiveLetters";
 import { CURSIVE_NUMBERS } from "@/content/cursiveNumbers";
 import { PAPER_KINDS } from "@/content/paperKinds";
 import { routing } from "@/i18n/routing";
+import { AUTHORS } from "@/content/authors";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
 
 /** 内容仅来自 localStorage 的本地工具页禁止进 sitemap */
-const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-text-generator", "/cursive-font-generator", "/cursive-worksheets", "/number-tracing", "/handwriting-personality-quiz", "/handwriting-workbook-generator", "/handwriting-page-calculator", "/printable-handwritten-letters", "/printable-paper", ...PAPER_KINDS.map((k) => `/printable-paper/${k.slug}`), "/name-tracing", "/handwriting-worksheet-generator", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact"];
+const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-text-generator", "/cursive-font-generator", "/cursive-worksheets", "/number-tracing", "/handwriting-personality-quiz", "/handwriting-workbook-generator", "/handwriting-page-calculator", "/printable-handwritten-letters", "/printable-paper", ...PAPER_KINDS.map((k) => `/printable-paper/${k.slug}`), "/name-tracing", "/handwriting-worksheet-generator", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact", "/authors"];
 const YEARLY_PATHS = new Set(["/privacy", "/terms", "/contact", "/about"]);
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -65,6 +66,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: localizedUrl(p, routing.defaultLocale),
       changeFrequency: "weekly",
       priority: 0.7,
+      alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
+    });
+  }
+  // 作者页:5 个笔名桌位的聚合与详情
+  for (const p of ["/authors", ...Object.keys(AUTHORS).map((id) => `/authors/${id}`)]) {
+    entries.push({
+      url: localizedUrl(p, routing.defaultLocale),
+      changeFrequency: "monthly",
+      priority: 0.5,
+      lastModified: new Date(),
       alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
     });
   }

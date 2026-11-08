@@ -121,6 +121,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字。装饰可选星星、动物或机器。宽屏左栏控件不随预览页数下移。页脚站点水印默认开,下载按钮上方可关 | `NameColoringGenerator`,`WatermarkSwitch`,`COLORING_FAQS` |
 | `/templates` · `/templates/[slug]` | 模板库/详情。索引 FAQ 是库的用法;详情 FAQ 带上该模板标题和范文首行,16 页不共用同一组问答 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>`。`TEMPLATE_FAQS`,`templateDetailFaqs` |
 | `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
+| `/authors` · `/authors/[author]` | 五个笔名桌位的聚合与详情(2026-11-08 SEO 补强):署名、简介、该桌位全部文章。无导航入口,由文章署名链接;红线:只写视角不写资历、无照片 | `AUTHORS`,`POSTS`,Person JSON-LD |
 | `/faq` | 工具目录。每条一句,链到拥有完整答案的页面。FAQPage 由 `ToolFaq` 输出,问法与首页 `FAQ_ITEMS` 不重复。语音排错仍在首页 | `FAQ_HUB`(`faqHub.ts`)+ `ToolFaq` |
 | `/about` `/privacy` `/terms` `/contact` | 静态页 | `makeStaticPage(key)` 工厂(`src/lib/staticPage.tsx`)从 `PAGE_CONTENT` 取 MDX |
 | `[...rest]` | 兜底 notFound | — |

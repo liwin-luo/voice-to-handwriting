@@ -10,6 +10,7 @@ import { postReadingMinutes } from "@/lib/reading";
 import ProseShell from "@/components/ProseShell";
 import RelatedLinks from "@/components/RelatedLinks";
 import { SITE } from "@/lib/site";
+import { Link } from "@/i18n/navigation";
 import { localizedUrl, pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -72,7 +73,7 @@ export default async function BlogPostPage({
     inLanguage: locale,
     datePublished: post?.date,
     dateModified: post?.updated,
-    author: { "@type": "Person", name: author.name, url: `${SITE.url}/about` },
+    author: { "@type": "Person", name: author.name, url: `${SITE.url}/authors/${post?.author}` },
     publisher: { "@type": "Organization", name: ta("name"), url: SITE.url },
     ...(post?.image ? { image: `${SITE.url}${post.image}` } : {}),
     mainEntityOfPage: localizedUrl(`/blog/${slug}`, locale),
@@ -86,9 +87,13 @@ export default async function BlogPostPage({
       />
       {/* 署名栏:写作角色 / 更新时间 / 阅读时长(EEAT);悬浮显示角色 bio */}
       <div className="mb-8 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-stone-200 pb-4 text-xs text-stone-500">
-        <span className="font-medium text-stone-700" title={author.bio}>
+        <Link
+          href={`/authors/${post?.author}`}
+          className="font-medium text-stone-700 underline-offset-2 transition-colors hover:text-accent hover:underline"
+          title={author.bio}
+        >
           {author.name}
-        </span>
+        </Link>
         <span className="text-stone-300">·</span>
         <span>{author.role}</span>
         <span className="text-stone-300">·</span>
