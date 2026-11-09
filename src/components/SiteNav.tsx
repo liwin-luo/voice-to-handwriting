@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { List, X } from "@phosphor-icons/react";
 import Logo from "./Logo";
 import NavDropdown, { type NavGroup } from "./NavDropdown";
+import LocaleSwitch from "./LocaleSwitch";
 import { Link, usePathname } from "@/i18n/navigation";
 
 /** 宽屏横排导航；窄屏收成点击菜单。Logo 回首页（通用惯例），右侧「Open the tool」直达工作台。 */
@@ -56,6 +57,7 @@ export default function SiteNav({
           <Link href="/about" className="transition-colors hover:text-stone-950">
             {aboutLabel}
           </Link>
+          <LocaleSwitch />
           <Link
             href="/"
             className="btn btn-primary px-3 py-1.5 text-[13px]"
@@ -65,6 +67,7 @@ export default function SiteNav({
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
+          <LocaleSwitch />
           <button
             type="button"
             aria-expanded={open}

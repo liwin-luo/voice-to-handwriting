@@ -343,4 +343,266 @@ const en: QuizLocaleContent = {
   ],
 };
 
-export const QUIZ_CONTENT: Record<Locale, QuizLocaleContent> = { en };
+const zh: QuizLocaleContent = {
+  title: "手写性格测试",
+  intro:
+    "这份手写性格测试用 12 道快速选择题看看你平时怎么写字——无需上传照片,也不会记录任何内容。最后你会得到一份趣味笔迹画像,以及针对你书写习惯的练习建议。",
+  start: "开始测试",
+  back: "上一题",
+  retake: "再测一次",
+  progress: "第 {n} 题 / 共 {total} 题",
+  download: "保存结果卡片",
+  writeCta: "用这个风格写一句",
+  resultHeading: "你的笔迹画像",
+  dimsHeading: "你的答案提示了什么",
+  practiceHeading: "想练一练?",
+  growthLabel: "提升方向",
+  faqTitle: "常见问题",
+  articleLink: "延伸阅读:你的字迹说明了什么?诚实版笔迹解读指南",
+  scienceTitle: "笔迹分析是科学的吗?",
+  scienceText: [
+    "笔迹学(graphology,从笔迹推断性格)已被反复验证并不可靠:1989 年 Neter 与 Ben-Shakhar 的荟萃分析发现,笔迹师的判断并不比随机猜测更准,心理学界普遍将其归为伪科学。任何测验——包括本测验——都无法真正从字形读出你的性格。",
+    "笔迹真正反映的是习惯:你何时学会写字、平时写得多不多、当下是否匆忙。习惯是可以练的——如果画像里有你想调整的地方,下面的练习工具正好派上用场。",
+  ],
+  disclaimer:
+    "仅供娱乐——本测验是趣味内容,并非科学或心理测评。你的选择不会被上传或保存。",
+  dimensions: {
+    social: {
+      label: "社交能量",
+      levels: { low: "内敛", mid: "随和", high: "外向" },
+      practice: {
+        text: "想要更流畅连贯的书写?花体生成器是个温柔的起点。",
+        href: "/cursive",
+      },
+    },
+    expressive: {
+      label: "表达力",
+      levels: { low: "收敛", mid: "均衡", high: "张扬" },
+      practice: {
+        text: "均匀的字号来自节奏行训练——描红生成器可以为任意词语打印节奏行。",
+        href: "/name-tracing",
+      },
+    },
+    space: {
+      label: "空间感",
+      levels: { low: "紧密", mid: "灵活", high: "疏朗" },
+      practice: {
+        text: "词距节奏靠重复培养——用拼写练习生成器、按自己的单词清单出一页。",
+        href: "/handwriting-worksheet-generator",
+      },
+    },
+    focus: {
+      label: "专注与结构",
+      levels: { low: "随性", mid: "平稳", high: "精准" },
+      practice: {
+        text: "在三条线上写,基线更容易平直——免费打印一张练字纸,试写一段。",
+        href: "/printable-paper",
+      },
+    },
+    pace: {
+      label: "笔压与速度",
+      levels: { low: "轻而从容", mid: "适中", high: "重而快" },
+      practice: {
+        text: "描红行能带来平稳均匀的节奏——用任意词表生成练习页。",
+        href: "/cursive-worksheets",
+      },
+    },
+  },
+  profiles: {
+    balanced: {
+      name: "均衡书写者",
+      tagline: "没有单一特质主导——你的手会随场合调整。",
+      points: [
+        "灵活的风格说明你能匹配场景:速记和用心写的卡片都不在话下。",
+        "笔迹学家会称之为平衡;我们只叫它可塑性强。",
+        "无论想往哪个方向精进,你都有扎实的基础。",
+      ],
+      growth: "从下面选一个维度集中练——均衡型书写者专注单点时进步最快。",
+    },
+    bold: {
+      name: "张扬表达者",
+      tagline: "字大形开——字还没看清,气场先到。",
+      points: [
+        "大而圆润的字形常被解读为热情与自信——至少在趣味层面上。",
+        "你习惯在纸面上占据存在感。",
+        "贺卡和海报是你的天然舞台。",
+      ],
+      growth: "再张扬的字也受益于均匀的间距——锁定节奏,别让大字牺牲可读性。",
+    },
+    planner: {
+      name: "精准规划者",
+      tagline: "直立、整洁、精确——你的手喜欢秩序。",
+      points: [
+        "稳定的字号和平直的基线,体现出耐心、细节优先的做事方式。",
+        "你的笔记就是大家抢着借的那种。",
+        "工整的字形是可以训练的肌肉技能——你显然练过。",
+      ],
+      growth: "精准过头容易僵硬——试试更松快的连笔,在不丢结构的前提下提速。",
+    },
+    spirit: {
+      name: "自由灵魂",
+      tagline: "你的字母会散步——这正是它们的魅力。",
+      points: [
+        "漂移的基线和开放的字形,说明你习惯边写边想。",
+        "结构不是你的默认项——写日记和头脑风暴时这反而是优势。",
+        "自由灵魂唯一要付的代价,是辨识度。",
+      ],
+      growth: "一个习惯就能解决大部分问题:在画好的直线上写。三线格会替你盯住基线。",
+    },
+    steady: {
+      name: "沉稳可靠型",
+      tagline: "直立、均匀、不慌不忙——你的字沉得住气。",
+      points: [
+        "直立的笔顺和适中的笔压,常被解读为冷静可靠。",
+        "你的手不赶时间,你的决定看起来也是。",
+        "风格内敛,字形却依旧开放。",
+      ],
+      growth: "如果需要速度,花体连笔能在不改变整洁外观的前提下提节奏。",
+    },
+    spark: {
+      name: "急行火花",
+      tagline: "快、实、向前倾——你的手总在赶路。",
+      points: [
+        "右倾的笔顺和轻快的节奏说明你有冲劲——写字是为了跟上思路。",
+        "偏重的笔压常被解读为活力与投入。",
+        "你的速记自带个性;让它变得易读是最后一公里。",
+      ],
+      growth: "每周慢下来练一页——节奏行能练出既快又清晰的手感。",
+    },
+  },
+  questions: [
+    {
+      id: "slant",
+      dimension: "social",
+      text: "hello",
+      prompt: "哪个 \u201chello\u201d 最像你写的?",
+      options: [
+        { score: 2, style: { font: "print", slant: 10 }, label: "向右倾斜" },
+        { score: 1, style: { font: "neat", slant: 0 }, label: "基本竖直" },
+        { score: 0, style: { font: "print", slant: -7 }, label: "向左倾斜" },
+      ],
+    },
+    {
+      id: "y-tail",
+      dimension: "social",
+      text: "happy",
+      prompt: "y 这样的字母,你的收笔是?",
+      options: [
+        { score: 2, style: { font: "everyday" }, label: "往下绕一个圈再收回" },
+        { score: 1, style: { font: "caveat" }, label: "一个小弯钩" },
+        { score: 0, style: { font: "print" }, label: "直直地收住" },
+      ],
+    },
+    {
+      id: "roundness",
+      dimension: "social",
+      text: "am",
+      prompt: "哪一组最接近你平时的字?",
+      options: [
+        { score: 2, style: { font: "everyday" }, label: "圆润开阔" },
+        { score: 1, style: { font: "neat" }, label: "介于两者之间" },
+        { score: 0, style: { font: "caveat" }, label: "锐利有棱角" },
+      ],
+    },
+    {
+      id: "size",
+      dimension: "expressive",
+      text: "g",
+      prompt: "你的小写字母写多大?",
+      options: [
+        { score: 0, style: { font: "print", size: 0.8 }, label: "偏小——写得紧凑" },
+        { score: 1, style: { font: "neat", size: 1.1 }, label: "中等" },
+        { score: 2, style: { font: "print", size: 1.5 }, label: "偏大——占满一行" },
+      ],
+    },
+    {
+      id: "capitals",
+      dimension: "expressive",
+      text: "M",
+      prompt: "哪个大写字母最接近你写的?",
+      options: [
+        { score: 0, style: { font: "print" }, label: "朴素简洁" },
+        { score: 1, style: { font: "neat" }, label: "有点小花样" },
+        { score: 2, style: { font: "fancy" }, label: "大大的花式绕笔" },
+      ],
+    },
+    {
+      id: "word-gap",
+      dimension: "space",
+      text: "the cat",
+      prompt: "单词和单词之间,你留多少空隙?",
+      options: [
+        { score: 0, style: { font: "neat", word: 0.05 }, label: "几乎贴在一起" },
+        { score: 1, style: { font: "neat", word: 0.4 }, label: "正常间距" },
+        { score: 2, style: { font: "neat", word: 0.9 }, label: "空得很宽" },
+      ],
+    },
+    {
+      id: "letter-gap",
+      dimension: "space",
+      text: "hand",
+      prompt: "那单词内部的字母之间呢?",
+      options: [
+        { score: 0, style: { font: "print", spacing: -0.03 }, label: "挤在一起" },
+        { score: 1, style: { font: "print", spacing: 0.03 }, label: "舒适自然" },
+        { score: 2, style: { font: "print", spacing: 0.16 }, label: "很宽松" },
+      ],
+    },
+    {
+      id: "baseline",
+      dimension: "focus",
+      text: "sunny day",
+      prompt: "写一整行字时,这行字会?",
+      options: [
+        { score: 0, style: { font: "messy", rotate: 6 }, label: "忽上忽下地漂" },
+        { score: 1, style: { font: "messy", rotate: 2 }, label: "略微起伏" },
+        { score: 2, style: { font: "print", rotate: 0 }, label: "始终保持水平" },
+      ],
+    },
+    {
+      id: "tidiness",
+      dimension: "focus",
+      text: "paper",
+      prompt: "哪个词最接近你平时最工整的字?",
+      options: [
+        { score: 0, style: { font: "messy" }, label: "自由奔放" },
+        { score: 1, style: { font: "print" }, label: "随手还算整齐" },
+        { score: 2, style: { font: "neat" }, label: "认真工整" },
+      ],
+    },
+    {
+      id: "i-dots",
+      dimension: "focus",
+      prompt: "i 上的那一点,你通常点在哪儿?",
+      options: [
+        { score: 2, label: "正好在竖笔正上方" },
+        { score: 1, label: "稍微偏一点或飘得高" },
+        { score: 0, label: "落到哪儿算哪儿" },
+      ],
+    },
+    {
+      id: "pressure",
+      dimension: "pace",
+      text: "hello",
+      prompt: "写字时你下笔多重?",
+      options: [
+        { score: 0, style: { font: "caveat", ink: "light" }, label: "很轻——像铅笔淡淡扫过" },
+        { score: 1, style: { font: "neat", ink: "normal" }, label: "适中" },
+        { score: 2, style: { font: "print", ink: "heavy" }, label: "很实——纸背面都有印子" },
+      ],
+    },
+    {
+      id: "pace",
+      dimension: "pace",
+      prompt: "你平时写字的状态是?",
+      options: [
+        { score: 0, label: "慢慢地、一笔一划" },
+        { score: 1, label: "看当天状态" },
+        { score: 2, label: "飞快——手一直往前赶" },
+      ],
+    },
+  ],
+};
+
+
+export const QUIZ_CONTENT: Record<Locale, QuizLocaleContent> = { en, zh };

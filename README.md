@@ -67,6 +67,6 @@ docs/plans/     设计文档与实施计划
 - **二期**:Hanzi Writer 逐笔书写动画、照片合成模式、云端 ASR(/api/transcribe)
 - **三期**:个人笔迹预设、端侧 Whisper/sherpa-onnx、书写动画视频导出
 
-国际化说明:**单语言英文**(2026-11-08 从 8 语种收缩)。界面文案在 `messages/en.json`,长文内容在 `src/content/blog/*.en.mdx`;旧 `/zh` `/es` 等 URL 由 next.config.ts 308 回英文版。生产域名 voicetohandwriting.online。
+国际化说明:**双语 en + zh**(2026-11-08 收缩为 en-only,2026-11-09 恢复中文)。en 无前缀,zh 带 `/zh` 前缀;界面文案在 `messages/en.json` 与 `messages/zh.json`(key 两文件必须一致,自动校验),长文内容在 `src/content/blog/<slug>.<locale>.mdx`;旧非 zh 语言前缀 URL(`/es` `/ja` 等)由 next.config.ts 308 回英文版。生产域名 voicetohandwriting.online。
 
 详见 `docs/plans/2026-10-06-voicetohandwriting-design.md`。

@@ -161,7 +161,7 @@ Bing 与 Google 的关键差异:Bing 语义改写更弱、对**精确匹配**更
 
 ### D2. 高危词句密度(6)
 
-词表见附录 A(历史 8 语种版本;2026-11-08 起站点 en-only,仅 en 词表适用)。规则:
+词表见附录 A(历史 8 语种版本;2026-11-09 起站点双语 en+zh,en 与 zh 词表适用,其余语言仅审历史页面时参考)。规则:
 
 - **开头式 / 过渡式 / 结尾式三类高危句式(如 "In today's fast-paced world…"、"In conclusion…"、德 "Zusammenfassend lässt sich sagen…"):命中必须为 0**;**3 分**(命中 1 处即 0 分);
 - 高危词(delve/leverage/seamless 类)全文 ≤2 处,每千词 ≤2;**2 分**

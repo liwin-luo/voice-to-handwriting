@@ -11,7 +11,7 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-const TAGLINES = { en: "Speak a paragraph, get a handwritten page" } as const;
+const TAGLINES = { en: "Speak a paragraph, get a handwritten page", zh: "说一段话,得到一页手写文稿" } as const;
 
 /** 默认品牌 OG 卡:手写字体渲染(服务端读自托管 TTF,支持 CJK) */
 export default async function OgImage({

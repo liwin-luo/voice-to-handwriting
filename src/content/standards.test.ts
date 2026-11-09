@@ -71,3 +71,58 @@ describe("规范 §3.3:每篇文章必须登记内链(RELATED)", () => {
     }
   });
 });
+
+describe("规范 §1.2:messages 多语言键位一致", () => {
+  // 扁平化 JSON 为 "a.b.c" 键集合;zh 与 en 必须一一对应,防止改文案时漏掉另一语言
+  const flatKeys = (obj: unknown, prefix = ""): string[] =>
+    Object.entries(obj as Record<string, unknown>).flatMap(([k, v]) => {
+      const key = prefix ? `${prefix}.${k}` : k;
+      return v && typeof v === "object" && !Array.isArray(v) ? flatKeys(v, key) : [key];
+    });
+
+  const en = JSON.parse(readFileSync(path.join(ROOT, "messages/en.json"), "utf8"));
+  const zh = JSON.parse(readFileSync(path.join(ROOT, "messages/zh.json"), "utf8"));
+  const enKeys = new Set(flatKeys(en));
+  const zhKeys = new Set(flatKeys(zh));
+
+  it("zh 与 en 的扁平 key 集合完全一致", () => {
+    const missingInZh = [...enKeys].filter((k) => !zhKeys.has(k));
+    const extraInZh = [...zhKeys].filter((k) => !enKeys.has(k));
+    expect({ missingInZh, extraInZh }).toEqual({ missingInZh: [], extraInZh: [] });
+  });
+
+  it("zh 条目不得为空且 ICU 占位符与 en 一致", () => {
+    // ICU 参数名提取:顶层 {name} 与 {name, plural, ...}(配对扫描嵌套;子消息里的 # 是数字占位,不是命名参数)
+    const icuArgs = (s: string): string[] => {
+      const args: string[] = [];
+      let i = 0;
+      while (i < s.length) {
+        if (s[i] !== "{") { i++; continue; }
+        const m = /^\{(\w+)(,|\})/.exec(s.slice(i));
+        if (!m) { i++; continue; }
+        args.push(m[1]);
+        let depth = 1;
+        let j = i + 1;
+        while (depth > 0 && j < s.length) {
+          if (s[j] === "{") depth++;
+          else if (s[j] === "}") depth--;
+          j++;
+        }
+        i = j;
+      }
+      return args.sort();
+    };
+    const lookup = (obj: Record<string, unknown>, key: string) =>
+      key.split(".").reduce<unknown>((o, k) => (o as Record<string, unknown>)?.[k], obj);
+    for (const key of enKeys) {
+      const zhVal = lookup(zh, key);
+      expect(zhVal, `${key} zh 值缺失`).toBeTruthy();
+      if (typeof zhVal === "string") {
+        const enVal = lookup(en, key);
+        if (typeof enVal === "string") {
+          expect(icuArgs(zhVal), `${key} ICU 占位符不一致`).toEqual(icuArgs(enVal));
+        }
+      }
+    }
+  });
+});

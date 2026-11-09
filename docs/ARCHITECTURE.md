@@ -12,7 +12,7 @@
 | 层 | 技术 |
 |---|---|
 | 框架 | Next.js 16(App Router,注意版本有破坏性变更,见 §9)· React 19 |
-| i18n | next-intl 4,单语言 `en`(无前缀;2026-11-08 从 8 语种收缩,旧 URL 308 回英文版) |
+| i18n | next-intl 4,双语 `en`(无前缀)+ `zh`(`/zh` 前缀;2026-11-08 从 8 语种收缩,2026-11-09 恢复中文,旧非 zh URL 308 回英文版) |
 | 样式 | Tailwind CSS 4 |
 | 状态 | Zustand 5 + persist(localStorage) |
 | 内容 | @next/mdx + remark-gfm,静态 import 注册表模式 |
@@ -24,7 +24,7 @@
 ## 2. 目录结构
 
 ```
-├── messages/                  # next-intl 文案,单语言 en.json(2026-11-08 从 8 语种收缩)
+├── messages/                  # next-intl 文案,en.json + zh.json(key 一致,自动校验;2026-11-09 恢复双语)
 ├── public/
 │   ├── fonts/<fontId>/        # cn-font-split 切片产物:result.css + *.woff2(勿手改)
 │   ├── models/onnx-community/ # 旧的自托管 Whisper 权重(浏览器已改从 huggingface.co 拉取,不再使用)
@@ -85,14 +85,14 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 ### 4.1 i18n 与路由
 
-- `src/i18n/routing.ts`:单语言 `locales: ["en"]`,`localePrefix: "as-needed"` 即无前缀。`LOCALE_LABELS` 只剩 en。语言切换器组件(LocaleSwitch)已删除。
+- `src/i18n/routing.ts`:双语 `locales: ["en", "zh"]`,`localePrefix: "as-needed"`:en 无前缀,zh 带 `/zh`。`LOCALE_LABELS` 为 en/中文。语言切换器(LocaleSwitch)挂在 SiteNav 桌面导航与移动端头部。
 - `src/proxy.ts`:Next 16 中 middleware 更名为 proxy,内容是 `createMiddleware({ ...routing, alternateLinks: false })`。**必须保持 alternateLinks 关闭**(middleware 会按 `routing.locales` 注入 hreflang `Link` 头,hreflang 统一以页面 metadata 为准;2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。旧语言前缀 URL(/es /fr /de /pt /zh /ja /ko)不在 middleware 处理,由 next.config.ts redirects() 整体 308 回英文版。
 - `src/i18n/navigation.ts` 导出带语言前缀的 `Link`/`usePathname`/`useRouter`,页面内链接**必须**用它而非 `next/link`。
-- 页面文案全部在 `messages/en.json`(单语言,不存在跨文件 key 同步问题)。
+- 页面文案在 `messages/en.json` 与 `messages/zh.json`,两文件 key 集合必须一致(standards.test 自动校验),改文案两处同步。
 
 ### 4.2 页面地图(src/app/[locale]/)
 
-所有页面同一模式:`setRequestLocale` + `getTranslations` + `pageMetadata(path, locale, { title, description })` 生成 canonical/hreflang 和 `og:type`/`og:url` + `generateStaticParams` 展开单语言 en,全站 SSG。
+所有页面同一模式:`setRequestLocale` + `getTranslations` + `pageMetadata(path, locale, { title, description })` 生成 canonical/hreflang 和 `og:type`/`og:url` + `generateStaticParams` 展开双语(en/zh),全站 SSG。
 
 | 路由 | 内容 | 核心组件 / 数据 |
 |---|---|---|
@@ -190,7 +190,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 
 - `lib/seo.ts`:`localizedUrl`(en 无前缀、非根路径不带尾斜杠)+ `buildAlternates`(每语言自引用 canonical,x-default→en;`available` 参数给部分翻译页面用——**指向 404 的 hreflang 会导致整组声明被丢弃**)+ `pageMetadata`(在 alternates 上加 `og:type` 与 `og:url`;文章页传 `article` 才写 `publishedTime`/`modifiedTime`)。
 - `next.config.ts` redirects:已收录旧 URL 的 308 收尾(`/history`、4 个缺 `/blog` 前缀的旧文章 slug)+ www 主机 308 归一到裸域(`has: type:'host'`,与 `SITE.url` 一致)。新增重定向要持续挂着,不要删。
-- `app/sitemap.ts`:静态路径(en)+ 全部模板页 + 连笔字母矩阵 + 连笔数字矩阵(en-only)+ 印刷体描红矩阵(en-only)+ 博客(仅 postLocales);内容仅来自 localStorage 的本地工具页禁止进。
+- `app/sitemap.ts`:静态路径(en+zh)+ 全部模板页 + 作者页(双语)+ 连笔字母矩阵 + 连笔数字矩阵(en-only)+ 印刷体描红矩阵(en-only)+ 博客(仅 postLocales,当前 28 篇有 zh);内容仅来自 localStorage 的本地工具页禁止进。
 - `app/robots.ts`:全放行 + sitemap 指引。
 - JSON-LD:主页 WebApplication、工具页与 /faq 的 FAQPage(`ToolFaq`)、博客 Article、连笔单字母页 BreadcrumbList、OG 图(`opengraph-image.tsx`,locale 级 + 文章级)。
 - IndexNow(`scripts/indexnow-submit.mjs`,`npm run indexnow`):无参提交 sitemap 全量,带参数提交指定 URL;密钥文件在 `public/fd1dfcff….txt`。**日常只提交有变化的 URL**,反复全量提交会被视为滥用。
@@ -240,7 +240,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,�
 
 **新增手写模板**:`templates.ts` 加一项(样式 + en 范文必填,其他语言进 `extra-locales.ts`),页面/sitemap 自动覆盖。
 
-**新增语言**:2026-11-08 起站点 en-only,不再新增语言。如未来恢复多语言,从 git 历史找回 8 语种基建(`git log -- src/i18n/routing.ts`),并同步移除 next.config.ts 的 locale 308 规则。
+**新增语言**:2026-11-09 起站点双语 en+zh(zh 从 git 历史 `e13f8a8^` 恢复,过程见 us-seo-content-plan §二十五)。再新增第三种语言:从 git 历史找回该语言内容(messages、blog mdx、数据文件 i18n),`routing.ts`/`LOCALE_LABELS` 补条目,并把 next.config.ts 两条 locale 308 的负向断言扩到新前缀(如 `(?!zh|xx)`)。
 
 **新增字体**:TTF 放 `fonts-src/` → `npm run fonts` → `FONTS` 加项(css 栈)→ `lib/fonts.ts` 的 ASYNC_FONT_CSS 加 `/fonts/<id>/result.css`。**两处都要加**,只加 FONTS 会导致 @font-face 不加载(见 §9 已知问题)。
 

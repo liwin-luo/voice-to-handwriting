@@ -69,15 +69,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
     });
   }
-  // 作者页:5 个笔名桌位的聚合与详情
+  // 作者页:5 个笔名桌位的聚合与详情(bio 已双语,随 locales 输出)
   for (const p of ["/authors", ...Object.keys(AUTHORS).map((id) => `/authors/${id}`)]) {
-    entries.push({
-      url: localizedUrl(p, routing.defaultLocale),
-      changeFrequency: "monthly",
-      priority: 0.5,
-      lastModified: new Date(),
-      alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
-    });
+    for (const locale of routing.locales) {
+      entries.push({
+        url: localizedUrl(p, locale),
+        changeFrequency: "monthly",
+        priority: 0.5,
+        lastModified: new Date(),
+        alternates: { languages: buildAlternates(p, locale).languages },
+      });
+    }
   }
   for (const post of POSTS) {
     // 仅输出有正文的语言变体,避免英-only 文章的其他语言 URL 404

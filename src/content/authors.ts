@@ -34,6 +34,9 @@ export const AUTHORS: Record<AuthorId, Author> = {
     i18n: { en: {
         role: "Classroom desk · K–3",
         bio: "Writes the classroom-tested guides for parents and teachers — name tracing, three-line paper, first cursive lessons. Everything starts from what actually works with young writers.",
+      }, zh: {
+        role: "课堂桌位 · K–3",
+        bio: "写给家长和老师的课堂实战指南——名字描红、三线纸、第一堂连笔课。所有建议都以“对刚学写字的孩子真的管用”为标准。",
       } },
   },
   "wes-morales": {
@@ -42,6 +45,9 @@ export const AUTHORS: Record<AuthorId, Author> = {
     i18n: { en: {
         role: "Adult practice coach",
         bio: "Retrained his own handwriting as an adult and now writes the step-by-step improvement plans: diagnosis first, drills second, honest expectations throughout.",
+      }, zh: {
+        role: "成人练字教练",
+        bio: "成年后亲手把自己的字练了回来，现在专门写分步提升计划：先诊断、再练习，全程给诚实的预期。",
       } },
   },
   "mara-voss": {
@@ -50,6 +56,9 @@ export const AUTHORS: Record<AuthorId, Author> = {
     i18n: { en: {
         role: "Science desk",
         bio: "Separates what handwriting research shows from what headlines claim — reads the studies, cites them, and says plainly where the evidence stops.",
+      }, zh: {
+        role: "科学桌位",
+        bio: "把手写研究“实际显示了什么”和“标题党说显示了什么”分开——读原始论文、给出出处，并直说证据到哪里为止。",
       } },
   },
   "june-park": {
@@ -58,6 +67,9 @@ export const AUTHORS: Record<AuthorId, Author> = {
     i18n: { en: {
         role: "Occasions & letters desk",
         bio: "Believes a handwritten note is the last luxury that costs nothing — writes the thank-you, wedding and seasonal letter guides for moments that deserve ink.",
+      }, zh: {
+        role: "书信与贺卡桌位",
+        bio: "相信手写字条是最后一种不花钱的奢侈。负责感谢卡、婚礼与节日信件的指南，写给那些值得落在纸上的时刻。",
       } },
   },
   "theo-lindgren": {
@@ -66,6 +78,9 @@ export const AUTHORS: Record<AuthorId, Author> = {
     i18n: { en: {
         role: "Maker's desk",
         bio: "Builds the tools and writes the tutorials: workflows, tuning tips and honest limitations, tested on desktop Chrome before anything is published.",
+      }, zh: {
+        role: "工具桌位",
+        bio: "工具的开发者，也写教程：工作流、调参技巧和诚实的局限，发布前都在桌面版 Chrome 上实测过。",
       } },
   },
 };

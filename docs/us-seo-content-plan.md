@@ -3,7 +3,8 @@
 > 配套交付:10 篇英文 SEO 文章已落地 `src/content/blog/*.en.mdx`(见文末映射表)。
 > 关键词量级为经验估算(高≈1万+/月,中≈1k–1万/月,低<1k/月),以相对热度做优先级判断,发布后用 GSC 实测校准。
 > 写新文章前另读 [seo-article-playbook.md](./seo-article-playbook.md):要不要写、属于哪一个文章簇、第一屏放什么、`updated` 何时前进。登记选题时按该文 §6 补文章簇、意图、下一跳、复核月。
-> **2026-11-08 语种收缩:站点从 8 语种收缩为 **en-only**(GSC 3 个月非 en 仅 8 点击,i18n 税与 thin 面page 是收录塌方诱因);旧 /{locale}/… URL 由 next.config.ts 308 回英文版。** 新功能与新文章一律 en-only,不再补任何语言的翻译。
+> **2026-11-08 语种收缩:站点从 8 语种收缩为 **en-only**(GSC 3 个月非 en 仅 8 点击,i18n 税与 thin 面page 是收录塌方诱因);旧 /{locale}/… URL 由 next.config.ts 308 回英文版。**
+> **2026-11-09 更新:恢复中文(en + zh 双语)**,理由与落地见文末 §二十五;新功能与新文章仍 en 先行,zh 跟随存档与排名再补。
 
 ## 一、为什么美国市场对这款产品是"对口的"
 
@@ -484,3 +485,19 @@
 内容机会(登记待做,不在冻结期执行):1/23 National Handwriting Day 页;1 月 `how to improve handwriting` 峰值推社媒;workbook 整本模式等留观名单随 2027-01 Go/No-Go 复盘。
 
 **冻结:2026-11-08 起站点进入观察期,不做新改动**;下一步动作全部以 2027-01 GSC 复盘(roadmap Go/No-Go)为准。
+
+## 二十五、恢复中文:en + zh 双语(2026-11-09,已落地)
+
+**决策**:2026-11-09 用户拍板恢复中文,覆盖 §二十四的冻结期(zh 线定位不变:百度+小红书渠道,非 Google 矩阵;当初砍 zh 的依据是 Google GSC 非 en 仅 8 点击,与百度/社媒线无关)。其他 5 个 locale 仍不恢复,旧前缀继续 308。
+
+**落地**(全部从 git 历史 `e13f8a8^` 找回,per-key 合并进砍后重构过的结构):
+
+- 基建:`locales: ["en","zh"]`;next.config.ts 两条两字母 308 加 `(?!zh)` 负向断言(验证:/ja→308、/ur/privacy→308、/zh→200);LocaleSwitch 找回并接回 SiteNav;OG 卡 zh 分支复活。
+- 文案:`messages/zh.json` 恢复(916 键基底,剪掉 13 个已下线工具命名空间,补译 17 个新键:authors 段、pageCalc 字数换页数、quiz/pageCalc 新 meta);standards.test 新增 en↔zh key 与 ICU 占位符一致性校验。
+- 博客:28 篇存档 zh 正文恢复(砍后新增的 ~19 篇仍 en-only,`postLocales()` 自动不进 zh 的 sitemap/blog 索引);7 篇 en 死链/题图修复镜像到 zh。
+- 内容数据:faqs(53)/pageFaqs(12+DETAIL)/paperKindFaqs(27)/paperKinds(9)/faqHub(7)/quiz(整份)/authors(5 bio)/templates(17,doctor-prescription 新补译)全部双语;静态页 about/privacy/terms/contact 恢复 zh。
+- sitemap:作者页从 en-only 改为双语输出;其余 en-only 段(连笔字母/数字矩阵、/cursive-alphabet)维持。
+
+**验收记录**:tsc 零错误;vitest 631/631;build 成功(sitemap 250 条,其中 zh 84 条);生产抽查 /zh hreflang 恰 3 条(en/zh/x-default)、canonical 自引用、JSON-LD inLanguage=zh;Playwright 9/9(含新增 zh 冒烟)。存量 lint 错误 16 个为依赖升级遗留(干净 main 同样报),本批零新增。
+
+**后续**:~19 篇砍后新增英文文章的 zh 翻译登记为 backlog(按 §3.2「有排名再补」执行,不进冻结期);2027-01 GSC 复盘时把 /zh 的曝光/点击单列观察(百度流量不进 GSC,zh 在 Google 的表现按 hreflang 组看)。

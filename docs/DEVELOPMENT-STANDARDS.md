@@ -13,7 +13,7 @@
 
 ### 1.1 语言清单与路由
 
-- 单语言 en(2026-11-08 从 8 语种收缩,GSC 数据驱动决策):URL 无前缀,`src/i18n/routing.ts` 是唯一语言清单;旧语言前缀 URL 由 next.config.ts 308 回英文版,不得删除重定向。
+- 双语 en + zh(2026-11-08 从 8 语种收缩为 en-only,2026-11-09 恢复中文;en 为默认):en URL 无前缀,zh 带 `/zh` 前缀,`src/i18n/routing.ts` 是唯一语言清单;旧非 zh 语言前缀 URL 由 next.config.ts 308 回英文版(负向断言 `(?!zh)` 排除 zh),不得删除重定向。
 - 新页面**必须**建在 `src/app/[locale]/` 下,并**必须**实现 `generateStaticParams` + `setRequestLocale`(复制现有页面模式)。**禁止**在 `[locale]` 之外创建面向用户的路由。
 - 页面内部链接**必须**用 `@/i18n/navigation` 导出的 `Link` / `useRouter` / `usePathname`,**禁止**直接用 `next/link`(会丢语言前缀,把用户扔回英文版)。
 - 生成绝对 URL(sitemap、JSON-LD、og:url、分享)**必须**用 `localizedUrl()`(src/lib/seo.ts),**禁止**手拼 `/zh/...` 字符串。
@@ -22,7 +22,7 @@
 ### 1.2 文案(用户可见字符串)
 
 - **禁止**在组件里硬编码任何用户可见文案(包括按钮、aria-label、placeholder、title 属性、错误提示)。一律进 `messages/*.json`,server 组件用 `getTranslations`,client 组件用 `useTranslations`。
-- 页面文案只写 `messages/en.json`(单语言)。
+- 页面文案写 `messages/en.json` 与 `messages/zh.json`,两文件扁平 key 集合必须一致(自动校验,§5);改任何文案 en/zh 两处同步。
 - key 按页面/功能区组织命名空间(`nav`、`footer`、`meta`、`<pageName>`…);新加 key 前先搜现有 key,能复用就复用。
 - 插值用 ICU 占位符 `{name}`;各语言译文**必须保留全部占位符**,不得删改。
 - 翻译质量底线:非英语条目至少人工通读一遍再上线,**禁止**纯机翻直出;日/韩用敬体,西/葡用中性称谓,与现有文案风格一致。
@@ -221,7 +221,7 @@
 
 | 校验项 | 对应规范 |
 |---|---|
-| 8 个 `messages/*.json` 扁平 key 集合与 en 完全一致 | §1.2 |
+| `messages/zh.json` 与 `en.json` 扁平 key 集合完全一致,ICU 占位符一致 | §1.2 |
 | 每篇 POSTS 有非空 en title/description,slug 合法,date/updated 合法,author 已注册(类型级校验,`tsc` 拦截) | §2.5、§3.4 |
 | `BLOG_CONTENT` 与 `POSTS` 双向一致(不出现幽灵 slug) | §3.4 |
 | 每篇 POSTS 都有 `RELATED[slug]`,且 tools ≥ 1、路径都在 `TOOL_LABEL_KEY`、posts 都存在且非自身 | §3.3 |
@@ -235,7 +235,7 @@
 按 §1–§3 标准盘点存量,以下项不符合规范,限期整改(标 ✅ 的为发布本规范时已修复):
 
 1. ✅ MDX 正文站内链接不保留语言前缀(zh 文章点工具链接会跳英文版)→ 已在 `mdx-components.tsx` 将 MDX `a` 映射到 next-intl `Link`。
-2. ~~cursive 集群 16 篇文章仅 en 正文 → 按 §3.2 优先级补 zh/ja/ko/es。~~ 作废:2026-11-08 站点收缩为 en-only。
+2. ~~cursive 集群 16 篇文章仅 en 正文 → 按 §3.2 优先级补 zh/ja/ko/es。~~ 作废:2026-11-08 站点收缩为 en-only;2026-11-09 恢复 zh 时已随存档回填该簇多数文章的 zh 正文。
 3. ~~5 篇 8 语文章的 de/fr/pt 缺本地化 title/description。~~ 作废:同上,多语言整改项全部作废。
 4. ✅ `/word-work`、`/writing-practice`、`/name-coloring` 配套文章(2026-10-10):`spelling-list-word-work`、`one-character-in-the-grid`、`color-a-name-before-tracing`,en,工具页英文与中文 FAQ 回链。日文及其他语言等英文有排名后再补正文,不从那些语言链到英文教程。
 5. 工具页无文章回链入口(§3.3 应当级)。

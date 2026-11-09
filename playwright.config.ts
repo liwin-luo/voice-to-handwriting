@@ -5,7 +5,7 @@ const port = Number(process.env.E2E_PORT ?? 3000);
 
 export default defineConfig({
   testDir: "tests/e2e",
-  use: { baseURL: `http://localhost:${port}`, locale: "en-US" }, // en-only(2026-11-08);固定 locale 避免中间件按 Accept-Language 协商
+  use: { baseURL: `http://localhost:${port}`, locale: "en-US" }, // 固定 locale:路由由 URL 驱动,不受 Accept-Language 影响(2026-11-09 恢复双语后仍保持)
   webServer: {
     command: "npm run dev",
     url: `http://localhost:${port}`,

@@ -33,4 +33,16 @@ describe("pageMetadata", () => {
     });
     expect(meta.openGraph).not.toHaveProperty("images");
   });
+
+  it("2026-11-09 恢复双语:hreflang 含 en+zh,x-default 指向 en,zh canonical 自引用", () => {
+    const meta = pageMetadata("/blog", "zh", { title: "T", description: "D" });
+    expect(meta.alternates).toMatchObject({
+      canonical: `${SITE.url}/zh/blog`,
+      languages: {
+        en: `${SITE.url}/blog`,
+        zh: `${SITE.url}/zh/blog`,
+        "x-default": `${SITE.url}/blog`,
+      },
+    });
+  });
 });
