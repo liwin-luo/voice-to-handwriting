@@ -124,7 +124,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/authors` · `/authors/[author]` | 五个笔名桌位的聚合与详情(2026-11-08 SEO 补强):署名、简介、该桌位全部文章。无导航入口,由文章署名链接;红线:只写视角不写资历、无照片 | `AUTHORS`,`POSTS`,Person JSON-LD |
 | `/faq` | 工具目录。每条一句,链到拥有完整答案的页面。FAQPage 由 `ToolFaq` 输出,问法与首页 `FAQ_ITEMS` 不重复。语音排错仍在首页 | `FAQ_HUB`(`faqHub.ts`)+ `ToolFaq` |
 | `/about` `/privacy` `/terms` `/contact` | 静态页 | `makeStaticPage(key)` 工厂(`src/lib/staticPage.tsx`)从 `PAGE_CONTENT` 取 MDX |
-| `[...rest]` | 兜底 notFound | — |
+| `[...rest]` | 兜底 notFound。`dynamicParams = false`(2026-11-13):未知路径静态 404,不调用函数渲染,省 Fluid Active CPU | — |
 
 ### 4.3 手写渲染引擎(src/engine/,纯函数、有单测)
 
