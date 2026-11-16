@@ -36,7 +36,6 @@
 │   ├── models.sh              # 从 hf-mirror 下载 Whisper 模型(npm run models)
 │   └── indexnow-submit.mjs    # 提交 URL 到 IndexNow(npm run indexnow)
 ├── src/
-│   ├── proxy.ts               # Next 16 的 middleware:next-intl 语言协商/前缀
 │   ├── i18n/                  # routing(locales 顺序即切换器顺序)、navigation(Link)、request
 │   ├── lib/                   # site(SITE 常量)、seo(localizedUrl/buildAlternates)、
 │   │                          # fonts(CSS 加载清单)、transcribe(Whisper)、
@@ -86,7 +85,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 ### 4.1 i18n 与路由
 
 - `src/i18n/routing.ts`:双语 `locales: ["en", "zh"]`,`localePrefix: "as-needed"`:en 无前缀,zh 带 `/zh`。`LOCALE_LABELS` 为 en/中文。语言切换器(LocaleSwitch)挂在 SiteNav 桌面导航与移动端头部。
-- `src/proxy.ts`:Next 16 中 middleware 更名为 proxy,内容是 `createMiddleware({ ...routing, alternateLinks: false })`。**必须保持 alternateLinks 关闭**(middleware 会按 `routing.locales` 注入 hreflang `Link` 头,hreflang 统一以页面 metadata 为准;2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。旧语言前缀 URL(/es /fr /de /pt /zh /ja /ko)不在 middleware 处理,由 next.config.ts redirects() 整体 308 回英文版。
+- **语言路由(2026-11-16 起无 middleware)**:原 `src/proxy.ts`(next-intl middleware,Vercel 在静态缓存前运行,每请求计一次函数 CPU)已删除,职责下沉到 `next.config.ts` 边缘层,全站零函数调用:① redirects() 首页两条 307 语言谈判(Cookie `NEXT_LOCALE=zh` 优先;Accept-Language 以 `zh` 打头且未显式切 en 时跳 `/zh`;has 条件 value 是全串匹配);② rewrites() afterFiles 把裸路径 rewrite 到 `/en/*`(`:seg` 排除 zh/_next/_vercel 与带点段,排除锚点须写 `(?:(?:zh|…)(?:$|/))`——lookahead 的 `$` 对整个剩余路径求值,写 `zh$` 会漏拦 `/zh/*` 多段路径);③ 旧非 zh 语言前缀(/es /fr 等)仍由 redirects() 整体 308。**不再引入 proxy/middleware**:会让全站每个请求重新计费函数 CPU(2026-11-13 与 11-16 两次 Fluid Active CPU 治理的结论)。hreflang 红线不变:统一以页面 metadata 为准,不要在任何响应头层注入全语言 alternate 链接(2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。
 - `src/i18n/navigation.ts` 导出带语言前缀的 `Link`/`usePathname`/`useRouter`,页面内链接**必须**用它而非 `next/link`。
 - 页面文案在 `messages/en.json` 与 `messages/zh.json`,两文件 key 集合必须一致(standards.test 自动校验),改文案两处同步。
 

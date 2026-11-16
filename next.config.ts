@@ -7,6 +7,22 @@ const nextConfig: NextConfig = {
   // /history 已移除(功能并入工具内历史抽屉):对外部链接与已收录 URL 做 308 收尾
   async redirects() {
     return [
+      // 2026-11-16 摘掉 proxy.ts(next-intl middleware):Vercel 的 middleware 在静态缓存
+      // 查找之前运行,每个请求(含 100% 命中预渲染页的)都要调一次函数,是 Fluid Active
+      // CPU 的持续消耗源(约 2-4 分钟/天)。语言协商下沉到边缘层 redirects,只在首页
+      // 覆盖(zh 用户深链接本来就走 /zh/*,博客/工具的 GSC 流量入口不受影响):
+      { source: "/", has: [{ type: "cookie", key: "NEXT_LOCALE", value: "zh" }], destination: "/zh", permanent: false },
+      {
+        source: "/",
+        // 用户显式切到 en(cookie)时浏览器语言不再劫持
+        missing: [{ type: "cookie", key: "NEXT_LOCALE", value: "en" }],
+        // has 条件的 value 对整个 header 值做全串匹配(部分匹配不生效,
+        // "^\\s*zh" 能中 "zh" 却漏掉 "zh-CN,zh;q=0.9"),因此从头吞全串;
+        // 只认 zh 打头(en 等其他语言打头不劫持)
+        has: [{ type: "header", key: "accept-language", value: "^zh[\\s\\S]*" }],
+        destination: "/zh",
+        permanent: false,
+      },
       { source: "/history", destination: "/", permanent: true },
       // 2026-11-09 恢复双语(en + zh):旧语言前缀仍 308 回英文版,保已收录 URL 权重;
       // zh 前缀负向断言排除,否则这两条会抢在路由前把 /zh/* 打回英文版。
@@ -65,6 +81,28 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
+  },
+  // 裸路径英文页的服务(原 proxy.ts 内部 rewrite 的替代)。afterFiles 在文件系统检查之后,
+  // public/ 资源(fonts/ models/ printables/ blog/ 封面)优先命中不被劫持;首段排除
+  // zh(真实 [locale] 路由)与 _next/_vercel(平台路径,Analytics 上报走 /_vercel/*,
+  // 不在文件系统里,必须显式排除),带点的段排除 robots.txt / sitemap.xml / icon.svg /
+  // GSC 验证文件等根级文件。单段与多段拆成两条,避免 :rest* 空匹配时补出尾斜杠。
+  async rewrites() {
+    return {
+      beforeFiles: [],
+      afterFiles: [
+        { source: "/", destination: "/en" },
+        // 排除锚点用 (?:(?:zh|_next|_vercel)(?:$|/)):lookahead 的 $ 是对整个剩余路径
+        // 求值而非单个段,zh$ 在 /zh/blog(剩余串 "zh/blog")上不成立,会漏拦导致
+        // /zh/* 多段路径被 rewrite 到 /en/zh/* 打成 404(2026-11-16 本地矩阵发现)
+        { source: "/:seg((?!(?:zh|_next|_vercel)(?:$|/))[^./]+)", destination: "/en/:seg" },
+        {
+          source: "/:seg((?!(?:zh|_next|_vercel)(?:$|/))[^./]+)/:rest+",
+          destination: "/en/:seg/:rest+",
+        },
+      ],
+      fallback: [],
+    };
   },
 };
 

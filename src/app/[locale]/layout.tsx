@@ -18,6 +18,11 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
+// 未预渲染的 locale 段直接静态 404:带点的探测路径(/wp-login.php 等,rewrites 的
+// 点段排除会让它们落进 [locale] 匹配)不再进函数现场渲染,配合 [...rest] 的
+// dynamicParams=false 把所有未知路径的 Fluid Active CPU 归零(2026-11-16 摘掉 proxy.ts)
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {
