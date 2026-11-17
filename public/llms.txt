@@ -1,0 +1,68 @@
+# Voice to Handwriting
+
+> Free browser-based handwriting generator: speak or type a text, and get a realistic handwritten page you can export as PNG or PDF. Speech recognition and rendering run locally in your browser — your text is never uploaded. No signup.
+
+Made for greeting cards, letters, journals and social posts, plus printable practice sheets for kids and adults. Every tool is free and works in the browser.
+
+## Tools: write & generate
+
+- [Handwriting Generator](https://voicetohandwriting.online/): the main tool — speak into the page or paste text, pick a handwriting font and paper, export PNG or PDF.
+- [Cursive Writing Generator](https://voicetohandwriting.online/cursive): turn speech or typing into flowing cursive on lined practice paper.
+- [Cursive Text Generator](https://voicetohandwriting.online/cursive-text-generator): cursive text you can copy and paste — thirteen Unicode styles for Instagram, TikTok and Discord bios.
+- [Cursive Font Generator](https://voicetohandwriting.online/cursive-font-generator): preview text in thirteen open-source handwriting fonts and export PNG, SVG or PDF.
+- [Handwriting Templates](https://voicetohandwriting.online/templates): love letters, apologies, thank-you notes, birthday and holiday wishes — copy, restyle and export as handwriting.
+- [Printable Handwritten Letters and Envelopes](https://voicetohandwriting.online/printable-handwritten-letters): paste a recipient list and download a handwritten-style letter plus matching envelope for each person.
+
+## Tools: practice sheets & printing
+
+- [Name Tracing Worksheet Generator](https://voicetohandwriting.online/name-tracing): personalized name tracing worksheets with dashed midlines, downloadable as PDF.
+- [Handwriting Worksheet Generator](https://voicetohandwriting.online/handwriting-worksheet-generator): printable handwriting worksheets from any word list or sentence, on three-line practice paper.
+- [Printable Lined Paper Generator](https://voicetohandwriting.online/printable-paper): lined, graph and handwriting paper in Letter or A4, no watermark.
+- [Handwriting Page Calculator](https://voicetohandwriting.online/handwriting-page-calculator): see how many sheets a handwritten text needs, by paper type and line spacing.
+- [Cursive Alphabet](https://voicetohandwriting.online/cursive-alphabet): every cursive letter A to Z with start-dot stroke guides, printable as a chart.
+- [Cursive Worksheets Generator](https://voicetohandwriting.online/cursive-worksheets): traceable cursive rows from any word list, with stroke guides.
+- [Number Tracing Worksheets](https://voicetohandwriting.online/number-tracing): number tracing pages for 1–10 or 1–20, one solid row then dotted rows.
+- [Writing Practice Sheet Generator](https://voicetohandwriting.online/writing-practice): practice sheets for Chinese, Japanese and Korean — tianzige squares, genkō yōshi grids and hangul cells.
+- [Name Coloring Page Generator](https://voicetohandwriting.online/name-coloring): printable bubble-letter coloring pages for any name.
+- [Handwriting Workbook Generator](https://voicetohandwriting.online/handwriting-workbook-generator): a printable workbook PDF with cover page, word list and traceable rows.
+- [Handwriting Personality Test](https://voicetohandwriting.online/handwriting-personality-quiz): a fun 12-question quiz about your handwriting, with practice tips.
+
+## Guides: cards, letters & everyday writing
+
+- [Blog](https://voicetohandwriting.online/blog): all tutorials and guides.
+- [Write a greeting card with your voice in 3 minutes](https://voicetohandwriting.online/blog/handwritten-card-with-voice)
+- [How to write a thank you note people keep](https://voicetohandwriting.online/blog/handwritten-thank-you-notes)
+- [DIY wedding calligraphy: place cards & signs without a pro](https://voicetohandwriting.online/blog/diy-wedding-calligraphy)
+- [Free printable letter to Santa template](https://voicetohandwriting.online/blog/letter-to-santa-template)
+- [Pen pal letters for kids: friendly letter format & prompts](https://voicetohandwriting.online/blog/pen-pal-letters-for-kids)
+
+## Guides: practice & worksheets
+
+- [Free name tracing generator: editable worksheets to print](https://voicetohandwriting.online/blog/name-tracing-generator)
+- [Kindergarten handwriting paper: the three lines, explained](https://voicetohandwriting.online/blog/kindergarten-handwriting-paper)
+- [Sight word tracing worksheets you can print before homework](https://voicetohandwriting.online/blog/sight-word-tracing-worksheets)
+- [Handwriting for struggling writers (dysgraphia-friendly)](https://voicetohandwriting.online/blog/handwriting-practice-struggling-writers)
+- [How to make handwriting worksheets for a whole week, tonight](https://voicetohandwriting.online/blog/handwriting-worksheets)
+
+## Guides: cursive & adult practice
+
+- [How to write in cursive: a beginner's guide that works](https://voicetohandwriting.online/blog/how-to-write-in-cursive)
+- [How to improve your handwriting as an adult: 4-week plan](https://voicetohandwriting.online/blog/how-to-improve-handwriting-adults)
+- [Cursive vs print: which handwriting style should you learn?](https://voicetohandwriting.online/blog/cursive-vs-print)
+- [Best free cursive fonts: 13 open-source picks reviewed](https://voicetohandwriting.online/blog/best-cursive-fonts)
+- [A handwriting workbook built from words you actually write](https://voicetohandwriting.online/blog/handwriting-workbook)
+
+## Guides: research & background
+
+- [Handwriting vs typing: what the brain research actually says](https://voicetohandwriting.online/blog/handwriting-vs-typing-brain)
+- [What does your handwriting say about you? The honest guide](https://voicetohandwriting.online/blog/what-does-your-handwriting-say-about-you)
+- [Is cursive still taught in schools?](https://voicetohandwriting.online/blog/is-cursive-still-taught)
+- [Cursive laws by state (2026)](https://voicetohandwriting.online/blog/cursive-laws-by-state)
+
+## More
+
+- [FAQ](https://voicetohandwriting.online/faq): find the right tool for each task.
+- [The five writing desks](https://voicetohandwriting.online/authors): who writes the guides (pen names, disclosed on the About page).
+- [About](https://voicetohandwriting.online/about)
+- [Privacy](https://voicetohandwriting.online/privacy): speech and text stay in your browser and are not uploaded.
+- [Contact](https://voicetohandwriting.online/contact)

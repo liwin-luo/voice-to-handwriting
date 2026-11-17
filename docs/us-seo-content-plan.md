@@ -501,3 +501,16 @@
 **验收记录**:tsc 零错误;vitest 631/631;build 成功(sitemap 250 条,其中 zh 84 条);生产抽查 /zh hreflang 恰 3 条(en/zh/x-default)、canonical 自引用、JSON-LD inLanguage=zh;Playwright 9/9(含新增 zh 冒烟)。存量 lint 错误 16 个为依赖升级遗留(干净 main 同样报),本批零新增。
 
 **后续**:~19 篇砍后新增英文文章的 zh 翻译登记为 backlog(按 §3.2「有排名再补」执行,不进冻结期);2027-01 GSC 复盘时把 /zh 的曝光/点击单列观察(百度流量不进 GSC,zh 在 Google 的表现按 hreflang 组看)。
+
+## 二十六、外部 SEO 报告评审(2026-11-17,zens-ink v1.4.12,冻结期内的技术性补丁)
+
+外部免费工具报告(无真实搜索量/KD,仅 autocomplete 相对活跃度)主张本站"战略错配":词库 178 词命中 text-to-handwriting 而站内主打 voice,建议建 text-to-handwriting 强 landing 为 P0。逐条裁定如下,冻结期约束(§二十四)不变。
+
+- **❌ 不建 text-to-handwriting landing**:与 `traffic-ceiling-roadmap.md` §六红线("不追 text-to-handwriting 全球量",印度/菲律宾为主、CPM 约为美国教育流量 1/10、风口已过)和本文 §九不接登记(低价值转换词)直接冲突;站内数据更全——转换器簇 US 18–56K/月是全品类最小最低值簇,且"转换器簇小站最密集但价值最低"。报告自身聚类(bangla/marathi/bengali/arabic/assignment)恰好印证南亚作业转换市场判断。首页 title 已瞄准真头词 handwriting generator,"type"意图由首页输入承接,不动文案。
+- **✅ 补 llms.txt(已落地)**:`public/llms.txt` 按 llmstxt.org 规范(简介 + 工具/指南/更多分区),文案复用 messages/en.json 已有主张,不新增未经证实的说法。诚实备注:llms.txt 对 AI 搜索引用的实际加权尚属推测(Google 已公开表态忽略),属零成本顺手补。**维护约定**:工具/文章增删时手工同步本文件;不属于路由/组件,不进 ARCHITECTURE 页面地图。
+- **📋 登记 2027-01 Go/No-Go 候选(放行前不动工)**:
+  1. **best free handwriting generator 对比文**(GEO 金矿词 best/free/alternative/vs)。文章簇:工具选型对比(枢纽 = `/`,意图差 = "best free" 选型查询,非使用教程);下一跳:`/`、`/cursive`、best-cursive-fonts;复核:每年 1 月随 GSC 复盘。红线:竞品对比须真实,数据以 roadmap 附录快照为底、发布前重新核实,不贬损不虚构,不做"我们最优"结论性话术。
+  2. **journal/diary 场景文**(报告词库 note/card/journal 簇里站内唯一缺口)。文章簇:贺卡信件场景(枢纽 = `/templates`,意图差 = 日常日记/手账,与贺卡/婚礼/圣诞文分开);角色挂 June Park 评估;下一跳:`/templates`、`/`、handwritten-thank-you-notes;复核:季前 1 月(新年日记/手账季)。
+- **❌ 多语言手写页(arabic/marathi)**:locale 决策 en+zh(§二十五),§6.5.4 多语种簇暂缓不变;该批词即南亚作业市场,与红线一致不追。
+- **❌ 导出格式(PNG/PDF)教程文**:违反 §二十二教训"一个工具没有自然曝光前,不为它写配套文";save-a-handwritten-note 等导出类配套文刚删,不回锅。
+- **P2 voice 不投 SEO 资源**:与现状一致,无需动作;**P3 量化**:走 roadmap §七的 GSC 季度校准,不依赖外部工具 key。
