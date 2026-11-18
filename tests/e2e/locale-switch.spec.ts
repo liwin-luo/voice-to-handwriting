@@ -1,4 +1,5 @@
-import { expect, test, type Page } from "./fixtures";
+import type { Page } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 // 2026-11-18 en-only 页切语言不再送 404:LocaleSwitch 对目标语言做 HEAD 探测,
 // 页面不存在(或被 308 带走)则落回该语言首页(plan §三十五)。
