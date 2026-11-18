@@ -85,7 +85,7 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 ### 4.1 i18n 与路由
 
-- `src/i18n/routing.ts`:四语 `locales: ["en", "zh", "es", "pt"]`,`localePrefix: "as-needed"`:en 无前缀,其余带 `/{locale}`。`LOCALE_LABELS` 为 endonym;`CORE_LOCALES`(en/zh)是 blog/authors/faq 门控页的唯一 locale 集。语言切换器(LocaleSwitch)挂在 SiteNav 桌面导航与移动端头部,切到 es/pt 时若当前在门控页则落回该语言首页。
+- `src/i18n/routing.ts`:四语 `locales: ["en", "zh", "es", "pt"]`,`localePrefix: "as-needed"`:en 无前缀,其余带 `/{locale}`。`LOCALE_LABELS` 为 endonym;`CORE_LOCALES`(en/zh)是 blog/authors/faq 门控页的唯一 locale 集。语言切换器(LocaleSwitch)挂在 SiteNav 桌面导航与移动端头部:非 en 目标先过 GATED 快路径(es/pt 的门控区直落该语言首页),其余做 HEAD 探测(会话级缓存;404 与被 308 带走都算不可用)后落回该语言首页——en-only 文章与工具页切语言不再送 404(2026-11-18,plan §三十五)。
 - **语言路由(2026-11-16 起无 middleware)**:原 `src/proxy.ts`(next-intl middleware,Vercel 在静态缓存前运行,每请求计一次函数 CPU)已删除,职责下沉到 `next.config.ts` 边缘层,全站零函数调用:① redirects() 首页两条 307 语言谈判(Cookie `NEXT_LOCALE=zh` 优先;Accept-Language 以 `zh` 打头且未显式切 en 时跳 `/zh`;has 条件 value 是全串匹配);② rewrites() afterFiles 把裸路径 rewrite 到 `/en/*`(`:seg` 排除 zh/es/pt/_next/_vercel 与带点段,排除锚点须写 `(?:(?:zh|…)(?:$|/))`——lookahead 的 `$` 对整个剩余路径求值,写 `zh$` 会漏拦 `/zh/*` 多段路径);③ 旧语言前缀 redirects() 308:`/es`、`/pt` 的门控页与已下线工具逐一显式收口(200/新内容除外),其余两字母前缀(/fr /ja 等)由 `(?!zh|es|pt)[a-z]{2}` 通配 308。**不再引入 proxy/middleware**:会让全站每个请求重新计费函数 CPU(2026-11-13 与 11-16 两次 Fluid Active CPU 治理的结论)。hreflang 红线不变:统一以页面 metadata 为准,不要在任何响应头层注入全语言 alternate 链接(2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。
 - `src/i18n/navigation.ts` 导出带语言前缀的 `Link`/`usePathname`/`useRouter`,页面内链接**必须**用它而非 `next/link`。
 - 页面文案在 `messages/en.json` 与 `messages/zh.json`,两文件 key 集合必须一致(standards.test 自动校验),改文案两处同步。

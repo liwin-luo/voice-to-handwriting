@@ -610,3 +610,10 @@
 - **文章**:handwriting-personality-test(en-only)新增 People also ask 3 题(letters/numbers/results/online free);handwriting-practice-struggling-writers(en+zh)的 dysgraphia 答案外链 ADDITUDE(URL 已验证 200;understood.org 拒爬虫无法核实故不用)+ 新增居家练字 FAQ(for kids with dysgraphia/0.40);两篇 updated → 2026-11-18。
 - **红线遵守**:quiz 页 personality test 长尾按冻结不动(文章侧承接);FAQ 免费题保持最后(faqSeo 约定);全部 FAQ 只写已验证的工具能力,JSON-LD 与可见 FAQ 同源(ToolFaq)。
 - **验收**:tsc 零错误;vitest 639/639(standards + faqSeo 全过);lint 与干净 HEAD 基线一致(24 problems,零新增)。
+
+## 三十五、LocaleSwitch 切语言 404 修复(2026-11-18,冻结期内的技术性补丁,用户报告)
+
+- **现象**:用户检查 §34 落地页时发现部分页面切换中英文 404。复现:`/zh/cursive-alphabet`、`/zh/blog/handwriting-personality-test` 等;影响面 = 20 篇 en-only 文章 + `/cursive-alphabet` 工具页(切 zh)与该工具页(切 es/pt)。
+- **根因**:LocaleSwitch 的 GATED 快路径只覆盖 blog/authors/faq × es/pt(§32.5);zh 不受保护,盲替换路径。404 本身是 §1.3 设计(hreflang/sitemap 不宣告未翻译变体),问题只在切换器 UX。
+- **修复**:非 en 目标统一 HEAD 探测(会话级 Map 缓存;fetch 跟随 308 时 `res.redirected=true` 也判不可用,与"落回该语言首页"语义一致),不存在则落首页;GATED 快路径保留省一次探测。**零清单维护**:未来新增 en-only 页自动被探测覆盖,不需要登记任何路由表。
+- **验收**:新增 `tests/e2e/locale-switch.spec.ts` 5 用例(en-only 文章/工具落首页、双语工具留原页、zh→en 回原页、es 门控区落首页);全量 E2E 17/17 两连过(首跑暴露水合竞态,switchLocale 加 toPass 轮询);tsc 零错;vitest 639/639;lint 基线零新增。standards §1.4 与 ARCHITECTURE §4.1 已同步。
