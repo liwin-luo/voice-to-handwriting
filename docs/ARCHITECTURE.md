@@ -43,7 +43,8 @@
 │   │                          # fancyText(花体 Unicode 映射+折行,有单测)、
 │   │                          # handwritingCheck(手写照片评分的解析与提示词,有单测)、
 │   │                          # handwritingCount(手写照片转写后的字数,有单测)、glmVision(智谱看图)、
-│   │                          # tools(工具分组:nav 标记进页头下拉,全量给 /tools)
+│   │                          # tools(工具分组:nav 标记进页头下拉,全量给 /tools)、
+│   │                          # ads(联盟广告位配置与脚本注入)、consent(Cookie 同意读写)
 │   ├── engine/                # 手写渲染引擎:tokens / layout / jitter / paper(纯函数+单测)
 │   ├── hooks/                 # useSpeechRecognition(Web Speech API 封装)
 │   ├── stores/                # useEditorStore(编辑器+样式)、useHistoryStore(本地历史)
@@ -198,6 +199,7 @@ MDX 渲染链:MDX 文件 → registry 静态 import → `<Body />` 放进 `Prose
 
 - Sentry:5 个配置文件(instrumentation* + sentry.{server,edge}.config),**未配置 DSN 时零开销跳过**;client 采样 0.1。
 - AdSense 双保险:layout 只在 `NEXT_PUBLIC_ADSENSE_CLIENT` 存在时注入 script;`ConsentBanner`(`localStorage["vth-consent"]`)用户点"接受"后才真正生效注入。
+- 联盟广告(2026-11,`src/lib/ads.ts` 硬编码 zone 代码):原生横幅 `AdNativeBanner`(博客文章页正文末尾,容器随 SSR 输出)、Social Bar 悬浮条(ConsentBanner 同意后注入)、Direct Link(页脚 Sponsored 纯导航链接,无脚本)。除 Direct Link 外都是 Cookie 类脚本,统一经 ConsentBanner 同意门控;接受时广播 `vth-consent-accepted` 事件(`lib/consent.ts`),已挂载组件据此补注。因广告代码硬编码非空,ConsentBanner 现在对全部访客可见(2026-11 前仅在配置 AdSense 后显示)。
 - Vercel Analytics 挂在 locale layout。
 - Microsoft Clarity(`ClarityAnalytics.tsx`,挂在 locale layout):无 Cookie 会话回放/热图,官方代码原样内联(ID 硬编码于组件);与 Vercel Analytics 同为无 Cookie 统计,不经 ConsentBanner 直接加载;隐私政策 §4(en)已披露。
 
@@ -219,7 +221,7 @@ npm run dev        # http://localhost:3000(语音识别要求 localhost/HTTPS)
 npm run fonts      # 首次:切片字体到 public/fonts/(需先放 TTF 到 fonts-src/)
 npm run models     # 首次:下载 Whisper 模型(whisper-base 已入库,可跳过)
 npm run test       # Vitest 单测(engine/hooks/stores)
-npx playwright test  # E2E 冒烟(tests/e2e/smoke.spec.ts,自动起 dev server,固定 zh-CN)
+npx playwright test  # E2E 冒烟(tests/e2e/,自动起 dev server;fixtures.ts 统一种子 vth-consent=rejected 模拟回访用户,故无横幅遮挡、不注入广告;3000 被并行项目占用时用 E2E_PORT=<port> 换端口)
 ```
 
 ## 7. 部署

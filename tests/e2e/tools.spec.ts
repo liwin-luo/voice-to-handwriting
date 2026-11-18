@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures"; // 统一种子 vth-consent,见 fixtures.ts
 
 test.describe("en-only", () => {
   test.use({ locale: "en-US" });

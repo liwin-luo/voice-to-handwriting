@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures"; // 统一种子 vth-consent,见 fixtures.ts
 
 test("输入文字后渲染手写页并可导出", async ({ page }) => {
   await page.goto("/");

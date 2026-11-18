@@ -9,6 +9,7 @@ import { BLOG_CONTENT, postLocales } from "@/content/blog/registry";
 import { postReadingMinutes } from "@/lib/reading";
 import ProseShell from "@/components/ProseShell";
 import RelatedLinks from "@/components/RelatedLinks";
+import AdNativeBanner from "@/components/AdNativeBanner";
 import { SITE } from "@/lib/site";
 import { Link } from "@/i18n/navigation";
 import { localizedUrl, pageMetadata } from "@/lib/seo";
@@ -114,6 +115,8 @@ export default async function BlogPostPage({
         />
       )}
       <Body />
+      {/* 原生横幅广告位:正文与内链之间,Cookie 同意后才加载脚本(lib/ads.ts) */}
+      <AdNativeBanner />
       <RelatedLinks slug={slug} locale={locale as Locale} />
     </ProseShell>
   );

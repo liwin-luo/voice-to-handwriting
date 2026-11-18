@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures"; // 统一种子 vth-consent,见 fixtures.ts
 
 // 站点 en-only(2026-11-08),locale 固定 en-US 避免中间件按 Accept-Language 协商。
 test.describe("en-only", () => {

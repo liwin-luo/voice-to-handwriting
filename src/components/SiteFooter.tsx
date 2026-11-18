@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { DIRECT_LINK_URL } from "@/lib/ads";
 import { SITE } from "@/lib/site";
 
 export default async function SiteFooter() {
@@ -32,6 +33,17 @@ export default async function SiteFooter() {
           <Link href="/faq" className="transition-colors hover:text-stone-900">
             {t("faq")}
           </Link>
+          {/* Direct Link 广告(Smartlink):纯导航链接,无脚本注入;按 Google 规范标注 sponsored */}
+          {DIRECT_LINK_URL && (
+            <a
+              href={DIRECT_LINK_URL}
+              target="_blank"
+              rel="sponsored noopener noreferrer"
+              className="transition-colors hover:text-stone-900"
+            >
+              {t("sponsored")}
+            </a>
+          )}
         </nav>
         <p className="text-stone-400">
           © {new Date().getFullYear()} {meta("brand")}
