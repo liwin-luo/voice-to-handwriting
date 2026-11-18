@@ -544,3 +544,5 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-11-09 | DE | eigenart der handschrift | Breakout | — | — | 放弃:填字解题(buchstaben 同款模式) |
 | 2026-11-09 | DE | schlechte handschrift scherzhaft 5 buchstaben | Breakout | — | — | 放弃:填字解题(上周同款加词缀,模式确认) |
 | 2026-11-18 | US | handwriting repeater(机器区 10-20 行翻案) | +90%;GSC 近 30 天 25 词/159 曝光/pos 9.2/CTR 0.63% | Clara Hartley | 教师课堂重复抄写练习教程 | ✅ 已翻案重建 /handwriting-repeater + 配套文(2026-11-18,用户批准解冻,裁定见 us-seo-content-plan §三十二) |
+| 2026-11-18 | US | signature practice sheets(簇 20 变体全活:sheets free/pdf/maker/online/for my name;comp 0.35–0.65) | autocomplete 全活跃(zens-ink;砍单时 GSC 仅 3 曝光——判据测不到没排名的词) | Wes Morales | TracingGenerator 单行签名单元+打印(§32.1 repeater 同模式);§18.1 意图边界有效 | 继续观察:工具 11-08 已砍,308 目标 /cursive-font-generator 意图错配(练签名 vs 导字体图);2027-01 与砍留复盘同窗裁决是否第四项解冻(见 plan §三十四) |
+| 2026-11-18 | US | letter tracing worksheets(12 变体全活:pdf/free printable/preschool/kindergarten/3 year olds/with arrows;comp 0.45–0.65) | autocomplete 全活跃 | Clara Hartley | 单页合并版承接;严禁复活 27 页子页矩阵;?letter= 预填已保留在 /name-tracing | 继续观察:§二十二砍的是薄页矩阵形态而非主题;2027-01 与 signature 同窗按「autocomplete 活性 vs GSC 砍单判据」重裁(见 plan §三十四) |

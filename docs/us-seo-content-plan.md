@@ -573,3 +573,31 @@
 
 1. **improve-handwriting-on-ipad**(en,Wes Morales 练习桌——成人自我提升簇,设备角度属主读者成人自学,非产品教程不归 Theo)。playbook §6 四行:文章簇=成人练字自我提升;枢纽=/handwriting-worksheet-generator;意图差=iPad/Apple Pencil 场景练字(不抢桌面 improve 头词,与 adults 文错位);下一跳=worksheet-generator、/handwriting-board(Apple Pencil 直接在线写)、how-to-improve-handwriting-adults、improve-your-handwriting;复核=2027-01。发布门槛(角色卡):需一手实测资产——真实 iPad 练字过程记录/截图 + 可导入 Goodnotes 的练习纸 PDF 工作流验证。
 2. **how-to-improve-handwriting-adults 升级改稿**(同角色 Wes Morales,existing slug 不变,`updated` 前进按 playbook)。第一屏改为直答" Reddit 上公认有效的练字路径"摘要 + 工具入口;正文补社区共识源(真实帖子模式归纳,不虚构引用)。复核=2027-01,与候选 1 同窗定优先级。
+
+## 三十四、站内全簇 autocomplete 关键词研究(2026-11-18,keyword-research,冻结期内只登记)
+
+**方法与口径**:zens-ink autocomplete 跑 14 个种子词(覆盖 17 工具/49 文的全部词簇)→ 140 个建议词,**14 簇全部 high-activity**;关键词聚类得 14 簇;竞争度评分 140 词(分布:102 词 0.55–0.7 / 32 词 0.35–0.55 / 6 词 <0.35)。**BING_WMT_API_KEY 未配置,真实音量与 KGR 缺失**,以 autocomplete 活性 + §三十二 GSC 数据交叉判读;正式立项前值得配 key(免费)补齐。两个缺口簇(signature / letter tracing)另做 a-z 深挖确认。
+
+**覆盖判定**:11/14 簇已被存活页面良好覆盖(santa/USPS、worksheet generator、name tracing、lined paper、workbook、quiz、cursive worksheets/fonts/alphabet、adults practice)。噪音剔除:`handwriting to excel`(OCR 场景)、`personality test indie game`(竞品游戏品牌)、`practice near me`(本地意图)。
+
+**缺口簇两条(2027-01 与砍留复盘同窗裁决,backlog 已登记观察行,本节不立项)**:
+
+1. **signature practice**:簇 20 变体全活(含 `sheet maker` 工具意图),comp 0.35–0.65;工具 11-08 砍(3 曝光),308 目标 `/cursive-font-generator` 意图错配(练签名纸 vs 导字体图)。若解冻:照 §32.1 repeater 模式重建(TracingGenerator 单行签名单元+打印),§18.1 意图边界有效。
+2. **letter tracing worksheets**:簇 12 变体全活,comp 0.45–0.65;§二十二砍的是 27 页薄页矩阵(收录塌方元凶)而非主题。若解冻:**单页**承接,严禁复活子页矩阵。
+
+**发现三:低竞争长尾补词清单(comp ≤0.40,全部落在存活页,零新页)**——属 §32.2 已解冻的元数据/FAQ 范围,与 §三十三 GO 项(`how to make handwriting practice sheets` 并入 worksheet H2/FAQ)同批执行;补词前先核工具实际能力,缺能力的小改随批登记:
+
+| 长尾词 | comp | 承接页(存活) | 落点 |
+|---|---|---|---|
+| handwriting worksheet generator free pdf | 0.20 | /handwriting-worksheet-generator | FAQ(导出 PDF 问答)+ description |
+| handwriting worksheet generator with arrows | 0.20 | 同上 | FAQ(箭头描红问答) |
+| handwriting worksheet generator for kids | 0.25 | 同上 | H2/FAQ 分龄段(与 §三十三 GO 项同批) |
+| handwriting worksheet generator free printable | 0.25 | 同上 | description 变体覆盖 |
+| name tracing generator bubble letters | 0.20 | /name-coloring | FAQ/描述(涂色+描红组合) |
+| name tracing generator free cursive | 0.35 | /name-tracing | FAQ(cursive 预设) |
+| name tracing generator with blue and red lines | 0.40 | /name-tracing | FAQ(三线格蓝红基线;纸型能力待核) |
+| cursive alphabet chart printable free / with directional arrows pdf / calligraphy | 0.35 | /cursive-alphabet + 文章 cursive-alphabet-chart | 文章 FAQ/图表说明 |
+| handwriting personality test letters / numbers / results / online free | 0.35–0.40 | 文章 handwriting-personality-test(quiz 页在冻结名单) | 文章 FAQ;quiz 页待 2027-01 解冻 |
+| handwriting practice for kids with dysgraphia | 0.40 | 文章 handwriting-practice-struggling-writers | FAQ 核词(§三十三 dysgraphia 裁定:YMYL 不新开,FAQ 段+外链权威源,同批) |
+
+**低成本内容维护候选(未批不动)**:`best-cursive-fonts` 增补 "cursive fonts in word / google docs / canva / adobe" 平台节(4 个信息长尾,一节一平台;冻结期内属内容改动)。**复核**:补词批次执行后随 2027-01 Go/No-Go 看承接页 GSC 变化。
