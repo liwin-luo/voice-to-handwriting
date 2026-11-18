@@ -252,19 +252,64 @@ export const HANDWRITING_WORKSHEET_FAQS: FaqItem[] = [
   {
     id: "worksheet-make",
     i18n: { en: {
-        q: "How do I make my own handwriting worksheet?",
+        q: "How do I make my own handwriting practice sheets?",
         a: "Type your words one per line — or one short sentence per line. The first pass through your list prints solid to copy, and the rows after it are dotted to trace. Pick a row height, download the PDF, and print at actual size. Nothing you type is uploaded.",
         link: { href: "/cursive-worksheets", label: "Same list in cursive" },
       }, zh: { q: "怎么做一张自己的手写练习纸?", a: "一行输入一个单词,或者一行一个短句。词表第一遍印成深色范字,后面的行都是浅色虚线描红。选好行高,下载 PDF,按实际尺寸打印。输入的内容不会上传。", link: { href: "/cursive-worksheets", label: "同一份词表的连笔版" } },
 es: {
-          q: "¿Cómo hago mi propia hoja de caligrafía?",
+          q: "¿Cómo hago mis propias hojas de caligrafía?",
           a: "Escribe tus palabras una por línea — o una frase corta por línea. La primera pasada por tu lista se imprime en tinta sólida para copiar, y las filas siguientes salen punteadas para repasar. Elige la altura de fila, descarga el PDF e imprime a tamaño real. Lo que escribes no se sube.",
           link: { href: "/cursive-worksheets", label: "La misma lista en cursiva" },
         },
 pt: {
-          q: "Como faço minha própria ficha de caligrafia?",
+          q: "Como faço minhas próprias fichas de caligrafia?",
           a: "Digite suas palavras uma por linha — ou uma frase curta por linha. A primeira passada pela lista sai em tinta cheia para copiar, e as linhas seguintes vêm pontilhadas para treinar. Escolha a altura da linha, baixe o PDF e imprima em tamanho real. O que você digita não é enviado.",
           link: { href: "/cursive-worksheets", label: "A mesma lista em cursiva" },
+        } },
+  },
+  {
+    id: "worksheet-pdf",
+    i18n: { en: {
+        q: "Can I download the worksheet as a PDF?",
+        a: "Yes — the PDF button saves the whole sheet for printing at actual size, and the PNG button saves the page you see on screen. Both downloads are free, and everything is generated in your browser.",
+      }, zh: { q: "练习纸能下载成 PDF 吗?", a: "可以——PDF 按钮保存整页,按实际尺寸打印;PNG 按钮保存屏幕上这一页。两种下载都免费,全部在浏览器里生成。" },
+es: {
+          q: "¿Puedo descargar la hoja en PDF?",
+          a: "Sí — el botón de PDF guarda la hoja completa para imprimir a tamaño real, y el de PNG guarda la página que ves en pantalla. Las dos descargas son gratis y todo se genera en tu navegador.",
+        },
+pt: {
+          q: "Posso baixar a ficha em PDF?",
+          a: "Sim — o botão de PDF salva a folha completa para imprimir em tamanho real, e o de PNG salva a página que você vê na tela. Os dois downloads são grátis e tudo é gerado no seu navegador.",
+        } },
+  },
+  {
+    id: "worksheet-arrows",
+    i18n: { en: {
+        q: "Does the worksheet generator show start dots and arrows?",
+        a: "Yes for the Latin teaching fonts, including Patrick Hand, the default: each letter gets a green start dot and a red arrow for the first stroke. Switch Stroke guides off for plain rows. Blank tracing rows hide the marks. They show where a letter begins — not a numbered stroke diagram.",
+      }, zh: { q: "生成器会显示落笔点和笔顺箭头吗?", a: "拉丁教学字体会有,包括默认的 Patrick Hand:每个字母标一个绿色落笔点和一支红箭头,指出第一笔的方向。想要干净的行,把「笔画引导」开关关掉即可。空白描红行不画这些标记。它们只标出起笔位置,不是带编号的完整笔顺图。" },
+es: {
+          q: "¿El generador muestra puntos de inicio y flechas?",
+          a: "Sí, con las fuentes didácticas latinas, incluida Patrick Hand, la predeterminada: cada letra lleva un punto verde de inicio y una flecha roja con la dirección del primer trazo. Desactiva «Guías de trazo» para tener filas limpias. Las filas en blanco los ocultan. Marcan dónde empieza la letra, no un diagrama numerado de los trazos.",
+        },
+pt: {
+          q: "O gerador mostra pontos de partida e setas?",
+          a: "Sim, com as fontes didáticas latinas, incluindo Patrick Hand, a padrão: cada letra recebe um ponto verde de partida e uma seta vermelha com a direção do primeiro traço. Desligue «Guias de traço» para ter linhas limpas. As linhas em branco os escondem. Eles marcam onde a letra começa, não um diagrama numerado dos traços.",
+        } },
+  },
+  {
+    id: "worksheet-rows",
+    i18n: { en: {
+        q: "Which row height fits my child's grade?",
+        a: "The presets are labeled Pre-K, Kindergarten, and Grade 2 — pick the closest one, and go a size up if letters look cramped. The page opens on a large row on purpose: shrink the height only when the current one feels easy.",
+      }, zh: { q: "哪一档行高适合孩子的年龄?", a: "行高预设按 4–5 岁、5–6 岁、7–8 岁标注——选最接近的一档,字母看着挤就再放大一档。页面默认就是大行高:等孩子写起来轻松了再调小。" },
+es: {
+          q: "¿Qué altura de fila encaja con la edad de mi hijo?",
+          a: "Los ajustes vienen marcados 4–5 años, 5–6 años y 7–8 años — elige el más cercano y sube un tamaño si las letras se ven apretadas. La página abre con fila grande a propósito: reduce la altura solo cuando la actual le resulte fácil.",
+        },
+pt: {
+          q: "Qual altura de linha serve para a idade do meu filho?",
+          a: "Os presets vêm marcados 4–5 anos, 5–6 anos e 7–8 anos — escolha o mais próximo e suba um tamanho se as letras ficarem apertadas. A página abre com linha grande de propósito: diminua a altura só quando a atual estiver fácil.",
         } },
   },
   {

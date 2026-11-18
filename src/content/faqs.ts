@@ -110,6 +110,24 @@ pt: {
 /** /name-tracing 工具页 FAQ */
 export const TRACING_FAQS: FaqItem[] = [
   {
+    id: "tracing-lines",
+    i18n: { en: {
+        q: "Can I make the classic blue-and-red handwriting lines?",
+        a: "The tracing bands print as soft blue three-line guides — top line, dashed midline, solid baseline — and the midline color is fixed, so there is no red-line option. For classic kindergarten handwriting paper without traced names, the kindergarten paper page prints exactly that format.",
+        link: { href: "/printable-paper/kindergarten", label: "Kindergarten handwriting paper" },
+      }, zh: { q: "能做经典的红蓝双色线吗?", a: "描红行印出来是浅蓝色三线格——顶线、虚中格、实基线——中线颜色是固定的,没有红色线的选项。要经典的幼儿园写字纸(不带名字描红),幼儿园纸张页印出来的就是这个格式。", link: { href: "/printable-paper/kindergarten", label: "幼儿园写字纸" } },
+es: {
+          q: "¿Se pueden hacer las líneas clásicas azul y roja?",
+          a: "Las bandas de calco se imprimen como guías azules suaves de tres líneas — línea superior, línea media discontinua y base sólida — y el color de la línea media es fijo: no hay opción en rojo. Para papel de caligrafía infantil clásico, sin nombres para calcar, la página de papel infantil imprime justo ese formato.",
+          link: { href: "/printable-paper/kindergarten", label: "Papel de caligrafía infantil" },
+        },
+pt: {
+          q: "Dá para fazer as linhas clássicas azul e vermelha?",
+          a: "As faixas de calco saem como guias azuis suaves de três linhas — linha de cima, linha do meio tracejada e base sólida — e a cor da linha do meio é fixa: não há opção vermelha. Para papel de caligrafia infantil clássico, sem nomes para calcar, a página de papel infantil imprime exatamente esse formato.",
+          link: { href: "/printable-paper/kindergarten", label: "Papel de caligrafia infantil" },
+        } },
+  },
+  {
     id: "tracing-free",
     i18n: { en: {
         q: "Is the name tracing generator free?",
@@ -462,17 +480,17 @@ pt: {
   {
     id: "coloring-how",
     i18n: { en: {
-        q: "How do I make a coloring page with my child's name?",
-        a: "Type the name, pick a playful font and a decoration (stars, animals, or machines), and the page draws bubble-letter outlines of each character.",
+        q: "How do I make bubble letters with my child's name?",
+        a: "Type the name, pick a playful font and a decoration (stars, animals, or machines), and the page draws each letter as a bubble-letter outline to color.",
         link: { href: "/blog/color-a-name-before-tracing", label: "Color the name first" },
-      }, zh: { q: "怎么给孩子做名字涂色页?", a: "输入名字、选一个可爱字体和装饰(星星、动物或机器),页面会自动画出每个字的大气泡轮廓。", link: { href: "/blog/color-a-name-before-tracing", label: "先涂名字" } },
+      }, zh: { q: "怎么用孩子的名字做大气泡字母涂色页?", a: "输入名字、选一个可爱字体和装饰(星星、动物或机器),页面会把每个字母画成可以涂色的大气泡轮廓。", link: { href: "/blog/color-a-name-before-tracing", label: "先涂名字" } },
 es: {
-          q: "¿Cómo hago una página para colorear con el nombre de mi hijo?",
-          a: "Escribe el nombre, elige una fuente divertida y una decoración (estrellas, animales o máquinas), y la página dibuja los contornos de burbuja de cada letra.",
+          q: "¿Cómo hago letras burbuja con el nombre de mi hijo?",
+          a: "Escribe el nombre, elige una fuente divertida y una decoración (estrellas, animales o máquinas), y la página dibuja cada letra como un contorno de burbuja para colorear.",
         },
 pt: {
-          q: "Como faço uma página para colorir com o nome do meu filho?",
-          a: "Digite o nome, escolha uma fonte divertida e uma decoração (estrelas, animais ou máquinas) e a página desenha contornos de letras-bolha de cada caractere.",
+          q: "Como faço letras-bolha com o nome do meu filho?",
+          a: "Digite o nome, escolha uma fonte divertida e uma decoração (estrelas, animais ou máquinas) e a página desenha cada letra como um contorno de bolha para colorir.",
         } },
   },
   {

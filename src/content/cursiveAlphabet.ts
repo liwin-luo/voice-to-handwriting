@@ -97,6 +97,11 @@ export const ALPHABET_PAGE = {
       q: "Why do these letters look different from my old school chart?",
       a: "Every cursive tradition — Zaner-Bloser, D'Nealian, Palmer, italic — draws the same 26 letters with slightly different flourishes, and this site uses open-source fonts rather than a licensed school script. The stroke logic and starting points transfer between them; treat the differences as dialects, not mistakes.",
     },
+    {
+      q: "Is cursive the same as calligraphy?",
+      a: "No. Cursive is everyday connected handwriting — an ordinary pen, written at reading speed. Calligraphy is drawn lettering made with broad nibs or brushes for formal pieces; each stroke is constructed rather than written. This chart teaches the connected everyday style. For decorative lettering projects, the calligraphy motto cards guide walks through that workflow instead.",
+      link: { href: "/blog/calligraphy-motto-cards", label: "Calligraphy motto cards guide" },
+    },
   ] satisfies FaqEntry[],
 };
 

@@ -601,3 +601,12 @@
 | handwriting practice for kids with dysgraphia | 0.40 | 文章 handwriting-practice-struggling-writers | FAQ 核词(§三十三 dysgraphia 裁定:YMYL 不新开,FAQ 段+外链权威源,同批) |
 
 **低成本内容维护候选(未批不动)**:`best-cursive-fonts` 增补 "cursive fonts in word / google docs / canva / adobe" 平台节(4 个信息长尾,一节一平台;冻结期内属内容改动)。**复核**:补词批次执行后随 2027-01 Go/No-Go 看承接页 GSC 变化。
+
+### 34.1 落地结果(2026-11-18,补词批次已执行,用户批准)
+
+- **/handwriting-worksheet-generator FAQ 4→7(四语)**:新增 PDF 下载题(free pdf/0.20)、落笔点+首笔箭头题(with arrows/0.20,按组件真实能力写:拉丁教学字体含默认 Patrick Hand 有引导,空白行隐藏,非编号笔顺图)、行高分龄题(for kids/0.25,标签随 UI 本地化:en Pre-K/K/Grade 2,zh/es/pt 按年龄);make 题问法 worksheet→practice sheets(并吃 §三十三 GO 词);en description 尾补 "Free PDF, no signup."(153 字符,≤158 钳制)。
+- **/name-tracing FAQ 5→6**:新增红蓝线题(blue and red lines/0.40)——如实答中线颜色固定、无红色选项,链接 /printable-paper/kindergarten;name-coloring 的 how 题问法补 bubble letters。
+- **/cursive-alphabet FAQ 5→6(en-only 页)**:新增 calligraphy 题(0.35,连笔≠书法,内链 calligraphy-motto-cards)。
+- **文章**:handwriting-personality-test(en-only)新增 People also ask 3 题(letters/numbers/results/online free);handwriting-practice-struggling-writers(en+zh)的 dysgraphia 答案外链 ADDITUDE(URL 已验证 200;understood.org 拒爬虫无法核实故不用)+ 新增居家练字 FAQ(for kids with dysgraphia/0.40);两篇 updated → 2026-11-18。
+- **红线遵守**:quiz 页 personality test 长尾按冻结不动(文章侧承接);FAQ 免费题保持最后(faqSeo 约定);全部 FAQ 只写已验证的工具能力,JSON-LD 与可见 FAQ 同源(ToolFaq)。
+- **验收**:tsc 零错误;vitest 639/639(standards + faqSeo 全过);lint 与干净 HEAD 基线一致(24 problems,零新增)。

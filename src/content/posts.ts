@@ -281,7 +281,7 @@ const US_POSTS: Post[] = [
     slug: "handwriting-practice-struggling-writers",
     author: "clara-hartley",
     date: "2026-10-07",
-    updated: "2026-10-07",
+    updated: "2026-11-18",
     image: "/blog/tracing-worksheet.webp",
     i18n: {
       en: {
@@ -734,7 +734,7 @@ const CURSIVE_POSTS: Post[] = [
     slug: "handwriting-personality-test",
     author: "theo-lindgren",
     date: "2026-10-20",
-    updated: "2026-10-27",
+    updated: "2026-11-18",
     image: "/blog/handwriting-personality-test.webp",
     i18n: {
       en: {
