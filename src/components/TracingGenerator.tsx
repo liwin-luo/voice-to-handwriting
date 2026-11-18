@@ -35,6 +35,13 @@ function waitForFontFace(family: string, timeoutMs = 3000): Promise<void> {
   });
 }
 
+/** repeater 行内重复:按当前字号量宽,同一条文本重复占满可写宽度(左右各留约 60px) */
+function repeatedLine(ctx: CanvasRenderingContext2D, text: string, pageW: number): string {
+  const unit = `${text}   `;
+  const copies = Math.max(1, Math.floor((pageW - 120) / ctx.measureText(unit).width));
+  return Array(copies).fill(text).join("   ");
+}
+
 /** 姓名描红工作表生成器:美国教师/家长市场(姓名描红 + 三线格) */
 export default function TracingGenerator({
   defaultFontId = "patrickhand",
@@ -48,6 +55,7 @@ export default function TracingGenerator({
   inputLabel,
   fileStem = "name-tracing-worksheet",
   presets,
+  repeatFill = false,
 }: {
   defaultFontId?: string;
   defaultBandH?: number;
@@ -65,6 +73,8 @@ export default function TracingGenerator({
   inputLabel?: string;
   fileStem?: string;
   presets?: { id: string; label: string; text: string }[];
+  /** repeater 语义:单条文本在行内重复填满一行(经典重复抄写练习纸),与逐行不同文本的通用练习纸区分 */
+  repeatFill?: boolean;
 }) {
   const t = useTranslations("tracing");
   const fontNames = useTranslations("tool");
@@ -174,24 +184,26 @@ export default function TracingGenerator({
       const fontSize = Math.round(H * 0.62);
       ctx.font = `${fontSize}px "${family}"`;
       ctx.textBaseline = "alphabetic";
+      // repeater 语义:示例行整行实心重复,描红行整行描红重复;普通页仍是逐行不同文本
+      const lineText = repeatFill ? repeatedLine(ctx, text, w) : text;
       // 示例行实心;描红行按 traceInk:虚线、空心,或只留三线格
       const isExampleRow = showExample && row < rows.length;
       ctx.save();
       if (isExampleRow) {
         ctx.fillStyle = textColor;
-        ctx.fillText(text, 60, y0 + H - 6);
+        ctx.fillText(lineText, 60, y0 + H - 6);
       } else if (traceInk === "dotted") {
         ctx.strokeStyle = fadeInk(textColor);
         ctx.lineWidth = 1.15;
         ctx.setLineDash([2.5, 2.5]);
-        ctx.strokeText(text, 60, y0 + H - 6);
+        ctx.strokeText(lineText, 60, y0 + H - 6);
       } else if (traceInk === "outline") {
         ctx.strokeStyle = fadeInk(textColor, 0.4);
         ctx.lineWidth = 1.35;
-        ctx.strokeText(text, 60, y0 + H - 6);
+        ctx.strokeText(lineText, 60, y0 + H - 6);
       }
       ctx.restore();
-      if (guides && traceInk !== "blank") drawGlyphGuides(ctx, text, 60, y0 + H - 6, fontSize, fontId);
+      if (guides && traceInk !== "blank") drawGlyphGuides(ctx, lineText, 60, y0 + H - 6, fontSize, fontId);
     }
     void showExample;
   }

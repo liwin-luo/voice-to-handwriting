@@ -9,9 +9,9 @@ test.describe("en-only", () => {
     await expect(page.getByRole("heading", { name: "Write & generate" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Practice sheets & printing" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Just for fun" })).toBeVisible();
-    // 2026-11 三轮收缩后:17 个存活工具
-    await expect(page.getByRole("main").getByRole("link")).toHaveCount(17);
-    for (const cut of ["/handwriting-check", "/handwriting-count", "/handwriting-pad", "/handwriting-repeater", "/letter-tracing", "/daily-cursive-handwriting-practice", "/word-work", "/handwriting-sentence-practice", "/doctor-handwriting-generator"]) {
+    // 2026-11 三轮收缩后 17 个存活工具;2026-11-18 /handwriting-repeater 翻案重建,18 个
+    await expect(page.getByRole("main").getByRole("link")).toHaveCount(18);
+    for (const cut of ["/handwriting-check", "/handwriting-count", "/handwriting-pad", "/letter-tracing", "/daily-cursive-handwriting-practice", "/word-work", "/handwriting-sentence-practice", "/doctor-handwriting-generator"]) {
       await expect(page.getByRole("main").locator(`a[href="${cut}"]`)).toHaveCount(0);
     }
     await expect(page.getByRole("main").getByRole("link", { name: "Printable Letters" })).toBeVisible();

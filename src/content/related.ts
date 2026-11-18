@@ -11,6 +11,7 @@ export const TOOL_ANCHOR: Record<string, string> = {
   "/printable-handwritten-letters": "the printable letters and envelopes tool",
   "/name-tracing": "the name tracing worksheet generator",
   "/handwriting-worksheet-generator": "the handwriting worksheet generator",
+  "/handwriting-repeater": "the handwriting repeater (one word repeated across the page)",
   "/printable-paper": "the printable paper pack",
   "/handwriting-page-calculator": "the words-to-pages handwriting calculator",
   "/cursive-alphabet": "the interactive cursive alphabet",
@@ -29,6 +30,7 @@ export const TOOL_LABEL_KEY: Record<string, string> = {
   "/printable-paper": "printablePaper",
   "/name-tracing": "nameTracing",
   "/handwriting-worksheet-generator": "worksheet",
+  "/handwriting-repeater": "repeater",
   "/cursive": "cursive",
   "/cursive-text-generator": "cursiveText",
   "/cursive-alphabet": "cursiveAlphabet",
@@ -289,6 +291,13 @@ export const RELATED: Record<string, RelatedConfig> = {
   "bubble-letters-for-a-display-name": {
     tools: ["/cursive-font-generator", "/cursive-text-generator"],
     posts: ["cursive-text-generator", "best-cursive-fonts", "cursive-name-signature"],
+  },
+
+  // 课堂重复抄写簇:枢纽 /handwriting-repeater。本文吃教师课堂用法(for teachers 意图),
+  // 不抢工具页的 handwriting repeater 主词;尾部相关文是同一任务链上的词表/姓名练习纸文章
+  "handwriting-repeater-for-teachers": {
+    tools: ["/handwriting-repeater", "/handwriting-worksheet-generator", "/printable-paper"],
+    posts: ["handwriting-worksheets", "sight-word-tracing-worksheets", "name-tracing-generator"],
   },
 };
 

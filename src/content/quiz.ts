@@ -605,4 +605,526 @@ const zh: QuizLocaleContent = {
 };
 
 
-export const QUIZ_CONTENT: Record<Locale, QuizLocaleContent> = { en, zh };
+const es: QuizLocaleContent = {
+  title: "Test de personalidad según tu letra",
+  intro:
+    "12 preguntas rápidas sobre cómo escribes — sin subir fotos y sin guardar nada. Al final tendrás un perfil caligráfico de entretenimiento y consejos para practicar los hábitos detrás de tus letras.",
+  start: "Empezar el test",
+  back: "Anterior",
+  retake: "Repetir el test",
+  progress: "Pregunta {n} de {total}",
+  download: "Descargar mi resultado",
+  writeCta: "Escribir una línea con este estilo",
+  resultHeading: "Tu perfil de escritura",
+  dimsHeading: "Lo que sugieren tus respuestas",
+  practiceHeading: "¿Quieres practicar?",
+  growthLabel: "Para mejorar",
+  faqTitle: "Preguntas frecuentes",
+  articleLink: "Sigue leyendo: ¿qué dice tu letra sobre ti? La guía honesta",
+  scienceTitle: "¿Es real el análisis de la escritura?",
+  scienceText: [
+    "La grafología —leer la personalidad en la letra— se ha puesto a prueba muchas veces y no se sostiene. Un metaanálisis de 1989 de Neter y Ben-Shakhar concluyó que los juicios de los grafólogos no superaban el azar, y hoy la psicología la clasifica como pseudociencia. Ningún test, tampoco este, puede leer tu personalidad en las formas de las letras.",
+    "Lo que la letra refleja de verdad son hábitos: cuándo aprendiste, cuánto escribes, con cuánta prisa. Los hábitos se entrenan — así que si el perfil señala algo que te gustaría cambiar, las herramientas de práctica de abajo pueden ayudarte.",
+  ],
+  disclaimer:
+    "Solo para divertirse — este test es entretenimiento, no una evaluación científica ni psicológica. Nada de lo que elijas se sube ni se guarda.",
+  dimensions: {
+    social: {
+      label: "Energía social",
+      levels: { low: "Reservado", mid: "Adaptable", high: "Extrovertido" },
+      practice: {
+        text: "¿Te apetece un estilo más fluido y conectado? El generador de letra cursiva es un buen punto de partida.",
+        href: "/cursive",
+      },
+    },
+    expressive: {
+      label: "Expresividad",
+      levels: { low: "Contenida", mid: "Equilibrada", high: "Atrevida" },
+      practice: {
+        text: "Un tamaño uniforme viene de filas con ritmo — el generador de calcos las imprime con la palabra que quieras.",
+        href: "/name-tracing",
+      },
+    },
+    space: {
+      label: "Espacio personal",
+      levels: { low: "Junto", mid: "Flexible", high: "Amplio" },
+      practice: {
+        text: "El ritmo de los espacios mejora con repetición — crea una hoja con tu propia lista de palabras.",
+        href: "/handwriting-worksheet-generator",
+      },
+    },
+    focus: {
+      label: "Concentración y estructura",
+      levels: { low: "Fluida", mid: "Estable", high: "Precisa" },
+      practice: {
+        text: "Una línea recta es más fácil en papel de tres líneas — imprime una hoja gratis y prueba con un párrafo.",
+        href: "/printable-paper",
+      },
+    },
+    pace: {
+      label: "Presión y ritmo",
+      levels: { low: "Suave y tranquila", mid: "Moderada", high: "Firme y rápida" },
+      practice: {
+        text: "Las filas para calcar marcan un ritmo parejo — genera hojas de práctica con cualquier lista de palabras.",
+        href: "/cursive-worksheets",
+      },
+    },
+  },
+  profiles: {
+    balanced: {
+      name: "El Equilibrado",
+      tagline: "Ningún rasgo manda — tu mano se adapta al momento.",
+      points: [
+        "Un estilo flexible sugiere que adaptas la letra a la situación: notas rápidas y tarjetas cuidadas.",
+        "Los grafólogos lo llamarían equilibrio; nosotros lo llamamos rango.",
+        "Tienes una base sólida para construir cualquier estilo.",
+      ],
+      growth: "Elige una dimensión para pulir — a los equilibrados les va mejor con un solo foco.",
+    },
+    bold: {
+      name: "El Expresivo Atrevido",
+      tagline: "Letras grandes, formas abiertas — tu letra llega antes que tú.",
+      points: [
+        "Las letras grandes y redondeadas se leen como calidez y confianza — por diversión, al menos.",
+        "Estás a gusto ocupando espacio en el papel.",
+        "Las tarjetas y los carteles son tu formato natural.",
+      ],
+      growth: "Hasta la letra atrevida gana con espaciados parejos — fija un ritmo para que el tamaño no cueste legibilidad.",
+    },
+    planner: {
+      name: "El Planificador Preciso",
+      tagline: "Vertical, ordenado, exacto — tu mano gusta del orden.",
+      points: [
+        "Tamaño constante y líneas rectas sugieren paciencia y ojo para el detalle.",
+        "La tuya es la letra de la que copian los apuntes.",
+        "Una letra nítida es una habilidad motriz entrenada — y la tuya se nota practicada.",
+      ],
+      growth: "La precisión puede volverse rigidez — prueba una cursiva más suelta para ganar velocidad sin perder estructura.",
+    },
+    spirit: {
+      name: "El Espíritu Libre",
+      tagline: "Tus letras deambulan — y ahí está su encanto.",
+      points: [
+        "Una línea que sube y baja y formas abiertas sugieren que piensas mientras escribes.",
+        "La estructura no es lo tuyo — perfecto para diarios y lluvias de ideas.",
+        "La legibilidad es lo único donde el espíritu libre paga peaje.",
+      ],
+      growth: "Un hábito arregla casi todo: escribir sobre una línea recta. El papel de tres líneas vigila por ti.",
+    },
+    steady: {
+      name: "El Sereno Constante",
+      tagline: "Vertical, parejo, sin prisa — tu letra mantiene la calma.",
+      points: [
+        "Trazo vertical y presión moderada se leen como calma y fiabilidad.",
+        "Tu mano no se apura — y por lo visto tus decisiones tampoco.",
+        "Un estilo reservado que mantiene las letras abiertas.",
+      ],
+      growth: "Si algún día importa la velocidad, los enlaces de la cursiva añaden ritmo sin cambiar tu letra ordenada.",
+    },
+    spark: {
+      name: "La Chispa Veloz",
+      tagline: "Rápida, firme, inclinada hacia adelante — tu mano tiene prisa.",
+      points: [
+        "Inclinación a la derecha y buen ritmo sugieren impulso — escribes para alcanzar tus ideas.",
+        "La presión firme se lee como energía y compromiso.",
+        "Tus notas rápidas tienen personalidad; hacerlas legibles es la última milla.",
+      ],
+      growth: "Frena una hoja por semana — las filas con ritmo entrenan velocidad que sigue siendo legible.",
+    },
+  },
+  questions: [
+    {
+      id: "slant",
+      dimension: "social",
+      text: "hello",
+      prompt: "¿Qué \u201chello\u201d se parece más al tuyo?",
+      options: [
+        { score: 2, style: { font: "print", slant: 10 }, label: "Se inclina a la derecha" },
+        { score: 1, style: { font: "neat", slant: 0 }, label: "Casi vertical" },
+        { score: 0, style: { font: "print", slant: -7 }, label: "Se inclina a la izquierda" },
+      ],
+    },
+    {
+      id: "y-tail",
+      dimension: "social",
+      text: "happy",
+      prompt: "¿Cómo terminas una letra como la y?",
+      options: [
+        { score: 2, style: { font: "everyday" }, label: "Con un rulo por debajo de la línea" },
+        { score: 1, style: { font: "caveat" }, label: "Con un gancho corto" },
+        { score: 0, style: { font: "print" }, label: "Corta con un trazo recto" },
+      ],
+    },
+    {
+      id: "roundness",
+      dimension: "social",
+      text: "am",
+      prompt: "¿Qué pareja se parece a tus letras de todos los días?",
+      options: [
+        { score: 2, style: { font: "everyday" }, label: "Redondas y abiertas" },
+        { score: 1, style: { font: "neat" }, label: "A medio camino" },
+        { score: 0, style: { font: "caveat" }, label: "Afiladas y angulosas" },
+      ],
+    },
+    {
+      id: "size",
+      dimension: "expressive",
+      text: "g",
+      prompt: "¿De qué tamaño escribes las minúsculas?",
+      options: [
+        { score: 0, style: { font: "print", size: 0.8 }, label: "Pequeñas — bien compactas" },
+        { score: 1, style: { font: "neat", size: 1.1 }, label: "Medianas" },
+        { score: 2, style: { font: "print", size: 1.5 }, label: "Grandes — llenan el renglón" },
+      ],
+    },
+    {
+      id: "capitals",
+      dimension: "expressive",
+      text: "M",
+      prompt: "Elige la mayúscula más parecida a la tuya.",
+      options: [
+        { score: 0, style: { font: "print" }, label: "Llana y sencilla" },
+        { score: 1, style: { font: "neat" }, label: "Con un toque de gracia" },
+        { score: 2, style: { font: "fancy" }, label: "Con grandes florituras" },
+      ],
+    },
+    {
+      id: "word-gap",
+      dimension: "space",
+      text: "the cat",
+      prompt: "¿Cuánto espacio dejas entre palabras?",
+      options: [
+        { score: 0, style: { font: "neat", word: 0.05 }, label: "Casi se tocan" },
+        { score: 1, style: { font: "neat", word: 0.4 }, label: "Un hueco normal" },
+        { score: 2, style: { font: "neat", word: 0.9 }, label: "Huecos amplios" },
+      ],
+    },
+    {
+      id: "letter-gap",
+      dimension: "space",
+      text: "hand",
+      prompt: "¿Y entre las letras dentro de una palabra?",
+      options: [
+        { score: 0, style: { font: "print", spacing: -0.03 }, label: "Apiñadas" },
+        { score: 1, style: { font: "print", spacing: 0.03 }, label: "Cómodas" },
+        { score: 2, style: { font: "print", spacing: 0.16 }, label: "Con mucho aire" },
+      ],
+    },
+    {
+      id: "baseline",
+      dimension: "focus",
+      text: "sunny day",
+      prompt: "Cuando escribes un renglón entero, ¿hacia dónde va?",
+      options: [
+        { score: 0, style: { font: "messy", rotate: 6 }, label: "Se va subiendo o bajando" },
+        { score: 1, style: { font: "messy", rotate: 2 }, label: "Vaga un poco" },
+        { score: 2, style: { font: "print", rotate: 0 }, label: "Se mantiene recta" },
+      ],
+    },
+    {
+      id: "tidiness",
+      dimension: "focus",
+      text: "paper",
+      prompt: "¿Qué palabra se parece a tu letra diaria más cuidada?",
+      options: [
+        { score: 0, style: { font: "messy" }, label: "A mi aire" },
+        { score: 1, style: { font: "print" }, label: "Desorden ordenado" },
+        { score: 2, style: { font: "neat" }, label: "Cuidadosamente nítida" },
+      ],
+    },
+    {
+      id: "i-dots",
+      dimension: "focus",
+      prompt: "¿Dónde caen los puntos de las íes?",
+      options: [
+        { score: 2, label: "Justo encima del palo" },
+        { score: 1, label: "Un poco desviados o flotando" },
+        { score: 0, label: "Donde caigan" },
+      ],
+    },
+    {
+      id: "pressure",
+      dimension: "pace",
+      text: "hello",
+      prompt: "¿Con cuánta fuerza aprietas al escribir?",
+      options: [
+        { score: 0, style: { font: "caveat", ink: "light" }, label: "Suave — como a lápiz" },
+        { score: 1, style: { font: "neat", ink: "normal" }, label: "Moderada" },
+        { score: 2, style: { font: "print", ink: "heavy" }, label: "Firme — se marca el dorso" },
+      ],
+    },
+    {
+      id: "pace",
+      dimension: "pace",
+      prompt: "¿Cómo escribes normalmente?",
+      options: [
+        { score: 0, label: "Despacio y con calma" },
+        { score: 1, label: "Depende del día" },
+        { score: 2, label: "Rápido — la mano va por delante" },
+      ],
+    },
+  ],
+}
+
+const pt: QuizLocaleContent = {
+  title: "Quiz de personalidade pela sua letra",
+  intro:
+    "12 perguntas rápidas sobre como você escreve — sem enviar fotos e sem guardar nada. No fim você recebe um perfil de escrita só por diversão, mais dicas para treinar os hábitos por trás das suas letras.",
+  start: "Começar o quiz",
+  back: "Voltar",
+  retake: "Refazer o quiz",
+  progress: "Pergunta {n} de {total}",
+  download: "Baixar meu resultado",
+  writeCta: "Escrever uma linha neste estilo",
+  resultHeading: "Seu perfil de escrita",
+  dimsHeading: "O que suas respostas sugerem",
+  practiceHeading: "Quer praticar?",
+  growthLabel: "Ponto de evolução",
+  faqTitle: "Perguntas frequentes",
+  articleLink: "Leia também: o que a sua letra diz sobre você? O guia honesto",
+  scienceTitle: "Análise de letra funciona mesmo?",
+  scienceText: [
+    "A grafologia — ler personalidade na letra — foi testada muitas vezes e não se sustenta. Uma meta-análise de 1989 (Neter e Ben-Shakhar) mostrou que os julgamentos dos grafólogos não superavam o acaso, e a psicologia hoje a classifica como pseudociência. Nenhum quiz, incluindo este, consegue ler sua personalidade no formato das letras.",
+    "O que a letra reflete de verdade são hábitos: quando você aprendeu, com que frequência escreve, quanta pressa está. Hábitos se treinam — se o perfil destacar um estilo que você quer mudar, as ferramentas de prática abaixo podem ajudar.",
+  ],
+  disclaimer:
+    "Só para diversão — este quiz é entretenimento, não uma avaliação científica ou psicológica. Nada do que você escolhe é enviado ou armazenado.",
+  dimensions: {
+    social: {
+      label: "Energia social",
+      levels: { low: "Reservada", mid: "Adaptável", high: "Expressiva" },
+      practice: {
+        text: "Quer um traço mais fluido e conectado? O gerador de letra cursiva é um começo suave.",
+        href: "/cursive",
+      },
+    },
+    expressive: {
+      label: "Expressividade",
+      levels: { low: "Contida", mid: "Equilibrada", high: "Ousada" },
+      practice: {
+        text: "Tamanho uniforme vem de linhas com ritmo — o gerador de caligrafia as imprime com qualquer palavra.",
+        href: "/name-tracing",
+      },
+    },
+    space: {
+      label: "Espaço pessoal",
+      levels: { low: "Junto", mid: "Flexível", high: "Arejada" },
+      practice: {
+        text: "O ritmo dos espaços melhora com repetição — monte uma folha com a sua lista de palavras.",
+        href: "/handwriting-worksheet-generator",
+      },
+    },
+    focus: {
+      label: "Foco e estrutura",
+      levels: { low: "Espontânea", mid: "Estável", high: "Precisa" },
+      practice: {
+        text: "Linha de base reta fica mais fácil no papel de três linhas — imprima uma folha grátis e teste um parágrafo.",
+        href: "/printable-paper",
+      },
+    },
+    pace: {
+      label: "Pressão e ritmo",
+      levels: { low: "Leve e tranquila", mid: "Moderada", high: "Firme e rápida" },
+      practice: {
+        text: "Linhas para calcar criam um ritmo calmo e uniforme — gere folhas com qualquer lista de palavras.",
+        href: "/cursive-worksheets",
+      },
+    },
+  },
+  profiles: {
+    balanced: {
+      name: "O Equilibrado",
+      tagline: "Nenhum traço manda sozinho — sua mão se adapta ao momento.",
+      points: [
+        "Um estilo flexível sugere que você ajusta a letra à situação — recados rápidos e cartões caprichados.",
+        "Grafólogos chamariam de equilíbrio; nós chamamos de repertório.",
+        "Você tem uma base sólida para construir qualquer estilo.",
+      ],
+      growth: "Escolha uma dimensão para refinar — quem é equilibrado evolui mais rápido com um foco só.",
+    },
+    bold: {
+      name: "O Expressivo Ousado",
+      tagline: "Letras grandes, formas abertas — sua letra chega antes de você.",
+      points: [
+        "Letras grandes e redondas são lidas como calor e confiança — por diversão, ao menos.",
+        "Você está à vontade ocupando espaço na página.",
+        "Cartões e cartazes são o seu formato natural.",
+      ],
+      growth: "Até letra ousada ganha com espaços regulares — fixe um ritmo para o tamanho nunca custar legibilidade.",
+    },
+    planner: {
+      name: "O Planejador Preciso",
+      tagline: "Vertical, arrumada, exata — sua mão gosta de ordem.",
+      points: [
+        "Tamanho constante e linhas retas sugerem paciência e olho no detalhe.",
+        "Seus cadernos são os que todo mundo pede emprestado.",
+        "Letra nítida é habilidade motora treinada — e a sua claramente tem milhagem.",
+      ],
+      growth: "Precisão pode virar rigidez — experimente uma cursiva mais solta para ganhar velocidade sem perder a estrutura.",
+    },
+    spirit: {
+      name: "O Espírito Livre",
+      tagline: "Suas letras passeiam — e esse é o charme delas.",
+      points: [
+        "Uma linha de base que sobe e desce e formas abertas sugerem que você pensa enquanto escreve.",
+        "Estrutura não é o seu padrão — ótimo para diários e brainstorming.",
+        "Legibilidade é o único pedágio dos espíritos livres.",
+      ],
+      growth: "Um hábito resolve quase tudo: escrever sobre uma linha reta. O papel de três linhas vigia por você.",
+    },
+    steady: {
+      name: "O Sereno Constante",
+      tagline: "Vertical, uniforme, sem pressa — sua letra mantém a calma.",
+      points: [
+        "Inclinação neutra e pressão moderada são lidas como calma e confiabilidade.",
+        "Sua mão não tem pressa — e suas decisões, aparentemente, também não.",
+        "Um estilo reservado que mantém as letras abertas.",
+      ],
+      growth: "Se a velocidade um dia importar, as ligações da cursiva acrescentam ritmo sem mudar seu visual arrumado.",
+    },
+    spark: {
+      name: "A Faísca Acelerada",
+      tagline: "Rápida, firme, inclinada para frente — sua mão tem pressa.",
+      points: [
+        "Inclinação à direita e ritmo cadenciado sugerem ímpeto — você escreve para acompanhar o pensamento.",
+        "Pressão firme é lida como energia e engajamento.",
+        "Seus recados rápidos têm personalidade; deixá-los legíveis é a última milha.",
+      ],
+      growth: "Desacelere para uma folha por semana — linhas com ritmo treinam velocidade que continua legível.",
+    },
+  },
+  questions: [
+    {
+      id: "slant",
+      dimension: "social",
+      text: "hello",
+      prompt: "Qual \u201chello\u201d mais parece o seu?",
+      options: [
+        { score: 2, style: { font: "print", slant: 10 }, label: "Inclinado para a direita" },
+        { score: 1, style: { font: "neat", slant: 0 }, label: "Quase na vertical" },
+        { score: 0, style: { font: "print", slant: -7 }, label: "Inclinado para a esquerda" },
+      ],
+    },
+    {
+      id: "y-tail",
+      dimension: "social",
+      text: "happy",
+      prompt: "Como você termina uma letra como o y?",
+      options: [
+        { score: 2, style: { font: "everyday" }, label: "Com uma laçada abaixo da linha" },
+        { score: 1, style: { font: "caveat" }, label: "Um gancho curto" },
+        { score: 0, style: { font: "print" }, label: "Paro num traço reto" },
+      ],
+    },
+    {
+      id: "roundness",
+      dimension: "social",
+      text: "am",
+      prompt: "Qual par se parece com as suas letras do dia a dia?",
+      options: [
+        { score: 2, style: { font: "everyday" }, label: "Redondas e abertas" },
+        { score: 1, style: { font: "neat" }, label: "Algum ponto no meio" },
+        { score: 0, style: { font: "caveat" }, label: "Pontudas e angulosas" },
+      ],
+    },
+    {
+      id: "size",
+      dimension: "expressive",
+      text: "g",
+      prompt: "De que tamanho você escreve as minúsculas?",
+      options: [
+        { score: 0, style: { font: "print", size: 0.8 }, label: "Pequenas — bem compactas" },
+        { score: 1, style: { font: "neat", size: 1.1 }, label: "Médias" },
+        { score: 2, style: { font: "print", size: 1.5 }, label: "Grandes — preenchem a linha" },
+      ],
+    },
+    {
+      id: "capitals",
+      dimension: "expressive",
+      text: "M",
+      prompt: "Escolha a maiúscula mais parecida com a sua.",
+      options: [
+        { score: 0, style: { font: "print" }, label: "Simples e direta" },
+        { score: 1, style: { font: "neat" }, label: "Um toque de estilo" },
+        { score: 2, style: { font: "fancy" }, label: "Grandes floreios" },
+      ],
+    },
+    {
+      id: "word-gap",
+      dimension: "space",
+      text: "the cat",
+      prompt: "Quanto espaço você deixa entre palavras?",
+      options: [
+        { score: 0, style: { font: "neat", word: 0.05 }, label: "Quase se encostam" },
+        { score: 1, style: { font: "neat", word: 0.4 }, label: "Um espaço normal" },
+        { score: 2, style: { font: "neat", word: 0.9 }, label: "Espaços largos" },
+      ],
+    },
+    {
+      id: "letter-gap",
+      dimension: "space",
+      text: "hand",
+      prompt: "E entre as letras dentro de uma palavra?",
+      options: [
+        { score: 0, style: { font: "print", spacing: -0.03 }, label: "Bem juntas" },
+        { score: 1, style: { font: "print", spacing: 0.03 }, label: "Confortável" },
+        { score: 2, style: { font: "print", spacing: 0.16 }, label: "Bem espaçadas" },
+      ],
+    },
+    {
+      id: "baseline",
+      dimension: "focus",
+      text: "sunny day",
+      prompt: "Quando você escreve uma linha inteira, para onde ela vai?",
+      options: [
+        { score: 0, style: { font: "messy", rotate: 6 }, label: "Sobe e desce" },
+        { score: 1, style: { font: "messy", rotate: 2 }, label: "Vagueia um pouquinho" },
+        { score: 2, style: { font: "print", rotate: 0 }, label: "Fica reta" },
+      ],
+    },
+    {
+      id: "tidiness",
+      dimension: "focus",
+      text: "paper",
+      prompt: "Qual palavra lembra a sua letra diária mais caprichada?",
+      options: [
+        { score: 0, style: { font: "messy" }, label: "Do jeito que vier" },
+        { score: 1, style: { font: "print" }, label: "Descontraída mas arrumada" },
+        { score: 2, style: { font: "neat" }, label: "Cuidadosamente limpa" },
+      ],
+    },
+    {
+      id: "i-dots",
+      dimension: "focus",
+      prompt: "Onde caem os pontos dos seus i's?",
+      options: [
+        { score: 2, label: "Exatamente sobre o haste" },
+        { score: 1, label: "Um pouco fora, ou flutuando alto" },
+        { score: 0, label: "Onde caírem" },
+      ],
+    },
+    {
+      id: "pressure",
+      dimension: "pace",
+      text: "hello",
+      prompt: "Com quanta força você aperta ao escrever?",
+      options: [
+        { score: 0, style: { font: "caveat", ink: "light" }, label: "Leve — macio como lápis" },
+        { score: 1, style: { font: "neat", ink: "normal" }, label: "Moderada" },
+        { score: 2, style: { font: "print", ink: "heavy" }, label: "Firme — marca até o verso" },
+      ],
+    },
+    {
+      id: "pace",
+      dimension: "pace",
+      prompt: "Como você costuma escrever?",
+      options: [
+        { score: 0, label: "Devagar, com calma" },
+        { score: 1, label: "Depende do dia" },
+        { score: 2, label: "Rápido — a mão dispara na frente" },
+      ],
+    },
+  ],
+}
+
+export const QUIZ_CONTENT: Record<Locale, QuizLocaleContent> = { en, zh, es, pt };

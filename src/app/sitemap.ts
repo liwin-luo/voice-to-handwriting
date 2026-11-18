@@ -5,24 +5,27 @@ import { TEMPLATES } from "@/content/templates";
 import { CURSIVE_LETTERS } from "@/content/cursiveLetters";
 import { CURSIVE_NUMBERS } from "@/content/cursiveNumbers";
 import { PAPER_KINDS } from "@/content/paperKinds";
-import { routing } from "@/i18n/routing";
+import { CORE_LOCALES, routing } from "@/i18n/routing";
 import { AUTHORS } from "@/content/authors";
 import { buildAlternates, localizedUrl } from "@/lib/seo";
 
 /** 内容仅来自 localStorage 的本地工具页禁止进 sitemap */
-const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-text-generator", "/cursive-font-generator", "/cursive-worksheets", "/number-tracing", "/handwriting-personality-quiz", "/handwriting-workbook-generator", "/handwriting-page-calculator", "/printable-handwritten-letters", "/printable-paper", ...PAPER_KINDS.map((k) => `/printable-paper/${k.slug}`), "/name-tracing", "/handwriting-worksheet-generator", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact", "/authors"];
+const PATHS = ["/", "/tools", "/templates", "/blog", "/faq", "/cursive", "/cursive-text-generator", "/cursive-font-generator", "/cursive-worksheets", "/number-tracing", "/handwriting-personality-quiz", "/handwriting-workbook-generator", "/handwriting-page-calculator", "/printable-handwritten-letters", "/printable-paper", ...PAPER_KINDS.map((k) => `/printable-paper/${k.slug}`), "/name-tracing", "/handwriting-worksheet-generator", "/handwriting-repeater", "/writing-practice", "/name-coloring", "/about", "/privacy", "/terms", "/contact", "/authors"];
 const YEARLY_PATHS = new Set(["/privacy", "/terms", "/contact", "/about"]);
+/** 门控路径(en/zh 完整,es/pt 404):blog/authors/faq 桌位与文章索引 */
+const GATED_PATHS = new Set(["/blog", "/faq", "/authors"]);
+const localesFor = (p: string) => (GATED_PATHS.has(p) ? CORE_LOCALES : routing.locales);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
   for (const p of PATHS) {
-    for (const locale of routing.locales) {
+    for (const locale of localesFor(p)) {
       entries.push({
         url: localizedUrl(p, locale),
         changeFrequency: YEARLY_PATHS.has(p) ? "yearly" : "weekly",
         priority: p === "/" ? 1 : 0.7,
-        alternates: { languages: buildAlternates(p, locale).languages },
+        alternates: { languages: buildAlternates(p, locale, localesFor(p)).languages },
       });
     }
   }
@@ -69,15 +72,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: buildAlternates(p, routing.defaultLocale, [routing.defaultLocale]).languages },
     });
   }
-  // 作者页:5 个笔名桌位的聚合与详情(bio 已双语,随 locales 输出)
+  // 作者页:5 个笔名桌位的聚合与详情(bio 双语;es/pt 门控,只输出 en/zh)
   for (const p of ["/authors", ...Object.keys(AUTHORS).map((id) => `/authors/${id}`)]) {
-    for (const locale of routing.locales) {
+    for (const locale of CORE_LOCALES) {
       entries.push({
         url: localizedUrl(p, locale),
         changeFrequency: "monthly",
         priority: 0.5,
         lastModified: new Date(),
-        alternates: { languages: buildAlternates(p, locale).languages },
+        alternates: { languages: buildAlternates(p, locale, CORE_LOCALES).languages },
       });
     }
   }

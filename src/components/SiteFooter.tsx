@@ -1,4 +1,5 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import { CORE_LOCALES, type Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { DIRECT_LINK_URL } from "@/lib/ads";
 import { SITE } from "@/lib/site";
@@ -8,6 +9,8 @@ export default async function SiteFooter() {
   const nav = await getTranslations("nav");
   const meta = await getTranslations("meta");
   const icp = process.env.NEXT_PUBLIC_ICP;
+  // es/pt 不译博客与 FAQ 目录(对应页 404),页脚隐藏这两个入口
+  const showCoreLinks = CORE_LOCALES.includes(await getLocale() as Locale);
   return (
     <footer className="mt-14 border-t border-stone-200 py-7 text-[13px] text-stone-500">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4">
@@ -15,9 +18,11 @@ export default async function SiteFooter() {
           <Link href="/" className="transition-colors hover:text-stone-900">
             {nav("tool")}
           </Link>
-          <Link href="/blog" className="transition-colors hover:text-stone-900">
-            {nav("blog")}
-          </Link>
+          {showCoreLinks && (
+            <Link href="/blog" className="transition-colors hover:text-stone-900">
+              {nav("blog")}
+            </Link>
+          )}
           <Link href="/about" className="transition-colors hover:text-stone-900">
             {nav("about")}
           </Link>
@@ -30,9 +35,11 @@ export default async function SiteFooter() {
           <Link href="/contact" className="transition-colors hover:text-stone-900">
             {t("contact")}
           </Link>
-          <Link href="/faq" className="transition-colors hover:text-stone-900">
-            {t("faq")}
-          </Link>
+          {showCoreLinks && (
+            <Link href="/faq" className="transition-colors hover:text-stone-900">
+              {t("faq")}
+            </Link>
+          )}
           {/* Direct Link 广告(Smartlink):纯导航链接,无脚本注入;按 Google 规范标注 sponsored */}
           {DIRECT_LINK_URL && (
             <a

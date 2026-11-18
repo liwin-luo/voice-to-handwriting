@@ -12,7 +12,7 @@
 | 层 | 技术 |
 |---|---|
 | 框架 | Next.js 16(App Router,注意版本有破坏性变更,见 §9)· React 19 |
-| i18n | next-intl 4,双语 `en`(无前缀)+ `zh`(`/zh` 前缀;2026-11-08 从 8 语种收缩,2026-11-09 恢复中文,旧非 zh URL 308 回英文版) |
+| i18n | next-intl 4,四语 `en`(无前缀)+ `zh`/`es`/`pt`(`/{locale}` 前缀;2026-11-08 从 8 语种收缩,2026-11-09 恢复中文,2026-11-18 恢复 es+pt——UI/工具命名空间,blog/authors/faq 门控,见 us-seo-content-plan §三十二) |
 | 样式 | Tailwind CSS 4 |
 | 状态 | Zustand 5 + persist(localStorage) |
 | 内容 | @next/mdx + remark-gfm,静态 import 注册表模式 |
@@ -24,7 +24,7 @@
 ## 2. 目录结构
 
 ```
-├── messages/                  # next-intl 文案,en.json + zh.json(key 一致,自动校验;2026-11-09 恢复双语)
+├── messages/                  # next-intl 文案,en/zh/es/pt.json(key 集合四语一致,standards.test 自动校验;es/pt 2026-11-18 从 e13f8a8^ 逐键合并)
 ├── public/
 │   ├── fonts/<fontId>/        # cn-font-split 切片产物:result.css + *.woff2(勿手改)
 │   ├── models/onnx-community/ # 旧的自托管 Whisper 权重(浏览器已改从 huggingface.co 拉取,不再使用)
@@ -85,8 +85,8 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 
 ### 4.1 i18n 与路由
 
-- `src/i18n/routing.ts`:双语 `locales: ["en", "zh"]`,`localePrefix: "as-needed"`:en 无前缀,zh 带 `/zh`。`LOCALE_LABELS` 为 en/中文。语言切换器(LocaleSwitch)挂在 SiteNav 桌面导航与移动端头部。
-- **语言路由(2026-11-16 起无 middleware)**:原 `src/proxy.ts`(next-intl middleware,Vercel 在静态缓存前运行,每请求计一次函数 CPU)已删除,职责下沉到 `next.config.ts` 边缘层,全站零函数调用:① redirects() 首页两条 307 语言谈判(Cookie `NEXT_LOCALE=zh` 优先;Accept-Language 以 `zh` 打头且未显式切 en 时跳 `/zh`;has 条件 value 是全串匹配);② rewrites() afterFiles 把裸路径 rewrite 到 `/en/*`(`:seg` 排除 zh/_next/_vercel 与带点段,排除锚点须写 `(?:(?:zh|…)(?:$|/))`——lookahead 的 `$` 对整个剩余路径求值,写 `zh$` 会漏拦 `/zh/*` 多段路径);③ 旧非 zh 语言前缀(/es /fr 等)仍由 redirects() 整体 308。**不再引入 proxy/middleware**:会让全站每个请求重新计费函数 CPU(2026-11-13 与 11-16 两次 Fluid Active CPU 治理的结论)。hreflang 红线不变:统一以页面 metadata 为准,不要在任何响应头层注入全语言 alternate 链接(2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。
+- `src/i18n/routing.ts`:四语 `locales: ["en", "zh", "es", "pt"]`,`localePrefix: "as-needed"`:en 无前缀,其余带 `/{locale}`。`LOCALE_LABELS` 为 endonym;`CORE_LOCALES`(en/zh)是 blog/authors/faq 门控页的唯一 locale 集。语言切换器(LocaleSwitch)挂在 SiteNav 桌面导航与移动端头部,切到 es/pt 时若当前在门控页则落回该语言首页。
+- **语言路由(2026-11-16 起无 middleware)**:原 `src/proxy.ts`(next-intl middleware,Vercel 在静态缓存前运行,每请求计一次函数 CPU)已删除,职责下沉到 `next.config.ts` 边缘层,全站零函数调用:① redirects() 首页两条 307 语言谈判(Cookie `NEXT_LOCALE=zh` 优先;Accept-Language 以 `zh` 打头且未显式切 en 时跳 `/zh`;has 条件 value 是全串匹配);② rewrites() afterFiles 把裸路径 rewrite 到 `/en/*`(`:seg` 排除 zh/es/pt/_next/_vercel 与带点段,排除锚点须写 `(?:(?:zh|…)(?:$|/))`——lookahead 的 `$` 对整个剩余路径求值,写 `zh$` 会漏拦 `/zh/*` 多段路径);③ 旧语言前缀 redirects() 308:`/es`、`/pt` 的门控页与已下线工具逐一显式收口(200/新内容除外),其余两字母前缀(/fr /ja 等)由 `(?!zh|es|pt)[a-z]{2}` 通配 308。**不再引入 proxy/middleware**:会让全站每个请求重新计费函数 CPU(2026-11-13 与 11-16 两次 Fluid Active CPU 治理的结论)。hreflang 红线不变:统一以页面 metadata 为准,不要在任何响应头层注入全语言 alternate 链接(2026-10 曾因 8 语种 hreflang 宣告 404 变体引发 1646 条 404)。
 - `src/i18n/navigation.ts` 导出带语言前缀的 `Link`/`usePathname`/`useRouter`,页面内链接**必须**用它而非 `next/link`。
 - 页面文案在 `messages/en.json` 与 `messages/zh.json`,两文件 key 集合必须一致(standards.test 自动校验),改文案两处同步。
 
@@ -103,13 +103,14 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/cursive-alphabet` | 交互式连笔字母表(**en-only**,非英文 404/sitemap 仅 en)。`?letter=z` 打开即选中该字母。页上挂可抓取的 printable 家族 4 变体(全表/大写/小写/黑白,`/printables/cursive-alphabet*.png|.pdf`,由 `scripts/cursive-alphabet-printables.mjs` 生成),静态区 3 张变体卡。收在 /tools「练习纸与打印」,页头下拉不单列 | `CursiveAlphabetPanel`,`cursiveAlphabet.ts`(`ALPHABET_PRINTABLES`),`alphabetSheet.mjs`,`isEnOnlyTool` |
 | `/cursive-font-generator` | 手写字体预览 + 导出(13 款 OFL:4 签名体 + 4 正式花体 + 2 日常手写 + 3 印刷体。签名体只在本页,不进主工作台。PNG 透明底 / 内嵌字体 SVG / PDF) | `CursiveFontBrowser`,`fontCatalog.ts`,`cursiveSvg.ts`,`fontFace.ts`,FAQ 经 `CURSIVE_FONT_FAQS` |
 | `/cursive-worksheets` | 连笔字描红工作表。行高用大行/普通/小行;`?words=` 预填练习词(一行一个)。字色改示例,描红用同色变浅,纸底可改 | `TracingGenerator`(sacramento,`rowLabels="lines"`),`CURSIVE_WORKSHEET_FAQS` |
-| (已下线 2026-11-08) | `/handwriting-check` `/handwriting-count` `/handwriting-pad` `/handwriting-repeater` `/architect-lettering` `/cursive-tattoo-stencil` `/prewriting-strokes` `/signature-practice` `/cursive-letter-joins` `/daily-cursive-handwriting-practice` `/letter-tracing`(含 26 子页)及配套 10 篇文章;2026-11-08 第三批聚类合并:`/word-work`、`/handwriting-sentence-practice` 并入 `/handwriting-worksheet-generator`(词表预设/例句走 `?words=`),`/doctor-handwriting-generator` 并入 `/templates/doctor-prescription` 处方模板:GSC 零曝光/死押注,308 到最近存活页(映射见 next.config.ts);`src/app/api/` 整目录删除,全站回归零后端 | — |
+| (已下线 2026-11-08) | `/handwriting-check` `/handwriting-count` `/handwriting-pad` `/architect-lettering` `/cursive-tattoo-stencil` `/prewriting-strokes` `/signature-practice` `/cursive-letter-joins` `/daily-cursive-handwriting-practice` `/letter-tracing`(含 26 子页)及配套 10 篇文章;2026-11-08 第三批聚类合并:`/word-work`、`/handwriting-sentence-practice` 并入 `/handwriting-worksheet-generator`(词表预设/例句走 `?words=`),`/doctor-handwriting-generator` 并入 `/templates/doctor-prescription` 处方模板:GSC 零曝光/死押注,308 到最近存活页(映射见 next.config.ts;`/handwriting-repeater` 的 308 已于 2026-11-18 拆除、路由翻案重建);`src/app/api/` 整目录删除,全站回归零后端 | — |
 | `/handwriting-sentence-practice` | 成人单句练习纸。一句、四选一(大小 / 斜度 / 间距 / 印刷体),实心、虚线、三行空白。空输入画当前语言的例句。超长不画纸。左手只翻红边距;斜度时斜线反向。下载后本地记住这一句,可「再写一遍」只留三行空白。页头下拉不单列 | `SentencePractice`,`sentencePractice.ts`,`SENTENCE_PRACTICE_FAQS` |
 | `/number-tracing` | 数字描红。1–10 或 1–20,每个数字单独一页(首行实心,其余虚线)。Patrick Hand,行高档。页头下拉不单列 | `TracingGenerator`(`perName`,`defaultOneEach`,`presets`),`practicePresets.ts`,`NUMBER_TRACING_FAQS` |
 | `/cursive/letter/[letter]` | 连笔单字母课(en-only,52 页)。标题句式 “Z in Cursive” / “Capital Z in Cursive”。顺序:范字、步骤、易错、上一课/下一课、A–Z 两行导航条(52 页互链)、练习词;本字母练习条 PDF 由 `LetterSheetDownload` 客户端导出,练习词链到 `/cursive-worksheets?words=`,图表链到 `/cursive-alphabet?letter=`;挂 BreadcrumbList(首页→/cursive→本课) | `cursiveLetters.ts` + `cursiveLettersRest.ts`,`LetterSheetDownload` |
 | `/cursive/number/[number]` | 连笔数字课(en-only,0–9 共 10 页)。结构与字母课平行(范字/步骤/易错/0–9 导航条/练习词/练习条 PDF);数字无入笔数据,练习条无起笔点,页内 fontNote 写明;CTA 链 `/blog/numbers-in-cursive`;hub 在 `/cursive` 页字母矩阵下方的 Numbers 网格,文章 `numbers-in-cursive` 正文回链 | `cursiveNumbers.ts`(复用 `LetterCopy` 类型),`CursiveLettersHub` |
 | `/name-tracing` | 姓名描红(示例行 + 虚线/空心/空白;空白行不画落笔点)。可「每人一页」,PDF 含全部页,PNG 为当前页。窄屏预览在输入下方,字体与行高在「更多」。字色改示例,描红用同色变浅,纸底可改。`?letter=a` 预填单个小写字母(描红字母课跳入);`?words=` 仍优先 | `TracingGenerator`(`perName`,`tracingSheets`),`PracticeLayout`,`TRACING_FAQS` |
 | `/handwriting-worksheet-generator` | 通用手写练习纸(任意词表/一行一句,印刷体)。三线格加 Pre-K/K/Grade 2 三档行高;打开预填当前语言的星期词表;默认字体随语言(`defaultFontId`),英文区 Patrick Hand。`?words=` 预填沿用。页头下拉不单列 | `TracingGenerator`(`inputLabel`,`worksheetStarterLines`),`HANDWRITING_WORKSHEET_FAQS` |
+| `/handwriting-repeater` | 手写重复字帖(2026-11-18 翻案重建,GSC 159 曝光/pos 9.2 推翻砍单判据,裁定见 content-plan §三十二)。单条文本**行内重复**填满一行、整页循环:首行实心示例,其余描红;预设 a–z / A–Z / 0–9。与 worksheet(逐行不同词)意图差已在 FAQ 写明 | `TracingGenerator`(`repeatFill`),`REPEATER_FAQS` |
 | `/printable-paper` · `/printable-paper/[kind]` | 横线/方格/点阵/图画框/康奈尔,另加 narrow ruled(1/4 英寸)、large print(1/2 英寸)、graph paper(1/4 英寸方格)。图画框与康奈尔在纸面上标出分区。线条颜色和纸底可改。子页锁定当前纸型,其他纸型只在页底链接。每种纸有可抓取的 US Letter PDF(`/printables/<slug>.pdf`,`scripts/paper-printables.mjs`)。Hub 用 `PAPER_FAQS`;子页用 `paperKindFaqs` | `PaperGenerator`(`lockType`),`paperSheet.mjs`,`paperKinds.ts`,`paperKindFaqs.ts` |
 | `/handwriting-page-calculator` | 手写用纸页数(数字估算 + 贴正文预览)。「打印空白纸 / 带到手写工具」在预览上方,页数变多时按钮不下移 | `PageCalculator`,`pageEstimate.ts`,`PAGE_CALC_FAQS` |
 | `/printable-handwritten-letters` | 可打印手写信。五类短笺可改正文。名单表头固定,可逐格填写或导入 Excel / CSV(最多 30 人,页面提供 xlsx 模板)。字体、墨色、纸样可选,信纸可铺图片。下载信件 PDF 与信封 PDF。英语区 US Letter + #10(实际尺寸),其余 A4 + DL。手写字体,用户自己贴邮票寄出 | `BulkLetterMailer`,`bulkLetters.ts`,`xlsxTable.ts`,`BULK_LETTER_FAQS` |
@@ -120,9 +121,9 @@ AudioImportPanel(音频文件,本地 Whisper)──┘         │
 | `/writing-practice` | CJK 练字表(田字格/原稿纸)。墨色改范字,描红用同色变浅,纸底可改 | `WritingPracticeGenerator`,defaultScript 按 locale,`WRITING_FAQS` |
 | `/name-coloring` | 名字涂色页。空输入先画出占位符里的第一个名字。装饰可选星星、动物或机器。宽屏左栏控件不随预览页数下移。页脚站点水印默认开,下载按钮上方可关 | `NameColoringGenerator`,`WatermarkSwitch`,`COLORING_FAQS` |
 | `/templates` · `/templates/[slug]` | 模板库/详情。索引 FAQ 是库的用法;详情 FAQ 带上该模板标题和范文首行,16 页不共用同一组问答 | 服务端映射 `TEMPLATES` → `TemplatesBrowser`;详情页真实样式预览,"使用"链到 `/?template=<slug>`。`TEMPLATE_FAQS`,`templateDetailFaqs` |
-| `/blog` · `/blog/[slug]` | 博客索引/正文 | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
-| `/authors` · `/authors/[author]` | 五个笔名桌位的聚合与详情(2026-11-08 SEO 补强):署名、简介、该桌位全部文章。无导航入口,由文章署名链接;红线:只写视角不写资历、无照片 | `AUTHORS`,`POSTS`,Person JSON-LD |
-| `/faq` | 工具目录。每条一句,链到拥有完整答案的页面。FAQPage 由 `ToolFaq` 输出,问法与首页 `FAQ_ITEMS` 不重复。语音排错仍在首页 | `FAQ_HUB`(`faqHub.ts`)+ `ToolFaq` |
+| `/blog` · `/blog/[slug]` | 博客索引/正文(**en/zh 门控**,es/pt 404 且不进 sitemap/hreflang) | `POSTS` + `BLOG_CONTENT`;正文 `ProseShell` + Article JSON-LD + `RelatedLinks`;hreflang 用 `postLocales()` 只声明有正文的语言 |
+| `/authors` · `/authors/[author]` | 五个笔名桌位的聚合与详情(2026-11-08 SEO 补强;**en/zh 门控**):署名、简介、该桌位全部文章。无导航入口,由文章署名链接;红线:只写视角不写资历、无照片 | `AUTHORS`,`POSTS`,Person JSON-LD |
+| `/faq` | 工具目录(**en/zh 门控**)。每条一句,链到拥有完整答案的页面。FAQPage 由 `ToolFaq` 输出,问法与首页 `FAQ_ITEMS` 不重复。语音排错仍在首页 | `FAQ_HUB`(`faqHub.ts`)+ `ToolFaq` |
 | `/about` `/privacy` `/terms` `/contact` | 静态页 | `makeStaticPage(key)` 工厂(`src/lib/staticPage.tsx`)从 `PAGE_CONTENT` 取 MDX |
 | `[...rest]` | 兜底 notFound。`dynamicParams = false`(2026-11-13):未知路径静态 404,不调用函数渲染,省 Fluid Active CPU | — |
 
@@ -241,7 +242,7 @@ npx playwright test  # E2E 冒烟(tests/e2e/,自动起 dev server;fixtures.ts �
 
 **新增手写模板**:`templates.ts` 加一项(样式 + en 范文必填,其他语言进 `extra-locales.ts`),页面/sitemap 自动覆盖。
 
-**新增语言**:2026-11-09 起站点双语 en+zh(zh 从 git 历史 `e13f8a8^` 恢复,过程见 us-seo-content-plan §二十五)。再新增第三种语言:从 git 历史找回该语言内容(messages、blog mdx、数据文件 i18n),`routing.ts`/`LOCALE_LABELS` 补条目,并把 next.config.ts 两条 locale 308 的负向断言扩到新前缀(如 `(?!zh|xx)`)。
+**新增语言**:现役 en+zh+es+pt(es/pt 2026-11-18 从 `e13f8a8^` 逐键合并恢复:messages、quiz/templates/faqs/paperKinds 数据、静态页 mdx;blog/authors/faq 不译走门控,过程见 us-seo-content-plan §三十二)。再新增语言:从 git 历史找回该语言内容(messages、数据文件 i18n、静态页 mdx),`routing.ts`/`LOCALE_LABELS` 补条目,`localeDefaults.ts` 的字体/纸型/语音映射补 key,并把 next.config.ts 通配 308 的负向断言扩到新前缀(如 `(?!zh|es|pt|xx)`;旧前缀历史链接逐一显式收口)。
 
 **新增字体**:TTF 放 `fonts-src/` → `npm run fonts` → `FONTS` 加项(css 栈)→ `lib/fonts.ts` 的 ASYNC_FONT_CSS 加 `/fonts/<id>/result.css`。**两处都要加**,只加 FONTS 会导致 @font-face 不加载(见 §9 已知问题)。
 

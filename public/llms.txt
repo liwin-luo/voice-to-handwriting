@@ -17,6 +17,7 @@ Made for greeting cards, letters, journals and social posts, plus printable prac
 
 - [Name Tracing Worksheet Generator](https://voicetohandwriting.online/name-tracing): personalized name tracing worksheets with dashed midlines, downloadable as PDF.
 - [Handwriting Worksheet Generator](https://voicetohandwriting.online/handwriting-worksheet-generator): printable handwriting worksheets from any word list or sentence, on three-line practice paper.
+- [Handwriting Repeater](https://voicetohandwriting.online/handwriting-repeater): type one word or the alphabet and print a full page of repeated tracing lines — solid example row, then dotted rows.
 - [Printable Lined Paper Generator](https://voicetohandwriting.online/printable-paper): lined, graph and handwriting paper in Letter or A4, no watermark.
 - [Handwriting Page Calculator](https://voicetohandwriting.online/handwriting-page-calculator): see how many sheets a handwritten text needs, by paper type and line spacing.
 - [Cursive Alphabet](https://voicetohandwriting.online/cursive-alphabet): every cursive letter A to Z with start-dot stroke guides, printable as a chart.
@@ -43,6 +44,7 @@ Made for greeting cards, letters, journals and social posts, plus printable prac
 - [Sight word tracing worksheets you can print before homework](https://voicetohandwriting.online/blog/sight-word-tracing-worksheets)
 - [Handwriting for struggling writers (dysgraphia-friendly)](https://voicetohandwriting.online/blog/handwriting-practice-struggling-writers)
 - [How to make handwriting worksheets for a whole week, tonight](https://voicetohandwriting.online/blog/handwriting-worksheets)
+- [Handwriting repeater for teachers: one word, one page](https://voicetohandwriting.online/blog/handwriting-repeater-for-teachers)
 
 ## Guides: cursive & adult practice
 
@@ -66,3 +68,5 @@ Made for greeting cards, letters, journals and social posts, plus printable prac
 - [About](https://voicetohandwriting.online/about)
 - [Privacy](https://voicetohandwriting.online/privacy): speech and text stay in your browser and are not uploaded.
 - [Contact](https://voicetohandwriting.online/contact)
+
+Also available in Español ([herramientas](https://voicetohandwriting.online/es), [test de personalidad según tu letra](https://voicetohandwriting.online/es/handwriting-personality-quiz)) and Português ([ferramentas](https://voicetohandwriting.online/pt), [teste de personalidade pela sua escrita](https://voicetohandwriting.online/pt/handwriting-personality-quiz)).

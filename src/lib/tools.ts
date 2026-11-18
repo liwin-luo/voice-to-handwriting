@@ -67,6 +67,7 @@ export const TOOL_GROUPS: ToolGroup[] = [
     tools: [
       { href: "/name-tracing", navKey: "nameTracing", metaKey: "tracing", nav: true },
       { href: "/handwriting-worksheet-generator", navKey: "worksheet", metaKey: "worksheet" },
+      { href: "/handwriting-repeater", navKey: "repeater", metaKey: "repeater" },
       { href: "/printable-paper", navKey: "printablePaper", metaKey: "printable", nav: true },
       { href: "/handwriting-page-calculator", navKey: "pageCalc", metaKey: "pageCalc" },
       { href: "/cursive-alphabet", navKey: "cursiveAlphabet", metaKey: "cursiveAlphabet", enOnly: true },

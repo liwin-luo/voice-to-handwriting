@@ -543,3 +543,4 @@ DE/FR 候选优先路由为补齐现有文章的 de/fr 正文,而非新开文章
 | 2026-11-09 | US | patsy ramsey handwriting | +300% | — | — | 放弃:案件名人新闻 |
 | 2026-11-09 | DE | eigenart der handschrift | Breakout | — | — | 放弃:填字解题(buchstaben 同款模式) |
 | 2026-11-09 | DE | schlechte handschrift scherzhaft 5 buchstaben | Breakout | — | — | 放弃:填字解题(上周同款加词缀,模式确认) |
+| 2026-11-18 | US | handwriting repeater(机器区 10-20 行翻案) | +90%;GSC 近 30 天 25 词/159 曝光/pos 9.2/CTR 0.63% | Clara Hartley | 教师课堂重复抄写练习教程 | ✅ 已翻案重建 /handwriting-repeater + 配套文(2026-11-18,用户批准解冻,裁定见 us-seo-content-plan §三十二) |

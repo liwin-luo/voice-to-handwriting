@@ -44,6 +44,10 @@
       "title": "Free Handwriting Worksheet Generator (Printable PDF)",
       "description": "Make free printable handwriting worksheets from any word list or sentence — traceable print-style rows on three-line practice paper."
     },
+    "repeater": {
+      "title": "Handwriting Repeater — Free Repeated Practice Sheets Online",
+      "description": "Type a word or the alphabet and get a full page of repeated tracing lines — one solid example row, then dotted rows to trace. Free, no signup, PDF."
+    },
     "cursive": {
       "title": "Cursive Writing Generator - Free",
       "description": "Type or speak anything and see it in flowing cursive — free, no signup. Practice the lost art of penmanship, then export as an image or PDF."
@@ -108,6 +112,7 @@
     "printablePaper": "Printable Paper",
     "nameTracing": "Name Tracing",
     "worksheet": "Handwriting Worksheets",
+    "repeater": "Handwriting Repeater",
     "cursive": "Cursive Writing",
     "cursiveAlphabet": "Cursive Alphabet",
     "cursiveFont": "Cursive Font Generator",
@@ -422,6 +427,16 @@
     "seoTitle": "Printable handwriting worksheets from any word list",
     "seoText": "Handwriting practice sheets like these work for spelling words, sight words, days and months, classmates' names, or a short sentence per line. The first pass through your list prints solid to copy; every row after that is dotted to trace. Rows sit on three-line practice paper with a dashed midline — the format used for print handwriting in classrooms.\n\nThe fonts are open-source handwriting styles — Patrick Hand for neat print — not a school textbook font, so letterforms may differ slightly from your curriculum. Everything renders in your browser: nothing you type is uploaded, and the PDF carries no watermark.",
     "faqTitle": "Handwriting worksheet questions",
+    "relatedLead": "More practice makers:"
+  },
+  "repeater": {
+    "title": "Handwriting Repeater",
+    "intro": "Type one word — or the alphabet — and the page fills with that text repeated line after line: a solid example row first, then traceable rows on three-line practice paper. Free PDF, right in your browser.",
+    "inputLabel": "Text to repeat (one entry per line)",
+    "sampleInput": "apple",
+    "seoTitle": "One word, a full page of repeated handwriting lines",
+    "seoText": "Copywork and letter-practice sheets repeat the same text across the whole line so one word gets an entire page of repetitions — the fastest way to build muscle memory for a new letter shape, a name, or a tricky spelling word.\n\nHow to use: type your word, name, or a letter run like a–z (one entry per line if you want several), pick a font, and download the PDF. The first pass through your text prints solid to copy; every row after that repeats the same text as dotted rows to trace. Rows sit on three-line practice paper with a dashed midline — the format used in classrooms.\n\nThe fonts are open-source handwriting styles — Patrick Hand for print, Sacramento for a cursive look — not a school textbook font, so letterforms may differ slightly from your curriculum. Everything renders in your browser: nothing you type is uploaded, and the PDF carries no watermark.",
+    "faqTitle": "Handwriting repeater questions",
     "relatedLead": "More practice makers:"
   },
   "workbook": {

@@ -50,6 +50,7 @@ import gpmEn from "./graphisme-maternelle.en.mdx";
 import qvhEn from "./quiet-voice-before-handwriting.en.mdx";
 import hptEn from "./handwriting-personality-test.en.mdx";
 import bldEn from "./bubble-letters-for-a-display-name.en.mdx";
+import hrtEn from "./handwriting-repeater-for-teachers.en.mdx";
 
 // 2026-11-09 恢复双语:28 篇存档文章的 zh 正文(e13f8a8^ 找回,死链已按 en 的承接页改法镜像)
 
@@ -132,6 +133,7 @@ export const BLOG_CONTENT: Record<string, Partial<Record<Locale, ComponentType>>
   "quiet-voice-before-handwriting": { en: qvhEn },
   "handwriting-personality-test": { en: hptEn },
   "bubble-letters-for-a-display-name": { en: bldEn },
+  "handwriting-repeater-for-teachers": { en: hrtEn },
 };
 
 /** 该文章在哪些语言下有正文(sitemap / blog 索引用它过滤,避免 404 URL 进 sitemap) */

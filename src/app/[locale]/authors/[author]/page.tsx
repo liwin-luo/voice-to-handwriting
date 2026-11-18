@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { routing, type Locale } from "@/i18n/routing";
+import { CORE_LOCALES, routing, type Locale } from "@/i18n/routing";
 import PageHeader from "@/components/ui/PageHeader";
 import { Link } from "@/i18n/navigation";
 import { AUTHORS, type AuthorId } from "@/content/authors";
@@ -10,8 +10,9 @@ import { getPostMeta, POSTS } from "@/content/posts";
 import { SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
+// 2026-11-18 起 /authors/* 门控 en+zh(es/pt 未翻译,404;hreflang/sitemap 同口径)
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
+  return CORE_LOCALES.flatMap((locale) =>
     Object.keys(AUTHORS).map((author) => ({ locale, author })),
   );
 }
@@ -23,12 +24,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, author } = await params;
   const a = AUTHORS[author as AuthorId];
-  if (!a) return pageMetadata("/authors", locale as Locale);
+  if (!a || !CORE_LOCALES.includes(locale as Locale)) notFound();
   const meta = a.i18n[locale as Locale] ?? a.i18n.en!;
   return pageMetadata(`/authors/${author}`, locale as Locale, {
     title: `${a.name} — ${meta.role}`,
     description: meta.bio,
-  });
+  }, { available: CORE_LOCALES });
 }
 
 export default async function AuthorPage({
@@ -37,7 +38,7 @@ export default async function AuthorPage({
   params: Promise<{ locale: string; author: string }>;
 }) {
   const { locale, author } = await params;
-  if (!hasLocale(routing.locales, locale)) notFound();
+  if (!hasLocale(routing.locales, locale) || !CORE_LOCALES.includes(locale as Locale)) notFound();
   setRequestLocale(locale);
   const a = AUTHORS[author as AuthorId];
   if (!a) notFound();

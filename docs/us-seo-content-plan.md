@@ -514,3 +514,62 @@
 - **❌ 多语言手写页(arabic/marathi)**:locale 决策 en+zh(§二十五),§6.5.4 多语种簇暂缓不变;该批词即南亚作业市场,与红线一致不追。
 - **❌ 导出格式(PNG/PDF)教程文**:违反 §二十二教训"一个工具没有自然曝光前,不为它写配套文";save-a-handwritten-note 等导出类配套文刚删,不回锅。
 - **P2 voice 不投 SEO 资源**:与现状一致,无需动作;**P3 量化**:走 roadmap §七的 GSC 季度校准,不依赖外部工具 key。
+
+## 三十二、GSC 真实数据评审(2026-11-18,用户批准部分解冻)
+
+数据源:GSC 关键词报告 2026-11-18(近 28–30 天口径,503 词/1656 曝光/105 点击/CTR 6.34%),已逐项核对原始 CSV。外部清单:`WorkBuddy/2026-11-17-21-22-48/seo-analysis/12-voicetohandwriting.online-补充清单(基于GSC真实数据).md`。
+
+**解冻范围(用户 2026-11-18 拍板,仅此三项,§二十四其余冻结不变)**:①重建 `/handwriting-repeater`;②元数据 CTR 批次;③新增 es + pt-BR locale(UI+工具,blog 不译)。
+
+### 32.1 repeater 翻案:重建 /handwriting-repeater
+
+- **翻案证据**:近 30 天 repeater 词群 25 词/159 曝光/加权 pos 9.24/CTR 0.63%(`handwriting repeater online` 103 曝光),推翻砍单判据(§二十二:70 曝光/2 点击/pos 65"品牌词自搜,无需求簇")。
+- **现状**:308 到 /cursive-worksheets,词群排名资产 consolidation 在承接页上;重建独立页后需重新赢排名,配合元数据与内链。
+- **意图勘误**:§八原形态是"逐字书写动画"(handwriting animation 词);GSC 长尾(for school / for teachers / IWB / topmarks)与 Google 把 repeater 词 consolidat 到练习纸页的事实,证明真实意图是**重复抄写练习纸**。新形态:TracingGenerator 包一层,单条文本行内重复填满一行,整页成练习纸,导出 PDF。
+- **簇意图差(§2.5 登记)**:`/handwriting-repeater` = 单条文本重复抄满整页(肌肉记忆练习);`/cursive-worksheets` = 连笔词表描红;`/handwriting-worksheet-generator` = 通用词表/星期词练习纸。主词互不侵占,页内互链邻居。
+- **配套文章(§3.1)**:词群已有月级曝光,不违 §二十二"无曝光不写配套文"教训。新 slug(旧 `handwriting-repeater` slug 已 308 /blog,不复用),角色 Clara Hartley(课堂桌,读者=教师)。playbook §6 四行:文章簇=课堂练习工具,枢纽=/handwriting-repeater;意图=教师课堂怎么用(不抢工具主词 handwriting repeater);下一跳=工具页、/printable-paper;复核=2027-01(与 Go/No-Go 同窗)。
+- **拒绝**:9 个长尾子页(薄页矩阵正是 2026-10-22 收录塌方元凶;扩词 38 个近半为 com/org/github/io/uk 垃圾词;for teachers/kids/a to z/full page 意图全部收进工具页 FAQ 与配套文);蹭"宣羽手写生成器"(竞品品牌词,商标风险,133 曝光 0 点击不接)。
+
+### 32.2 元数据 CTR 批次
+
+- 中文主词卡位 6–9:手写体文稿生成器 251 曝光 pos 6.9 / 手写体生成器 183 pos 6.2 / 手写生成器 116 pos 9.2;zh 首页 title 前置主词 + 免费/在线钩子,变体进 description。en 首页主词不动。
+- 审计 P1(品牌后缀移除/10 个最长标题修剪/描述钳制 ~158)已随 §二十四上线,本批只补 zh 首页 meta 与高印象页 FAQ 抽查。
+
+### 32.3 es + pt-BR locale(UI+工具,不做 blog)
+
+- **es:已验证需求**。笔迹性格测试簇 46 词/120 曝光/20 点击/CTR 16.7%(test de personalidad en base a como escribes 39 曝光 pos 4.85;segun 10 曝光 pos 3.5)全部落在 en quiz 页上;签名练习词 hoja para practicar firma pos 1.1。首批:quiz + home + /tools + 工具页与模板卡全量 UI。
+- **pt-BR:前瞻投入**(本报告期葡语词仅 5 词/6 曝光),依据=es 同主题簇已验证 + 巴西 grafologia/笔迹测试市场容量;复核 2027-01(判据:es 版表现 + pt 词群 GSC 曝光)。
+- **内容边界**:messages 工具/UI 命名空间 + quiz.ts + templates 卡片 + 法律短页(privacy/terms/contact);blog/authors/faq/about 不译(404 门控,旧 /es/blog 深链挂 308 保权重),hreflang 按页存在性输出。
+- **红线**:quiz 娱乐定位+免责声明沿用 §五;es 标题用本地化表达(Test de personalidad según tu escritura),pt(Teste de personalidade pela sua escrita),禁直译。
+
+### 32.4 勘误(12 号清单的 4 处口径问题)
+
+1. "全部词 1-10 位"不成立:网页输入手写体 pos 12(4 曝光 4 点击);4-10 位实为 366 词/1447 曝光/51 点击(非 373/1475/57)。
+2. 语言分桶口径乱:"中文 103 词"含日文汉字(纯中文 77);"其他(日韩)150 词"实为德/法/葡杂项(日韩仅约 48 词);"西语 69 词"≈personality 簇口径,漏圣诞卡/感谢信等 30-40 个西语词。
+3. "补 llms.txt"已由 07fcfd7 完成,清单该 P2 作废。
+4. 清单未提 repeater 已砍 + 站点冻结期背景,其 P0 建议与 §二十二/§二十四冲突;以本节裁定为准。
+
+### 32.5 落地结果(2026-11-18,本节三项已全部上线待部署)
+
+- **repeater**:`/handwriting-repeater` 重建(en/zh),TracingGenerator 加 `repeatFill`(单条文本行内重复填满一行),预设 a–z/A–Z/0–9;308 已拆,配套文章 `handwriting-repeater-for-teachers`(Clara,题图为工具页实拍)已发布;REPEATER_FAQS 四语。
+- **元数据**:zh 首页 title 前置「手写体文稿生成器」+ 免费/在线钩子,description 覆盖「手写体生成器」变体;品牌后缀/标题修剪/描述钳制确认 §二十四已上线,未重复动。
+- **es + pt(UI+工具)**:locale 四语(pt 承载巴西葡语,SPEECH_LANG 已是 pt-BR);messages es/pt 从 `e13f8a8^` 逐键合并(缺 21 键补译;旧 repeater 动画文案整命名空间重写);quiz/templates/faqs/paperKindFaqs/静态页 mdx(privacy 广告披露段同步新口径)同源恢复;quiz 内 /word-work 练习链接改指 worksheet 承接页。**门控**:blog/authors/faq 仅 en/zh(页内 notFound + generateStaticParams + hreflang available + sitemap 双口径),导航/页脚按 locale 隐藏入口,LocaleSwitch 切 es/pt 时门控页落回首页。**路由**:通配 308 排除 zh|es|pt;/es、/pt 的旧深链(博客/faq/authors/已下线工具/letter-tracing 子页)逐一显式收口,保"历史 URL 零 404"。
+- **验收**:tsc 零错误;vitest 639/639(standards.test key/ICU 四语一致);Playwright 12/12(含 repeater/es/pt 冒烟与 es 308);lint 与干净 HEAD 完全一致(24 problems,零新增);dev 实测 /es、/pt 全 200,旧深链 308 正确,首页 hreflang 恰 4+x-default,/blog 恰 3 条,sitemap 349 条(无 es/pt 门控页)。
+- **复核**:32.1–32.3 全部 2027-01 与 Go/No-Go 同窗复核(repeater 词群 imp/pos、es/pt 词群曝光/点击、zh CTR 变化)。
+
+## 三十三、Reddit 蓝海词挖掘(2026-11-18,reddit-keywords + SERP 实抓,冻结期内只登记不动工)
+
+**方法与口径**:zens-ink reddit_blueocean 跑 16 个种子词(text to handwriting / handwriting practice / cursive writing / worksheets / improve handwriting / signature / iPad / analysis / name tracing / dysgraphia / fountain pen / neat / adult cursive / teaching / handwritten letter / practice sheets)。Reddit 直连 API 403,自动降级 Google autocomplete 需求层——信号含义是"有人在 Google 搜 `xxx reddit`",即 Google 自己的页面没满足需求、用户找社区答案。go/no-go 用 DDG lite POST 实抓 SERP 结构,按三指纹判 winnable seats(官方域名占前 3 = 导航锁;同域名 2+ 席 = 品牌锁;UGC 高密度 = 平台锁)。SERPER_API_KEY 未配置,kd 工具未跑,以手动判读为准;正式立项前可用 serper 免费 key 复核。
+
+**逐词裁定**:
+
+- **✅ GO(登记候选)**:`how to improve handwriting on ipad`(+ reddit 变体,autocomplete 双 BO=3 低竞争)。SERP 十席:macobserver / writey.app / astropad / ipadlover / tinymoose / support.apple(#6)/ geeky-gadgets / apexgear / ipadapps4school / pcmag(#10)——零 Reddit、官方不入前 3、无同域 2 席,8 席中小博客,可进。站内 47 文零覆盖,竞品教育站同样空白。
+- **✅ GO(改稿,不新开)**:`reddit how to improve handwriting` 词群(autocomplete 5 条全低竞争)。SERP 9/10 席是 r/Handwriting 帖子 + wikiHow 一席——Google 没有编辑页可用,只能拿论坛帖凑数,这是"找不到更好页面"的最强蓝海信号。**不新开第三篇 improve 文**(已有 how-to-improve-handwriting-adults 与 improve-your-handwriting),而是把 adults 一篇升级为「r/Handwriting 共识 + 工具工作流」型:真实社区建议模式(字帖临摹/慢写/每日量)接练习纸生成与 repeater 工作流,E-E-A-T 引真实共识。
+- **❌ NO-GO(独立成文)**:`how to deal with dysgraphia`(autocomplete 3 条蓝海,但 SERP 权威锁死:understood.org×2、Cleveland Clinic、ADDitude、LD OnLine——健康 YMYL 领域,小站无医疗 E-E-A-T 不硬碰)。现有 handwriting-practice-struggling-writers 内加应对角度 FAQ 段落并外链权威源即可,防止后来重复立项。
+- **✅ GO(并入现有页,不开新文)**:`how to make handwriting practice sheets`(低竞争 commercial)。SERP(除 2 广告位)前排全是微型生成器站(handwritingmaker×2、handwritingguide×2、tracingpractice、handwritingtool)——Google 在给生成器工具页排位,§24 `/handwriting-worksheet-generator` 正是该页型;把该词 + `cursive handwriting practice sheets reddit` 并入其 H2/FAQ,随下一批解冻窗口顺带做。
+- **❌ 观察/不接**:`best text to handwriting converter reddit`(低竞争但撞 §二十六 roadmap 红线,text-to-handwriting landing 已拒);`handwriting analysis` / `fountain pen handwriting` / `signature ideas`(medium 竞争,大站已占,前者可并入 quiz 文 FAQ);`what does neat handwriting mean` / `why is it called cursive writing`(低量信息词,进现有文 FAQ);`name tracing` / `teaching handwriting` / 通用 `handwriting worksheets`(autocomplete 零 reddit 需求信号)。
+
+**候选登记(放行前不动工,并入 §二十六 2027-01 Go/No-Go 同窗复核)**:
+
+1. **improve-handwriting-on-ipad**(en,Wes Morales 练习桌——成人自我提升簇,设备角度属主读者成人自学,非产品教程不归 Theo)。playbook §6 四行:文章簇=成人练字自我提升;枢纽=/handwriting-worksheet-generator;意图差=iPad/Apple Pencil 场景练字(不抢桌面 improve 头词,与 adults 文错位);下一跳=worksheet-generator、/handwriting-board(Apple Pencil 直接在线写)、how-to-improve-handwriting-adults、improve-your-handwriting;复核=2027-01。发布门槛(角色卡):需一手实测资产——真实 iPad 练字过程记录/截图 + 可导入 Goodnotes 的练习纸 PDF 工作流验证。
+2. **how-to-improve-handwriting-adults 升级改稿**(同角色 Wes Morales,existing slug 不变,`updated` 前进按 playbook)。第一屏改为直答" Reddit 上公认有效的练字路径"摘要 + 工具入口;正文补社区共识源(真实帖子模式归纳,不虚构引用)。复核=2027-01,与候选 1 同窗定优先级。

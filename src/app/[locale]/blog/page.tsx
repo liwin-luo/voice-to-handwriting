@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { POSTS } from "@/content/posts";
 import { SITE } from "@/lib/site";
@@ -8,7 +9,7 @@ import { RELATED, TOOL_LABEL_KEY } from "@/content/related";
 import BlogExplorer, { type BlogCardData, type ToolOption } from "@/components/BlogExplorer";
 import { postReadingMinutes } from "@/lib/reading";
 import { pageMetadata } from "@/lib/seo";
-import type { Locale } from "@/i18n/routing";
+import { CORE_LOCALES, type Locale } from "@/i18n/routing";
 
 export async function generateMetadata({
   params,
@@ -16,11 +17,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  if (!CORE_LOCALES.includes(locale as Locale)) notFound();
   const t = await getTranslations({ locale, namespace: "meta.blog" });
   return pageMetadata("/blog", locale as Locale, {
     title: t("title"),
     description: t("description"),
-  });
+  }, { available: CORE_LOCALES });
 }
 
 export default async function BlogIndex({
@@ -29,6 +31,7 @@ export default async function BlogIndex({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (!CORE_LOCALES.includes(locale as Locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations("blog");
   const tm = await getTranslations("meta.blog");

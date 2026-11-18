@@ -1,7 +1,10 @@
 "use client";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { LOCALE_LABELS, routing, type Locale } from "@/i18n/routing";
+import { CORE_LOCALES, LOCALE_LABELS, routing, type Locale } from "@/i18n/routing";
+
+/** es/pt 没有正文的桌位/文章/FAQ 区:切语言时落回该语言首页,避免 404 */
+const GATED = /^\/(blog|authors|faq)(\/|$)/;
 
 /** 语言切换:下拉选择,替换当前路径到目标语言(2026-11-09 恢复双语时按历史版本找回) */
 export default function LocaleSwitch() {
@@ -13,7 +16,11 @@ export default function LocaleSwitch() {
     <select
       aria-label="Language"
       value={locale}
-      onChange={(e) => router.replace(pathname, { locale: e.target.value as Locale })}
+      onChange={(e) => {
+        const target = e.target.value as Locale;
+        if (GATED.test(pathname) && !CORE_LOCALES.includes(target)) router.replace("/", { locale: target });
+        else router.replace(pathname, { locale: target });
+      }}
       className="select-field w-auto cursor-pointer py-1.5 pl-3 pr-8 text-xs"
     >
       {routing.locales.map((l) => (

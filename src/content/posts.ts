@@ -759,6 +759,20 @@ const CURSIVE_POSTS: Post[] = [
     },
   },
   {
+    slug: "handwriting-repeater-for-teachers",
+    author: "clara-hartley",
+    date: "2026-11-18",
+    updated: "2026-11-18",
+    image: "/blog/handwriting-repeater-for-teachers.webp",
+    i18n: {
+      en: {
+        title: "Handwriting repeater for teachers: one word, one page",
+        description:
+          "How teachers use a handwriting repeater: the right word for each age, a five-minute morning-work routine, and what repeated tracing will not do. Free, no signup.",
+      },
+    },
+  },
+  {
     slug: "november-in-cursive",
     author: "wes-morales",
     date: "2026-11-02",

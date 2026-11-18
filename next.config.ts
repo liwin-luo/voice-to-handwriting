@@ -24,13 +24,66 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       { source: "/history", destination: "/", permanent: true },
-      // 2026-11-09 恢复双语(en + zh):旧语言前缀仍 308 回英文版,保已收录 URL 权重;
-      // zh 前缀负向断言排除,否则这两条会抢在路由前把 /zh/* 打回英文版。
+      // 2026-11-18 恢复 es(裁定见 us-seo-content-plan §三十二):旧 /es/* 历史链接逐一收口,
+      // 保"历史 URL 零 404"的口径;门控页(blog/authors/faq)与已下线工具按无前缀 308 的同一目的地收口。
+      // /pt 旧前缀不恢复(新内容在 /pt 全新收录),仍由下方通配 308
+      ...[
+        { source: "/es/blog", destination: "/blog" },
+        { source: "/es/blog/:slug", destination: "/blog/:slug" },
+        { source: "/es/faq", destination: "/faq" },
+        { source: "/es/authors", destination: "/authors" },
+        { source: "/es/authors/:author", destination: "/authors/:author" },
+        { source: "/es/history", destination: "/" },
+        { source: "/es/blog/whatsapp-voice-note-handwriting", destination: "/blog" },
+      ].map((r) => ({ ...r, permanent: true })),
+      ...[
+        ["word-work", "/handwriting-worksheet-generator"],
+        ["handwriting-sentence-practice", "/handwriting-worksheet-generator?words=The+quick+brown+fox+jumps+over+the+lazy+dog."],
+        ["doctor-handwriting-generator", "/templates/doctor-prescription"],
+        ["handwriting-check", "/tools"],
+        ["handwriting-count", "/tools"],
+        ["handwriting-pad", "/tools"],
+        ["architect-lettering", "/handwriting-worksheet-generator"],
+        ["cursive-tattoo-stencil", "/cursive-font-generator"],
+        ["prewriting-strokes", "/handwriting-worksheet-generator"],
+        ["signature-practice", "/cursive-font-generator"],
+        ["cursive-letter-joins", "/cursive-worksheets"],
+        ["daily-cursive-handwriting-practice", "/cursive-worksheets"],
+      ].map(([slug, destination]) => ({ source: `/es/${slug}`, destination, permanent: true })),
+      { source: "/es/letter-tracing", destination: "/name-tracing", permanent: true },
+      { source: "/es/letter-tracing/:letter", destination: "/name-tracing?letter=:letter", permanent: true },
+      // /pt 旧前缀同 es 口径收口(新 pt 内容在 /pt 下全新收录;两字母前缀会撞通配 308,必须先排除)
+      ...[
+        { source: "/pt/blog", destination: "/blog" },
+        { source: "/pt/blog/:slug", destination: "/blog/:slug" },
+        { source: "/pt/faq", destination: "/faq" },
+        { source: "/pt/authors", destination: "/authors" },
+        { source: "/pt/authors/:author", destination: "/authors/:author" },
+        { source: "/pt/history", destination: "/" },
+      ].map((r) => ({ ...r, permanent: true })),
+      ...[
+        ["word-work", "/handwriting-worksheet-generator"],
+        ["handwriting-sentence-practice", "/handwriting-worksheet-generator?words=The+quick+brown+fox+jumps+over+the+lazy+dog."],
+        ["doctor-handwriting-generator", "/templates/doctor-prescription"],
+        ["handwriting-check", "/tools"],
+        ["handwriting-count", "/tools"],
+        ["handwriting-pad", "/tools"],
+        ["architect-lettering", "/handwriting-worksheet-generator"],
+        ["cursive-tattoo-stencil", "/cursive-font-generator"],
+        ["prewriting-strokes", "/handwriting-worksheet-generator"],
+        ["signature-practice", "/cursive-font-generator"],
+        ["cursive-letter-joins", "/cursive-worksheets"],
+        ["daily-cursive-handwriting-practice", "/cursive-worksheets"],
+        ["letter-tracing", "/name-tracing"],
+      ].map(([slug, destination]) => ({ source: `/pt/${slug}`, destination, permanent: true })),
+      { source: "/pt/letter-tracing/:letter", destination: "/name-tracing?letter=:letter", permanent: true },
+      // 2026-11-09 恢复双语(en + zh)、2026-11-18 加 es/pt:其余旧语言前缀仍 308 回英文版,保已收录 URL 权重;
+      // zh/es/pt 前缀负向断言排除,否则这两条会抢在路由前把它们打回英文版。
       // 保持任意两字母前缀(不枚举语种):hreflang 事故期被爬的 /ur/* /ru/* 等垃圾前缀也在 GSC 收录里
       // (2026-11-08 审计:266 个历史 URL 中 3 个 404 即此类);裸前缀单独放前面,空 :path* 会产出空 Location
-      { source: "/:locale((?!zh)[a-z]{2})", destination: "/", permanent: true },
+      { source: "/:locale((?!zh|es|pt)[a-z]{2})", destination: "/", permanent: true },
       {
-        source: "/:locale((?!zh)[a-z]{2})/:path*",
+        source: "/:locale((?!zh|es|pt)[a-z]{2})/:path*",
         destination: "/:path*",
         permanent: true,
       },
@@ -44,7 +97,8 @@ const nextConfig: NextConfig = {
       { source: "/handwriting-check", destination: "/tools", permanent: true },
       { source: "/handwriting-count", destination: "/tools", permanent: true },
       { source: "/handwriting-pad", destination: "/tools", permanent: true },
-      { source: "/handwriting-repeater", destination: "/cursive-worksheets", permanent: true },
+      // /handwriting-repeater 的 308 已于 2026-11-18 拆除:GSC 近 30 天 159 曝光/pos 9.2 推翻砍单判据,
+      // 路由翻案重建(裁定与证据见 us-seo-content-plan §三十二);配套文章 slug 仍 308 回 /blog
       { source: "/architect-lettering", destination: "/handwriting-worksheet-generator", permanent: true },
       { source: "/cursive-tattoo-stencil", destination: "/cursive-font-generator", permanent: true },
       { source: "/prewriting-strokes", destination: "/handwriting-worksheet-generator", permanent: true },
@@ -92,12 +146,13 @@ const nextConfig: NextConfig = {
       beforeFiles: [],
       afterFiles: [
         { source: "/", destination: "/en" },
-        // 排除锚点用 (?:(?:zh|_next|_vercel)(?:$|/)):lookahead 的 $ 是对整个剩余路径
+        // 排除锚点用 (?:(?:zh|es|pt|_next|_vercel)(?:$|/)):lookahead 的 $ 是对整个剩余路径
         // 求值而非单个段,zh$ 在 /zh/blog(剩余串 "zh/blog")上不成立,会漏拦导致
-        // /zh/* 多段路径被 rewrite 到 /en/zh/* 打成 404(2026-11-16 本地矩阵发现)
-        { source: "/:seg((?!(?:zh|_next|_vercel)(?:$|/))[^./]+)", destination: "/en/:seg" },
+        // /zh/* 多段路径被 rewrite 到 /en/zh/* 打成 404(2026-11-16 本地矩阵发现);
+        // 2026-11-18 起 es/pt 同为真实 [locale] 路由,一并排除
+        { source: "/:seg((?!(?:zh|es|pt|_next|_vercel)(?:$|/))[^./]+)", destination: "/en/:seg" },
         {
-          source: "/:seg((?!(?:zh|_next|_vercel)(?:$|/))[^./]+)/:rest+",
+          source: "/:seg((?!(?:zh|es|pt|_next|_vercel)(?:$|/))[^./]+)/:rest+",
           destination: "/en/:seg/:rest+",
         },
       ],
